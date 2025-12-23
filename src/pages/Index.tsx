@@ -8,23 +8,27 @@ import FullStackCTA from "@/components/portfolio/FullStackCTA";
 import FAQ from "@/components/portfolio/FAQ";
 import Contact from "@/components/portfolio/Contact";
 import Footer from "@/components/portfolio/Footer";
+import SEOHead from "@/components/SEOHead";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background dark">
-      <Navigation />
-      <main>
-        <Hero />
-        <About />
-        <Services />
-        <CaseStudies />
-        <Testimonials />
-        <FullStackCTA />
-        <FAQ />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <>
+      <SEOHead />
+      <div className="min-h-screen bg-background">
+        <Navigation />
+        <main>
+          <Hero />
+          <About />
+          <Services />
+          <CaseStudies />
+          <Testimonials />
+          <FullStackCTA />
+          <FAQ />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </>
   );
 };
 
