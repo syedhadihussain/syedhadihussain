@@ -1,4 +1,5 @@
 import { Award, CheckCircle, TrendingUp, Users, Mail, Phone, Calendar, Linkedin, Facebook, Github, Youtube, Globe, Zap } from "lucide-react";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 const certifications = ["Local SEO Certified", "HubSpot SEO Certification", "Project Management Certification", "Google Analytics Certified", "Google Search Console Certified", "Google Ads Search Certified"];
 const skills = [{
   name: "Local SEO",
@@ -89,7 +90,7 @@ const About = () => {
         {/* Main Content Grid */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 mb-16">
           {/* Left Column - About Text */}
-          <div>
+          <ScrollReveal animation="fade-left">
             <span className="text-primary text-sm font-medium tracking-wider uppercase mb-4 block">
               About Me
             </span>
@@ -119,10 +120,10 @@ const About = () => {
                 <div className="text-sm text-muted-foreground">Clients Served</div>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* Right Column - Contact & Certifications */}
-          <div className="space-y-6">
+          <ScrollReveal animation="fade-right" delay={200} className="space-y-6">
             {/* Contact Card */}
             <div className="glass rounded-2xl p-6">
               <h3 className="font-display text-lg font-semibold text-foreground mb-4">Get in Touch</h3>
@@ -163,15 +164,16 @@ const About = () => {
                   </div>)}
               </div>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
 
         {/* Key Skills - Full Width Below */}
-        <div className="glass rounded-2xl p-8">
-          <div className="flex items-center justify-center gap-3 mb-8">
-            <Zap className="w-6 h-6 text-primary" />
-            <h3 className="font-display text-2xl font-bold text-foreground text-center">Key Skills & Expertise</h3>
-          </div>
+        <ScrollReveal animation="fade-up" delay={300}>
+          <div className="glass rounded-2xl p-8">
+            <div className="flex items-center justify-center gap-3 mb-8">
+              <Zap className="w-6 h-6 text-primary" />
+              <h3 className="font-display text-2xl font-bold text-foreground text-center">Key Skills & Expertise</h3>
+            </div>
           
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
             {skills.map((skill, index) => <div key={index} className="group relative overflow-hidden rounded-xl bg-secondary/50 hover:bg-primary/20 border border-border hover:border-primary/30 p-4 text-center transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/5">
@@ -179,8 +181,9 @@ const About = () => {
                 <CheckCircle className="w-5 h-5 text-primary mx-auto mb-2 group-hover:scale-110 transition-transform" />
                 <span className="text-sm font-medium text-foreground relative z-10">{skill.name}</span>
               </div>)}
+            </div>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>;
 };

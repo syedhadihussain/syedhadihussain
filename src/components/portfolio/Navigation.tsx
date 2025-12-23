@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { scrollToSection } from "@/hooks/use-scroll-animation";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -37,13 +38,13 @@ const Navigation = () => {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a
+            <button
               key={link.href}
-              href={link.href}
+              onClick={() => scrollToSection(link.href.replace("#", ""))}
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               {link.label}
-            </a>
+            </button>
           ))}
           <Button asChild size="sm" className="glow-sm">
             <a href="https://calendly.com/syedhadihussain" target="_blank" rel="noopener noreferrer">
@@ -66,14 +67,16 @@ const Navigation = () => {
         <div className="md:hidden glass border-t border-border mt-3 animate-fade-in">
           <div className="container-narrow py-6 flex flex-col gap-4">
             {navLinks.map((link) => (
-              <a
+              <button
                 key={link.href}
-                href={link.href}
-                className="text-muted-foreground hover:text-foreground transition-colors py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => {
+                  scrollToSection(link.href.replace("#", ""));
+                  setIsMobileMenuOpen(false);
+                }}
+                className="text-muted-foreground hover:text-foreground transition-colors py-2 text-left"
               >
                 {link.label}
-              </a>
+              </button>
             ))}
             <Button asChild className="w-full mt-2">
               <a href="https://calendly.com/syedhadihussain" target="_blank" rel="noopener noreferrer">

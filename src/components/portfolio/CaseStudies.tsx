@@ -1,6 +1,6 @@
 import { ArrowUpRight, MapPin, TrendingUp, Phone, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 const caseStudies = [
   {
     client: "Jewelry Repair of Atlanta",
@@ -81,86 +81,91 @@ const CaseStudies = () => {
   return (
     <section id="case-studies" className="section-padding bg-card/50">
       <div className="container-narrow">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-primary text-sm font-medium tracking-wider uppercase mb-4 block">
-            Case Studies
-          </span>
-          <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Real Results for Real Businesses
-          </h2>
-          <p className="text-muted-foreground">
-            See how I've helped service businesses dominate their local markets and increase revenue through proven Local SEO strategies.
-          </p>
-        </div>
+        <ScrollReveal animation="fade-up">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <span className="text-primary text-sm font-medium tracking-wider uppercase mb-4 block">
+              Case Studies
+            </span>
+            <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-4">
+              Real Results for Real Businesses
+            </h2>
+            <p className="text-muted-foreground">
+              See how I've helped service businesses dominate their local markets and increase revenue through proven Local SEO strategies.
+            </p>
+          </div>
+        </ScrollReveal>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {caseStudies.map((study, index) => (
-            <div
-              key={index}
-              className={`glass rounded-2xl p-6 hover:glow-sm transition-all duration-300 group relative ${
-                study.featured ? 'md:col-span-2 lg:col-span-1 ring-1 ring-primary/30' : ''
-              }`}
-            >
-              {study.featured && (
-                <div className="absolute -top-3 left-6 px-3 py-1 bg-primary text-primary-foreground text-xs font-medium rounded-full flex items-center gap-1">
-                  <Sparkles className="w-3 h-3" />
-                  Full-Stack Project
-                </div>
-              )}
+            <ScrollReveal key={index} animation="fade-up" delay={index * 100}>
+              <div
+                className={`glass rounded-2xl p-6 hover:glow-sm transition-all duration-300 group relative h-full ${
+                  study.featured ? 'ring-1 ring-primary/30' : ''
+                }`}
+              >
+                {study.featured && (
+                  <div className="absolute -top-3 left-6 px-3 py-1 bg-primary text-primary-foreground text-xs font-medium rounded-full flex items-center gap-1">
+                    <Sparkles className="w-3 h-3" />
+                    Full-Stack Project
+                  </div>
+                )}
 
-              {/* Header */}
-              <div className="flex items-start justify-between mb-5 pt-1">
-                <div>
-                  <h3 className="font-display text-lg font-bold text-foreground mb-1">
-                    {study.client}
-                  </h3>
-                  <p className="text-xs text-primary font-medium">{study.industry}</p>
-                  <div className="flex items-center gap-1 mt-1 text-muted-foreground">
-                    <MapPin className="w-3 h-3" />
-                    <span className="text-xs">{study.location}</span>
+                {/* Header */}
+                <div className="flex items-start justify-between mb-5 pt-1">
+                  <div>
+                    <h3 className="font-display text-lg font-bold text-foreground mb-1">
+                      {study.client}
+                    </h3>
+                    <p className="text-xs text-primary font-medium">{study.industry}</p>
+                    <div className="flex items-center gap-1 mt-1 text-muted-foreground">
+                      <MapPin className="w-3 h-3" />
+                      <span className="text-xs">{study.location}</span>
+                    </div>
+                  </div>
+                  <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors flex-shrink-0">
+                    <TrendingUp className="w-4 h-4 text-primary" />
                   </div>
                 </div>
-                <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors flex-shrink-0">
-                  <TrendingUp className="w-4 h-4 text-primary" />
-                </div>
-              </div>
 
-              {/* Challenge & Solution */}
-              <div className="space-y-3 mb-5">
-                <div>
-                  <span className="text-xs uppercase tracking-wider text-muted-foreground">Challenge</span>
-                  <p className="text-foreground text-sm mt-1">{study.challenge}</p>
+                {/* Challenge & Solution */}
+                <div className="space-y-3 mb-5">
+                  <div>
+                    <span className="text-xs uppercase tracking-wider text-muted-foreground">Challenge</span>
+                    <p className="text-foreground text-sm mt-1">{study.challenge}</p>
+                  </div>
+                  <div>
+                    <span className="text-xs uppercase tracking-wider text-muted-foreground">Solution</span>
+                    <p className="text-foreground text-sm mt-1">{study.solution}</p>
+                  </div>
                 </div>
-                <div>
-                  <span className="text-xs uppercase tracking-wider text-muted-foreground">Solution</span>
-                  <p className="text-foreground text-sm mt-1">{study.solution}</p>
-                </div>
-              </div>
 
-              {/* Results */}
-              <div className="pt-5 border-t border-border">
-                <span className="text-xs uppercase tracking-wider text-primary mb-3 block">Results</span>
-                <div className="grid grid-cols-3 gap-3">
-                  {study.results.map((result, idx) => (
-                    <div key={idx} className="text-center">
-                      <div className="font-display text-base font-bold text-foreground">{result.metric}</div>
-                      <div className="text-xs text-muted-foreground leading-tight">{result.label}</div>
-                    </div>
-                  ))}
+                {/* Results */}
+                <div className="pt-5 border-t border-border">
+                  <span className="text-xs uppercase tracking-wider text-primary mb-3 block">Results</span>
+                  <div className="grid grid-cols-3 gap-3">
+                    {study.results.map((result, idx) => (
+                      <div key={idx} className="text-center">
+                        <div className="font-display text-base font-bold text-foreground">{result.metric}</div>
+                        <div className="text-xs text-muted-foreground leading-tight">{result.label}</div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <Button asChild size="lg" variant="outline">
-            <a href="#contact">
-              Want Similar Results?
-              <ArrowUpRight className="w-4 h-4 ml-2" />
-            </a>
-          </Button>
-        </div>
+        <ScrollReveal animation="fade-up" delay={600}>
+          <div className="text-center mt-12">
+            <Button asChild size="lg" variant="outline">
+              <a href="#contact">
+                Want Similar Results?
+                <ArrowUpRight className="w-4 h-4 ml-2" />
+              </a>
+            </Button>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );
