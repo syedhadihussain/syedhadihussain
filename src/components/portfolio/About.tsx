@@ -1,4 +1,4 @@
-import { Award, CheckCircle, TrendingUp, Users } from "lucide-react";
+import { Award, CheckCircle, TrendingUp, Users, Mail, Phone, Calendar, Linkedin, Facebook, Github, Youtube, Globe } from "lucide-react";
 
 const certifications = [
   "Local SEO Certified",
@@ -25,6 +25,55 @@ const skills = [
   "Team Collaboration",
   "Strategic Planning",
   "Performance Tracking",
+];
+
+const contactLinks = [
+  {
+    icon: Mail,
+    label: "Email",
+    value: "syedhadi.workid@gmail.com",
+    href: "mailto:syedhadi.workid@gmail.com",
+  },
+  {
+    icon: Phone,
+    label: "WhatsApp",
+    value: "+971 52 369 5036",
+    href: "https://wa.me/+971523695036",
+  },
+  {
+    icon: Calendar,
+    label: "Schedule a Meeting",
+    value: "Book on Calendly",
+    href: "https://calendly.com/syedhadihussain",
+  },
+];
+
+const socialLinks = [
+  {
+    icon: Linkedin,
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/syed-hadi-hussain-seo-specialist/",
+  },
+  {
+    icon: Facebook,
+    label: "Facebook",
+    href: "https://www.facebook.com/syedhadihussainseo/",
+  },
+  {
+    icon: Youtube,
+    label: "YouTube",
+    href: "https://www.youtube.com/@SyedHadiHussainLocalSeo",
+  },
+  {
+    icon: Github,
+    label: "GitHub",
+    href: "https://github.com/syedhadihussain",
+  },
+  {
+    icon: Globe,
+    label: "Gravatar",
+    href: "https://gravatar.com/syedhadihussainseoexpert",
+  },
 ];
 
 const About = () => {
@@ -67,6 +116,51 @@ const About = () => {
 
           {/* Right Column */}
           <div className="space-y-8">
+            {/* Contact & Social Links */}
+            <div className="glass rounded-2xl p-6">
+              <h3 className="font-display text-xl font-semibold text-foreground mb-5">Get in Touch</h3>
+              
+              {/* Contact Links */}
+              <div className="space-y-4 mb-6">
+                {contactLinks.map((contact, index) => (
+                  <a
+                    key={index}
+                    href={contact.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 group hover:bg-secondary/50 rounded-lg p-3 -m-3 transition-colors"
+                  >
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <contact.icon className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <div className="text-xs text-muted-foreground uppercase tracking-wider">{contact.label}</div>
+                      <div className="text-foreground text-sm font-medium">{contact.value}</div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+
+              {/* Social Links */}
+              <div className="pt-4 border-t border-border">
+                <div className="text-xs text-muted-foreground uppercase tracking-wider mb-4">Connect with Me</div>
+                <div className="flex flex-wrap gap-3">
+                  {socialLinks.map((social, index) => (
+                    <a
+                      key={index}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-all group"
+                      title={social.label}
+                    >
+                      <social.icon className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+
             {/* Certifications */}
             <div>
               <div className="flex items-center gap-3 mb-5">
