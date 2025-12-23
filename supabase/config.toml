@@ -1,1 +1,8 @@
 project_id = "sbilaslhxhbdyclacnkv"
+
+[functions.send-contact-email]
+verify_jwt = false
+
+[api]
+enabled = true
+schemas = ["public", "graphql_public"]

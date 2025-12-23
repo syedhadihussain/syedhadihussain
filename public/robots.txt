@@ -1,7 +1,32 @@
+# https://www.robotstxt.org/robotstxt.html
+# Syed Hadi Hussain - Local SEO Specialist Portfolio
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://syedhadihussain.com/sitemap.xml
+
+# Allow all crawlers
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: Claude-Web
 Allow: /
 
 User-agent: Twitterbot
@@ -10,5 +35,7 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
-Allow: /
+# Disallow sensitive paths
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/

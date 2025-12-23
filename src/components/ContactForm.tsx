@@ -75,6 +75,24 @@ const ContactForm = () => {
 
       if (error) throw error;
 
+      // Send email notifications
+      try {
+        await supabase.functions.invoke("send-contact-email", {
+          body: {
+            name: validatedData.name,
+            email: validatedData.email,
+            phone: validatedData.phone,
+            company: validatedData.company,
+            service: validatedData.service,
+            message: validatedData.message,
+            language: language,
+          },
+        });
+      } catch (emailError) {
+        console.error("Email notification failed:", emailError);
+        // Don't fail the form submission if email fails
+      }
+
       toast({
         title: "Success!",
         description: t("contact.success"),
