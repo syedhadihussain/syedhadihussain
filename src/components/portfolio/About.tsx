@@ -1,12 +1,12 @@
 import { Award, CheckCircle, TrendingUp, Users, Mail, Phone, Calendar, Linkedin, Facebook, Github, Youtube, Globe, Zap } from "lucide-react";
 
 const certifications = [
-  { name: "Local SEO Certified", icon: "🎯" },
-  { name: "HubSpot SEO Certification", icon: "🧡" },
-  { name: "Project Management Certification", icon: "📋" },
-  { name: "Google Analytics Certified", icon: "📊" },
-  { name: "Google Search Console Certified", icon: "🔍" },
-  { name: "Google Ads Search Certified", icon: "💰" },
+  "Local SEO Certified",
+  "HubSpot SEO Certification",
+  "Project Management Certification",
+  "Google Analytics Certified",
+  "Google Search Console Certified",
+  "Google Ads Search Certified",
 ];
 
 const skills = [
@@ -167,11 +167,11 @@ const About = () => {
                 <Award className="w-5 h-5 text-primary" />
                 <h3 className="font-display text-lg font-semibold text-foreground">Certifications</h3>
               </div>
-              <div className="grid grid-cols-1 gap-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {certifications.map((cert, index) => (
-                  <div key={index} className="flex items-center gap-3 p-2 rounded-lg hover:bg-secondary/30 transition-colors">
-                    <span className="text-lg">{cert.icon}</span>
-                    <span className="text-sm text-foreground">{cert.name}</span>
+                  <div key={index} className="flex items-center gap-3 text-muted-foreground">
+                    <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                    <span className="text-sm">{cert}</span>
                   </div>
                 ))}
               </div>
