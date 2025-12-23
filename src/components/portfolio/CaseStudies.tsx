@@ -51,7 +51,7 @@ const caseStudies = [
     ],
   },
   {
-    client: "Hartful Orthodontics",
+    client: "Artful Orthodontics",
     industry: "Orthodontic Services",
     location: "Winter Garden, FL",
     challenge: "Low visibility for orthodontic services in Winter Garden, FL",
