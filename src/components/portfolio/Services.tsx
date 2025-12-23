@@ -1,35 +1,79 @@
-import { MapPin, Globe, Search, FileText, Code, BarChart3 } from "lucide-react";
+import { 
+  MapPin, 
+  Globe, 
+  Search, 
+  FileText, 
+  Code, 
+  BarChart3, 
+  Map, 
+  Wrench, 
+  Link, 
+  LineChart, 
+  FolderKanban, 
+  MessageSquare, 
+  Sparkles 
+} from "lucide-react";
 
 const services = [
   {
     icon: MapPin,
-    title: "Local SEO & Google Business Profile Optimization",
-    description: "Complete optimization of your Google Business Profile to improve local rankings, visibility, and calls.",
+    title: "Local SEO Optimization",
+    description: "I boost your visibility on Google Search with local SEO strategies that attract high-intent customers in your local area.",
   },
   {
     icon: Globe,
-    title: "Service-Based Website SEO",
-    description: "On-page SEO, service page optimization, and internal linking to rank for high-intent keywords.",
+    title: "Google Business Profile Management",
+    description: "I handle the complete setup, optimization, and management of your Google Business Profile to maximize visibility in search, maps, and AI-powered listings.",
+  },
+  {
+    icon: Map,
+    title: "Map SEO – Google, Apple, Bing",
+    description: "I optimize your presence on Google Maps, Apple Maps, Bing Maps, and other location-based platforms to effectively capture local searches.",
   },
   {
     icon: Search,
-    title: "Keyword Research & Topical Authority Building",
-    description: "Deep keyword research and content planning to make your website an authority in your niche.",
+    title: "Keyword Research & Semantic SEO",
+    description: "I identify the best keywords for your business, including voice search and AI-generated queries, to drive relevant traffic that converts.",
   },
   {
     icon: FileText,
-    title: "SEO Content Writing & Optimization",
-    description: "SEO-optimized blogs, service pages, and location pages written for both Google and users.",
+    title: "On-Page SEO",
+    description: "I optimize website pages with meta tags, headings, structured data, and semantic markup to improve rankings and relevance for search engines and AI assistants.",
+  },
+  {
+    icon: Wrench,
+    title: "Technical SEO",
+    description: "I fix site performance, speed, mobile-friendliness, indexing, and crawl issues so your website works flawlessly for both Google and AI-powered search engines.",
   },
   {
     icon: Code,
-    title: "Schema Markup & Technical SEO",
-    description: "Advanced schema implementation to enhance search appearance and click-through rates.",
+    title: "Content Strategy & AI-Optimized Content",
+    description: "I create high-quality, AI-ready content for service pages, blogs, FAQs, and landing pages to rank on search engines, maps, and generative platforms.",
   },
   {
-    icon: BarChart3,
-    title: "Monthly SEO Management & Reporting",
-    description: "Ongoing SEO campaigns with transparent reporting and measurable growth.",
+    icon: Link,
+    title: "Link Building & Local Citations",
+    description: "I build high-authority links and local citations to boost trust signals and improve visibility across search engines, maps, and AI-driven platforms.",
+  },
+  {
+    icon: LineChart,
+    title: "Conversion Tracking & Analytics",
+    description: "I set up GA4, GTM, UTM tracking, and advanced analytics to track traffic, calls, map clicks, and conversions with actionable insights.",
+  },
+  {
+    icon: FolderKanban,
+    title: "Full-Stack Project Management",
+    description: "I manage all SEO, AI, and map optimization projects end-to-end, ensuring timely execution, performance tracking, and alignment with business goals.",
+  },
+  {
+    icon: MessageSquare,
+    title: "Client Communication & Reporting",
+    description: "I provide transparent, regular updates with insights on search performance, map visibility, AI ranking signals, and lead generation.",
+  },
+  {
+    icon: Sparkles,
+    title: "Advanced AI & Generative SEO",
+    description: "I implement strategies to get your business cited by ChatGPT, Perplexity, Bing AI, You.com, and other generative engines for future-ready SEO.",
   },
 ];
 
@@ -42,10 +86,10 @@ const Services = () => {
             Services
           </span>
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            SEO Services That Drive Results
+            My Services Designed to Boost Business Growth
           </h2>
           <p className="text-muted-foreground">
-            Comprehensive Local SEO solutions tailored for service-based businesses ready to dominate their market.
+            I provide full-stack SEO and local growth services, designed for businesses that want measurable results, AI-ready strategies, and top local map visibility.
           </p>
         </div>
 
