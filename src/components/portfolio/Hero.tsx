@@ -22,16 +22,16 @@ const Hero = () => {
 
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6 animate-fade-up" style={{ animationDelay: "0.2s" }}>
               Hi, I'm Syed Hadi
-              <span className="block text-primary">Local SEO Specialist</span>
+              <span className="block text-primary">Your Full Stack Local SEO Specialist</span>
             </h1>
 
             <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl animate-fade-up" style={{ animationDelay: "0.3s" }}>
-              I help local and service-based businesses rank higher on Google and turn searches into paying customers.
+              I help local and service-based businesses move from low visibility to top Google rankings, converting searches into consistent leads and long-term growth.
             </p>
 
             <div className="flex items-center gap-3 text-sm text-muted-foreground mb-8 animate-fade-up" style={{ animationDelay: "0.35s" }}>
               <MapPin className="w-4 h-4 text-primary" />
-              <span>Serving clients globally — UAE, UK, USA, Australia</span>
+              <span>Helping businesses worldwide across diverse industries and regions grow online</span>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: "0.4s" }}>
@@ -53,11 +53,11 @@ const Hero = () => {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-border animate-fade-up" style={{ animationDelay: "0.5s" }}>
               <div>
-                <div className="font-display text-3xl font-bold text-foreground">4+</div>
+                <div className="font-display text-3xl font-bold text-foreground">7+</div>
                 <div className="text-sm text-muted-foreground">Years Experience</div>
               </div>
               <div>
-                <div className="font-display text-3xl font-bold text-foreground">50+</div>
+                <div className="font-display text-3xl font-bold text-foreground">100+</div>
                 <div className="text-sm text-muted-foreground">Clients Served</div>
               </div>
               <div>
