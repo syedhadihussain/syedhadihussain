@@ -1,9 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Calendar, Mail, MessageCircle, ArrowRight, MapPin } from "lucide-react";
-
 const Contact = () => {
-  return (
-    <section id="contact" className="section-padding bg-card/50">
+  return <section id="contact" className="section-padding bg-card/50">
       <div className="container-narrow">
         <div className="max-w-4xl mx-auto">
           {/* Main CTA Card */}
@@ -19,7 +17,7 @@ const Contact = () => {
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
               Ready to Dominate Google?
             </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8">
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8 text-center">
               Book a free Local SEO audit and discover how to outrank your competitors and generate more leads from Google.
             </p>
 
@@ -53,8 +51,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Contact;
