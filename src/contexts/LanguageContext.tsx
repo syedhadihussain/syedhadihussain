@@ -27,6 +27,8 @@ export const translations: Translations = {
   "nav.contact": { en: "Contact", ar: "اتصل بنا", es: "Contacto", pt: "Contato", fr: "Contact", it: "Contatto", de: "Kontakt" },
   "nav.blog": { en: "Blog", ar: "المدونة", es: "Blog", pt: "Blog", fr: "Blog", it: "Blog", de: "Blog" },
   "nav.bookCall": { en: "Book a Call", ar: "احجز مكالمة", es: "Reservar Llamada", pt: "Agendar Chamada", fr: "Réserver un appel", it: "Prenota una chiamata", de: "Anruf buchen" },
+  "nav.localServiceAds": { en: "Local Service Ads", ar: "إعلانات الخدمات المحلية", es: "Anuncios de Servicios Locales", pt: "Anúncios de Serviços Locais", fr: "Annonces de services locaux", it: "Annunci di servizi locali", de: "Lokale Serviceanzeigen" },
+  "nav.projectManagement": { en: "Project Management", ar: "إدارة المشاريع", es: "Gestión de Proyectos", pt: "Gerenciamento de Projetos", fr: "Gestion de projet", it: "Gestione progetti", de: "Projektmanagement" },
 
   // Hero
   "hero.available": { en: "Available for new projects", ar: "متاح لمشاريع جديدة", es: "Disponible para nuevos proyectos", pt: "Disponível para novos projetos", fr: "Disponible pour de nouveaux projets", it: "Disponibile per nuovi progetti", de: "Verfügbar für neue Projekte" },
