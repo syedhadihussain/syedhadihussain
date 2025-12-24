@@ -56,14 +56,14 @@ const Contact = () => {
               </a>
 
               <a 
-                href="mailto:syedhadi.workid@gmail.com"
+                href="mailto:contact.syedhadihussain@gmail.com"
                 className="glass rounded-2xl p-6 text-center hover:bg-primary/10 transition-all duration-300 group"
               >
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
                   <Mail className="w-6 h-6 text-primary" />
                 </div>
                 <h3 className="font-semibold text-foreground mb-1">{t("contact.email")}</h3>
-                <p className="text-sm text-muted-foreground">syedhadi.workid@gmail.com</p>
+                <p className="text-sm text-muted-foreground">contact.syedhadihussain@gmail.com</p>
               </a>
 
               <div className="glass rounded-2xl p-6 text-center">

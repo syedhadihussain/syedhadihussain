@@ -49,7 +49,7 @@ const ContactPage = () => {
                       
                       <div className="space-y-6">
                         <a 
-                          href="mailto:syedhadi.workid@gmail.com" 
+                          href="mailto:contact.syedhadihussain@gmail.com" 
                           className="flex items-start gap-4 group"
                         >
                           <div className="p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
@@ -57,7 +57,7 @@ const ContactPage = () => {
                           </div>
                           <div>
                             <p className="font-medium text-foreground">Email</p>
-                            <p className="text-muted-foreground text-sm">syedhadi.workid@gmail.com</p>
+                            <p className="text-muted-foreground text-sm">contact.syedhadihussain@gmail.com</p>
                           </div>
                         </a>
 

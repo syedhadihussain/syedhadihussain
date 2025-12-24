@@ -36,7 +36,7 @@ const SEOHead = ({
     jobTitle: "Full Stack Local SEO Specialist",
     description: "Results-driven Local SEO specialist with 7+ years of experience helping service businesses dominate Google Search and Google Business Profile rankings.",
     url: baseUrl,
-    email: "syedhadi.workid@gmail.com",
+    email: "contact.syedhadihussain@gmail.com",
     image: `${baseUrl}/profile-photo.png`,
     sameAs: [
       "https://www.linkedin.com/in/syed-hadi-hussain-seo-specialist/",
@@ -168,7 +168,7 @@ const SEOHead = ({
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",
-      email: "syedhadi.workid@gmail.com",
+      email: "contact.syedhadihussain@gmail.com",
       availableLanguage: ["English", "Arabic", "Spanish"]
     },
     sameAs: [
