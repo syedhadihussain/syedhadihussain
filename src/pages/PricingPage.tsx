@@ -1,4 +1,4 @@
-import { Check, Sparkles, ArrowRight, Clock, Star, Shield } from "lucide-react";
+import { Check, Sparkles, ArrowRight, Clock, Star, Shield, Zap, Timer } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -7,16 +7,25 @@ import Footer from "@/components/portfolio/Footer";
 import SEOHead from "@/components/SEOHead";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { useLanguage } from "@/contexts/LanguageContext";
+import DiscountCountdown from "@/components/DiscountCountdown";
+import { useDiscountTimer } from "@/hooks/useDiscountTimer";
 
 const PricingPage = () => {
   const { t } = useLanguage();
+  const { expired } = useDiscountTimer();
+
+  // Calculate discounted prices (25% off)
+  const calculateDiscount = (price: number) => {
+    const discounted = price * 0.75;
+    return `$${discounted.toFixed(0)}`;
+  };
 
   const packages = [
     {
       name: "SEO Audit",
-      badge: "50% OFF",
+      badge: expired ? null : "25% OFF",
       originalPrice: "$100",
-      price: "$50",
+      price: expired ? "$100" : "$75",
       description: "Perfect for understanding your current SEO standing and getting actionable recommendations.",
       features: [
         "Complete GBP Analysis",
@@ -29,11 +38,13 @@ const PricingPage = () => {
       ],
       cta: "Get Audit Now",
       popular: true,
-      highlight: "Book within 24 hours for 50% OFF!",
+      highlight: expired ? null : "Sign up within 3 days for 25% OFF!",
     },
     {
       name: "GBP Management",
-      price: "$299",
+      badge: expired ? null : "25% OFF",
+      originalPrice: "$399",
+      price: expired ? "$399" : "$299",
       period: "/month",
       description: "Ongoing Google Business Profile optimization to keep you ranking high in local search.",
       features: [
@@ -51,7 +62,9 @@ const PricingPage = () => {
     },
     {
       name: "Full Stack Local SEO",
-      price: "$599",
+      badge: expired ? null : "25% OFF",
+      originalPrice: "$799",
+      price: expired ? "$799" : "$599",
       period: "/month",
       description: "Complete local SEO solution for businesses serious about dominating their market.",
       features: [
@@ -70,7 +83,9 @@ const PricingPage = () => {
     },
     {
       name: "Complete Business Audit",
-      price: "$199",
+      badge: expired ? null : "25% OFF",
+      originalPrice: "$265",
+      price: expired ? "$265" : "$199",
       description: "Comprehensive analysis of your entire digital presence with a detailed action plan.",
       features: [
         "Full Website SEO Audit",
@@ -106,7 +121,9 @@ const PricingPage = () => {
     },
     {
       name: "Local Service Ads",
-      price: "$399",
+      badge: expired ? null : "25% OFF",
+      originalPrice: "$532",
+      price: expired ? "$532" : "$399",
       period: "/month + ad spend",
       description: "Google Local Service Ads management to get guaranteed leads for your service business.",
       features: [
@@ -145,8 +162,8 @@ const PricingPage = () => {
   return (
     <>
       <SEOHead
-        title="Pricing - Local SEO Packages & Services | Syed Hadi"
-        description="Affordable local SEO pricing packages. Get your SEO audit for just $50 (50% OFF). Monthly SEO management starting at $299. View all service packages."
+        title="Pricing - Local SEO Packages & Services | 25% OFF Limited Offer"
+        description="Affordable local SEO pricing packages with 25% OFF for 3 days! Get your SEO audit starting at $75. Monthly SEO management from $299. View all service packages."
         canonical="https://syedhadi.com/pricing"
       />
       <Navigation />
@@ -168,38 +185,56 @@ const PricingPage = () => {
             </div>
           </ScrollReveal>
 
-          {/* Special Offer Banner */}
-          <ScrollReveal delay={100}>
-            <div className="relative overflow-hidden glass rounded-2xl p-6 lg:p-8 mb-12 border-2 border-primary/30">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-              <div className="relative flex flex-col lg:flex-row items-center justify-between gap-6">
-                <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
-                    <Sparkles className="w-8 h-8 text-primary" />
+          {/* Special Offer Banner with Countdown */}
+          {!expired && (
+            <ScrollReveal delay={100}>
+              <div className="relative overflow-hidden glass rounded-2xl p-6 lg:p-8 mb-12 border-2 border-primary/30 glow">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+                <div className="absolute bottom-0 left-0 w-48 h-48 bg-primary/5 rounded-full blur-2xl translate-y-1/2 -translate-x-1/2" />
+                
+                <div className="relative">
+                  <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+                    <div className="flex items-center gap-4 text-center lg:text-left">
+                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center shrink-0">
+                        <Zap className="w-8 h-8 text-primary-foreground" />
+                      </div>
+                      <div>
+                        <div className="flex items-center gap-2 justify-center lg:justify-start mb-1">
+                          <Badge variant="destructive" className="animate-pulse">
+                            <Timer className="w-3 h-3 mr-1" />
+                            Limited Time
+                          </Badge>
+                        </div>
+                        <h2 className="font-display text-2xl lg:text-3xl font-bold text-foreground">
+                          25% OFF All Packages!
+                        </h2>
+                        <p className="text-muted-foreground mt-1">
+                          Sign up within 3 days and save big on any service package
+                        </p>
+                      </div>
+                    </div>
+                    
+                    <DiscountCountdown />
                   </div>
-                  <div>
-                    <h2 className="font-display text-2xl font-bold text-foreground">
-                      Limited Time Offer: 50% OFF SEO Audit
-                    </h2>
-                    <p className="text-muted-foreground">
-                      Book within 24 hours and get your comprehensive SEO audit for just $50!
-                    </p>
+                  
+                  <div className="flex justify-center mt-6">
+                    <Button asChild size="lg" className="glow group">
+                      <Link to="/contact">
+                        Claim Your 25% Discount
+                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                      </Link>
+                    </Button>
                   </div>
                 </div>
-                <Button asChild size="lg" className="glow shrink-0">
-                  <a href="https://calendly.com/syedhadihussain" target="_blank" rel="noopener noreferrer">
-                    Claim Offer <ArrowRight className="w-4 h-4 ml-2" />
-                  </a>
-                </Button>
               </div>
-            </div>
-          </ScrollReveal>
+            </ScrollReveal>
+          )}
 
           {/* Pricing Cards */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
             {packages.map((pkg, index) => (
               <ScrollReveal key={index} delay={150 + index * 50}>
-                <div className={`glass rounded-2xl p-6 h-full flex flex-col relative ${pkg.popular ? 'border-2 border-primary' : ''}`}>
+                <div className={`glass rounded-2xl p-6 h-full flex flex-col relative ${pkg.popular ? 'border-2 border-primary glow-sm' : ''}`}>
                   {pkg.popular && (
                     <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                       <Badge className="bg-primary text-primary-foreground">
@@ -221,7 +256,7 @@ const PricingPage = () => {
                   </h3>
                   
                   <div className="mb-4">
-                    {pkg.originalPrice && (
+                    {pkg.originalPrice && !expired && (
                       <span className="text-muted-foreground line-through text-lg mr-2">
                         {pkg.originalPrice}
                       </span>
@@ -235,7 +270,8 @@ const PricingPage = () => {
                   </div>
 
                   {pkg.highlight && (
-                    <p className="text-sm text-primary font-medium mb-3">
+                    <p className="text-sm text-primary font-medium mb-3 flex items-center gap-1">
+                      <Timer className="w-3 h-3" />
                       {pkg.highlight}
                     </p>
                   )}
@@ -256,6 +292,7 @@ const PricingPage = () => {
                   <Button asChild className={`w-full ${pkg.popular ? 'glow' : ''}`} variant={pkg.popular ? 'default' : 'outline'}>
                     <Link to="/contact">
                       {pkg.cta}
+                      <ArrowRight className="w-4 h-4 ml-2" />
                     </Link>
                   </Button>
                 </div>
@@ -271,8 +308,8 @@ const PricingPage = () => {
               </h2>
               <div className="grid md:grid-cols-3 gap-8">
                 {guarantees.map((item, index) => (
-                  <div key={index} className="text-center">
-                    <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <div key={index} className="text-center group">
+                    <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
                       <item.icon className="w-7 h-7 text-primary" />
                     </div>
                     <h3 className="font-display text-lg font-bold text-foreground mb-2">
@@ -297,10 +334,13 @@ const PricingPage = () => {
                 Check our FAQ or get in touch for custom solutions tailored to your needs.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Button asChild variant="outline">
+                <Button asChild variant="outline" size="lg">
                   <Link to="/faq">View FAQ</Link>
                 </Button>
-                <Button asChild className="glow">
+                <Button asChild variant="outline" size="lg">
+                  <Link to="/case-studies">View Case Studies</Link>
+                </Button>
+                <Button asChild className="glow" size="lg">
                   <Link to="/contact">
                     Contact Us <ArrowRight className="w-4 h-4 ml-2" />
                   </Link>

@@ -18,6 +18,7 @@ export const translations: Translations = {
   // Navigation
   "nav.about": { en: "About", ar: "حول", es: "Acerca de", pt: "Sobre", fr: "À propos", it: "Chi siamo", de: "Über" },
   "nav.services": { en: "Services", ar: "الخدمات", es: "Servicios", pt: "Serviços", fr: "Services", it: "Servizi", de: "Dienstleistungen" },
+  "nav.pricing": { en: "Pricing", ar: "الأسعار", es: "Precios", pt: "Preços", fr: "Tarifs", it: "Prezzi", de: "Preise" },
   "nav.caseStudies": { en: "Case Studies", ar: "دراسات الحالة", es: "Casos de Estudio", pt: "Estudos de Caso", fr: "Études de cas", it: "Casi di studio", de: "Fallstudien" },
   "nav.portfolio": { en: "Portfolio", ar: "المحفظة", es: "Portafolio", pt: "Portfólio", fr: "Portfolio", it: "Portfolio", de: "Portfolio" },
   "nav.testimonials": { en: "Testimonials", ar: "الشهادات", es: "Testimonios", pt: "Depoimentos", fr: "Témoignages", it: "Testimonianze", de: "Referenzen" },
@@ -66,6 +67,7 @@ export const translations: Translations = {
   "contact.gbpLink": { en: "GBP/Map Link", ar: "رابط خرائط جوجل", es: "Enlace de GBP/Mapa", pt: "Link do GBP/Mapa", fr: "Lien GBP/Carte", it: "Link GBP/Mappa", de: "GBP/Karten-Link" },
   "contact.gbpLinkHint": { en: "Paste your Google Business Profile or Google Maps link", ar: "الصق رابط ملف Google التجاري أو خرائط Google", es: "Pegue su enlace de Google Business Profile o Google Maps", pt: "Cole seu link do Google Business Profile ou Google Maps", fr: "Collez votre lien Google Business Profile ou Google Maps", it: "Incolla il tuo link Google Business Profile o Google Maps", de: "Fügen Sie Ihren Google Business Profile- oder Google Maps-Link ein" },
   "contact.competitor": { en: "Competitor (Optional)", ar: "المنافس (اختياري)", es: "Competidor (Opcional)", pt: "Concorrente (Opcional)", fr: "Concurrent (Optionnel)", it: "Concorrente (Opzionale)", de: "Wettbewerber (Optional)" },
+  "contact.customService": { en: "Describe Your Custom Service", ar: "صف خدمتك المخصصة", es: "Describe Tu Servicio Personalizado", pt: "Descreva Seu Serviço Personalizado", fr: "Décrivez votre service personnalisé", it: "Descrivi il tuo servizio personalizzato", de: "Beschreiben Sie Ihren benutzerdefinierten Service" },
   "contact.formGuide": { en: "Need help? Read the form guide", ar: "تحتاج مساعدة؟ اقرأ دليل النموذج", es: "¿Necesita ayuda? Lea la guía del formulario", pt: "Precisa de ajuda? Leia o guia do formulário", fr: "Besoin d'aide? Lisez le guide du formulaire", it: "Hai bisogno di aiuto? Leggi la guida al modulo", de: "Brauchen Sie Hilfe? Lesen Sie die Formularanleitung" },
 
   // Services

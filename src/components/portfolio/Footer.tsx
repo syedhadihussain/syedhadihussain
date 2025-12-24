@@ -11,6 +11,7 @@ const socialLinks = [
 const quickLinks = [
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
+  { label: "Pricing", href: "/pricing" },
   { label: "Portfolio", href: "/portfolio" },
   { label: "Case Studies", href: "/case-studies" },
   { label: "FAQ", href: "/faq" },

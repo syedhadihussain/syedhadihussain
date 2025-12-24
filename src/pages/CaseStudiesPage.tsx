@@ -25,7 +25,7 @@ const caseStudies = [
   {
     client: "Neighborhood Pizza & Pasta House",
     industry: "Restaurant",
-    location: "New York, USA",
+    location: "Wilbraham, MA, USA",
     challenge: "Popular local restaurant was missing out on thousands of potential customers due to poor Google visibility despite excellent food and service.",
     solution: "GBP optimization with menu integration, restaurant schema markup, high-volume keyword targeting, and professional photo strategy.",
     results: [
@@ -40,7 +40,7 @@ const caseStudies = [
   {
     client: "Artful Orthodontics",
     industry: "Healthcare / Dental",
-    location: "New York, USA",
+    location: "Winter Garden, FL, USA",
     challenge: "Low visibility in local search results for dental services, minimal online presence despite quality patient care.",
     solution: "Complete GBP optimization, local content strategy targeting dental keywords, citation building in healthcare directories.",
     results: [
