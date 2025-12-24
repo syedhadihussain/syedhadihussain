@@ -51,10 +51,10 @@ const Hero = () => {
                 </a>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <a href="https://wa.me/+971523695036" target="_blank" rel="noopener noreferrer">
+                <Link to="/contact">
                   <MessageCircle className="w-4 h-4 mr-2" />
-                  {t("hero.whatsapp")}
-                </a>
+                  {t("hero.bookConsultation")}
+                </Link>
               </Button>
               <Button asChild variant="secondary" size="lg">
                 <Link to="/portfolio">
