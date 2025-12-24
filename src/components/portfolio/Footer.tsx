@@ -2,43 +2,43 @@ import { Link } from "react-router-dom";
 import { Linkedin, Facebook, Github, Mail, Globe, Phone, ArrowUpRight, Shield, CreditCard } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-const socialLinks = [
-  { icon: Linkedin, href: "https://www.linkedin.com/in/syed-hadi-hussain-seo-specialist/", label: "LinkedIn" },
-  { icon: Facebook, href: "https://www.facebook.com/syedhadihussainseo/", label: "Facebook" },
-  { icon: Github, href: "https://github.com/syedhadihussain", label: "GitHub" },
-];
-
-const quickLinks = [
-  { label: "About", href: "/about" },
-  { label: "Services", href: "/services" },
-  { label: "Pricing", href: "/pricing" },
-  { label: "Portfolio", href: "/portfolio" },
-  { label: "Case Studies", href: "/case-studies" },
-  { label: "FAQ", href: "/faq" },
-  { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "/contact" },
-];
-
-const services = [
-  { label: "Full Stack Local SEO", href: "/services" },
-  { label: "GBP & Map SEO", href: "/services" },
-  { label: "Website SEO", href: "/services" },
-  { label: "Citation Building", href: "/services" },
-  { label: "Local Service Ads", href: "/local-service-ads" },
-  { label: "Project Management", href: "/project-management" },
-];
-
-const paymentLogos = [
-  { name: "Payoneer", color: "#FF4800" },
-  { name: "Wise", color: "#9FE870" },
-  { name: "PayPal", color: "#003087" },
-  { name: "Bank Transfer", color: "#1e40af" },
-  { name: "USDT", color: "#26A17B" },
-];
-
 const Footer = () => {
   const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
+
+  const socialLinks = [
+    { icon: Linkedin, href: "https://www.linkedin.com/in/syed-hadi-hussain-seo-specialist/", label: "LinkedIn" },
+    { icon: Facebook, href: "https://www.facebook.com/syedhadihussainseo/", label: "Facebook" },
+    { icon: Github, href: "https://github.com/syedhadihussain", label: "GitHub" },
+  ];
+
+  const quickLinks = [
+    { label: t("nav.about"), href: "/about" },
+    { label: t("nav.services"), href: "/services" },
+    { label: t("nav.pricing"), href: "/pricing" },
+    { label: t("nav.portfolio"), href: "/portfolio" },
+    { label: t("nav.caseStudies"), href: "/case-studies" },
+    { label: t("nav.faq"), href: "/faq" },
+    { label: t("nav.blog"), href: "/blog" },
+    { label: t("nav.contact"), href: "/contact" },
+  ];
+
+  const services = [
+    { label: t("services.localSeo"), href: "/services" },
+    { label: t("services.gbp"), href: "/services" },
+    { label: t("services.onPage"), href: "/services" },
+    { label: t("services.linkBuilding"), href: "/services" },
+    { label: "Local Service Ads", href: "/local-service-ads" },
+    { label: t("services.projectMgmt"), href: "/project-management" },
+  ];
+
+  const paymentLogos = [
+    { name: "Payoneer", color: "#FF4800" },
+    { name: "Wise", color: "#9FE870" },
+    { name: "PayPal", color: "#003087" },
+    { name: "Bank Transfer", color: "#1e40af" },
+    { name: "USDT", color: "#26A17B" },
+  ];
 
   return (
     <footer className="bg-card border-t border-border">
@@ -54,13 +54,13 @@ const Footer = () => {
               {t("footer.tagline")}
             </p>
             <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-              Helping local businesses dominate Google Search and Maps with proven SEO strategies that deliver real results.
+              {t("footer.description")}
             </p>
             
             {/* Trust Badges */}
             <div className="flex items-center gap-2 mb-4">
               <Shield className="w-4 h-4 text-primary" />
-              <span className="text-xs text-muted-foreground">100+ Clients Worldwide</span>
+              <span className="text-xs text-muted-foreground">{t("footer.trustBadge")}</span>
             </div>
             
             {/* Contact Info */}
@@ -75,7 +75,7 @@ const Footer = () => {
               </a>
               <div className="flex items-center gap-2">
                 <Globe className="w-4 h-4 text-primary" />
-                <span>Serving Clients Worldwide</span>
+                <span>{t("footer.servingWorldwide")}</span>
               </div>
             </div>
           </div>
@@ -120,9 +120,9 @@ const Footer = () => {
 
           {/* Connect */}
           <div>
-            <h4 className="font-display font-bold text-foreground mb-5">Connect</h4>
+            <h4 className="font-display font-bold text-foreground mb-5">{t("footer.connect")}</h4>
             <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
-              Follow me for tips and updates on local SEO strategies.
+              {t("footer.followTips")}
             </p>
             
             {/* Social Links */}

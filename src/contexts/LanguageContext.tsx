@@ -212,6 +212,52 @@ export const translations: Translations = {
   "discount.hours": { en: "Hours", ar: "ساعات", es: "Horas", pt: "Horas", fr: "Heures", it: "Ore", de: "Stunden" },
   "discount.minutes": { en: "Minutes", ar: "دقائق", es: "Minutos", pt: "Minutos", fr: "Minutes", it: "Minuti", de: "Minuten" },
   "discount.seconds": { en: "Seconds", ar: "ثواني", es: "Segundos", pt: "Segundos", fr: "Secondes", it: "Secondi", de: "Sekunden" },
+  "discount.min": { en: "Min", ar: "دق", es: "Min", pt: "Min", fr: "Min", it: "Min", de: "Min" },
+  "discount.sec": { en: "Sec", ar: "ث", es: "Seg", pt: "Seg", fr: "Sec", it: "Sec", de: "Sek" },
+  "discount.offerExpires": { en: "Offer expires in:", ar: "ينتهي العرض في:", es: "La oferta expira en:", pt: "A oferta expira em:", fr: "L'offre expire dans:", it: "L'offerta scade tra:", de: "Angebot läuft ab in:" },
+  "discount.lockIn": { en: "Lock in 25% OFF before time runs out!", ar: "احصل على خصم 25% قبل انتهاء الوقت!", es: "¡Asegura tu 25% de descuento antes de que se acabe el tiempo!", pt: "Garanta seu 25% de desconto antes que o tempo acabe!", fr: "Obtenez 25% de réduction avant la fin du temps!", it: "Blocca il 25% di sconto prima che scada il tempo!", de: "Sichern Sie sich 25% Rabatt bevor die Zeit abläuft!" },
+
+  // Case Studies
+  "caseStudies.badge": { en: "Case Studies", ar: "دراسات الحالة", es: "Casos de Estudio", pt: "Estudos de Caso", fr: "Études de cas", it: "Casi di studio", de: "Fallstudien" },
+  "caseStudies.title": { en: "Real Results for Real Businesses", ar: "نتائج حقيقية لأعمال حقيقية", es: "Resultados Reales para Negocios Reales", pt: "Resultados Reais para Negócios Reais", fr: "Des résultats réels pour de vraies entreprises", it: "Risultati reali per aziende reali", de: "Echte Ergebnisse für echte Unternehmen" },
+  "caseStudies.subtitle": { en: "See how I've helped service businesses dominate their local markets and increase revenue through proven Local SEO strategies.", ar: "شاهد كيف ساعدت الشركات الخدمية على السيطرة على أسواقها المحلية وزيادة الإيرادات من خلال استراتيجيات SEO المحلية المثبتة.", es: "Vea cómo he ayudado a negocios de servicios a dominar sus mercados locales y aumentar ingresos a través de estrategias de SEO local comprobadas.", pt: "Veja como ajudei empresas de serviços a dominar seus mercados locais e aumentar a receita através de estratégias de SEO local comprovadas.", fr: "Découvrez comment j'ai aidé les entreprises de services à dominer leurs marchés locaux et à augmenter leurs revenus grâce à des stratégies de SEO local éprouvées.", it: "Scopri come ho aiutato le aziende di servizi a dominare i loro mercati locali e aumentare i ricavi attraverso strategie SEO locali comprovate.", de: "Sehen Sie, wie ich Service-Unternehmen geholfen habe, ihre lokalen Märkte zu dominieren und den Umsatz durch bewährte Local SEO Strategien zu steigern." },
+  "caseStudies.challenge": { en: "Challenge", ar: "التحدي", es: "Desafío", pt: "Desafio", fr: "Défi", it: "Sfida", de: "Herausforderung" },
+  "caseStudies.solution": { en: "Solution", ar: "الحل", es: "Solución", pt: "Solução", fr: "Solution", it: "Soluzione", de: "Lösung" },
+  "caseStudies.results": { en: "Results", ar: "النتائج", es: "Resultados", pt: "Resultados", fr: "Résultats", it: "Risultati", de: "Ergebnisse" },
+  "caseStudies.wantResults": { en: "Want Similar Results?", ar: "هل تريد نتائج مماثلة؟", es: "¿Quieres Resultados Similares?", pt: "Quer Resultados Semelhantes?", fr: "Vous voulez des résultats similaires?", it: "Vuoi risultati simili?", de: "Möchten Sie ähnliche Ergebnisse?" },
+  "caseStudies.fullStack": { en: "Full-Stack Project", ar: "مشروع شامل", es: "Proyecto Full-Stack", pt: "Projeto Full-Stack", fr: "Projet Full-Stack", it: "Progetto Full-Stack", de: "Full-Stack Projekt" },
+
+  // Certifications
+  "cert.localSeo": { en: "Local SEO Certified", ar: "معتمد في SEO المحلي", es: "Certificado en SEO Local", pt: "Certificado em SEO Local", fr: "Certifié SEO local", it: "Certificato SEO locale", de: "Local SEO Zertifiziert" },
+  "cert.hubspot": { en: "HubSpot SEO Certification", ar: "شهادة HubSpot SEO", es: "Certificación SEO de HubSpot", pt: "Certificação SEO da HubSpot", fr: "Certification SEO HubSpot", it: "Certificazione SEO HubSpot", de: "HubSpot SEO Zertifizierung" },
+  "cert.projectMgmt": { en: "Project Management Certification", ar: "شهادة إدارة المشاريع", es: "Certificación en Gestión de Proyectos", pt: "Certificação em Gerenciamento de Projetos", fr: "Certification en gestion de projet", it: "Certificazione Project Management", de: "Projektmanagement Zertifizierung" },
+  "cert.googleAnalytics": { en: "Google Analytics Certified", ar: "معتمد من Google Analytics", es: "Certificado de Google Analytics", pt: "Certificado do Google Analytics", fr: "Certifié Google Analytics", it: "Certificato Google Analytics", de: "Google Analytics Zertifiziert" },
+  "cert.searchConsole": { en: "Google Search Console Certified", ar: "معتمد من Google Search Console", es: "Certificado de Google Search Console", pt: "Certificado do Google Search Console", fr: "Certifié Google Search Console", it: "Certificato Google Search Console", de: "Google Search Console Zertifiziert" },
+  "cert.googleAds": { en: "Google Ads Search Certified", ar: "معتمد في إعلانات Google", es: "Certificado en Google Ads", pt: "Certificado em Google Ads", fr: "Certifié Google Ads", it: "Certificato Google Ads", de: "Google Ads Zertifiziert" },
+
+  // Skills
+  "skill.localSeo": { en: "Local SEO", ar: "SEO المحلي", es: "SEO Local", pt: "SEO Local", fr: "SEO local", it: "SEO locale", de: "Lokales SEO" },
+  "skill.gbp": { en: "Google Business Profile", ar: "ملف Google التجاري", es: "Google Business Profile", pt: "Google Business Profile", fr: "Google Business Profile", it: "Google Business Profile", de: "Google Business Profile" },
+  "skill.keywordResearch": { en: "Keyword Research", ar: "بحث الكلمات المفتاحية", es: "Investigación de Palabras Clave", pt: "Pesquisa de Palavras-chave", fr: "Recherche de mots-clés", it: "Ricerca parole chiave", de: "Keyword-Recherche" },
+  "skill.onPage": { en: "On-Page SEO", ar: "SEO على الصفحة", es: "SEO On-Page", pt: "SEO On-Page", fr: "SEO On-Page", it: "SEO On-Page", de: "On-Page SEO" },
+  "skill.technical": { en: "Technical SEO", ar: "SEO التقني", es: "SEO Técnico", pt: "SEO Técnico", fr: "SEO technique", it: "SEO tecnico", de: "Technisches SEO" },
+  "skill.content": { en: "Content Strategy", ar: "استراتيجية المحتوى", es: "Estrategia de Contenido", pt: "Estratégia de Conteúdo", fr: "Stratégie de contenu", it: "Strategia di contenuto", de: "Content-Strategie" },
+  "skill.linkBuilding": { en: "Link Building", ar: "بناء الروابط", es: "Link Building", pt: "Link Building", fr: "Link Building", it: "Link Building", de: "Linkaufbau" },
+  "skill.citation": { en: "Citation Management", ar: "إدارة الاستشهادات", es: "Gestión de Citaciones", pt: "Gerenciamento de Citações", fr: "Gestion des citations", it: "Gestione citazioni", de: "Zitatverwaltung" },
+  "skill.conversion": { en: "Conversion Optimization", ar: "تحسين التحويل", es: "Optimización de Conversión", pt: "Otimização de Conversão", fr: "Optimisation de conversion", it: "Ottimizzazione conversione", de: "Conversion-Optimierung" },
+  "skill.analytics": { en: "Analytics & Reporting", ar: "التحليلات والتقارير", es: "Analytics y Reportes", pt: "Analytics e Relatórios", fr: "Analytics et rapports", it: "Analytics e reportistica", de: "Analytics & Reporting" },
+  "skill.projectMgmt": { en: "Project Management", ar: "إدارة المشاريع", es: "Gestión de Proyectos", pt: "Gerenciamento de Projetos", fr: "Gestion de projet", it: "Gestione progetti", de: "Projektmanagement" },
+  "skill.clientComm": { en: "Client Communication", ar: "التواصل مع العملاء", es: "Comunicación con Clientes", pt: "Comunicação com Clientes", fr: "Communication client", it: "Comunicazione clienti", de: "Kundenkommunikation" },
+  "skill.teamCollab": { en: "Team Collaboration", ar: "التعاون الجماعي", es: "Colaboración en Equipo", pt: "Colaboração em Equipe", fr: "Collaboration d'équipe", it: "Collaborazione di squadra", de: "Teamzusammenarbeit" },
+  "skill.strategic": { en: "Strategic Planning", ar: "التخطيط الاستراتيجي", es: "Planificación Estratégica", pt: "Planejamento Estratégico", fr: "Planification stratégique", it: "Pianificazione strategica", de: "Strategische Planung" },
+  "skill.performance": { en: "Performance Tracking", ar: "تتبع الأداء", es: "Seguimiento de Rendimiento", pt: "Rastreamento de Desempenho", fr: "Suivi des performances", it: "Tracciamento prestazioni", de: "Performance-Tracking" },
+
+  // Contact labels
+  "contact.email.label": { en: "Email", ar: "البريد الإلكتروني", es: "Correo", pt: "E-mail", fr: "E-mail", it: "Email", de: "E-Mail" },
+  "contact.whatsapp.label": { en: "WhatsApp", ar: "واتساب", es: "WhatsApp", pt: "WhatsApp", fr: "WhatsApp", it: "WhatsApp", de: "WhatsApp" },
+
+  // Testimonial quotes (sample for AI translation fallback) 
+  "testimonial.quote1": { en: "Hadi transformed our Google Business Profile and now we receive daily calls from Google Maps. His local SEO knowledge is exceptional.", ar: "غيّر هادي ملف Google Business الخاص بنا والآن نتلقى مكالمات يومية من خرائط Google. معرفته بـ SEO المحلي استثنائية.", es: "Hadi transformó nuestro perfil de Google Business y ahora recibimos llamadas diarias desde Google Maps. Su conocimiento de SEO local es excepcional.", pt: "Hadi transformou nosso perfil do Google Business e agora recebemos chamadas diárias do Google Maps. Seu conhecimento de SEO local é excepcional.", fr: "Hadi a transformé notre profil Google Business et maintenant nous recevons des appels quotidiens depuis Google Maps. Sa connaissance du SEO local est exceptionnelle.", it: "Hadi ha trasformato il nostro profilo Google Business e ora riceviamo chiamate giornaliere da Google Maps. La sua conoscenza del SEO locale è eccezionale.", de: "Hadi hat unser Google Business Profil transformiert und jetzt erhalten wir täglich Anrufe von Google Maps. Sein Wissen über lokales SEO ist außergewöhnlich." },
 };
 
 interface LanguageContextType {
