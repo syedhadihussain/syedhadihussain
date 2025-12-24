@@ -13,27 +13,40 @@ import {
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { supabase } from "@/integrations/supabase/client";
-import { Send, Loader2 } from "lucide-react";
+import { Send, Loader2, HelpCircle } from "lucide-react";
 import { z } from "zod";
+import { Link } from "react-router-dom";
 
 const contactSchema = z.object({
   name: z.string().trim().min(2, "Name must be at least 2 characters").max(100),
   email: z.string().trim().email("Invalid email address").max(255),
-  phone: z.string().trim().max(20).optional(),
-  company: z.string().trim().max(100).optional(),
-  service: z.string().optional(),
-  message: z.string().trim().min(10, "Message must be at least 10 characters").max(1000),
+  phone: z.string().trim().min(10, "Phone number is required").max(20),
+  business_name: z.string().trim().min(2, "Business name is required").max(200),
+  business_address: z.string().trim().max(300).optional(),
+  business_city: z.string().trim().min(2, "City is required").max(100),
+  business_state: z.string().trim().max(100).optional(),
+  zipcode: z.string().trim().min(3, "Zipcode is required").max(20),
+  business_country: z.string().trim().min(2, "Country is required").max(100),
+  service: z.string().min(1, "Please select a service"),
+  competitor: z.string().trim().max(500).optional(),
+  gbp_link: z.string().trim().min(5, "GBP/Map link is required").max(500),
+  message: z.string().trim().min(10, "Message must be at least 10 characters").max(2000),
 });
 
 const services = [
-  "Google Business Profile Optimization",
-  "Local Keyword Research",
-  "On-Page Local SEO",
-  "Citation Building & NAP",
-  "Review Management",
-  "Technical SEO Audit",
-  "Full Local SEO Package",
-  "Other",
+  "Full Stack Local SEO",
+  "GBP Management",
+  "GBP Audit",
+  "Website Audit",
+  "Complete Business Audit",
+  "Business Consultation",
+  "Complete Project Management",
+  "Website Development",
+  "Local Service Ads",
+  "Citations",
+  "Link Building",
+  "Website SEO",
+  "Other (Custom Service)",
 ];
 
 const ContactForm = () => {
@@ -44,8 +57,15 @@ const ContactForm = () => {
     name: "",
     email: "",
     phone: "",
-    company: "",
+    business_name: "",
+    business_address: "",
+    business_city: "",
+    business_state: "",
+    zipcode: "",
+    business_country: "",
     service: "",
+    competitor: "",
+    gbp_link: "",
     message: "",
   });
 
@@ -59,38 +79,45 @@ const ContactForm = () => {
     setIsLoading(true);
 
     try {
-      // Validate form data
       const validatedData = contactSchema.parse(formData);
 
-      // Insert into database
       const { error } = await supabase.from("contacts").insert({
         name: validatedData.name,
         email: validatedData.email,
-        phone: validatedData.phone || null,
-        company: validatedData.company || null,
-        service: validatedData.service || null,
+        phone: validatedData.phone,
+        company: validatedData.business_name,
+        service: validatedData.service,
         message: validatedData.message,
         language: language,
+        business_name: validatedData.business_name,
+        business_address: validatedData.business_address || null,
+        business_city: validatedData.business_city,
+        business_state: validatedData.business_state || null,
+        zipcode: validatedData.zipcode,
+        business_country: validatedData.business_country,
+        competitor: validatedData.competitor || null,
+        gbp_link: validatedData.gbp_link,
       });
 
       if (error) throw error;
 
-      // Send email notifications
       try {
         await supabase.functions.invoke("send-contact-email", {
           body: {
             name: validatedData.name,
             email: validatedData.email,
             phone: validatedData.phone,
-            company: validatedData.company,
+            company: validatedData.business_name,
             service: validatedData.service,
             message: validatedData.message,
             language: language,
+            business_city: validatedData.business_city,
+            business_country: validatedData.business_country,
+            gbp_link: validatedData.gbp_link,
           },
         });
       } catch (emailError) {
         console.error("Email notification failed:", emailError);
-        // Don't fail the form submission if email fails
       }
 
       toast({
@@ -98,13 +125,19 @@ const ContactForm = () => {
         description: t("contact.success"),
       });
 
-      // Reset form
       setFormData({
         name: "",
         email: "",
         phone: "",
-        company: "",
+        business_name: "",
+        business_address: "",
+        business_city: "",
+        business_state: "",
+        zipcode: "",
+        business_country: "",
         service: "",
+        competitor: "",
+        gbp_link: "",
         message: "",
       });
     } catch (error) {
@@ -127,10 +160,22 @@ const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-5">
+      {/* Help Link */}
+      <div className="flex items-center justify-end">
+        <Link 
+          to="/blog/how-to-fill-contact-form" 
+          className="inline-flex items-center gap-1.5 text-xs text-primary hover:text-primary/80 transition-colors"
+        >
+          <HelpCircle className="w-3.5 h-3.5" />
+          {t("contact.formGuide")}
+        </Link>
+      </div>
+
+      {/* Client Name & Email */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="space-y-2">
-          <Label htmlFor="name">{t("contact.name")} *</Label>
+          <Label htmlFor="name">{t("contact.clientName")} *</Label>
           <Input
             id="name"
             name="name"
@@ -156,9 +201,22 @@ const ContactForm = () => {
         </div>
       </div>
 
+      {/* Business Name & Phone */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="space-y-2">
-          <Label htmlFor="phone">{t("contact.phone")}</Label>
+          <Label htmlFor="business_name">{t("contact.businessName")} *</Label>
+          <Input
+            id="business_name"
+            name="business_name"
+            value={formData.business_name}
+            onChange={handleChange}
+            placeholder="ABC Services LLC"
+            required
+            className="bg-background/50"
+          />
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="phone">{t("contact.phone")} *</Label>
           <Input
             id="phone"
             name="phone"
@@ -166,30 +224,87 @@ const ContactForm = () => {
             value={formData.phone}
             onChange={handleChange}
             placeholder="+1 234 567 8900"
-            className="bg-background/50"
-          />
-        </div>
-        <div className="space-y-2">
-          <Label htmlFor="company">{t("contact.company")}</Label>
-          <Input
-            id="company"
-            name="company"
-            value={formData.company}
-            onChange={handleChange}
-            placeholder="Your Company"
+            required
             className="bg-background/50"
           />
         </div>
       </div>
 
+      {/* Business Address */}
       <div className="space-y-2">
-        <Label htmlFor="service">{t("contact.service")}</Label>
+        <Label htmlFor="business_address">{t("contact.businessAddress")}</Label>
+        <Input
+          id="business_address"
+          name="business_address"
+          value={formData.business_address}
+          onChange={handleChange}
+          placeholder="123 Main Street, Suite 100"
+          className="bg-background/50"
+        />
+      </div>
+
+      {/* City, State, Zipcode */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div className="space-y-2">
+          <Label htmlFor="business_city">{t("contact.city")} *</Label>
+          <Input
+            id="business_city"
+            name="business_city"
+            value={formData.business_city}
+            onChange={handleChange}
+            placeholder="New York"
+            required
+            className="bg-background/50"
+          />
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="business_state">{t("contact.state")}</Label>
+          <Input
+            id="business_state"
+            name="business_state"
+            value={formData.business_state}
+            onChange={handleChange}
+            placeholder="NY"
+            className="bg-background/50"
+          />
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="zipcode">{t("contact.zipcode")} *</Label>
+          <Input
+            id="zipcode"
+            name="zipcode"
+            value={formData.zipcode}
+            onChange={handleChange}
+            placeholder="10001"
+            required
+            className="bg-background/50"
+          />
+        </div>
+      </div>
+
+      {/* Country */}
+      <div className="space-y-2">
+        <Label htmlFor="business_country">{t("contact.country")} *</Label>
+        <Input
+          id="business_country"
+          name="business_country"
+          value={formData.business_country}
+          onChange={handleChange}
+          placeholder="United States"
+          required
+          className="bg-background/50"
+        />
+      </div>
+
+      {/* Service Selection */}
+      <div className="space-y-2">
+        <Label htmlFor="service">{t("contact.service")} *</Label>
         <Select
           value={formData.service}
           onValueChange={(value) => setFormData((prev) => ({ ...prev, service: value }))}
         >
           <SelectTrigger className="bg-background/50">
-            <SelectValue placeholder="Select a service" />
+            <SelectValue placeholder={t("contact.selectService")} />
           </SelectTrigger>
           <SelectContent>
             {services.map((service) => (
@@ -201,6 +316,37 @@ const ContactForm = () => {
         </Select>
       </div>
 
+      {/* GBP/Map Link */}
+      <div className="space-y-2">
+        <Label htmlFor="gbp_link">{t("contact.gbpLink")} *</Label>
+        <Input
+          id="gbp_link"
+          name="gbp_link"
+          value={formData.gbp_link}
+          onChange={handleChange}
+          placeholder="https://maps.google.com/..."
+          required
+          className="bg-background/50"
+        />
+        <p className="text-xs text-muted-foreground">
+          {t("contact.gbpLinkHint")}
+        </p>
+      </div>
+
+      {/* Competitor */}
+      <div className="space-y-2">
+        <Label htmlFor="competitor">{t("contact.competitor")}</Label>
+        <Input
+          id="competitor"
+          name="competitor"
+          value={formData.competitor}
+          onChange={handleChange}
+          placeholder="Competitor business name or website"
+          className="bg-background/50"
+        />
+      </div>
+
+      {/* Message */}
       <div className="space-y-2">
         <Label htmlFor="message">{t("contact.message")} *</Label>
         <Textarea
@@ -208,9 +354,9 @@ const ContactForm = () => {
           name="message"
           value={formData.message}
           onChange={handleChange}
-          placeholder="Tell me about your project and goals..."
+          placeholder="Tell me about your project, goals, and any specific challenges..."
           required
-          rows={5}
+          rows={4}
           className="bg-background/50 resize-none"
         />
       </div>

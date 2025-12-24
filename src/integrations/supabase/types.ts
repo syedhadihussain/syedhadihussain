@@ -16,37 +16,61 @@ export type Database = {
     Tables: {
       contacts: {
         Row: {
+          business_address: string | null
+          business_city: string | null
+          business_country: string | null
+          business_name: string | null
+          business_state: string | null
           company: string | null
+          competitor: string | null
           created_at: string
           email: string
+          gbp_link: string | null
           id: string
           language: string | null
           message: string
           name: string
           phone: string | null
           service: string | null
+          zipcode: string | null
         }
         Insert: {
+          business_address?: string | null
+          business_city?: string | null
+          business_country?: string | null
+          business_name?: string | null
+          business_state?: string | null
           company?: string | null
+          competitor?: string | null
           created_at?: string
           email: string
+          gbp_link?: string | null
           id?: string
           language?: string | null
           message: string
           name: string
           phone?: string | null
           service?: string | null
+          zipcode?: string | null
         }
         Update: {
+          business_address?: string | null
+          business_city?: string | null
+          business_country?: string | null
+          business_name?: string | null
+          business_state?: string | null
           company?: string | null
+          competitor?: string | null
           created_at?: string
           email?: string
+          gbp_link?: string | null
           id?: string
           language?: string | null
           message?: string
           name?: string
           phone?: string | null
           service?: string | null
+          zipcode?: string | null
         }
         Relationships: []
       }
