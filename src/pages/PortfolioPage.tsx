@@ -103,7 +103,7 @@ const PortfolioPage = () => {
       <SEOHead 
         title="Portfolio | Web Development & SEO Results - Syed Hadi Hussain"
         description="View our portfolio of successful web development projects and proven SEO results. See real case studies with measurable business growth."
-        canonicalUrl="/portfolio"
+        canonical="/portfolio"
       />
       <Navigation />
       
