@@ -1,11 +1,17 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { scrollToSection } from "@/hooks/use-scroll-animation";
 import { useLanguage } from "@/contexts/LanguageContext";
 import ThemeToggle from "@/components/ThemeToggle";
 import LanguageSelector from "@/components/LanguageSelector";
 import { Link, useLocation } from "react-router-dom";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,23 +28,22 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
-    { href: "/about", label: t("nav.about"), isAnchor: false },
-    { href: "/services", label: t("nav.services"), isAnchor: false },
-    { href: "/pricing", label: t("nav.pricing"), isAnchor: false },
-    { href: "/portfolio", label: t("nav.portfolio"), isAnchor: false },
-    { href: "/case-studies", label: t("nav.caseStudies"), isAnchor: false },
-    { href: "/faq", label: t("nav.faq"), isAnchor: false },
-    { href: "/blog", label: t("nav.blog"), isAnchor: false },
-    { href: "/contact", label: t("nav.contact"), isAnchor: false },
+  const serviceLinks = [
+    { href: "/services", label: t("nav.services") },
+    { href: "/local-service-ads", label: t("nav.localServiceAds") },
+    { href: "/project-management", label: t("nav.projectManagement") },
   ];
 
-  const handleNavClick = (link: { href: string; isAnchor: boolean }) => {
-    if (link.isAnchor) {
-      scrollToSection(link.href.replace("#", ""));
-    }
-    setIsMobileMenuOpen(false);
-  };
+  const navLinks = [
+    { href: "/about", label: t("nav.about"), isDropdown: false },
+    { href: "/services", label: t("nav.services"), isDropdown: true },
+    { href: "/pricing", label: t("nav.pricing"), isDropdown: false },
+    { href: "/portfolio", label: t("nav.portfolio"), isDropdown: false },
+    { href: "/case-studies", label: t("nav.caseStudies"), isDropdown: false },
+    { href: "/faq", label: t("nav.faq"), isDropdown: false },
+    { href: "/blog", label: t("nav.blog"), isDropdown: false },
+    { href: "/contact", label: t("nav.contact"), isDropdown: false },
+  ];
 
   return (
     <nav
@@ -54,13 +59,34 @@ const Navigation = () => {
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-5">
           {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              to={link.href}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              {link.label}
-            </Link>
+            link.isDropdown ? (
+              <DropdownMenu key={link.href}>
+                <DropdownMenuTrigger className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors outline-none">
+                  {link.label}
+                  <ChevronDown className="h-3 w-3" />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="start" className="bg-background border border-border z-50">
+                  {serviceLinks.map((service) => (
+                    <DropdownMenuItem key={service.href} asChild>
+                      <Link
+                        to={service.href}
+                        className="w-full cursor-pointer"
+                      >
+                        {service.label}
+                      </Link>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+            ) : (
+              <Link
+                key={link.href}
+                to={link.href}
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {link.label}
+              </Link>
+            )
           ))}
           
           <div className="flex items-center gap-2 ml-2 pl-2 border-l border-border">
@@ -94,14 +120,32 @@ const Navigation = () => {
         <div className="lg:hidden glass border-t border-border mt-3 animate-fade-in">
           <div className="container-narrow py-6 flex flex-col gap-4">
             {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                to={link.href}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="text-muted-foreground hover:text-foreground transition-colors py-2"
-              >
-                {link.label}
-              </Link>
+              link.isDropdown ? (
+                <div key={link.href} className="flex flex-col gap-2">
+                  <span className="text-foreground font-medium py-2">{link.label}</span>
+                  <div className="pl-4 flex flex-col gap-2">
+                    {serviceLinks.map((service) => (
+                      <Link
+                        key={service.href}
+                        to={service.href}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="text-muted-foreground hover:text-foreground transition-colors py-1"
+                      >
+                        {service.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-muted-foreground hover:text-foreground transition-colors py-2"
+                >
+                  {link.label}
+                </Link>
+              )
             ))}
             <Button asChild className="w-full mt-2">
               <a href="https://calendly.com/syedhadihussain" target="_blank" rel="noopener noreferrer">
