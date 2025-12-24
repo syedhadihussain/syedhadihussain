@@ -3,7 +3,7 @@ import Footer from "@/components/portfolio/Footer";
 import SEOHead from "@/components/SEOHead";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, TrendingUp, Eye, MousePointer, MapPin, Search, BarChart3 } from "lucide-react";
+import { ArrowRight, TrendingUp, MapPin, Search, BarChart3, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -14,61 +14,61 @@ import moesInteractions from "@/assets/portfolio/moes-interactions.png";
 import moesGoogleRanking from "@/assets/portfolio/moes-google-ranking.png";
 import moesSearchConsole from "@/assets/portfolio/moes-search-console.png";
 import seoGrowthChart from "@/assets/portfolio/seo-growth-chart.jpg";
-
-const webDevProjects = [
-  {
-    title: "Moe's iRepair",
-    industry: "Phone Repair Shop",
-    location: "Texas, USA",
-    description: "Complete website redesign with local SEO optimization for a multi-location phone repair business.",
-    features: ["Responsive Design", "Local SEO", "Online Booking", "Service Pages"],
-    url: "https://moesirepair.net"
-  },
-  {
-    title: "Neighborhood Pizza & Pasta House",
-    industry: "Restaurant",
-    location: "New York, USA",
-    description: "Modern restaurant website with menu integration and online ordering system.",
-    features: ["Menu System", "Online Ordering", "Google Maps Integration", "Mobile-First Design"],
-  },
-  {
-    title: "Elite Bail Bonds",
-    industry: "Legal Services",
-    location: "California, USA",
-    description: "Professional bail bonds website optimized for 24/7 emergency services and local search.",
-    features: ["24/7 Contact Forms", "Service Area Pages", "Schema Markup", "Fast Loading"],
-  },
-  {
-    title: "Premier HVAC Solutions",
-    industry: "Home Services",
-    location: "Florida, USA",
-    description: "Service-based website with appointment scheduling and service area coverage.",
-    features: ["Appointment Booking", "Service Areas", "Testimonials", "Emergency Contact"],
-  },
-];
+import locustBeforeSeo from "@/assets/portfolio/locust-before-seo.png";
+import locustAfterSeo from "@/assets/portfolio/locust-after-seo.png";
 
 const seoProjects = [
   {
-    title: "Moe's iRepair - Full Local SEO",
+    title: "Moe's iRepair - Complete Local SEO Domination",
     industry: "Phone Repair",
     location: "Duncanville, TX",
-    challenge: "New business with zero online visibility competing against established repair shops.",
-    solution: "Complete GBP optimization, citation building, review management, and on-page SEO.",
+    challenge: "New business with zero online visibility competing against established repair shops. No Google presence, no reviews, and no organic traffic.",
+    solution: "Implemented full-stack local SEO strategy including GBP optimization, aggressive citation building, review generation campaign, and comprehensive on-page optimization.",
     results: [
-      { metric: "5,187", label: "Business Profile Interactions" },
-      { metric: "495", label: "Website Clicks from GBP" },
+      { metric: "5,187", label: "GBP Interactions" },
+      { metric: "495", label: "Website Clicks" },
       { metric: "2,129", label: "Direction Requests" },
       { metric: "#1", label: "Map Pack Ranking" },
     ],
-    images: [moesGoogleRanking, moesInteractions, moesWebsiteClicks],
-    strategy: "Started with comprehensive GBP optimization including all service categories, business attributes, and weekly posts. Built 150+ citations across major directories. Implemented review generation campaign that grew reviews from 0 to 1,300+. Optimized website with local schema markup and location-specific landing pages."
+    images: [moesGoogleRanking, moesInteractions, moesWebsiteClicks, moesSearchConsole],
+    strategy: [
+      "Complete GBP optimization with all service categories, business attributes, and weekly posts",
+      "Built 150+ high-quality citations across major directories",
+      "Review generation campaign: grew from 0 to 1,300+ verified reviews",
+      "Local schema markup and location-specific landing pages",
+      "Targeted 50+ local keywords including 'phone repair near me', 'iphone repair duncanville'",
+      "Monthly performance tracking and strategy adjustments"
+    ]
   },
   {
-    title: "Neighborhood Pizza - Restaurant SEO",
+    title: "Phone Repair Shop - Grid Domination in Locust City",
+    industry: "Phone Repair",
+    location: "Locust City, NC",
+    challenge: "Business was ranking 20+ for most grid points in the local area. Competitors were dominating the map pack and taking all the local traffic.",
+    solution: "Implemented aggressive local SEO grid strategy focusing on expanding visibility across the entire service area through systematic GBP optimization and localized content.",
+    results: [
+      { metric: "95%", label: "Grid Points #1" },
+      { metric: "20+ → 1", label: "Ranking Improvement" },
+      { metric: "5x", label: "More Map Visibility" },
+      { metric: "Full", label: "Area Coverage" },
+    ],
+    images: [locustBeforeSeo, locustAfterSeo],
+    beforeAfter: true,
+    strategy: [
+      "Comprehensive local grid analysis to identify weak coverage areas",
+      "Strategic GBP category and service optimization",
+      "Geo-targeted content creation for surrounding areas",
+      "Citation consistency audit across 100+ directories",
+      "Review velocity optimization with automated follow-up system",
+      "Bi-weekly performance monitoring and ranking adjustments"
+    ]
+  },
+  {
+    title: "Neighborhood Pizza - Restaurant Local SEO",
     industry: "Restaurant",
     location: "New York, USA",
-    challenge: "Invisible in local searches despite being a popular neighborhood spot.",
-    solution: "GBP optimization, menu schema markup, local keyword targeting, and review strategy.",
+    challenge: "Popular neighborhood restaurant was invisible in local searches despite excellent food and service. Missing out on thousands of potential customers.",
+    solution: "GBP optimization with menu integration, local keyword targeting for high-volume restaurant searches, and structured data implementation.",
     results: [
       { metric: "36,164", label: "Profile Views" },
       { metric: "20,909", label: "Search Appearances" },
@@ -76,22 +76,36 @@ const seoProjects = [
       { metric: "Top 3", label: "Map Pack Position" },
     ],
     images: [pizzaSeoResults],
-    strategy: "Optimized GBP with complete menu integration and food photos. Targeted high-volume keywords like 'restaurants near me' and 'pizza near me'. Implemented structured data for restaurant and menu items. Created local content strategy targeting neighborhood-specific searches."
+    strategy: [
+      "Complete GBP optimization with full menu integration and professional food photos",
+      "Targeted high-volume keywords: 'restaurants near me', 'pizza near me', 'pasta restaurants'",
+      "Restaurant and menu schema markup for rich snippets",
+      "Local content strategy targeting neighborhood-specific searches",
+      "Review management and response strategy",
+      "Weekly posts featuring specials and seasonal items"
+    ]
   },
   {
-    title: "Website SEO - Organic Growth",
+    title: "Website SEO - Sustainable Organic Growth",
     industry: "Multiple Clients",
     location: "Worldwide",
-    challenge: "Clients needed sustainable organic traffic growth beyond just local pack rankings.",
-    solution: "Comprehensive website SEO including technical optimization, content strategy, and link building.",
+    challenge: "Clients needed sustainable organic traffic growth beyond just local pack rankings. Required comprehensive website optimization strategy.",
+    solution: "Full website SEO including technical optimization, content strategy, on-page SEO, and strategic link building for long-term organic growth.",
     results: [
       { metric: "1.5K", label: "Total Clicks" },
-      { metric: "41.8K", label: "Total Impressions" },
+      { metric: "41.8K", label: "Impressions" },
       { metric: "3.6%", label: "Average CTR" },
       { metric: "7.7", label: "Average Position" },
     ],
     images: [seoGrowthChart, moesSearchConsole],
-    strategy: "Conducted thorough technical SEO audits to fix crawl issues and improve site speed. Developed content clusters around target keywords. Built high-quality backlinks through guest posting and digital PR. Implemented schema markup for rich snippets. Monthly reporting with actionable insights."
+    strategy: [
+      "Thorough technical SEO audits to fix crawl issues and improve site speed",
+      "Content cluster strategy around target keywords",
+      "High-quality backlink building through guest posting and digital PR",
+      "Schema markup implementation for rich snippets",
+      "Core Web Vitals optimization for better user experience",
+      "Monthly reporting with actionable insights and recommendations"
+    ]
   },
 ];
 
@@ -101,15 +115,15 @@ const PortfolioPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="Portfolio | Web Development & SEO Results - Syed Hadi Hussain"
-        description="View our portfolio of successful web development projects and proven SEO results. See real case studies with measurable business growth."
+        title="SEO Portfolio | Proven Results & Case Studies - Syed Hadi Hussain"
+        description="View my SEO portfolio showcasing proven results. Real case studies with measurable rankings, traffic growth, and business impact for local businesses."
         canonical="/portfolio"
       />
       <Navigation />
       
       <main className="pt-24">
         {/* Hero Section */}
-        <section className="section-padding bg-card/50">
+        <section className="section-padding bg-gradient-to-b from-primary/5 to-background">
           <div className="container-narrow">
             <ScrollReveal animation="fade-up">
               <div className="text-center max-w-3xl mx-auto">
@@ -117,79 +131,41 @@ const PortfolioPage = () => {
                   {t("nav.portfolio")}
                 </span>
                 <h1 className="font-display text-4xl sm:text-5xl font-bold text-foreground mb-6">
-                  {t("portfolio.title")}
+                  SEO Results That Speak For Themselves
                 </h1>
-                <p className="text-muted-foreground text-lg">
-                  Real projects, real results. Explore our web development work and SEO success stories with detailed metrics and strategies.
+                <p className="text-muted-foreground text-lg mb-8">
+                  Real projects, real results. Every case study includes the exact strategies I used and the measurable outcomes achieved. No fluff, just proven SEO success.
                 </p>
-              </div>
-            </ScrollReveal>
-          </div>
-        </section>
-
-        {/* Web Development Portfolio */}
-        <section className="section-padding">
-          <div className="container-narrow">
-            <ScrollReveal animation="fade-up">
-              <div className="text-center mb-12">
-                <h2 className="font-display text-3xl font-bold text-foreground mb-4">
-                  {t("portfolio.webDev")}
-                </h2>
-                <p className="text-muted-foreground">
-                  Custom websites built for local businesses across various industries
-                </p>
-              </div>
-            </ScrollReveal>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              {webDevProjects.map((project, index) => (
-                <ScrollReveal key={index} animation="fade-up" delay={index * 100}>
-                  <div className="glass rounded-2xl p-6 lg:p-8 h-full hover:glow-sm transition-all duration-300">
-                    <div className="flex items-center gap-2 text-primary text-sm mb-3">
-                      <MapPin className="w-4 h-4" />
-                      {project.location}
-                    </div>
-                    <h3 className="font-display text-xl font-bold text-foreground mb-2">
-                      {project.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground mb-4">{project.industry}</p>
-                    <p className="text-foreground mb-6">{project.description}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {project.features.map((feature, i) => (
-                        <span key={i} className="px-3 py-1 bg-secondary/50 rounded-full text-xs text-muted-foreground">
-                          {feature}
-                        </span>
-                      ))}
-                    </div>
+                <div className="flex flex-wrap justify-center gap-4">
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <CheckCircle className="w-4 h-4 text-primary" />
+                    <span>100+ Clients Served</span>
                   </div>
-                </ScrollReveal>
-              ))}
-            </div>
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <CheckCircle className="w-4 h-4 text-primary" />
+                    <span>Verified Screenshots</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <CheckCircle className="w-4 h-4 text-primary" />
+                    <span>Real Business Impact</span>
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
           </div>
         </section>
 
         {/* SEO Portfolio */}
-        <section className="section-padding bg-card/50">
+        <section className="section-padding">
           <div className="container-narrow">
-            <ScrollReveal animation="fade-up">
-              <div className="text-center mb-12">
-                <h2 className="font-display text-3xl font-bold text-foreground mb-4">
-                  {t("portfolio.seo")}
-                </h2>
-                <p className="text-muted-foreground">
-                  Detailed SEO case studies with strategies, metrics, and proven results
-                </p>
-              </div>
-            </ScrollReveal>
-
-            <div className="space-y-16">
+            <div className="space-y-20">
               {seoProjects.map((project, index) => (
                 <ScrollReveal key={index} animation="fade-up">
                   <div className="glass rounded-3xl overflow-hidden">
                     {/* Header */}
-                    <div className="p-6 lg:p-8 border-b border-border">
+                    <div className="p-6 lg:p-8 bg-gradient-to-r from-primary/10 to-transparent border-b border-border">
                       <div className="flex flex-wrap items-center gap-4 mb-4">
-                        <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">
+                        <span className="px-4 py-1.5 bg-primary text-primary-foreground rounded-full text-sm font-medium">
                           {project.industry}
                         </span>
                         <span className="flex items-center gap-1 text-muted-foreground text-sm">
@@ -197,54 +173,88 @@ const PortfolioPage = () => {
                           {project.location}
                         </span>
                       </div>
-                      <h3 className="font-display text-2xl font-bold text-foreground">
+                      <h2 className="font-display text-2xl lg:text-3xl font-bold text-foreground">
                         {project.title}
-                      </h3>
+                      </h2>
                     </div>
 
                     {/* Content */}
                     <div className="p-6 lg:p-8">
+                      {/* Challenge & Solution */}
                       <div className="grid lg:grid-cols-2 gap-8 mb-8">
                         <div>
-                          <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
-                            <Search className="w-4 h-4 text-primary" />
+                          <h3 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                            <Search className="w-5 h-5 text-primary" />
                             The Challenge
-                          </h4>
-                          <p className="text-muted-foreground mb-4">{project.challenge}</p>
-                          
-                          <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
-                            <TrendingUp className="w-4 h-4 text-primary" />
-                            Our Solution
-                          </h4>
-                          <p className="text-muted-foreground">{project.solution}</p>
+                          </h3>
+                          <p className="text-muted-foreground leading-relaxed">{project.challenge}</p>
                         </div>
                         <div>
-                          <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
-                            <BarChart3 className="w-4 h-4 text-primary" />
-                            Strategy & Execution
-                          </h4>
-                          <p className="text-muted-foreground text-sm">{project.strategy}</p>
+                          <h3 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                            <TrendingUp className="w-5 h-5 text-primary" />
+                            The Solution
+                          </h3>
+                          <p className="text-muted-foreground leading-relaxed">{project.solution}</p>
                         </div>
                       </div>
 
-                      {/* Results */}
+                      {/* Results Grid */}
                       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
                         {project.results.map((result, i) => (
-                          <div key={i} className="bg-secondary/30 rounded-xl p-4 text-center">
-                            <div className="font-display text-2xl font-bold text-primary">{result.metric}</div>
-                            <div className="text-xs text-muted-foreground">{result.label}</div>
+                          <div key={i} className="bg-primary/5 border border-primary/20 rounded-xl p-4 text-center hover:bg-primary/10 transition-colors">
+                            <div className="font-display text-2xl lg:text-3xl font-bold text-primary">{result.metric}</div>
+                            <div className="text-xs text-muted-foreground mt-1">{result.label}</div>
                           </div>
                         ))}
+                      </div>
+
+                      {/* Strategy */}
+                      <div className="mb-8">
+                        <h3 className="font-semibold text-foreground mb-4 flex items-center gap-2">
+                          <BarChart3 className="w-5 h-5 text-primary" />
+                          Strategy & Execution
+                        </h3>
+                        <div className="grid md:grid-cols-2 gap-3">
+                          {project.strategy.map((item, i) => (
+                            <div key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
+                              <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                              <span>{item}</span>
+                            </div>
+                          ))}
+                        </div>
                       </div>
 
                       {/* Screenshots */}
-                      <div className="grid md:grid-cols-3 gap-4">
-                        {project.images.map((img, i) => (
-                          <div key={i} className="rounded-xl overflow-hidden border border-border">
-                            <img src={img} alt={`${project.title} results screenshot ${i + 1}`} className="w-full h-auto" />
+                      {project.beforeAfter ? (
+                        <div>
+                          <h3 className="font-semibold text-foreground mb-4">Before & After Grid Rankings</h3>
+                          <div className="grid md:grid-cols-2 gap-6">
+                            <div className="rounded-xl overflow-hidden border border-destructive/30 bg-destructive/5">
+                              <div className="p-3 bg-destructive/10 text-center">
+                                <span className="text-sm font-medium text-destructive">BEFORE - Ranking 20+ (Red = Not Ranking)</span>
+                              </div>
+                              <img src={project.images[0]} alt="Before SEO - poor rankings" className="w-full h-auto" />
+                            </div>
+                            <div className="rounded-xl overflow-hidden border border-primary/30 bg-primary/5">
+                              <div className="p-3 bg-primary/10 text-center">
+                                <span className="text-sm font-medium text-primary">AFTER - Ranking #1 (Green = Top Position)</span>
+                              </div>
+                              <img src={project.images[1]} alt="After SEO - top rankings" className="w-full h-auto" />
+                            </div>
                           </div>
-                        ))}
-                      </div>
+                        </div>
+                      ) : (
+                        <div>
+                          <h3 className="font-semibold text-foreground mb-4">Results Screenshots</h3>
+                          <div className={`grid gap-4 ${project.images.length === 1 ? 'grid-cols-1 max-w-2xl mx-auto' : project.images.length === 2 ? 'md:grid-cols-2' : 'md:grid-cols-2 lg:grid-cols-4'}`}>
+                            {project.images.map((img, i) => (
+                              <div key={i} className="rounded-xl overflow-hidden border border-border hover:border-primary/50 transition-colors">
+                                <img src={img} alt={`${project.title} results screenshot ${i + 1}`} className="w-full h-auto" />
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </ScrollReveal>
@@ -254,15 +264,15 @@ const PortfolioPage = () => {
         </section>
 
         {/* CTA */}
-        <section className="section-padding">
+        <section className="section-padding bg-card/50">
           <div className="container-narrow">
             <ScrollReveal animation="scale">
-              <div className="glass rounded-3xl p-8 lg:p-12 text-center">
+              <div className="glass rounded-3xl p-8 lg:p-12 text-center glow">
                 <h2 className="font-display text-3xl font-bold text-foreground mb-4">
                   Ready for Similar Results?
                 </h2>
                 <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-                  Get a professional SEO audit for just $50 (50% OFF if you book within 24 hours!) and discover your growth potential.
+                  Get a professional SEO audit for just <span className="text-primary font-semibold">$50</span> (50% OFF if you book within 24 hours!) and discover your growth potential.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button asChild size="lg" className="glow group">
@@ -270,6 +280,11 @@ const PortfolioPage = () => {
                       Get SEO Audit — $50
                       <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                     </a>
+                  </Button>
+                  <Button asChild variant="outline" size="lg">
+                    <Link to="/case-studies">
+                      View Case Studies
+                    </Link>
                   </Button>
                   <Button asChild variant="outline" size="lg">
                     <Link to="/contact">
