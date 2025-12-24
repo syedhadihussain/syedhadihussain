@@ -16,6 +16,13 @@ import moesSearchConsole from "@/assets/portfolio/moes-search-console.png";
 import seoGrowthChart from "@/assets/portfolio/seo-growth-chart.jpg";
 import locustBeforeSeo from "@/assets/portfolio/locust-before-seo.png";
 import locustAfterSeo from "@/assets/portfolio/locust-after-seo.png";
+import plumbingGbpAnalytics from "@/assets/portfolio/plumbing-gbp-analytics.png";
+import dentalBeforeGrid from "@/assets/portfolio/dental-before-grid.png";
+import dentalAfterGrid from "@/assets/portfolio/dental-after-grid.png";
+import medspaSearchConsole from "@/assets/portfolio/medspa-search-console.png";
+import autodetailGbpInsights from "@/assets/portfolio/autodetail-gbp-insights.png";
+import locksmithBeforeGrid from "@/assets/portfolio/locksmith-before-grid.png";
+import locksmithAfterGrid from "@/assets/portfolio/locksmith-after-grid.png";
 
 const seoProjects = [
   {
@@ -64,6 +71,52 @@ const seoProjects = [
     ]
   },
   {
+    title: "24/7 Emergency Locksmith - Los Angeles Grid Takeover",
+    industry: "Emergency Services",
+    location: "Los Angeles, CA",
+    challenge: "Emergency locksmith business was invisible in high-intent local searches. Competitors dominated 'locksmith near me' queries, capturing all emergency calls.",
+    solution: "Implemented comprehensive local grid domination strategy with 24/7 keyword targeting, mobile optimization, and multi-location service area expansion.",
+    results: [
+      { metric: "+300%", label: "Emergency Calls" },
+      { metric: "15+", label: "Cities Covered" },
+      { metric: "Top 3", label: "'Locksmith Near Me'" },
+      { metric: "+120%", label: "Monthly Revenue" },
+    ],
+    images: [locksmithBeforeGrid, locksmithAfterGrid],
+    beforeAfter: true,
+    strategy: [
+      "Targeted emergency and 24/7 specific keywords with urgency signals",
+      "Mobile-first optimization for users locked out searching on phones",
+      "Service area expansion to cover 15+ surrounding cities",
+      "Call tracking implementation to measure ROI",
+      "Fast-loading landing pages for quick conversions",
+      "Local citation building in emergency service directories"
+    ]
+  },
+  {
+    title: "Artful Orthodontics - Healthcare Local SEO",
+    industry: "Healthcare / Dental",
+    location: "New York, NY",
+    challenge: "Low visibility in local search results for dental services. Despite quality patient care, the practice was invisible online and losing patients to competitors.",
+    solution: "Complete GBP optimization, healthcare-specific local content strategy, citation building in medical directories, and patient review generation.",
+    results: [
+      { metric: "+320%", label: "Organic Traffic" },
+      { metric: "Top 3", label: "15+ Keywords" },
+      { metric: "+180%", label: "Monthly Leads" },
+      { metric: "3x", label: "New Patients" },
+    ],
+    images: [dentalBeforeGrid, dentalAfterGrid],
+    beforeAfter: true,
+    strategy: [
+      "Healthcare-focused GBP optimization with service categories",
+      "Medical directory citations (Healthgrades, Zocdoc, etc.)",
+      "Patient review generation with HIPAA-compliant follow-up",
+      "Service-specific landing pages for each treatment type",
+      "Local content targeting neighborhood dental searches",
+      "Schema markup for medical practice rich snippets"
+    ]
+  },
+  {
     title: "Neighborhood Pizza - Restaurant Local SEO",
     industry: "Restaurant",
     location: "New York, USA",
@@ -83,6 +136,72 @@ const seoProjects = [
       "Local content strategy targeting neighborhood-specific searches",
       "Review management and response strategy",
       "Weekly posts featuring specials and seasonal items"
+    ]
+  },
+  {
+    title: "Elite Plumbing Solutions - Service Business Growth",
+    industry: "Home Services",
+    location: "London, UK",
+    challenge: "Competing against established competitors with stronger online presence. Needed to capture emergency plumbing searches and build local authority.",
+    solution: "Aggressive local SEO campaign with review generation, technical website optimization, and service area targeting across London neighborhoods.",
+    results: [
+      { metric: "8,245", label: "Total GBP Views" },
+      { metric: "1,234", label: "Website Clicks" },
+      { metric: "890", label: "Phone Calls" },
+      { metric: "+85%", label: "YoY Revenue" },
+    ],
+    images: [plumbingGbpAnalytics],
+    strategy: [
+      "Service area SEO targeting 20+ London neighborhoods",
+      "Emergency keyword optimization for 'plumber near me' searches",
+      "Review generation with automated SMS follow-up system",
+      "Technical SEO audit and Core Web Vitals optimization",
+      "Lead tracking and conversion rate optimization",
+      "Monthly performance reporting with ROI analysis"
+    ]
+  },
+  {
+    title: "Sunrise Medical Spa - Premium Wellness SEO",
+    industry: "Beauty & Wellness",
+    location: "Miami, FL",
+    challenge: "New medical spa entering competitive Miami market. Needed to establish authority and attract high-value clients seeking premium treatments.",
+    solution: "Premium positioning strategy with service-specific landing pages, before/after gallery optimization, and aggressive review generation for trust building.",
+    results: [
+      { metric: "12.5K", label: "Total Clicks" },
+      { metric: "450K", label: "Impressions" },
+      { metric: "2.8%", label: "Average CTR" },
+      { metric: "4.2", label: "Avg Position" },
+    ],
+    images: [medspaSearchConsole],
+    strategy: [
+      "Service-specific landing pages for each treatment (Botox, fillers, etc.)",
+      "Before/after gallery optimization with proper ALT tags",
+      "Review generation targeting 5-star Google reviews",
+      "Medical spa schema markup for rich snippets",
+      "Content strategy targeting treatment-specific keywords",
+      "Social proof integration and testimonial management"
+    ]
+  },
+  {
+    title: "Premium Auto Detailing - Luxury Market SEO",
+    industry: "Automotive Services",
+    location: "Phoenix, AZ",
+    challenge: "Auto detailing business in saturated market needed to stand out and attract luxury car owners willing to pay premium prices.",
+    solution: "Niche keyword targeting for luxury vehicles, portfolio gallery optimization, and GBP posts showcasing high-end detailing work.",
+    results: [
+      { metric: "2,456", label: "Customer Actions" },
+      { metric: "1,890", label: "Website Visits" },
+      { metric: "3,210", label: "Direction Requests" },
+      { metric: "+75%", label: "Avg Ticket Value" },
+    ],
+    images: [autodetailGbpInsights],
+    strategy: [
+      "Luxury vehicle keyword targeting (Ferrari, Porsche, Tesla detailing)",
+      "Portfolio SEO with optimized gallery and vehicle-specific pages",
+      "GBP posts showcasing premium detailing work quality",
+      "Premium positioning in all marketing materials",
+      "Review strategy targeting luxury car owner testimonials",
+      "Local partnerships with luxury car dealerships"
     ]
   },
   {
