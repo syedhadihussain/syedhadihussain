@@ -36,8 +36,8 @@ const About = () => {
     {
       icon: Mail,
       label: t("contact.email.label"),
-      value: "syedhadi.workid@gmail.com",
-      href: "mailto:syedhadi.workid@gmail.com"
+      value: "contact.syedhadihussain@gmail.com",
+      href: "mailto:contact.syedhadihussain@gmail.com"
     },
     {
       icon: Phone,
