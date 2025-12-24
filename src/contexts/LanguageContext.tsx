@@ -35,6 +35,7 @@ export const translations: Translations = {
   "hero.bookAudit": { en: "Get SEO Audit — $50", ar: "احصل على تدقيق SEO — 50$", es: "Obtener Auditoría SEO — $50", pt: "Obter Auditoria SEO — $50", fr: "Obtenir un audit SEO — 50$", it: "Ottieni Audit SEO — $50", de: "SEO-Audit erhalten — 50$" },
   "hero.auditDiscount": { en: "50% OFF — Book in 24hrs!", ar: "خصم 50% — احجز خلال 24 ساعة!", es: "50% DESCUENTO — ¡Reserva en 24hrs!", pt: "50% DESCONTO — Reserve em 24hrs!", fr: "50% RÉDUCTION — Réservez en 24h!", it: "50% SCONTO — Prenota in 24 ore!", de: "50% RABATT — Buchen Sie in 24 Std!" },
   "hero.whatsapp": { en: "WhatsApp Me", ar: "راسلني على واتساب", es: "WhatsApp", pt: "WhatsApp", fr: "WhatsApp", it: "WhatsApp", de: "WhatsApp" },
+  "hero.bookConsultation": { en: "Book Consultation", ar: "احجز استشارة", es: "Reservar Consulta", pt: "Agendar Consulta", fr: "Réserver une consultation", it: "Prenota Consulenza", de: "Beratung buchen" },
   "hero.viewProjects": { en: "View Projects", ar: "عرض المشاريع", es: "Ver Proyectos", pt: "Ver Projetos", fr: "Voir les projets", it: "Vedi Progetti", de: "Projekte ansehen" },
   "hero.years": { en: "Years Experience", ar: "سنوات الخبرة", es: "Años de Experiencia", pt: "Anos de Experiência", fr: "Années d'expérience", it: "Anni di esperienza", de: "Jahre Erfahrung" },
   "hero.clients": { en: "Clients Served", ar: "عملاء تم خدمتهم", es: "Clientes Atendidos", pt: "Clientes Atendidos", fr: "Clients servis", it: "Clienti serviti", de: "Betreute Kunden" },
@@ -54,6 +55,18 @@ export const translations: Translations = {
   "contact.sending": { en: "Sending...", ar: "جاري الإرسال...", es: "Enviando...", pt: "Enviando...", fr: "Envoi en cours...", it: "Invio in corso...", de: "Wird gesendet..." },
   "contact.success": { en: "Message sent successfully! I'll get back to you soon.", ar: "تم إرسال الرسالة بنجاح! سأرد عليك قريباً.", es: "¡Mensaje enviado con éxito! Te responderé pronto.", pt: "Mensagem enviada com sucesso! Entrarei em contato em breve.", fr: "Message envoyé avec succès! Je vous répondrai bientôt.", it: "Messaggio inviato con successo! Ti risponderò presto.", de: "Nachricht erfolgreich gesendet! Ich melde mich bald bei Ihnen." },
   "contact.error": { en: "Failed to send message. Please try again.", ar: "فشل إرسال الرسالة. يرجى المحاولة مرة أخرى.", es: "Error al enviar el mensaje. Por favor, inténtelo de nuevo.", pt: "Falha ao enviar mensagem. Por favor, tente novamente.", fr: "Échec de l'envoi du message. Veuillez réessayer.", it: "Impossibile inviare il messaggio. Si prega di riprovare.", de: "Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut." },
+  "contact.clientName": { en: "Client Name", ar: "اسم العميل", es: "Nombre del Cliente", pt: "Nome do Cliente", fr: "Nom du client", it: "Nome del cliente", de: "Kundenname" },
+  "contact.businessName": { en: "Business Name", ar: "اسم العمل", es: "Nombre del Negocio", pt: "Nome da Empresa", fr: "Nom de l'entreprise", it: "Nome dell'azienda", de: "Firmenname" },
+  "contact.businessAddress": { en: "Business Address", ar: "عنوان العمل", es: "Dirección del Negocio", pt: "Endereço da Empresa", fr: "Adresse de l'entreprise", it: "Indirizzo dell'azienda", de: "Geschäftsadresse" },
+  "contact.city": { en: "City", ar: "المدينة", es: "Ciudad", pt: "Cidade", fr: "Ville", it: "Città", de: "Stadt" },
+  "contact.state": { en: "State/Province", ar: "الولاية/المقاطعة", es: "Estado/Provincia", pt: "Estado/Província", fr: "État/Province", it: "Stato/Provincia", de: "Bundesland" },
+  "contact.zipcode": { en: "Zipcode", ar: "الرمز البريدي", es: "Código Postal", pt: "CEP", fr: "Code postal", it: "CAP", de: "Postleitzahl" },
+  "contact.country": { en: "Country", ar: "البلد", es: "País", pt: "País", fr: "Pays", it: "Paese", de: "Land" },
+  "contact.selectService": { en: "Select a service", ar: "اختر خدمة", es: "Seleccione un servicio", pt: "Selecione um serviço", fr: "Sélectionnez un service", it: "Seleziona un servizio", de: "Service auswählen" },
+  "contact.gbpLink": { en: "GBP/Map Link", ar: "رابط خرائط جوجل", es: "Enlace de GBP/Mapa", pt: "Link do GBP/Mapa", fr: "Lien GBP/Carte", it: "Link GBP/Mappa", de: "GBP/Karten-Link" },
+  "contact.gbpLinkHint": { en: "Paste your Google Business Profile or Google Maps link", ar: "الصق رابط ملف Google التجاري أو خرائط Google", es: "Pegue su enlace de Google Business Profile o Google Maps", pt: "Cole seu link do Google Business Profile ou Google Maps", fr: "Collez votre lien Google Business Profile ou Google Maps", it: "Incolla il tuo link Google Business Profile o Google Maps", de: "Fügen Sie Ihren Google Business Profile- oder Google Maps-Link ein" },
+  "contact.competitor": { en: "Competitor (Optional)", ar: "المنافس (اختياري)", es: "Competidor (Opcional)", pt: "Concorrente (Opcional)", fr: "Concurrent (Optionnel)", it: "Concorrente (Opzionale)", de: "Wettbewerber (Optional)" },
+  "contact.formGuide": { en: "Need help? Read the form guide", ar: "تحتاج مساعدة؟ اقرأ دليل النموذج", es: "¿Necesita ayuda? Lea la guía del formulario", pt: "Precisa de ajuda? Leia o guia do formulário", fr: "Besoin d'aide? Lisez le guide du formulaire", it: "Hai bisogno di aiuto? Leggi la guida al modulo", de: "Brauchen Sie Hilfe? Lesen Sie die Formularanleitung" },
 
   // Services
   "services.title": { en: "Local SEO Services That Drive Results", ar: "خدمات SEO المحلية التي تحقق النتائج", es: "Servicios de SEO Local que Generan Resultados", pt: "Serviços de SEO Local que Geram Resultados", fr: "Services SEO locaux qui génèrent des résultats", it: "Servizi SEO locali che generano risultati", de: "Lokale SEO-Dienste, die Ergebnisse liefern" },
@@ -98,6 +111,11 @@ export const translations: Translations = {
   "common.viewAll": { en: "View All", ar: "عرض الكل", es: "Ver Todo", pt: "Ver Tudo", fr: "Voir tout", it: "Vedi tutto", de: "Alle ansehen" },
   "common.readMore": { en: "Read More", ar: "اقرأ المزيد", es: "Leer Más", pt: "Leia Mais", fr: "Lire la suite", it: "Leggi di più", de: "Mehr lesen" },
   "common.getAudit": { en: "Get SEO Audit", ar: "احصل على تدقيق SEO", es: "Obtener Auditoría SEO", pt: "Obter Auditoria SEO", fr: "Obtenir un audit SEO", it: "Ottieni Audit SEO", de: "SEO-Audit erhalten" },
+
+  // Pricing
+  "pricing.title": { en: "Transparent Pricing for Every Business", ar: "أسعار شفافة لكل عمل", es: "Precios Transparentes para Cada Negocio", pt: "Preços Transparentes para Cada Negócio", fr: "Tarification transparente pour chaque entreprise", it: "Prezzi trasparenti per ogni azienda", de: "Transparente Preise für jedes Unternehmen" },
+  "pricing.subtitle": { en: "Choose Your Plan", ar: "اختر خطتك", es: "Elige Tu Plan", pt: "Escolha Seu Plano", fr: "Choisissez votre plan", it: "Scegli il tuo piano", de: "Wählen Sie Ihren Plan" },
+  "pricing.description": { en: "Affordable SEO solutions with proven results. No hidden fees, no long-term contracts.", ar: "حلول SEO بأسعار معقولة مع نتائج مثبتة. لا رسوم خفية، لا عقود طويلة الأجل.", es: "Soluciones SEO asequibles con resultados comprobados. Sin tarifas ocultas, sin contratos a largo plazo.", pt: "Soluções de SEO acessíveis com resultados comprovados. Sem taxas ocultas, sem contratos de longo prazo.", fr: "Solutions SEO abordables avec des résultats prouvés. Pas de frais cachés, pas de contrats à long terme.", it: "Soluzioni SEO accessibili con risultati comprovati. Nessun costo nascosto, nessun contratto a lungo termine.", de: "Erschwingliche SEO-Lösungen mit nachgewiesenen Ergebnissen. Keine versteckten Gebühren, keine langfristigen Verträge." },
 };
 
 interface LanguageContextType {

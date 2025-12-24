@@ -19,6 +19,8 @@ const ContactPage = lazy(() => import("./pages/ContactPage"));
 const BlogPage = lazy(() => import("./pages/BlogPage"));
 const ProjectManagementPage = lazy(() => import("./pages/ProjectManagementPage"));
 const LocalServiceAdsPage = lazy(() => import("./pages/LocalServiceAdsPage"));
+const PricingPage = lazy(() => import("./pages/PricingPage"));
+const FormGuideBlogPage = lazy(() => import("./pages/FormGuideBlogPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -54,6 +56,8 @@ const App = () => (
                   <Route path="/blog" element={<BlogPage />} />
                   <Route path="/project-management" element={<ProjectManagementPage />} />
                   <Route path="/local-service-ads" element={<LocalServiceAdsPage />} />
+                  <Route path="/pricing" element={<PricingPage />} />
+                  <Route path="/blog/how-to-fill-contact-form" element={<FormGuideBlogPage />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </Suspense>
