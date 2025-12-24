@@ -270,7 +270,12 @@ interface LanguageContextType {
   dir: "ltr" | "rtl";
 }
 
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+const LanguageContext = createContext<LanguageContextType>({
+  language: "en",
+  setLanguage: () => {},
+  t: (key: string) => key,
+  dir: "ltr",
+});
 
 const DYNAMIC_STORAGE_PREFIX = "dynamicTranslations.v1.";
 
@@ -405,10 +410,6 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
 };
 
 export const useLanguage = () => {
-  const context = useContext(LanguageContext);
-  if (!context) {
-    throw new Error("useLanguage must be used within a LanguageProvider");
-  }
-  return context;
+  return useContext(LanguageContext);
 };
 
