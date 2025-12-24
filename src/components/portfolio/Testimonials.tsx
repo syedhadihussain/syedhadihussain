@@ -1,4 +1,4 @@
-import { Quote, Star, ChevronLeft, ChevronRight } from "lucide-react";
+import { Quote, Star } from "lucide-react";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { 
@@ -194,13 +194,13 @@ const Testimonials = () => {
 
                     {/* Quote Text */}
                     <p className="text-foreground leading-relaxed mb-6 line-clamp-5">
-                      "{testimonial.quote}"
+                      "{t(testimonial.quote)}"
                     </p>
 
                     {/* Author */}
                     <div className="pt-4 border-t border-border mt-auto">
                       <div className="font-display font-semibold text-foreground">{testimonial.author}</div>
-                      <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                      <div className="text-sm text-muted-foreground">{t(testimonial.role)}</div>
                       <div className="text-xs text-primary mt-1">{testimonial.location}</div>
                     </div>
                   </div>
