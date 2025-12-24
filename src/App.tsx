@@ -17,6 +17,8 @@ const PortfolioPage = lazy(() => import("./pages/PortfolioPage"));
 const FAQPage = lazy(() => import("./pages/FAQPage"));
 const ContactPage = lazy(() => import("./pages/ContactPage"));
 const BlogPage = lazy(() => import("./pages/BlogPage"));
+const ProjectManagementPage = lazy(() => import("./pages/ProjectManagementPage"));
+const LocalServiceAdsPage = lazy(() => import("./pages/LocalServiceAdsPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -50,6 +52,8 @@ const App = () => (
                   <Route path="/faq" element={<FAQPage />} />
                   <Route path="/contact" element={<ContactPage />} />
                   <Route path="/blog" element={<BlogPage />} />
+                  <Route path="/project-management" element={<ProjectManagementPage />} />
+                  <Route path="/local-service-ads" element={<LocalServiceAdsPage />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </Suspense>

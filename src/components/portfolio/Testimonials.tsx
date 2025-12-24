@@ -1,6 +1,13 @@
-import { Quote, Star } from "lucide-react";
+import { Quote, Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { 
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const testimonials = [
   {
@@ -80,6 +87,66 @@ const testimonials = [
     author: "Steve J.",
     role: "Plumbing Company Owner",
     location: "Chicago, USA"
+  },
+  {
+    quote: "Within 3 months, our phone repair shop became the go-to place in Duncanville. Over 1,300 reviews and counting!",
+    author: "Moe K.",
+    role: "Phone Repair Shop Owner",
+    location: "Texas, USA"
+  },
+  {
+    quote: "Hadi's attention to detail is impressive. Every aspect of our GBP was optimized for maximum visibility.",
+    author: "Patricia S.",
+    role: "Medical Spa Owner",
+    location: "Miami, USA"
+  },
+  {
+    quote: "Our locksmith business now ranks #1 for emergency searches. Response time and professionalism are top-notch.",
+    author: "Kevin D.",
+    role: "Locksmith Business Owner",
+    location: "Seattle, USA"
+  },
+  {
+    quote: "The local SEO strategy Hadi implemented helped us beat competitors who have been in business for decades.",
+    author: "Amanda R.",
+    role: "Fitness Studio Owner",
+    location: "Denver, USA"
+  },
+  {
+    quote: "Excellent communication throughout the project. Hadi explains everything clearly and delivers results.",
+    author: "Thomas H.",
+    role: "Insurance Agency Owner",
+    location: "Berlin, Germany"
+  },
+  {
+    quote: "Our clinic's online appointment bookings increased by 400%. Best SEO investment we've ever made.",
+    author: "Dr. Chen L.",
+    role: "Chiropractic Clinic Owner",
+    location: "Vancouver, Canada"
+  },
+  {
+    quote: "Hadi's strategies are future-proof. He prepared us for AI search engines while dominating Google today.",
+    author: "Richard M.",
+    role: "Tech Startup Founder",
+    location: "San Francisco, USA"
+  },
+  {
+    quote: "From zero presence to dominating our local market. Hadi's SEO expertise is second to none.",
+    author: "Emily T.",
+    role: "Boutique Hotel Owner",
+    location: "Paris, France"
+  },
+  {
+    quote: "Our moving company gets 90% of leads from Google now. Hadi's citation building strategy was key.",
+    author: "Carlos V.",
+    role: "Moving Company Owner",
+    location: "Phoenix, USA"
+  },
+  {
+    quote: "The review generation strategy alone was worth the investment. We went from 20 to 500+ reviews in months.",
+    author: "Jessica N.",
+    role: "Day Spa Owner",
+    location: "Atlanta, USA"
   }
 ];
 
@@ -87,10 +154,10 @@ const Testimonials = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="testimonials" className="section-padding">
+    <section id="testimonials" className="section-padding overflow-hidden">
       <div className="container-narrow">
         <ScrollReveal animation="fade-up">
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-12">
             <span className="text-primary text-sm font-medium tracking-wider uppercase mb-4 block">
               {t("nav.testimonials")}
             </span>
@@ -103,35 +170,49 @@ const Testimonials = () => {
           </div>
         </ScrollReveal>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.map((testimonial, index) => (
-            <ScrollReveal key={index} animation="fade-up" delay={index * 100}>
-              <div className="glass rounded-2xl p-6 lg:p-8 relative group hover:glow-sm transition-all duration-300 h-full">
-                {/* Quote Icon */}
-                <Quote className="w-10 h-10 text-primary/20 mb-4" />
+        <ScrollReveal animation="fade-up" delay={200}>
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-4">
+              {testimonials.map((testimonial, index) => (
+                <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                  <div className="glass rounded-2xl p-6 lg:p-8 relative group hover:glow-sm transition-all duration-300 h-full">
+                    {/* Quote Icon */}
+                    <Quote className="w-10 h-10 text-primary/20 mb-4" />
 
-                {/* Stars */}
-                <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-primary text-primary" />
-                  ))}
-                </div>
+                    {/* Stars */}
+                    <div className="flex gap-1 mb-4">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 fill-primary text-primary" />
+                      ))}
+                    </div>
 
-                {/* Quote Text */}
-                <p className="text-foreground leading-relaxed mb-6">
-                  "{testimonial.quote}"
-                </p>
+                    {/* Quote Text */}
+                    <p className="text-foreground leading-relaxed mb-6 line-clamp-5">
+                      "{testimonial.quote}"
+                    </p>
 
-                {/* Author */}
-                <div className="pt-4 border-t border-border">
-                  <div className="font-display font-semibold text-foreground">{testimonial.author}</div>
-                  <div className="text-sm text-muted-foreground">{testimonial.role}</div>
-                  <div className="text-xs text-primary mt-1">{testimonial.location}</div>
-                </div>
-              </div>
-            </ScrollReveal>
-          ))}
-        </div>
+                    {/* Author */}
+                    <div className="pt-4 border-t border-border mt-auto">
+                      <div className="font-display font-semibold text-foreground">{testimonial.author}</div>
+                      <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                      <div className="text-xs text-primary mt-1">{testimonial.location}</div>
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="flex items-center justify-center gap-4 mt-8">
+              <CarouselPrevious className="static translate-y-0 bg-secondary hover:bg-primary hover:text-primary-foreground" />
+              <CarouselNext className="static translate-y-0 bg-secondary hover:bg-primary hover:text-primary-foreground" />
+            </div>
+          </Carousel>
+        </ScrollReveal>
       </div>
     </section>
   );

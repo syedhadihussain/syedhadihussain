@@ -2,21 +2,52 @@ import Navigation from "@/components/portfolio/Navigation";
 import Footer from "@/components/portfolio/Footer";
 import SEOHead from "@/components/SEOHead";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
-import { CheckCircle, Award, Users, TrendingUp, Target } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import { 
+  CheckCircle, 
+  Award, 
+  Users, 
+  TrendingUp, 
+  Target, 
+  ArrowRight,
+  MapPin,
+  Search,
+  Settings,
+  Code,
+  MessageSquare,
+  Bot,
+  Megaphone,
+  BarChart3,
+  Briefcase,
+  Globe
+} from "lucide-react";
 import profilePhoto from "@/assets/profile-photo.png";
 
 const certifications = [
   "Google Analytics Certified",
   "Google Search Console Certified",
   "SEMrush SEO Toolkit Certified",
-  "Local SEO Training (Opti-Rank Technologies)"
+  "Local SEO Training (Opti-Rank Technologies)",
+  "HubSpot Content Marketing Certified",
+  "Google Ads Certified"
 ];
 
 const skills = [
-  { icon: Target, title: "Local SEO & GBP", description: "Google Business Profile optimization for maximum visibility" },
-  { icon: TrendingUp, title: "Technical SEO", description: "Site audits, speed optimization, and structured data" },
-  { icon: Users, title: "Citation Building", description: "NAP consistency across authoritative directories" },
-  { icon: Award, title: "Review Management", description: "Reputation building and review generation strategies" }
+  { icon: Target, title: "Local SEO & GBP", description: "Google Business Profile optimization for maximum local visibility" },
+  { icon: MapPin, title: "Map SEO Optimization", description: "Dominate Google Maps, Apple Maps, and Bing Maps rankings" },
+  { icon: TrendingUp, title: "Technical SEO", description: "Site audits, speed optimization, and structured data implementation" },
+  { icon: Users, title: "Citation Building", description: "NAP consistency across 100+ authoritative directories" },
+  { icon: Award, title: "Review Management", description: "Reputation building and review generation strategies" },
+  { icon: Search, title: "Keyword Research", description: "Semantic SEO and voice search optimization" },
+  { icon: MessageSquare, title: "SEO Consultation", description: "Strategic planning and ongoing SEO advisory services" },
+  { icon: Code, title: "Web Development", description: "SEO-optimized websites with modern technologies" },
+  { icon: Bot, title: "AI Assistants & Chatbots", description: "AI-powered customer service solutions for businesses" },
+  { icon: Megaphone, title: "Google Local Service Ads", description: "LSA setup, optimization, and management" },
+  { icon: Globe, title: "Social Media Marketing", description: "Social media management and growth strategies" },
+  { icon: BarChart3, title: "Meta Ads & PPC", description: "Facebook, Instagram, and paid advertising campaigns" },
+  { icon: Briefcase, title: "Project Management", description: "End-to-end digital marketing project coordination" },
+  { icon: Settings, title: "Analytics & Tracking", description: "GA4, GTM, and conversion tracking setup" }
 ];
 
 const AboutPage = () => {
@@ -57,9 +88,29 @@ const AboutPage = () => {
                   <p className="text-muted-foreground text-lg leading-relaxed mb-6">
                     I am a results-driven Local SEO specialist with hands-on experience helping service businesses dominate Google Search and Google Business Profile rankings. I focus on practical SEO strategies that generate real calls, leads, and revenue—not just traffic.
                   </p>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed mb-8">
                     With 7+ years of professional SEO experience and 100+ clients served across UAE, UK, USA, and Australia, I've developed proven methodologies that consistently deliver measurable results for local businesses.
                   </p>
+
+                  {/* CTA Buttons */}
+                  <div className="flex flex-wrap gap-4">
+                    <Button asChild size="lg" className="glow group">
+                      <Link to="/case-studies">
+                        View Case Studies
+                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                      </Link>
+                    </Button>
+                    <Button asChild variant="outline" size="lg">
+                      <Link to="/services">
+                        Explore Services
+                      </Link>
+                    </Button>
+                    <Button asChild variant="outline" size="lg">
+                      <Link to="/contact">
+                        Get In Touch
+                      </Link>
+                    </Button>
+                  </div>
                 </ScrollReveal>
               </div>
             </div>
@@ -73,7 +124,7 @@ const AboutPage = () => {
                   Certifications & Training
                 </h2>
               </ScrollReveal>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {certifications.map((cert, index) => (
                   <ScrollReveal key={cert} animation="scale" delay={index * 100}>
                     <div className="glass rounded-xl p-6 text-center hover:glow-sm transition-all duration-300">
@@ -90,21 +141,52 @@ const AboutPage = () => {
           <section className="section-padding">
             <div className="container-narrow">
               <ScrollReveal animation="fade-up">
-                <h2 className="font-display text-3xl font-bold text-foreground text-center mb-12">
-                  Core Expertise
-                </h2>
+                <div className="text-center mb-12">
+                  <h2 className="font-display text-3xl font-bold text-foreground mb-4">
+                    Core Expertise
+                  </h2>
+                  <p className="text-muted-foreground max-w-2xl mx-auto">
+                    A comprehensive skill set covering all aspects of local SEO, digital marketing, and web development.
+                  </p>
+                </div>
               </ScrollReveal>
-              <div className="grid sm:grid-cols-2 gap-8">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {skills.map((skill, index) => (
-                  <ScrollReveal key={skill.title} animation="fade-up" delay={index * 100}>
-                    <div className="glass rounded-xl p-8 hover:glow-sm transition-all duration-300 group">
-                      <skill.icon className="w-12 h-12 text-primary mb-4 group-hover:scale-110 transition-transform" />
-                      <h3 className="font-display text-xl font-bold text-foreground mb-2">{skill.title}</h3>
-                      <p className="text-muted-foreground">{skill.description}</p>
+                  <ScrollReveal key={skill.title} animation="fade-up" delay={index * 50}>
+                    <div className="glass rounded-xl p-6 hover:glow-sm transition-all duration-300 group h-full">
+                      <skill.icon className="w-10 h-10 text-primary mb-4 group-hover:scale-110 transition-transform" />
+                      <h3 className="font-display text-lg font-bold text-foreground mb-2">{skill.title}</h3>
+                      <p className="text-muted-foreground text-sm">{skill.description}</p>
                     </div>
                   </ScrollReveal>
                 ))}
               </div>
+            </div>
+          </section>
+
+          {/* Stats */}
+          <section className="section-padding bg-primary/5">
+            <div className="container-narrow">
+              <ScrollReveal animation="scale">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                  <div className="text-center">
+                    <div className="font-display text-4xl lg:text-5xl font-bold text-primary mb-2">7+</div>
+                    <div className="text-muted-foreground">Years Experience</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="font-display text-4xl lg:text-5xl font-bold text-primary mb-2">100+</div>
+                    <div className="text-muted-foreground">Clients Served</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="font-display text-4xl lg:text-5xl font-bold text-primary mb-2">15+</div>
+                    <div className="text-muted-foreground">Industries</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="font-display text-4xl lg:text-5xl font-bold text-primary mb-2">95%</div>
+                    <div className="text-muted-foreground">Success Rate</div>
+                  </div>
+                </div>
+              </ScrollReveal>
             </div>
           </section>
         </main>
