@@ -38,8 +38,8 @@ const Contact = () => {
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
                   <Calendar className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="font-semibold text-foreground mb-1">Book a Call</h3>
-                <p className="text-sm text-muted-foreground">Schedule a meeting</p>
+                <h3 className="font-semibold text-foreground mb-1">{t("contact.bookCall")}</h3>
+                <p className="text-sm text-muted-foreground">{t("contact.scheduleMeeting")}</p>
               </a>
 
               <a 
@@ -51,8 +51,8 @@ const Contact = () => {
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
                   <MessageCircle className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="font-semibold text-foreground mb-1">WhatsApp</h3>
-                <p className="text-sm text-muted-foreground">Quick chat</p>
+                <h3 className="font-semibold text-foreground mb-1">{t("contact.whatsapp")}</h3>
+                <p className="text-sm text-muted-foreground">{t("contact.quickChat")}</p>
               </a>
 
               <a 
@@ -62,7 +62,7 @@ const Contact = () => {
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
                   <Mail className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="font-semibold text-foreground mb-1">Email</h3>
+                <h3 className="font-semibold text-foreground mb-1">{t("contact.email")}</h3>
                 <p className="text-sm text-muted-foreground">syedhadi.workid@gmail.com</p>
               </a>
 
@@ -70,7 +70,7 @@ const Contact = () => {
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                   <MapPin className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="font-semibold text-foreground mb-1">Worldwide</h3>
+                <h3 className="font-semibold text-foreground mb-1">{t("contact.worldwide")}</h3>
                 <p className="text-sm text-muted-foreground">UAE, UK, USA, AU</p>
               </div>
             </div>
@@ -80,7 +80,7 @@ const Contact = () => {
           <ScrollReveal animation="fade-up" delay={200}>
             <div className="glass rounded-3xl p-6 sm:p-8 lg:p-10">
               <h3 className="font-display text-xl lg:text-2xl font-bold text-foreground mb-6 text-center">
-                Send a Detailed Inquiry
+                {t("contact.sendInquiry")}
               </h3>
               <ContactForm />
             </div>

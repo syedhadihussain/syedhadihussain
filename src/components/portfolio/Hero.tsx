@@ -88,8 +88,8 @@ const Hero = () => {
               </div>
               {/* Floating Badge */}
               <div className="absolute -bottom-4 -right-4 glass rounded-xl p-4 glow-sm animate-fade-up" style={{ animationDelay: "0.6s" }}>
-                <div className="text-sm font-medium text-foreground">Google Certified</div>
-                <div className="text-xs text-muted-foreground">Analytics & Search Console</div>
+                <div className="text-sm font-medium text-foreground">{t("hero.googleCertified")}</div>
+                <div className="text-xs text-muted-foreground">{t("hero.analyticsConsole")}</div>
               </div>
             </div>
           </div>
