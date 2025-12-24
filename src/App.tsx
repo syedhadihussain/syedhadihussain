@@ -36,10 +36,10 @@ const PageLoader = () => (
 );
 
 const App = () => (
-  <HelmetProvider>
-    <QueryClientProvider client={queryClient}>
-      <ThemeProvider>
-        <LanguageProvider>
+  <QueryClientProvider client={queryClient}>
+    <ThemeProvider>
+      <LanguageProvider>
+        <HelmetProvider>
           <TooltipProvider>
             <Toaster />
             <Sonner />
@@ -63,10 +63,10 @@ const App = () => (
               </Suspense>
             </BrowserRouter>
           </TooltipProvider>
-        </LanguageProvider>
-      </ThemeProvider>
-    </QueryClientProvider>
-  </HelmetProvider>
+        </HelmetProvider>
+      </LanguageProvider>
+    </ThemeProvider>
+  </QueryClientProvider>
 );
 
 export default App;
