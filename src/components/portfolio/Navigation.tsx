@@ -23,12 +23,13 @@ const Navigation = () => {
   }, []);
 
   const navLinks = [
-    { href: isHomePage ? "#about" : "/about", label: t("nav.about"), isAnchor: isHomePage },
-    { href: isHomePage ? "#services" : "/services", label: t("nav.services"), isAnchor: isHomePage },
-    { href: isHomePage ? "#case-studies" : "/case-studies", label: t("nav.caseStudies"), isAnchor: isHomePage },
-    { href: isHomePage ? "#testimonials" : "/#testimonials", label: t("nav.testimonials"), isAnchor: isHomePage },
-    { href: isHomePage ? "#faq" : "/faq", label: t("nav.faq"), isAnchor: isHomePage },
-    { href: isHomePage ? "#contact" : "/contact", label: t("nav.contact"), isAnchor: isHomePage },
+    { href: "/about", label: t("nav.about"), isAnchor: false },
+    { href: "/services", label: t("nav.services"), isAnchor: false },
+    { href: "/portfolio", label: t("nav.portfolio"), isAnchor: false },
+    { href: "/case-studies", label: t("nav.caseStudies"), isAnchor: false },
+    { href: "/faq", label: t("nav.faq"), isAnchor: false },
+    { href: "/blog", label: t("nav.blog"), isAnchor: false },
+    { href: "/contact", label: t("nav.contact"), isAnchor: false },
   ];
 
   const handleNavClick = (link: { href: string; isAnchor: boolean }) => {
@@ -50,25 +51,15 @@ const Navigation = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-6">
+        <div className="hidden lg:flex items-center gap-5">
           {navLinks.map((link) => (
-            link.isAnchor ? (
-              <button
-                key={link.href}
-                onClick={() => handleNavClick(link)}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                {link.label}
-              </button>
-            ) : (
-              <Link
-                key={link.href}
-                to={link.href}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                {link.label}
-              </Link>
-            )
+            <Link
+              key={link.href}
+              to={link.href}
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              {link.label}
+            </Link>
           ))}
           
           <div className="flex items-center gap-2 ml-2 pl-2 border-l border-border">
@@ -84,7 +75,7 @@ const Navigation = () => {
         </div>
 
         {/* Mobile Menu Toggle */}
-        <div className="md:hidden flex items-center gap-2">
+        <div className="lg:hidden flex items-center gap-2">
           <ThemeToggle />
           <LanguageSelector />
           <button
@@ -99,27 +90,17 @@ const Navigation = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden glass border-t border-border mt-3 animate-fade-in">
+        <div className="lg:hidden glass border-t border-border mt-3 animate-fade-in">
           <div className="container-narrow py-6 flex flex-col gap-4">
             {navLinks.map((link) => (
-              link.isAnchor ? (
-                <button
-                  key={link.href}
-                  onClick={() => handleNavClick(link)}
-                  className="text-muted-foreground hover:text-foreground transition-colors py-2 text-left"
-                >
-                  {link.label}
-                </button>
-              ) : (
-                <Link
-                  key={link.href}
-                  to={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-muted-foreground hover:text-foreground transition-colors py-2"
-                >
-                  {link.label}
-                </Link>
-              )
+              <Link
+                key={link.href}
+                to={link.href}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-muted-foreground hover:text-foreground transition-colors py-2"
+              >
+                {link.label}
+              </Link>
             ))}
             <Button asChild className="w-full mt-2">
               <a href="https://calendly.com/syedhadihussain" target="_blank" rel="noopener noreferrer">

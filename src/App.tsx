@@ -13,6 +13,7 @@ import Index from "./pages/Index";
 const AboutPage = lazy(() => import("./pages/AboutPage"));
 const ServicesPage = lazy(() => import("./pages/ServicesPage"));
 const CaseStudiesPage = lazy(() => import("./pages/CaseStudiesPage"));
+const PortfolioPage = lazy(() => import("./pages/PortfolioPage"));
 const FAQPage = lazy(() => import("./pages/FAQPage"));
 const ContactPage = lazy(() => import("./pages/ContactPage"));
 const BlogPage = lazy(() => import("./pages/BlogPage"));
@@ -44,11 +45,11 @@ const App = () => (
                   <Route path="/" element={<Index />} />
                   <Route path="/about" element={<AboutPage />} />
                   <Route path="/services" element={<ServicesPage />} />
+                  <Route path="/portfolio" element={<PortfolioPage />} />
                   <Route path="/case-studies" element={<CaseStudiesPage />} />
                   <Route path="/faq" element={<FAQPage />} />
                   <Route path="/contact" element={<ContactPage />} />
                   <Route path="/blog" element={<BlogPage />} />
-                  {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </Suspense>
