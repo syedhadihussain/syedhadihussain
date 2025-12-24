@@ -1,4 +1,5 @@
-import { createContext, useContext, useState, ReactNode, useEffect } from "react";
+import { createContext, useContext, useEffect, useMemo, useRef, useState, ReactNode } from "react";
+import { supabase } from "@/integrations/supabase/client";
 
 export type Language = "en" | "ar" | "es" | "pt" | "fr" | "it" | "de";
 
@@ -70,7 +71,7 @@ export const translations: Translations = {
   "contact.gbpLinkHint": { en: "Paste your Google Business Profile or Google Maps link", ar: "الصق رابط ملف Google التجاري أو خرائط Google", es: "Pegue su enlace de Google Business Profile o Google Maps", pt: "Cole seu link do Google Business Profile ou Google Maps", fr: "Collez votre lien Google Business Profile ou Google Maps", it: "Incolla il tuo link Google Business Profile o Google Maps", de: "Fügen Sie Ihren Google Business Profile- oder Google Maps-Link ein" },
   "contact.competitor": { en: "Competitor (Optional)", ar: "المنافس (اختياري)", es: "Competidor (Opcional)", pt: "Concorrente (Opcional)", fr: "Concurrent (Optionnel)", it: "Concorrente (Opzionale)", de: "Wettbewerber (Optional)" },
   "contact.customService": { en: "Describe Your Custom Service", ar: "صف خدمتك المخصصة", es: "Describe Tu Servicio Personalizado", pt: "Descreva Seu Serviço Personalizado", fr: "Décrivez votre service personnalisé", it: "Descrivi il tuo servizio personalizzato", de: "Beschreiben Sie Ihren benutzerdefinierten Service" },
-  "contact.formGuide": { en: "Need help? Read the form guide", ar: "تحتاج مساعدة؟ اقرأ دليل النموذج", es: "¿Necesita ayuda? Lea la guía del formulario", pt: "Precisa de ajuda? Leia o guia do formulário", fr: "Besoin d'aide? Lisez le guide du formulaire", it: "Hai bisogno di aiuto? Leggi la guida al modulo", de: "Brauchen Sie Hilfe? Lesen Sie die Formularanleitung" },
+  "contact.formGuide": { en: "Need help? Read the form guide", ar: "تحتاج مساعدة؟ اقرأ دليل النموذج", es: "¿Necesita ayuda? Lea la guía del formulario", pt: "Precisa de ajuda? Leia a guia do formulário", fr: "Besoin d'aide? Lisez le guide du formulaire", it: "Hai bisogno di aiuto? Leggi la guida al modulo", de: "Brauchen Sie Hilfe? Lesen Sie die Formularanleitung" },
   "contact.bookCall": { en: "Book a Call", ar: "احجز مكالمة", es: "Reservar Llamada", pt: "Agendar Chamada", fr: "Réserver un appel", it: "Prenota una chiamata", de: "Anruf buchen" },
   "contact.scheduleMeeting": { en: "Schedule a meeting", ar: "جدولة اجتماع", es: "Programar una reunión", pt: "Agendar reunião", fr: "Planifier une réunion", it: "Pianifica un incontro", de: "Meeting planen" },
   "contact.whatsapp": { en: "WhatsApp", ar: "واتساب", es: "WhatsApp", pt: "WhatsApp", fr: "WhatsApp", it: "WhatsApp", de: "WhatsApp" },
@@ -85,7 +86,7 @@ export const translations: Translations = {
   "services.badge": { en: "Services", ar: "الخدمات", es: "Servicios", pt: "Serviços", fr: "Services", it: "Servizi", de: "Dienstleistungen" },
   "services.heading": { en: "My Services Designed to Boost Business Growth", ar: "خدماتي المصممة لتعزيز نمو الأعمال", es: "Mis Servicios Diseñados para Impulsar el Crecimiento Empresarial", pt: "Meus Serviços Projetados para Impulsionar o Crescimento dos Negócios", fr: "Mes services conçus pour stimuler la croissance des entreprises", it: "I miei servizi progettati per aumentare la crescita aziendale", de: "Meine Dienstleistungen für Ihr Unternehmenswachstum" },
   "services.description": { en: "I provide full-stack SEO and local growth services, designed for businesses that want measurable results, AI-ready strategies, and top local map visibility.", ar: "أقدم خدمات SEO شاملة ونمو محلي، مصممة للشركات التي تريد نتائج قابلة للقياس واستراتيجيات جاهزة للذكاء الاصطناعي وأعلى ظهور على الخرائط المحلية.", es: "Proporciono servicios SEO completos y crecimiento local, diseñados para empresas que quieren resultados medibles, estrategias listas para IA y máxima visibilidad en mapas locales.", pt: "Forneço serviços completos de SEO e crescimento local, projetados para empresas que desejam resultados mensuráveis, estratégias prontas para IA e máxima visibilidade em mapas locais.", fr: "Je fournis des services SEO complets et de croissance locale, conçus pour les entreprises qui veulent des résultats mesurables, des stratégies prêtes pour l'IA et une visibilité maximale sur les cartes locales.", it: "Fornisco servizi SEO completi e crescita locale, progettati per le aziende che vogliono risultati misurabili, strategie pronte per l'IA e massima visibilità sulle mappe locali.", de: "Ich biete Full-Stack-SEO- und lokale Wachstumsdienste für Unternehmen, die messbare Ergebnisse, KI-bereite Strategien und Top-Sichtbarkeit auf lokalen Karten wollen." },
-  
+
   // Service items
   "services.localSeo": { en: "Local SEO Optimization", ar: "تحسين SEO المحلي", es: "Optimización SEO Local", pt: "Otimização SEO Local", fr: "Optimisation SEO local", it: "Ottimizzazione SEO locale", de: "Lokale SEO-Optimierung" },
   "services.localSeoDesc": { en: "I boost your visibility on Google Search with local SEO strategies that attract high-intent customers in your local area.", ar: "أعزز ظهورك على بحث Google باستراتيجيات SEO محلية تجذب العملاء ذوي النية العالية في منطقتك المحلية.", es: "Impulso tu visibilidad en Google Search con estrategias SEO locales que atraen clientes de alta intención en tu área local.", pt: "Aumento sua visibilidade no Google Search com estratégias de SEO local que atraem clientes de alta intenção em sua área local.", fr: "Je booste votre visibilité sur Google Search avec des stratégies SEO locales qui attirent des clients à forte intention dans votre zone locale.", it: "Aumento la tua visibilità su Google Search con strategie SEO locali che attraggono clienti ad alta intenzione nella tua zona.", de: "Ich steigere Ihre Sichtbarkeit in der Google-Suche mit lokalen SEO-Strategien, die kaufwillige Kunden in Ihrer Region anziehen." },
@@ -137,7 +138,7 @@ export const translations: Translations = {
   "faq.title": { en: "Frequently Asked Questions", ar: "الأسئلة الشائعة", es: "Preguntas Frecuentes", pt: "Perguntas Frequentes", fr: "Questions fréquemment posées", it: "Domande frequenti", de: "Häufig gestellte Fragen" },
   "faq.subtitle": { en: "Everything you need to know about Local SEO", ar: "كل ما تحتاج معرفته عن SEO المحلي", es: "Todo lo que necesitas saber sobre SEO Local", pt: "Tudo o que você precisa saber sobre SEO Local", fr: "Tout ce que vous devez savoir sur le SEO local", it: "Tutto quello che devi sapere sul SEO locale", de: "Alles, was Sie über Local SEO wissen müssen" },
   "faq.description": { en: "Get answers to common questions about my SEO services and how I can help your business grow.", ar: "احصل على إجابات للأسئلة الشائعة حول خدمات SEO الخاصة بي وكيف يمكنني مساعدة عملك على النمو.", es: "Obtén respuestas a preguntas comunes sobre mis servicios SEO y cómo puedo ayudar a tu negocio a crecer.", pt: "Obtenha respostas para perguntas comuns sobre meus serviços de SEO e como posso ajudar seu negócio a crescer.", fr: "Obtenez des réponses aux questions courantes sur mes services SEO et comment je peux aider votre entreprise à se développer.", it: "Ottieni risposte alle domande comuni sui miei servizi SEO e su come posso aiutare la tua attività a crescere.", de: "Erhalten Sie Antworten auf häufige Fragen zu meinen SEO-Diensten und wie ich Ihrem Unternehmen beim Wachstum helfen kann." },
-  
+
   // FAQ Questions
   "faq.q1": { en: "What exactly is Local SEO and Map SEO?", ar: "ما هو بالضبط SEO المحلي وSEO الخرائط؟", es: "¿Qué es exactamente SEO Local y SEO de Mapas?", pt: "O que exatamente é SEO Local e SEO de Mapas?", fr: "Qu'est-ce que le SEO local et le SEO Maps exactement?", it: "Cos'è esattamente il SEO locale e il SEO Mappe?", de: "Was genau ist Local SEO und Maps SEO?" },
   "faq.a1": { en: "Local SEO and Map SEO help your business appear on Google Maps, Apple Maps, Bing Maps, and local searches, making it easy for nearby customers to find you and contact you.", ar: "يساعد SEO المحلي وSEO الخرائط عملك على الظهور على خرائط Google وApple وBing والبحث المحلي، مما يسهل على العملاء القريبين العثور عليك والاتصال بك.", es: "El SEO Local y SEO de Mapas ayudan a tu negocio a aparecer en Google Maps, Apple Maps, Bing Maps y búsquedas locales, facilitando que los clientes cercanos te encuentren y contacten.", pt: "SEO Local e SEO de Mapas ajudam seu negócio a aparecer no Google Maps, Apple Maps, Bing Maps e pesquisas locais, facilitando que clientes próximos encontrem e entrem em contato com você.", fr: "Le SEO local et le SEO Maps aident votre entreprise à apparaître sur Google Maps, Apple Maps, Bing Maps et les recherches locales, facilitant la recherche et le contact par les clients proches.", it: "Il SEO locale e il SEO Mappe aiutano la tua attività ad apparire su Google Maps, Apple Maps, Bing Maps e ricerche locali, facilitando ai clienti vicini di trovarti e contattarti.", de: "Local SEO und Maps SEO helfen Ihrem Unternehmen, auf Google Maps, Apple Maps, Bing Maps und in lokalen Suchen zu erscheinen, damit Kunden in der Nähe Sie leicht finden und kontaktieren können." },
@@ -222,12 +223,14 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
+const DYNAMIC_STORAGE_PREFIX = "dynamicTranslations.v1.";
+
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [language, setLanguageState] = useState<Language>(() => {
     if (typeof window !== "undefined") {
       const stored = localStorage.getItem("language") as Language;
       if (stored && ["en", "ar", "es", "pt", "fr", "it", "de"].includes(stored)) return stored;
-      
+
       // Detect browser language
       const browserLang = navigator.language.slice(0, 2);
       if (browserLang === "ar") return "ar";
@@ -240,24 +243,108 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     return "en";
   });
 
+  const [dynamicTranslations, setDynamicTranslations] = useState<Record<string, string>>({});
+  const pendingRef = useRef<Set<string>>(new Set());
+  const [pendingTick, setPendingTick] = useState(0);
+
   useEffect(() => {
     localStorage.setItem("language", language);
     document.documentElement.lang = language;
     document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
   }, [language]);
 
+  useEffect(() => {
+    // Load per-language cached dynamic translations (AI translated)
+    if (typeof window === "undefined") return;
+
+    pendingRef.current.clear();
+
+    if (language === "en") {
+      setDynamicTranslations({});
+      return;
+    }
+
+    const raw = localStorage.getItem(`${DYNAMIC_STORAGE_PREFIX}${language}`);
+    if (!raw) {
+      setDynamicTranslations({});
+      return;
+    }
+
+    try {
+      const parsed = JSON.parse(raw);
+      if (parsed && typeof parsed === "object") setDynamicTranslations(parsed);
+      else setDynamicTranslations({});
+    } catch {
+      setDynamicTranslations({});
+    }
+  }, [language]);
+
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
   };
 
-  const t = (key: string): string => {
-    const translation = translations[key];
-    if (!translation) {
-      console.warn(`Translation missing for key: ${key}`);
+  const t = useMemo(() => {
+    return (key: string): string => {
+      const staticTranslation = translations[key];
+      if (staticTranslation) return staticTranslation[language] || staticTranslation.en || key;
+
+      // If it's a missing translation KEY (e.g. "pricing.foo"), don't send it to AI.
+      if (key.includes(".")) return key;
+
+      // For English we just render the input string.
+      if (language === "en") return key;
+
+      // Dynamic AI translation cache
+      const cached = dynamicTranslations[key];
+      if (cached) return cached;
+
+      // Enqueue for translation (batched)
+      if (!pendingRef.current.has(key)) {
+        pendingRef.current.add(key);
+        setPendingTick((x) => x + 1);
+      }
+
+      // Show English until translation arrives
       return key;
-    }
-    return translation[language] || translation.en || key;
-  };
+    };
+  }, [dynamicTranslations, language]);
+
+  useEffect(() => {
+    if (language === "en") return;
+    if (pendingRef.current.size === 0) return;
+
+    const handle = window.setTimeout(async () => {
+      const batch = Array.from(pendingRef.current).slice(0, 40);
+      if (batch.length === 0) return;
+
+      const { data, error } = await supabase.functions.invoke("translate", {
+        body: { targetLanguage: language, texts: batch },
+      });
+
+      // Always remove processed items from the queue (avoid infinite loops on errors)
+      batch.forEach((txt) => pendingRef.current.delete(txt));
+
+      if (error || !data?.translations) {
+        // Try again later if there are still items in the queue
+        if (pendingRef.current.size > 0) setPendingTick((x) => x + 1);
+        return;
+      }
+
+      setDynamicTranslations((prev) => {
+        const next = { ...prev, ...data.translations };
+        try {
+          localStorage.setItem(`${DYNAMIC_STORAGE_PREFIX}${language}`, JSON.stringify(next));
+        } catch {
+          // ignore quota issues
+        }
+        return next;
+      });
+
+      if (pendingRef.current.size > 0) setPendingTick((x) => x + 1);
+    }, 250);
+
+    return () => window.clearTimeout(handle);
+  }, [language, pendingTick]);
 
   const dir = language === "ar" ? "rtl" : "ltr";
 
@@ -275,3 +362,4 @@ export const useLanguage = () => {
   }
   return context;
 };
+
