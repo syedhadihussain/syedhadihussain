@@ -65,14 +65,6 @@ const Footer = () => {
             
             {/* Contact Info */}
             <div className="space-y-2 text-sm text-muted-foreground">
-              <a href="mailto:contact.syedhadihussain@gmail.com" className="flex items-center gap-2 hover:text-foreground transition-colors group">
-                <Mail className="w-4 h-4 text-primary" />
-                <span>contact.syedhadihussain@gmail.com</span>
-              </a>
-              <a href="https://wa.me/+971523695036" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-foreground transition-colors group">
-                <Phone className="w-4 h-4 text-primary" />
-                <span>+971 52 369 5036</span>
-              </a>
               <div className="flex items-center gap-2">
                 <Globe className="w-4 h-4 text-primary" />
                 <span>{t("footer.servingWorldwide")}</span>
