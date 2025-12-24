@@ -133,14 +133,17 @@ const Footer = () => {
               ))}
             </div>
 
-            {/* CTA */}
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium transition-colors group text-sm"
-            >
-              <span>{t("common.getAudit")} — $50</span>
-              <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-            </Link>
+            {/* Contact Info */}
+            <div className="space-y-2 text-sm text-muted-foreground">
+              <a href="mailto:contact.syedhadihussain@gmail.com" className="flex items-center gap-2 hover:text-foreground transition-colors">
+                <Mail className="w-4 h-4 text-primary" />
+                <span>contact.syedhadihussain@gmail.com</span>
+              </a>
+              <a href="https://wa.me/+971523695036" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-foreground transition-colors">
+                <Phone className="w-4 h-4 text-primary" />
+                <span>+971 52 369 5036</span>
+              </a>
+            </div>
           </div>
         </div>
 
