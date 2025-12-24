@@ -25,6 +25,7 @@ const Navigation = () => {
   const navLinks = [
     { href: "/about", label: t("nav.about"), isAnchor: false },
     { href: "/services", label: t("nav.services"), isAnchor: false },
+    { href: "/pricing", label: t("nav.pricing"), isAnchor: false },
     { href: "/portfolio", label: t("nav.portfolio"), isAnchor: false },
     { href: "/case-studies", label: t("nav.caseStudies"), isAnchor: false },
     { href: "/faq", label: t("nav.faq"), isAnchor: false },

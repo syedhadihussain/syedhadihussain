@@ -66,7 +66,7 @@ const seoProjects = [
   {
     title: "Neighborhood Pizza - Restaurant Local SEO",
     industry: "Restaurant",
-    location: "New York, USA",
+    location: "Wilbraham, MA, USA",
     challenge: "Popular neighborhood restaurant was invisible in local searches despite excellent food and service. Missing out on thousands of potential customers.",
     solution: "GBP optimization with menu integration, local keyword targeting for high-volume restaurant searches, and structured data implementation.",
     results: [

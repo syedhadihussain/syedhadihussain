@@ -64,10 +64,13 @@ const ContactForm = () => {
     zipcode: "",
     business_country: "",
     service: "",
+    customService: "",
     competitor: "",
     gbp_link: "",
     message: "",
   });
+
+  const isOtherService = formData.service === "Other (Custom Service)";
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -80,13 +83,18 @@ const ContactForm = () => {
 
     try {
       const validatedData = contactSchema.parse(formData);
+      
+      // If "Other" is selected, use the custom service description
+      const finalService = isOtherService && formData.customService 
+        ? `Other: ${formData.customService}` 
+        : validatedData.service;
 
       const { error } = await supabase.from("contacts").insert({
         name: validatedData.name,
         email: validatedData.email,
         phone: validatedData.phone,
         company: validatedData.business_name,
-        service: validatedData.service,
+        service: finalService,
         message: validatedData.message,
         language: language,
         business_name: validatedData.business_name,
@@ -136,6 +144,7 @@ const ContactForm = () => {
         zipcode: "",
         business_country: "",
         service: "",
+        customService: "",
         competitor: "",
         gbp_link: "",
         message: "",
@@ -301,7 +310,7 @@ const ContactForm = () => {
         <Label htmlFor="service">{t("contact.service")} *</Label>
         <Select
           value={formData.service}
-          onValueChange={(value) => setFormData((prev) => ({ ...prev, service: value }))}
+          onValueChange={(value) => setFormData((prev) => ({ ...prev, service: value, customService: value !== "Other (Custom Service)" ? "" : prev.customService }))}
         >
           <SelectTrigger className="bg-background/50">
             <SelectValue placeholder={t("contact.selectService")} />
@@ -315,6 +324,25 @@ const ContactForm = () => {
           </SelectContent>
         </Select>
       </div>
+
+      {/* Custom Service Input - Only shown when "Other" is selected */}
+      {isOtherService && (
+        <div className="space-y-2 animate-fade-in">
+          <Label htmlFor="customService">{t("contact.customService")} *</Label>
+          <Input
+            id="customService"
+            name="customService"
+            value={formData.customService}
+            onChange={handleChange}
+            placeholder="Describe the custom service you need..."
+            required
+            className="bg-background/50"
+          />
+          <p className="text-xs text-muted-foreground">
+            Please describe the specific service you're looking for
+          </p>
+        </div>
+      )}
 
       {/* GBP/Map Link */}
       <div className="space-y-2">
