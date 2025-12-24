@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, MapPin, Calendar, MessageCircle, Eye, Sparkles } from "lucide-react";
+import { ArrowRight, MapPin, MessageCircle, Eye } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import profilePhoto from "@/assets/profile-photo.png";
@@ -39,21 +39,11 @@ const Hero = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: "0.4s" }}>
-              <Button asChild size="lg" className="glow group relative">
-                <a href="https://calendly.com/syedhadihussain" target="_blank" rel="noopener noreferrer">
-                  <Calendar className="w-4 h-4 mr-2" />
-                  {t("hero.bookAudit")}
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                  <span className="absolute -top-2 -right-2 px-2 py-0.5 bg-destructive text-destructive-foreground text-xs font-bold rounded-full animate-pulse flex items-center gap-1">
-                    <Sparkles className="w-3 h-3" />
-                    50% OFF
-                  </span>
-                </a>
-              </Button>
-              <Button asChild variant="outline" size="lg">
+              <Button asChild size="lg" className="glow group">
                 <Link to="/contact">
                   <MessageCircle className="w-4 h-4 mr-2" />
                   {t("hero.bookConsultation")}
+                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
               <Button asChild variant="secondary" size="lg">
