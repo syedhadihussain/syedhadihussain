@@ -12,6 +12,10 @@ const languages: { code: Language; name: string; flag: string }[] = [
   { code: "en", name: "English", flag: "🇺🇸" },
   { code: "ar", name: "العربية", flag: "🇦🇪" },
   { code: "es", name: "Español", flag: "🇪🇸" },
+  { code: "pt", name: "Português", flag: "🇧🇷" },
+  { code: "fr", name: "Français", flag: "🇫🇷" },
+  { code: "it", name: "Italiano", flag: "🇮🇹" },
+  { code: "de", name: "Deutsch", flag: "🇩🇪" },
 ];
 
 const LanguageSelector = () => {

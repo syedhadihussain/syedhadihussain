@@ -1,23 +1,20 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Briefcase, Globe, MessageSquare, Bot, BarChart3 } from "lucide-react";
+import { ArrowRight, Briefcase, Globe, MessageSquare, Bot, BarChart3, Eye } from "lucide-react";
+import { Link } from "react-router-dom";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
-const capabilities = [{
-  icon: Globe,
-  label: "SEO & Website Design"
-}, {
-  icon: BarChart3,
-  label: "Google Local Service Ads"
-}, {
-  icon: MessageSquare,
-  label: "Social Media Marketing"
-}, {
-  icon: Bot,
-  label: "AI Assistants & Chatbots"
-}, {
-  icon: Briefcase,
-  label: "Complete Digital Marketing"
-}];
+import { useLanguage } from "@/contexts/LanguageContext";
+
+const capabilities = [
+  { icon: Globe, label: "SEO & Website Design" },
+  { icon: BarChart3, label: "Google Local Service Ads" },
+  { icon: MessageSquare, label: "Social Media Marketing" },
+  { icon: Bot, label: "AI Assistants & Chatbots" },
+  { icon: Briefcase, label: "Complete Digital Marketing" },
+];
+
 const FullStackCTA = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="section-padding bg-card/50">
       <div className="container-narrow">
@@ -32,13 +29,13 @@ const FullStackCTA = () => {
 
               <div className="text-center mb-10">
                 <span className="text-primary text-sm font-medium tracking-wider uppercase mb-4 block">
-                  Beyond SEO
+                  {t("cta.beyondSeo")}
                 </span>
                 <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-                  Grow Your Business Online – From SEO to Full Digital Solutions
+                  {t("cta.title")}
                 </h2>
                 <p className="text-muted-foreground text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed">
-                  As a Local SEO specialist, I help businesses get more visibility, leads, and sales online. Beyond that, you can also hire me as your full-stack project manager to manage everything, so your business grows smoothly without juggling multiple vendors.
+                  {t("cta.description")}
                 </p>
               </div>
 
@@ -56,20 +53,26 @@ const FullStackCTA = () => {
               </div>
 
               <p className="text-center text-muted-foreground text-lg mb-10">
-                My goal is simple: deliver more leads, more sales, and better online visibility with a clear, custom strategy.
+                {t("cta.goal")}
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild size="lg" className="glow group text-base px-8 py-6">
                   <a href="https://calendly.com/syedhadihussain" target="_blank" rel="noopener noreferrer">
-                    Book a Strategy Call
+                    {t("cta.bookStrategy")}
                     <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                   </a>
                 </Button>
                 <Button asChild variant="outline" size="lg" className="text-base px-8 py-6">
-                  <a href="#contact">
-                    Share Your Goals
-                  </a>
+                  <Link to="/contact">
+                    {t("cta.shareGoals")}
+                  </Link>
+                </Button>
+                <Button asChild variant="secondary" size="lg" className="text-base px-8 py-6">
+                  <Link to="/portfolio">
+                    <Eye className="w-5 h-5 mr-2" />
+                    {t("cta.viewProjects")}
+                  </Link>
                 </Button>
               </div>
             </div>
