@@ -108,10 +108,10 @@ const SocialMediaPage = () => {
   return (
     <>
       <SEOHead 
-        title="Social Media Management & Marketing Services – Grow Your Brand Online – Syed Hadi Hussain" 
-        description="Full-service social media management and marketing. Content creation, community management, paid ads, and analytics to grow your brand and generate leads." 
+        title="Social Media Marketing & Management Services That Grow Brands – Syed Hadi Hussain" 
+        description="Results-driven social media marketing and management services designed to build brand presence, increase engagement, and generate leads consistently." 
         canonical="https://syedhadihussain.com/social-media"
-        keywords="social media management, social media marketing, content creation, community management, social media strategy, paid social ads"
+        keywords="social media management, social media marketing, content creation, community management, social media strategy, paid social ads, brand growth"
         breadcrumbs={[
           { name: "Home", url: "https://syedhadihussain.com" },
           { name: "Social Media Marketing", url: "https://syedhadihussain.com/social-media" }

@@ -99,10 +99,10 @@ const ContentWritingPage = () => {
   return (
     <>
       <SEOHead 
-        title="SEO Content Writing Services – Blog Posts, Website Copy & Marketing Content – Syed Hadi Hussain" 
-        description="Professional content writing services focused on SEO, conversions, and AI-readiness. Get website copy, blog posts, and marketing content that ranks and converts." 
+        title="SEO Content Writing Services That Rank, Convert & Build Authority – Syed Hadi Hussain" 
+        description="Expert content writing services for blogs, website pages, copywriting, product descriptions, emails, and press releases optimized for SEO, intent, and conversions." 
         canonical="https://syedhadihussain.com/content-writing"
-        keywords="content writing, SEO content, blog writing, website copywriting, marketing content, content strategy, semantic SEO"
+        keywords="content writing, SEO content, blog writing, website copywriting, marketing content, content strategy, semantic SEO, product descriptions"
         breadcrumbs={[
           { name: "Home", url: "https://syedhadihussain.com" },
           { name: "Content Writing", url: "https://syedhadihussain.com/content-writing" }

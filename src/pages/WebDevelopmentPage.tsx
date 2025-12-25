@@ -101,10 +101,10 @@ const WebDevelopmentPage = () => {
   return (
     <>
       <SEOHead 
-        title="Professional Web Development Services – Custom Websites & E-commerce – Syed Hadi Hussain" 
-        description="Get a fast, SEO-optimized, conversion-focused website built with modern technologies. Custom web development, WordPress, e-commerce, and web applications." 
+        title="Web Development Services That Build Fast, Scalable & SEO-Ready Websites – Syed Hadi Hussain" 
+        description="Professional web development services including custom websites, WordPress, CMS, and eCommerce stores built for speed, scalability, SEO performance, and conversions." 
         canonical="https://syedhadihussain.com/web-development"
-        keywords="web development, custom website, WordPress development, e-commerce website, responsive design, SEO website, web application"
+        keywords="web development, custom website, WordPress development, e-commerce website, responsive design, SEO website, web application, CMS development"
         breadcrumbs={[
           { name: "Home", url: "https://syedhadihussain.com" },
           { name: "Web Development", url: "https://syedhadihussain.com/web-development" }
