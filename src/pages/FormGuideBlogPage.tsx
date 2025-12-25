@@ -102,9 +102,15 @@ const FormGuideBlogPage = () => {
   return (
     <>
       <SEOHead
-        title="How to Fill the Contact Form - Complete Guide | Syed Hadi"
+        title="How to Fill the Contact Form - Complete Guide | Syed Hadi Hussain"
         description="Step-by-step guide on how to fill out the contact form correctly. Learn what information to provide for the best SEO consultation experience."
-        canonical="https://syedhadi.com/blog/how-to-fill-contact-form"
+        canonical="https://syedhadihussain.com/blog/how-to-fill-contact-form"
+        keywords="contact form guide, SEO consultation form, how to fill form, business information for SEO"
+        breadcrumbs={[
+          { name: "Home", url: "https://syedhadihussain.com" },
+          { name: "Blog", url: "https://syedhadihussain.com/blog" },
+          { name: "Form Guide", url: "https://syedhadihussain.com/blog/how-to-fill-contact-form" }
+        ]}
       />
       <Navigation />
       

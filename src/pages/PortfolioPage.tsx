@@ -117,7 +117,12 @@ const PortfolioPage = () => {
       <SEOHead 
         title="SEO Portfolio | Proven Results & Case Studies - Syed Hadi Hussain"
         description="View my SEO portfolio showcasing proven results. Real case studies with measurable rankings, traffic growth, and business impact for local businesses."
-        canonical="/portfolio"
+        canonical="https://syedhadihussain.com/portfolio"
+        keywords="SEO portfolio, local SEO results, GBP optimization examples, SEO case studies"
+        breadcrumbs={[
+          { name: "Home", url: "https://syedhadihussain.com" },
+          { name: "Portfolio", url: "https://syedhadihussain.com/portfolio" }
+        ]}
       />
       <Navigation />
       
@@ -233,13 +238,13 @@ const PortfolioPage = () => {
                               <div className="p-3 bg-destructive/10 text-center">
                                 <span className="text-sm font-medium text-destructive">BEFORE - Ranking 20+ (Red = Not Ranking)</span>
                               </div>
-                              <img src={project.images[0]} alt="Before SEO - poor rankings" className="w-full h-auto" />
+                              <img src={project.images[0]} alt="Before SEO - poor rankings" loading="lazy" width={600} height={400} className="w-full h-auto" />
                             </div>
                             <div className="rounded-xl overflow-hidden border border-primary/30 bg-primary/5">
                               <div className="p-3 bg-primary/10 text-center">
                                 <span className="text-sm font-medium text-primary">AFTER - Ranking #1 (Green = Top Position)</span>
                               </div>
-                              <img src={project.images[1]} alt="After SEO - top rankings" className="w-full h-auto" />
+                              <img src={project.images[1]} alt="After SEO - top rankings" loading="lazy" width={600} height={400} className="w-full h-auto" />
                             </div>
                           </div>
                         </div>
@@ -249,7 +254,7 @@ const PortfolioPage = () => {
                           <div className={`grid gap-4 ${project.images.length === 1 ? 'grid-cols-1 max-w-2xl mx-auto' : project.images.length === 2 ? 'md:grid-cols-2' : 'md:grid-cols-2 lg:grid-cols-4'}`}>
                             {project.images.map((img, i) => (
                               <div key={i} className="rounded-xl overflow-hidden border border-border hover:border-primary/50 transition-colors">
-                                <img src={img} alt={`${project.title} results screenshot ${i + 1}`} className="w-full h-auto" />
+                                <img src={img} alt={`${project.title} results screenshot ${i + 1}`} loading="lazy" width={600} height={400} className="w-full h-auto" />
                               </div>
                             ))}
                           </div>
@@ -272,12 +277,12 @@ const PortfolioPage = () => {
                   Ready for Similar Results?
                 </h2>
                 <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-                  Get a professional SEO audit for just <span className="text-primary font-semibold">$50</span> (50% OFF — book within 24 hours!) and discover your growth potential.
+                  Get a professional SEO audit for just <span className="text-primary font-semibold">$100</span> and discover your growth potential.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button asChild size="lg" className="glow group">
                     <a href="https://calendly.com/syedhadihussain" target="_blank" rel="noopener noreferrer">
-                      Get SEO Audit — $50
+                      Get SEO Audit — $100
                       <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                     </a>
                   </Button>

@@ -135,8 +135,12 @@ const CaseStudiesPage = () => {
       <SEOHead
         title="Case Studies | Local SEO Success Stories - Syed Hadi Hussain"
         description="Explore real results from local businesses that achieved significant growth through strategic Local SEO. See ROI-driven case studies."
-        canonical="/case-studies"
+        canonical="https://syedhadihussain.com/case-studies"
         keywords="Local SEO case studies, SEO results, business growth, ROI, success stories"
+        breadcrumbs={[
+          { name: "Home", url: "https://syedhadihussain.com" },
+          { name: "Case Studies", url: "https://syedhadihussain.com/case-studies" }
+        ]}
       />
       <div className="min-h-screen bg-background">
         <Navigation />
@@ -248,12 +252,12 @@ const CaseStudiesPage = () => {
                     Want Results Like These?
                   </h2>
                   <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-                    Let's discuss how we can achieve similar or better results for your business. Get a professional SEO audit for just <span className="text-primary font-semibold">$50</span> (50% OFF if you book within 24 hours!)
+                    Let's discuss how we can achieve similar or better results for your business. Get a professional SEO audit for just <span className="text-primary font-semibold">$100</span>!
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <Button asChild size="lg" className="glow group">
                       <a href="https://calendly.com/syedhadihussain" target="_blank" rel="noopener noreferrer">
-                        Get SEO Audit — $50
+                        Get SEO Audit — $100
                         <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                       </a>
                     </Button>
