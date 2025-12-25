@@ -35,6 +35,7 @@ const Navigation = () => {
   ];
 
   const navLinks = [
+    { href: "/", label: t("nav.home"), isDropdown: false },
     { href: "/about", label: t("nav.about"), isDropdown: false },
     { href: "/services", label: t("nav.services"), isDropdown: true },
     { href: "/pricing", label: t("nav.pricing"), isDropdown: false },
