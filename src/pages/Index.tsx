@@ -13,18 +13,34 @@ import SEOHead from "@/components/SEOHead";
 const Index = () => {
   return (
     <>
-      <SEOHead />
+      <SEOHead 
+        breadcrumbs={[{ name: "Home", url: "/" }]}
+      />
       <div className="min-h-screen bg-background">
         <Navigation />
-        <main>
+        <main id="main-content" role="main">
           <Hero />
-          <About />
-          <Services />
-          <CaseStudies />
-          <Testimonials />
-          <FullStackCTA />
-          <FAQ />
-          <Contact />
+          <article id="about" aria-label="About section">
+            <About />
+          </article>
+          <section id="services" aria-label="Services offered">
+            <Services />
+          </section>
+          <section id="case-studies" aria-label="Client success stories">
+            <CaseStudies />
+          </section>
+          <section id="testimonials" aria-label="Client testimonials">
+            <Testimonials />
+          </section>
+          <aside aria-label="Call to action">
+            <FullStackCTA />
+          </aside>
+          <section id="faq" aria-label="Frequently asked questions">
+            <FAQ />
+          </section>
+          <section id="contact" aria-label="Contact information">
+            <Contact />
+          </section>
         </main>
         <Footer />
       </div>

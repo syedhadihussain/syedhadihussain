@@ -54,13 +54,15 @@ const AboutPage = () => {
   return (
     <>
       <SEOHead
-        title="About Syed Hadi Hussain | Local SEO Expert"
-        description="Learn about Syed Hadi Hussain, a certified Local SEO specialist with 7+ years of experience helping businesses dominate Google rankings."
+        title="About Syed Hadi Hussain | Local SEO Expert with 7+ Years Experience"
+        description="Learn about Syed Hadi Hussain, a certified Local SEO specialist with 7+ years of experience helping businesses dominate Google rankings worldwide. Google Analytics and SEMrush certified."
         canonical="/about"
+        keywords="Local SEO expert, SEO specialist about, Syed Hadi Hussain, Google Business Profile expert, certified SEO professional"
+        breadcrumbs={[{ name: "Home", url: "/" }, { name: "About", url: "/about" }]}
       />
       <div className="min-h-screen bg-background">
         <Navigation />
-        <main className="pt-24">
+        <main id="main-content" role="main" aria-label="About page content" className="pt-24">
           {/* Hero Section */}
           <section className="section-padding">
             <div className="container-narrow">
