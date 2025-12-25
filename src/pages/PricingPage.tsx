@@ -1,4 +1,4 @@
-import { Check, Sparkles, ArrowRight, Clock, Star, Shield, Zap, Timer } from "lucide-react";
+import { Check, Sparkles, ArrowRight, Timer, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -141,23 +141,6 @@ const PricingPage = () => {
     },
   ];
 
-  const guarantees = [
-    {
-      icon: Shield,
-      title: "Results Guaranteed",
-      description: "If you don't see improvement in 90 days, we'll work for free until you do.",
-    },
-    {
-      icon: Clock,
-      title: "Quick Turnaround",
-      description: "Audit reports delivered within 48-72 hours. No long waits.",
-    },
-    {
-      icon: Star,
-      title: "Proven Track Record",
-      description: "100+ businesses helped with an average 150% traffic increase.",
-    },
-  ];
 
   return (
     <>
@@ -305,29 +288,6 @@ const PricingPage = () => {
             ))}
           </div>
 
-          {/* Guarantees */}
-          <ScrollReveal delay={100}>
-            <div className="glass rounded-2xl p-8 lg:p-12 mb-12">
-              <h2 className="font-display text-2xl lg:text-3xl font-bold text-foreground text-center mb-8">
-                Our Guarantees
-              </h2>
-              <div className="grid md:grid-cols-3 gap-8">
-                {guarantees.map((item, index) => (
-                  <div key={index} className="text-center group">
-                    <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
-                      <item.icon className="w-7 h-7 text-primary" />
-                    </div>
-                    <h3 className="font-display text-lg font-bold text-foreground mb-2">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground">
-                      {item.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </ScrollReveal>
 
           {/* FAQ CTA */}
           <ScrollReveal delay={150}>
