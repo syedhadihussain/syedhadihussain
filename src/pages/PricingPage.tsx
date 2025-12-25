@@ -276,6 +276,16 @@ const PricingPage = () => {
                       </li>
                     ))}
                   </ul>
+
+                  {/* Multi-location/Multi-service note */}
+                  <div className="bg-primary/5 border border-primary/20 rounded-lg p-3 mb-4">
+                    <p className="text-xs text-muted-foreground flex items-start gap-1.5">
+                      <Sparkles className="w-3 h-3 text-primary shrink-0 mt-0.5" />
+                      <span>
+                        <strong className="text-foreground">Multi-location or need more services?</strong> Use code <span className="text-primary font-semibold">MULTI-DISCOUNT</span> for special pricing!
+                      </span>
+                    </p>
+                  </div>
                   
                   <Button asChild className={`w-full ${pkg.popular ? 'glow' : ''}`} variant={pkg.popular ? 'default' : 'outline'}>
                     <Link to="/contact">
