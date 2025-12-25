@@ -23,9 +23,9 @@ const PricingPage = () => {
   const packages = [
     {
       name: "SEO Audit",
-      badge: expired ? null : "25% OFF",
+      badge: expired ? null : "50% OFF",
       originalPrice: "$100",
-      price: expired ? "$100" : "$75",
+      price: expired ? "$100" : "$50",
       description: "Perfect for understanding your current SEO standing and getting actionable recommendations.",
       features: [
         "Complete GBP Analysis",
@@ -38,7 +38,7 @@ const PricingPage = () => {
       ],
       cta: "Get Audit Now",
       popular: true,
-      highlight: expired ? null : "Sign up within 3 days for 25% OFF!",
+      highlight: expired ? null : "Sign up within 3 days for 50% OFF!",
     },
     {
       name: "GBP Management",
@@ -162,8 +162,8 @@ const PricingPage = () => {
   return (
     <>
       <SEOHead
-        title="Pricing - Local SEO Packages & Services | 25% OFF Limited Offer"
-        description="Affordable local SEO pricing packages with 25% OFF for 3 days! Get your SEO audit starting at $75. Monthly SEO management from $299. View all service packages."
+        title="Pricing - Local SEO Packages & Services | 50% OFF Audit Limited Offer"
+        description="Affordable local SEO pricing packages with 50% OFF audit for 3 days! Get your SEO audit starting at $50. Monthly SEO management from $299. View all service packages."
         canonical="https://syedhadi.com/pricing"
       />
       <Navigation />
@@ -206,10 +206,10 @@ const PricingPage = () => {
                           </Badge>
                         </div>
                         <h2 className="font-display text-2xl lg:text-3xl font-bold text-foreground">
-                          25% OFF All Packages!
+                          50% OFF SEO Audit!
                         </h2>
                         <p className="text-muted-foreground mt-1">
-                          Sign up within 3 days and save big on any service package
+                          Book within 3 days and get your audit for just $50
                         </p>
                       </div>
                     </div>
@@ -220,7 +220,7 @@ const PricingPage = () => {
                   <div className="flex justify-center mt-6">
                     <Button asChild size="lg" className="glow group">
                       <Link to="/contact">
-                        Claim Your 25% Discount
+                        Claim Your 50% Discount
                         <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                       </Link>
                     </Button>
