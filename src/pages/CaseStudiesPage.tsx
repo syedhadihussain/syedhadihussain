@@ -252,12 +252,12 @@ const CaseStudiesPage = () => {
                     Want Results Like These?
                   </h2>
                   <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-                    Let's discuss how we can achieve similar or better results for your business. Get a professional SEO audit for just <span className="text-primary font-semibold">$100</span>!
+                    Let's discuss how we can achieve similar or better results for your business. Get a professional SEO audit for just <span className="text-primary font-semibold">$50</span> (50% OFF — book within 24 hours!)
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <Button asChild size="lg" className="glow group">
                       <a href="https://calendly.com/syedhadihussain" target="_blank" rel="noopener noreferrer">
-                        Get SEO Audit — $100
+                        Get SEO Audit — $50
                         <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                       </a>
                     </Button>
