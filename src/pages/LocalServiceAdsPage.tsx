@@ -27,7 +27,16 @@ const caseStudies = [
 const LocalServiceAdsPage = () => {
   return (
     <>
-      <SEOHead title="Local Service Ads | Google LSA Management" description="Expert Google Local Service Ads management. Get the Google Guaranteed badge and pay only for qualified leads." canonical="/local-service-ads" />
+      <SEOHead 
+        title="Local Service Ads | Google LSA Management - Syed Hadi Hussain" 
+        description="Expert Google Local Service Ads management. Get the Google Guaranteed badge and pay only for qualified leads." 
+        canonical="https://syedhadihussain.com/local-service-ads"
+        keywords="Google Local Service Ads, LSA management, Google Guaranteed badge, pay per lead advertising"
+        breadcrumbs={[
+          { name: "Home", url: "https://syedhadihussain.com" },
+          { name: "Local Service Ads", url: "https://syedhadihussain.com/local-service-ads" }
+        ]}
+      />
       <div className="min-h-screen bg-background">
         <Navigation />
         <main className="pt-24">

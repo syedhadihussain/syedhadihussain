@@ -12,8 +12,12 @@ const ContactPage = () => {
       <SEOHead
         title="Contact Syed Hadi Hussain | Free Local SEO Consultation"
         description="Get in touch for a free Local SEO audit and consultation. Available via email, WhatsApp, or schedule a call to discuss your business goals."
-        canonical="/contact"
+        canonical="https://syedhadihussain.com/contact"
         keywords="Contact SEO specialist, free SEO consultation, Local SEO audit, book SEO call"
+        breadcrumbs={[
+          { name: "Home", url: "https://syedhadihussain.com" },
+          { name: "Contact", url: "https://syedhadihussain.com/contact" }
+        ]}
       />
       <div className="min-h-screen bg-background">
         <Navigation />

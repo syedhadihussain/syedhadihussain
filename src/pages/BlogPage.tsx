@@ -69,8 +69,12 @@ const BlogPage = () => {
       <SEOHead
         title="Local SEO Blog | Tips & Strategies - Syed Hadi Hussain"
         description="Expert Local SEO tips, strategies, and industry insights. Learn how to improve your local search rankings and grow your business."
-        canonical="/blog"
+        canonical="https://syedhadihussain.com/blog"
         keywords="Local SEO blog, SEO tips, Google Business Profile tips, local search strategies"
+        breadcrumbs={[
+          { name: "Home", url: "https://syedhadihussain.com" },
+          { name: "Blog", url: "https://syedhadihussain.com/blog" }
+        ]}
       />
       <div className="min-h-screen bg-background">
         <Navigation />
@@ -103,6 +107,9 @@ const BlogPage = () => {
                         <img
                           src={post.image}
                           alt={post.title}
+                          loading="lazy"
+                          width={800}
+                          height={450}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         />
                         <div className="absolute top-4 left-4">

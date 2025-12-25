@@ -26,7 +26,16 @@ const caseStudies = [
 const ProjectManagementPage = () => {
   return (
     <>
-      <SEOHead title="Project Management | Complete Online Business Handling" description="End-to-end project management for your online business. From SEO to web development, ads to AI chatbots - we handle everything." canonical="/project-management" />
+      <SEOHead 
+        title="Project Management | Complete Online Business Handling - Syed Hadi Hussain" 
+        description="End-to-end project management for your online business. From SEO to web development, ads to AI chatbots - we handle everything." 
+        canonical="https://syedhadihussain.com/project-management"
+        keywords="digital project management, online business management, SEO project handling, website development management"
+        breadcrumbs={[
+          { name: "Home", url: "https://syedhadihussain.com" },
+          { name: "Project Management", url: "https://syedhadihussain.com/project-management" }
+        ]}
+      />
       <div className="min-h-screen bg-background">
         <Navigation />
         <main className="pt-24">

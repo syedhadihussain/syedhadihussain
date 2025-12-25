@@ -164,7 +164,12 @@ const PricingPage = () => {
       <SEOHead
         title="Pricing - Local SEO Packages & Services | 50% OFF Audit Limited Offer"
         description="Affordable local SEO pricing packages with 50% OFF audit for 3 days! Get your SEO audit starting at $50. Monthly SEO management from $299. View all service packages."
-        canonical="https://syedhadi.com/pricing"
+        canonical="https://syedhadihussain.com/pricing"
+        keywords="Local SEO pricing, SEO packages, GBP management cost, SEO audit price, affordable SEO services"
+        breadcrumbs={[
+          { name: "Home", url: "https://syedhadihussain.com" },
+          { name: "Pricing", url: "https://syedhadihussain.com/pricing" }
+        ]}
       />
       <Navigation />
       
