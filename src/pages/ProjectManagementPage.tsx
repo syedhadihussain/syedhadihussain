@@ -27,10 +27,10 @@ const ProjectManagementPage = () => {
   return (
     <>
       <SEOHead 
-        title="Project Management | Complete Online Business Handling - Syed Hadi Hussain" 
-        description="End-to-end project management for your online business. From SEO to web development, ads to AI chatbots - we handle everything." 
+        title="Full-Stack Project Management From Strategy to Scalable Growth – Syed Hadi Hussain" 
+        description="End-to-end project management covering SEO, development, content, tracking, and optimization to deliver structured execution, faster results, and long-term growth." 
         canonical="https://syedhadihussain.com/project-management"
-        keywords="digital project management, online business management, SEO project handling, website development management"
+        keywords="full-stack project management, SEO strategy, scalable growth, digital project execution, content optimization"
         breadcrumbs={[
           { name: "Home", url: "https://syedhadihussain.com" },
           { name: "Project Management", url: "https://syedhadihussain.com/project-management" }

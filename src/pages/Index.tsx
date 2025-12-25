@@ -14,6 +14,10 @@ const Index = () => {
   return (
     <>
       <SEOHead 
+        title="Local SEO That Drives Calls, Leads & Google Maps Rankings – Syed Hadi Hussain"
+        description="Grow your business with powerful Local SEO strategies that boost Google Maps rankings, increase calls, and turn searches into paying customers using proven, AI-ready optimization."
+        canonical="/"
+        keywords="Local SEO, Google Maps rankings, Google Business Profile, local search optimization, lead generation"
         breadcrumbs={[{ name: "Home", url: "/" }]}
       />
       <div className="min-h-screen bg-background">

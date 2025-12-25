@@ -73,10 +73,10 @@ const FAQPage = () => {
   return (
     <>
       <SEOHead
-        title="Local SEO FAQ | Common Questions Answered - Syed Hadi Hussain"
-        description="Get answers to frequently asked questions about Local SEO, Google Business Profile optimization, pricing, timelines, and how to improve your local search rankings."
+        title="Local SEO Questions Answered Clearly & Honestly – Syed Hadi Hussain"
+        description="Find clear answers to common Local SEO questions about Google Maps, Business Profiles, rankings, timelines, and what actually drives results."
         canonical="/faq"
-        keywords="Local SEO FAQ, SEO questions answered, Google Business Profile help, local search optimization guide, SEO pricing"
+        keywords="Local SEO FAQ, Google Maps questions, Business Profile help, SEO rankings, SEO timelines"
         breadcrumbs={[{ name: "Home", url: "/" }, { name: "FAQ", url: "/faq" }]}
       />
       <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>

@@ -115,10 +115,10 @@ const PortfolioPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="SEO Portfolio | Proven Results & Case Studies - Syed Hadi Hussain"
-        description="View my SEO portfolio showcasing proven results. Real case studies with measurable rankings, traffic growth, and business impact for local businesses."
+        title="Proven Local SEO Portfolio With Real Rankings & Growth – Syed Hadi Hussain"
+        description="View a curated portfolio of Local SEO projects showcasing Google Maps rankings, traffic growth, and lead generation across multiple industries and locations."
         canonical="https://syedhadihussain.com/portfolio"
-        keywords="SEO portfolio, local SEO results, GBP optimization examples, SEO case studies"
+        keywords="SEO portfolio, local SEO results, Google Maps rankings, traffic growth, lead generation"
         breadcrumbs={[
           { name: "Home", url: "https://syedhadihussain.com" },
           { name: "Portfolio", url: "https://syedhadihussain.com/portfolio" }

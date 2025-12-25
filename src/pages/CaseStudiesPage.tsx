@@ -133,10 +133,10 @@ const CaseStudiesPage = () => {
   return (
     <>
       <SEOHead
-        title="Case Studies | Local SEO Success Stories - Syed Hadi Hussain"
-        description="Explore real results from local businesses that achieved significant growth through strategic Local SEO. See ROI-driven case studies."
+        title="Local SEO Case Studies Showing Google Maps Ranking Wins – Syed Hadi Hussain"
+        description="In-depth Local SEO case studies explaining how businesses increased calls, leads, and Google Maps visibility using structured, scalable SEO strategies."
         canonical="https://syedhadihussain.com/case-studies"
-        keywords="Local SEO case studies, SEO results, business growth, ROI, success stories"
+        keywords="Local SEO case studies, Google Maps ranking, SEO success stories, lead generation, business growth"
         breadcrumbs={[
           { name: "Home", url: "https://syedhadihussain.com" },
           { name: "Case Studies", url: "https://syedhadihussain.com/case-studies" }
