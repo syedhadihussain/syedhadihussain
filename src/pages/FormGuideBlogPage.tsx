@@ -1,4 +1,4 @@
-import { ArrowLeft, ExternalLink, MapPin, Building, FileText, Search, CheckCircle } from "lucide-react";
+import { ArrowLeft, ExternalLink, MapPin, Building, FileText, Search, CheckCircle, Tag, Plus, Percent, Building2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/portfolio/Navigation";
@@ -64,6 +64,7 @@ const FormGuideBlogPage = () => {
         "Citations - Business directory listings",
         "Link Building - Quality backlink acquisition",
         "Website SEO - On-page and technical optimization",
+        "Multiple Services Bundle - Combine services for special discounts",
       ],
     },
     {
@@ -84,6 +85,29 @@ const FormGuideBlogPage = () => {
       icon: Search,
       description: "If you know of a competitor who ranks well in your area, provide their name or website. This helps us understand your market.",
       tip: "You can add multiple competitors separated by commas.",
+    },
+    {
+      title: "Multi-Location Business (NEW)",
+      icon: Building2,
+      description: "If you have multiple business locations, toggle this option ON to add details for each location. You can specify how many locations you have and provide individual details for each.",
+      multiLocationFeatures: [
+        "Select the number of business locations (2-10+)",
+        "Add business name for each location",
+        "Provide Google Business Profile link for each location",
+        "Enter specific address details for each location",
+      ],
+      tip: "Multi-location businesses are eligible for special bundle discounts! Use promo code MULTI-DISCOUNT for extra savings.",
+    },
+    {
+      title: "Promo Code (NEW)",
+      icon: Tag,
+      description: "Have a promo code? Enter it to unlock special discounts! Promo codes are available for multi-location businesses, bundled services, and special promotions.",
+      promoCodes: [
+        "MULTI-DISCOUNT - Special discount for multi-location businesses",
+        "Bundle discounts available for multiple services",
+        "Seasonal promotions and referral codes",
+      ],
+      tip: "Visit our Pricing page to learn about current promotions and how to get promo codes for maximum savings.",
     },
     {
       title: "Your Message",
@@ -233,6 +257,34 @@ const FormGuideBlogPage = () => {
                           </ul>
                         </div>
                       )}
+
+                      {step.multiLocationFeatures && (
+                        <div className="mt-4">
+                          <h4 className="font-semibold text-foreground mb-2">Multi-Location Features:</h4>
+                          <ul className="space-y-1">
+                            {step.multiLocationFeatures.map((item, i) => (
+                              <li key={i} className="text-sm text-muted-foreground flex items-start gap-2">
+                                <Plus className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+
+                      {step.promoCodes && (
+                        <div className="mt-4">
+                          <h4 className="font-semibold text-foreground mb-2">Available Promo Types:</h4>
+                          <ul className="space-y-1">
+                            {step.promoCodes.map((item, i) => (
+                              <li key={i} className="text-sm text-muted-foreground flex items-start gap-2">
+                                <Percent className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -240,20 +292,59 @@ const FormGuideBlogPage = () => {
             ))}
           </div>
 
-          {/* CTA */}
+          {/* Multi-Location & Promo Highlight */}
           <ScrollReveal delay={200}>
+            <div className="mt-12 glass rounded-2xl p-8 border border-primary/20 bg-gradient-to-br from-primary/5 to-transparent">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <Percent className="w-5 h-5 text-primary" />
+                </div>
+                <h2 className="font-display text-2xl font-bold text-foreground">
+                  Special Discounts for Multi-Location Businesses
+                </h2>
+              </div>
+              <p className="text-muted-foreground mb-6">
+                Running multiple business locations? Our updated contact form now allows you to add all your locations in one submission. 
+                Use promo code <span className="text-primary font-semibold">MULTI-DISCOUNT</span> for exclusive savings on bundled services!
+              </p>
+              <div className="grid md:grid-cols-2 gap-4">
+                {[
+                  "Add unlimited business locations",
+                  "Individual GBP links for each location",
+                  "Bundled pricing for multiple services",
+                  "Exclusive multi-location discounts",
+                ].map((item, index) => (
+                  <div key={index} className="flex items-center gap-2 text-sm">
+                    <CheckCircle className="w-4 h-4 text-primary shrink-0" />
+                    <span className="text-foreground">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* CTA */}
+          <ScrollReveal delay={250}>
             <div className="mt-12 text-center">
               <h2 className="font-display text-2xl font-bold text-foreground mb-4">
                 Ready to Get Started?
               </h2>
               <p className="text-muted-foreground mb-6">
                 Now that you know what information to provide, fill out the contact form to get your SEO consultation.
+                Don't forget to use promo code <span className="text-primary font-semibold">MULTI-DISCOUNT</span> for special savings!
               </p>
-              <Button asChild size="lg" className="glow">
-                <Link to="/contact">
-                  Go to Contact Form
-                </Link>
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button asChild size="lg" className="glow">
+                  <Link to="/contact">
+                    Go to Contact Form
+                  </Link>
+                </Button>
+                <Button asChild size="lg" variant="outline">
+                  <Link to="/pricing">
+                    View Pricing & Promos
+                  </Link>
+                </Button>
+              </div>
             </div>
           </ScrollReveal>
         </div>
