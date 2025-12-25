@@ -1187,4 +1187,20 @@
     <priority>0.3</priority>
   </url>
 
+  <!-- Terms of Service Page - All Languages -->
+  <url>
+    <loc>https://syedhadihussain.com/en/terms</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/terms"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/terms"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/terms"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/terms"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/terms"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/terms"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/terms"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/terms"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
 </urlset>
