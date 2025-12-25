@@ -3,13 +3,17 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   
-  <!-- Homepage -->
+  <!-- Homepage - All Languages -->
   <url>
-    <loc>https://syedhadihussain.com/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/?lang=es"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/"/>
+    <loc>https://syedhadihussain.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/"/>
     <lastmod>2025-12-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -18,112 +22,1086 @@
       <image:title>Syed Hadi Hussain - Local SEO Specialist</image:title>
     </image:image>
   </url>
-
-  <!-- About Page -->
   <url>
-    <loc>https://syedhadihussain.com/about</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/about"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/about?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/about?lang=es"/>
+    <loc>https://syedhadihussain.com/ar/</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/es/</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/pt/</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/it/</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/fr/</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/de/</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- About Page - All Languages -->
+  <url>
+    <loc>https://syedhadihussain.com/en/about</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/about"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/about"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/about"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/about"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/about"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/about"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/about"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/ar/about</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/about"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/about"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/about"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/about"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/about"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/about"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/about"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/es/about</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/about"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/about"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/about"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/about"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/about"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/about"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/about"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/pt/about</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/about"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/about"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/about"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/about"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/about"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/about"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/about"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/it/about</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/about"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/about"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/about"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/about"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/about"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/about"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/about"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/fr/about</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/about"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/about"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/about"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/about"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/about"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/about"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/about"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/de/about</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/about"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/about"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/about"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/about"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/about"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/about"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/about"/>
     <lastmod>2025-12-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Services Page -->
+  <!-- Services Page - All Languages -->
   <url>
-    <loc>https://syedhadihussain.com/services</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/services"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/services?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/services?lang=es"/>
+    <loc>https://syedhadihussain.com/en/services</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/services"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/services"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/services"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/services"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/services"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/services"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/services"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/services"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/ar/services</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/services"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/services"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/services"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/services"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/services"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/services"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/services"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/services"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/es/services</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/services"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/services"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/services"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/services"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/services"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/services"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/services"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/services"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/pt/services</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/services"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/services"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/services"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/services"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/services"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/services"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/services"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/services"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/it/services</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/services"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/services"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/services"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/services"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/services"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/services"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/services"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/services"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/fr/services</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/services"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/services"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/services"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/services"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/services"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/services"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/services"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/services"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/de/services</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/services"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/services"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/services"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/services"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/services"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/services"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/services"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/services"/>
     <lastmod>2025-12-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Case Studies Page -->
+  <!-- Case Studies Page - All Languages -->
   <url>
-    <loc>https://syedhadihussain.com/case-studies</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/case-studies"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/case-studies?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/case-studies?lang=es"/>
+    <loc>https://syedhadihussain.com/en/case-studies</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/case-studies"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/ar/case-studies</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/case-studies"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/es/case-studies</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/case-studies"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/pt/case-studies</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/case-studies"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/it/case-studies</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/case-studies"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/fr/case-studies</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/case-studies"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/de/case-studies</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/case-studies"/>
     <lastmod>2025-12-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Pricing Page -->
+  <!-- Pricing Page - All Languages -->
   <url>
-    <loc>https://syedhadihussain.com/pricing</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/pricing"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/pricing?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/pricing?lang=es"/>
+    <loc>https://syedhadihussain.com/en/pricing</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/pricing"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/pricing"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/pricing"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/pricing"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/pricing"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/pricing"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/pricing"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/pricing"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/ar/pricing</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/pricing"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/pricing"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/pricing"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/pricing"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/pricing"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/pricing"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/pricing"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/pricing"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/es/pricing</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/pricing"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/pricing"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/pricing"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/pricing"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/pricing"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/pricing"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/pricing"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/pricing"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/pt/pricing</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/pricing"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/pricing"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/pricing"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/pricing"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/pricing"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/pricing"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/pricing"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/pricing"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/it/pricing</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/pricing"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/pricing"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/pricing"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/pricing"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/pricing"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/pricing"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/pricing"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/pricing"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/fr/pricing</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/pricing"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/pricing"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/pricing"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/pricing"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/pricing"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/pricing"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/pricing"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/pricing"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/de/pricing</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/pricing"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/pricing"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/pricing"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/pricing"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/pricing"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/pricing"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/pricing"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/pricing"/>
     <lastmod>2025-12-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- FAQ Page -->
+  <!-- FAQ Page - All Languages -->
   <url>
-    <loc>https://syedhadihussain.com/faq</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/faq"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/faq?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/faq?lang=es"/>
+    <loc>https://syedhadihussain.com/en/faq</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/faq"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/faq"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/faq"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/faq"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/faq"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/faq"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/faq"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/faq"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/ar/faq</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/faq"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/faq"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/faq"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/faq"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/faq"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/faq"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/faq"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/faq"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/es/faq</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/faq"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/faq"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/faq"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/faq"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/faq"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/faq"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/faq"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/faq"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/pt/faq</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/faq"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/faq"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/faq"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/faq"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/faq"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/faq"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/faq"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/faq"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/it/faq</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/faq"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/faq"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/faq"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/faq"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/faq"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/faq"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/faq"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/faq"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/fr/faq</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/faq"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/faq"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/faq"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/faq"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/faq"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/faq"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/faq"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/faq"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/de/faq</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/faq"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/faq"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/faq"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/faq"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/faq"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/faq"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/faq"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/faq"/>
     <lastmod>2025-12-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- Contact Page -->
+  <!-- Contact Page - All Languages -->
   <url>
-    <loc>https://syedhadihussain.com/contact</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/contact"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/contact?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/contact?lang=es"/>
+    <loc>https://syedhadihussain.com/en/contact</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/contact"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/contact"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/contact"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/contact"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/contact"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/contact"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/ar/contact</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/contact"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/contact"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/contact"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/contact"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/contact"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/contact"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/es/contact</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/contact"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/contact"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/contact"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/contact"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/contact"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/contact"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/pt/contact</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/contact"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/contact"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/contact"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/contact"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/contact"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/contact"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/it/contact</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/contact"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/contact"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/contact"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/contact"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/contact"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/contact"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/fr/contact</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/contact"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/contact"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/contact"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/contact"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/contact"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/contact"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/de/contact</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/contact"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/contact"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/contact"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/contact"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/contact"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/contact"/>
     <lastmod>2025-12-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Blog Page -->
+  <!-- Blog Page - All Languages -->
   <url>
-    <loc>https://syedhadihussain.com/blog</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/blog"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/blog?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/blog?lang=es"/>
+    <loc>https://syedhadihussain.com/en/blog</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/blog"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/blog"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/blog"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/blog"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/blog"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/blog"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/ar/blog</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/blog"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/blog"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/blog"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/blog"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/blog"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/blog"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/es/blog</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/blog"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/blog"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/blog"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/blog"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/blog"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/blog"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/pt/blog</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/blog"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/blog"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/blog"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/blog"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/blog"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/blog"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/it/blog</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/blog"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/blog"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/blog"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/blog"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/blog"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/blog"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/fr/blog</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/blog"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/blog"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/blog"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/blog"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/blog"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/blog"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/de/blog</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/blog"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/blog"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/blog"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/blog"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/blog"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/blog"/>
     <lastmod>2025-12-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- Portfolio Page -->
+  <!-- Portfolio Page - All Languages -->
   <url>
-    <loc>https://syedhadihussain.com/portfolio</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/portfolio"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/portfolio?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/portfolio?lang=es"/>
+    <loc>https://syedhadihussain.com/en/portfolio</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/portfolio"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/ar/portfolio</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/portfolio"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/es/portfolio</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/portfolio"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/pt/portfolio</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/portfolio"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/it/portfolio</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/portfolio"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/fr/portfolio</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/portfolio"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/de/portfolio</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/portfolio"/>
     <lastmod>2025-12-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Project Management Page -->
+  <!-- Project Management Page - All Languages -->
   <url>
-    <loc>https://syedhadihussain.com/project-management</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/project-management"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/project-management?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/project-management?lang=es"/>
+    <loc>https://syedhadihussain.com/en/project-management</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/project-management"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/project-management"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/project-management"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/project-management"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/project-management"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/project-management"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/project-management"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/project-management"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/ar/project-management</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/project-management"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/project-management"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/project-management"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/project-management"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/project-management"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/project-management"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/project-management"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/project-management"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/es/project-management</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/project-management"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/project-management"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/project-management"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/project-management"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/project-management"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/project-management"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/project-management"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/project-management"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/pt/project-management</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/project-management"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/project-management"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/project-management"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/project-management"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/project-management"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/project-management"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/project-management"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/project-management"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/it/project-management</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/project-management"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/project-management"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/project-management"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/project-management"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/project-management"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/project-management"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/project-management"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/project-management"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/fr/project-management</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/project-management"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/project-management"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/project-management"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/project-management"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/project-management"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/project-management"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/project-management"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/project-management"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/de/project-management</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/project-management"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/project-management"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/project-management"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/project-management"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/project-management"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/project-management"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/project-management"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/project-management"/>
     <lastmod>2025-12-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- Local Service Ads Page -->
+  <!-- Local Service Ads Page - All Languages -->
   <url>
-    <loc>https://syedhadihussain.com/local-service-ads</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/local-service-ads"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/local-service-ads?lang=ar"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/local-service-ads?lang=es"/>
+    <loc>https://syedhadihussain.com/en/local-service-ads</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/local-service-ads"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/ar/local-service-ads</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/local-service-ads"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/es/local-service-ads</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/local-service-ads"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/pt/local-service-ads</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/local-service-ads"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/it/local-service-ads</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/local-service-ads"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/fr/local-service-ads</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/local-service-ads"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://syedhadihussain.com/de/local-service-ads</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/local-service-ads"/>
     <lastmod>2025-12-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

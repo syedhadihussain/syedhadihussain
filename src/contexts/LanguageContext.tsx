@@ -1,7 +1,8 @@
 import { createContext, useContext, useEffect, useMemo, useRef, useState, ReactNode } from "react";
 import { supabase } from "@/integrations/supabase/client";
+import { isSupportedLanguage, SupportedLanguage, SUPPORTED_LANGUAGES } from "@/lib/i18n-config";
 
-export type Language = "en" | "ar" | "es" | "pt" | "fr" | "it" | "de";
+export type Language = SupportedLanguage;
 
 interface Translations {
   [key: string]: {
@@ -279,20 +280,31 @@ const LanguageContext = createContext<LanguageContextType>({
 
 const DYNAMIC_STORAGE_PREFIX = "dynamicTranslations.v1.";
 
+// Extract language from URL path
+const getLanguageFromUrl = (): Language | null => {
+  if (typeof window === "undefined") return null;
+  const pathParts = window.location.pathname.split("/").filter(Boolean);
+  const firstPart = pathParts[0];
+  if (firstPart && isSupportedLanguage(firstPart)) {
+    return firstPart;
+  }
+  return null;
+};
+
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [language, setLanguageState] = useState<Language>(() => {
     if (typeof window !== "undefined") {
-      const stored = localStorage.getItem("language") as Language;
-      if (stored && ["en", "ar", "es", "pt", "fr", "it", "de"].includes(stored)) return stored;
+      // Priority 1: URL path language
+      const urlLang = getLanguageFromUrl();
+      if (urlLang) return urlLang;
 
-      // Detect browser language
+      // Priority 2: Stored preference
+      const stored = localStorage.getItem("language") as Language;
+      if (stored && SUPPORTED_LANGUAGES.includes(stored)) return stored;
+
+      // Priority 3: Browser language
       const browserLang = navigator.language.slice(0, 2);
-      if (browserLang === "ar") return "ar";
-      if (browserLang === "es") return "es";
-      if (browserLang === "pt") return "pt";
-      if (browserLang === "fr") return "fr";
-      if (browserLang === "it") return "it";
-      if (browserLang === "de") return "de";
+      if (isSupportedLanguage(browserLang)) return browserLang;
     }
     return "en";
   });
@@ -300,6 +312,24 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [dynamicTranslations, setDynamicTranslations] = useState<Record<string, string>>({});
   const pendingRef = useRef<Set<string>>(new Set());
   const [pendingTick, setPendingTick] = useState(0);
+
+  // Sync language from URL changes
+  useEffect(() => {
+    const handleUrlChange = () => {
+      const urlLang = getLanguageFromUrl();
+      if (urlLang && urlLang !== language) {
+        setLanguageState(urlLang);
+      }
+    };
+
+    // Listen for popstate (back/forward navigation)
+    window.addEventListener("popstate", handleUrlChange);
+    
+    // Initial check
+    handleUrlChange();
+
+    return () => window.removeEventListener("popstate", handleUrlChange);
+  }, [language]);
 
   useEffect(() => {
     localStorage.setItem("language", language);
@@ -335,6 +365,23 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
+    localStorage.setItem("language", lang);
+    
+    // Update URL to reflect new language
+    if (typeof window !== "undefined") {
+      const currentPath = window.location.pathname;
+      const pathParts = currentPath.split("/").filter(Boolean);
+      
+      // Check if first part is a language code
+      if (pathParts.length > 0 && isSupportedLanguage(pathParts[0])) {
+        pathParts[0] = lang;
+      } else {
+        pathParts.unshift(lang);
+      }
+      
+      const newPath = "/" + pathParts.join("/");
+      window.history.pushState({}, "", newPath + window.location.search + window.location.hash);
+    }
   };
 
   const t = useMemo(() => {
