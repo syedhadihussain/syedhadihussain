@@ -71,7 +71,7 @@ const Contact = () => {
                   <MapPin className="w-6 h-6 text-primary" />
                 </div>
                 <h3 className="font-semibold text-foreground mb-1">{t("contact.worldwide")}</h3>
-                <p className="text-sm text-muted-foreground">UAE, UK, USA, AU</p>
+                <p className="text-sm text-muted-foreground">Worldwide</p>
               </div>
             </div>
           </ScrollReveal>

@@ -89,23 +89,23 @@ const AboutPage = () => {
                     I am a results-driven Local SEO specialist with hands-on experience helping service businesses dominate Google Search and Google Business Profile rankings. I focus on practical SEO strategies that generate real calls, leads, and revenue—not just traffic.
                   </p>
                   <p className="text-muted-foreground leading-relaxed mb-8">
-                    With 7+ years of professional SEO experience and 100+ clients served across UAE, UK, USA, and Australia, I've developed proven methodologies that consistently deliver measurable results for local businesses.
+                    With 7+ years of professional SEO experience and 100+ clients served worldwide, I've developed proven methodologies that consistently deliver measurable results for local businesses.
                   </p>
 
                   {/* CTA Buttons */}
                   <div className="flex flex-wrap gap-4">
-                    <Button asChild size="lg" className="glow group">
+                    <Button asChild size="lg" className="glow group min-w-[160px] justify-center">
                       <Link to="/case-studies">
                         View Case Studies
                         <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                       </Link>
                     </Button>
-                    <Button asChild variant="outline" size="lg">
+                    <Button asChild variant="outline" size="lg" className="min-w-[160px] justify-center">
                       <Link to="/services">
                         Explore Services
                       </Link>
                     </Button>
-                    <Button asChild variant="outline" size="lg">
+                    <Button asChild variant="outline" size="lg" className="min-w-[160px] justify-center">
                       <Link to="/contact">
                         Get In Touch
                       </Link>

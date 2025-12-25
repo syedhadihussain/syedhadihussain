@@ -38,7 +38,7 @@ const FormGuideBlogPage = () => {
     {
       title: "Business Country",
       icon: MapPin,
-      description: "Select or type your country. We serve clients worldwide across the USA, UK, Australia, Canada, UAE, and more.",
+      description: "Select or type your country. We serve clients worldwide.",
       tip: "This helps us understand your target market and local search landscape.",
     },
     {

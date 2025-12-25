@@ -51,7 +51,7 @@ const faqs = [
   },
   {
     question: "What areas do you serve?",
-    answer: "I work with businesses globally, with a strong focus on UAE, UK, USA, and Australia. Local SEO strategies can be implemented remotely, and I use local expertise and tools to optimize for any market. Time zone differences are easily managed through scheduled calls and async communication."
+    answer: "I work with businesses worldwide. Local SEO strategies can be implemented remotely, and I use local expertise and tools to optimize for any market. Time zone differences are easily managed through scheduled calls and async communication."
   }
 ];
 

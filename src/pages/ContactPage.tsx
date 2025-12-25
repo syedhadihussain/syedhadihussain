@@ -82,7 +82,7 @@ const ContactPage = () => {
                           </div>
                           <div>
                             <p className="font-medium text-foreground">Service Areas</p>
-                            <p className="text-muted-foreground text-sm">UAE, UK, USA, Australia</p>
+                            <p className="text-muted-foreground text-sm">Worldwide</p>
                           </div>
                         </div>
 
