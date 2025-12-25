@@ -1,5 +1,12 @@
 import { Helmet } from "react-helmet-async";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useLocation } from "react-router-dom";
+import { 
+  SUPPORTED_LANGUAGES, 
+  BASE_URL, 
+  isRTL,
+  SupportedLanguage 
+} from "@/lib/i18n-config";
 
 interface SEOHeadProps {
   title?: string;
@@ -14,7 +21,17 @@ interface SEOHeadProps {
   breadcrumbs?: Array<{ name: string; url: string }>;
 }
 
-const baseUrl = "https://syedhadihussain.com";
+const baseUrl = BASE_URL;
+
+// Extract slug from current path (removes language prefix)
+const getSlugFromPath = (pathname: string): string => {
+  const parts = pathname.split("/").filter(Boolean);
+  // If first part is a language code, remove it
+  if (parts.length > 0 && SUPPORTED_LANGUAGES.includes(parts[0] as SupportedLanguage)) {
+    parts.shift();
+  }
+  return parts.length > 0 ? `/${parts.join("/")}` : "";
+};
 
 const SEOHead = ({
   title = "Syed Hadi Hussain | Full Stack Local SEO Specialist",
@@ -29,10 +46,20 @@ const SEOHead = ({
   breadcrumbs,
 }: SEOHeadProps) => {
   const { language } = useLanguage();
-
-  const fullCanonical = canonical ? `${baseUrl}${canonical}` : baseUrl;
+  const location = useLocation();
+  
+  // Get the current slug (without language prefix)
+  const currentSlug = getSlugFromPath(location.pathname);
+  
+  // Generate canonical URL for current language
+  const fullCanonical = `${baseUrl}/${language}${currentSlug}`;
   const fullOgImage = ogImage.startsWith("http") ? ogImage : `${baseUrl}${ogImage}`;
   const currentDate = new Date().toISOString();
+
+  // Generate hreflang URLs for all languages
+  const generateHreflangUrl = (lang: SupportedLanguage): string => {
+    return `${baseUrl}/${lang}${currentSlug}`;
+  };
 
   // Person Schema - Core identity
   const personSchema = {
@@ -332,7 +359,7 @@ const SEOHead = ({
     about: { "@id": `${baseUrl}/#person` },
     datePublished: publishedTime || "2024-01-01",
     dateModified: modifiedTime || currentDate,
-    inLanguage: language === "ar" ? "ar" : language === "es" ? "es" : "en",
+    inLanguage: language,
     breadcrumb: { "@id": `${baseUrl}/#breadcrumb` },
     primaryImageOfPage: {
       "@type": "ImageObject",
@@ -347,7 +374,7 @@ const SEOHead = ({
   return (
     <Helmet>
       {/* Basic Meta Tags */}
-      <html lang={language} dir={language === "ar" ? "rtl" : "ltr"} />
+      <html lang={language} dir={isRTL(language) ? "rtl" : "ltr"} />
       <title>{title}</title>
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
@@ -363,11 +390,15 @@ const SEOHead = ({
       <meta name="googlebot" content="index, follow" />
       <meta name="bingbot" content="index, follow" />
 
-      {/* Hreflang for multi-language SEO */}
-      <link rel="alternate" hrefLang="en" href={`${baseUrl}${canonical || ""}`} />
-      <link rel="alternate" hrefLang="ar" href={`${baseUrl}${canonical || ""}?lang=ar`} />
-      <link rel="alternate" hrefLang="es" href={`${baseUrl}${canonical || ""}?lang=es`} />
-      <link rel="alternate" hrefLang="x-default" href={fullCanonical} />
+      {/* Hreflang for multi-language SEO - All 7 languages + x-default */}
+      <link rel="alternate" hrefLang="x-default" href={generateHreflangUrl("en")} />
+      <link rel="alternate" hrefLang="en" href={generateHreflangUrl("en")} />
+      <link rel="alternate" hrefLang="ar" href={generateHreflangUrl("ar")} />
+      <link rel="alternate" hrefLang="es" href={generateHreflangUrl("es")} />
+      <link rel="alternate" hrefLang="pt" href={generateHreflangUrl("pt")} />
+      <link rel="alternate" hrefLang="it" href={generateHreflangUrl("it")} />
+      <link rel="alternate" hrefLang="fr" href={generateHreflangUrl("fr")} />
+      <link rel="alternate" hrefLang="de" href={generateHreflangUrl("de")} />
 
       {/* Open Graph */}
       <meta property="og:title" content={title} />
@@ -379,7 +410,15 @@ const SEOHead = ({
       <meta property="og:image:height" content="630" />
       <meta property="og:image:alt" content={title} />
       <meta property="og:site_name" content="Syed Hadi Hussain - Local SEO Specialist" />
-      <meta property="og:locale" content={language === "ar" ? "ar_AE" : language === "es" ? "es_ES" : "en_US"} />
+      <meta property="og:locale" content={
+        language === "ar" ? "ar_AE" : 
+        language === "es" ? "es_ES" : 
+        language === "pt" ? "pt_BR" : 
+        language === "it" ? "it_IT" : 
+        language === "fr" ? "fr_FR" : 
+        language === "de" ? "de_DE" : 
+        "en_US"
+      } />
       {publishedTime && <meta property="article:published_time" content={publishedTime} />}
       {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
 

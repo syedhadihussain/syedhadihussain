@@ -6,17 +6,14 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useLanguage, Language } from "@/contexts/LanguageContext";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { SUPPORTED_LANGUAGES, LANGUAGE_NAMES, LANGUAGE_FLAGS, SupportedLanguage } from "@/lib/i18n-config";
 
-const languages: { code: Language; name: string; flag: string }[] = [
-  { code: "en", name: "English", flag: "🇺🇸" },
-  { code: "ar", name: "العربية", flag: "🇦🇪" },
-  { code: "es", name: "Español", flag: "🇪🇸" },
-  { code: "pt", name: "Português", flag: "🇧🇷" },
-  { code: "fr", name: "Français", flag: "🇫🇷" },
-  { code: "it", name: "Italiano", flag: "🇮🇹" },
-  { code: "de", name: "Deutsch", flag: "🇩🇪" },
-];
+const languages = SUPPORTED_LANGUAGES.map((code) => ({
+  code,
+  name: LANGUAGE_NAMES[code],
+  flag: LANGUAGE_FLAGS[code],
+}));
 
 const LanguageSelector = () => {
   const { language, setLanguage } = useLanguage();

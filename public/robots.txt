@@ -5,6 +5,13 @@
 # Default rules for all crawlers
 User-agent: *
 Allow: /
+Allow: /en/
+Allow: /ar/
+Allow: /es/
+Allow: /pt/
+Allow: /it/
+Allow: /fr/
+Allow: /de/
 Crawl-delay: 1
 
 # Sitemaps
@@ -13,6 +20,13 @@ Sitemap: https://syedhadihussain.com/sitemap.xml
 # Google
 User-agent: Googlebot
 Allow: /
+Allow: /en/
+Allow: /ar/
+Allow: /es/
+Allow: /pt/
+Allow: /it/
+Allow: /fr/
+Allow: /de/
 Crawl-delay: 0
 
 User-agent: Googlebot-Image
@@ -27,6 +41,13 @@ Allow: /
 # Bing
 User-agent: Bingbot
 Allow: /
+Allow: /en/
+Allow: /ar/
+Allow: /es/
+Allow: /pt/
+Allow: /it/
+Allow: /fr/
+Allow: /de/
 Crawl-delay: 1
 
 User-agent: msnbot
