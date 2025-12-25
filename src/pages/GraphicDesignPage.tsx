@@ -99,10 +99,10 @@ const GraphicDesignPage = () => {
   return (
     <>
       <SEOHead 
-        title="Professional Graphic Design Services – Logo, Branding & Marketing Design – Syed Hadi Hussain" 
-        description="Creative graphic design services for businesses. Logo design, brand identity, social media graphics, and marketing materials that make your brand stand out." 
+        title="Graphic Design Services That Build Strong Brands & Visual Identity – Syed Hadi Hussain" 
+        description="Professional graphic design services including logo design, UI UX design, brand style guides, social media creatives, brochures, and marketing visuals." 
         canonical="https://syedhadihussain.com/graphic-design"
-        keywords="graphic design, logo design, brand identity, social media graphics, marketing design, business branding, visual design"
+        keywords="graphic design, logo design, brand identity, social media graphics, marketing design, business branding, visual design, UI UX design"
         breadcrumbs={[
           { name: "Home", url: "https://syedhadihussain.com" },
           { name: "Graphic Design", url: "https://syedhadihussain.com/graphic-design" }
