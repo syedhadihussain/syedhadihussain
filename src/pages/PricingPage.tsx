@@ -1,4 +1,4 @@
-import { Check, Sparkles, ArrowRight, Timer, Zap } from "lucide-react";
+import { Check, Sparkles, ArrowRight, Timer, Zap, MapPin, Layers, Percent, Building2, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -288,6 +288,88 @@ const PricingPage = () => {
             ))}
           </div>
 
+
+          {/* Multi-Location & Custom Plans CTA */}
+          <ScrollReveal delay={100}>
+            <div className="relative overflow-hidden glass rounded-3xl p-8 lg:p-12 mb-12 border border-primary/20">
+              <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+              <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/10 rounded-full blur-2xl translate-y-1/2 -translate-x-1/2" />
+              
+              <div className="relative">
+                <div className="text-center mb-8">
+                  <Badge className="bg-primary/10 text-primary border-primary/20 mb-4">
+                    <Percent className="w-3 h-3 mr-1" />
+                    Special Multi-Location Discount
+                  </Badge>
+                  <h2 className="font-display text-3xl lg:text-4xl font-bold text-foreground mb-4">
+                    Managing Multiple Locations or Need Multiple Services?
+                  </h2>
+                  <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                    Get a custom quote with exclusive discounts for businesses with multiple Google Business Profiles, 
+                    franchise locations, or those needing a combination of SEO, web development, content, and marketing services.
+                  </p>
+                </div>
+
+                <div className="grid md:grid-cols-3 gap-6 mb-8">
+                  <div className="glass rounded-xl p-6 text-center hover:glow-sm transition-all">
+                    <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                      <MapPin className="w-7 h-7 text-primary" />
+                    </div>
+                    <h3 className="font-display text-lg font-bold text-foreground mb-2">
+                      Multi-Location SEO
+                    </h3>
+                    <p className="text-sm text-muted-foreground">
+                      Managing 2+ GBP locations? Get volume discounts up to 30% off per location.
+                    </p>
+                  </div>
+
+                  <div className="glass rounded-xl p-6 text-center hover:glow-sm transition-all">
+                    <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                      <Layers className="w-7 h-7 text-primary" />
+                    </div>
+                    <h3 className="font-display text-lg font-bold text-foreground mb-2">
+                      Bundled Services
+                    </h3>
+                    <p className="text-sm text-muted-foreground">
+                      Combine SEO + Web Dev + Content + Social Media for up to 25% bundle discount.
+                    </p>
+                  </div>
+
+                  <div className="glass rounded-xl p-6 text-center hover:glow-sm transition-all">
+                    <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                      <Building2 className="w-7 h-7 text-primary" />
+                    </div>
+                    <h3 className="font-display text-lg font-bold text-foreground mb-2">
+                      Enterprise Solutions
+                    </h3>
+                    <p className="text-sm text-muted-foreground">
+                      Franchise or agency? Custom pricing with dedicated account management.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                  <Button asChild size="lg" className="glow group">
+                    <a href="https://calendly.com/syedhadihussain" target="_blank" rel="noopener noreferrer">
+                      <Phone className="w-4 h-4 mr-2" />
+                      Book a Strategy Call
+                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                    </a>
+                  </Button>
+                  <Button asChild variant="outline" size="lg">
+                    <Link to="/contact">
+                      Request Custom Quote
+                    </Link>
+                  </Button>
+                </div>
+
+                <p className="text-center text-sm text-muted-foreground mt-6">
+                  <Sparkles className="w-4 h-4 inline mr-1 text-primary" />
+                  Mention "MULTI-DISCOUNT" when you reach out to unlock exclusive pricing
+                </p>
+              </div>
+            </div>
+          </ScrollReveal>
 
           {/* FAQ CTA */}
           <ScrollReveal delay={150}>
