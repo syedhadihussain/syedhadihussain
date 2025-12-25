@@ -67,10 +67,10 @@ const BlogPage = () => {
   return (
     <>
       <SEOHead
-        title="Local SEO Blog | Tips & Strategies - Syed Hadi Hussain"
-        description="Expert Local SEO tips, strategies, and industry insights. Learn how to improve your local search rankings and grow your business."
+        title="Local SEO Insights, Google Maps Tips & Growth Strategies – Syed Hadi Hussain"
+        description="Actionable blog content covering Local SEO, Google Maps ranking, AI SEO, tracking, and advanced strategies for sustainable business growth."
         canonical="https://syedhadihussain.com/blog"
-        keywords="Local SEO blog, SEO tips, Google Business Profile tips, local search strategies"
+        keywords="Local SEO blog, Google Maps tips, AI SEO, growth strategies, local search ranking"
         breadcrumbs={[
           { name: "Home", url: "https://syedhadihussain.com" },
           { name: "Blog", url: "https://syedhadihussain.com/blog" }

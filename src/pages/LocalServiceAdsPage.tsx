@@ -28,10 +28,10 @@ const LocalServiceAdsPage = () => {
   return (
     <>
       <SEOHead 
-        title="Local Service Ads | Google LSA Management - Syed Hadi Hussain" 
-        description="Expert Google Local Service Ads management. Get the Google Guaranteed badge and pay only for qualified leads." 
+        title="Local Service Ads That Generate Verified Calls & High-Intent Leads – Syed Hadi Hussain" 
+        description="Run high-converting Google Local Service Ads that put your business at the top with verified leads, trust badges, and pay-per-lead campaigns optimized for maximum ROI." 
         canonical="https://syedhadihussain.com/local-service-ads"
-        keywords="Google Local Service Ads, LSA management, Google Guaranteed badge, pay per lead advertising"
+        keywords="Google Local Service Ads, verified leads, Google Guaranteed badge, pay per lead, high-intent leads"
         breadcrumbs={[
           { name: "Home", url: "https://syedhadihussain.com" },
           { name: "Local Service Ads", url: "https://syedhadihussain.com/local-service-ads" }

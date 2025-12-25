@@ -162,10 +162,10 @@ const PricingPage = () => {
   return (
     <>
       <SEOHead
-        title="Pricing - Local SEO Packages & Services | 50% OFF Audit Limited Offer"
-        description="Affordable local SEO pricing packages with 50% OFF audit for 3 days! Get your SEO audit starting at $50. Monthly SEO management from $299. View all service packages."
+        title="Simple & Transparent Local SEO Pricing That Delivers ROI – Syed Hadi Hussain"
+        description="Explore flexible Local SEO pricing plans built for businesses that want better Google Maps rankings, more traffic, and consistent inbound leads without hidden costs."
         canonical="https://syedhadihussain.com/pricing"
-        keywords="Local SEO pricing, SEO packages, GBP management cost, SEO audit price, affordable SEO services"
+        keywords="Local SEO pricing, SEO packages, GBP management cost, SEO audit price, affordable SEO services, ROI"
         breadcrumbs={[
           { name: "Home", url: "https://syedhadihussain.com" },
           { name: "Pricing", url: "https://syedhadihussain.com/pricing" }

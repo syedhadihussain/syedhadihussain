@@ -198,10 +198,10 @@ const ServicesPage = () => {
   return (
     <>
       <SEOHead
-        title="Local SEO Services | Google Business Profile Optimization - Syed Hadi Hussain"
-        description="Comprehensive Local SEO services including Google Business Profile optimization, Map SEO, citation building, review management, and AI-optimized content strategies. Get found on Google, Maps & AI."
+        title="High-Impact Local SEO Services for Google Maps & Search Visibility – Syed Hadi Hussain"
+        description="Comprehensive Local SEO services including Google Business Profile optimization, Map Pack ranking, technical SEO, content, tracking, and AI-focused optimization."
         canonical="/services"
-        keywords="Local SEO services, GBP optimization, Map SEO, citation building, review management, technical SEO, AI SEO services"
+        keywords="Local SEO services, Google Maps optimization, GBP management, Map Pack ranking, technical SEO, AI SEO"
         breadcrumbs={[{ name: "Home", url: "/" }, { name: "Services", url: "/services" }]}
       />
       <div className="min-h-screen bg-background">

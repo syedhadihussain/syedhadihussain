@@ -54,10 +54,10 @@ const AboutPage = () => {
   return (
     <>
       <SEOHead
-        title="About Syed Hadi Hussain | Local SEO Expert with 7+ Years Experience"
-        description="Learn about Syed Hadi Hussain, a certified Local SEO specialist with 7+ years of experience helping businesses dominate Google rankings worldwide. Google Analytics and SEMrush certified."
+        title="Meet Your Local SEO Growth Partner Behind Real Google Maps Results – Syed Hadi Hussain"
+        description="Discover how Syed Hadi Hussain helps service-based businesses grow through Local SEO, Google Business Profile optimization, and data-backed strategies that generate real leads."
         canonical="/about"
-        keywords="Local SEO expert, SEO specialist about, Syed Hadi Hussain, Google Business Profile expert, certified SEO professional"
+        keywords="Local SEO expert, SEO specialist, Syed Hadi Hussain, Google Business Profile expert, local search growth partner"
         breadcrumbs={[{ name: "Home", url: "/" }, { name: "About", url: "/about" }]}
       />
       <div className="min-h-screen bg-background">
