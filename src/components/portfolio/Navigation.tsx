@@ -32,6 +32,10 @@ const Navigation = () => {
     { href: "/services", label: t("nav.localSeo") },
     { href: "/local-service-ads", label: t("nav.localServiceAds") },
     { href: "/project-management", label: t("nav.projectManagement") },
+    { href: "/web-development", label: "Web Development" },
+    { href: "/content-writing", label: "Content Writing" },
+    { href: "/graphic-design", label: "Graphic Design" },
+    { href: "/social-media", label: "Social Media Marketing" },
   ];
 
   const navLinks = [

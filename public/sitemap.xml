@@ -1107,4 +1107,68 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Web Development Page - All Languages -->
+  <url>
+    <loc>https://syedhadihussain.com/en/web-development</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/web-development"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/web-development"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/web-development"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/web-development"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/web-development"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/web-development"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/web-development"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/web-development"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Content Writing Page - All Languages -->
+  <url>
+    <loc>https://syedhadihussain.com/en/content-writing</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/content-writing"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/content-writing"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/content-writing"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/content-writing"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/content-writing"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/content-writing"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/content-writing"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/content-writing"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Graphic Design Page - All Languages -->
+  <url>
+    <loc>https://syedhadihussain.com/en/graphic-design</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/graphic-design"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/graphic-design"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/graphic-design"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/graphic-design"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/graphic-design"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/graphic-design"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/graphic-design"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/graphic-design"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Social Media Page - All Languages -->
+  <url>
+    <loc>https://syedhadihussain.com/en/social-media</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/en/social-media"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/en/social-media"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/ar/social-media"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/es/social-media"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://syedhadihussain.com/pt/social-media"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://syedhadihussain.com/it/social-media"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://syedhadihussain.com/fr/social-media"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://syedhadihussain.com/de/social-media"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>

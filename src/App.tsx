@@ -23,6 +23,10 @@ const ProjectManagementPage = lazy(() => import("./pages/ProjectManagementPage")
 const LocalServiceAdsPage = lazy(() => import("./pages/LocalServiceAdsPage"));
 const PricingPage = lazy(() => import("./pages/PricingPage"));
 const FormGuideBlogPage = lazy(() => import("./pages/FormGuideBlogPage"));
+const WebDevelopmentPage = lazy(() => import("./pages/WebDevelopmentPage"));
+const ContentWritingPage = lazy(() => import("./pages/ContentWritingPage"));
+const GraphicDesignPage = lazy(() => import("./pages/GraphicDesignPage"));
+const SocialMediaPage = lazy(() => import("./pages/SocialMediaPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -51,6 +55,10 @@ const pageRoutes = [
   { path: "local-service-ads", element: <LocalServiceAdsPage /> },
   { path: "pricing", element: <PricingPage /> },
   { path: "blog/how-to-fill-contact-form", element: <FormGuideBlogPage /> },
+  { path: "web-development", element: <WebDevelopmentPage /> },
+  { path: "content-writing", element: <ContentWritingPage /> },
+  { path: "graphic-design", element: <GraphicDesignPage /> },
+  { path: "social-media", element: <SocialMediaPage /> },
 ];
 
 const App = () => (
