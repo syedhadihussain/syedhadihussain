@@ -1,10 +1,19 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Linkedin, Facebook, Github, Mail, Globe, MessageCircle, ArrowUpRight, Shield, CreditCard } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE } from "@/lib/i18n-config";
 
 const Footer = () => {
   const { t } = useLanguage();
+  const location = useLocation();
   const currentYear = new Date().getFullYear();
+
+  // Get current language from URL
+  const pathParts = location.pathname.split('/').filter(Boolean);
+  const currentLang = SUPPORTED_LANGUAGES.includes(pathParts[0] as any) ? pathParts[0] : DEFAULT_LANGUAGE;
+  
+  // Helper to create language-prefixed links
+  const langLink = (path: string) => `/${currentLang}${path}`;
 
   const socialLinks = [
     { icon: Linkedin, href: "https://www.linkedin.com/in/syed-hadi-hussain-seo-specialist/", label: "LinkedIn" },
@@ -13,24 +22,24 @@ const Footer = () => {
   ];
 
   const quickLinks = [
-    { label: t("nav.about"), href: "/about" },
-    { label: t("nav.services"), href: "/services" },
-    { label: t("nav.pricing"), href: "/pricing" },
-    { label: t("nav.portfolio"), href: "/portfolio" },
-    { label: t("nav.caseStudies"), href: "/case-studies" },
-    { label: t("nav.faq"), href: "/faq" },
-    { label: t("nav.blog"), href: "/blog" },
-    { label: t("nav.contact"), href: "/contact" },
+    { label: t("nav.about"), href: langLink("/about") },
+    { label: t("nav.services"), href: langLink("/services") },
+    { label: t("nav.pricing"), href: langLink("/pricing") },
+    { label: t("nav.portfolio"), href: langLink("/portfolio") },
+    { label: t("nav.caseStudies"), href: langLink("/case-studies") },
+    { label: t("nav.faq"), href: langLink("/faq") },
+    { label: t("nav.blog"), href: langLink("/blog") },
+    { label: t("nav.contact"), href: langLink("/contact") },
   ];
 
   const services = [
-    { label: t("services.localSeo"), href: "/services" },
-    { label: "Local Service Ads", href: "/local-service-ads" },
-    { label: t("services.projectMgmt"), href: "/project-management" },
-    { label: "Web Development", href: "/web-development" },
-    { label: "Content Writing", href: "/content-writing" },
-    { label: "Graphic Design", href: "/graphic-design" },
-    { label: "Social Media Marketing", href: "/social-media" },
+    { label: t("services.localSeo"), href: langLink("/services") },
+    { label: "Local Service Ads", href: langLink("/local-service-ads") },
+    { label: t("services.projectMgmt"), href: langLink("/project-management") },
+    { label: "Web Development", href: langLink("/web-development") },
+    { label: "Content Writing", href: langLink("/content-writing") },
+    { label: "Graphic Design", href: langLink("/graphic-design") },
+    { label: "Social Media Marketing", href: langLink("/social-media") },
   ];
 
   const paymentLogos = [
@@ -48,7 +57,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <Link to="/" className="font-display text-2xl font-bold text-foreground inline-block mb-2">
+            <Link to={langLink("/")} className="font-display text-2xl font-bold text-foreground inline-block mb-2">
               Syed Hadi<span className="text-primary">.</span>
             </Link>
             <p className="text-sm text-primary font-medium mb-3">
@@ -189,10 +198,10 @@ const Footer = () => {
               © {currentYear} Syed Hadi Hussain. {t("footer.rights")}
             </p>
             <div className="flex items-center gap-4">
-              <Link to="/privacy" className="hover:text-foreground transition-colors">
+              <Link to={langLink("/privacy")} className="hover:text-foreground transition-colors">
                 {t("footer.privacy")}
               </Link>
-              <Link to="/terms" className="hover:text-foreground transition-colors">
+              <Link to={langLink("/terms")} className="hover:text-foreground transition-colors">
                 {t("footer.terms")}
               </Link>
             </div>
