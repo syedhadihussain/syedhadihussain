@@ -94,7 +94,7 @@ const PricingPage = () => {
         "Social Media Presence Review",
         "Brand Consistency Check",
         "Technical Performance Analysis",
-        "Detailed PDF Report (50+ pages)",
+        "Detailed PDF Report",
         "60-min Strategy Call",
         "30-day Email Support",
       ],
