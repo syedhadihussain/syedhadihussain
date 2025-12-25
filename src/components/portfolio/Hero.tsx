@@ -8,7 +8,7 @@ const Hero = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="min-h-screen flex items-center pt-24 pb-16 relative overflow-hidden">
+    <section id="hero" aria-label="Hero section introducing Syed Hadi Hussain" className="min-h-screen flex items-center pt-24 pb-16 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
@@ -79,13 +79,17 @@ const Hero = () => {
           <div className="order-1 lg:order-2 flex justify-center animate-scale-in" style={{ animationDelay: "0.3s" }}>
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl blur-2xl scale-110" />
-              <div className="relative gradient-border rounded-2xl overflow-hidden">
+              <figure className="relative gradient-border rounded-2xl overflow-hidden">
                 <img
                   src={profilePhoto}
-                  alt="Syed Hadi Hussain - Senior Local SEO Specialist"
+                  alt="Syed Hadi Hussain - Senior Local SEO Specialist with 7+ years experience helping businesses rank higher on Google Search and Maps"
                   className="w-full max-w-md rounded-2xl object-cover"
+                  loading="eager"
+                  fetchPriority="high"
+                  width="400"
+                  height="500"
                 />
-              </div>
+              </figure>
               {/* Floating Badge */}
               <div className="absolute -bottom-4 -right-4 glass rounded-xl p-4 glow-sm animate-fade-up" style={{ animationDelay: "0.6s" }}>
                 <div className="text-sm font-medium text-foreground">{t("hero.googleCertified")}</div>

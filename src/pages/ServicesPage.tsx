@@ -198,14 +198,15 @@ const ServicesPage = () => {
   return (
     <>
       <SEOHead
-        title="Local SEO Services | Syed Hadi Hussain"
-        description="Comprehensive Local SEO services including Google Business Profile optimization, citation building, review management, and technical SEO audits."
+        title="Local SEO Services | Google Business Profile Optimization - Syed Hadi Hussain"
+        description="Comprehensive Local SEO services including Google Business Profile optimization, Map SEO, citation building, review management, and AI-optimized content strategies. Get found on Google, Maps & AI."
         canonical="/services"
-        keywords="Local SEO services, GBP optimization, citation building, review management, technical SEO"
+        keywords="Local SEO services, GBP optimization, Map SEO, citation building, review management, technical SEO, AI SEO services"
+        breadcrumbs={[{ name: "Home", url: "/" }, { name: "Services", url: "/services" }]}
       />
       <div className="min-h-screen bg-background">
         <Navigation />
-        <main className="pt-24">
+        <main id="main-content" role="main" aria-label="SEO services page" className="pt-24">
           {/* Hero */}
           <section className="section-padding bg-gradient-to-b from-primary/5 to-background">
             <div className="container-narrow text-center">

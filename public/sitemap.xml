@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   
   <!-- Homepage -->
   <url>
@@ -9,9 +10,13 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/?lang=ar"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/?lang=es"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://syedhadihussain.com/"/>
-    <lastmod>2024-12-23</lastmod>
+    <lastmod>2025-12-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://syedhadihussain.com/og-image.jpg</image:loc>
+      <image:title>Syed Hadi Hussain - Local SEO Specialist</image:title>
+    </image:image>
   </url>
 
   <!-- About Page -->
@@ -20,7 +25,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/about"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/about?lang=ar"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/about?lang=es"/>
-    <lastmod>2024-12-23</lastmod>
+    <lastmod>2025-12-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -31,7 +36,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/services"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/services?lang=ar"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/services?lang=es"/>
-    <lastmod>2024-12-23</lastmod>
+    <lastmod>2025-12-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -42,9 +47,20 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/case-studies"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/case-studies?lang=ar"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/case-studies?lang=es"/>
-    <lastmod>2024-12-23</lastmod>
+    <lastmod>2025-12-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <!-- Pricing Page -->
+  <url>
+    <loc>https://syedhadihussain.com/pricing</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/pricing"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/pricing?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/pricing?lang=es"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
 
   <!-- FAQ Page -->
@@ -53,7 +69,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/faq"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/faq?lang=ar"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/faq?lang=es"/>
-    <lastmod>2024-12-23</lastmod>
+    <lastmod>2025-12-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -64,7 +80,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/contact"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/contact?lang=ar"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/contact?lang=es"/>
-    <lastmod>2024-12-23</lastmod>
+    <lastmod>2025-12-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -75,8 +91,41 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/blog"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/blog?lang=ar"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/blog?lang=es"/>
-    <lastmod>2024-12-23</lastmod>
+    <lastmod>2025-12-25</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Portfolio Page -->
+  <url>
+    <loc>https://syedhadihussain.com/portfolio</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/portfolio?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/portfolio?lang=es"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Project Management Page -->
+  <url>
+    <loc>https://syedhadihussain.com/project-management</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/project-management"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/project-management?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/project-management?lang=es"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Local Service Ads Page -->
+  <url>
+    <loc>https://syedhadihussain.com/local-service-ads</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://syedhadihussain.com/local-service-ads"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://syedhadihussain.com/local-service-ads?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://syedhadihussain.com/local-service-ads?lang=es"/>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 

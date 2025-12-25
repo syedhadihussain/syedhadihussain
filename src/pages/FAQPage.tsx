@@ -73,15 +73,16 @@ const FAQPage = () => {
   return (
     <>
       <SEOHead
-        title="FAQ | Local SEO Questions Answered - Syed Hadi Hussain"
-        description="Get answers to common questions about Local SEO, Google Business Profile optimization, pricing, and how to improve your local search rankings."
+        title="Local SEO FAQ | Common Questions Answered - Syed Hadi Hussain"
+        description="Get answers to frequently asked questions about Local SEO, Google Business Profile optimization, pricing, timelines, and how to improve your local search rankings."
         canonical="/faq"
-        keywords="Local SEO FAQ, SEO questions, Google Business Profile help, local search optimization"
+        keywords="Local SEO FAQ, SEO questions answered, Google Business Profile help, local search optimization guide, SEO pricing"
+        breadcrumbs={[{ name: "Home", url: "/" }, { name: "FAQ", url: "/faq" }]}
       />
       <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       <div className="min-h-screen bg-background">
         <Navigation />
-        <main className="pt-24">
+        <main id="main-content" role="main" aria-label="FAQ page" className="pt-24">
           {/* Hero */}
           <section className="section-padding">
             <div className="container-narrow text-center">
