@@ -248,7 +248,7 @@ const CaseStudiesPage = () => {
                     Want Results Like These?
                   </h2>
                   <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-                    Let's discuss how we can achieve similar or better results for your business. Get a professional SEO audit for just $50.
+                    Let's discuss how we can achieve similar or better results for your business. Get a professional SEO audit for just <span className="text-primary font-semibold">$50</span> (50% OFF if you book within 24 hours!)
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <Button asChild size="lg" className="glow group">
