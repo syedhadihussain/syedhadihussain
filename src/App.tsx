@@ -27,6 +27,7 @@ const WebDevelopmentPage = lazy(() => import("./pages/WebDevelopmentPage"));
 const ContentWritingPage = lazy(() => import("./pages/ContentWritingPage"));
 const GraphicDesignPage = lazy(() => import("./pages/GraphicDesignPage"));
 const SocialMediaPage = lazy(() => import("./pages/SocialMediaPage"));
+const PrivacyPolicyPage = lazy(() => import("./pages/PrivacyPolicyPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -59,6 +60,7 @@ const pageRoutes = [
   { path: "content-writing", element: <ContentWritingPage /> },
   { path: "graphic-design", element: <GraphicDesignPage /> },
   { path: "social-media", element: <SocialMediaPage /> },
+  { path: "privacy", element: <PrivacyPolicyPage /> },
 ];
 
 const App = () => (
