@@ -25,11 +25,12 @@ const Footer = () => {
 
   const services = [
     { label: t("services.localSeo"), href: "/services" },
-    { label: t("services.gbp"), href: "/services" },
-    { label: t("services.onPage"), href: "/services" },
-    { label: t("services.linkBuilding"), href: "/services" },
     { label: "Local Service Ads", href: "/local-service-ads" },
     { label: t("services.projectMgmt"), href: "/project-management" },
+    { label: "Web Development", href: "/web-development" },
+    { label: "Content Writing", href: "/content-writing" },
+    { label: "Graphic Design", href: "/graphic-design" },
+    { label: "Social Media Marketing", href: "/social-media" },
   ];
 
   const paymentLogos = [
