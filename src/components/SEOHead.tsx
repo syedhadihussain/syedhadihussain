@@ -148,7 +148,7 @@ const SEOHead = ({
     alternateName: "SHH SEO",
     description: description,
     publisher: { "@id": `${baseUrl}/#person` },
-    inLanguage: ["en", "ar", "es"],
+    inLanguage: ["en", "ar", "es", "pt", "it", "fr", "de"],
     copyrightYear: 2024,
     datePublished: "2024-01-01",
     dateModified: currentDate,
