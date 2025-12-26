@@ -136,6 +136,7 @@ export const ALL_ROUTES = [
   "social-media",
   "privacy",                   // Maps to PrivacyPolicyPage
   "terms",                     // Maps to TermsOfServicePage
+  "us",                        // Country: United States
 ] as const;
 
 // Generate all hreflang links for sitemap
