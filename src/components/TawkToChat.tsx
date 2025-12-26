@@ -1,8 +1,7 @@
 import { useEffect } from 'react';
 
-// Replace these with your actual Tawk.to credentials from https://dashboard.tawk.to
-const TAWK_PROPERTY_ID = 'YOUR_PROPERTY_ID'; // e.g., '6849xxxxxxxxxxxx'
-const TAWK_WIDGET_ID = 'YOUR_WIDGET_ID'; // e.g., '1ioxxxxxxxx'
+const TAWK_PROPERTY_ID = '694e35f09053fb197ca43dcf';
+const TAWK_WIDGET_ID = '1jdco5dj6';
 
 declare global {
   interface Window {
@@ -13,12 +12,6 @@ declare global {
 
 const TawkToChat = () => {
   useEffect(() => {
-    // Don't load if placeholder IDs are still in place
-    if (TAWK_PROPERTY_ID === 'YOUR_PROPERTY_ID' || TAWK_WIDGET_ID === 'YOUR_WIDGET_ID') {
-      console.warn('Tawk.to: Please replace YOUR_PROPERTY_ID and YOUR_WIDGET_ID with your actual Tawk.to credentials');
-      return;
-    }
-
     // Initialize Tawk.to
     window.Tawk_API = window.Tawk_API || {};
     window.Tawk_LoadStart = new Date();
