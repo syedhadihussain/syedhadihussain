@@ -60,13 +60,13 @@ const FloatingActions = () => {
   const emailUrl = `mailto:contact.syedhadihussain@gmail.com?subject=${emailSubject}&body=${emailBody}`;
 
   return (
-    <div className="fixed right-[18px] bottom-6 z-40 flex flex-col gap-2">
+    <div className="fixed right-[22px] bottom-6 z-40 flex flex-col gap-2">
       {/* WhatsApp Button */}
       <a
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className={`group relative flex items-center justify-center w-14 h-14 bg-gradient-to-br from-[#25D366] to-[#128C7E] text-white rounded-full shadow-lg transition-all duration-500 hover:shadow-[0_0_25px_rgba(37,211,102,0.5)] hover:scale-110 ${
+        className={`group relative flex items-center justify-center w-14 h-14 bg-gradient-to-br from-[#25D366] to-[#128C7E] text-white rounded-full shadow-[0_4px_14px_rgba(0,0,0,0.25)] transition-all duration-500 hover:shadow-[0_6px_20px_rgba(37,211,102,0.5)] hover:scale-110 ${
           mounted ? 'animate-[bounce-in_0.6s_ease-out_0.2s_both]' : 'opacity-0'
         }`}
         aria-label="Contact via WhatsApp"
@@ -82,7 +82,7 @@ const FloatingActions = () => {
       {/* Email Button */}
       <a
         href={emailUrl}
-        className={`group relative flex items-center justify-center w-14 h-14 bg-gradient-to-br from-primary to-primary/80 text-primary-foreground rounded-full shadow-lg transition-all duration-500 hover:shadow-[0_0_25px_hsl(var(--primary)/0.5)] hover:scale-110 ${
+        className={`group relative flex items-center justify-center w-14 h-14 bg-gradient-to-br from-primary to-primary/80 text-primary-foreground rounded-full shadow-[0_4px_14px_rgba(0,0,0,0.25)] transition-all duration-500 hover:shadow-[0_6px_20px_hsl(var(--primary)/0.5)] hover:scale-110 ${
           mounted ? 'animate-[bounce-in_0.6s_ease-out_0.4s_both]' : 'opacity-0'
         }`}
         aria-label="Contact via Email"
@@ -96,7 +96,7 @@ const FloatingActions = () => {
       {/* Scroll to Top Button */}
       <button
         onClick={scrollToTop}
-        className={`group relative flex items-center justify-center w-14 h-14 bg-gradient-to-br from-muted to-muted/80 text-foreground rounded-full shadow-lg transition-all duration-500 hover:shadow-xl hover:scale-110 ${
+        className={`group relative flex items-center justify-center w-14 h-14 bg-gradient-to-br from-muted to-muted/80 text-foreground rounded-full shadow-[0_4px_14px_rgba(0,0,0,0.25)] transition-all duration-500 hover:shadow-[0_6px_20px_rgba(0,0,0,0.3)] hover:scale-110 ${
           showScrollTop 
             ? 'opacity-100 translate-y-0' 
             : 'opacity-0 translate-y-4 pointer-events-none'
