@@ -18,40 +18,47 @@ import { z } from "zod";
 import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 
-const contactSchema = z.object({
-  name: z.string().trim().min(2, "Name must be at least 2 characters").max(100),
-  email: z.string().trim().email("Invalid email address").max(255),
-  phone: z.string().trim().min(10, "Phone number is required").max(20),
-  business_name: z.string().trim().min(2, "Business name is required").max(200),
-  business_address: z.string().trim().max(300).optional(),
-  business_city: z.string().trim().min(2, "City is required").max(100),
-  business_state: z.string().trim().max(100).optional(),
-  zipcode: z.string().trim().min(3, "Zipcode is required").max(20),
-  business_country: z.string().trim().min(2, "Country is required").max(100),
-  service: z.string().min(1, "Please select a service"),
-  competitor: z.string().trim().max(500).optional(),
-  gbp_link: z.string().trim().min(5, "GBP/Map link is required").max(500),
-  message: z.string().trim().min(10, "Message must be at least 10 characters").max(2000),
-});
+type TFn = (key: string) => string;
 
-const services = [
-  "Full Stack Local SEO",
-  "GBP Management",
-  "GBP Audit",
-  "Website Audit",
-  "Complete Business Audit",
-  "Business Consultation",
-  "Complete Project Management",
-  "Website Development",
-  "Local Service Ads",
-  "Citations",
-  "Link Building",
-  "Website SEO",
-  "Content Writing",
-  "Graphic Design",
-  "Social Media Marketing",
-  "Multiple Services Bundle",
-  "Other (Custom Service)",
+const buildContactSchema = (t: TFn) =>
+  z.object({
+    name: z.string().trim().min(2, t("contact.validation.nameMin")).max(100),
+    email: z.string().trim().email(t("contact.validation.emailInvalid")).max(255),
+    phone: z.string().trim().min(10, t("contact.validation.phoneRequired")).max(20),
+    business_name: z
+      .string()
+      .trim()
+      .min(2, t("contact.validation.businessNameRequired"))
+      .max(200),
+    business_address: z.string().trim().max(300).optional(),
+    business_city: z.string().trim().min(2, t("contact.validation.cityRequired")).max(100),
+    business_state: z.string().trim().max(100).optional(),
+    zipcode: z.string().trim().min(3, t("contact.validation.zipcodeRequired")).max(20),
+    business_country: z.string().trim().min(2, t("contact.validation.countryRequired")).max(100),
+    service: z.string().min(1, t("contact.validation.serviceRequired")),
+    competitor: z.string().trim().max(500).optional(),
+    gbp_link: z.string().trim().min(5, t("contact.validation.gbpRequired")).max(500),
+    message: z.string().trim().min(10, t("contact.validation.messageMin")).max(2000),
+  });
+
+const services: Array<{ value: string; labelKey: string }> = [
+  { value: "Full Stack Local SEO", labelKey: "contact.serviceOption.fullStackLocalSeo" },
+  { value: "GBP Management", labelKey: "contact.serviceOption.gbpManagement" },
+  { value: "GBP Audit", labelKey: "contact.serviceOption.gbpAudit" },
+  { value: "Website Audit", labelKey: "contact.serviceOption.websiteAudit" },
+  { value: "Complete Business Audit", labelKey: "contact.serviceOption.completeBusinessAudit" },
+  { value: "Business Consultation", labelKey: "contact.serviceOption.businessConsultation" },
+  { value: "Complete Project Management", labelKey: "contact.serviceOption.completeProjectManagement" },
+  { value: "Website Development", labelKey: "contact.serviceOption.websiteDevelopment" },
+  { value: "Local Service Ads", labelKey: "contact.serviceOption.localServiceAds" },
+  { value: "Citations", labelKey: "contact.serviceOption.citations" },
+  { value: "Link Building", labelKey: "contact.serviceOption.linkBuilding" },
+  { value: "Website SEO", labelKey: "contact.serviceOption.websiteSeo" },
+  { value: "Content Writing", labelKey: "contact.serviceOption.contentWriting" },
+  { value: "Graphic Design", labelKey: "contact.serviceOption.graphicDesign" },
+  { value: "Social Media Marketing", labelKey: "contact.serviceOption.socialMediaMarketing" },
+  { value: "Multiple Services Bundle", labelKey: "contact.serviceOption.multipleServicesBundle" },
+  { value: "Other (Custom Service)", labelKey: "contact.serviceOption.otherCustom" },
 ];
 
 interface BusinessLocation {
@@ -148,7 +155,7 @@ const ContactForm = () => {
         ...primaryLocation,
       };
 
-      const validatedData = contactSchema.parse(dataToValidate);
+      const validatedData = buildContactSchema(t).parse(dataToValidate);
       
       // If "Other" is selected, use the custom service description
       const finalService = isOtherService && formData.customService 
@@ -213,7 +220,7 @@ const ContactForm = () => {
       }
 
       toast({
-        title: "Success!",
+        title: t("contact.toast.successTitle"),
         description: t("contact.success"),
       });
 
@@ -239,13 +246,13 @@ const ContactForm = () => {
     } catch (error) {
       if (error instanceof z.ZodError) {
         toast({
-          title: "Validation Error",
+          title: t("contact.toast.validationTitle"),
           description: error.errors[0].message,
           variant: "destructive",
         });
       } else {
         toast({
-          title: "Error",
+          title: t("contact.toast.errorTitle"),
           description: t("contact.error"),
           variant: "destructive",
         });
@@ -277,7 +284,7 @@ const ContactForm = () => {
             name="name"
             value={formData.name}
             onChange={handleChange}
-            placeholder="John Doe"
+            placeholder={t("contact.placeholder.fullName")}
             required
             className="bg-background/50"
           />
@@ -290,7 +297,7 @@ const ContactForm = () => {
             type="email"
             value={formData.email}
             onChange={handleChange}
-            placeholder="john@example.com"
+            placeholder={t("contact.placeholder.email")}
             required
             className="bg-background/50"
           />
@@ -306,7 +313,7 @@ const ContactForm = () => {
           type="tel"
           value={formData.phone}
           onChange={handleChange}
-          placeholder="+1 234 567 8900"
+          placeholder={t("contact.placeholder.phone")}
           required
           className="bg-background/50"
         />
@@ -350,7 +357,7 @@ const ContactForm = () => {
               name="business_name"
               value={formData.business_name}
               onChange={handleChange}
-              placeholder="ABC Services LLC"
+              placeholder={t("contact.placeholder.businessName")}
               required
               className="bg-background/50"
             />
@@ -364,7 +371,7 @@ const ContactForm = () => {
               name="business_address"
               value={formData.business_address}
               onChange={handleChange}
-              placeholder="123 Main Street, Suite 100"
+              placeholder={t("contact.placeholder.businessAddress")}
               className="bg-background/50"
             />
           </div>
@@ -378,7 +385,7 @@ const ContactForm = () => {
                 name="business_city"
                 value={formData.business_city}
                 onChange={handleChange}
-                placeholder="New York"
+                placeholder={t("contact.placeholder.city")}
                 required
                 className="bg-background/50"
               />
@@ -390,7 +397,7 @@ const ContactForm = () => {
                 name="business_state"
                 value={formData.business_state}
                 onChange={handleChange}
-                placeholder="NY"
+                placeholder={t("contact.placeholder.state")}
                 className="bg-background/50"
               />
             </div>
@@ -401,7 +408,7 @@ const ContactForm = () => {
                 name="zipcode"
                 value={formData.zipcode}
                 onChange={handleChange}
-                placeholder="10001"
+                placeholder={t("contact.placeholder.zipcode")}
                 required
                 className="bg-background/50"
               />
@@ -416,7 +423,7 @@ const ContactForm = () => {
               name="business_country"
               value={formData.business_country}
               onChange={handleChange}
-              placeholder="United States"
+              placeholder={t("contact.placeholder.country")}
               required
               className="bg-background/50"
             />
@@ -430,13 +437,11 @@ const ContactForm = () => {
               name="gbp_link"
               value={formData.gbp_link}
               onChange={handleChange}
-              placeholder="https://maps.google.com/..."
+              placeholder={t("contact.placeholder.gbpLink")}
               required
               className="bg-background/50"
             />
-            <p className="text-xs text-muted-foreground">
-              {t("contact.gbpLinkHint")}
-            </p>
+            <p className="text-xs text-muted-foreground">{t("contact.gbpLinkHint")}</p>
           </div>
         </>
       )}
@@ -477,8 +482,8 @@ const ContactForm = () => {
                 <Label>{t("contact.businessName")} *</Label>
                 <Input
                   value={location.business_name}
-                  onChange={(e) => handleLocationChange(location.id, 'business_name', e.target.value)}
-                  placeholder="ABC Services LLC"
+                  onChange={(e) => handleLocationChange(location.id, "business_name", e.target.value)}
+                  placeholder={t("contact.placeholder.businessName")}
                   required
                   className="bg-background/50"
                 />
@@ -489,8 +494,8 @@ const ContactForm = () => {
                 <Label>{t("contact.businessAddress")}</Label>
                 <Input
                   value={location.business_address}
-                  onChange={(e) => handleLocationChange(location.id, 'business_address', e.target.value)}
-                  placeholder="123 Main Street, Suite 100"
+                  onChange={(e) => handleLocationChange(location.id, "business_address", e.target.value)}
+                  placeholder={t("contact.placeholder.businessAddress")}
                   className="bg-background/50"
                 />
               </div>
@@ -501,8 +506,8 @@ const ContactForm = () => {
                   <Label>{t("contact.city")} *</Label>
                   <Input
                     value={location.business_city}
-                    onChange={(e) => handleLocationChange(location.id, 'business_city', e.target.value)}
-                    placeholder="New York"
+                    onChange={(e) => handleLocationChange(location.id, "business_city", e.target.value)}
+                    placeholder={t("contact.placeholder.city")}
                     required
                     className="bg-background/50"
                   />
@@ -511,8 +516,8 @@ const ContactForm = () => {
                   <Label>{t("contact.state")}</Label>
                   <Input
                     value={location.business_state}
-                    onChange={(e) => handleLocationChange(location.id, 'business_state', e.target.value)}
-                    placeholder="NY"
+                    onChange={(e) => handleLocationChange(location.id, "business_state", e.target.value)}
+                    placeholder={t("contact.placeholder.state")}
                     className="bg-background/50"
                   />
                 </div>
@@ -520,8 +525,8 @@ const ContactForm = () => {
                   <Label>{t("contact.zipcode")} *</Label>
                   <Input
                     value={location.zipcode}
-                    onChange={(e) => handleLocationChange(location.id, 'zipcode', e.target.value)}
-                    placeholder="10001"
+                    onChange={(e) => handleLocationChange(location.id, "zipcode", e.target.value)}
+                    placeholder={t("contact.placeholder.zipcode")}
                     required
                     className="bg-background/50"
                   />
@@ -533,8 +538,8 @@ const ContactForm = () => {
                 <Label>{t("contact.country")} *</Label>
                 <Input
                   value={location.business_country}
-                  onChange={(e) => handleLocationChange(location.id, 'business_country', e.target.value)}
-                  placeholder="United States"
+                  onChange={(e) => handleLocationChange(location.id, "business_country", e.target.value)}
+                  placeholder={t("contact.placeholder.country")}
                   required
                   className="bg-background/50"
                 />
@@ -545,8 +550,8 @@ const ContactForm = () => {
                 <Label>{t("contact.gbpLink")} *</Label>
                 <Input
                   value={location.gbp_link}
-                  onChange={(e) => handleLocationChange(location.id, 'gbp_link', e.target.value)}
-                  placeholder="https://maps.google.com/..."
+                  onChange={(e) => handleLocationChange(location.id, "gbp_link", e.target.value)}
+                  placeholder={t("contact.placeholder.gbpLink")}
                   required
                   className="bg-background/50"
                 />
@@ -571,19 +576,22 @@ const ContactForm = () => {
         <Label htmlFor="service">{t("contact.service")} *</Label>
         <Select
           value={formData.service}
-          onValueChange={(value) => setFormData((prev) => ({ 
-            ...prev, 
-            service: value, 
-            customService: (value !== "Other (Custom Service)" && value !== "Multiple Services Bundle") ? "" : prev.customService 
-          }))}
+          onValueChange={(value) =>
+            setFormData((prev) => ({
+              ...prev,
+              service: value,
+              customService:
+                value !== "Other (Custom Service)" && value !== "Multiple Services Bundle" ? "" : prev.customService,
+            }))
+          }
         >
           <SelectTrigger className="bg-background/50">
             <SelectValue placeholder={t("contact.selectService")} />
           </SelectTrigger>
           <SelectContent className="bg-background border border-border z-50">
             {services.map((service) => (
-              <SelectItem key={service} value={service}>
-                {service}
+              <SelectItem key={service.value} value={service.value}>
+                {t(service.labelKey)}
               </SelectItem>
             ))}
           </SelectContent>
@@ -643,7 +651,7 @@ const ContactForm = () => {
           name="competitor"
           value={formData.competitor}
           onChange={handleChange}
-          placeholder="Competitor business name or website"
+          placeholder={t("contact.placeholder.competitor")}
           className="bg-background/50"
         />
       </div>
@@ -656,7 +664,7 @@ const ContactForm = () => {
           name="message"
           value={formData.message}
           onChange={handleChange}
-          placeholder="Tell me about your project, goals, and any specific challenges..."
+          placeholder={t("contact.placeholder.message")}
           required
           rows={4}
           className="bg-background/50 resize-none"
