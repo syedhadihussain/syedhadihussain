@@ -16,17 +16,17 @@ const TawkToChat = () => {
     window.Tawk_API = window.Tawk_API || {};
     window.Tawk_LoadStart = new Date();
 
-    // Position widget in the middle of the page
+    // Position widget above floating buttons with matching alignment
     window.Tawk_API.customStyle = {
       visibility: {
         desktop: {
-          position: 'br', // bottom-right
-          xOffset: 20,
-          yOffset: 250 // Push up to middle area
+          position: 'br',
+          xOffset: 16, // Match floating buttons right-4 (16px)
+          yOffset: 220 // Position in middle area
         },
         mobile: {
           position: 'br',
-          xOffset: 10,
+          xOffset: 16, // Match floating buttons right-4
           yOffset: 200
         }
       }
