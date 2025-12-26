@@ -8,75 +8,75 @@ const CaseStudies = () => {
 
   const caseStudies = [
     {
-      client: "Jewelry Repair of Atlanta",
-      industry: "Jewelry Repair Services",
-      location: "Atlanta, GA",
-      challenge: "Low visibility for 'jewelry repair near me' searches",
-      solution: "Optimized Google Business Profile, service pages, and local keywords",
+      clientKey: "caseStudies.client1.name",
+      industryKey: "caseStudies.client1.industry",
+      locationKey: "caseStudies.client1.location",
+      challengeKey: "caseStudies.client1.challenge",
+      solutionKey: "caseStudies.client1.solution",
       results: [
-        { metric: "150%", label: "Increase in Local Impressions" },
-        { metric: "Top 3", label: "'Near Me' Rankings" },
-        { metric: "Daily", label: "Inbound Calls from Maps" },
+        { metricKey: "caseStudies.client1.metric1", labelKey: "caseStudies.client1.label1" },
+        { metricKey: "caseStudies.client1.metric2", labelKey: "caseStudies.client1.label2" },
+        { metricKey: "caseStudies.client1.metric3", labelKey: "caseStudies.client1.label3" },
       ],
     },
     {
-      client: "Watkins Bail Bonds Vista",
-      industry: "Bail Bonds Services",
-      location: "Vista, CA",
-      challenge: "Low ranking for bail bond services in Vista, CA",
-      solution: "Optimized GBP, local citations, and targeted local keywords",
+      clientKey: "caseStudies.client2.name",
+      industryKey: "caseStudies.client2.industry",
+      locationKey: "caseStudies.client2.location",
+      challengeKey: "caseStudies.client2.challenge",
+      solutionKey: "caseStudies.client2.solution",
       results: [
-        { metric: "180%", label: "Increase in Local Searches" },
-        { metric: "Top 3", label: "'Bail Bonds Near Me' Queries" },
-        { metric: "Immediate", label: "Inquiries Through Maps" },
+        { metricKey: "caseStudies.client2.metric1", labelKey: "caseStudies.client2.label1" },
+        { metricKey: "caseStudies.client2.metric2", labelKey: "caseStudies.client2.label2" },
+        { metricKey: "caseStudies.client2.metric3", labelKey: "caseStudies.client2.label3" },
       ],
     },
     {
-      client: "Moe's iRepair Texas",
-      industry: "Device Repair (Multi-Location)",
-      location: "Texas",
-      challenge: "Four locations across Texas with scattered online presence",
-      solution: "Unified local SEO strategy, optimized each GBP, local content, and map listings",
+      clientKey: "caseStudies.client3.name",
+      industryKey: "caseStudies.client3.industry",
+      locationKey: "caseStudies.client3.location",
+      challengeKey: "caseStudies.client3.challenge",
+      solutionKey: "caseStudies.client3.solution",
       results: [
-        { metric: "200%", label: "Increase in Local Visibility" },
-        { metric: "Top 5", label: "Rankings Across All Locations" },
-        { metric: "Daily", label: "Calls and Walk-ins from Maps" },
+        { metricKey: "caseStudies.client3.metric1", labelKey: "caseStudies.client3.label1" },
+        { metricKey: "caseStudies.client3.metric2", labelKey: "caseStudies.client3.label2" },
+        { metricKey: "caseStudies.client3.metric3", labelKey: "caseStudies.client3.label3" },
       ],
     },
     {
-      client: "Tribeca Salon",
-      industry: "Salon & Beauty",
-      location: "South Tampa, FL",
-      challenge: "Low bookings from local searches",
-      solution: "Optimized Google Business Profile, service listings, and location keywords",
+      clientKey: "caseStudies.client4.name",
+      industryKey: "caseStudies.client4.industry",
+      locationKey: "caseStudies.client4.location",
+      challengeKey: "caseStudies.client4.challenge",
+      solutionKey: "caseStudies.client4.solution",
       results: [
-        { metric: "160%", label: "Increase in Map Impressions" },
-        { metric: "Top 3", label: "Local Rankings" },
-        { metric: "Surge", label: "In Daily Appointments" },
+        { metricKey: "caseStudies.client4.metric1", labelKey: "caseStudies.client4.label1" },
+        { metricKey: "caseStudies.client4.metric2", labelKey: "caseStudies.client4.label2" },
+        { metricKey: "caseStudies.client4.metric3", labelKey: "caseStudies.client4.label3" },
       ],
     },
     {
-      client: "Artful Orthodontics",
-      industry: "Orthodontic Services",
-      location: "Winter Garden, FL",
-      challenge: "Low visibility for orthodontic services in Winter Garden, FL",
-      solution: "Optimized service pages, GBP, and local keywords",
+      clientKey: "caseStudies.client5.name",
+      industryKey: "caseStudies.client5.industry",
+      locationKey: "caseStudies.client5.location",
+      challengeKey: "caseStudies.client5.challenge",
+      solutionKey: "caseStudies.client5.solution",
       results: [
-        { metric: "150%", label: "Increase in Local Impressions" },
-        { metric: "Top 3", label: "'Near Me' Rankings" },
-        { metric: "Consistent", label: "Inbound Patient Inquiries" },
+        { metricKey: "caseStudies.client5.metric1", labelKey: "caseStudies.client5.label1" },
+        { metricKey: "caseStudies.client5.metric2", labelKey: "caseStudies.client5.label2" },
+        { metricKey: "caseStudies.client5.metric3", labelKey: "caseStudies.client5.label3" },
       ],
     },
     {
-      client: "Pickup Truck Rental UAE",
-      industry: "Vehicle Rental (Full-Stack)",
-      location: "United Arab Emirates",
-      challenge: "Low online visibility and scattered lead sources",
-      solution: "Managed website design, SEO, Google Local Service Ads, Meta ads, social media campaigns, and AI-assisted chatbots",
+      clientKey: "caseStudies.client6.name",
+      industryKey: "caseStudies.client6.industry",
+      locationKey: "caseStudies.client6.location",
+      challengeKey: "caseStudies.client6.challenge",
+      solutionKey: "caseStudies.client6.solution",
       results: [
-        { metric: "250%", label: "Increase in Leads" },
-        { metric: "Top 3", label: "Local & Service Rankings" },
-        { metric: "Automated", label: "Daily Booking Conversions" },
+        { metricKey: "caseStudies.client6.metric1", labelKey: "caseStudies.client6.label1" },
+        { metricKey: "caseStudies.client6.metric2", labelKey: "caseStudies.client6.label2" },
+        { metricKey: "caseStudies.client6.metric3", labelKey: "caseStudies.client6.label3" },
       ],
       featured: true,
     },
@@ -118,12 +118,12 @@ const CaseStudies = () => {
                 <div className="flex items-start justify-between mb-5 pt-1">
                   <div>
                     <h3 className="font-display text-lg font-bold text-foreground mb-1">
-                      {study.client}
+                      {t(study.clientKey)}
                     </h3>
-                    <p className="text-xs text-primary font-medium">{study.industry}</p>
+                    <p className="text-xs text-primary font-medium">{t(study.industryKey)}</p>
                     <div className="flex items-center gap-1 mt-1 text-muted-foreground">
                       <MapPin className="w-3 h-3" />
-                      <span className="text-xs">{study.location}</span>
+                      <span className="text-xs">{t(study.locationKey)}</span>
                     </div>
                   </div>
                   <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors flex-shrink-0">
@@ -135,11 +135,11 @@ const CaseStudies = () => {
                 <div className="space-y-3 mb-5">
                   <div>
                     <span className="text-xs uppercase tracking-wider text-muted-foreground">{t("caseStudies.challenge")}</span>
-                    <p className="text-foreground text-sm mt-1">{study.challenge}</p>
+                    <p className="text-foreground text-sm mt-1">{t(study.challengeKey)}</p>
                   </div>
                   <div>
                     <span className="text-xs uppercase tracking-wider text-muted-foreground">{t("caseStudies.solution")}</span>
-                    <p className="text-foreground text-sm mt-1">{study.solution}</p>
+                    <p className="text-foreground text-sm mt-1">{t(study.solutionKey)}</p>
                   </div>
                 </div>
 
@@ -149,8 +149,8 @@ const CaseStudies = () => {
                   <div className="grid grid-cols-3 gap-3">
                     {study.results.map((result, idx) => (
                       <div key={idx} className="text-center">
-                        <div className="font-display text-base font-bold text-foreground">{result.metric}</div>
-                        <div className="text-xs text-muted-foreground leading-tight">{result.label}</div>
+                        <div className="font-display text-base font-bold text-foreground">{t(result.metricKey)}</div>
+                        <div className="text-xs text-muted-foreground leading-tight">{t(result.labelKey)}</div>
                       </div>
                     ))}
                   </div>
