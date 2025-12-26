@@ -11,6 +11,8 @@ import CountryServices from "@/components/country/CountryServices";
 import CountryCaseStudiesCTA from "@/components/country/CountryCaseStudiesCTA";
 import CountryContact from "@/components/country/CountryContact";
 import Testimonials from "@/components/portfolio/Testimonials";
+import CaseStudies from "@/components/portfolio/CaseStudies";
+import FullStackCTA from "@/components/portfolio/FullStackCTA";
 import FAQ from "@/components/portfolio/FAQ";
 
 const CountryPage = () => {
@@ -67,9 +69,13 @@ const CountryPage = () => {
           <CountryAuthority country={country} />
           <CountryMap country={country} />
           <CountryServices country={country} />
+          <section id="case-studies" aria-label="Client case studies">
+            <CaseStudies />
+          </section>
           <section id="testimonials" aria-label="Client testimonials">
             <Testimonials />
           </section>
+          <FullStackCTA />
           <CountryCaseStudiesCTA country={country} />
           <section id="faq" aria-label="Frequently asked questions">
             <FAQ />

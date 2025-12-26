@@ -77,9 +77,9 @@ const CountryServices = ({ country }: CountryServicesProps) => {
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                   <service.icon className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="font-display text-lg font-semibold text-foreground mb-2">
+                <h2 className="font-display text-lg font-semibold text-foreground mb-2">
                   {service.title}
-                </h3>
+                </h2>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   {service.description}
                 </p>
