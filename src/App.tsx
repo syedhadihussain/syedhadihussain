@@ -9,6 +9,7 @@ import { ThemeProvider } from "@/contexts/ThemeContext";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import LanguageRedirect from "@/components/LanguageRedirect";
 import FloatingActions from "@/components/FloatingActions";
+import TawkToChat from "@/components/TawkToChat";
 import { SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE } from "@/lib/i18n-config";
 import Index from "./pages/Index";
 
@@ -75,6 +76,7 @@ const App = () => (
             <Toaster />
             <Sonner />
             <FloatingActions />
+            <TawkToChat />
             <BrowserRouter>
               <LanguageRedirect />
               <Suspense fallback={<PageLoader />}>
