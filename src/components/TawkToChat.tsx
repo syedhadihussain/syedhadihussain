@@ -16,6 +16,22 @@ const TawkToChat = () => {
     window.Tawk_API = window.Tawk_API || {};
     window.Tawk_LoadStart = new Date();
 
+    // Position widget in the middle of the page
+    window.Tawk_API.customStyle = {
+      visibility: {
+        desktop: {
+          position: 'br', // bottom-right
+          xOffset: 20,
+          yOffset: 250 // Push up to middle area
+        },
+        mobile: {
+          position: 'br',
+          xOffset: 10,
+          yOffset: 200
+        }
+      }
+    };
+
     const script = document.createElement('script');
     script.async = true;
     script.src = `https://embed.tawk.to/${TAWK_PROPERTY_ID}/${TAWK_WIDGET_ID}`;
