@@ -56,14 +56,15 @@ const Testimonials = () => {
         </ScrollReveal>
 
         <ScrollReveal animation="fade-up" delay={200}>
-          <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            className="w-full"
-          >
-            <CarouselContent className="-ml-4">
+          <div dir="ltr">
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-4">
               {testimonialKeys.map((testimonial, index) => (
                 <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
                   <div className="glass rounded-2xl p-6 lg:p-8 relative group hover:glow-sm transition-all duration-300 h-full">
@@ -97,6 +98,7 @@ const Testimonials = () => {
               <CarouselNext className="static translate-y-0 bg-secondary hover:bg-primary hover:text-primary-foreground" />
             </div>
           </Carousel>
+          </div>
         </ScrollReveal>
       </div>
     </section>
