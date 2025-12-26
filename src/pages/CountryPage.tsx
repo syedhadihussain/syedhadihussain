@@ -3,7 +3,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { getCountryData, isValidCountry } from "@/lib/countries-config";
 import Navigation from "@/components/portfolio/Navigation";
 import Footer from "@/components/portfolio/Footer";
-import SEOHead from "@/components/SEOHead";
+import CountrySEOHead from "@/components/country/CountrySEOHead";
 import CountryHero from "@/components/country/CountryHero";
 import CountryAuthority from "@/components/country/CountryAuthority";
 import CountryMap from "@/components/country/CountryMap";
@@ -29,38 +29,32 @@ const CountryPage = () => {
     return <Navigate to={`/${language}`} replace />;
   }
 
-  // Generate SEO metadata
-  const pageTitle = t("country.seo.title")
-    .replace("{country}", country.name)
-    .replace("{service}", t("country.seo.localSeo"));
+  // Generate unique SEO metadata to avoid cannibalization
+  const pageTitle = `Local SEO Expert in ${country.name} | Rank Higher on Google Maps & AI Search`;
   
-  const pageDescription = t("country.seo.description")
-    .replace("{country}", country.name)
-    .replace("{count}", String(country.statesCount || "all"));
+  const pageDescription = `Get more customers with Local SEO services across all ${country.statesCount} states. I help ${country.name} businesses appear in Google Maps, local search results, and AI-powered search engines like ChatGPT. 7+ years experience, 150%+ traffic growth.`;
 
   const keywords = [
     `local SEO ${country.name}`,
     `SEO specialist ${country.name}`,
-    `local SEO expert ${country.name}`,
     `Google Maps optimization ${country.name}`,
-    `local search ${country.name}`,
-    `AI SEO ${country.name}`,
-    `generative search optimization`,
-    `map SEO consultant`,
+    `local search marketing USA`,
+    `Google Business Profile expert`,
+    `local SEO consultant America`,
+    `AI search optimization`,
+    `generative search SEO`,
+    `map ranking services`,
+    `local business SEO`,
     ...country.seoKeywords
   ].join(", ");
 
   return (
     <>
-      <SEOHead
+      <CountrySEOHead
+        country={country}
         title={pageTitle}
         description={pageDescription}
-        canonical={`/${country.code}`}
         keywords={keywords}
-        breadcrumbs={[
-          { name: "Home", url: "/" },
-          { name: country.name, url: `/${country.code}` }
-        ]}
       />
       <div className="min-h-screen bg-background">
         <Navigation />
