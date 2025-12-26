@@ -63,7 +63,11 @@ const Contact = () => {
                   <Mail className="w-6 h-6 text-primary" />
                 </div>
                 <h3 className="font-semibold text-foreground mb-1">{t("contact.email")}</h3>
-                <p className="text-sm text-muted-foreground">contact.syedhadihussain@gmail.com</p>
+                <p className="text-xs text-muted-foreground leading-relaxed break-all">
+                  contact.syedhadihussain
+                  <br />
+                  @gmail.com
+                </p>
               </a>
 
               <div className="glass rounded-2xl p-6 text-center">
