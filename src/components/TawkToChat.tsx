@@ -21,13 +21,13 @@ const TawkToChat = () => {
       visibility: {
         desktop: {
           position: 'br',
-          xOffset: 16, // Match floating buttons right-4 (16px)
-          yOffset: 220 // Position in middle area
+          xOffset: 15,
+          yOffset: 80 // Just above the floating buttons stack
         },
         mobile: {
           position: 'br',
-          xOffset: 16, // Match floating buttons right-4
-          yOffset: 200
+          xOffset: 15,
+          yOffset: 80
         }
       }
     };
