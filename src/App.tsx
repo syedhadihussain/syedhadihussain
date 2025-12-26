@@ -98,14 +98,11 @@ const App = () => (
                           element={route.element}
                         />
                       ))}
-                      {/* Country pages within language prefix */}
-                      {COUNTRY_CODES.map((countryCode) => (
-                        <Route
-                          key={`${lang}-country-${countryCode}`}
-                          path={countryCode}
-                          element={<CountryPage />}
-                        />
-                      ))}
+                      {/* Country pages within language prefix - use :countryCode param */}
+                      <Route
+                        path=":countryCode"
+                        element={<CountryPage />}
+                      />
                     </Route>
                   ))}
 
