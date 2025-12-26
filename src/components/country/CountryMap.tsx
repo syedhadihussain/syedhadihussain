@@ -1,6 +1,7 @@
 import { MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { CountryData, US_STATE_COORDS } from "@/lib/countries-config";
+import { CountryData } from "@/lib/countries-config";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 interface CountryMapProps {
@@ -8,7 +9,7 @@ interface CountryMapProps {
 }
 
 const CountryMap = ({ country }: CountryMapProps) => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   // Only show detailed map for US currently
   const isUS = country.code === "us";
@@ -33,7 +34,7 @@ const CountryMap = ({ country }: CountryMapProps) => {
         <ScrollReveal delay={0.2}>
           <div className="relative bg-muted/50 rounded-2xl p-8 border border-border overflow-hidden">
             {/* SVG Map for US */}
-            {isUS && (
+            {isUS && country.states && (
               <div className="relative">
                 {/* US Map SVG - Simplified outline with state pins */}
                 <svg 
@@ -50,22 +51,23 @@ const CountryMap = ({ country }: CountryMapProps) => {
                   />
                   
                   {/* State dots with labels */}
-                  {country.states?.map((state, index) => {
-                    const coords = US_STATE_COORDS[state];
-                    if (!coords) return null;
-                    
+                  {country.states.map((state) => {
                     // Convert lat/lng to approximate SVG coordinates
                     // US bounds roughly: lat 24-50, lng -125 to -66
-                    const x = ((coords[1] + 125) / 59) * 800 + 80;
-                    const y = ((50 - coords[0]) / 26) * 450 + 50;
+                    const x = ((state.coords[1] + 125) / 59) * 800 + 80;
+                    const y = ((50 - state.coords[0]) / 26) * 450 + 50;
                     
                     return (
-                      <g key={state} className="group cursor-pointer">
+                      <Link 
+                        key={state.code} 
+                        to={`/${language}/${country.code}/${state.code}/`}
+                        className="group cursor-pointer"
+                      >
                         <circle
                           cx={x}
                           cy={y}
                           r="8"
-                          className="fill-primary/60 stroke-primary stroke-2 transition-all duration-300 group-hover:fill-primary group-hover:r-10"
+                          className="fill-primary/60 stroke-primary stroke-2 transition-all duration-300 group-hover:fill-primary"
                         />
                         <circle
                           cx={x}
@@ -73,9 +75,9 @@ const CountryMap = ({ country }: CountryMapProps) => {
                           r="4"
                           className="fill-background"
                         />
-                        {/* Tooltip on hover - hidden by default */}
-                        <title>{state}</title>
-                      </g>
+                        {/* Tooltip on hover */}
+                        <title>{state.name}</title>
+                      </Link>
                     );
                   })}
                 </svg>
@@ -100,7 +102,7 @@ const CountryMap = ({ country }: CountryMapProps) => {
           </div>
         </ScrollReveal>
 
-        {/* State list for accessibility and SEO */}
+        {/* State list for accessibility and SEO - with internal links */}
         {isUS && country.states && (
           <ScrollReveal delay={0.3}>
             <div className="mt-8 p-6 bg-muted/30 rounded-xl">
@@ -109,12 +111,13 @@ const CountryMap = ({ country }: CountryMapProps) => {
               </h3>
               <div className="flex flex-wrap justify-center gap-2">
                 {country.states.map((state) => (
-                  <span 
-                    key={state}
-                    className="px-3 py-1 bg-background rounded-full text-sm text-muted-foreground border border-border hover:border-primary hover:text-primary transition-colors"
+                  <Link 
+                    key={state.code}
+                    to={`/${language}/${country.code}/${state.code}/`}
+                    className="px-3 py-1 bg-background rounded-full text-sm text-muted-foreground border border-border hover:border-primary hover:text-primary hover:bg-primary/5 transition-colors"
                   >
-                    {state}
-                  </span>
+                    {state.name}
+                  </Link>
                 ))}
               </div>
             </div>
