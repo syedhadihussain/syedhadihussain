@@ -60,7 +60,7 @@ const FloatingActions = () => {
   const emailUrl = `mailto:contact.syedhadihussain@gmail.com?subject=${emailSubject}&body=${emailBody}`;
 
   return (
-    <div className="fixed right-4 bottom-6 z-40 flex flex-col gap-3 mb-0">
+    <div className="fixed right-4 bottom-[280px] z-40 flex flex-col gap-4">
       {/* WhatsApp Button */}
       <a
         href={whatsappUrl}
