@@ -250,6 +250,20 @@ export const translations: Translations = {
   "footer.followTips": { en: "Follow me for tips and updates on local SEO strategies.", ar: "تابعني للحصول على نصائح وتحديثات حول استراتيجيات SEO المحلية.", es: "Sígueme para consejos y actualizaciones sobre estrategias de SEO local.", pt: "Siga-me para dicas e atualizações sobre estratégias de SEO local.", fr: "Suivez-moi pour des conseils et mises à jour sur les stratégies SEO locales.", it: "Seguimi per consigli e aggiornamenti sulle strategie SEO locali.", de: "Folgen Sie mir für Tipps und Updates zu lokalen SEO-Strategien." },
   "footer.connect": { en: "Connect", ar: "تواصل", es: "Conectar", pt: "Conectar", fr: "Se connecter", it: "Connetti", de: "Verbinden" },
 
+  // Footer - Services list
+  "footer.service.localServiceAds": { en: "Local Service Ads", ar: "إعلانات الخدمات المحلية", es: "Anuncios de Servicios Locales", pt: "Anúncios de Serviços Locais", fr: "Annonces de services locaux", it: "Annunci di servizi locali", de: "Lokale Serviceanzeigen" },
+  "footer.service.webDevelopment": { en: "Web Development", ar: "تطوير المواقع", es: "Desarrollo Web", pt: "Desenvolvimento Web", fr: "Développement Web", it: "Sviluppo Web", de: "Webentwicklung" },
+  "footer.service.contentWriting": { en: "Content Writing", ar: "كتابة المحتوى", es: "Redacción de Contenido", pt: "Redação de Conteúdo", fr: "Rédaction de contenu", it: "Scrittura contenuti", de: "Content-Erstellung" },
+  "footer.service.graphicDesign": { en: "Graphic Design", ar: "تصميم جرافيك", es: "Diseño Gráfico", pt: "Design Gráfico", fr: "Design graphique", it: "Graphic design", de: "Grafikdesign" },
+  "footer.service.socialMedia": { en: "Social Media Marketing", ar: "التسويق عبر وسائل التواصل", es: "Marketing en Redes Sociales", pt: "Marketing de Mídias Sociais", fr: "Marketing sur les réseaux sociaux", it: "Social media marketing", de: "Social Media Marketing" },
+
+  // Footer - Payment methods
+  "footer.payment.payoneer": { en: "Payoneer", ar: "بايونير", es: "Payoneer", pt: "Payoneer", fr: "Payoneer", it: "Payoneer", de: "Payoneer" },
+  "footer.payment.wise": { en: "Wise", ar: "وايز", es: "Wise", pt: "Wise", fr: "Wise", it: "Wise", de: "Wise" },
+  "footer.payment.paypal": { en: "PayPal", ar: "باي بال", es: "PayPal", pt: "PayPal", fr: "PayPal", it: "PayPal", de: "PayPal" },
+  "footer.payment.bankTransfer": { en: "Bank Transfer", ar: "تحويل بنكي", es: "Transferencia Bancaria", pt: "Transferência Bancária", fr: "Virement bancaire", it: "Bonifico bancario", de: "Banküberweisung" },
+  "footer.payment.usdt": { en: "USDT", ar: "USDT", es: "USDT", pt: "USDT", fr: "USDT", it: "USDT", de: "USDT" },
+
   // Portfolio
   "portfolio.title": { en: "Our Portfolio", ar: "محفظتنا", es: "Nuestro Portafolio", pt: "Nosso Portfólio", fr: "Notre Portfolio", it: "Il nostro Portfolio", de: "Unser Portfolio" },
   "portfolio.webDev": { en: "Web Development", ar: "تطوير المواقع", es: "Desarrollo Web", pt: "Desenvolvimento Web", fr: "Développement Web", it: "Sviluppo Web", de: "Webentwicklung" },
