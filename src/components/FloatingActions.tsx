@@ -4,9 +4,11 @@ import { useLanguage } from '@/contexts/LanguageContext';
 
 const FloatingActions = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const { language } = useLanguage();
 
   useEffect(() => {
+    setMounted(true);
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 400);
     };
@@ -35,8 +37,7 @@ const FloatingActions = () => {
       : 'Hi! I\'m interested in your SEO services. Can I know more?'
   );
 
-  const whatsappNumber = '923001234567'; // Replace with actual number
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+  const whatsappUrl = `https://wa.me/+971523695036?text=${whatsappMessage}`;
 
   const emailSubject = encodeURIComponent(
     language === 'ar' ? 'استفسار عن خدمات SEO' : 'SEO Services Inquiry'
@@ -56,7 +57,7 @@ const FloatingActions = () => {
       ? 'Hallo,\n\nIch interessiere mich für Ihre SEO-Dienste und würde gerne mehr darüber erfahren, wie Sie helfen können, die Online-Sichtbarkeit meines Unternehmens zu verbessern.\n\nDanke!'
       : 'Hello,\n\nI\'m interested in your SEO services and would like to know more about how you can help improve my business visibility online.\n\nThank you!'
   );
-  const emailUrl = `mailto:contact@hadiseo.com?subject=${emailSubject}&body=${emailBody}`;
+  const emailUrl = `mailto:contact.syedhadihussain@gmail.com?subject=${emailSubject}&body=${emailBody}`;
 
   return (
     <div className="fixed right-4 bottom-24 z-50 flex flex-col gap-3">
@@ -65,11 +66,15 @@ const FloatingActions = () => {
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="group flex items-center justify-center w-12 h-12 bg-[#25D366] hover:bg-[#128C7E] text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+        className={`group relative flex items-center justify-center w-14 h-14 bg-gradient-to-br from-[#25D366] to-[#128C7E] text-white rounded-full shadow-lg transition-all duration-500 hover:shadow-[0_0_25px_rgba(37,211,102,0.5)] hover:scale-110 ${
+          mounted ? 'animate-[bounce-in_0.6s_ease-out_0.2s_both]' : 'opacity-0'
+        }`}
         aria-label="Contact via WhatsApp"
       >
-        <MessageCircle className="w-6 h-6" />
-        <span className="absolute right-14 bg-foreground text-background text-sm px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
+        <MessageCircle className="w-6 h-6 transition-transform duration-300 group-hover:rotate-12" />
+        <span className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-ping" />
+        <span className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full" />
+        <span className="absolute right-16 bg-foreground/90 backdrop-blur-sm text-background text-sm px-4 py-2 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap pointer-events-none shadow-lg translate-x-2 group-hover:translate-x-0">
           WhatsApp
         </span>
       </a>
@@ -77,11 +82,13 @@ const FloatingActions = () => {
       {/* Email Button */}
       <a
         href={emailUrl}
-        className="group flex items-center justify-center w-12 h-12 bg-primary hover:bg-primary/90 text-primary-foreground rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+        className={`group relative flex items-center justify-center w-14 h-14 bg-gradient-to-br from-primary to-primary/80 text-primary-foreground rounded-full shadow-lg transition-all duration-500 hover:shadow-[0_0_25px_hsl(var(--primary)/0.5)] hover:scale-110 ${
+          mounted ? 'animate-[bounce-in_0.6s_ease-out_0.4s_both]' : 'opacity-0'
+        }`}
         aria-label="Contact via Email"
       >
-        <Mail className="w-6 h-6" />
-        <span className="absolute right-14 bg-foreground text-background text-sm px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
+        <Mail className="w-6 h-6 transition-transform duration-300 group-hover:scale-110" />
+        <span className="absolute right-16 bg-foreground/90 backdrop-blur-sm text-background text-sm px-4 py-2 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap pointer-events-none shadow-lg translate-x-2 group-hover:translate-x-0">
           Email
         </span>
       </a>
@@ -89,16 +96,37 @@ const FloatingActions = () => {
       {/* Scroll to Top Button */}
       <button
         onClick={scrollToTop}
-        className={`group flex items-center justify-center w-12 h-12 bg-muted hover:bg-muted/80 text-foreground rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 ${
-          showScrollTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
+        className={`group relative flex items-center justify-center w-14 h-14 bg-gradient-to-br from-muted to-muted/80 text-foreground rounded-full shadow-lg transition-all duration-500 hover:shadow-xl hover:scale-110 ${
+          showScrollTop 
+            ? 'opacity-100 translate-y-0' 
+            : 'opacity-0 translate-y-4 pointer-events-none'
         }`}
         aria-label="Scroll to top"
       >
-        <ChevronUp className="w-6 h-6" />
-        <span className="absolute right-14 bg-foreground text-background text-sm px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
+        <ChevronUp className="w-6 h-6 transition-transform duration-300 group-hover:-translate-y-1" />
+        <span className="absolute right-16 bg-foreground/90 backdrop-blur-sm text-background text-sm px-4 py-2 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap pointer-events-none shadow-lg translate-x-2 group-hover:translate-x-0">
           {language === 'ar' ? 'أعلى الصفحة' : 'Back to top'}
         </span>
       </button>
+
+      <style>{`
+        @keyframes bounce-in {
+          0% {
+            opacity: 0;
+            transform: scale(0.3) translateY(20px);
+          }
+          50% {
+            transform: scale(1.05) translateY(-5px);
+          }
+          70% {
+            transform: scale(0.95) translateY(2px);
+          }
+          100% {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+          }
+        }
+      `}</style>
     </div>
   );
 };
