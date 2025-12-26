@@ -320,8 +320,8 @@ const ContactForm = () => {
               <Building2 className="w-5 h-5 text-primary" />
             </div>
             <div>
-              <p className="font-medium text-foreground text-sm">Do you have multiple business locations?</p>
-              <p className="text-xs text-muted-foreground">Add all your locations for a custom multi-location quote</p>
+              <p className="font-medium text-foreground text-sm">{t("contact.multiLocation.question")}</p>
+              <p className="text-xs text-muted-foreground">{t("contact.multiLocation.hint")}</p>
             </div>
           </div>
           <Select
@@ -332,8 +332,8 @@ const ContactForm = () => {
               <SelectValue />
             </SelectTrigger>
             <SelectContent className="bg-background border border-border z-50">
-              <SelectItem value="no">No</SelectItem>
-              <SelectItem value="yes">Yes</SelectItem>
+              <SelectItem value="no">{t("contact.multiLocation.no")}</SelectItem>
+              <SelectItem value="yes">{t("contact.multiLocation.yes")}</SelectItem>
             </SelectContent>
           </Select>
         </div>
@@ -447,18 +447,18 @@ const ContactForm = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <MapPin className="w-4 h-4 text-primary" />
-              <span className="font-medium text-foreground">Your Business Locations ({locations.length})</span>
+              <span className="font-medium text-foreground">{t("contact.multiLocation.yourLocations")} ({locations.length})</span>
             </div>
             <Badge variant="secondary" className="text-xs">
               <Sparkles className="w-3 h-3 mr-1" />
-              Multi-location discount applies!
+              {t("contact.multiLocation.discountApplies")}
             </Badge>
           </div>
 
           {locations.map((location, index) => (
             <div key={location.id} className="glass rounded-xl p-4 space-y-4 border border-border/50">
               <div className="flex items-center justify-between">
-                <span className="text-sm font-medium text-primary">Location {index + 1}</span>
+                <span className="text-sm font-medium text-primary">{t("contact.multiLocation.location")} {index + 1}</span>
                 {locations.length > 1 && (
                   <Button
                     type="button"
@@ -474,7 +474,7 @@ const ContactForm = () => {
 
               {/* Business Name */}
               <div className="space-y-2">
-                <Label>Business Name *</Label>
+                <Label>{t("contact.businessName")} *</Label>
                 <Input
                   value={location.business_name}
                   onChange={(e) => handleLocationChange(location.id, 'business_name', e.target.value)}
@@ -486,7 +486,7 @@ const ContactForm = () => {
 
               {/* Address */}
               <div className="space-y-2">
-                <Label>Business Address</Label>
+                <Label>{t("contact.businessAddress")}</Label>
                 <Input
                   value={location.business_address}
                   onChange={(e) => handleLocationChange(location.id, 'business_address', e.target.value)}
@@ -498,7 +498,7 @@ const ContactForm = () => {
               {/* City, State, Zip */}
               <div className="grid grid-cols-3 gap-3">
                 <div className="space-y-2">
-                  <Label>City *</Label>
+                  <Label>{t("contact.city")} *</Label>
                   <Input
                     value={location.business_city}
                     onChange={(e) => handleLocationChange(location.id, 'business_city', e.target.value)}
@@ -508,7 +508,7 @@ const ContactForm = () => {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label>State</Label>
+                  <Label>{t("contact.state")}</Label>
                   <Input
                     value={location.business_state}
                     onChange={(e) => handleLocationChange(location.id, 'business_state', e.target.value)}
@@ -517,7 +517,7 @@ const ContactForm = () => {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label>Zipcode *</Label>
+                  <Label>{t("contact.zipcode")} *</Label>
                   <Input
                     value={location.zipcode}
                     onChange={(e) => handleLocationChange(location.id, 'zipcode', e.target.value)}
@@ -530,7 +530,7 @@ const ContactForm = () => {
 
               {/* Country */}
               <div className="space-y-2">
-                <Label>Country *</Label>
+                <Label>{t("contact.country")} *</Label>
                 <Input
                   value={location.business_country}
                   onChange={(e) => handleLocationChange(location.id, 'business_country', e.target.value)}
@@ -542,7 +542,7 @@ const ContactForm = () => {
 
               {/* GBP Link */}
               <div className="space-y-2">
-                <Label>GBP/Map Link *</Label>
+                <Label>{t("contact.gbpLink")} *</Label>
                 <Input
                   value={location.gbp_link}
                   onChange={(e) => handleLocationChange(location.id, 'gbp_link', e.target.value)}
@@ -561,7 +561,7 @@ const ContactForm = () => {
             className="w-full border-dashed"
           >
             <Plus className="w-4 h-4 mr-2" />
-            Add Another Location
+            {t("contact.multiLocation.addAnother")}
           </Button>
         </div>
       )}
@@ -594,7 +594,7 @@ const ContactForm = () => {
       {(isOtherService || isMultiServiceBundle) && (
         <div className="space-y-2 animate-fade-in">
           <Label htmlFor="customService">
-            {isMultiServiceBundle ? "Which services do you need? *" : t("contact.customService") + " *"}
+            {isMultiServiceBundle ? t("contact.whichServices") + " *" : t("contact.customService") + " *"}
           </Label>
           <Textarea
             id="customService"
@@ -602,16 +602,16 @@ const ContactForm = () => {
             value={formData.customService}
             onChange={handleChange}
             placeholder={isMultiServiceBundle 
-              ? "E.g., Local SEO + Web Development + Social Media Marketing..." 
-              : "Describe the custom service you need..."}
+              ? t("contact.bundleServicesPlaceholder")
+              : t("contact.customServiceHint")}
             required
             rows={3}
             className="bg-background/50 resize-none"
           />
           <p className="text-xs text-muted-foreground">
             {isMultiServiceBundle 
-              ? "List all the services you're interested in bundling together"
-              : "Please describe the specific service you're looking for"}
+              ? t("contact.bundleServicesHint")
+              : t("contact.customServiceHint")}
           </p>
         </div>
       )}
@@ -620,18 +620,18 @@ const ContactForm = () => {
       <div className="space-y-2">
         <Label htmlFor="promoCode" className="flex items-center gap-2">
           <Sparkles className="w-4 h-4 text-primary" />
-          Promo Code (Optional)
+          {t("contact.promoCode")}
         </Label>
         <Input
           id="promoCode"
           name="promoCode"
           value={formData.promoCode}
           onChange={handleChange}
-          placeholder="E.g., MULTI-DISCOUNT"
+          placeholder={t("contact.promoCodePlaceholder")}
           className="bg-background/50"
         />
         <p className="text-xs text-muted-foreground">
-          Have a promo code? Enter it here for special discounts on multi-location or bundled services.
+          {t("contact.promoCodeHint")}
         </p>
       </div>
 
@@ -668,11 +668,11 @@ const ContactForm = () => {
         <div className="bg-primary/5 border border-primary/20 rounded-lg p-4 flex items-start gap-3">
           <Sparkles className="w-5 h-5 text-primary shrink-0 mt-0.5" />
           <div>
-            <p className="text-sm font-medium text-foreground">Special Discount Eligible!</p>
+            <p className="text-sm font-medium text-foreground">{t("contact.discountEligible")}</p>
             <p className="text-xs text-muted-foreground mt-1">
               {hasMultipleLocations && locations.length > 1 
-                ? `You're adding ${locations.length} locations — you qualify for up to 30% volume discount!`
-                : "Bundling multiple services qualifies you for up to 25% discount!"}
+                ? t("contact.locationDiscount").replace("{count}", String(locations.length))
+                : t("contact.bundleDiscount")}
             </p>
           </div>
         </div>

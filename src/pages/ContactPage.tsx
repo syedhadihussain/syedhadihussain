@@ -4,9 +4,12 @@ import SEOHead from "@/components/SEOHead";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import ContactForm from "@/components/ContactForm";
 import { Button } from "@/components/ui/button";
-import { Calendar, Mail, MessageCircle, MapPin, Phone, Clock, ArrowRight } from "lucide-react";
+import { Calendar, Mail, MessageCircle, MapPin, Clock, ArrowRight } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const ContactPage = () => {
+  const { t } = useLanguage();
+
   return (
     <>
       <SEOHead
@@ -27,13 +30,13 @@ const ContactPage = () => {
             <div className="container-narrow text-center">
               <ScrollReveal animation="fade-up">
                 <span className="text-primary text-sm font-medium tracking-wider uppercase mb-4 block">
-                  Contact
+                  {t("nav.contact")}
                 </span>
                 <h1 className="font-display text-4xl lg:text-5xl font-bold text-foreground mb-6">
-                  Let's Start a Conversation
+                  {t("contactPage.title")}
                 </h1>
                 <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                  Ready to dominate local search? Get in touch and let's discuss how I can help your business grow.
+                  {t("contactPage.description")}
                 </p>
               </ScrollReveal>
             </div>
@@ -48,7 +51,7 @@ const ContactPage = () => {
                   <ScrollReveal animation="fade-right">
                     <div className="glass rounded-2xl p-8">
                       <h2 className="font-display text-2xl font-bold text-foreground mb-6">
-                        Quick Contact
+                        {t("contactPage.quickContact")}
                       </h2>
                       
                       <div className="space-y-6">
@@ -60,7 +63,7 @@ const ContactPage = () => {
                             <Mail className="w-5 h-5" />
                           </div>
                           <div>
-                            <p className="font-medium text-foreground">Email</p>
+                            <p className="font-medium text-foreground">{t("contact.email.label")}</p>
                             <p className="text-muted-foreground text-sm">contact.syedhadihussain@gmail.com</p>
                           </div>
                         </a>
@@ -75,7 +78,7 @@ const ContactPage = () => {
                             <MessageCircle className="w-5 h-5" />
                           </div>
                           <div>
-                            <p className="font-medium text-foreground">WhatsApp</p>
+                            <p className="font-medium text-foreground">{t("contact.whatsapp.label")}</p>
                             <p className="text-muted-foreground text-sm">+971 52 369 5036</p>
                           </div>
                         </a>
@@ -85,8 +88,8 @@ const ContactPage = () => {
                             <MapPin className="w-5 h-5" />
                           </div>
                           <div>
-                            <p className="font-medium text-foreground">Service Areas</p>
-                            <p className="text-muted-foreground text-sm">Worldwide</p>
+                            <p className="font-medium text-foreground">{t("contactPage.serviceAreas")}</p>
+                            <p className="text-muted-foreground text-sm">{t("contact.worldwide")}</p>
                           </div>
                         </div>
 
@@ -95,8 +98,8 @@ const ContactPage = () => {
                             <Clock className="w-5 h-5" />
                           </div>
                           <div>
-                            <p className="font-medium text-foreground">Response Time</p>
-                            <p className="text-muted-foreground text-sm">Within 24 hours</p>
+                            <p className="font-medium text-foreground">{t("contactPage.responseTime")}</p>
+                            <p className="text-muted-foreground text-sm">{t("contactPage.within24h")}</p>
                           </div>
                         </div>
                       </div>
@@ -107,14 +110,14 @@ const ContactPage = () => {
                     <div className="glass rounded-2xl p-8 glow">
                       <Calendar className="w-10 h-10 text-primary mb-4" />
                       <h3 className="font-display text-xl font-bold text-foreground mb-2">
-                        Book a Free Consultation
+                        {t("contactPage.bookConsultation")}
                       </h3>
                       <p className="text-muted-foreground text-sm mb-6">
-                        Schedule a 30-minute call to discuss your Local SEO needs and get actionable insights.
+                        {t("contactPage.consultationDesc")}
                       </p>
                       <Button asChild className="w-full glow group">
                         <a href="https://calendly.com/syedhadihussain" target="_blank" rel="noopener noreferrer">
-                          Schedule Call
+                          {t("contactPage.scheduleCall")}
                           <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                         </a>
                       </Button>
@@ -127,10 +130,10 @@ const ContactPage = () => {
                   <ScrollReveal animation="fade-left">
                     <div className="glass rounded-2xl p-8 lg:p-10">
                       <h2 className="font-display text-2xl font-bold text-foreground mb-2">
-                        Send a Message
+                        {t("contactPage.sendMessage")}
                       </h2>
                       <p className="text-muted-foreground mb-8">
-                        Fill out the form below and I'll get back to you within 24 hours.
+                        {t("contactPage.formDescription")}
                       </p>
                       <ContactForm />
                     </div>
