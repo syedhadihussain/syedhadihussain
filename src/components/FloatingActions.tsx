@@ -82,8 +82,8 @@ const FloatingActions = () => {
       {/* Email Button */}
       <a
         href={emailUrl}
-        className={`group relative flex items-center justify-center w-14 h-14 bg-gradient-to-br from-primary to-primary/80 text-primary-foreground rounded-full shadow-[0_4px_14px_rgba(0,0,0,0.25)] transition-all duration-500 hover:shadow-[0_6px_20px_hsl(var(--primary)/0.5)] hover:scale-110 ${
-          mounted ? 'animate-[bounce-in_0.6s_ease-out_0.4s_both]' : 'opacity-0'
+        className={`group relative flex items-center justify-center w-14 h-14 bg-gradient-to-br from-primary to-primary/80 text-primary-foreground rounded-full shadow-[0_4px_14px_rgba(0,0,0,0.25)] transition-all duration-500 hover:shadow-[0_6px_20px_hsl(var(--primary)/0.5)] hover:scale-110 animate-[email-pulse_2s_ease-in-out_infinite] ${
+          mounted ? 'animate-[bounce-in_0.6s_ease-out_0.4s_both,email-pulse_2s_ease-in-out_infinite_1s]' : 'opacity-0'
         }`}
         aria-label="Contact via Email"
       >
@@ -132,6 +132,14 @@ const FloatingActions = () => {
           }
           50% {
             box-shadow: 0 4px 14px rgba(0,0,0,0.25), 0 0 20px 4px rgba(37, 211, 102, 0.3);
+          }
+        }
+        @keyframes email-pulse {
+          0%, 100% {
+            box-shadow: 0 4px 14px rgba(0,0,0,0.25), 0 0 0 0 hsl(var(--primary) / 0.4);
+          }
+          50% {
+            box-shadow: 0 4px 14px rgba(0,0,0,0.25), 0 0 20px 4px hsl(var(--primary) / 0.3);
           }
         }
       `}</style>
