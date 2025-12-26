@@ -3,9 +3,13 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { useLocation } from "react-router-dom";
 import { 
   SUPPORTED_LANGUAGES, 
+  HREFLANG_CODES,
   BASE_URL, 
   isRTL,
-  SupportedLanguage 
+  getCanonicalUrl,
+  extractSlugFromPath,
+  generateHreflangs,
+  type SupportedLanguage 
 } from "@/lib/i18n-config";
 
 interface SEOHeadProps {
@@ -23,16 +27,6 @@ interface SEOHeadProps {
 
 const baseUrl = BASE_URL;
 
-// Extract slug from current path (removes language prefix)
-const getSlugFromPath = (pathname: string): string => {
-  const parts = pathname.split("/").filter(Boolean);
-  // If first part is a language code, remove it
-  if (parts.length > 0 && SUPPORTED_LANGUAGES.includes(parts[0] as SupportedLanguage)) {
-    parts.shift();
-  }
-  return parts.length > 0 ? `/${parts.join("/")}` : "";
-};
-
 const SEOHead = ({
   title = "Syed Hadi Hussain | Full Stack Local SEO Specialist",
   description = "I help local and service-based businesses rank higher on Google and turn searches into paying customers. 7+ years experience, 100+ clients served worldwide.",
@@ -48,18 +42,17 @@ const SEOHead = ({
   const { language } = useLanguage();
   const location = useLocation();
   
-  // Get the current slug (without language prefix)
-  const currentSlug = getSlugFromPath(location.pathname);
+  // Extract the current slug (without language prefix) using centralized helper
+  const currentSlug = extractSlugFromPath(location.pathname);
   
-  // Generate canonical URL for current language
-  const fullCanonical = `${baseUrl}/${language}${currentSlug}`;
+  // Generate canonical URL - use provided or auto-generate using centralized helper
+  // This ensures canonical URLs match hreflang URLs exactly
+  const fullCanonical = canonical || getCanonicalUrl(language, currentSlug);
   const fullOgImage = ogImage.startsWith("http") ? ogImage : `${baseUrl}${ogImage}`;
   const currentDate = new Date().toISOString();
 
-  // Generate hreflang URLs for all languages
-  const generateHreflangUrl = (lang: SupportedLanguage): string => {
-    return `${baseUrl}/${lang}${currentSlug}`;
-  };
+  // Generate all hreflang URLs using centralized helper for consistency
+  const hreflangs = generateHreflangs(currentSlug);
 
   // Person Schema - Core identity
   const personSchema = {
@@ -391,14 +384,18 @@ const SEOHead = ({
       <meta name="bingbot" content="index, follow" />
 
       {/* Hreflang for multi-language SEO - All 7 languages + x-default */}
-      <link rel="alternate" hrefLang="x-default" href={generateHreflangUrl("en")} />
-      <link rel="alternate" hrefLang="en" href={generateHreflangUrl("en")} />
-      <link rel="alternate" hrefLang="ar" href={generateHreflangUrl("ar")} />
-      <link rel="alternate" hrefLang="es" href={generateHreflangUrl("es")} />
-      <link rel="alternate" hrefLang="pt" href={generateHreflangUrl("pt")} />
-      <link rel="alternate" hrefLang="it" href={generateHreflangUrl("it")} />
-      <link rel="alternate" hrefLang="fr" href={generateHreflangUrl("fr")} />
-      <link rel="alternate" hrefLang="de" href={generateHreflangUrl("de")} />
+      {/* x-default points to English version for users whose language isn't supported */}
+      <link rel="alternate" hrefLang="x-default" href={hreflangs["x-default"]} />
+      
+      {/* All supported language versions - dynamically generated for consistency */}
+      {SUPPORTED_LANGUAGES.map((lang) => (
+        <link
+          key={lang}
+          rel="alternate"
+          hrefLang={HREFLANG_CODES[lang]}
+          href={hreflangs[HREFLANG_CODES[lang]]}
+        />
+      ))}
 
       {/* Open Graph */}
       <meta property="og:title" content={title} />
@@ -419,6 +416,24 @@ const SEOHead = ({
         language === "de" ? "de_DE" : 
         "en_US"
       } />
+      
+      {/* Open Graph alternate locales for all other languages */}
+      {SUPPORTED_LANGUAGES.filter((lang) => lang !== language).map((lang) => (
+        <meta 
+          key={`og-locale-${lang}`} 
+          property="og:locale:alternate" 
+          content={
+            lang === "ar" ? "ar_AE" : 
+            lang === "es" ? "es_ES" : 
+            lang === "pt" ? "pt_BR" : 
+            lang === "it" ? "it_IT" : 
+            lang === "fr" ? "fr_FR" : 
+            lang === "de" ? "de_DE" : 
+            "en_US"
+          } 
+        />
+      ))}
+      
       {publishedTime && <meta property="article:published_time" content={publishedTime} />}
       {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
 

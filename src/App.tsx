@@ -10,6 +10,7 @@ import { LanguageProvider } from "@/contexts/LanguageContext";
 import LanguageRedirect from "@/components/LanguageRedirect";
 import FloatingActions from "@/components/FloatingActions";
 import TawkToChat from "@/components/TawkToChat";
+import GlobalSEO from "@/components/GlobalSEO";
 import { SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE } from "@/lib/i18n-config";
 import Index from "./pages/Index";
 
@@ -72,6 +73,7 @@ const App = () => (
     <ThemeProvider>
       <LanguageProvider>
         <HelmetProvider>
+          <GlobalSEO />
           <TooltipProvider>
             <Toaster />
             <Sonner />
