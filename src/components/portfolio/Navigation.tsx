@@ -16,9 +16,10 @@ import {
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const location = useLocation();
-  const isHomePage = location.pathname === "/";
+  // Check if on homepage - account for language prefix
+  const isHomePage = location.pathname === "/" || location.pathname === `/${language}` || location.pathname === `/${language}/`;
 
   useEffect(() => {
     const handleScroll = () => {

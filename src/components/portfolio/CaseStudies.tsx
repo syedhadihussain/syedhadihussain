@@ -2,6 +2,7 @@ import { ArrowUpRight, MapPin, TrendingUp, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Link } from "react-router-dom";
 
 const CaseStudies = () => {
   const { t } = useLanguage();
@@ -163,10 +164,10 @@ const CaseStudies = () => {
         <ScrollReveal animation="fade-up" delay={600}>
           <div className="text-center mt-12">
             <Button asChild size="lg" variant="outline">
-              <a href="#contact">
+              <Link to="/contact">
                 {t("caseStudies.wantResults")}
                 <ArrowUpRight className="w-4 h-4 ml-2" />
-              </a>
+              </Link>
             </Button>
           </div>
         </ScrollReveal>
