@@ -33,21 +33,21 @@ const Footer = () => {
   ];
 
   const services = [
-    { label: t("services.localSeo"), href: langLink("/services") },
-    { label: "Local Service Ads", href: langLink("/local-service-ads") },
-    { label: t("services.projectMgmt"), href: langLink("/project-management") },
-    { label: "Web Development", href: langLink("/web-development") },
-    { label: "Content Writing", href: langLink("/content-writing") },
-    { label: "Graphic Design", href: langLink("/graphic-design") },
-    { label: "Social Media Marketing", href: langLink("/social-media") },
+    { labelKey: "services.localSeo", href: langLink("/services") },
+    { labelKey: "footer.service.localServiceAds", href: langLink("/local-service-ads") },
+    { labelKey: "services.projectMgmt", href: langLink("/project-management") },
+    { labelKey: "footer.service.webDevelopment", href: langLink("/web-development") },
+    { labelKey: "footer.service.contentWriting", href: langLink("/content-writing") },
+    { labelKey: "footer.service.graphicDesign", href: langLink("/graphic-design") },
+    { labelKey: "footer.service.socialMedia", href: langLink("/social-media") },
   ];
 
   const paymentLogos = [
-    { name: "Payoneer", color: "#FF4800" },
-    { name: "Wise", color: "#9FE870" },
-    { name: "PayPal", color: "#003087" },
-    { name: "Bank Transfer", color: "#1e40af" },
-    { name: "USDT", color: "#26A17B" },
+    { labelKey: "footer.payment.payoneer", color: "#FF4800" },
+    { labelKey: "footer.payment.wise", color: "#9FE870" },
+    { labelKey: "footer.payment.paypal", color: "#003087" },
+    { labelKey: "footer.payment.bankTransfer", color: "#1e40af" },
+    { labelKey: "footer.payment.usdt", color: "#26A17B" },
   ];
 
   return (
@@ -107,12 +107,12 @@ const Footer = () => {
             <nav className="space-y-2.5">
               {services.map((service) => (
                 <Link
-                  key={service.label}
+                  key={service.labelKey}
                   to={service.href}
                   className="block text-sm text-muted-foreground hover:text-foreground transition-colors group"
                 >
                   <span className="inline-flex items-center gap-1">
-                    {service.label}
+                    {t(service.labelKey)}
                     <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </span>
                 </Link>
@@ -175,14 +175,14 @@ const Footer = () => {
             <div className="flex flex-wrap items-center justify-center gap-3">
               {paymentLogos.map((payment) => (
                 <div 
-                  key={payment.name}
+                  key={payment.labelKey}
                   className="flex items-center gap-2 px-4 py-2 bg-secondary/50 rounded-lg border border-border hover:border-primary/30 transition-colors"
                 >
                   <div 
                     className="w-2.5 h-2.5 rounded-full" 
                     style={{ backgroundColor: payment.color }}
                   />
-                  <span className="text-sm text-muted-foreground font-medium">{payment.name}</span>
+                  <span className="text-sm text-muted-foreground font-medium">{t(payment.labelKey)}</span>
                 </div>
               ))}
             </div>
