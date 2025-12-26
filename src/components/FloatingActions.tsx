@@ -66,8 +66,8 @@ const FloatingActions = () => {
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className={`group relative flex items-center justify-center w-14 h-14 bg-gradient-to-br from-[#25D366] to-[#128C7E] text-white rounded-full shadow-[0_4px_14px_rgba(0,0,0,0.25)] transition-all duration-500 hover:shadow-[0_6px_20px_rgba(37,211,102,0.5)] hover:scale-110 ${
-          mounted ? 'animate-[bounce-in_0.6s_ease-out_0.2s_both]' : 'opacity-0'
+        className={`group relative flex items-center justify-center w-14 h-14 bg-gradient-to-br from-[#25D366] to-[#128C7E] text-white rounded-full shadow-[0_4px_14px_rgba(0,0,0,0.25)] transition-all duration-500 hover:shadow-[0_6px_20px_rgba(37,211,102,0.5)] hover:scale-110 animate-[whatsapp-pulse_2s_ease-in-out_infinite] ${
+          mounted ? 'animate-[bounce-in_0.6s_ease-out_0.2s_both,whatsapp-pulse_2s_ease-in-out_infinite_0.8s]' : 'opacity-0'
         }`}
         aria-label="Contact via WhatsApp"
       >
@@ -124,6 +124,14 @@ const FloatingActions = () => {
           100% {
             opacity: 1;
             transform: scale(1) translateY(0);
+          }
+        }
+        @keyframes whatsapp-pulse {
+          0%, 100% {
+            box-shadow: 0 4px 14px rgba(0,0,0,0.25), 0 0 0 0 rgba(37, 211, 102, 0.4);
+          }
+          50% {
+            box-shadow: 0 4px 14px rgba(0,0,0,0.25), 0 0 20px 4px rgba(37, 211, 102, 0.3);
           }
         }
       `}</style>
