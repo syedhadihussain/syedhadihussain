@@ -746,78 +746,646 @@ export const translations: Translations = {
   "graphicDesign.readyToElevate": { en: "Ready to Elevate Your Brand?", ar: "مستعد لرفع مستوى علامتك التجارية؟", es: "¿Listo para Elevar Su Marca?", pt: "Pronto para Elevar Sua Marca?", fr: "Prêt à élever votre marque?", it: "Pronto a elevare il tuo brand?", de: "Bereit, Ihre Marke zu erheben?" },
   "graphicDesign.ctaDesc": { en: "Let's create stunning visuals that represent your brand and captivate your audience.", ar: "دعنا ننشئ صوراً مذهلة تمثل علامتك التجارية وتأسر جمهورك.", es: "Creemos visuales impresionantes que representen su marca y cautiven a su audiencia.", pt: "Vamos criar visuais impressionantes que representem sua marca e cativem seu público.", fr: "Créons des visuels époustouflants qui représentent votre marque et captivent votre audience.", it: "Creiamo visual straordinari che rappresentino il tuo brand e affascinino il tuo pubblico.", de: "Lassen Sie uns atemberaubende Visuals erstellen, die Ihre Marke repräsentieren und Ihr Publikum fesseln." },
 
-  // ============ COUNTRY PAGES ============
-  "country.servingIn": { en: "Serving businesses in", ar: "نخدم الشركات في", es: "Sirviendo negocios en", pt: "Atendendo empresas em", fr: "Au service des entreprises en", it: "Al servizio delle aziende in", de: "Wir bedienen Unternehmen in" },
-  "country.heroTitle": { en: "Local SEO Services in", ar: "خدمات SEO المحلي في", es: "Servicios de SEO Local en", pt: "Serviços de SEO Local em", fr: "Services SEO Local en", it: "Servizi SEO Locale in", de: "Lokale SEO-Dienste in" },
-  "country.heroDescription": { en: "Dominate local search results, Google Maps, and AI-powered search engines. Get more calls, leads, and customers with proven Local SEO strategies.", ar: "تصدر نتائج البحث المحلي وخرائط Google ومحركات البحث المدعومة بالذكاء الاصطناعي. احصل على المزيد من المكالمات والعملاء المحتملين.", es: "Domina los resultados de búsqueda local, Google Maps y motores de búsqueda con IA. Obtén más llamadas, leads y clientes.", pt: "Domine os resultados de busca local, Google Maps e mecanismos de busca com IA. Obtenha mais ligações, leads e clientes.", fr: "Dominez les résultats de recherche locale, Google Maps et les moteurs de recherche IA. Obtenez plus d'appels et de clients.", it: "Domina i risultati di ricerca locale, Google Maps e i motori di ricerca IA. Ottieni più chiamate e clienti.", de: "Dominieren Sie lokale Suchergebnisse, Google Maps und KI-Suchmaschinen. Erhalten Sie mehr Anrufe und Kunden." },
-  "country.expertIn": { en: "Local SEO Expert serving businesses across", ar: "خبير SEO محلي يخدم الشركات عبر", es: "Experto en SEO Local sirviendo negocios en", pt: "Especialista em SEO Local atendendo empresas em", fr: "Expert SEO Local au service des entreprises en", it: "Esperto SEO Locale al servizio delle aziende in", de: "Lokaler SEO-Experte für Unternehmen in" },
-  "country.aiReady": { en: "AI & Generative Search Ready.", ar: "جاهز للذكاء الاصطناعي والبحث التوليدي.", es: "Preparado para IA y Búsqueda Generativa.", pt: "Pronto para IA e Busca Generativa.", fr: "Prêt pour l'IA et la recherche générative.", it: "Pronto per IA e Ricerca Generativa.", de: "Bereit für KI und generative Suche." },
-  "country.servingAllStates": { en: "Serving all {count} states across", ar: "نخدم جميع الولايات البالغ عددها {count} عبر", es: "Sirviendo los {count} estados de", pt: "Atendendo todos os {count} estados de", fr: "Au service des {count} états de", it: "Al servizio di tutti i {count} stati di", de: "Wir bedienen alle {count} Bundesstaaten von" },
-  "country.viewProjects": { en: "View Successful Projects", ar: "عرض المشاريع الناجحة", es: "Ver Proyectos Exitosos", pt: "Ver Projetos de Sucesso", fr: "Voir les projets réussis", it: "Vedi progetti di successo", de: "Erfolgreiche Projekte ansehen" },
-  "country.getConsultation": { en: "Get Consultation", ar: "احصل على استشارة", es: "Obtener Consulta", pt: "Obter Consulta", fr: "Obtenir une consultation", it: "Ottieni consulenza", de: "Beratung erhalten" },
-  "country.localExpert": { en: "Local SEO Expert", ar: "خبير SEO محلي", es: "Experto SEO Local", pt: "Especialista SEO Local", fr: "Expert SEO Local", it: "Esperto SEO Locale", de: "Lokaler SEO-Experte" },
-  "country.specialist": { en: "Specialist", ar: "متخصص", es: "Especialista", pt: "Especialista", fr: "Spécialiste", it: "Specialista", de: "Spezialist" },
-  "country.whyChooseUs": { en: "Why Choose Us", ar: "لماذا تختارنا", es: "Por Qué Elegirnos", pt: "Por Que Nos Escolher", fr: "Pourquoi nous choisir", it: "Perché sceglierci", de: "Warum uns wählen" },
-  "country.authorityTitle": { en: "Your Local SEO Authority in {country}", ar: "سلطتك في SEO المحلي في {country}", es: "Tu Autoridad en SEO Local en {country}", pt: "Sua Autoridade em SEO Local em {country}", fr: "Votre autorité SEO locale en {country}", it: "La tua autorità SEO locale in {country}", de: "Ihre lokale SEO-Autorität in {country}" },
-  "country.authoritySubtitle": { en: "Helping businesses across {country} dominate local search and attract more customers.", ar: "مساعدة الشركات عبر {country} للسيطرة على البحث المحلي وجذب المزيد من العملاء.", es: "Ayudando a empresas en {country} a dominar la búsqueda local y atraer más clientes.", pt: "Ajudando empresas em {country} a dominar a busca local e atrair mais clientes.", fr: "Aider les entreprises en {country} à dominer la recherche locale.", it: "Aiutando le aziende in {country} a dominare la ricerca locale.", de: "Wir helfen Unternehmen in {country}, die lokale Suche zu dominieren." },
-  "country.multiStateExpertise": { en: "Multi-State SEO Expertise", ar: "خبرة SEO متعددة الولايات", es: "Experiencia SEO Multi-Estado", pt: "Expertise SEO Multi-Estado", fr: "Expertise SEO multi-états", it: "Competenza SEO multi-stato", de: "Multi-State SEO-Expertise" },
-  "country.multiStateDesc": { en: "Proven strategies that work across all {count} states in {country}.", ar: "استراتيجيات مثبتة تعمل عبر جميع الولايات البالغ عددها {count} في {country}.", es: "Estrategias probadas que funcionan en los {count} estados de {country}.", pt: "Estratégias comprovadas que funcionam em todos os {count} estados de {country}.", fr: "Stratégies éprouvées pour les {count} états de {country}.", it: "Strategie comprovate per tutti i {count} stati di {country}.", de: "Bewährte Strategien für alle {count} Bundesstaaten von {country}." },
-  "country.mapOptimization": { en: "Google, Apple & Bing Maps", ar: "خرائط Google وApple وBing", es: "Google, Apple y Bing Maps", pt: "Google, Apple e Bing Maps", fr: "Google, Apple et Bing Maps", it: "Google, Apple e Bing Maps", de: "Google, Apple & Bing Maps" },
-  "country.mapOptimizationDesc": { en: "Optimize your presence across all major map platforms for maximum visibility.", ar: "حسّن حضورك عبر جميع منصات الخرائط الرئيسية لأقصى قدر من الظهور.", es: "Optimiza tu presencia en todas las principales plataformas de mapas.", pt: "Otimize sua presença em todas as principais plataformas de mapas.", fr: "Optimisez votre présence sur toutes les plateformes de cartes.", it: "Ottimizza la tua presenza su tutte le piattaforme di mappe.", de: "Optimieren Sie Ihre Präsenz auf allen Kartenplattformen." },
-  "country.aiSearchReady": { en: "AI & Generative Search Ready", ar: "جاهز للذكاء الاصطناعي والبحث التوليدي", es: "Preparado para IA y Búsqueda Generativa", pt: "Pronto para IA e Busca Generativa", fr: "Prêt pour IA et recherche générative", it: "Pronto per IA e ricerca generativa", de: "KI & Generative Suche bereit" },
-  "country.aiSearchReadyDesc": { en: "Future-proof your SEO for ChatGPT, Gemini, and other AI search platforms.", ar: "اجعل SEO الخاص بك جاهزاً للمستقبل مع ChatGPT وGemini ومنصات البحث AI الأخرى.", es: "Prepara tu SEO para ChatGPT, Gemini y otras plataformas de búsqueda IA.", pt: "Prepare seu SEO para ChatGPT, Gemini e outras plataformas de busca IA.", fr: "Préparez votre SEO pour ChatGPT, Gemini et autres plateformes IA.", it: "Prepara il tuo SEO per ChatGPT, Gemini e altre piattaforme IA.", de: "Machen Sie Ihr SEO zukunftssicher für ChatGPT, Gemini und andere KI-Plattformen." },
-  "country.localSearchDominance": { en: "Local Search Dominance", ar: "السيطرة على البحث المحلي", es: "Dominio de Búsqueda Local", pt: "Domínio de Busca Local", fr: "Domination de la recherche locale", it: "Dominio della ricerca locale", de: "Lokale Suchdominanz" },
-  "country.localSearchDominanceDesc": { en: "Rank higher in {country} local search results and attract more customers.", ar: "احتل مرتبة أعلى في نتائج البحث المحلي في {country} واجذب المزيد من العملاء.", es: "Posiciónate más alto en los resultados de búsqueda local de {country}.", pt: "Posicione-se melhor nos resultados de busca local de {country}.", fr: "Classez-vous plus haut dans les résultats de recherche locale de {country}.", it: "Posizionati più in alto nei risultati di ricerca locale di {country}.", de: "Ranken Sie höher in den lokalen Suchergebnissen von {country}." },
-  "country.googlePartner": { en: "Google Certified Partner", ar: "شريك معتمد من Google", es: "Socio Certificado de Google", pt: "Parceiro Certificado do Google", fr: "Partenaire certifié Google", it: "Partner certificato Google", de: "Google-zertifizierter Partner" },
-  "country.provenResults": { en: "Proven Results", ar: "نتائج مثبتة", es: "Resultados Probados", pt: "Resultados Comprovados", fr: "Résultats prouvés", it: "Risultati comprovati", de: "Bewährte Ergebnisse" },
-  "country.transparentReporting": { en: "Transparent Reporting", ar: "تقارير شفافة", es: "Informes Transparentes", pt: "Relatórios Transparentes", fr: "Rapports transparents", it: "Reportistica trasparente", de: "Transparente Berichterstattung" },
-  "country.serviceArea": { en: "Service Area", ar: "منطقة الخدمة", es: "Área de Servicio", pt: "Área de Serviço", fr: "Zone de service", it: "Area di servizio", de: "Servicegebiet" },
-  "country.servingBusinesses": { en: "Serving Businesses Across {country}", ar: "نخدم الشركات عبر {country}", es: "Sirviendo Negocios en {country}", pt: "Atendendo Empresas em {country}", fr: "Au service des entreprises en {country}", it: "Al servizio delle aziende in {country}", de: "Wir bedienen Unternehmen in {country}" },
-  "country.mapDescription": { en: "We provide Local SEO services to businesses across all {count} states in {country}.", ar: "نقدم خدمات SEO المحلي للشركات عبر جميع الولايات البالغ عددها {count} في {country}.", es: "Proporcionamos servicios de SEO Local a empresas en los {count} estados de {country}.", pt: "Fornecemos serviços de SEO Local para empresas em todos os {count} estados de {country}.", fr: "Nous fournissons des services SEO Local aux entreprises des {count} états de {country}.", it: "Forniamo servizi SEO locale alle aziende in tutti i {count} stati di {country}.", de: "Wir bieten lokale SEO-Dienste für Unternehmen in allen {count} Bundesstaaten von {country}." },
-  "country.statesServed": { en: "States Served", ar: "الولايات المخدومة", es: "Estados Atendidos", pt: "Estados Atendidos", fr: "États desservis", it: "Stati serviti", de: "Bediente Bundesstaaten" },
-  "country.servingAllRegions": { en: "Serving all regions of {country}", ar: "نخدم جميع مناطق {country}", es: "Sirviendo todas las regiones de {country}", pt: "Atendendo todas as regiões de {country}", fr: "Au service de toutes les régions de {country}", it: "Al servizio di tutte le regioni di {country}", de: "Wir bedienen alle Regionen von {country}" },
-  "country.allStatesHeading": { en: "All States We Serve", ar: "جميع الولايات التي نخدمها", es: "Todos los Estados que Atendemos", pt: "Todos os Estados que Atendemos", fr: "Tous les états que nous desservons", it: "Tutti gli stati che serviamo", de: "Alle Bundesstaaten, die wir bedienen" },
-  "country.ourServices": { en: "Our Services", ar: "خدماتنا", es: "Nuestros Servicios", pt: "Nossos Serviços", fr: "Nos services", it: "I nostri servizi", de: "Unsere Dienstleistungen" },
-  "country.servicesTitle": { en: "Local SEO Services for {country}", ar: "خدمات SEO المحلي لـ {country}", es: "Servicios de SEO Local para {country}", pt: "Serviços de SEO Local para {country}", fr: "Services SEO Local pour {country}", it: "Servizi SEO Locale per {country}", de: "Lokale SEO-Dienste für {country}" },
-  "country.servicesSubtitle": { en: "Comprehensive Local SEO solutions tailored for businesses in {country}.", ar: "حلول SEO محلية شاملة مصممة للشركات في {country}.", es: "Soluciones completas de SEO Local para empresas en {country}.", pt: "Soluções completas de SEO Local para empresas em {country}.", fr: "Solutions SEO Local complètes pour les entreprises en {country}.", it: "Soluzioni SEO locale complete per le aziende in {country}.", de: "Umfassende lokale SEO-Lösungen für Unternehmen in {country}." },
-  "country.service.localSeo": { en: "Local SEO", ar: "SEO المحلي", es: "SEO Local", pt: "SEO Local", fr: "SEO Local", it: "SEO Locale", de: "Lokales SEO" },
-  "country.service.localSeoDesc": { en: "Dominate local search results across {country} with proven optimization strategies.", ar: "تصدر نتائج البحث المحلي عبر {country} باستراتيجيات تحسين مثبتة.", es: "Domina los resultados de búsqueda local en {country} con estrategias de optimización probadas.", pt: "Domine os resultados de busca local em {country} com estratégias de otimização comprovadas.", fr: "Dominez les résultats de recherche locale en {country}.", it: "Domina i risultati di ricerca locale in {country}.", de: "Dominieren Sie lokale Suchergebnisse in {country}." },
-  "country.service.gbp": { en: "Google Business Profile", ar: "ملف Google التجاري", es: "Perfil de Google Business", pt: "Perfil do Google Business", fr: "Profil Google Business", it: "Profilo Google Business", de: "Google Business Profil" },
-  "country.service.gbpDesc": { en: "Optimize your GBP for maximum visibility in {country} local searches.", ar: "حسّن ملفك التجاري على Google لأقصى ظهور في عمليات البحث المحلية في {country}.", es: "Optimiza tu GBP para máxima visibilidad en búsquedas locales de {country}.", pt: "Otimize seu GBP para máxima visibilidade em buscas locais de {country}.", fr: "Optimisez votre GBP pour une visibilité maximale en {country}.", it: "Ottimizza il tuo GBP per la massima visibilità in {country}.", de: "Optimieren Sie Ihr GBP für maximale Sichtbarkeit in {country}." },
-  "country.service.mapSeo": { en: "Map SEO", ar: "SEO الخرائط", es: "SEO de Mapas", pt: "SEO de Mapas", fr: "SEO Cartes", it: "SEO Mappe", de: "Karten-SEO" },
-  "country.service.mapSeoDesc": { en: "Rank higher on Google Maps, Apple Maps, and Bing Maps.", ar: "احتل مرتبة أعلى على خرائط Google وApple وBing.", es: "Posiciónate más alto en Google Maps, Apple Maps y Bing Maps.", pt: "Posicione-se melhor no Google Maps, Apple Maps e Bing Maps.", fr: "Classez-vous plus haut sur Google Maps, Apple Maps et Bing Maps.", it: "Posizionati più in alto su Google Maps, Apple Maps e Bing Maps.", de: "Ranken Sie höher auf Google Maps, Apple Maps und Bing Maps." },
-  "country.service.aiSeo": { en: "AI & Generative SEO", ar: "SEO الذكاء الاصطناعي والتوليدي", es: "SEO de IA y Generativo", pt: "SEO de IA e Generativo", fr: "SEO IA et Génératif", it: "SEO IA e Generativo", de: "KI & Generatives SEO" },
-  "country.service.aiSeoDesc": { en: "Future-proof your visibility for AI-powered search engines.", ar: "اجعل ظهورك جاهزاً للمستقبل مع محركات البحث المدعومة بالذكاء الاصطناعي.", es: "Prepara tu visibilidad para motores de búsqueda impulsados por IA.", pt: "Prepare sua visibilidade para mecanismos de busca com IA.", fr: "Préparez votre visibilité pour les moteurs de recherche IA.", it: "Prepara la tua visibilità per i motori di ricerca IA.", de: "Machen Sie Ihre Sichtbarkeit zukunftssicher für KI-Suchmaschinen." },
-  "country.service.reputation": { en: "Reputation Management", ar: "إدارة السمعة", es: "Gestión de Reputación", pt: "Gestão de Reputação", fr: "Gestion de réputation", it: "Gestione reputazione", de: "Reputationsmanagement" },
-  "country.service.reputationDesc": { en: "Build and maintain a stellar online reputation with review management.", ar: "ابنِ وحافظ على سمعة ممتازة عبر الإنترنت مع إدارة التقييمات.", es: "Construye y mantén una excelente reputación online.", pt: "Construa e mantenha uma reputação online excelente.", fr: "Construisez et maintenez une excellente réputation en ligne.", it: "Costruisci e mantieni un'ottima reputazione online.", de: "Bauen und pflegen Sie einen ausgezeichneten Online-Ruf." },
-  "country.service.localRankings": { en: "Local Rankings", ar: "التصنيفات المحلية", es: "Rankings Locales", pt: "Rankings Locais", fr: "Classements locaux", it: "Classifiche locali", de: "Lokale Rankings" },
-  "country.service.localRankingsDesc": { en: "Track and improve your local search rankings across {country}.", ar: "تتبع وحسّن تصنيفات البحث المحلي الخاصة بك عبر {country}.", es: "Rastrea y mejora tus rankings de búsqueda local en {country}.", pt: "Acompanhe e melhore seus rankings de busca local em {country}.", fr: "Suivez et améliorez vos classements de recherche locale en {country}.", it: "Monitora e migliora le tue classifiche di ricerca locale in {country}.", de: "Verfolgen und verbessern Sie Ihre lokalen Suchrankings in {country}." },
-  "country.service.localContent": { en: "Local Content", ar: "المحتوى المحلي", es: "Contenido Local", pt: "Conteúdo Local", fr: "Contenu local", it: "Contenuti locali", de: "Lokaler Inhalt" },
-  "country.service.localContentDesc": { en: "Create location-specific content that resonates with {country} audiences.", ar: "أنشئ محتوى خاص بالموقع يتفاعل مع جماهير {country}.", es: "Crea contenido específico para audiencias de {country}.", pt: "Crie conteúdo específico para públicos de {country}.", fr: "Créez du contenu spécifique pour les audiences de {country}.", it: "Crea contenuti specifici per il pubblico di {country}.", de: "Erstellen Sie ortsspezifische Inhalte für {country}." },
-  "country.service.analytics": { en: "Analytics & Reporting", ar: "التحليلات والتقارير", es: "Análisis e Informes", pt: "Análise e Relatórios", fr: "Analyses et rapports", it: "Analisi e reportistica", de: "Analysen & Berichte" },
-  "country.service.analyticsDesc": { en: "Comprehensive tracking and transparent reporting on your SEO performance.", ar: "تتبع شامل وتقارير شفافة عن أداء SEO الخاص بك.", es: "Seguimiento completo e informes transparentes sobre tu rendimiento SEO.", pt: "Acompanhamento abrangente e relatórios transparentes sobre seu desempenho SEO.", fr: "Suivi complet et rapports transparents sur vos performances SEO.", it: "Monitoraggio completo e reportistica trasparente sulle performance SEO.", de: "Umfassendes Tracking und transparente Berichte über Ihre SEO-Leistung." },
-  "country.cta.provenResults": { en: "Proven Results", ar: "نتائج مثبتة", es: "Resultados Probados", pt: "Resultados Comprovados", fr: "Résultats prouvés", it: "Risultati comprovati", de: "Bewährte Ergebnisse" },
-  "country.cta.title": { en: "See Our {country} Success Stories", ar: "شاهد قصص نجاحنا في {country}", es: "Vea Nuestras Historias de Éxito en {country}", pt: "Veja Nossas Histórias de Sucesso em {country}", fr: "Découvrez nos réussites en {country}", it: "Guarda le nostre storie di successo in {country}", de: "Sehen Sie unsere Erfolgsgeschichten in {country}" },
-  "country.cta.subtitle": { en: "Real results from real businesses that trusted us with their Local SEO.", ar: "نتائج حقيقية من شركات حقيقية وثقت بنا في SEO المحلي.", es: "Resultados reales de negocios reales que confiaron en nosotros.", pt: "Resultados reais de empresas reais que confiaram em nós.", fr: "Des résultats réels d'entreprises qui nous ont fait confiance.", it: "Risultati reali da aziende reali che si sono affidate a noi.", de: "Echte Ergebnisse von echten Unternehmen, die uns vertraut haben." },
-  "country.cta.trafficIncrease": { en: "Avg. Traffic Increase", ar: "متوسط زيادة الزيارات", es: "Aumento Promedio de Tráfico", pt: "Aumento Médio de Tráfego", fr: "Augmentation moyenne du trafic", it: "Aumento medio del traffico", de: "Durchschn. Traffic-Steigerung" },
-  "country.cta.callsIncrease": { en: "More Calls", ar: "مكالمات أكثر", es: "Más Llamadas", pt: "Mais Ligações", fr: "Plus d'appels", it: "Più chiamate", de: "Mehr Anrufe" },
-  "country.cta.topRankings": { en: "Google Rankings", ar: "تصنيفات Google", es: "Rankings en Google", pt: "Rankings no Google", fr: "Classements Google", it: "Classifiche Google", de: "Google-Rankings" },
-  "country.cta.realClients": { en: "Real Client Results", ar: "نتائج عملاء حقيقيين", es: "Resultados de Clientes Reales", pt: "Resultados de Clientes Reais", fr: "Résultats clients réels", it: "Risultati clienti reali", de: "Echte Kundenergebnisse" },
-  "country.cta.measurableResults": { en: "Measurable ROI", ar: "عائد استثمار قابل للقياس", es: "ROI Medible", pt: "ROI Mensurável", fr: "ROI mesurable", it: "ROI misurabile", de: "Messbarer ROI" },
-  "country.cta.transparentProcess": { en: "Transparent Process", ar: "عملية شفافة", es: "Proceso Transparente", pt: "Processo Transparente", fr: "Processus transparent", it: "Processo trasparente", de: "Transparenter Prozess" },
-  "country.cta.viewCaseStudies": { en: "View {country} Case Studies", ar: "عرض دراسات الحالة في {country}", es: "Ver Casos de Estudio de {country}", pt: "Ver Estudos de Caso de {country}", fr: "Voir les études de cas de {country}", it: "Vedi casi di studio di {country}", de: "{country} Fallstudien ansehen" },
-  "country.contact.getStarted": { en: "Get Started", ar: "ابدأ الآن", es: "Comenzar", pt: "Começar", fr: "Commencer", it: "Inizia", de: "Jetzt starten" },
-  "country.contact.title": { en: "Ready to Dominate Local Search in {country}?", ar: "مستعد للسيطرة على البحث المحلي في {country}؟", es: "¿Listo para Dominar la Búsqueda Local en {country}?", pt: "Pronto para Dominar a Busca Local em {country}?", fr: "Prêt à dominer la recherche locale en {country}?", it: "Pronto a dominare la ricerca locale in {country}?", de: "Bereit, die lokale Suche in {country} zu dominieren?" },
-  "country.contact.subtitle": { en: "Let's discuss how we can help your business grow across {country}.", ar: "دعنا نناقش كيف يمكننا مساعدة عملك على النمو عبر {country}.", es: "Discutamos cómo podemos ayudar a crecer tu negocio en {country}.", pt: "Vamos discutir como podemos ajudar seu negócio a crescer em {country}.", fr: "Discutons de la façon dont nous pouvons aider votre entreprise à se développer en {country}.", it: "Discutiamo come possiamo aiutare la tua azienda a crescere in {country}.", de: "Lassen Sie uns besprechen, wie wir Ihrem Unternehmen in {country} helfen können." },
-  "country.contact.bookCall": { en: "Book a Call", ar: "احجز مكالمة", es: "Reservar Llamada", pt: "Agendar Chamada", fr: "Réserver un appel", it: "Prenota una chiamata", de: "Anruf buchen" },
-  "country.contact.bookCallDesc": { en: "Schedule a free 30-minute consultation.", ar: "جدولة استشارة مجانية لمدة 30 دقيقة.", es: "Programa una consulta gratuita de 30 minutos.", pt: "Agende uma consulta gratuita de 30 minutos.", fr: "Planifiez une consultation gratuite de 30 minutes.", it: "Pianifica una consulenza gratuita di 30 minuti.", de: "Planen Sie eine kostenlose 30-minütige Beratung." },
-  "country.contact.whatsappDesc": { en: "Quick response via WhatsApp.", ar: "استجابة سريعة عبر واتساب.", es: "Respuesta rápida vía WhatsApp.", pt: "Resposta rápida via WhatsApp.", fr: "Réponse rapide via WhatsApp.", it: "Risposta rapida via WhatsApp.", de: "Schnelle Antwort über WhatsApp." },
-  "country.contact.servingClients": { en: "Serving Clients", ar: "نخدم العملاء", es: "Atendiendo Clientes", pt: "Atendendo Clientes", fr: "Au service des clients", it: "Al servizio dei clienti", de: "Kundenbetreuung" },
-  "country.contact.allStates": { en: "All {count} states in {country}", ar: "جميع الولايات البالغ عددها {count} في {country}", es: "Los {count} estados de {country}", pt: "Todos os {count} estados de {country}", fr: "Les {count} états de {country}", it: "Tutti i {count} stati di {country}", de: "Alle {count} Bundesstaaten in {country}" },
-  "country.contact.sendMessage": { en: "Send Us a Message", ar: "أرسل لنا رسالة", es: "Envíanos un Mensaje", pt: "Envie-nos uma Mensagem", fr: "Envoyez-nous un message", it: "Inviaci un messaggio", de: "Senden Sie uns eine Nachricht" },
-  "country.seo.title": { en: "{service} Services in {country} | Local SEO Expert", ar: "خدمات {service} في {country} | خبير SEO المحلي", es: "Servicios de {service} en {country} | Experto SEO Local", pt: "Serviços de {service} em {country} | Especialista SEO Local", fr: "Services {service} en {country} | Expert SEO Local", it: "Servizi {service} in {country} | Esperto SEO Locale", de: "{service} Dienste in {country} | Lokaler SEO-Experte" },
-  "country.seo.description": { en: "Professional Local SEO services for businesses across all {count} states in {country}. Dominate Google Maps, AI search, and local rankings.", ar: "خدمات SEO محلية احترافية للشركات عبر جميع الولايات البالغ عددها {count} في {country}. تصدر خرائط Google والبحث بالذكاء الاصطناعي والتصنيفات المحلية.", es: "Servicios profesionales de SEO Local para empresas en los {count} estados de {country}. Domina Google Maps, búsqueda IA y rankings locales.", pt: "Serviços profissionais de SEO Local para empresas em todos os {count} estados de {country}. Domine Google Maps, busca IA e rankings locais.", fr: "Services SEO Local professionnels pour les entreprises des {count} états de {country}.", it: "Servizi SEO locale professionali per le aziende in tutti i {count} stati di {country}.", de: "Professionelle lokale SEO-Dienste für Unternehmen in allen {count} Bundesstaaten von {country}." },
-  "country.seo.localSeo": { en: "Local SEO", ar: "SEO المحلي", es: "SEO Local", pt: "SEO Local", fr: "SEO Local", it: "SEO Locale", de: "Lokales SEO" },
+  // ============ COUNTRY PAGES - UNIQUE SEO OPTIMIZED CONTENT ============
+  "country.servingIn": { 
+    en: "Trusted by businesses in", 
+    ar: "موثوق به من قبل الشركات في", 
+    es: "De confianza para negocios en", 
+    pt: "Confiável para empresas em", 
+    fr: "Fait confiance par les entreprises en", 
+    it: "Affidato dalle aziende in", 
+    de: "Vertraut von Unternehmen in" 
+  },
+  "country.heroTitle": { 
+    en: "Grow Your Business with Local SEO in", 
+    ar: "نمّي عملك مع SEO المحلي في", 
+    es: "Haz Crecer Tu Negocio con SEO Local en", 
+    pt: "Faça Seu Negócio Crescer com SEO Local em", 
+    fr: "Développez Votre Entreprise avec le SEO Local en", 
+    it: "Fai Crescere la Tua Attività con la SEO Locale in", 
+    de: "Wachsen Sie mit Local SEO in" 
+  },
+  "country.heroDescription": { 
+    en: "Want more phone calls, walk-ins, and online orders? I specialize in getting local businesses found on Google, Google Maps, and even AI search tools like ChatGPT. Simple strategies, real results.", 
+    ar: "هل تريد المزيد من المكالمات والزيارات والطلبات عبر الإنترنت؟ أنا متخصص في جعل الشركات المحلية تظهر على Google وخرائط Google وحتى أدوات البحث بالذكاء الاصطناعي. استراتيجيات بسيطة ونتائج حقيقية.", 
+    es: "¿Quieres más llamadas, visitas y pedidos online? Me especializo en hacer que los negocios locales aparezcan en Google, Google Maps e incluso herramientas de búsqueda con IA como ChatGPT. Estrategias simples, resultados reales.", 
+    pt: "Quer mais ligações, visitas e pedidos online? Eu me especializo em fazer empresas locais aparecerem no Google, Google Maps e até ferramentas de busca com IA como ChatGPT. Estratégias simples, resultados reais.", 
+    fr: "Vous voulez plus d'appels, de visites et de commandes en ligne? Je me spécialise dans la visibilité des entreprises locales sur Google, Google Maps et même les outils de recherche IA comme ChatGPT. Stratégies simples, résultats réels.", 
+    it: "Vuoi più chiamate, visite e ordini online? Mi specializzo nel far trovare le attività locali su Google, Google Maps e persino strumenti di ricerca IA come ChatGPT. Strategie semplici, risultati reali.", 
+    de: "Möchten Sie mehr Anrufe, Besuche und Online-Bestellungen? Ich bin darauf spezialisiert, lokale Unternehmen auf Google, Google Maps und sogar KI-Suchtools wie ChatGPT sichtbar zu machen. Einfache Strategien, echte Ergebnisse." 
+  },
+  "country.expertIn": { 
+    en: "Helping service businesses grow in", 
+    ar: "أساعد شركات الخدمات على النمو في", 
+    es: "Ayudando a negocios de servicios a crecer en", 
+    pt: "Ajudando empresas de serviços a crescer em", 
+    fr: "Aidant les entreprises de services à se développer en", 
+    it: "Aiutando le aziende di servizi a crescere in", 
+    de: "Ich helfe Dienstleistungsunternehmen zu wachsen in" 
+  },
+  "country.aiReady": { 
+    en: "Ready for Google, Maps & AI search.", 
+    ar: "جاهز لـ Google والخرائط والبحث بالذكاء الاصطناعي.", 
+    es: "Listo para Google, Mapas y búsqueda IA.", 
+    pt: "Pronto para Google, Maps e busca IA.", 
+    fr: "Prêt pour Google, Maps et recherche IA.", 
+    it: "Pronto per Google, Maps e ricerca IA.", 
+    de: "Bereit für Google, Maps & KI-Suche." 
+  },
+  "country.servingAllStates": { 
+    en: "Working with businesses in all {count} states across", 
+    ar: "نعمل مع الشركات في جميع الولايات الـ {count} عبر", 
+    es: "Trabajando con negocios en los {count} estados de", 
+    pt: "Trabalhando com empresas em todos os {count} estados de", 
+    fr: "Travaillant avec des entreprises dans les {count} états de", 
+    it: "Lavorando con aziende in tutti i {count} stati di", 
+    de: "Zusammenarbeit mit Unternehmen in allen {count} Bundesstaaten von" 
+  },
+  "country.viewProjects": { 
+    en: "See Client Results", 
+    ar: "شاهد نتائج العملاء", 
+    es: "Ver Resultados de Clientes", 
+    pt: "Ver Resultados de Clientes", 
+    fr: "Voir les résultats clients", 
+    it: "Vedi risultati clienti", 
+    de: "Kundenergebnisse ansehen" 
+  },
+  "country.getConsultation": { 
+    en: "Free Strategy Call", 
+    ar: "مكالمة استراتيجية مجانية", 
+    es: "Llamada Estratégica Gratis", 
+    pt: "Chamada Estratégica Gratuita", 
+    fr: "Appel stratégique gratuit", 
+    it: "Chiamata strategica gratuita", 
+    de: "Kostenloses Strategiegespräch" 
+  },
+  "country.localExpert": { 
+    en: "Your Local SEO Partner", 
+    ar: "شريكك في SEO المحلي", 
+    es: "Tu Socio de SEO Local", 
+    pt: "Seu Parceiro de SEO Local", 
+    fr: "Votre partenaire SEO local", 
+    it: "Il tuo partner SEO locale", 
+    de: "Ihr lokaler SEO-Partner" 
+  },
+  "country.specialist": { 
+    en: "Expert", 
+    ar: "خبير", 
+    es: "Experto", 
+    pt: "Especialista", 
+    fr: "Expert", 
+    it: "Esperto", 
+    de: "Experte" 
+  },
+  "country.whyChooseUs": { 
+    en: "What Makes Us Different", 
+    ar: "ما الذي يميزنا", 
+    es: "Qué Nos Hace Diferentes", 
+    pt: "O Que Nos Torna Diferentes", 
+    fr: "Ce qui nous différencie", 
+    it: "Cosa ci rende diversi", 
+    de: "Was uns unterscheidet" 
+  },
+  "country.authorityTitle": { 
+    en: "Your Go-To Local SEO Partner in {country}", 
+    ar: "شريكك الموثوق في SEO المحلي في {country}", 
+    es: "Tu Socio de Confianza en SEO Local en {country}", 
+    pt: "Seu Parceiro de Confiança em SEO Local em {country}", 
+    fr: "Votre partenaire SEO local de confiance en {country}", 
+    it: "Il tuo partner SEO locale di fiducia in {country}", 
+    de: "Ihr vertrauenswürdiger lokaler SEO-Partner in {country}" 
+  },
+  "country.authoritySubtitle": { 
+    en: "I work with restaurants, dentists, plumbers, lawyers, and other local businesses across {country} to bring in more customers through search.", 
+    ar: "أعمل مع المطاعم وأطباء الأسنان والسباكين والمحامين والشركات المحلية الأخرى عبر {country} لجلب المزيد من العملاء من خلال البحث.", 
+    es: "Trabajo con restaurantes, dentistas, plomeros, abogados y otros negocios locales en {country} para atraer más clientes a través de la búsqueda.", 
+    pt: "Trabalho com restaurantes, dentistas, encanadores, advogados e outras empresas locais em {country} para trazer mais clientes através da busca.", 
+    fr: "Je travaille avec des restaurants, dentistes, plombiers, avocats et autres entreprises locales en {country} pour attirer plus de clients via la recherche.", 
+    it: "Lavoro con ristoranti, dentisti, idraulici, avvocati e altre attività locali in {country} per portare più clienti attraverso la ricerca.", 
+    de: "Ich arbeite mit Restaurants, Zahnärzten, Klempnern, Anwälten und anderen lokalen Unternehmen in {country} zusammen, um mehr Kunden über die Suche zu gewinnen." 
+  },
+  "country.multiStateExpertise": { 
+    en: "Coast-to-Coast Coverage", 
+    ar: "تغطية من الساحل إلى الساحل", 
+    es: "Cobertura de Costa a Costa", 
+    pt: "Cobertura de Costa a Costa", 
+    fr: "Couverture d'un bout à l'autre", 
+    it: "Copertura da costa a costa", 
+    de: "Küste-zu-Küste-Abdeckung" 
+  },
+  "country.multiStateDesc": { 
+    en: "Whether you run a single location or have stores in {count} states, I know how to make each one rank locally in {country}.", 
+    ar: "سواء كنت تدير موقعًا واحدًا أو لديك متاجر في {count} ولاية، أعرف كيف أجعل كل منها يتصدر محليًا في {country}.", 
+    es: "Ya sea que tengas una ubicación o tiendas en {count} estados, sé cómo hacer que cada una se posicione localmente en {country}.", 
+    pt: "Seja uma única localização ou lojas em {count} estados, sei como fazer cada uma ranquear localmente em {country}.", 
+    fr: "Que vous ayez un seul emplacement ou des magasins dans {count} états, je sais comment faire classer chacun localement en {country}.", 
+    it: "Che tu abbia una sede o negozi in {count} stati, so come far classificare ognuno localmente in {country}.", 
+    de: "Ob Sie einen Standort oder Geschäfte in {count} Bundesstaaten haben, ich weiß, wie man jeden lokal in {country} ranken lässt." 
+  },
+  "country.mapOptimization": { 
+    en: "Show Up on All Maps", 
+    ar: "اظهر على جميع الخرائط", 
+    es: "Aparece en Todos los Mapas", 
+    pt: "Apareça em Todos os Mapas", 
+    fr: "Apparaissez sur toutes les cartes", 
+    it: "Appari su tutte le mappe", 
+    de: "Erscheinen Sie auf allen Karten" 
+  },
+  "country.mapOptimizationDesc": { 
+    en: "Get found on Google Maps, Apple Maps, and Bing Maps. Your customers search on all of them.", 
+    ar: "كن موجودًا على خرائط Google وApple وBing. عملاؤك يبحثون على جميعها.", 
+    es: "Aparece en Google Maps, Apple Maps y Bing Maps. Tus clientes buscan en todos.", 
+    pt: "Seja encontrado no Google Maps, Apple Maps e Bing Maps. Seus clientes buscam em todos.", 
+    fr: "Soyez trouvé sur Google Maps, Apple Maps et Bing Maps. Vos clients cherchent sur tous.", 
+    it: "Fatti trovare su Google Maps, Apple Maps e Bing Maps. I tuoi clienti cercano su tutti.", 
+    de: "Werden Sie auf Google Maps, Apple Maps und Bing Maps gefunden. Ihre Kunden suchen auf allen." 
+  },
+  "country.aiSearchReady": { 
+    en: "Ready for AI Search", 
+    ar: "جاهز للبحث بالذكاء الاصطناعي", 
+    es: "Listo para Búsqueda IA", 
+    pt: "Pronto para Busca IA", 
+    fr: "Prêt pour la recherche IA", 
+    it: "Pronto per la ricerca IA", 
+    de: "Bereit für KI-Suche" 
+  },
+  "country.aiSearchReadyDesc": { 
+    en: "People now ask ChatGPT and Google AI for recommendations. I make sure your business gets mentioned.", 
+    ar: "الناس الآن يسألون ChatGPT و Google AI عن التوصيات. أتأكد من ذكر عملك.", 
+    es: "La gente ahora pregunta a ChatGPT y Google AI por recomendaciones. Me aseguro de que tu negocio sea mencionado.", 
+    pt: "As pessoas agora perguntam ao ChatGPT e Google AI por recomendações. Eu garanto que seu negócio seja mencionado.", 
+    fr: "Les gens demandent maintenant des recommandations à ChatGPT et Google AI. Je m'assure que votre entreprise soit mentionnée.", 
+    it: "Le persone ora chiedono raccomandazioni a ChatGPT e Google AI. Mi assicuro che la tua attività venga menzionata.", 
+    de: "Menschen fragen jetzt ChatGPT und Google AI nach Empfehlungen. Ich sorge dafür, dass Ihr Unternehmen erwähnt wird." 
+  },
+  "country.localSearchDominance": { 
+    en: "Beat Your Competitors", 
+    ar: "تفوق على منافسيك", 
+    es: "Supera a Tus Competidores", 
+    pt: "Supere Seus Concorrentes", 
+    fr: "Battez vos concurrents", 
+    it: "Batti i tuoi concorrenti", 
+    de: "Schlagen Sie Ihre Konkurrenten" 
+  },
+  "country.localSearchDominanceDesc": { 
+    en: "When someone searches for your service in {country}, you should show up first. I make that happen.", 
+    ar: "عندما يبحث شخص ما عن خدمتك في {country}، يجب أن تظهر أولاً. أنا أجعل ذلك يحدث.", 
+    es: "Cuando alguien busca tu servicio en {country}, deberías aparecer primero. Yo hago que eso suceda.", 
+    pt: "Quando alguém busca seu serviço em {country}, você deve aparecer primeiro. Eu faço isso acontecer.", 
+    fr: "Quand quelqu'un cherche votre service en {country}, vous devriez apparaître en premier. Je fais en sorte que cela arrive.", 
+    it: "Quando qualcuno cerca il tuo servizio in {country}, dovresti apparire per primo. Io faccio in modo che succeda.", 
+    de: "Wenn jemand nach Ihrem Service in {country} sucht, sollten Sie zuerst erscheinen. Ich mache das möglich." 
+  },
+  "country.googlePartner": { 
+    en: "Google Certified", 
+    ar: "معتمد من Google", 
+    es: "Certificado por Google", 
+    pt: "Certificado pelo Google", 
+    fr: "Certifié Google", 
+    it: "Certificato Google", 
+    de: "Google-zertifiziert" 
+  },
+  "country.provenResults": { 
+    en: "Real Client Results", 
+    ar: "نتائج عملاء حقيقية", 
+    es: "Resultados Reales de Clientes", 
+    pt: "Resultados Reais de Clientes", 
+    fr: "Résultats clients réels", 
+    it: "Risultati clienti reali", 
+    de: "Echte Kundenergebnisse" 
+  },
+  "country.transparentReporting": { 
+    en: "Clear Monthly Reports", 
+    ar: "تقارير شهرية واضحة", 
+    es: "Informes Mensuales Claros", 
+    pt: "Relatórios Mensais Claros", 
+    fr: "Rapports mensuels clairs", 
+    it: "Report mensili chiari", 
+    de: "Klare monatliche Berichte" 
+  },
+  "country.serviceArea": { 
+    en: "Where I Work", 
+    ar: "أين أعمل", 
+    es: "Dónde Trabajo", 
+    pt: "Onde Trabalho", 
+    fr: "Où je travaille", 
+    it: "Dove lavoro", 
+    de: "Wo ich arbeite" 
+  },
+  "country.servingBusinesses": { 
+    en: "Local SEO Across {country}", 
+    ar: "SEO محلي عبر {country}", 
+    es: "SEO Local en {country}", 
+    pt: "SEO Local em {country}", 
+    fr: "SEO Local en {country}", 
+    it: "SEO Locale in {country}", 
+    de: "Lokales SEO in {country}" 
+  },
+  "country.mapDescription": { 
+    en: "No matter where your business is located, I can help you rank higher in local search. Click on any state to learn more about my services there.", 
+    ar: "بغض النظر عن موقع عملك، يمكنني مساعدتك في التصدر في البحث المحلي. انقر على أي ولاية لمعرفة المزيد عن خدماتي هناك.", 
+    es: "No importa dónde esté ubicado tu negocio, puedo ayudarte a posicionarte mejor en la búsqueda local. Haz clic en cualquier estado para saber más.", 
+    pt: "Não importa onde seu negócio esteja localizado, posso ajudá-lo a rankear melhor na busca local. Clique em qualquer estado para saber mais.", 
+    fr: "Peu importe où se trouve votre entreprise, je peux vous aider à mieux vous classer dans la recherche locale. Cliquez sur un état pour en savoir plus.", 
+    it: "Non importa dove si trovi la tua attività, posso aiutarti a classificarti meglio nella ricerca locale. Clicca su uno stato per saperne di più.", 
+    de: "Egal wo Ihr Unternehmen sich befindet, ich kann Ihnen helfen, in der lokalen Suche besser zu ranken. Klicken Sie auf einen Bundesstaat, um mehr zu erfahren." 
+  },
+  "country.statesServed": { 
+    en: "States with Active Clients", 
+    ar: "ولايات بها عملاء نشطون", 
+    es: "Estados con Clientes Activos", 
+    pt: "Estados com Clientes Ativos", 
+    fr: "États avec clients actifs", 
+    it: "Stati con clienti attivi", 
+    de: "Bundesstaaten mit aktiven Kunden" 
+  },
+  "country.servingAllRegions": { 
+    en: "Working with businesses everywhere in {country}", 
+    ar: "نعمل مع الشركات في كل مكان في {country}", 
+    es: "Trabajando con negocios en todas partes de {country}", 
+    pt: "Trabalhando com empresas em todos os lugares de {country}", 
+    fr: "Travaillant avec des entreprises partout en {country}", 
+    it: "Lavorando con aziende ovunque in {country}", 
+    de: "Zusammenarbeit mit Unternehmen überall in {country}" 
+  },
+  "country.allStatesHeading": { 
+    en: "All States We Serve", 
+    ar: "جميع الولايات التي نخدمها", 
+    es: "Todos los Estados que Atendemos", 
+    pt: "Todos os Estados que Atendemos", 
+    fr: "Tous les états que nous desservons", 
+    it: "Tutti gli stati che serviamo", 
+    de: "Alle Bundesstaaten, die wir bedienen" 
+  },
+  "country.ourServices": { 
+    en: "What I Do", 
+    ar: "ما أقوم به", 
+    es: "Lo Que Hago", 
+    pt: "O Que Eu Faço", 
+    fr: "Ce que je fais", 
+    it: "Cosa faccio", 
+    de: "Was ich tue" 
+  },
+  "country.servicesTitle": { 
+    en: "Local SEO Services That Get Results in {country}", 
+    ar: "خدمات SEO محلية تحقق نتائج في {country}", 
+    es: "Servicios de SEO Local que Obtienen Resultados en {country}", 
+    pt: "Serviços de SEO Local que Obtêm Resultados em {country}", 
+    fr: "Services SEO Local qui obtiennent des résultats en {country}", 
+    it: "Servizi SEO Locale che ottengono risultati in {country}", 
+    de: "Lokale SEO-Dienste, die Ergebnisse in {country} erzielen" 
+  },
+  "country.servicesSubtitle": { 
+    en: "From setting up your Google Business Profile to building citations and managing reviews, here is how I help businesses win in local search.", 
+    ar: "من إعداد ملفك التجاري على Google إلى بناء الاستشهادات وإدارة التقييمات، هكذا أساعد الشركات على الفوز في البحث المحلي.", 
+    es: "Desde configurar tu Perfil de Negocio de Google hasta construir citaciones y gestionar reseñas, así es como ayudo a los negocios a ganar en la búsqueda local.", 
+    pt: "Desde configurar seu Perfil de Negócio do Google até construir citações e gerenciar avaliações, é assim que ajudo empresas a vencer na busca local.", 
+    fr: "De la configuration de votre profil Google Business à la création de citations et la gestion des avis, voici comment j'aide les entreprises à gagner dans la recherche locale.", 
+    it: "Dalla configurazione del tuo Profilo Business Google alla creazione di citazioni e gestione delle recensioni, ecco come aiuto le aziende a vincere nella ricerca locale.", 
+    de: "Von der Einrichtung Ihres Google Business-Profils über den Aufbau von Zitationen bis zur Verwaltung von Bewertungen - so helfe ich Unternehmen, in der lokalen Suche zu gewinnen." 
+  },
+  "country.service.localSeo": { 
+    en: "Local Search Optimization", 
+    ar: "تحسين البحث المحلي", 
+    es: "Optimización de Búsqueda Local", 
+    pt: "Otimização de Busca Local", 
+    fr: "Optimisation de recherche locale", 
+    it: "Ottimizzazione ricerca locale", 
+    de: "Lokale Suchoptimierung" 
+  },
+  "country.service.localSeoDesc": { 
+    en: "Get your business to appear when people in {country} search for what you offer. More visibility means more customers.", 
+    ar: "اجعل عملك يظهر عندما يبحث الناس في {country} عما تقدمه. المزيد من الظهور يعني المزيد من العملاء.", 
+    es: "Haz que tu negocio aparezca cuando la gente en {country} busque lo que ofreces. Más visibilidad significa más clientes.", 
+    pt: "Faça seu negócio aparecer quando as pessoas em {country} buscarem o que você oferece. Mais visibilidade significa mais clientes.", 
+    fr: "Faites apparaître votre entreprise quand les gens en {country} cherchent ce que vous offrez. Plus de visibilité signifie plus de clients.", 
+    it: "Fai apparire la tua attività quando le persone in {country} cercano ciò che offri. Più visibilità significa più clienti.", 
+    de: "Lassen Sie Ihr Unternehmen erscheinen, wenn Menschen in {country} nach dem suchen, was Sie anbieten. Mehr Sichtbarkeit bedeutet mehr Kunden." 
+  },
+  "country.service.gbp": { 
+    en: "Google Business Profile", 
+    ar: "ملف Google التجاري", 
+    es: "Perfil de Negocio de Google", 
+    pt: "Perfil de Negócio do Google", 
+    fr: "Profil Google Business", 
+    it: "Profilo Google Business", 
+    de: "Google Business Profil" 
+  },
+  "country.service.gbpDesc": { 
+    en: "Your Google listing is often the first thing customers see. I make sure it stands out and converts in {country}.", 
+    ar: "قائمتك على Google غالبًا ما تكون أول ما يراه العملاء. أتأكد من أنها تبرز وتحول في {country}.", 
+    es: "Tu ficha de Google suele ser lo primero que ven los clientes. Me aseguro de que destaque y convierta en {country}.", 
+    pt: "Sua listagem do Google geralmente é a primeira coisa que os clientes veem. Eu garanto que ela se destaque e converta em {country}.", 
+    fr: "Votre fiche Google est souvent la première chose que les clients voient. Je m'assure qu'elle se démarque et convertisse en {country}.", 
+    it: "La tua scheda Google è spesso la prima cosa che i clienti vedono. Mi assicuro che si distingua e converta in {country}.", 
+    de: "Ihr Google-Eintrag ist oft das Erste, was Kunden sehen. Ich sorge dafür, dass er auffällt und in {country} konvertiert." 
+  },
+  "country.service.mapSeo": { 
+    en: "Map Rankings", 
+    ar: "تصنيفات الخرائط", 
+    es: "Rankings en Mapas", 
+    pt: "Rankings em Mapas", 
+    fr: "Classements sur les cartes", 
+    it: "Classifiche mappe", 
+    de: "Karten-Rankings" 
+  },
+  "country.service.mapSeoDesc": { 
+    en: "When someone opens Google Maps looking for a business like yours, you want to be in the top 3. That is my specialty.", 
+    ar: "عندما يفتح شخص ما خرائط Google للبحث عن عمل مثل عملك، تريد أن تكون في أفضل 3. هذا تخصصي.", 
+    es: "Cuando alguien abre Google Maps buscando un negocio como el tuyo, quieres estar en el top 3. Esa es mi especialidad.", 
+    pt: "Quando alguém abre o Google Maps procurando um negócio como o seu, você quer estar no top 3. Essa é minha especialidade.", 
+    fr: "Quand quelqu'un ouvre Google Maps pour chercher une entreprise comme la vôtre, vous voulez être dans le top 3. C'est ma spécialité.", 
+    it: "Quando qualcuno apre Google Maps cercando un'attività come la tua, vuoi essere nei primi 3. Questa è la mia specialità.", 
+    de: "Wenn jemand Google Maps öffnet und nach einem Unternehmen wie Ihrem sucht, wollen Sie in den Top 3 sein. Das ist meine Spezialität." 
+  },
+  "country.service.aiSeo": { 
+    en: "AI Search Visibility", 
+    ar: "الظهور في البحث بالذكاء الاصطناعي", 
+    es: "Visibilidad en Búsqueda IA", 
+    pt: "Visibilidade em Busca IA", 
+    fr: "Visibilité dans la recherche IA", 
+    it: "Visibilità nella ricerca IA", 
+    de: "KI-Such-Sichtbarkeit" 
+  },
+  "country.service.aiSeoDesc": { 
+    en: "More people are using ChatGPT and Google AI to find local businesses. I help you get recommended in these new search channels.", 
+    ar: "المزيد من الناس يستخدمون ChatGPT و Google AI للعثور على الشركات المحلية. أساعدك على الحصول على توصيات في قنوات البحث الجديدة هذه.", 
+    es: "Más personas usan ChatGPT y Google AI para encontrar negocios locales. Te ayudo a ser recomendado en estos nuevos canales de búsqueda.", 
+    pt: "Mais pessoas estão usando ChatGPT e Google AI para encontrar empresas locais. Eu ajudo você a ser recomendado nesses novos canais de busca.", 
+    fr: "De plus en plus de personnes utilisent ChatGPT et Google AI pour trouver des entreprises locales. Je vous aide à être recommandé dans ces nouveaux canaux de recherche.", 
+    it: "Più persone usano ChatGPT e Google AI per trovare attività locali. Ti aiuto a essere raccomandato in questi nuovi canali di ricerca.", 
+    de: "Immer mehr Menschen nutzen ChatGPT und Google AI, um lokale Unternehmen zu finden. Ich helfe Ihnen, in diesen neuen Suchkanälen empfohlen zu werden." 
+  },
+  "country.service.reputation": { 
+    en: "Review Management", 
+    ar: "إدارة التقييمات", 
+    es: "Gestión de Reseñas", 
+    pt: "Gestão de Avaliações", 
+    fr: "Gestion des avis", 
+    it: "Gestione recensioni", 
+    de: "Bewertungsmanagement" 
+  },
+  "country.service.reputationDesc": { 
+    en: "Good reviews build trust and improve rankings. I help you get more positive reviews and respond to feedback professionally.", 
+    ar: "التقييمات الجيدة تبني الثقة وتحسن التصنيفات. أساعدك في الحصول على المزيد من التقييمات الإيجابية والرد على الملاحظات باحترافية.", 
+    es: "Las buenas reseñas generan confianza y mejoran los rankings. Te ayudo a obtener más reseñas positivas y responder profesionalmente.", 
+    pt: "Boas avaliações constroem confiança e melhoram os rankings. Eu ajudo você a obter mais avaliações positivas e responder profissionalmente.", 
+    fr: "Les bons avis renforcent la confiance et améliorent les classements. Je vous aide à obtenir plus d'avis positifs et à répondre professionnellement.", 
+    it: "Le buone recensioni costruiscono fiducia e migliorano le classifiche. Ti aiuto a ottenere più recensioni positive e a rispondere professionalmente.", 
+    de: "Gute Bewertungen bauen Vertrauen auf und verbessern Rankings. Ich helfe Ihnen, mehr positive Bewertungen zu erhalten und professionell zu antworten." 
+  },
+  "country.service.localRankings": { 
+    en: "Ranking Tracking", 
+    ar: "تتبع التصنيفات", 
+    es: "Seguimiento de Rankings", 
+    pt: "Acompanhamento de Rankings", 
+    fr: "Suivi des classements", 
+    it: "Monitoraggio classifiche", 
+    de: "Ranking-Tracking" 
+  },
+  "country.service.localRankingsDesc": { 
+    en: "I track where you rank for the searches that matter most in {country} and show you exactly how we are improving.", 
+    ar: "أتابع ترتيبك في عمليات البحث الأكثر أهمية في {country} وأريك بالضبط كيف نتحسن.", 
+    es: "Rastro dónde rankeas para las búsquedas más importantes en {country} y te muestro exactamente cómo estamos mejorando.", 
+    pt: "Acompanho onde você rankeia para as buscas mais importantes em {country} e mostro exatamente como estamos melhorando.", 
+    fr: "Je suis où vous vous classez pour les recherches les plus importantes en {country} et vous montre exactement comment nous nous améliorons.", 
+    it: "Monitoro dove ti classifichi per le ricerche più importanti in {country} e ti mostro esattamente come stiamo migliorando.", 
+    de: "Ich verfolge, wo Sie für die wichtigsten Suchanfragen in {country} ranken und zeige Ihnen genau, wie wir uns verbessern." 
+  },
+  "country.service.localContent": { 
+    en: "Local Content", 
+    ar: "المحتوى المحلي", 
+    es: "Contenido Local", 
+    pt: "Conteúdo Local", 
+    fr: "Contenu local", 
+    it: "Contenuti locali", 
+    de: "Lokaler Inhalt" 
+  },
+  "country.service.localContentDesc": { 
+    en: "I create website pages and blog posts that speak to your local audience in {country} and help you rank for local searches.", 
+    ar: "أنشئ صفحات موقع ومقالات مدونة تخاطب جمهورك المحلي في {country} وتساعدك على التصدر في عمليات البحث المحلية.", 
+    es: "Creo páginas web y publicaciones de blog que hablan a tu audiencia local en {country} y te ayudan a posicionarte en búsquedas locales.", 
+    pt: "Crio páginas de site e posts de blog que falam com seu público local em {country} e ajudam você a rankear em buscas locais.", 
+    fr: "Je crée des pages web et des articles de blog qui parlent à votre public local en {country} et vous aident à vous classer pour les recherches locales.", 
+    it: "Creo pagine web e post del blog che parlano al tuo pubblico locale in {country} e ti aiutano a classificarti per le ricerche locali.", 
+    de: "Ich erstelle Website-Seiten und Blog-Posts, die Ihr lokales Publikum in {country} ansprechen und Ihnen helfen, für lokale Suchanfragen zu ranken." 
+  },
+  "country.service.analytics": { 
+    en: "Performance Reports", 
+    ar: "تقارير الأداء", 
+    es: "Informes de Rendimiento", 
+    pt: "Relatórios de Desempenho", 
+    fr: "Rapports de performance", 
+    it: "Report delle prestazioni", 
+    de: "Leistungsberichte" 
+  },
+  "country.service.analyticsDesc": { 
+    en: "Every month, you get a clear report showing calls, clicks, and rankings. No confusing jargon, just results you can understand.", 
+    ar: "كل شهر، تحصل على تقرير واضح يظهر المكالمات والنقرات والتصنيفات. لا مصطلحات مربكة، فقط نتائج يمكنك فهمها.", 
+    es: "Cada mes, recibes un informe claro mostrando llamadas, clics y rankings. Sin jerga confusa, solo resultados que puedes entender.", 
+    pt: "Todo mês, você recebe um relatório claro mostrando ligações, cliques e rankings. Sem jargão confuso, apenas resultados que você pode entender.", 
+    fr: "Chaque mois, vous recevez un rapport clair montrant les appels, les clics et les classements. Pas de jargon confus, juste des résultats compréhensibles.", 
+    it: "Ogni mese, ricevi un report chiaro che mostra chiamate, clic e classifiche. Nessun gergo confuso, solo risultati che puoi capire.", 
+    de: "Jeden Monat erhalten Sie einen klaren Bericht mit Anrufen, Klicks und Rankings. Kein verwirrendes Fachjargon, nur Ergebnisse, die Sie verstehen können." 
+  },
+  "country.cta.provenResults": { 
+    en: "Client Success", 
+    ar: "نجاح العملاء", 
+    es: "Éxito de Clientes", 
+    pt: "Sucesso de Clientes", 
+    fr: "Succès clients", 
+    it: "Successo clienti", 
+    de: "Kundenerfolg" 
+  },
+  "country.cta.title": { 
+    en: "Real Results from {country} Businesses", 
+    ar: "نتائج حقيقية من شركات {country}", 
+    es: "Resultados Reales de Negocios en {country}", 
+    pt: "Resultados Reais de Empresas em {country}", 
+    fr: "Résultats réels d'entreprises en {country}", 
+    it: "Risultati reali da aziende in {country}", 
+    de: "Echte Ergebnisse von Unternehmen in {country}" 
+  },
+  "country.cta.subtitle": { 
+    en: "These are not made-up numbers. These are results from real local businesses that trusted me with their SEO.", 
+    ar: "هذه ليست أرقامًا مختلقة. هذه نتائج من شركات محلية حقيقية وثقت بي في SEO الخاص بها.", 
+    es: "Estos no son números inventados. Estos son resultados de negocios locales reales que confiaron en mí para su SEO.", 
+    pt: "Esses não são números inventados. Esses são resultados de empresas locais reais que confiaram em mim para seu SEO.", 
+    fr: "Ce ne sont pas des chiffres inventés. Ce sont des résultats d'entreprises locales réelles qui m'ont fait confiance pour leur SEO.", 
+    it: "Questi non sono numeri inventati. Questi sono risultati da aziende locali reali che mi hanno affidato la loro SEO.", 
+    de: "Das sind keine erfundenen Zahlen. Das sind Ergebnisse von echten lokalen Unternehmen, die mir ihre SEO anvertraut haben." 
+  },
+  "country.cta.trafficIncrease": { 
+    en: "Avg. Traffic Growth", 
+    ar: "متوسط نمو الزيارات", 
+    es: "Crecimiento Promedio de Tráfico", 
+    pt: "Crescimento Médio de Tráfego", 
+    fr: "Croissance moyenne du trafic", 
+    it: "Crescita media del traffico", 
+    de: "Durchschn. Traffic-Wachstum" 
+  },
+  "country.cta.callsIncrease": { 
+    en: "More Phone Calls", 
+    ar: "مكالمات هاتفية أكثر", 
+    es: "Más Llamadas Telefónicas", 
+    pt: "Mais Ligações Telefônicas", 
+    fr: "Plus d'appels téléphoniques", 
+    it: "Più chiamate", 
+    de: "Mehr Telefonanrufe" 
+  },
+  "country.cta.topRankings": { 
+    en: "Map Pack Ranking", 
+    ar: "ترتيب حزمة الخريطة", 
+    es: "Ranking en Map Pack", 
+    pt: "Ranking no Map Pack", 
+    fr: "Classement Map Pack", 
+    it: "Classifica Map Pack", 
+    de: "Map Pack Ranking" 
+  },
+  "country.cta.realClients": { 
+    en: "Verified Results", 
+    ar: "نتائج موثقة", 
+    es: "Resultados Verificados", 
+    pt: "Resultados Verificados", 
+    fr: "Résultats vérifiés", 
+    it: "Risultati verificati", 
+    de: "Verifizierte Ergebnisse" 
+  },
+  "country.cta.measurableResults": { 
+    en: "ROI You Can See", 
+    ar: "عائد استثمار يمكنك رؤيته", 
+    es: "ROI que Puedes Ver", 
+    pt: "ROI que Você Pode Ver", 
+    fr: "ROI visible", 
+    it: "ROI visibile", 
+    de: "Sichtbarer ROI" 
+  },
+  "country.cta.transparentProcess": { 
+    en: "No Hidden Fees", 
+    ar: "لا رسوم مخفية", 
+    es: "Sin Tarifas Ocultas", 
+    pt: "Sem Taxas Ocultas", 
+    fr: "Pas de frais cachés", 
+    it: "Nessun costo nascosto", 
+    de: "Keine versteckten Gebühren" 
+  },
+  "country.cta.viewCaseStudies": { 
+    en: "See More {country} Success Stories", 
+    ar: "شاهد المزيد من قصص النجاح في {country}", 
+    es: "Ver Más Historias de Éxito de {country}", 
+    pt: "Ver Mais Histórias de Sucesso de {country}", 
+    fr: "Voir plus de réussites en {country}", 
+    it: "Vedi più storie di successo di {country}", 
+    de: "Mehr Erfolgsgeschichten aus {country} ansehen" 
+  },
+  "country.contact.getStarted": { 
+    en: "Let's Talk", 
+    ar: "لنتحدث", 
+    es: "Hablemos", 
+    pt: "Vamos Conversar", 
+    fr: "Parlons-en", 
+    it: "Parliamone", 
+    de: "Lass uns reden" 
+  },
+  "country.contact.title": { 
+    en: "Ready to Get More Customers in {country}?", 
+    ar: "مستعد للحصول على المزيد من العملاء في {country}؟", 
+    es: "¿Listo para Conseguir Más Clientes en {country}?", 
+    pt: "Pronto para Conseguir Mais Clientes em {country}?", 
+    fr: "Prêt à obtenir plus de clients en {country}?", 
+    it: "Pronto a ottenere più clienti in {country}?", 
+    de: "Bereit, mehr Kunden in {country} zu gewinnen?" 
+  },
+  "country.contact.subtitle": { 
+    en: "Book a free call to discuss your business goals. No sales pitch, just honest advice on how to grow your local presence.", 
+    ar: "احجز مكالمة مجانية لمناقشة أهداف عملك. لا عروض بيع، فقط نصيحة صادقة حول كيفية تنمية حضورك المحلي.", 
+    es: "Reserva una llamada gratuita para discutir los objetivos de tu negocio. Sin discurso de ventas, solo consejos honestos sobre cómo hacer crecer tu presencia local.", 
+    pt: "Agende uma chamada gratuita para discutir os objetivos do seu negócio. Sem discurso de vendas, apenas conselhos honestos sobre como crescer sua presença local.", 
+    fr: "Réservez un appel gratuit pour discuter de vos objectifs commerciaux. Pas de discours de vente, juste des conseils honnêtes sur la façon de développer votre présence locale.", 
+    it: "Prenota una chiamata gratuita per discutere i tuoi obiettivi aziendali. Nessun discorso di vendita, solo consigli onesti su come far crescere la tua presenza locale.", 
+    de: "Buchen Sie ein kostenloses Gespräch, um Ihre Geschäftsziele zu besprechen. Kein Verkaufsgespräch, nur ehrliche Ratschläge, wie Sie Ihre lokale Präsenz ausbauen können." 
+  },
+  "country.contact.bookCall": { 
+    en: "Book Free Call", 
+    ar: "احجز مكالمة مجانية", 
+    es: "Reservar Llamada Gratis", 
+    pt: "Agendar Chamada Grátis", 
+    fr: "Réserver un appel gratuit", 
+    it: "Prenota chiamata gratuita", 
+    de: "Kostenlosen Anruf buchen" 
+  },
+  "country.contact.bookCallDesc": { 
+    en: "30-minute strategy session, completely free.", 
+    ar: "جلسة استراتيجية مدتها 30 دقيقة، مجانية تمامًا.", 
+    es: "Sesión estratégica de 30 minutos, completamente gratis.", 
+    pt: "Sessão estratégica de 30 minutos, totalmente gratuita.", 
+    fr: "Session stratégique de 30 minutes, entièrement gratuite.", 
+    it: "Sessione strategica di 30 minuti, completamente gratuita.", 
+    de: "30-minütige Strategiesitzung, völlig kostenlos." 
+  },
+  "country.contact.whatsappDesc": { 
+    en: "Quick questions? Message me anytime.", 
+    ar: "أسئلة سريعة؟ راسلني في أي وقت.", 
+    es: "¿Preguntas rápidas? Escríbeme cuando quieras.", 
+    pt: "Perguntas rápidas? Me mande mensagem a qualquer hora.", 
+    fr: "Questions rapides? Envoyez-moi un message à tout moment.", 
+    it: "Domande veloci? Scrivimi quando vuoi.", 
+    de: "Schnelle Fragen? Schreiben Sie mir jederzeit." 
+  },
+  "country.contact.servingClients": { 
+    en: "Currently Working With", 
+    ar: "أعمل حاليًا مع", 
+    es: "Actualmente Trabajando Con", 
+    pt: "Atualmente Trabalhando Com", 
+    fr: "Travaillant actuellement avec", 
+    it: "Attualmente lavorando con", 
+    de: "Derzeit zusammenarbeitend mit" 
+  },
+  "country.contact.allStates": { 
+    en: "Clients in all {count} {country} states", 
+    ar: "عملاء في جميع ولايات {country} الـ {count}", 
+    es: "Clientes en los {count} estados de {country}", 
+    pt: "Clientes em todos os {count} estados de {country}", 
+    fr: "Clients dans les {count} états de {country}", 
+    it: "Clienti in tutti i {count} stati di {country}", 
+    de: "Kunden in allen {count} Bundesstaaten von {country}" 
+  },
+  "country.contact.sendMessage": { 
+    en: "Send a Message", 
+    ar: "أرسل رسالة", 
+    es: "Envía un Mensaje", 
+    pt: "Envie uma Mensagem", 
+    fr: "Envoyez un message", 
+    it: "Invia un messaggio", 
+    de: "Nachricht senden" 
+  },
+  "country.seo.title": { 
+    en: "{service} Services in {country} | Syed Hadi Hussain", 
+    ar: "خدمات {service} في {country} | سيد هادي حسين", 
+    es: "Servicios de {service} en {country} | Syed Hadi Hussain", 
+    pt: "Serviços de {service} em {country} | Syed Hadi Hussain", 
+    fr: "Services {service} en {country} | Syed Hadi Hussain", 
+    it: "Servizi {service} in {country} | Syed Hadi Hussain", 
+    de: "{service} Dienste in {country} | Syed Hadi Hussain" 
+  },
+  "country.seo.description": { 
+    en: "Get more customers with Local SEO services across all {count} states. Dominate Google Maps, local search, and AI search engines. 7+ years experience.", 
+    ar: "احصل على المزيد من العملاء مع خدمات SEO المحلية عبر جميع الولايات الـ {count}. تصدر خرائط Google والبحث المحلي ومحركات البحث AI. خبرة 7+ سنوات.", 
+    es: "Consigue más clientes con servicios de SEO Local en los {count} estados. Domina Google Maps, búsqueda local y motores de búsqueda IA. 7+ años de experiencia.", 
+    pt: "Consiga mais clientes com serviços de SEO Local em todos os {count} estados. Domine Google Maps, busca local e mecanismos de busca IA. 7+ anos de experiência.", 
+    fr: "Obtenez plus de clients avec les services SEO Local dans les {count} états. Dominez Google Maps, la recherche locale et les moteurs IA. 7+ ans d'expérience.", 
+    it: "Ottieni più clienti con i servizi SEO Locale in tutti i {count} stati. Domina Google Maps, ricerca locale e motori di ricerca IA. 7+ anni di esperienza.", 
+    de: "Gewinnen Sie mehr Kunden mit lokalen SEO-Diensten in allen {count} Bundesstaaten. Dominieren Sie Google Maps, lokale Suche und KI-Suchmaschinen. 7+ Jahre Erfahrung." 
+  },
+  "country.seo.localSeo": { 
+    en: "Local SEO", 
+    ar: "SEO المحلي", 
+    es: "SEO Local", 
+    pt: "SEO Local", 
+    fr: "SEO Local", 
+    it: "SEO Locale", 
+    de: "Lokales SEO" 
+  },
 };
 
 interface LanguageContextType {
