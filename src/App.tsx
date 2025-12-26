@@ -8,7 +8,7 @@ import { HelmetProvider } from "react-helmet-async";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import LanguageRedirect from "@/components/LanguageRedirect";
-import FloatingContactPanel from "@/components/FloatingContactPanel";
+import FloatingActions from "@/components/FloatingActions";
 import TawkToChat from "@/components/TawkToChat";
 import GlobalSEO from "@/components/GlobalSEO";
 import { SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE } from "@/lib/i18n-config";
@@ -32,7 +32,6 @@ const GraphicDesignPage = lazy(() => import("./pages/GraphicDesignPage"));
 const SocialMediaPage = lazy(() => import("./pages/SocialMediaPage"));
 const PrivacyPolicyPage = lazy(() => import("./pages/PrivacyPolicyPage"));
 const TermsOfServicePage = lazy(() => import("./pages/TermsOfServicePage"));
-const CountryPage = lazy(() => import("./pages/CountryPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -67,7 +66,6 @@ const pageRoutes = [
   { path: "social-media", element: <SocialMediaPage /> },
   { path: "privacy", element: <PrivacyPolicyPage /> },
   { path: "terms", element: <TermsOfServicePage /> },
-  { path: "country/:countrySlug", element: <CountryPage /> },
 ];
 
 const App = () => (
@@ -79,7 +77,7 @@ const App = () => (
           <TooltipProvider>
             <Toaster />
             <Sonner />
-            <FloatingContactPanel />
+            <FloatingActions />
             <TawkToChat />
             <BrowserRouter>
               <LanguageRedirect />
