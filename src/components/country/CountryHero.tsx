@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import profilePhoto from "@/assets/profile-photo.png";
 import { CountryData } from "@/lib/countries-config";
+import { getCountryPageCopy } from "@/lib/country-page-copy";
 
 interface CountryHeroProps {
   country: CountryData;
@@ -11,6 +12,7 @@ interface CountryHeroProps {
 
 const CountryHero = ({ country }: CountryHeroProps) => {
   const { t, language } = useLanguage();
+  const copy = getCountryPageCopy(country);
 
   return (
     <section 
@@ -34,12 +36,12 @@ const CountryHero = ({ country }: CountryHeroProps) => {
             </div>
 
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-              {t("country.heroTitle")}
+              {copy.heroTitlePrefix}
               <span className="block text-primary">{country.name}</span>
             </h1>
 
             <p className="text-lg text-muted-foreground leading-relaxed mb-4 max-w-xl animate-fade-up" style={{ animationDelay: "0.3s" }}>
-              {t("country.heroDescription")}
+              {copy.heroDescription}
             </p>
             
             <p className="text-base text-foreground/80 font-medium mb-8 max-w-xl animate-fade-up" style={{ animationDelay: "0.35s" }}>

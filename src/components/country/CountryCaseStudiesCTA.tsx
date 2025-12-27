@@ -3,6 +3,7 @@ import { ArrowRight, TrendingUp, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { CountryData } from "@/lib/countries-config";
+import { getCountryPageCopy } from "@/lib/country-page-copy";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 interface CountryCaseStudiesCTAProps {
@@ -11,6 +12,7 @@ interface CountryCaseStudiesCTAProps {
 
 const CountryCaseStudiesCTA = ({ country }: CountryCaseStudiesCTAProps) => {
   const { t, language } = useLanguage();
+  const copy = getCountryPageCopy(country);
 
   const results = [
     { label: t("country.cta.trafficIncrease"), value: "150%" },
@@ -33,10 +35,10 @@ const CountryCaseStudiesCTA = ({ country }: CountryCaseStudiesCTAProps) => {
               {t("country.cta.provenResults")}
             </span>
             <h2 id="cta-heading" className="font-display text-3xl sm:text-4xl font-bold text-foreground mt-2 mb-4">
-              {t("country.cta.title").replace("{country}", country.name)}
+              {copy.ctaTitle}
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              {t("country.cta.subtitle")}
+              {copy.ctaSubtitle}
             </p>
           </div>
         </ScrollReveal>
