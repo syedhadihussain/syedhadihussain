@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { CountryData, ALL_US_STATES, US_STATES } from "@/lib/countries-config";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
-import usStatesMap from "@/assets/us-states-map.png";
 
 interface CountryMapProps {
   country: CountryData;
@@ -38,14 +37,21 @@ const CountryMap = ({ country }: CountryMapProps) => {
 
         <ScrollReveal delay={0.2}>
           <div className="relative bg-muted/50 rounded-2xl p-8 border border-border overflow-hidden">
-            {isUS && (
+            {country.mapEmbed ? (
               <div className="relative flex flex-col items-center">
-                <img 
-                  src={usStatesMap} 
-                  alt={`Map of the ${country.name} showing all ${country.statesCount} states where we provide Local SEO services`}
-                  className="w-full max-w-4xl h-auto mx-auto"
-                  loading="lazy"
-                />
+                <div className="w-full max-w-4xl mx-auto aspect-video rounded-xl overflow-hidden">
+                  <iframe 
+                    src={country.mapEmbed}
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title={`Map of ${country.name} showing regions where we provide Local SEO services`}
+                    className="w-full h-full"
+                  />
+                </div>
                 <div className="mt-6 glass rounded-lg px-4 py-3">
                   <div className="flex items-center gap-2 text-sm">
                     <div className="w-3 h-3 bg-primary rounded-full" />
@@ -55,8 +61,7 @@ const CountryMap = ({ country }: CountryMapProps) => {
                   </div>
                 </div>
               </div>
-            )}
-            {!isUS && (
+            ) : (
               <div className="text-center py-20">
                 <MapPin className="w-16 h-16 text-primary mx-auto mb-4" />
                 <p className="text-foreground font-medium">{t("country.servingAllRegions").replace("{country}", country.name)}</p>
