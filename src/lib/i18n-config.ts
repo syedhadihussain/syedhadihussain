@@ -124,6 +124,13 @@ export const US_STATE_CODES = [
   "nm", "nd", "ok", "ri", "sc", "sd", "ut", "vt", "wv", "wi", "wy"
 ] as const;
 
+// All country codes for sitemap generation
+export const COUNTRY_CODES = [
+  "us", "ca", "au", "de", "mx", "my", "ae", "uk", "it", "nz",
+  "br", "ie", "sg", "za", "nl", "fr", "es", "se", "no", "dk",
+  "fi", "ch", "be", "sa", "qa", "eg", "pt", "om", "lu", "jo"
+] as const;
+
 // All routes in the application (for sitemap generation)
 // IMPORTANT: Keep this in sync with pageRoutes in App.tsx
 export const ALL_ROUTES = [
@@ -145,7 +152,8 @@ export const ALL_ROUTES = [
   "social-media",
   "privacy",                   // Maps to PrivacyPolicyPage
   "terms",                     // Maps to TermsOfServicePage
-  "us",                        // Country: United States
+  // All 30 country routes
+  ...COUNTRY_CODES,
   // All 51 US state routes
   ...US_STATE_CODES.map(code => `us/${code}`),
 ] as const;
