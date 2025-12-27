@@ -1416,22 +1416,22 @@ export const translations: Translations = {
     de: "Über {count} Städte in {state} betreuen" 
   },
   "state.heroTitle": { 
-    en: "Local SEO Expert for {state} Businesses", 
-    ar: "خبير SEO المحلي للشركات في {state}", 
-    es: "Experto en SEO Local para Negocios en {state}", 
-    pt: "Especialista em SEO Local para Empresas em {state}", 
-    fr: "Expert SEO Local pour les Entreprises en {state}", 
-    it: "Esperto SEO Locale per Aziende in {state}", 
-    de: "Lokaler SEO-Experte für {state} Unternehmen" 
+    en: "Your {state} Local SEO Specialist", 
+    ar: "متخصص SEO المحلي الخاص بك في {state}", 
+    es: "Tu Especialista en SEO Local de {state}", 
+    pt: "Seu Especialista em SEO Local de {state}", 
+    fr: "Votre Spécialiste SEO Local au {state}", 
+    it: "Il Tuo Specialista SEO Locale in {state}", 
+    de: "Ihr {state} Lokaler SEO-Spezialist" 
   },
   "state.heroDescription": { 
-    en: "I help {state} businesses get found on Google, Google Maps, and AI-powered search. From {city1} to {city2}, {city3} to {city4}, my strategies bring more calls, more visits, and more sales to businesses across {count}+ cities.", 
-    ar: "أساعد شركات {state} على الظهور في Google وخرائط Google والبحث المدعوم بالذكاء الاصطناعي. من {city1} إلى {city2}، ومن {city3} إلى {city4}، استراتيجياتي تجلب المزيد من المكالمات والزيارات والمبيعات للشركات في أكثر من {count} مدينة.", 
-    es: "Ayudo a negocios de {state} a aparecer en Google, Google Maps y búsqueda con IA. Desde {city1} hasta {city2}, {city3} hasta {city4}, mis estrategias traen más llamadas, más visitas y más ventas a negocios en más de {count} ciudades.", 
-    pt: "Ajudo empresas de {state} a serem encontradas no Google, Google Maps e busca com IA. De {city1} a {city2}, {city3} a {city4}, minhas estratégias trazem mais ligações, mais visitas e mais vendas para empresas em mais de {count} cidades.", 
-    fr: "J'aide les entreprises de {state} à être trouvées sur Google, Google Maps et la recherche IA. De {city1} à {city2}, {city3} à {city4}, mes stratégies apportent plus d'appels, plus de visites et plus de ventes aux entreprises dans plus de {count} villes.", 
-    it: "Aiuto le aziende di {state} a farsi trovare su Google, Google Maps e ricerca IA. Da {city1} a {city2}, {city3} a {city4}, le mie strategie portano più chiamate, più visite e più vendite alle aziende in oltre {count} città.", 
-    de: "Ich helfe {state}-Unternehmen, auf Google, Google Maps und KI-gestützter Suche gefunden zu werden. Von {city1} bis {city2}, {city3} bis {city4}, meine Strategien bringen mehr Anrufe, mehr Besuche und mehr Verkäufe für Unternehmen in über {count} Städten." 
+    en: "Running a business in {state} means competing for attention in a crowded market. I specialize in helping local businesses dominate Google search results and Google Maps. Whether you operate in {city1}, {city2}, {city3}, or {city4}, my proven methods generate qualified leads across {count}+ cities throughout the state.", 
+    ar: "إدارة عمل في {state} تعني المنافسة على الاهتمام في سوق مزدحم. أتخصص في مساعدة الشركات المحلية على الهيمنة في نتائج بحث Google وخرائط Google. سواء كنت تعمل في {city1} أو {city2} أو {city3} أو {city4}، طرقي المجربة تولد عملاء مؤهلين في أكثر من {count} مدينة عبر الولاية.", 
+    es: "Operar un negocio en {state} significa competir por atención en un mercado saturado. Me especializo en ayudar a negocios locales a dominar los resultados de búsqueda de Google y Google Maps. Ya sea que operes en {city1}, {city2}, {city3} o {city4}, mis métodos probados generan leads calificados en más de {count} ciudades del estado.", 
+    pt: "Administrar um negócio em {state} significa competir por atenção em um mercado lotado. Especializo-me em ajudar empresas locais a dominar os resultados de busca do Google e Google Maps. Seja operando em {city1}, {city2}, {city3} ou {city4}, meus métodos comprovados geram leads qualificados em mais de {count} cidades pelo estado.", 
+    fr: "Gérer une entreprise au {state} signifie rivaliser pour l'attention dans un marché encombré. Je me spécialise pour aider les entreprises locales à dominer les résultats de recherche Google et Google Maps. Que vous opériez à {city1}, {city2}, {city3} ou {city4}, mes méthodes éprouvées génèrent des prospects qualifiés dans plus de {count} villes de l'état.", 
+    it: "Gestire un'attività in {state} significa competere per l'attenzione in un mercato affollato. Mi specializzo nell'aiutare le attività locali a dominare i risultati di ricerca Google e Google Maps. Che tu operi a {city1}, {city2}, {city3} o {city4}, i miei metodi collaudati generano lead qualificati in oltre {count} città dello stato.", 
+    de: "Ein Unternehmen in {state} zu führen bedeutet, um Aufmerksamkeit in einem überfüllten Markt zu konkurrieren. Ich spezialisiere mich darauf, lokalen Unternehmen zu helfen, die Google-Suchergebnisse und Google Maps zu dominieren. Ob Sie in {city1}, {city2}, {city3} oder {city4} tätig sind, meine bewährten Methoden generieren qualifizierte Leads in über {count} Städten im gesamten Bundesstaat." 
   },
   "state.getFreeAudit": { 
     en: "Get Free SEO Audit", 
@@ -1497,13 +1497,13 @@ export const translations: Translations = {
     de: "Lokale SEO-Dienste in ganz {state}" 
   },
   "state.citiesDescription": { 
-    en: "Whether you run a restaurant in {city1}, a dental practice in {city2}, or a law firm in {city3}, I understand what {state} customers search for. My local SEO strategies are tailored to each city's unique market.", 
-    ar: "سواء كنت تدير مطعمًا في {city1}، أو عيادة أسنان في {city2}، أو مكتب محاماة في {city3}، أفهم ما يبحث عنه عملاء {state}. استراتيجيات SEO المحلية الخاصة بي مصممة لكل سوق مدينة فريد.", 
-    es: "Ya sea que tengas un restaurante en {city1}, una clínica dental en {city2} o un bufete en {city3}, entiendo lo que buscan los clientes de {state}. Mis estrategias de SEO local están adaptadas al mercado único de cada ciudad.", 
-    pt: "Seja um restaurante em {city1}, uma clínica dental em {city2} ou um escritório de advocacia em {city3}, eu entendo o que os clientes de {state} buscam. Minhas estratégias de SEO local são adaptadas ao mercado único de cada cidade.", 
-    fr: "Que vous dirigiez un restaurant à {city1}, un cabinet dentaire à {city2} ou un cabinet d'avocats à {city3}, je comprends ce que recherchent les clients de {state}. Mes stratégies SEO local sont adaptées au marché unique de chaque ville.", 
-    it: "Che tu gestisca un ristorante a {city1}, uno studio dentistico a {city2} o uno studio legale a {city3}, capisco cosa cercano i clienti di {state}. Le mie strategie SEO locale sono adattate al mercato unico di ogni città.", 
-    de: "Ob Sie ein Restaurant in {city1}, eine Zahnarztpraxis in {city2} oder eine Anwaltskanzlei in {city3} betreiben, ich verstehe, wonach Kunden in {state} suchen. Meine lokalen SEO-Strategien sind auf den einzigartigen Markt jeder Stadt zugeschnitten." 
+    en: "From plumbers in {city1} to accountants in {city2} and medical practices in {city3}, every {state} business has unique local search challenges. I craft individualized optimization plans that address your specific competitive landscape and target audience.", 
+    ar: "من السباكين في {city1} إلى المحاسبين في {city2} والممارسات الطبية في {city3}، كل عمل في {state} لديه تحديات بحث محلية فريدة. أصمم خطط تحسين فردية تعالج المشهد التنافسي المحدد والجمهور المستهدف.", 
+    es: "Desde fontaneros en {city1} hasta contadores en {city2} y prácticas médicas en {city3}, cada negocio en {state} tiene desafíos únicos de búsqueda local. Creo planes de optimización individualizados que abordan tu panorama competitivo específico y audiencia objetivo.", 
+    pt: "De encanadores em {city1} a contadores em {city2} e práticas médicas em {city3}, cada empresa em {state} tem desafios únicos de busca local. Crio planos de otimização individualizados que abordam seu cenário competitivo específico e público-alvo.", 
+    fr: "Des plombiers à {city1} aux comptables à {city2} et aux cabinets médicaux à {city3}, chaque entreprise au {state} a des défis de recherche locale uniques. Je crée des plans d'optimisation individualisés qui répondent à votre paysage concurrentiel spécifique et à votre public cible.", 
+    it: "Dagli idraulici a {city1} ai commercialisti a {city2} e agli studi medici a {city3}, ogni attività in {state} ha sfide di ricerca locale uniche. Creo piani di ottimizzazione personalizzati che affrontano il tuo specifico panorama competitivo e pubblico target.", 
+    de: "Von Klempnern in {city1} bis zu Buchhaltern in {city2} und Arztpraxen in {city3}, jedes Unternehmen in {state} hat einzigartige lokale Suchherausforderungen. Ich erstelle individualisierte Optimierungspläne, die Ihre spezifische Wettbewerbslandschaft und Zielgruppe ansprechen." 
   },
   "state.allCitiesHeading": { 
     en: "All {count} Cities We Serve", 
@@ -1542,13 +1542,13 @@ export const translations: Translations = {
     de: "Lokale SEO-Dienste für {state} Unternehmen" 
   },
   "state.servicesDescription": { 
-    en: "I focus on what actually moves the needle for local businesses. No fluff, no unnecessary services, just proven tactics that bring customers through your door.", 
-    ar: "أركز على ما يحدث فرقًا حقيقيًا للشركات المحلية. لا حشو، لا خدمات غير ضرورية، فقط تكتيكات مثبتة تجلب العملاء إلى بابك.", 
-    es: "Me enfoco en lo que realmente mueve la aguja para los negocios locales. Sin relleno, sin servicios innecesarios, solo tácticas probadas que traen clientes a tu puerta.", 
-    pt: "Foco no que realmente faz diferença para empresas locais. Sem enrolação, sem serviços desnecessários, apenas táticas comprovadas que trazem clientes para sua porta.", 
-    fr: "Je me concentre sur ce qui fait vraiment la différence pour les entreprises locales. Pas de remplissage, pas de services inutiles, juste des tactiques éprouvées qui amènent les clients à votre porte.", 
-    it: "Mi concentro su ciò che fa davvero la differenza per le attività locali. Niente fronzoli, niente servizi inutili, solo tattiche comprovate che portano clienti alla tua porta.", 
-    de: "Ich konzentriere mich auf das, was wirklich einen Unterschied für lokale Unternehmen macht. Kein Füllmaterial, keine unnötigen Dienste, nur bewährte Taktiken, die Kunden zu Ihnen bringen." 
+    en: "Every service I provide targets measurable business growth. I eliminate guesswork and focus exclusively on strategies that deliver tangible returns for {state} business owners.", 
+    ar: "كل خدمة أقدمها تستهدف نمو الأعمال القابل للقياس. أزيل التخمين وأركز حصريًا على الاستراتيجيات التي تحقق عوائد ملموسة لأصحاب الأعمال في {state}.", 
+    es: "Cada servicio que ofrezco apunta al crecimiento empresarial medible. Elimino las conjeturas y me enfoco exclusivamente en estrategias que entregan retornos tangibles para los dueños de negocios de {state}.", 
+    pt: "Cada serviço que ofereço visa o crescimento empresarial mensurável. Elimino as suposições e foco exclusivamente em estratégias que entregam retornos tangíveis para os proprietários de empresas de {state}.", 
+    fr: "Chaque service que je fournis cible une croissance commerciale mesurable. J'élimine les conjectures et me concentre exclusivement sur les stratégies qui produisent des retours tangibles pour les propriétaires d'entreprises au {state}.", 
+    it: "Ogni servizio che offro mira alla crescita aziendale misurabile. Elimino le congetture e mi concentro esclusivamente su strategie che producono ritorni tangibili per i proprietari di attività in {state}.", 
+    de: "Jeder Service, den ich anbiete, zielt auf messbares Geschäftswachstum ab. Ich eliminiere Rätselraten und konzentriere mich ausschließlich auf Strategien, die greifbare Renditen für {state}-Geschäftsinhaber liefern." 
   },
   "state.service1Title": { 
     en: "Google Business Profile", 
@@ -1560,13 +1560,13 @@ export const translations: Translations = {
     de: "Google Business Profil" 
   },
   "state.service1Desc": { 
-    en: "Your Google listing is the first thing customers see. I optimize every detail to make your {state} business stand out and convert browsers into buyers.", 
-    ar: "قائمتك على Google هي أول ما يراه العملاء. أحسّن كل التفاصيل لجعل عملك في {state} يبرز ويحول المتصفحين إلى مشترين.", 
-    es: "Tu ficha de Google es lo primero que ven los clientes. Optimizo cada detalle para que tu negocio en {state} destaque y convierta visitantes en compradores.", 
-    pt: "Sua ficha do Google é a primeira coisa que os clientes veem. Otimizo cada detalhe para que seu negócio em {state} se destaque e converta visitantes em compradores.", 
-    fr: "Votre fiche Google est la première chose que les clients voient. J'optimise chaque détail pour que votre entreprise en {state} se démarque et convertisse les visiteurs en acheteurs.", 
-    it: "La tua scheda Google è la prima cosa che i clienti vedono. Ottimizzo ogni dettaglio per far risaltare la tua attività in {state} e convertire i visitatori in acquirenti.", 
-    de: "Ihr Google-Eintrag ist das Erste, was Kunden sehen. Ich optimiere jedes Detail, damit Ihr {state}-Unternehmen auffällt und Besucher in Käufer verwandelt." 
+    en: "Customers decide within seconds whether to contact you based on your Google listing. I fine-tune every element of your profile to maximize clicks, calls, and direction requests from {state} searchers.", 
+    ar: "يقرر العملاء في ثوانٍ ما إذا كانوا سيتصلون بك بناءً على قائمتك على Google. أضبط كل عنصر في ملفك لتعظيم النقرات والمكالمات وطلبات الاتجاهات من الباحثين في {state}.", 
+    es: "Los clientes deciden en segundos si contactarte basándose en tu ficha de Google. Afino cada elemento de tu perfil para maximizar clics, llamadas y solicitudes de direcciones de buscadores de {state}.", 
+    pt: "Os clientes decidem em segundos se vão entrar em contato com base na sua ficha do Google. Ajusto cada elemento do seu perfil para maximizar cliques, ligações e solicitações de direções de pesquisadores de {state}.", 
+    fr: "Les clients décident en quelques secondes de vous contacter en fonction de votre fiche Google. J'affine chaque élément de votre profil pour maximiser les clics, appels et demandes d'itinéraires des chercheurs au {state}.", 
+    it: "I clienti decidono in pochi secondi se contattarti in base alla tua scheda Google. Perfeziono ogni elemento del tuo profilo per massimizzare clic, chiamate e richieste di indicazioni dai cercatori in {state}.", 
+    de: "Kunden entscheiden innerhalb von Sekunden, ob sie Sie kontaktieren, basierend auf Ihrem Google-Eintrag. Ich optimiere jedes Element Ihres Profils, um Klicks, Anrufe und Wegbeschreibungsanfragen von {state}-Suchenden zu maximieren." 
   },
   "state.service2Title": { 
     en: "Local Search Rankings", 
@@ -1578,13 +1578,13 @@ export const translations: Translations = {
     de: "Lokale Such-Rankings" 
   },
   "state.service2Desc": { 
-    en: "When someone in {state} searches for your service, I make sure you show up. Keyword research, on-page optimization, and local signals that Google loves.", 
-    ar: "عندما يبحث شخص في {state} عن خدمتك، أتأكد من ظهورك. بحث الكلمات المفتاحية، تحسين الصفحة، والإشارات المحلية التي يحبها Google.", 
-    es: "Cuando alguien en {state} busca tu servicio, me aseguro de que aparezcas. Investigación de palabras clave, optimización on-page y señales locales que Google adora.", 
-    pt: "Quando alguém em {state} busca seu serviço, garanto que você apareça. Pesquisa de palavras-chave, otimização on-page e sinais locais que o Google adora.", 
-    fr: "Quand quelqu'un en {state} recherche votre service, je m'assure que vous apparaissez. Recherche de mots-clés, optimisation on-page et signaux locaux que Google adore.", 
-    it: "Quando qualcuno in {state} cerca il tuo servizio, mi assicuro che tu appaia. Ricerca di parole chiave, ottimizzazione on-page e segnali locali che Google adora.", 
-    de: "Wenn jemand in {state} nach Ihrem Service sucht, sorge ich dafür, dass Sie erscheinen. Keyword-Recherche, On-Page-Optimierung und lokale Signale, die Google liebt." 
+    en: "Appearing on page one for local searches requires technical precision and strategic content. I implement on-page optimizations and build local signals that position your {state} business ahead of competitors.", 
+    ar: "الظهور في الصفحة الأولى للبحث المحلي يتطلب دقة تقنية ومحتوى استراتيجي. أنفذ تحسينات على الصفحة وأبني إشارات محلية تضع عملك في {state} أمام المنافسين.", 
+    es: "Aparecer en la primera página para búsquedas locales requiere precisión técnica y contenido estratégico. Implemento optimizaciones on-page y construyo señales locales que posicionan tu negocio de {state} por delante de los competidores.", 
+    pt: "Aparecer na primeira página para buscas locais requer precisão técnica e conteúdo estratégico. Implemento otimizações on-page e construo sinais locais que posicionam seu negócio de {state} à frente dos concorrentes.", 
+    fr: "Apparaître en première page pour les recherches locales nécessite une précision technique et un contenu stratégique. Je mets en œuvre des optimisations on-page et construis des signaux locaux qui positionnent votre entreprise au {state} devant les concurrents.", 
+    it: "Apparire in prima pagina per le ricerche locali richiede precisione tecnica e contenuti strategici. Implemento ottimizzazioni on-page e costruisco segnali locali che posizionano la tua attività in {state} davanti ai concorrenti.", 
+    de: "Auf Seite eins für lokale Suchanfragen zu erscheinen, erfordert technische Präzision und strategische Inhalte. Ich implementiere On-Page-Optimierungen und baue lokale Signale auf, die Ihr {state}-Unternehmen vor Wettbewerbern positionieren." 
   },
   "state.service3Title": { 
     en: "Review Generation", 
@@ -1596,13 +1596,13 @@ export const translations: Translations = {
     de: "Bewertungsgenerierung" 
   },
   "state.service3Desc": { 
-    en: "More 5-star reviews mean more trust and higher rankings. I set up systems that encourage happy customers to share their experience.", 
-    ar: "المزيد من التقييمات 5 نجوم تعني المزيد من الثقة وتصنيفات أعلى. أقوم بإعداد أنظمة تشجع العملاء السعداء على مشاركة تجربتهم.", 
-    es: "Más reseñas de 5 estrellas significan más confianza y mejores rankings. Configuro sistemas que animan a los clientes felices a compartir su experiencia.", 
-    pt: "Mais avaliações 5 estrelas significam mais confiança e rankings mais altos. Configuro sistemas que incentivam clientes satisfeitos a compartilhar sua experiência.", 
-    fr: "Plus d'avis 5 étoiles signifie plus de confiance et de meilleurs classements. Je mets en place des systèmes qui encouragent les clients satisfaits à partager leur expérience.", 
-    it: "Più recensioni a 5 stelle significano più fiducia e classifiche più alte. Creo sistemi che incoraggiano i clienti soddisfatti a condividere la loro esperienza.", 
-    de: "Mehr 5-Sterne-Bewertungen bedeuten mehr Vertrauen und höhere Rankings. Ich richte Systeme ein, die zufriedene Kunden ermutigen, ihre Erfahrung zu teilen." 
+    en: "A steady flow of authentic reviews signals trustworthiness to both customers and search algorithms. I establish systematic processes that consistently generate positive feedback from your satisfied clients.", 
+    ar: "تدفق مستمر من التقييمات الأصلية يشير إلى الموثوقية لكل من العملاء وخوارزميات البحث. أؤسس عمليات منهجية تولد باستمرار ردود فعل إيجابية من عملائك الراضين.", 
+    es: "Un flujo constante de reseñas auténticas señala confiabilidad tanto a los clientes como a los algoritmos de búsqueda. Establezco procesos sistemáticos que generan consistentemente comentarios positivos de tus clientes satisfechos.", 
+    pt: "Um fluxo constante de avaliações autênticas sinaliza confiabilidade tanto para clientes quanto para algoritmos de busca. Estabeleço processos sistemáticos que geram consistentemente feedback positivo dos seus clientes satisfeitos.", 
+    fr: "Un flux régulier d'avis authentiques signale la fiabilité aux clients et aux algorithmes de recherche. J'établis des processus systématiques qui génèrent constamment des retours positifs de vos clients satisfaits.", 
+    it: "Un flusso costante di recensioni autentiche segnala affidabilità sia ai clienti che agli algoritmi di ricerca. Stabilisco processi sistematici che generano costantemente feedback positivi dai tuoi clienti soddisfatti.", 
+    de: "Ein stetiger Strom authentischer Bewertungen signalisiert Vertrauenswürdigkeit sowohl für Kunden als auch für Suchalgorithmen. Ich etabliere systematische Prozesse, die konsequent positives Feedback von Ihren zufriedenen Kunden generieren." 
   },
   "state.service4Title": { 
     en: "Local Content Creation", 
@@ -1614,13 +1614,13 @@ export const translations: Translations = {
     de: "Lokale Content-Erstellung" 
   },
   "state.service4Desc": { 
-    en: "Content that speaks to {state} residents. Location pages, service pages, and blog posts that capture local search traffic and establish authority.", 
-    ar: "محتوى يتحدث إلى سكان {state}. صفحات المواقع، صفحات الخدمات، ومقالات المدونة التي تلتقط حركة البحث المحلية وتؤسس السلطة.", 
-    es: "Contenido que habla a los residentes de {state}. Páginas de ubicación, páginas de servicios y publicaciones de blog que capturan tráfico de búsqueda local y establecen autoridad.", 
-    pt: "Conteúdo que fala com os residentes de {state}. Páginas de localização, páginas de serviços e posts de blog que capturam tráfego de busca local e estabelecem autoridade.", 
-    fr: "Contenu qui parle aux résidents de {state}. Pages de localisation, pages de services et articles de blog qui captent le trafic de recherche local et établissent l'autorité.", 
-    it: "Contenuti che parlano ai residenti di {state}. Pagine di località, pagine di servizi e post del blog che catturano traffico di ricerca locale e stabiliscono autorità.", 
-    de: "Inhalte, die zu {state}-Bewohnern sprechen. Standortseiten, Serviceseiten und Blog-Posts, die lokalen Suchverkehr erfassen und Autorität aufbauen." 
+    en: "Generic content fails to connect with {state} audiences. I develop location-specific pages and articles that resonate with regional searchers while building your reputation as a local authority.", 
+    ar: "المحتوى العام يفشل في التواصل مع جماهير {state}. أطور صفحات ومقالات خاصة بالموقع تتردد صداها مع الباحثين الإقليميين مع بناء سمعتك كسلطة محلية.", 
+    es: "El contenido genérico no conecta con las audiencias de {state}. Desarrollo páginas y artículos específicos de ubicación que resuenan con los buscadores regionales mientras construyo tu reputación como autoridad local.", 
+    pt: "Conteúdo genérico falha em conectar com audiências de {state}. Desenvolvo páginas e artigos específicos de localização que ressoam com pesquisadores regionais enquanto construo sua reputação como autoridade local.", 
+    fr: "Le contenu générique ne parvient pas à se connecter avec les audiences du {state}. Je développe des pages et des articles spécifiques à l'emplacement qui résonnent avec les chercheurs régionaux tout en construisant votre réputation d'autorité locale.", 
+    it: "I contenuti generici non riescono a connettersi con il pubblico di {state}. Sviluppo pagine e articoli specifici per località che risuonano con i cercatori regionali costruendo la tua reputazione come autorità locale.", 
+    de: "Generischer Inhalt schafft es nicht, mit {state}-Publikum zu verbinden. Ich entwickle standortspezifische Seiten und Artikel, die bei regionalen Suchenden Anklang finden und gleichzeitig Ihren Ruf als lokale Autorität aufbauen."
   },
   "state.service5Title": { 
     en: "AI Search Optimization", 
@@ -1767,13 +1767,13 @@ export const translations: Translations = {
     de: "Direkte Kommunikation" 
   },
   "state.why5Desc": { 
-    en: "Work directly with me, not a junior team member. Your project gets my full attention.", 
-    ar: "اعمل معي مباشرة، وليس مع عضو فريق مبتدئ. مشروعك يحصل على اهتمامي الكامل.", 
-    es: "Trabaja directamente conmigo, no con un miembro junior. Tu proyecto recibe toda mi atención.", 
-    pt: "Trabalhe diretamente comigo, não com um membro júnior. Seu projeto recebe minha atenção total.", 
-    fr: "Travaillez directement avec moi, pas avec un membre junior. Votre projet reçoit toute mon attention.", 
-    it: "Lavora direttamente con me, non con un membro junior. Il tuo progetto riceve tutta la mia attenzione.", 
-    de: "Arbeiten Sie direkt mit mir, nicht mit einem Junior-Teammitglied. Ihr Projekt erhält meine volle Aufmerksamkeit." 
+    en: "Large agencies assign junior staff to client accounts after closing deals. When you work with me, you get direct access to the person actually executing your strategy.", 
+    ar: "الوكالات الكبيرة تعين موظفين مبتدئين لحسابات العملاء بعد إغلاق الصفقات. عندما تعمل معي، تحصل على وصول مباشر للشخص الذي ينفذ استراتيجيتك فعليًا.", 
+    es: "Las grandes agencias asignan personal junior a las cuentas de clientes después de cerrar tratos. Cuando trabajas conmigo, obtienes acceso directo a la persona que realmente ejecuta tu estrategia.", 
+    pt: "Grandes agências atribuem funcionários juniores às contas de clientes após fechar negócios. Quando você trabalha comigo, obtém acesso direto à pessoa que realmente executa sua estratégia.", 
+    fr: "Les grandes agences assignent du personnel junior aux comptes clients après avoir conclu des affaires. Quand vous travaillez avec moi, vous avez un accès direct à la personne qui exécute réellement votre stratégie.", 
+    it: "Le grandi agenzie assegnano personale junior agli account clienti dopo aver chiuso accordi. Quando lavori con me, ottieni accesso diretto alla persona che effettivamente esegue la tua strategia.", 
+    de: "Große Agenturen weisen Junior-Mitarbeiter nach Vertragsabschluss den Kundenkonten zu. Wenn Sie mit mir arbeiten, haben Sie direkten Zugang zu der Person, die Ihre Strategie tatsächlich umsetzt." 
   },
   "state.why6Title": { 
     en: "Flexible Packages", 
@@ -1785,13 +1785,13 @@ export const translations: Translations = {
     de: "Flexible Pakete" 
   },
   "state.why6Desc": { 
-    en: "Services tailored to your budget and goals. No one-size-fits-all approach here.", 
-    ar: "خدمات مصممة لميزانيتك وأهدافك. لا يوجد نهج واحد يناسب الجميع هنا.", 
-    es: "Servicios adaptados a tu presupuesto y objetivos. Sin enfoque único para todos.", 
-    pt: "Serviços adaptados ao seu orçamento e objetivos. Sem abordagem única para todos.", 
-    fr: "Services adaptés à votre budget et vos objectifs. Pas d'approche unique ici.", 
-    it: "Servizi adattati al tuo budget e obiettivi. Nessun approccio unico per tutti.", 
-    de: "Dienste angepasst an Ihr Budget und Ihre Ziele. Hier gibt es keinen Einheitsansatz." 
+    en: "Cookie-cutter packages waste money on services you may not need. I create customized plans that match your specific objectives and available investment.", 
+    ar: "الباقات الجاهزة تهدر المال على خدمات قد لا تحتاجها. أنشئ خططًا مخصصة تتناسب مع أهدافك المحددة والاستثمار المتاح.", 
+    es: "Los paquetes genéricos desperdician dinero en servicios que quizás no necesites. Creo planes personalizados que coinciden con tus objetivos específicos e inversión disponible.", 
+    pt: "Pacotes genéricos desperdiçam dinheiro em serviços que você pode não precisar. Crio planos personalizados que correspondem aos seus objetivos específicos e investimento disponível.", 
+    fr: "Les forfaits génériques gaspillent de l'argent sur des services dont vous n'avez peut-être pas besoin. Je crée des plans personnalisés qui correspondent à vos objectifs spécifiques et à votre investissement disponible.", 
+    it: "I pacchetti standardizzati sprecano denaro su servizi che potresti non aver bisogno. Creo piani personalizzati che corrispondono ai tuoi obiettivi specifici e all'investimento disponibile.", 
+    de: "Standardpakete verschwenden Geld für Dienste, die Sie möglicherweise nicht benötigen. Ich erstelle maßgeschneiderte Pläne, die Ihren spezifischen Zielen und verfügbaren Investitionen entsprechen." 
   },
   "state.readyToGrow": { 
     en: "Ready to Grow?", 
@@ -1803,22 +1803,22 @@ export const translations: Translations = {
     de: "Bereit zu Wachsen?" 
   },
   "state.contactHeading": { 
-    en: "Let's Grow Your {state} Business", 
-    ar: "لننمّي عملك في {state}", 
-    es: "Hagamos Crecer Tu Negocio en {state}", 
-    pt: "Vamos Fazer Seu Negócio em {state} Crescer", 
-    fr: "Faisons Croître Votre Entreprise en {state}", 
-    it: "Facciamo Crescere la Tua Attività in {state}", 
-    de: "Lassen Sie Uns Ihr {state}-Geschäft Wachsen" 
+    en: "Start Growing Your {state} Business Today", 
+    ar: "ابدأ بتنمية عملك في {state} اليوم", 
+    es: "Empieza a Hacer Crecer Tu Negocio en {state} Hoy", 
+    pt: "Comece a Crescer Seu Negócio em {state} Hoje", 
+    fr: "Commencez à Faire Croître Votre Entreprise au {state} Aujourd'hui", 
+    it: "Inizia a Far Crescere la Tua Attività in {state} Oggi", 
+    de: "Beginnen Sie Heute Ihr {state}-Geschäft zu Wachsen" 
   },
   "state.contactDescription": { 
-    en: "Ready to attract more local customers in {state}? Schedule a free consultation and let's discuss your goals. No pressure, just honest advice.", 
-    ar: "مستعد لجذب المزيد من العملاء المحليين في {state}؟ حدد موعدًا لاستشارة مجانية ودعنا نناقش أهدافك. لا ضغط، فقط نصيحة صادقة.", 
-    es: "¿Listo para atraer más clientes locales en {state}? Programa una consulta gratuita y hablemos de tus objetivos. Sin presión, solo consejos honestos.", 
-    pt: "Pronto para atrair mais clientes locais em {state}? Agende uma consulta gratuita e vamos discutir seus objetivos. Sem pressão, apenas conselhos honestos.", 
-    fr: "Prêt à attirer plus de clients locaux en {state}? Planifiez une consultation gratuite et discutons de vos objectifs. Pas de pression, juste des conseils honnêtes.", 
-    it: "Pronto ad attirare più clienti locali in {state}? Pianifica una consulenza gratuita e discutiamo dei tuoi obiettivi. Nessuna pressione, solo consigli onesti.", 
-    de: "Bereit, mehr lokale Kunden in {state} anzuziehen? Vereinbaren Sie eine kostenlose Beratung und lassen Sie uns Ihre Ziele besprechen. Kein Druck, nur ehrliche Beratung." 
+    en: "The best time to improve your local search presence was yesterday. The second best time is now. Book a complimentary strategy call and discover exactly how I can help your {state} business reach more customers.", 
+    ar: "أفضل وقت لتحسين حضورك في البحث المحلي كان بالأمس. ثاني أفضل وقت هو الآن. احجز مكالمة استراتيجية مجانية واكتشف بالضبط كيف يمكنني مساعدة عملك في {state} للوصول إلى المزيد من العملاء.", 
+    es: "El mejor momento para mejorar tu presencia en búsqueda local fue ayer. El segundo mejor momento es ahora. Reserva una llamada estratégica gratuita y descubre exactamente cómo puedo ayudar a tu negocio en {state} a alcanzar más clientes.", 
+    pt: "O melhor momento para melhorar sua presença na busca local foi ontem. O segundo melhor momento é agora. Agende uma chamada estratégica gratuita e descubra exatamente como posso ajudar seu negócio em {state} a alcançar mais clientes.", 
+    fr: "Le meilleur moment pour améliorer votre présence dans la recherche locale était hier. Le deuxième meilleur moment est maintenant. Réservez un appel stratégique gratuit et découvrez exactement comment je peux aider votre entreprise au {state} à atteindre plus de clients.", 
+    it: "Il momento migliore per migliorare la tua presenza nella ricerca locale era ieri. Il secondo momento migliore è adesso. Prenota una chiamata strategica gratuita e scopri esattamente come posso aiutare la tua attività in {state} a raggiungere più clienti.", 
+    de: "Die beste Zeit, Ihre lokale Suchpräsenz zu verbessern, war gestern. Die zweitbeste Zeit ist jetzt. Buchen Sie ein kostenloses Strategiegespräch und erfahren Sie genau, wie ich Ihrem {state}-Unternehmen helfen kann, mehr Kunden zu erreichen." 
   },
   "state.getStarted": { 
     en: "Get Started", 
@@ -1884,22 +1884,22 @@ export const translations: Translations = {
     de: "Unternehmen in ganz {state} betreuen" 
   },
   "state.mapDescription": { 
-    en: "I provide local SEO services to businesses in all {count} cities across {state}. From major metropolitan areas to growing suburban communities, I help local businesses get found online.", 
-    ar: "أقدم خدمات SEO المحلية للشركات في جميع المدن الـ {count} عبر {state}. من المناطق الحضرية الكبرى إلى المجتمعات الضواحي المتنامية، أساعد الشركات المحلية على الظهور عبر الإنترنت.", 
-    es: "Ofrezco servicios de SEO local a negocios en las {count} ciudades de {state}. Desde áreas metropolitanas importantes hasta comunidades suburbanas en crecimiento, ayudo a negocios locales a ser encontrados en línea.", 
-    pt: "Ofereço serviços de SEO local para empresas em todas as {count} cidades de {state}. De grandes áreas metropolitanas a comunidades suburbanas em crescimento, ajudo empresas locais a serem encontradas online.", 
-    fr: "Je fournis des services SEO local aux entreprises dans les {count} villes de {state}. Des grandes zones métropolitaines aux communautés suburbaines en croissance, j'aide les entreprises locales à être trouvées en ligne.", 
-    it: "Offro servizi SEO locale alle aziende in tutte le {count} città di {state}. Dalle grandi aree metropolitane alle comunità suburbane in crescita, aiuto le attività locali a farsi trovare online.", 
-    de: "Ich biete lokale SEO-Dienste für Unternehmen in allen {count} Städten in {state} an. Von großen Metropolregionen bis hin zu wachsenden Vorstadtgemeinden helfe ich lokalen Unternehmen, online gefunden zu werden." 
+    en: "My reach extends throughout {state}, covering {count} distinct cities and communities. No matter where your customers are located, I position your business to capture their attention when they search for local services.", 
+    ar: "يمتد نطاقي في جميع أنحاء {state}، ويغطي {count} مدينة ومجتمع متميز. بغض النظر عن مكان تواجد عملائك، أضع عملك لجذب انتباههم عند البحث عن الخدمات المحلية.", 
+    es: "Mi alcance se extiende por todo {state}, cubriendo {count} ciudades y comunidades distintas. Sin importar dónde estén ubicados tus clientes, posiciono tu negocio para captar su atención cuando buscan servicios locales.", 
+    pt: "Meu alcance se estende por todo {state}, cobrindo {count} cidades e comunidades distintas. Não importa onde seus clientes estejam localizados, posiciono seu negócio para captar a atenção deles quando buscam serviços locais.", 
+    fr: "Ma portée s'étend à travers tout le {state}, couvrant {count} villes et communautés distinctes. Peu importe où se trouvent vos clients, je positionne votre entreprise pour capter leur attention lorsqu'ils recherchent des services locaux.", 
+    it: "La mia portata si estende in tutto {state}, coprendo {count} città e comunità distinte. Non importa dove si trovino i tuoi clienti, posiziono la tua attività per catturare la loro attenzione quando cercano servizi locali.", 
+    de: "Meine Reichweite erstreckt sich über ganz {state} und umfasst {count} verschiedene Städte und Gemeinden. Egal wo Ihre Kunden sich befinden, ich positioniere Ihr Unternehmen, um ihre Aufmerksamkeit zu gewinnen, wenn sie nach lokalen Diensten suchen." 
   },
   "state.citiesWeServe": { 
-    en: "Cities We Serve in {state}", 
-    ar: "المدن التي نخدمها في {state}", 
-    es: "Ciudades que Servimos en {state}", 
-    pt: "Cidades que Atendemos em {state}", 
-    fr: "Villes que Nous Desservons en {state}", 
-    it: "Città che Serviamo in {state}", 
-    de: "Städte, die Wir in {state} Betreuen" 
+    en: "{state} Cities I Work With", 
+    ar: "مدن {state} التي أعمل معها", 
+    es: "Ciudades de {state} con las que Trabajo", 
+    pt: "Cidades de {state} com as quais Trabalho", 
+    fr: "Villes du {state} avec Lesquelles je Travaille", 
+    it: "Città di {state} con cui Lavoro", 
+    de: "{state} Städte, mit denen ich Arbeite" 
   },
 };
 
