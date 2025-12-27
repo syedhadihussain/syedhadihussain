@@ -1,5 +1,4 @@
-import { Phone, Mail, Calendar, MapPin } from "lucide-react";
-import { Link } from "react-router-dom";
+import { MessageCircle, Mail, Calendar, MapPin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { CountryData } from "@/lib/countries-config";
 import ContactForm from "@/components/ContactForm";
@@ -10,117 +9,90 @@ interface CountryContactProps {
 }
 
 const CountryContact = ({ country }: CountryContactProps) => {
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
 
   return (
-    <section className="py-20 bg-background" id="contact" aria-labelledby="contact-heading">
+    <section className="py-20 bg-primary/5" id="contact" aria-labelledby="contact-heading">
       <div className="container-narrow">
-        <ScrollReveal>
-          <div className="text-center mb-12">
-            <span className="text-primary font-medium text-sm uppercase tracking-wider">
-              {t("country.contact.getStarted")}
-            </span>
-            <h2 id="contact-heading" className="font-display text-3xl sm:text-4xl font-bold text-foreground mt-2 mb-4">
-              {t("country.contact.title").replace("{country}", country.name)}
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              {t("country.contact.subtitle").replace("{country}", country.name)}
-            </p>
-          </div>
-        </ScrollReveal>
+        <div className="max-w-4xl mx-auto">
+          {/* Section Header */}
+          <ScrollReveal animation="fade-up">
+            <div className="text-center mb-12">
+              <span className="text-primary text-sm font-medium tracking-wider uppercase mb-4 block">
+                {t("country.contact.getStarted")}
+              </span>
+              <h2 id="contact-heading" className="font-display text-3xl lg:text-4xl xl:text-5xl font-bold text-foreground mb-4">
+                {t("country.contact.title").replace("{country}", country.name)}
+              </h2>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                {t("country.contact.subtitle").replace("{country}", country.name)}
+              </p>
+            </div>
+          </ScrollReveal>
 
-        <div className="grid lg:grid-cols-3 gap-8">
           {/* Quick Contact Cards */}
-          <div className="lg:col-span-1 space-y-4">
-            <ScrollReveal delay={0.1}>
-              <a
-                href="https://calendly.com/syedhadihussain"
-                target="_blank"
+          <ScrollReveal animation="fade-up" delay={100}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+              <a 
+                href="https://calendly.com/syedhadihussain" 
+                target="_blank" 
                 rel="noopener noreferrer"
-                className="glass p-6 rounded-xl flex items-start gap-4 hover:shadow-lg transition-all duration-300 group block"
+                className="glass rounded-2xl p-6 text-center hover:bg-primary/10 transition-all duration-300 group"
               >
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors flex-shrink-0">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
                   <Calendar className="w-6 h-6 text-primary" />
                 </div>
-                <div>
-                  <h3 className="font-display font-semibold text-foreground mb-1">
-                    {t("country.contact.bookCall")}
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    {t("country.contact.bookCallDesc")}
-                  </p>
-                </div>
+                <h3 className="font-semibold text-foreground mb-1">{t("contact.bookCall")}</h3>
+                <p className="text-sm text-muted-foreground">{t("contact.scheduleMeeting")}</p>
               </a>
-            </ScrollReveal>
 
-            <ScrollReveal delay={0.2}>
-              <a
-                href="https://wa.me/+971523695036"
-                target="_blank"
+              <a 
+                href="https://wa.me/+971523695036" 
+                target="_blank" 
                 rel="noopener noreferrer"
-                className="glass p-6 rounded-xl flex items-start gap-4 hover:shadow-lg transition-all duration-300 group block"
+                className="glass rounded-2xl p-6 text-center hover:bg-primary/10 transition-all duration-300 group"
               >
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors flex-shrink-0">
-                  <Phone className="w-6 h-6 text-primary" />
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
+                  <MessageCircle className="w-6 h-6 text-primary" />
                 </div>
-                <div>
-                  <h3 className="font-display font-semibold text-foreground mb-1">
-                    WhatsApp
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    {t("country.contact.whatsappDesc")}
-                  </p>
-                </div>
+                <h3 className="font-semibold text-foreground mb-1">{t("contact.whatsapp")}</h3>
+                <p className="text-sm text-muted-foreground">{t("contact.quickChat")}</p>
               </a>
-            </ScrollReveal>
 
-            <ScrollReveal delay={0.3}>
-              <a
+              <a 
                 href="mailto:contact.syedhadihussain@gmail.com"
-                className="glass p-6 rounded-xl flex items-start gap-4 hover:shadow-lg transition-all duration-300 group block"
+                className="glass rounded-2xl p-6 text-center hover:bg-primary/10 transition-all duration-300 group"
               >
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors flex-shrink-0">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
                   <Mail className="w-6 h-6 text-primary" />
                 </div>
-                <div className="min-w-0 flex-1">
-                  <h3 className="font-display font-semibold text-foreground mb-1">
-                    Email
-                  </h3>
-                  <p className="text-xs sm:text-sm text-muted-foreground break-all leading-relaxed">
-                    contact.syedhadihussain@gmail.com
-                  </p>
-                </div>
+                <h3 className="font-semibold text-foreground mb-1">{t("contact.email")}</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed break-all">
+                  contact.syedhadihussain
+                  <br />
+                  @gmail.com
+                </p>
               </a>
-            </ScrollReveal>
 
-            <ScrollReveal delay={0.4}>
-              <div className="glass p-6 rounded-xl flex items-start gap-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="glass rounded-2xl p-6 text-center">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                   <MapPin className="w-6 h-6 text-primary" />
                 </div>
-                <div>
-                  <h3 className="font-display font-semibold text-foreground mb-1">
-                    {t("country.contact.servingClients")}
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    {t("country.contact.allStates").replace("{count}", String(country.statesCount || "all")).replace("{country}", country.name)}
-                  </p>
-                </div>
+                <h3 className="font-semibold text-foreground mb-1">{t("contact.worldwide")}</h3>
+                <p className="text-sm text-muted-foreground">Worldwide</p>
               </div>
-            </ScrollReveal>
-          </div>
+            </div>
+          </ScrollReveal>
 
           {/* Contact Form */}
-          <div className="lg:col-span-2">
-            <ScrollReveal delay={0.2}>
-              <div className="glass p-8 rounded-xl">
-                <h3 className="font-display text-xl font-semibold text-foreground mb-6">
-                  {t("country.contact.sendMessage")}
-                </h3>
-                <ContactForm />
-              </div>
-            </ScrollReveal>
-          </div>
+          <ScrollReveal animation="fade-up" delay={200}>
+            <div className="glass rounded-3xl p-6 sm:p-8 lg:p-10">
+              <h3 className="font-display text-xl lg:text-2xl font-bold text-foreground mb-6 text-center">
+                {t("contact.sendInquiry")}
+              </h3>
+              <ContactForm />
+            </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>
