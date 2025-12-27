@@ -1,7 +1,7 @@
 import { MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { CountryData } from "@/lib/countries-config";
+import { CountryData, ALL_US_STATES } from "@/lib/countries-config";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import usStatesMap from "@/assets/us-states-map.png";
 
@@ -66,23 +66,39 @@ const CountryMap = ({ country }: CountryMapProps) => {
           </div>
         </ScrollReveal>
 
-        {/* State list for accessibility and SEO - with internal links */}
-        {isUS && country.states && (
+        {/* State list for accessibility and SEO - with internal links for active states only */}
+        {isUS && (
           <ScrollReveal delay={0.3}>
             <div className="mt-8 p-6 bg-muted/30 rounded-xl">
               <h3 className="font-display text-lg font-semibold text-foreground mb-4 text-center">
                 {t("country.allStatesHeading")}
               </h3>
               <div className="flex flex-wrap justify-center gap-2">
-                {country.states.map((state) => (
-                  <Link 
-                    key={state.code}
-                    to={`/${language}/${country.code}/${state.code}/`}
-                    className="px-3 py-1 bg-background rounded-full text-sm text-muted-foreground border border-border hover:border-primary hover:text-primary hover:bg-primary/5 transition-colors"
-                  >
-                    {state.name}
-                  </Link>
-                ))}
+                {ALL_US_STATES.map((stateName) => {
+                  // Only Florida has an active page
+                  const isActive = stateName === "Florida";
+                  
+                  if (isActive) {
+                    return (
+                      <Link 
+                        key={stateName}
+                        to={`/${language}/${country.code}/fl/`}
+                        className="px-3 py-1 bg-background rounded-full text-sm text-muted-foreground border border-border hover:border-primary hover:text-primary hover:bg-primary/5 transition-colors"
+                      >
+                        {stateName}
+                      </Link>
+                    );
+                  }
+                  
+                  return (
+                    <span 
+                      key={stateName}
+                      className="px-3 py-1 bg-background rounded-full text-sm text-muted-foreground border border-border"
+                    >
+                      {stateName}
+                    </span>
+                  );
+                })}
               </div>
             </div>
           </ScrollReveal>

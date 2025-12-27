@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { CountryData } from "@/lib/countries-config";
+import { CountryData, ALL_US_STATES } from "@/lib/countries-config";
 import { 
   SUPPORTED_LANGUAGES, 
   HREFLANG_CODES,
@@ -37,7 +37,7 @@ const CountrySEOHead = ({ country, title, description, keywords }: CountrySEOHea
     url: `${BASE_URL}/${language}/${country.code}/${state.code}/`
   })) || [];
 
-  // LocalBusiness Schema with all 50 state service areas
+  // LocalBusiness Schema with all 50 state service areas (using all states for areaServed)
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -56,14 +56,14 @@ const CountrySEOHead = ({ country, title, description, keywords }: CountrySEOHea
       name: "Syed Hadi Hussain",
       jobTitle: "Full Stack Local SEO Specialist"
     },
-    areaServed: country.states?.map(state => ({
+    areaServed: ALL_US_STATES.map(stateName => ({
       "@type": "State",
-      name: state.name,
+      name: stateName,
       containedInPlace: {
         "@type": "Country",
         name: country.name
       }
-    })) || [],
+    })),
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: `Local SEO Services in ${country.name}`,
