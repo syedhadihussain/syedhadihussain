@@ -115,6 +115,15 @@ export const getLanguageFromPath = (pathname: string): SupportedLanguage => {
   return DEFAULT_LANGUAGE;
 };
 
+// All US state codes for sitemap generation
+export const US_STATE_CODES = [
+  "fl", "tx", "ny", "wa", "ca", "az", "ga", "nc", "oh", "pa",
+  "il", "nj", "mi", "co", "tn", "va", "in", "ks", "dc", "or",
+  "al", "ak", "ar", "ct", "de", "hi", "id", "ia", "ky", "la",
+  "me", "md", "ma", "mn", "ms", "mo", "mt", "ne", "nv", "nh",
+  "nm", "nd", "ok", "ri", "sc", "sd", "ut", "vt", "wv", "wi", "wy"
+] as const;
+
 // All routes in the application (for sitemap generation)
 // IMPORTANT: Keep this in sync with pageRoutes in App.tsx
 export const ALL_ROUTES = [
@@ -137,6 +146,8 @@ export const ALL_ROUTES = [
   "privacy",                   // Maps to PrivacyPolicyPage
   "terms",                     // Maps to TermsOfServicePage
   "us",                        // Country: United States
+  // All 51 US state routes
+  ...US_STATE_CODES.map(code => `us/${code}`),
 ] as const;
 
 // Generate all hreflang links for sitemap
