@@ -12,6 +12,11 @@ interface StateCitiesProps {
 const StateCities = ({ state, countryCode }: StateCitiesProps) => {
   const { t, language } = useLanguage();
 
+  // Get first 3 cities for dynamic content (avoid duplication across states)
+  const city1 = state.cities[0]?.name || "City 1";
+  const city2 = state.cities[1]?.name || "City 2";
+  const city3 = state.cities[2]?.name || "City 3";
+
   // Check if a city has an active page
   const isCityActive = (cityCode: string) => {
     return state.activeCities?.includes(cityCode) ?? false;
@@ -32,7 +37,12 @@ const StateCities = ({ state, countryCode }: StateCitiesProps) => {
               {t("state.citiesHeading").replace("{state}", state.name)}
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              {t("state.citiesDescription").replace("{count}", String(state.cities.length)).replace("{state}", state.name)}
+              {t("state.citiesDescription")
+                .replace("{count}", String(state.cities.length))
+                .replace("{state}", state.name)
+                .replace("{city1}", city1)
+                .replace("{city2}", city2)
+                .replace("{city3}", city3)}
             </p>
           </div>
         </ScrollReveal>

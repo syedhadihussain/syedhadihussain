@@ -1425,13 +1425,13 @@ export const translations: Translations = {
     de: "Lokaler SEO-Experte für {state} Unternehmen" 
   },
   "state.heroDescription": { 
-    en: "I help {state} businesses get found on Google, Google Maps, and AI-powered search. From Miami to Jacksonville, Tampa to Orlando, my strategies bring more calls, more visits, and more sales to businesses across {count}+ cities.", 
-    ar: "أساعد شركات {state} على الظهور في Google وخرائط Google والبحث المدعوم بالذكاء الاصطناعي. من ميامي إلى جاكسونفيل، ومن تامبا إلى أورلاندو، استراتيجياتي تجلب المزيد من المكالمات والزيارات والمبيعات للشركات في أكثر من {count} مدينة.", 
-    es: "Ayudo a negocios de {state} a aparecer en Google, Google Maps y búsqueda con IA. Desde Miami hasta Jacksonville, Tampa hasta Orlando, mis estrategias traen más llamadas, más visitas y más ventas a negocios en más de {count} ciudades.", 
-    pt: "Ajudo empresas de {state} a serem encontradas no Google, Google Maps e busca com IA. De Miami a Jacksonville, Tampa a Orlando, minhas estratégias trazem mais ligações, mais visitas e mais vendas para empresas em mais de {count} cidades.", 
-    fr: "J'aide les entreprises de {state} à être trouvées sur Google, Google Maps et la recherche IA. De Miami à Jacksonville, Tampa à Orlando, mes stratégies apportent plus d'appels, plus de visites et plus de ventes aux entreprises dans plus de {count} villes.", 
-    it: "Aiuto le aziende di {state} a farsi trovare su Google, Google Maps e ricerca IA. Da Miami a Jacksonville, Tampa a Orlando, le mie strategie portano più chiamate, più visite e più vendite alle aziende in oltre {count} città.", 
-    de: "Ich helfe {state}-Unternehmen, auf Google, Google Maps und KI-gestützter Suche gefunden zu werden. Von Miami bis Jacksonville, Tampa bis Orlando, meine Strategien bringen mehr Anrufe, mehr Besuche und mehr Verkäufe für Unternehmen in über {count} Städten." 
+    en: "I help {state} businesses get found on Google, Google Maps, and AI-powered search. From {city1} to {city2}, {city3} to {city4}, my strategies bring more calls, more visits, and more sales to businesses across {count}+ cities.", 
+    ar: "أساعد شركات {state} على الظهور في Google وخرائط Google والبحث المدعوم بالذكاء الاصطناعي. من {city1} إلى {city2}، ومن {city3} إلى {city4}، استراتيجياتي تجلب المزيد من المكالمات والزيارات والمبيعات للشركات في أكثر من {count} مدينة.", 
+    es: "Ayudo a negocios de {state} a aparecer en Google, Google Maps y búsqueda con IA. Desde {city1} hasta {city2}, {city3} hasta {city4}, mis estrategias traen más llamadas, más visitas y más ventas a negocios en más de {count} ciudades.", 
+    pt: "Ajudo empresas de {state} a serem encontradas no Google, Google Maps e busca com IA. De {city1} a {city2}, {city3} a {city4}, minhas estratégias trazem mais ligações, mais visitas e mais vendas para empresas em mais de {count} cidades.", 
+    fr: "J'aide les entreprises de {state} à être trouvées sur Google, Google Maps et la recherche IA. De {city1} à {city2}, {city3} à {city4}, mes stratégies apportent plus d'appels, plus de visites et plus de ventes aux entreprises dans plus de {count} villes.", 
+    it: "Aiuto le aziende di {state} a farsi trovare su Google, Google Maps e ricerca IA. Da {city1} a {city2}, {city3} a {city4}, le mie strategie portano più chiamate, più visite e più vendite alle aziende in oltre {count} città.", 
+    de: "Ich helfe {state}-Unternehmen, auf Google, Google Maps und KI-gestützter Suche gefunden zu werden. Von {city1} bis {city2}, {city3} bis {city4}, meine Strategien bringen mehr Anrufe, mehr Besuche und mehr Verkäufe für Unternehmen in über {count} Städten." 
   },
   "state.getFreeAudit": { 
     en: "Get Free SEO Audit", 
@@ -1497,13 +1497,13 @@ export const translations: Translations = {
     de: "Lokale SEO-Dienste in ganz {state}" 
   },
   "state.citiesDescription": { 
-    en: "Whether you run a restaurant in Miami, a dental practice in Tampa, or a law firm in Orlando, I understand what {state} customers search for. My local SEO strategies are tailored to each city's unique market.", 
-    ar: "سواء كنت تدير مطعمًا في ميامي، أو عيادة أسنان في تامبا، أو مكتب محاماة في أورلاندو، أفهم ما يبحث عنه عملاء {state}. استراتيجيات SEO المحلية الخاصة بي مصممة لكل سوق مدينة فريد.", 
-    es: "Ya sea que tengas un restaurante en Miami, una clínica dental en Tampa o un bufete en Orlando, entiendo lo que buscan los clientes de {state}. Mis estrategias de SEO local están adaptadas al mercado único de cada ciudad.", 
-    pt: "Seja um restaurante em Miami, uma clínica dental em Tampa ou um escritório de advocacia em Orlando, eu entendo o que os clientes de {state} buscam. Minhas estratégias de SEO local são adaptadas ao mercado único de cada cidade.", 
-    fr: "Que vous dirigiez un restaurant à Miami, un cabinet dentaire à Tampa ou un cabinet d'avocats à Orlando, je comprends ce que recherchent les clients de {state}. Mes stratégies SEO local sont adaptées au marché unique de chaque ville.", 
-    it: "Che tu gestisca un ristorante a Miami, uno studio dentistico a Tampa o uno studio legale a Orlando, capisco cosa cercano i clienti di {state}. Le mie strategie SEO locale sono adattate al mercato unico di ogni città.", 
-    de: "Ob Sie ein Restaurant in Miami, eine Zahnarztpraxis in Tampa oder eine Anwaltskanzlei in Orlando betreiben, ich verstehe, wonach Kunden in {state} suchen. Meine lokalen SEO-Strategien sind auf den einzigartigen Markt jeder Stadt zugeschnitten." 
+    en: "Whether you run a restaurant in {city1}, a dental practice in {city2}, or a law firm in {city3}, I understand what {state} customers search for. My local SEO strategies are tailored to each city's unique market.", 
+    ar: "سواء كنت تدير مطعمًا في {city1}، أو عيادة أسنان في {city2}، أو مكتب محاماة في {city3}، أفهم ما يبحث عنه عملاء {state}. استراتيجيات SEO المحلية الخاصة بي مصممة لكل سوق مدينة فريد.", 
+    es: "Ya sea que tengas un restaurante en {city1}, una clínica dental en {city2} o un bufete en {city3}, entiendo lo que buscan los clientes de {state}. Mis estrategias de SEO local están adaptadas al mercado único de cada ciudad.", 
+    pt: "Seja um restaurante em {city1}, uma clínica dental em {city2} ou um escritório de advocacia em {city3}, eu entendo o que os clientes de {state} buscam. Minhas estratégias de SEO local são adaptadas ao mercado único de cada cidade.", 
+    fr: "Que vous dirigiez un restaurant à {city1}, un cabinet dentaire à {city2} ou un cabinet d'avocats à {city3}, je comprends ce que recherchent les clients de {state}. Mes stratégies SEO local sont adaptées au marché unique de chaque ville.", 
+    it: "Che tu gestisca un ristorante a {city1}, uno studio dentistico a {city2} o uno studio legale a {city3}, capisco cosa cercano i clienti di {state}. Le mie strategie SEO locale sono adattate al mercato unico di ogni città.", 
+    de: "Ob Sie ein Restaurant in {city1}, eine Zahnarztpraxis in {city2} oder eine Anwaltskanzlei in {city3} betreiben, ich verstehe, wonach Kunden in {state} suchen. Meine lokalen SEO-Strategien sind auf den einzigartigen Markt jeder Stadt zugeschnitten." 
   },
   "state.allCitiesHeading": { 
     en: "All {count} Cities We Serve", 
