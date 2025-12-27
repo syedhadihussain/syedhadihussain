@@ -17,19 +17,19 @@ const StateContact = ({ state }: StateContactProps) => {
     {
       icon: Calendar,
       labelKey: "contact.bookCall",
-      href: "https://calendly.com/murtazaaidid/30min",
+      href: "https://calendly.com/syedhadihussain",
       external: true,
     },
     {
       icon: MessageCircle,
       labelKey: "contact.whatsapp",
-      href: "https://wa.me/923442828282",
+      href: "https://wa.me/+971523695036",
       external: true,
     },
     {
       icon: Mail,
       labelKey: "contact.email",
-      href: "mailto:info@murtazaaidid.com",
+      href: "mailto:contact.syedhadihussain@gmail.com",
       external: true,
     },
     {
