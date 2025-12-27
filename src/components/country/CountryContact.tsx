@@ -1,6 +1,7 @@
 import { MessageCircle, Mail, Calendar, MapPin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { CountryData } from "@/lib/countries-config";
+import { getCountryPageCopy } from "@/lib/country-page-copy";
 import ContactForm from "@/components/ContactForm";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
@@ -10,6 +11,7 @@ interface CountryContactProps {
 
 const CountryContact = ({ country }: CountryContactProps) => {
   const { t } = useLanguage();
+  const copy = getCountryPageCopy(country);
 
   return (
     <section className="py-20 bg-primary/5" id="contact" aria-labelledby="contact-heading">
@@ -22,10 +24,10 @@ const CountryContact = ({ country }: CountryContactProps) => {
                 {t("country.contact.getStarted")}
               </span>
               <h2 id="contact-heading" className="font-display text-3xl lg:text-4xl xl:text-5xl font-bold text-foreground mb-4">
-                {t("country.contact.title").replace("{country}", country.name)}
+                {copy.contactTitle}
               </h2>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                {t("country.contact.subtitle").replace("{country}", country.name)}
+                {copy.contactSubtitle}
               </p>
             </div>
           </ScrollReveal>

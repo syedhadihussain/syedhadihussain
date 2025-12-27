@@ -2,6 +2,7 @@ import { MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { CountryData, ALL_US_STATES, US_STATES } from "@/lib/countries-config";
+import { getCountryPageCopy } from "@/lib/country-page-copy";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 interface CountryMapProps {
@@ -10,6 +11,7 @@ interface CountryMapProps {
 
 const CountryMap = ({ country }: CountryMapProps) => {
   const { t, language } = useLanguage();
+  const copy = getCountryPageCopy(country);
   const isUS = country.code === "us";
 
   // Get active state codes for checking
@@ -27,10 +29,10 @@ const CountryMap = ({ country }: CountryMapProps) => {
               {t("country.serviceArea")}
             </span>
             <h2 id="map-heading" className="font-display text-3xl sm:text-4xl font-bold text-foreground mt-2 mb-4">
-              {t("country.servingBusinesses").replace("{country}", country.name)}
+              {copy.mapTitle}
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              {t("country.mapDescription").replace("{count}", String(country.statesCount || "all")).replace("{country}", country.name)}
+              {copy.mapDescription}
             </p>
           </div>
         </ScrollReveal>

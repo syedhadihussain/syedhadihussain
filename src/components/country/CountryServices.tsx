@@ -1,6 +1,7 @@
 import { Search, MapPin, Star, TrendingUp, Globe, Cpu, FileText, BarChart3 } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { CountryData } from "@/lib/countries-config";
+import { getCountryPageCopy } from "@/lib/country-page-copy";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 interface CountryServicesProps {
@@ -9,6 +10,7 @@ interface CountryServicesProps {
 
 const CountryServices = ({ country }: CountryServicesProps) => {
   const { t } = useLanguage();
+  const copy = getCountryPageCopy(country);
 
   const services = [
     {
@@ -62,10 +64,10 @@ const CountryServices = ({ country }: CountryServicesProps) => {
               {t("country.ourServices")}
             </span>
             <h2 id="services-heading" className="font-display text-3xl sm:text-4xl font-bold text-foreground mt-2 mb-4">
-              {t("country.servicesTitle").replace("{country}", country.name)}
+              {copy.servicesTitle}
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              {t("country.servicesSubtitle").replace("{country}", country.name)}
+              {copy.servicesSubtitle}
             </p>
           </div>
         </ScrollReveal>

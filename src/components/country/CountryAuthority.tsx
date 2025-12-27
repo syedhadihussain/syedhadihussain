@@ -1,6 +1,7 @@
-import { CheckCircle, Globe, Map, Cpu, Search, TrendingUp } from "lucide-react";
+import { CheckCircle, Globe, Map, Cpu, Search } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { CountryData } from "@/lib/countries-config";
+import { getCountryPageCopy } from "@/lib/country-page-copy";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 interface CountryAuthorityProps {
@@ -9,6 +10,7 @@ interface CountryAuthorityProps {
 
 const CountryAuthority = ({ country }: CountryAuthorityProps) => {
   const { t } = useLanguage();
+  const copy = getCountryPageCopy(country);
 
   const authorityPoints = [
     {
@@ -42,10 +44,10 @@ const CountryAuthority = ({ country }: CountryAuthorityProps) => {
               {t("country.whyChooseUs")}
             </span>
             <h2 id="authority-heading" className="font-display text-3xl sm:text-4xl font-bold text-foreground mt-2 mb-4">
-              {t("country.authorityTitle").replace("{country}", country.name)}
+              {copy.authorityTitle}
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              {t("country.authoritySubtitle").replace("{country}", country.name)}
+              {copy.authoritySubtitle}
             </p>
           </div>
         </ScrollReveal>
