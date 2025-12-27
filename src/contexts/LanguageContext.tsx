@@ -748,49 +748,49 @@ export const translations: Translations = {
 
   // ============ COUNTRY PAGES - UNIQUE SEO OPTIMIZED CONTENT ============
   "country.servingIn": { 
-    en: "Trusted by businesses in", 
-    ar: "موثوق به من قبل الشركات في", 
-    es: "De confianza para negocios en", 
-    pt: "Confiável para empresas em", 
-    fr: "Fait confiance par les entreprises en", 
-    it: "Affidato dalle aziende in", 
-    de: "Vertraut von Unternehmen in" 
+    en: "Your Local SEO Partner in", 
+    ar: "شريكك في SEO المحلي في", 
+    es: "Tu Socio de SEO Local en", 
+    pt: "Seu Parceiro de SEO Local em", 
+    fr: "Votre Partenaire SEO Local en", 
+    it: "Il Tuo Partner SEO Locale in", 
+    de: "Ihr Lokaler SEO-Partner in" 
   },
   "country.heroTitle": { 
-    en: "Grow Your Business with Local SEO in", 
-    ar: "نمّي عملك مع SEO المحلي في", 
-    es: "Haz Crecer Tu Negocio con SEO Local en", 
-    pt: "Faça Seu Negócio Crescer com SEO Local em", 
-    fr: "Développez Votre Entreprise avec le SEO Local en", 
-    it: "Fai Crescere la Tua Attività con la SEO Locale in", 
-    de: "Wachsen Sie mit Local SEO in" 
+    en: "Attract More Local Customers in", 
+    ar: "اجذب المزيد من العملاء المحليين في", 
+    es: "Atrae Más Clientes Locales en", 
+    pt: "Atraia Mais Clientes Locais em", 
+    fr: "Attirez Plus de Clients Locaux en", 
+    it: "Attira Più Clienti Locali in", 
+    de: "Gewinnen Sie Mehr Lokale Kunden in" 
   },
   "country.heroDescription": { 
-    en: "Want more phone calls, walk-ins, and online orders? I specialize in getting local businesses found on Google, Google Maps, and even AI search tools like ChatGPT. Simple strategies, real results.", 
-    ar: "هل تريد المزيد من المكالمات والزيارات والطلبات عبر الإنترنت؟ أنا متخصص في جعل الشركات المحلية تظهر على Google وخرائط Google وحتى أدوات البحث بالذكاء الاصطناعي. استراتيجيات بسيطة ونتائج حقيقية.", 
-    es: "¿Quieres más llamadas, visitas y pedidos online? Me especializo en hacer que los negocios locales aparezcan en Google, Google Maps e incluso herramientas de búsqueda con IA como ChatGPT. Estrategias simples, resultados reales.", 
-    pt: "Quer mais ligações, visitas e pedidos online? Eu me especializo em fazer empresas locais aparecerem no Google, Google Maps e até ferramentas de busca com IA como ChatGPT. Estratégias simples, resultados reais.", 
-    fr: "Vous voulez plus d'appels, de visites et de commandes en ligne? Je me spécialise dans la visibilité des entreprises locales sur Google, Google Maps et même les outils de recherche IA comme ChatGPT. Stratégies simples, résultats réels.", 
-    it: "Vuoi più chiamate, visite e ordini online? Mi specializzo nel far trovare le attività locali su Google, Google Maps e persino strumenti di ricerca IA come ChatGPT. Strategie semplici, risultati reali.", 
-    de: "Möchten Sie mehr Anrufe, Besuche und Online-Bestellungen? Ich bin darauf spezialisiert, lokale Unternehmen auf Google, Google Maps und sogar KI-Suchtools wie ChatGPT sichtbar zu machen. Einfache Strategien, echte Ergebnisse." 
+    en: "Every day, potential customers are typing your service into Google—but they're finding your competitors instead. I change that. Through strategic Google Business Profile optimization, local search rankings, and visibility in AI-powered search like ChatGPT, I connect your business with people who are ready to buy, book, or call right now.", 
+    ar: "كل يوم، العملاء المحتملون يكتبون خدمتك في Google—لكنهم يجدون منافسيك بدلاً منك. أنا أغير ذلك. من خلال تحسين ملف Google التجاري الاستراتيجي وتصنيفات البحث المحلي والظهور في البحث المدعوم بالذكاء الاصطناعي مثل ChatGPT، أربط عملك بالأشخاص المستعدين للشراء أو الحجز أو الاتصال الآن.", 
+    es: "Cada día, clientes potenciales escriben tu servicio en Google—pero encuentran a tus competidores. Yo cambio eso. A través de optimización estratégica de Google Business Profile, rankings de búsqueda local y visibilidad en búsqueda con IA como ChatGPT, conecto tu negocio con personas listas para comprar, reservar o llamar ahora mismo.", 
+    pt: "Todos os dias, clientes potenciais digitam seu serviço no Google—mas encontram seus concorrentes. Eu mudo isso. Através de otimização estratégica do Google Business Profile, rankings de busca local e visibilidade em busca com IA como ChatGPT, conecto seu negócio com pessoas prontas para comprar, agendar ou ligar agora mesmo.", 
+    fr: "Chaque jour, des clients potentiels tapent votre service sur Google—mais trouvent vos concurrents. Je change cela. Grâce à l'optimisation stratégique de Google Business Profile, aux classements de recherche locale et à la visibilité dans la recherche IA comme ChatGPT, je connecte votre entreprise avec des personnes prêtes à acheter, réserver ou appeler maintenant.", 
+    it: "Ogni giorno, potenziali clienti digitano il tuo servizio su Google—ma trovano i tuoi concorrenti. Io cambio questo. Attraverso l'ottimizzazione strategica del Profilo Google Business, classifiche di ricerca locale e visibilità nella ricerca IA come ChatGPT, connetto la tua attività con persone pronte a comprare, prenotare o chiamare adesso.", 
+    de: "Jeden Tag tippen potenzielle Kunden Ihren Service bei Google ein—aber sie finden Ihre Konkurrenten. Ich ändere das. Durch strategische Google Business Profil-Optimierung, lokale Such-Rankings und Sichtbarkeit in KI-gestützter Suche wie ChatGPT verbinde ich Ihr Unternehmen mit Menschen, die jetzt kaufen, buchen oder anrufen wollen." 
   },
   "country.expertIn": { 
-    en: "Helping service businesses grow in", 
-    ar: "أساعد شركات الخدمات على النمو في", 
-    es: "Ayudando a negocios de servicios a crecer en", 
-    pt: "Ajudando empresas de serviços a crescer em", 
-    fr: "Aidant les entreprises de services à se développer en", 
-    it: "Aiutando le aziende di servizi a crescere in", 
-    de: "Ich helfe Dienstleistungsunternehmen zu wachsen in" 
+    en: "Seven years ago, I started helping a local restaurant get more dinner reservations. Today, I work with businesses across", 
+    ar: "قبل سبع سنوات، بدأت بمساعدة مطعم محلي للحصول على المزيد من حجوزات العشاء. اليوم، أعمل مع الشركات عبر", 
+    es: "Hace siete años, empecé ayudando a un restaurante local a conseguir más reservas. Hoy, trabajo con negocios en", 
+    pt: "Há sete anos, comecei ajudando um restaurante local a conseguir mais reservas. Hoje, trabalho com empresas em", 
+    fr: "Il y a sept ans, j'ai commencé à aider un restaurant local à obtenir plus de réservations. Aujourd'hui, je travaille avec des entreprises en", 
+    it: "Sette anni fa, ho iniziato ad aiutare un ristorante locale a ottenere più prenotazioni. Oggi, lavoro con aziende in", 
+    de: "Vor sieben Jahren begann ich, einem lokalen Restaurant zu mehr Reservierungen zu verhelfen. Heute arbeite ich mit Unternehmen in" 
   },
   "country.aiReady": { 
-    en: "Ready for Google, Maps & AI search.", 
-    ar: "جاهز لـ Google والخرائط والبحث بالذكاء الاصطناعي.", 
-    es: "Listo para Google, Mapas y búsqueda IA.", 
-    pt: "Pronto para Google, Maps e busca IA.", 
-    fr: "Prêt pour Google, Maps et recherche IA.", 
-    it: "Pronto per Google, Maps e ricerca IA.", 
-    de: "Bereit für Google, Maps & KI-Suche." 
+    en: "Search is changing fast. AI tools like ChatGPT now recommend local businesses—and I make sure you're one of them.", 
+    ar: "البحث يتغير بسرعة. أدوات الذكاء الاصطناعي مثل ChatGPT توصي الآن بالشركات المحلية—وأتأكد من أنك واحد منهم.", 
+    es: "La búsqueda está cambiando rápido. Las herramientas de IA como ChatGPT ahora recomiendan negocios locales—y me aseguro de que seas uno de ellos.", 
+    pt: "A busca está mudando rápido. Ferramentas de IA como ChatGPT agora recomendam empresas locais—e garanto que você seja uma delas.", 
+    fr: "La recherche change rapidement. Les outils IA comme ChatGPT recommandent maintenant des entreprises locales—et je m'assure que vous en faites partie.", 
+    it: "La ricerca sta cambiando velocemente. Gli strumenti IA come ChatGPT ora raccomandano attività locali—e mi assicuro che tu sia tra queste.", 
+    de: "Die Suche ändert sich schnell. KI-Tools wie ChatGPT empfehlen jetzt lokale Unternehmen—und ich sorge dafür, dass Sie dazugehören." 
   },
   "country.servingAllStates": { 
     en: "Working with businesses in all {count} states across", 
@@ -838,103 +838,103 @@ export const translations: Translations = {
     de: "Experte" 
   },
   "country.whyChooseUs": { 
-    en: "What Makes Us Different", 
-    ar: "ما الذي يميزنا", 
-    es: "Qué Nos Hace Diferentes", 
-    pt: "O Que Nos Torna Diferentes", 
-    fr: "Ce qui nous différencie", 
-    it: "Cosa ci rende diversi", 
-    de: "Was uns unterscheidet" 
+    en: "What Sets Me Apart", 
+    ar: "ما يميزني", 
+    es: "Lo Que Me Diferencia", 
+    pt: "O Que Me Diferencia", 
+    fr: "Ce Qui Me Distingue", 
+    it: "Cosa Mi Distingue", 
+    de: "Was Mich Unterscheidet" 
   },
   "country.authorityTitle": { 
-    en: "Your Go-To Local SEO Partner in {country}", 
-    ar: "شريكك الموثوق في SEO المحلي في {country}", 
-    es: "Tu Socio de Confianza en SEO Local en {country}", 
-    pt: "Seu Parceiro de Confiança em SEO Local em {country}", 
-    fr: "Votre partenaire SEO local de confiance en {country}", 
-    it: "Il tuo partner SEO locale di fiducia in {country}", 
-    de: "Ihr vertrauenswürdiger lokaler SEO-Partner in {country}" 
+    en: "Local SEO Built on Real Business Results", 
+    ar: "SEO محلي مبني على نتائج أعمال حقيقية", 
+    es: "SEO Local Construido sobre Resultados Reales", 
+    pt: "SEO Local Construído em Resultados Reais de Negócios", 
+    fr: "SEO Local Construit sur des Résultats Réels", 
+    it: "SEO Locale Costruito su Risultati Aziendali Reali", 
+    de: "Lokales SEO Aufgebaut auf Echten Geschäftsergebnissen" 
   },
   "country.authoritySubtitle": { 
-    en: "I work with restaurants, dentists, plumbers, lawyers, and other local businesses across {country} to bring in more customers through search.", 
-    ar: "أعمل مع المطاعم وأطباء الأسنان والسباكين والمحامين والشركات المحلية الأخرى عبر {country} لجلب المزيد من العملاء من خلال البحث.", 
-    es: "Trabajo con restaurantes, dentistas, plomeros, abogados y otros negocios locales en {country} para atraer más clientes a través de la búsqueda.", 
-    pt: "Trabalho com restaurantes, dentistas, encanadores, advogados e outras empresas locais em {country} para trazer mais clientes através da busca.", 
-    fr: "Je travaille avec des restaurants, dentistes, plombiers, avocats et autres entreprises locales en {country} pour attirer plus de clients via la recherche.", 
-    it: "Lavoro con ristoranti, dentisti, idraulici, avvocati e altre attività locali in {country} per portare più clienti attraverso la ricerca.", 
-    de: "Ich arbeite mit Restaurants, Zahnärzten, Klempnern, Anwälten und anderen lokalen Unternehmen in {country} zusammen, um mehr Kunden über die Suche zu gewinnen." 
+    en: "I don't outsource your project to a junior team. When you work with me, you get direct access to someone who has spent years understanding what actually moves the needle for local businesses in {country}—whether that's a dentist in a competitive metro area or a contractor in a smaller town.", 
+    ar: "لا أوكل مشروعك لفريق مبتدئ. عندما تعمل معي، تحصل على وصول مباشر لشخص قضى سنوات في فهم ما يحدث فرقاً فعلياً للشركات المحلية في {country}—سواء كان طبيب أسنان في منطقة حضرية تنافسية أو مقاول في بلدة أصغر.", 
+    es: "No externalizo tu proyecto a un equipo junior. Cuando trabajas conmigo, tienes acceso directo a alguien que ha pasado años entendiendo qué realmente marca la diferencia para negocios locales en {country}—ya sea un dentista en un área metropolitana competitiva o un contratista en un pueblo más pequeño.", 
+    pt: "Não terceirizo seu projeto para uma equipe júnior. Quando você trabalha comigo, tem acesso direto a alguém que passou anos entendendo o que realmente faz diferença para empresas locais em {country}—seja um dentista em uma área metropolitana competitiva ou um empreiteiro em uma cidade menor.", 
+    fr: "Je ne sous-traite pas votre projet à une équipe junior. Quand vous travaillez avec moi, vous avez un accès direct à quelqu'un qui a passé des années à comprendre ce qui fait vraiment la différence pour les entreprises locales en {country}—qu'il s'agisse d'un dentiste dans une zone métropolitaine compétitive ou d'un entrepreneur dans une petite ville.", 
+    it: "Non esternalizzo il tuo progetto a un team junior. Quando lavori con me, hai accesso diretto a qualcuno che ha passato anni a capire cosa fa davvero la differenza per le attività locali in {country}—che sia un dentista in un'area metropolitana competitiva o un appaltatore in una città più piccola.", 
+    de: "Ich lagere Ihr Projekt nicht an ein Junior-Team aus. Wenn Sie mit mir arbeiten, haben Sie direkten Zugang zu jemandem, der Jahre damit verbracht hat zu verstehen, was wirklich einen Unterschied für lokale Unternehmen in {country} macht—sei es ein Zahnarzt in einem wettbewerbsintensiven Ballungsraum oder ein Handwerker in einer kleineren Stadt." 
   },
   "country.multiStateExpertise": { 
-    en: "Coast-to-Coast Coverage", 
-    ar: "تغطية من الساحل إلى الساحل", 
-    es: "Cobertura de Costa a Costa", 
-    pt: "Cobertura de Costa a Costa", 
-    fr: "Couverture d'un bout à l'autre", 
-    it: "Copertura da costa a costa", 
-    de: "Küste-zu-Küste-Abdeckung" 
+    en: "Deep Local Market Knowledge", 
+    ar: "معرفة عميقة بالسوق المحلي", 
+    es: "Conocimiento Profundo del Mercado Local", 
+    pt: "Conhecimento Profundo do Mercado Local", 
+    fr: "Connaissance Approfondie du Marché Local", 
+    it: "Conoscenza Approfondita del Mercato Locale", 
+    de: "Tiefes Wissen über Lokale Märkte" 
   },
   "country.multiStateDesc": { 
-    en: "Whether you run a single location or have stores in {count} states, I know how to make each one rank locally in {country}.", 
-    ar: "سواء كنت تدير موقعًا واحدًا أو لديك متاجر في {count} ولاية، أعرف كيف أجعل كل منها يتصدر محليًا في {country}.", 
-    es: "Ya sea que tengas una ubicación o tiendas en {count} estados, sé cómo hacer que cada una se posicione localmente en {country}.", 
-    pt: "Seja uma única localização ou lojas em {count} estados, sei como fazer cada uma ranquear localmente em {country}.", 
-    fr: "Que vous ayez un seul emplacement ou des magasins dans {count} états, je sais comment faire classer chacun localement en {country}.", 
-    it: "Che tu abbia una sede o negozi in {count} stati, so come far classificare ognuno localmente in {country}.", 
-    de: "Ob Sie einen Standort oder Geschäfte in {count} Bundesstaaten haben, ich weiß, wie man jeden lokal in {country} ranken lässt." 
+    en: "A plumber in Miami faces different competition than one in Seattle. A restaurant in Toronto has different customer search patterns than one in Vancouver. I've worked across all {count} states and territories in {country}, and I bring that perspective to every project.", 
+    ar: "سباك في ميامي يواجه منافسة مختلفة عن سباك في سياتل. مطعم في تورونتو له أنماط بحث عملاء مختلفة عن مطعم في فانكوفر. عملت عبر جميع الولايات والأقاليم الـ {count} في {country}، وأحضر تلك الرؤية لكل مشروع.", 
+    es: "Un plomero en Miami enfrenta competencia diferente a uno en Seattle. Un restaurante en Toronto tiene patrones de búsqueda diferentes a uno en Vancouver. He trabajado en los {count} estados y territorios de {country}, y traigo esa perspectiva a cada proyecto.", 
+    pt: "Um encanador em Miami enfrenta competição diferente de um em Seattle. Um restaurante em Toronto tem padrões de busca diferentes de um em Vancouver. Trabalhei em todos os {count} estados e territórios de {country}, e trago essa perspectiva para cada projeto.", 
+    fr: "Un plombier à Miami fait face à une concurrence différente d'un à Seattle. Un restaurant à Toronto a des modèles de recherche différents d'un à Vancouver. J'ai travaillé dans les {count} états et territoires de {country}, et j'apporte cette perspective à chaque projet.", 
+    it: "Un idraulico a Miami affronta una concorrenza diversa da uno a Seattle. Un ristorante a Toronto ha schemi di ricerca diversi da uno a Vancouver. Ho lavorato in tutti i {count} stati e territori di {country}, e porto quella prospettiva in ogni progetto.", 
+    de: "Ein Klempner in Miami hat eine andere Konkurrenz als einer in Seattle. Ein Restaurant in Toronto hat andere Suchmuster als eines in Vancouver. Ich habe in allen {count} Bundesstaaten und Territorien von {country} gearbeitet und bringe diese Perspektive in jedes Projekt ein." 
   },
   "country.mapOptimization": { 
-    en: "Show Up on All Maps", 
-    ar: "اظهر على جميع الخرائط", 
-    es: "Aparece en Todos los Mapas", 
-    pt: "Apareça em Todos os Mapas", 
-    fr: "Apparaissez sur toutes les cartes", 
-    it: "Appari su tutte le mappe", 
-    de: "Erscheinen Sie auf allen Karten" 
+    en: "Map Pack Visibility That Converts", 
+    ar: "ظهور في حزمة الخريطة يحقق نتائج", 
+    es: "Visibilidad en Map Pack que Convierte", 
+    pt: "Visibilidade no Map Pack que Converte", 
+    fr: "Visibilité Map Pack qui Convertit", 
+    it: "Visibilità Map Pack che Converte", 
+    de: "Map Pack Sichtbarkeit die Konvertiert" 
   },
   "country.mapOptimizationDesc": { 
-    en: "Get found on Google Maps, Apple Maps, and Bing Maps. Your customers search on all of them.", 
-    ar: "كن موجودًا على خرائط Google وApple وBing. عملاؤك يبحثون على جميعها.", 
-    es: "Aparece en Google Maps, Apple Maps y Bing Maps. Tus clientes buscan en todos.", 
-    pt: "Seja encontrado no Google Maps, Apple Maps e Bing Maps. Seus clientes buscam em todos.", 
-    fr: "Soyez trouvé sur Google Maps, Apple Maps et Bing Maps. Vos clients cherchent sur tous.", 
-    it: "Fatti trovare su Google Maps, Apple Maps e Bing Maps. I tuoi clienti cercano su tutti.", 
-    de: "Werden Sie auf Google Maps, Apple Maps und Bing Maps gefunden. Ihre Kunden suchen auf allen." 
+    en: "The top 3 results in Google Maps get 93% of all clicks. Most agencies promise 'better rankings'—I focus specifically on getting you into those top positions and optimizing your listing so that clicks turn into calls, not just views.", 
+    ar: "أفضل 3 نتائج في خرائط Google تحصل على 93% من جميع النقرات. معظم الوكالات تعد بـ'تصنيفات أفضل'—أنا أركز تحديداً على إيصالك لتلك المراكز العليا وتحسين قائمتك حتى تتحول النقرات إلى مكالمات، وليس مجرد مشاهدات.", 
+    es: "Los 3 primeros resultados en Google Maps obtienen el 93% de todos los clics. La mayoría de agencias prometen 'mejores rankings'—yo me enfoco específicamente en ponerte en esas posiciones top y optimizar tu ficha para que los clics se conviertan en llamadas, no solo vistas.", 
+    pt: "Os 3 primeiros resultados no Google Maps recebem 93% de todos os cliques. A maioria das agências promete 'melhores rankings'—eu foco especificamente em colocá-lo nessas posições top e otimizar sua listagem para que cliques se tornem ligações, não apenas visualizações.", 
+    fr: "Les 3 premiers résultats sur Google Maps obtiennent 93% de tous les clics. La plupart des agences promettent 'de meilleurs classements'—je me concentre spécifiquement sur vous placer dans ces positions top et optimiser votre fiche pour que les clics deviennent des appels, pas seulement des vues.", 
+    it: "I primi 3 risultati su Google Maps ottengono il 93% di tutti i clic. La maggior parte delle agenzie promette 'classifiche migliori'—io mi concentro specificamente sul portarti in quelle posizioni top e ottimizzare la tua scheda in modo che i clic diventino chiamate, non solo visualizzazioni.", 
+    de: "Die Top 3 Ergebnisse in Google Maps erhalten 93% aller Klicks. Die meisten Agenturen versprechen 'bessere Rankings'—ich konzentriere mich speziell darauf, Sie in diese Top-Positionen zu bringen und Ihren Eintrag so zu optimieren, dass Klicks zu Anrufen werden, nicht nur zu Aufrufen." 
   },
   "country.aiSearchReady": { 
-    en: "Ready for AI Search", 
-    ar: "جاهز للبحث بالذكاء الاصطناعي", 
-    es: "Listo para Búsqueda IA", 
-    pt: "Pronto para Busca IA", 
-    fr: "Prêt pour la recherche IA", 
-    it: "Pronto per la ricerca IA", 
-    de: "Bereit für KI-Suche" 
+    en: "Prepared for How People Search Tomorrow", 
+    ar: "مستعد لطريقة بحث الناس غداً", 
+    es: "Preparado para Cómo Buscará la Gente Mañana", 
+    pt: "Preparado para Como as Pessoas Buscarão Amanhã", 
+    fr: "Préparé pour la Recherche de Demain", 
+    it: "Preparato per Come Cercheranno le Persone Domani", 
+    de: "Vorbereitet auf die Suche von Morgen" 
   },
   "country.aiSearchReadyDesc": { 
-    en: "People now ask ChatGPT and Google AI for recommendations. I make sure your business gets mentioned.", 
-    ar: "الناس الآن يسألون ChatGPT و Google AI عن التوصيات. أتأكد من ذكر عملك.", 
-    es: "La gente ahora pregunta a ChatGPT y Google AI por recomendaciones. Me aseguro de que tu negocio sea mencionado.", 
-    pt: "As pessoas agora perguntam ao ChatGPT e Google AI por recomendações. Eu garanto que seu negócio seja mencionado.", 
-    fr: "Les gens demandent maintenant des recommandations à ChatGPT et Google AI. Je m'assure que votre entreprise soit mentionnée.", 
-    it: "Le persone ora chiedono raccomandazioni a ChatGPT e Google AI. Mi assicuro che la tua attività venga menzionata.", 
-    de: "Menschen fragen jetzt ChatGPT und Google AI nach Empfehlungen. Ich sorge dafür, dass Ihr Unternehmen erwähnt wird." 
+    en: "Ask ChatGPT for 'the best dentist near me' and watch what happens. AI-powered search is already here, and it's reshaping how customers find local businesses. My strategies don't just work for Google today—they position you for AI search tomorrow.", 
+    ar: "اسأل ChatGPT عن 'أفضل طبيب أسنان بالقرب مني' وشاهد ما يحدث. البحث المدعوم بالذكاء الاصطناعي موجود بالفعل، ويعيد تشكيل كيفية عثور العملاء على الشركات المحلية. استراتيجياتي لا تعمل فقط لـ Google اليوم—بل تضعك في موقع جيد للبحث بالذكاء الاصطناعي غداً.", 
+    es: "Pregunta a ChatGPT por 'el mejor dentista cerca de mí' y mira qué pasa. La búsqueda con IA ya está aquí, y está reformando cómo los clientes encuentran negocios locales. Mis estrategias no solo funcionan para Google hoy—te posicionan para la búsqueda IA de mañana.", 
+    pt: "Pergunte ao ChatGPT 'o melhor dentista perto de mim' e veja o que acontece. A busca com IA já está aqui, e está remodelando como os clientes encontram empresas locais. Minhas estratégias não funcionam apenas para o Google hoje—elas te posicionam para a busca IA de amanhã.", 
+    fr: "Demandez à ChatGPT 'le meilleur dentiste près de chez moi' et regardez ce qui se passe. La recherche IA est déjà là, et elle remodèle la façon dont les clients trouvent les entreprises locales. Mes stratégies ne fonctionnent pas seulement pour Google aujourd'hui—elles vous positionnent pour la recherche IA de demain.", 
+    it: "Chiedi a ChatGPT 'il miglior dentista vicino a me' e guarda cosa succede. La ricerca IA è già qui, e sta rimodellando il modo in cui i clienti trovano le attività locali. Le mie strategie non funzionano solo per Google oggi—ti posizionano per la ricerca IA di domani.", 
+    de: "Fragen Sie ChatGPT nach 'dem besten Zahnarzt in meiner Nähe' und sehen Sie, was passiert. KI-gestützte Suche ist bereits hier und verändert, wie Kunden lokale Unternehmen finden. Meine Strategien funktionieren nicht nur für Google heute—sie positionieren Sie für die KI-Suche von morgen." 
   },
   "country.localSearchDominance": { 
-    en: "Beat Your Competitors", 
-    ar: "تفوق على منافسيك", 
-    es: "Supera a Tus Competidores", 
-    pt: "Supere Seus Concorrentes", 
-    fr: "Battez vos concurrents", 
-    it: "Batti i tuoi concorrenti", 
-    de: "Schlagen Sie Ihre Konkurrenten" 
+    en: "Measurable Growth You Can Track", 
+    ar: "نمو قابل للقياس يمكنك تتبعه", 
+    es: "Crecimiento Medible que Puedes Rastrear", 
+    pt: "Crescimento Mensurável que Você Pode Acompanhar", 
+    fr: "Croissance Mesurable que Vous Pouvez Suivre", 
+    it: "Crescita Misurabile che Puoi Monitorare", 
+    de: "Messbares Wachstum das Sie Verfolgen Können" 
   },
   "country.localSearchDominanceDesc": { 
-    en: "When someone searches for your service in {country}, you should show up first. I make that happen.", 
-    ar: "عندما يبحث شخص ما عن خدمتك في {country}، يجب أن تظهر أولاً. أنا أجعل ذلك يحدث.", 
-    es: "Cuando alguien busca tu servicio en {country}, deberías aparecer primero. Yo hago que eso suceda.", 
-    pt: "Quando alguém busca seu serviço em {country}, você deve aparecer primeiro. Eu faço isso acontecer.", 
-    fr: "Quand quelqu'un cherche votre service en {country}, vous devriez apparaître en premier. Je fais en sorte que cela arrive.", 
-    it: "Quando qualcuno cerca il tuo servizio in {country}, dovresti apparire per primo. Io faccio in modo che succeda.", 
-    de: "Wenn jemand nach Ihrem Service in {country} sucht, sollten Sie zuerst erscheinen. Ich mache das möglich." 
+    en: "I don't hide behind vague metrics. Every month, you'll see exactly how many calls came from your Google listing, how many people requested directions, and how your search visibility has changed. On average, my clients in {country} see 150%+ growth in qualified local traffic within 6 months.", 
+    ar: "لا أختبئ وراء مقاييس غامضة. كل شهر، سترى بالضبط عدد المكالمات التي جاءت من قائمتك على Google، وعدد الأشخاص الذين طلبوا الاتجاهات، وكيف تغيرت رؤيتك في البحث. في المتوسط، يرى عملائي في {country} نمواً بنسبة 150%+ في الزيارات المحلية المؤهلة خلال 6 أشهر.", 
+    es: "No me escondo detrás de métricas vagas. Cada mes, verás exactamente cuántas llamadas vinieron de tu ficha de Google, cuántas personas pidieron direcciones, y cómo ha cambiado tu visibilidad de búsqueda. En promedio, mis clientes en {country} ven 150%+ de crecimiento en tráfico local cualificado en 6 meses.", 
+    pt: "Não me escondo atrás de métricas vagas. Todo mês, você verá exatamente quantas ligações vieram da sua ficha do Google, quantas pessoas pediram direções, e como sua visibilidade de busca mudou. Em média, meus clientes em {country} veem 150%+ de crescimento em tráfego local qualificado em 6 meses.", 
+    fr: "Je ne me cache pas derrière des métriques vagues. Chaque mois, vous verrez exactement combien d'appels sont venus de votre fiche Google, combien de personnes ont demandé des directions, et comment votre visibilité de recherche a changé. En moyenne, mes clients en {country} voient 150%+ de croissance du trafic local qualifié en 6 mois.", 
+    it: "Non mi nascondo dietro metriche vaghe. Ogni mese, vedrai esattamente quante chiamate sono arrivate dalla tua scheda Google, quante persone hanno chiesto indicazioni, e come è cambiata la tua visibilità di ricerca. In media, i miei clienti in {country} vedono 150%+ di crescita nel traffico locale qualificato in 6 mesi.", 
+    de: "Ich verstecke mich nicht hinter vagen Metriken. Jeden Monat sehen Sie genau, wie viele Anrufe von Ihrem Google-Eintrag kamen, wie viele Personen Wegbeschreibungen angefordert haben und wie sich Ihre Suchsichtbarkeit verändert hat. Im Durchschnitt sehen meine Kunden in {country} 150%+ Wachstum bei qualifiziertem lokalem Traffic innerhalb von 6 Monaten." 
   },
   "country.googlePartner": { 
     en: "Google Certified", 
