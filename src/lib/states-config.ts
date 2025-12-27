@@ -642,6 +642,675 @@ export const OR_CITIES: CityData[] = [
   { name: "Roseburg", code: "roseburg" }
 ];
 
+// Alabama cities
+export const AL_CITIES: CityData[] = [
+  { name: "Birmingham", code: "birmingham" },
+  { name: "Montgomery", code: "montgomery" },
+  { name: "Huntsville", code: "huntsville" },
+  { name: "Mobile", code: "mobile" },
+  { name: "Tuscaloosa", code: "tuscaloosa" },
+  { name: "Hoover", code: "hoover" },
+  { name: "Dothan", code: "dothan" },
+  { name: "Auburn", code: "auburn" },
+  { name: "Decatur", code: "decatur" },
+  { name: "Madison", code: "madison-al" },
+  { name: "Florence", code: "florence" },
+  { name: "Gadsden", code: "gadsden" },
+  { name: "Vestavia Hills", code: "vestavia-hills" },
+  { name: "Prattville", code: "prattville" },
+  { name: "Phenix City", code: "phenix-city" },
+  { name: "Alabaster", code: "alabaster" },
+  { name: "Bessemer", code: "bessemer" },
+  { name: "Enterprise", code: "enterprise" },
+  { name: "Opelika", code: "opelika" },
+  { name: "Homewood", code: "homewood" }
+];
+
+// Alaska cities
+export const AK_CITIES: CityData[] = [
+  { name: "Anchorage", code: "anchorage" },
+  { name: "Fairbanks", code: "fairbanks" },
+  { name: "Juneau", code: "juneau" },
+  { name: "Sitka", code: "sitka" },
+  { name: "Ketchikan", code: "ketchikan" },
+  { name: "Wasilla", code: "wasilla" },
+  { name: "Kenai", code: "kenai" },
+  { name: "Kodiak", code: "kodiak" },
+  { name: "Bethel", code: "bethel" },
+  { name: "Palmer", code: "palmer" },
+  { name: "Homer", code: "homer" },
+  { name: "Soldotna", code: "soldotna" },
+  { name: "Valdez", code: "valdez" },
+  { name: "Nome", code: "nome" },
+  { name: "Barrow", code: "barrow" }
+];
+
+// Arkansas cities
+export const AR_CITIES: CityData[] = [
+  { name: "Little Rock", code: "little-rock" },
+  { name: "Fort Smith", code: "fort-smith" },
+  { name: "Fayetteville", code: "fayetteville-ar" },
+  { name: "Springdale", code: "springdale" },
+  { name: "Jonesboro", code: "jonesboro" },
+  { name: "North Little Rock", code: "north-little-rock" },
+  { name: "Conway", code: "conway" },
+  { name: "Rogers", code: "rogers" },
+  { name: "Pine Bluff", code: "pine-bluff" },
+  { name: "Bentonville", code: "bentonville" },
+  { name: "Hot Springs", code: "hot-springs" },
+  { name: "Benton", code: "benton" },
+  { name: "Texarkana", code: "texarkana" },
+  { name: "Sherwood", code: "sherwood" },
+  { name: "Jacksonville", code: "jacksonville-ar" },
+  { name: "Russellville", code: "russellville" },
+  { name: "Bella Vista", code: "bella-vista" },
+  { name: "West Memphis", code: "west-memphis" },
+  { name: "Paragould", code: "paragould" },
+  { name: "Cabot", code: "cabot" }
+];
+
+// Connecticut cities
+export const CT_CITIES: CityData[] = [
+  { name: "Bridgeport", code: "bridgeport" },
+  { name: "New Haven", code: "new-haven" },
+  { name: "Hartford", code: "hartford" },
+  { name: "Stamford", code: "stamford" },
+  { name: "Waterbury", code: "waterbury" },
+  { name: "Norwalk", code: "norwalk" },
+  { name: "Danbury", code: "danbury" },
+  { name: "New Britain", code: "new-britain" },
+  { name: "Bristol", code: "bristol" },
+  { name: "Meriden", code: "meriden" },
+  { name: "Milford", code: "milford" },
+  { name: "West Haven", code: "west-haven" },
+  { name: "Middletown", code: "middletown-ct" },
+  { name: "Norwich", code: "norwich" },
+  { name: "Shelton", code: "shelton" },
+  { name: "Torrington", code: "torrington" },
+  { name: "New London", code: "new-london" },
+  { name: "Ansonia", code: "ansonia" },
+  { name: "Derby", code: "derby-ct" },
+  { name: "Groton", code: "groton" }
+];
+
+// Delaware cities
+export const DE_CITIES: CityData[] = [
+  { name: "Wilmington", code: "wilmington-de" },
+  { name: "Dover", code: "dover" },
+  { name: "Newark", code: "newark-de" },
+  { name: "Middletown", code: "middletown-de" },
+  { name: "Smyrna", code: "smyrna-de" },
+  { name: "Milford", code: "milford-de" },
+  { name: "Seaford", code: "seaford" },
+  { name: "Georgetown", code: "georgetown-de" },
+  { name: "Elsmere", code: "elsmere" },
+  { name: "New Castle", code: "new-castle-de" },
+  { name: "Millsboro", code: "millsboro" },
+  { name: "Laurel", code: "laurel" },
+  { name: "Harrington", code: "harrington" },
+  { name: "Camden", code: "camden-de" },
+  { name: "Clayton", code: "clayton" }
+];
+
+// Hawaii cities
+export const HI_CITIES: CityData[] = [
+  { name: "Honolulu", code: "honolulu" },
+  { name: "Pearl City", code: "pearl-city" },
+  { name: "Hilo", code: "hilo" },
+  { name: "Kailua", code: "kailua" },
+  { name: "Waipahu", code: "waipahu" },
+  { name: "Kaneohe", code: "kaneohe" },
+  { name: "Mililani Town", code: "mililani" },
+  { name: "Kahului", code: "kahului" },
+  { name: "Ewa Gentry", code: "ewa-gentry" },
+  { name: "Kihei", code: "kihei" },
+  { name: "Kapolei", code: "kapolei" },
+  { name: "Lahaina", code: "lahaina" },
+  { name: "Wailuku", code: "wailuku" },
+  { name: "Aiea", code: "aiea" },
+  { name: "Kona", code: "kona" }
+];
+
+// Idaho cities
+export const ID_CITIES: CityData[] = [
+  { name: "Boise", code: "boise" },
+  { name: "Meridian", code: "meridian" },
+  { name: "Nampa", code: "nampa" },
+  { name: "Idaho Falls", code: "idaho-falls" },
+  { name: "Caldwell", code: "caldwell" },
+  { name: "Pocatello", code: "pocatello" },
+  { name: "Coeur d'Alene", code: "coeur-dalene" },
+  { name: "Twin Falls", code: "twin-falls" },
+  { name: "Post Falls", code: "post-falls" },
+  { name: "Lewiston", code: "lewiston" },
+  { name: "Rexburg", code: "rexburg" },
+  { name: "Moscow", code: "moscow-id" },
+  { name: "Eagle", code: "eagle" },
+  { name: "Kuna", code: "kuna" },
+  { name: "Ammon", code: "ammon" },
+  { name: "Mountain Home", code: "mountain-home" },
+  { name: "Chubbuck", code: "chubbuck" },
+  { name: "Hayden", code: "hayden" },
+  { name: "Jerome", code: "jerome" },
+  { name: "Blackfoot", code: "blackfoot" }
+];
+
+// Iowa cities
+export const IA_CITIES: CityData[] = [
+  { name: "Des Moines", code: "des-moines" },
+  { name: "Cedar Rapids", code: "cedar-rapids" },
+  { name: "Davenport", code: "davenport" },
+  { name: "Sioux City", code: "sioux-city" },
+  { name: "Iowa City", code: "iowa-city" },
+  { name: "Waterloo", code: "waterloo-ia" },
+  { name: "Ames", code: "ames" },
+  { name: "West Des Moines", code: "west-des-moines" },
+  { name: "Council Bluffs", code: "council-bluffs" },
+  { name: "Ankeny", code: "ankeny" },
+  { name: "Dubuque", code: "dubuque" },
+  { name: "Urbandale", code: "urbandale" },
+  { name: "Cedar Falls", code: "cedar-falls" },
+  { name: "Marion", code: "marion" },
+  { name: "Bettendorf", code: "bettendorf" },
+  { name: "Mason City", code: "mason-city" },
+  { name: "Marshalltown", code: "marshalltown" },
+  { name: "Clinton", code: "clinton" },
+  { name: "Burlington", code: "burlington-ia" },
+  { name: "Ottumwa", code: "ottumwa" }
+];
+
+// Kentucky cities
+export const KY_CITIES: CityData[] = [
+  { name: "Louisville", code: "louisville" },
+  { name: "Lexington", code: "lexington" },
+  { name: "Bowling Green", code: "bowling-green" },
+  { name: "Owensboro", code: "owensboro" },
+  { name: "Covington", code: "covington" },
+  { name: "Richmond", code: "richmond-ky" },
+  { name: "Georgetown", code: "georgetown-ky" },
+  { name: "Florence", code: "florence-ky" },
+  { name: "Hopkinsville", code: "hopkinsville" },
+  { name: "Nicholasville", code: "nicholasville" },
+  { name: "Elizabethtown", code: "elizabethtown" },
+  { name: "Henderson", code: "henderson" },
+  { name: "Frankfort", code: "frankfort" },
+  { name: "Independence", code: "independence" },
+  { name: "Jeffersontown", code: "jeffersontown" },
+  { name: "Paducah", code: "paducah" },
+  { name: "Radcliff", code: "radcliff" },
+  { name: "Ashland", code: "ashland-ky" },
+  { name: "Madisonville", code: "madisonville" },
+  { name: "Murray", code: "murray" }
+];
+
+// Louisiana cities
+export const LA_CITIES: CityData[] = [
+  { name: "New Orleans", code: "new-orleans" },
+  { name: "Baton Rouge", code: "baton-rouge" },
+  { name: "Shreveport", code: "shreveport" },
+  { name: "Lafayette", code: "lafayette-la" },
+  { name: "Lake Charles", code: "lake-charles" },
+  { name: "Kenner", code: "kenner" },
+  { name: "Bossier City", code: "bossier-city" },
+  { name: "Monroe", code: "monroe" },
+  { name: "Alexandria", code: "alexandria-la" },
+  { name: "Houma", code: "houma" },
+  { name: "Marrero", code: "marrero" },
+  { name: "New Iberia", code: "new-iberia" },
+  { name: "Laplace", code: "laplace" },
+  { name: "Slidell", code: "slidell" },
+  { name: "Central", code: "central" },
+  { name: "Ruston", code: "ruston" },
+  { name: "Sulphur", code: "sulphur" },
+  { name: "Hammond", code: "hammond" },
+  { name: "Zachary", code: "zachary" },
+  { name: "Natchitoches", code: "natchitoches" }
+];
+
+// Maine cities
+export const ME_CITIES: CityData[] = [
+  { name: "Portland", code: "portland-me" },
+  { name: "Lewiston", code: "lewiston-me" },
+  { name: "Bangor", code: "bangor" },
+  { name: "South Portland", code: "south-portland" },
+  { name: "Auburn", code: "auburn-me" },
+  { name: "Biddeford", code: "biddeford" },
+  { name: "Sanford", code: "sanford-me" },
+  { name: "Augusta", code: "augusta-me" },
+  { name: "Saco", code: "saco" },
+  { name: "Westbrook", code: "westbrook" },
+  { name: "Waterville", code: "waterville" },
+  { name: "Presque Isle", code: "presque-isle" },
+  { name: "Brewer", code: "brewer" },
+  { name: "Bath", code: "bath" },
+  { name: "Ellsworth", code: "ellsworth" }
+];
+
+// Maryland cities
+export const MD_CITIES: CityData[] = [
+  { name: "Baltimore", code: "baltimore" },
+  { name: "Columbia", code: "columbia-md" },
+  { name: "Germantown", code: "germantown-md" },
+  { name: "Silver Spring", code: "silver-spring" },
+  { name: "Waldorf", code: "waldorf" },
+  { name: "Frederick", code: "frederick" },
+  { name: "Ellicott City", code: "ellicott-city" },
+  { name: "Glen Burnie", code: "glen-burnie" },
+  { name: "Gaithersburg", code: "gaithersburg" },
+  { name: "Rockville", code: "rockville" },
+  { name: "Bethesda", code: "bethesda" },
+  { name: "Dundalk", code: "dundalk" },
+  { name: "Towson", code: "towson" },
+  { name: "Bowie", code: "bowie" },
+  { name: "Aspen Hill", code: "aspen-hill" },
+  { name: "Wheaton", code: "wheaton" },
+  { name: "Severn", code: "severn" },
+  { name: "Hagerstown", code: "hagerstown" },
+  { name: "Annapolis", code: "annapolis" },
+  { name: "College Park", code: "college-park" }
+];
+
+// Massachusetts cities
+export const MA_CITIES: CityData[] = [
+  { name: "Boston", code: "boston" },
+  { name: "Worcester", code: "worcester" },
+  { name: "Springfield", code: "springfield-ma" },
+  { name: "Cambridge", code: "cambridge" },
+  { name: "Lowell", code: "lowell" },
+  { name: "Brockton", code: "brockton" },
+  { name: "New Bedford", code: "new-bedford" },
+  { name: "Quincy", code: "quincy" },
+  { name: "Lynn", code: "lynn" },
+  { name: "Fall River", code: "fall-river" },
+  { name: "Newton", code: "newton" },
+  { name: "Lawrence", code: "lawrence-ma" },
+  { name: "Somerville", code: "somerville" },
+  { name: "Framingham", code: "framingham" },
+  { name: "Haverhill", code: "haverhill" },
+  { name: "Waltham", code: "waltham" },
+  { name: "Malden", code: "malden" },
+  { name: "Brookline", code: "brookline" },
+  { name: "Plymouth", code: "plymouth" },
+  { name: "Medford", code: "medford-ma" }
+];
+
+// Minnesota cities
+export const MN_CITIES: CityData[] = [
+  { name: "Minneapolis", code: "minneapolis" },
+  { name: "Saint Paul", code: "saint-paul" },
+  { name: "Rochester", code: "rochester-mn" },
+  { name: "Bloomington", code: "bloomington-mn" },
+  { name: "Duluth", code: "duluth" },
+  { name: "Brooklyn Park", code: "brooklyn-park" },
+  { name: "Plymouth", code: "plymouth-mn" },
+  { name: "Maple Grove", code: "maple-grove" },
+  { name: "Woodbury", code: "woodbury" },
+  { name: "St. Cloud", code: "st-cloud" },
+  { name: "Eagan", code: "eagan" },
+  { name: "Eden Prairie", code: "eden-prairie" },
+  { name: "Coon Rapids", code: "coon-rapids" },
+  { name: "Burnsville", code: "burnsville" },
+  { name: "Blaine", code: "blaine" },
+  { name: "Lakeville", code: "lakeville" },
+  { name: "Minnetonka", code: "minnetonka" },
+  { name: "Apple Valley", code: "apple-valley" },
+  { name: "Edina", code: "edina" },
+  { name: "St. Louis Park", code: "st-louis-park" }
+];
+
+// Mississippi cities
+export const MS_CITIES: CityData[] = [
+  { name: "Jackson", code: "jackson-ms" },
+  { name: "Gulfport", code: "gulfport" },
+  { name: "Southaven", code: "southaven" },
+  { name: "Hattiesburg", code: "hattiesburg" },
+  { name: "Biloxi", code: "biloxi" },
+  { name: "Meridian", code: "meridian-ms" },
+  { name: "Tupelo", code: "tupelo" },
+  { name: "Olive Branch", code: "olive-branch" },
+  { name: "Greenville", code: "greenville-ms" },
+  { name: "Horn Lake", code: "horn-lake" },
+  { name: "Pearl", code: "pearl" },
+  { name: "Clinton", code: "clinton-ms" },
+  { name: "Madison", code: "madison-ms" },
+  { name: "Starkville", code: "starkville" },
+  { name: "Vicksburg", code: "vicksburg" },
+  { name: "Columbus", code: "columbus-ms" },
+  { name: "Brandon", code: "brandon-ms" },
+  { name: "Pascagoula", code: "pascagoula" },
+  { name: "Oxford", code: "oxford" },
+  { name: "Ridgeland", code: "ridgeland" }
+];
+
+// Missouri cities
+export const MO_CITIES: CityData[] = [
+  { name: "Kansas City", code: "kansas-city" },
+  { name: "St. Louis", code: "st-louis" },
+  { name: "Springfield", code: "springfield-mo" },
+  { name: "Columbia", code: "columbia-mo" },
+  { name: "Independence", code: "independence-mo" },
+  { name: "Lee's Summit", code: "lees-summit" },
+  { name: "O'Fallon", code: "ofallon" },
+  { name: "St. Joseph", code: "st-joseph" },
+  { name: "St. Charles", code: "st-charles" },
+  { name: "St. Peters", code: "st-peters" },
+  { name: "Blue Springs", code: "blue-springs" },
+  { name: "Florissant", code: "florissant" },
+  { name: "Joplin", code: "joplin" },
+  { name: "Chesterfield", code: "chesterfield" },
+  { name: "Jefferson City", code: "jefferson-city" },
+  { name: "Cape Girardeau", code: "cape-girardeau" },
+  { name: "Wildwood", code: "wildwood" },
+  { name: "University City", code: "university-city" },
+  { name: "Ballwin", code: "ballwin" },
+  { name: "Raytown", code: "raytown" }
+];
+
+// Montana cities
+export const MT_CITIES: CityData[] = [
+  { name: "Billings", code: "billings" },
+  { name: "Missoula", code: "missoula" },
+  { name: "Great Falls", code: "great-falls" },
+  { name: "Bozeman", code: "bozeman" },
+  { name: "Butte", code: "butte" },
+  { name: "Helena", code: "helena" },
+  { name: "Kalispell", code: "kalispell" },
+  { name: "Havre", code: "havre" },
+  { name: "Anaconda", code: "anaconda" },
+  { name: "Miles City", code: "miles-city" },
+  { name: "Belgrade", code: "belgrade" },
+  { name: "Livingston", code: "livingston" },
+  { name: "Laurel", code: "laurel-mt" },
+  { name: "Whitefish", code: "whitefish" },
+  { name: "Lewistown", code: "lewistown" }
+];
+
+// Nebraska cities
+export const NE_CITIES: CityData[] = [
+  { name: "Omaha", code: "omaha" },
+  { name: "Lincoln", code: "lincoln" },
+  { name: "Bellevue", code: "bellevue-ne" },
+  { name: "Grand Island", code: "grand-island" },
+  { name: "Kearney", code: "kearney" },
+  { name: "Fremont", code: "fremont-ne" },
+  { name: "Hastings", code: "hastings" },
+  { name: "Norfolk", code: "norfolk-ne" },
+  { name: "North Platte", code: "north-platte" },
+  { name: "Columbus", code: "columbus-ne" },
+  { name: "Papillion", code: "papillion" },
+  { name: "La Vista", code: "la-vista" },
+  { name: "Scottsbluff", code: "scottsbluff" },
+  { name: "South Sioux City", code: "south-sioux-city" },
+  { name: "Beatrice", code: "beatrice" }
+];
+
+// Nevada cities
+export const NV_CITIES: CityData[] = [
+  { name: "Las Vegas", code: "las-vegas" },
+  { name: "Henderson", code: "henderson-nv" },
+  { name: "Reno", code: "reno" },
+  { name: "North Las Vegas", code: "north-las-vegas" },
+  { name: "Sparks", code: "sparks" },
+  { name: "Carson City", code: "carson-city" },
+  { name: "Fernley", code: "fernley" },
+  { name: "Elko", code: "elko" },
+  { name: "Mesquite", code: "mesquite-nv" },
+  { name: "Boulder City", code: "boulder-city" },
+  { name: "Fallon", code: "fallon" },
+  { name: "Winnemucca", code: "winnemucca" },
+  { name: "West Wendover", code: "west-wendover" },
+  { name: "Ely", code: "ely" },
+  { name: "Pahrump", code: "pahrump" }
+];
+
+// New Hampshire cities
+export const NH_CITIES: CityData[] = [
+  { name: "Manchester", code: "manchester" },
+  { name: "Nashua", code: "nashua" },
+  { name: "Concord", code: "concord-nh" },
+  { name: "Derry", code: "derry" },
+  { name: "Dover", code: "dover-nh" },
+  { name: "Rochester", code: "rochester-nh" },
+  { name: "Salem", code: "salem-nh" },
+  { name: "Merrimack", code: "merrimack" },
+  { name: "Hudson", code: "hudson-nh" },
+  { name: "Londonderry", code: "londonderry" },
+  { name: "Keene", code: "keene" },
+  { name: "Bedford", code: "bedford" },
+  { name: "Portsmouth", code: "portsmouth-nh" },
+  { name: "Goffstown", code: "goffstown" },
+  { name: "Laconia", code: "laconia" }
+];
+
+// New Mexico cities
+export const NM_CITIES: CityData[] = [
+  { name: "Albuquerque", code: "albuquerque" },
+  { name: "Las Cruces", code: "las-cruces" },
+  { name: "Rio Rancho", code: "rio-rancho" },
+  { name: "Santa Fe", code: "santa-fe" },
+  { name: "Roswell", code: "roswell" },
+  { name: "Farmington", code: "farmington" },
+  { name: "Clovis", code: "clovis" },
+  { name: "Hobbs", code: "hobbs" },
+  { name: "Alamogordo", code: "alamogordo" },
+  { name: "Carlsbad", code: "carlsbad-nm" },
+  { name: "Gallup", code: "gallup" },
+  { name: "Deming", code: "deming" },
+  { name: "Los Lunas", code: "los-lunas" },
+  { name: "Sunland Park", code: "sunland-park" },
+  { name: "Las Vegas", code: "las-vegas-nm" }
+];
+
+// North Dakota cities
+export const ND_CITIES: CityData[] = [
+  { name: "Fargo", code: "fargo" },
+  { name: "Bismarck", code: "bismarck" },
+  { name: "Grand Forks", code: "grand-forks" },
+  { name: "Minot", code: "minot" },
+  { name: "West Fargo", code: "west-fargo" },
+  { name: "Williston", code: "williston" },
+  { name: "Dickinson", code: "dickinson" },
+  { name: "Mandan", code: "mandan" },
+  { name: "Jamestown", code: "jamestown-nd" },
+  { name: "Wahpeton", code: "wahpeton" },
+  { name: "Devils Lake", code: "devils-lake" },
+  { name: "Valley City", code: "valley-city" },
+  { name: "Watford City", code: "watford-city" },
+  { name: "Grafton", code: "grafton" },
+  { name: "Beulah", code: "beulah" }
+];
+
+// Oklahoma cities
+export const OK_CITIES: CityData[] = [
+  { name: "Oklahoma City", code: "oklahoma-city" },
+  { name: "Tulsa", code: "tulsa" },
+  { name: "Norman", code: "norman" },
+  { name: "Broken Arrow", code: "broken-arrow" },
+  { name: "Edmond", code: "edmond" },
+  { name: "Lawton", code: "lawton" },
+  { name: "Moore", code: "moore" },
+  { name: "Midwest City", code: "midwest-city" },
+  { name: "Enid", code: "enid" },
+  { name: "Stillwater", code: "stillwater" },
+  { name: "Muskogee", code: "muskogee" },
+  { name: "Bartlesville", code: "bartlesville" },
+  { name: "Owasso", code: "owasso" },
+  { name: "Shawnee", code: "shawnee-ok" },
+  { name: "Ponca City", code: "ponca-city" },
+  { name: "Ardmore", code: "ardmore" },
+  { name: "Duncan", code: "duncan" },
+  { name: "Del City", code: "del-city" },
+  { name: "Bixby", code: "bixby" },
+  { name: "Yukon", code: "yukon" }
+];
+
+// Rhode Island cities
+export const RI_CITIES: CityData[] = [
+  { name: "Providence", code: "providence" },
+  { name: "Warwick", code: "warwick" },
+  { name: "Cranston", code: "cranston" },
+  { name: "Pawtucket", code: "pawtucket" },
+  { name: "East Providence", code: "east-providence" },
+  { name: "Woonsocket", code: "woonsocket" },
+  { name: "Coventry", code: "coventry" },
+  { name: "Cumberland", code: "cumberland" },
+  { name: "North Providence", code: "north-providence" },
+  { name: "South Kingstown", code: "south-kingstown" },
+  { name: "West Warwick", code: "west-warwick" },
+  { name: "Johnston", code: "johnston" },
+  { name: "North Kingstown", code: "north-kingstown" },
+  { name: "Newport", code: "newport" },
+  { name: "Bristol", code: "bristol-ri" }
+];
+
+// South Carolina cities
+export const SC_CITIES: CityData[] = [
+  { name: "Charleston", code: "charleston" },
+  { name: "Columbia", code: "columbia-sc" },
+  { name: "North Charleston", code: "north-charleston" },
+  { name: "Mount Pleasant", code: "mount-pleasant" },
+  { name: "Rock Hill", code: "rock-hill" },
+  { name: "Greenville", code: "greenville-sc" },
+  { name: "Summerville", code: "summerville" },
+  { name: "Goose Creek", code: "goose-creek" },
+  { name: "Sumter", code: "sumter" },
+  { name: "Hilton Head Island", code: "hilton-head" },
+  { name: "Florence", code: "florence-sc" },
+  { name: "Spartanburg", code: "spartanburg" },
+  { name: "Myrtle Beach", code: "myrtle-beach" },
+  { name: "Aiken", code: "aiken" },
+  { name: "Anderson", code: "anderson-sc" },
+  { name: "Mauldin", code: "mauldin" },
+  { name: "North Augusta", code: "north-augusta" },
+  { name: "Greer", code: "greer" },
+  { name: "Conway", code: "conway-sc" },
+  { name: "Bluffton", code: "bluffton" }
+];
+
+// South Dakota cities
+export const SD_CITIES: CityData[] = [
+  { name: "Sioux Falls", code: "sioux-falls" },
+  { name: "Rapid City", code: "rapid-city" },
+  { name: "Aberdeen", code: "aberdeen" },
+  { name: "Brookings", code: "brookings" },
+  { name: "Watertown", code: "watertown-sd" },
+  { name: "Mitchell", code: "mitchell" },
+  { name: "Yankton", code: "yankton" },
+  { name: "Pierre", code: "pierre" },
+  { name: "Huron", code: "huron" },
+  { name: "Spearfish", code: "spearfish" },
+  { name: "Vermillion", code: "vermillion" },
+  { name: "Brandon", code: "brandon-sd" },
+  { name: "Box Elder", code: "box-elder" },
+  { name: "Madison", code: "madison-sd" },
+  { name: "Sturgis", code: "sturgis" }
+];
+
+// Utah cities
+export const UT_CITIES: CityData[] = [
+  { name: "Salt Lake City", code: "salt-lake-city" },
+  { name: "West Valley City", code: "west-valley-city" },
+  { name: "Provo", code: "provo" },
+  { name: "West Jordan", code: "west-jordan" },
+  { name: "Orem", code: "orem" },
+  { name: "Sandy", code: "sandy" },
+  { name: "Ogden", code: "ogden" },
+  { name: "St. George", code: "st-george" },
+  { name: "Layton", code: "layton" },
+  { name: "Taylorsville", code: "taylorsville" },
+  { name: "South Jordan", code: "south-jordan" },
+  { name: "Lehi", code: "lehi" },
+  { name: "Logan", code: "logan" },
+  { name: "Murray", code: "murray-ut" },
+  { name: "Draper", code: "draper" },
+  { name: "Bountiful", code: "bountiful" },
+  { name: "Riverton", code: "riverton" },
+  { name: "Herriman", code: "herriman" },
+  { name: "Spanish Fork", code: "spanish-fork" },
+  { name: "Roy", code: "roy" }
+];
+
+// Vermont cities
+export const VT_CITIES: CityData[] = [
+  { name: "Burlington", code: "burlington-vt" },
+  { name: "South Burlington", code: "south-burlington" },
+  { name: "Rutland", code: "rutland" },
+  { name: "Barre", code: "barre" },
+  { name: "Montpelier", code: "montpelier" },
+  { name: "Winooski", code: "winooski" },
+  { name: "St. Albans", code: "st-albans" },
+  { name: "Newport", code: "newport-vt" },
+  { name: "Vergennes", code: "vergennes" },
+  { name: "Bennington", code: "bennington" },
+  { name: "Brattleboro", code: "brattleboro" },
+  { name: "Essex Junction", code: "essex-junction" },
+  { name: "Milton", code: "milton-vt" },
+  { name: "Hartford", code: "hartford-vt" },
+  { name: "Middlebury", code: "middlebury" }
+];
+
+// West Virginia cities
+export const WV_CITIES: CityData[] = [
+  { name: "Charleston", code: "charleston-wv" },
+  { name: "Huntington", code: "huntington" },
+  { name: "Morgantown", code: "morgantown" },
+  { name: "Parkersburg", code: "parkersburg" },
+  { name: "Wheeling", code: "wheeling" },
+  { name: "Weirton", code: "weirton" },
+  { name: "Fairmont", code: "fairmont" },
+  { name: "Martinsburg", code: "martinsburg" },
+  { name: "Beckley", code: "beckley" },
+  { name: "Clarksburg", code: "clarksburg" },
+  { name: "South Charleston", code: "south-charleston" },
+  { name: "Teays Valley", code: "teays-valley" },
+  { name: "St. Albans", code: "st-albans-wv" },
+  { name: "Vienna", code: "vienna" },
+  { name: "Bluefield", code: "bluefield" }
+];
+
+// Wisconsin cities
+export const WI_CITIES: CityData[] = [
+  { name: "Milwaukee", code: "milwaukee" },
+  { name: "Madison", code: "madison-wi" },
+  { name: "Green Bay", code: "green-bay" },
+  { name: "Kenosha", code: "kenosha" },
+  { name: "Racine", code: "racine" },
+  { name: "Appleton", code: "appleton" },
+  { name: "Waukesha", code: "waukesha" },
+  { name: "Oshkosh", code: "oshkosh" },
+  { name: "Eau Claire", code: "eau-claire" },
+  { name: "Janesville", code: "janesville" },
+  { name: "West Allis", code: "west-allis" },
+  { name: "La Crosse", code: "la-crosse" },
+  { name: "Sheboygan", code: "sheboygan" },
+  { name: "Wauwatosa", code: "wauwatosa" },
+  { name: "Fond du Lac", code: "fond-du-lac" },
+  { name: "New Berlin", code: "new-berlin" },
+  { name: "Wausau", code: "wausau" },
+  { name: "Brookfield", code: "brookfield-wi" },
+  { name: "Beloit", code: "beloit" },
+  { name: "Greenfield", code: "greenfield" }
+];
+
+// Wyoming cities
+export const WY_CITIES: CityData[] = [
+  { name: "Cheyenne", code: "cheyenne" },
+  { name: "Casper", code: "casper" },
+  { name: "Laramie", code: "laramie" },
+  { name: "Gillette", code: "gillette" },
+  { name: "Rock Springs", code: "rock-springs" },
+  { name: "Sheridan", code: "sheridan" },
+  { name: "Green River", code: "green-river" },
+  { name: "Evanston", code: "evanston-wy" },
+  { name: "Riverton", code: "riverton-wy" },
+  { name: "Cody", code: "cody" },
+  { name: "Jackson", code: "jackson" },
+  { name: "Rawlins", code: "rawlins" },
+  { name: "Lander", code: "lander" },
+  { name: "Powell", code: "powell" },
+  { name: "Douglas", code: "douglas" }
+];
+
 // State configurations
 export const STATES: Record<string, StateDetailData> = {
   fl: {
@@ -903,6 +1572,409 @@ export const STATES: Record<string, StateDetailData> = {
     timezone: "America/Los_Angeles",
     tagline: "Beaver State Local Search Innovation",
     description: "Innovating local search strategies for Oregon businesses from Portland to Eugene and beyond."
+  },
+  al: {
+    code: "al",
+    name: "Alabama",
+    fullName: "State of Alabama",
+    abbreviation: "AL",
+    cities: AL_CITIES,
+    activeCities: [],
+    mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6809892.667987045!2d-86.79874365!3d32.80907855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x888689cd3df54f35%3A0xa9af2d1a9a48!2sAlabama%2C%20USA!5e0!3m2!1sen!2s!4v1766841200000!5m2!1sen!2s",
+    population: "5.1 million",
+    timezone: "America/Chicago",
+    tagline: "Heart of Dixie Local SEO Services",
+    description: "Driving local search success for Alabama businesses from Birmingham to Mobile with proven strategies."
+  },
+  ak: {
+    code: "ak",
+    name: "Alaska",
+    fullName: "State of Alaska",
+    abbreviation: "AK",
+    cities: AK_CITIES,
+    activeCities: [],
+    mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11012334.665493672!2d-153.36879365!3d64.00457755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x51325d8dc7aa3f87%3A0x3e6f15a3e7abcd!2sAlaska%2C%20USA!5e0!3m2!1sen!2s!4v1766841300000!5m2!1sen!2s",
+    population: "0.7 million",
+    timezone: "America/Anchorage",
+    tagline: "Last Frontier Local Search Pioneers",
+    description: "Bringing local search excellence to Alaska businesses from Anchorage to Fairbanks across the vast frontier."
+  },
+  ar: {
+    code: "ar",
+    name: "Arkansas",
+    fullName: "State of Arkansas",
+    abbreviation: "AR",
+    cities: AR_CITIES,
+    activeCities: [],
+    mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6612334.665493672!2d-92.37879365!3d34.80457755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87d31e0f0fcff34b%3A0x6b8f82f8b3abcd!2sArkansas%2C%20USA!5e0!3m2!1sen!2s!4v1766841400000!5m2!1sen!2s",
+    population: "3.0 million",
+    timezone: "America/Chicago",
+    tagline: "Natural State Local SEO Experts",
+    description: "Growing local visibility for Arkansas businesses from Little Rock to Fayetteville with natural results."
+  },
+  ct: {
+    code: "ct",
+    name: "Connecticut",
+    fullName: "State of Connecticut",
+    abbreviation: "CT",
+    cities: CT_CITIES,
+    activeCities: [],
+    mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1512334.665493672!2d-72.75879365!3d41.55457755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e653748f9c5e1d%3A0x4a6e0ca0f8f7abcd!2sConnecticut%2C%20USA!5e0!3m2!1sen!2s!4v1766841500000!5m2!1sen!2s",
+    population: "3.6 million",
+    timezone: "America/New_York",
+    tagline: "Constitution State Local Search Mastery",
+    description: "Strengthening local search presence for Connecticut businesses from Hartford to Stamford."
+  },
+  de: {
+    code: "de",
+    name: "Delaware",
+    fullName: "State of Delaware",
+    abbreviation: "DE",
+    cities: DE_CITIES,
+    activeCities: [],
+    mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d812334.665493672!2d-75.52879365!3d39.00457755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c764b9d9e5a7e5%3A0x6d5e6a0c8b9abcd!2sDelaware%2C%20USA!5e0!3m2!1sen!2s!4v1766841600000!5m2!1sen!2s",
+    population: "1.0 million",
+    timezone: "America/New_York",
+    tagline: "First State Local SEO Leadership",
+    description: "Leading local search optimization for Delaware businesses from Wilmington to Dover."
+  },
+  hi: {
+    code: "hi",
+    name: "Hawaii",
+    fullName: "State of Hawaii",
+    abbreviation: "HI",
+    cities: HI_CITIES,
+    activeCities: [],
+    mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3812334.665493672!2d-157.52879365!3d20.80457755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c006636e79c9c99%3A0xab7a8c1e0a9abcd!2sHawaii%2C%20USA!5e0!3m2!1sen!2s!4v1766841700000!5m2!1sen!2s",
+    population: "1.4 million",
+    timezone: "Pacific/Honolulu",
+    tagline: "Aloha State Local Search Paradise",
+    description: "Bringing paradise-level local search results to Hawaii businesses across all islands."
+  },
+  id: {
+    code: "id",
+    name: "Idaho",
+    fullName: "State of Idaho",
+    abbreviation: "ID",
+    cities: ID_CITIES,
+    activeCities: [],
+    mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5512334.665493672!2d-114.72879365!3d44.24457755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54afc6a1e4b7e1a5%3A0x9a8b7c6d5e4abcd!2sIdaho%2C%20USA!5e0!3m2!1sen!2s!4v1766841800000!5m2!1sen!2s",
+    population: "2.0 million",
+    timezone: "America/Boise",
+    tagline: "Gem State Local Search Excellence",
+    description: "Unearthing local search gems for Idaho businesses from Boise to Coeur d'Alene."
+  },
+  ia: {
+    code: "ia",
+    name: "Iowa",
+    fullName: "State of Iowa",
+    abbreviation: "IA",
+    cities: IA_CITIES,
+    activeCities: [],
+    mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6012334.665493672!2d-93.50879365!3d42.03457755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87ee5c5de6a0c1e3%3A0x8b9a7c6d5e4abcd!2sIowa%2C%20USA!5e0!3m2!1sen!2s!4v1766841900000!5m2!1sen!2s",
+    population: "3.2 million",
+    timezone: "America/Chicago",
+    tagline: "Hawkeye State Local SEO Focus",
+    description: "Sharpening local search focus for Iowa businesses from Des Moines to Cedar Rapids."
+  },
+  ky: {
+    code: "ky",
+    name: "Kentucky",
+    fullName: "Commonwealth of Kentucky",
+    abbreviation: "KY",
+    cities: KY_CITIES,
+    activeCities: [],
+    mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6412334.665493672!2d-85.76879365!3d37.84457755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8841a3f2e0c1b5d7%3A0x7a6b5c4d3e2abcd!2sKentucky%2C%20USA!5e0!3m2!1sen!2s!4v1766842000000!5m2!1sen!2s",
+    population: "4.5 million",
+    timezone: "America/New_York",
+    tagline: "Bluegrass State Local Search Champions",
+    description: "Racing ahead in local search for Kentucky businesses from Louisville to Lexington."
+  },
+  la: {
+    code: "la",
+    name: "Louisiana",
+    fullName: "State of Louisiana",
+    abbreviation: "LA",
+    cities: LA_CITIES,
+    activeCities: [],
+    mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6912334.665493672!2d-91.96879365!3d31.16457755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8621f4a9c5b7e3d1%3A0x6a5b4c3d2e1abcd!2sLouisiana%2C%20USA!5e0!3m2!1sen!2s!4v1766842100000!5m2!1sen!2s",
+    population: "4.6 million",
+    timezone: "America/Chicago",
+    tagline: "Pelican State Local SEO Magic",
+    description: "Creating local search magic for Louisiana businesses from New Orleans to Baton Rouge."
+  },
+  me: {
+    code: "me",
+    name: "Maine",
+    fullName: "State of Maine",
+    abbreviation: "ME",
+    cities: ME_CITIES,
+    activeCities: [],
+    mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5212334.665493672!2d-69.38879365!3d45.25457755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb01f0f4b9e7a5d%3A0x5a4b3c2d1e0abcd!2sMaine%2C%20USA!5e0!3m2!1sen!2s!4v1766842200000!5m2!1sen!2s",
+    population: "1.4 million",
+    timezone: "America/New_York",
+    tagline: "Pine Tree State Local Search Growth",
+    description: "Growing local search presence for Maine businesses from Portland to Bangor."
+  },
+  md: {
+    code: "md",
+    name: "Maryland",
+    fullName: "State of Maryland",
+    abbreviation: "MD",
+    cities: MD_CITIES,
+    activeCities: [],
+    mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3212334.665493672!2d-76.64879365!3d39.04457755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7dfb0c3e5a7b9%3A0x4a3b2c1d0e9abcd!2sMaryland%2C%20USA!5e0!3m2!1sen!2s!4v1766842300000!5m2!1sen!2s",
+    population: "6.2 million",
+    timezone: "America/New_York",
+    tagline: "Old Line State Local SEO Authority",
+    description: "Building local search authority for Maryland businesses from Baltimore to Bethesda."
+  },
+  ma: {
+    code: "ma",
+    name: "Massachusetts",
+    fullName: "Commonwealth of Massachusetts",
+    abbreviation: "MA",
+    cities: MA_CITIES,
+    activeCities: [],
+    mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2912334.665493672!2d-71.38879365!3d42.36457755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e3652d0d3d311b%3A0x3a2b1c0d9e8abcd!2sMassachusetts%2C%20USA!5e0!3m2!1sen!2s!4v1766842400000!5m2!1sen!2s",
+    population: "7.0 million",
+    timezone: "America/New_York",
+    tagline: "Bay State Local Search Innovation",
+    description: "Innovating local search solutions for Massachusetts businesses from Boston to Worcester."
+  },
+  mn: {
+    code: "mn",
+    name: "Minnesota",
+    fullName: "State of Minnesota",
+    abbreviation: "MN",
+    cities: MN_CITIES,
+    activeCities: [],
+    mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5712334.665493672!2d-94.68879365!3d46.27457755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52b333909377bbbd%3A0x2a1b0c9d8e7abcd!2sMinnesota%2C%20USA!5e0!3m2!1sen!2s!4v1766842500000!5m2!1sen!2s",
+    population: "5.7 million",
+    timezone: "America/Chicago",
+    tagline: "North Star State Local SEO Guidance",
+    description: "Guiding Minnesota businesses to local search success from Minneapolis to Duluth."
+  },
+  ms: {
+    code: "ms",
+    name: "Mississippi",
+    fullName: "State of Mississippi",
+    abbreviation: "MS",
+    cities: MS_CITIES,
+    activeCities: [],
+    mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6812334.665493672!2d-89.39879365!3d32.74457755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x862886c1c5e9f5b9%3A0x1a0b9c8d7e6abcd!2sMississippi%2C%20USA!5e0!3m2!1sen!2s!4v1766842600000!5m2!1sen!2s",
+    population: "2.9 million",
+    timezone: "America/Chicago",
+    tagline: "Magnolia State Local Search Bloom",
+    description: "Helping Mississippi businesses bloom in local search from Jackson to Biloxi."
+  },
+  mo: {
+    code: "mo",
+    name: "Missouri",
+    fullName: "State of Missouri",
+    abbreviation: "MO",
+    cities: MO_CITIES,
+    activeCities: [],
+    mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6312334.665493672!2d-92.60879365!3d38.46457755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87df5c4d3e2b1a09%3A0x0a9b8c7d6e5abcd!2sMissouri%2C%20USA!5e0!3m2!1sen!2s!4v1766842700000!5m2!1sen!2s",
+    population: "6.2 million",
+    timezone: "America/Chicago",
+    tagline: "Show-Me State Local SEO Results",
+    description: "Showing Missouri businesses real local search results from Kansas City to St. Louis."
+  },
+  mt: {
+    code: "mt",
+    name: "Montana",
+    fullName: "State of Montana",
+    abbreviation: "MT",
+    cities: MT_CITIES,
+    activeCities: [],
+    mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6112334.665493672!2d-109.64879365!3d46.88457755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x536220c9c3a5e1b7%3A0x9a8b7c6d5e4abcd!2sMontana%2C%20USA!5e0!3m2!1sen!2s!4v1766842800000!5m2!1sen!2s",
+    population: "1.1 million",
+    timezone: "America/Denver",
+    tagline: "Treasure State Local Search Discovery",
+    description: "Discovering local search treasures for Montana businesses from Billings to Missoula."
+  },
+  ne: {
+    code: "ne",
+    name: "Nebraska",
+    fullName: "State of Nebraska",
+    abbreviation: "NE",
+    cities: NE_CITIES,
+    activeCities: [],
+    mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5912334.665493672!2d-99.90879365!3d41.50457755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x879a53b3d1e0f5c9%3A0x8a7b6c5d4e3abcd!2sNebraska%2C%20USA!5e0!3m2!1sen!2s!4v1766842900000!5m2!1sen!2s",
+    population: "2.0 million",
+    timezone: "America/Chicago",
+    tagline: "Cornhusker State Local SEO Harvest",
+    description: "Harvesting local search success for Nebraska businesses from Omaha to Lincoln."
+  },
+  nv: {
+    code: "nv",
+    name: "Nevada",
+    fullName: "State of Nevada",
+    abbreviation: "NV",
+    cities: NV_CITIES,
+    activeCities: [],
+    mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6512334.665493672!2d-116.92879365!3d38.80457755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809940b3e5f1d7ab%3A0x7a6b5c4d3e2abcd!2sNevada%2C%20USA!5e0!3m2!1sen!2s!4v1766843000000!5m2!1sen!2s",
+    population: "3.2 million",
+    timezone: "America/Los_Angeles",
+    tagline: "Silver State Local Search Jackpot",
+    description: "Hitting the local search jackpot for Nevada businesses from Las Vegas to Reno."
+  },
+  nh: {
+    code: "nh",
+    name: "New Hampshire",
+    fullName: "State of New Hampshire",
+    abbreviation: "NH",
+    cities: NH_CITIES,
+    activeCities: [],
+    mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2812334.665493672!2d-71.57879365!3d43.45457755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e17b2a6e5d3c1f%3A0x6a5b4c3d2e1abcd!2sNew%20Hampshire%2C%20USA!5e0!3m2!1sen!2s!4v1766843100000!5m2!1sen!2s",
+    population: "1.4 million",
+    timezone: "America/New_York",
+    tagline: "Granite State Local SEO Strength",
+    description: "Building rock-solid local search presence for New Hampshire businesses."
+  },
+  nm: {
+    code: "nm",
+    name: "New Mexico",
+    fullName: "State of New Mexico",
+    abbreviation: "NM",
+    cities: NM_CITIES,
+    activeCities: [],
+    mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6612334.665493672!2d-106.02879365!3d34.52457755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b0db5c3e1a5f7%3A0x5a4b3c2d1e0abcd!2sNew%20Mexico%2C%20USA!5e0!3m2!1sen!2s!4v1766843200000!5m2!1sen!2s",
+    population: "2.1 million",
+    timezone: "America/Denver",
+    tagline: "Land of Enchantment Local Search Magic",
+    description: "Creating enchanting local search results for New Mexico businesses."
+  },
+  nd: {
+    code: "nd",
+    name: "North Dakota",
+    fullName: "State of North Dakota",
+    abbreviation: "ND",
+    cities: ND_CITIES,
+    activeCities: [],
+    mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5312334.665493672!2d-100.47879365!3d47.53457755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52cf27a5d3e1b7c9%3A0x4a3b2c1d0e9abcd!2sNorth%20Dakota%2C%20USA!5e0!3m2!1sen!2s!4v1766843300000!5m2!1sen!2s",
+    population: "0.8 million",
+    timezone: "America/Chicago",
+    tagline: "Peace Garden State Local SEO Growth",
+    description: "Cultivating local search growth for North Dakota businesses from Fargo to Bismarck."
+  },
+  ok: {
+    code: "ok",
+    name: "Oklahoma",
+    fullName: "State of Oklahoma",
+    abbreviation: "OK",
+    cities: OK_CITIES,
+    activeCities: [],
+    mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6412334.665493672!2d-97.52879365!3d35.48457755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87ab41d5c3e1f7a9%3A0x3a2b1c0d9e8abcd!2sOklahoma%2C%20USA!5e0!3m2!1sen!2s!4v1766843400000!5m2!1sen!2s",
+    population: "4.0 million",
+    timezone: "America/Chicago",
+    tagline: "Sooner State Local Search Success",
+    description: "Achieving local search success sooner for Oklahoma businesses from OKC to Tulsa."
+  },
+  ri: {
+    code: "ri",
+    name: "Rhode Island",
+    fullName: "State of Rhode Island",
+    abbreviation: "RI",
+    cities: RI_CITIES,
+    activeCities: [],
+    mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d612334.665493672!2d-71.48879365!3d41.68457755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e444f4a5e1b7c3%3A0x2a1b0c9d8e7abcd!2sRhode%20Island%2C%20USA!5e0!3m2!1sen!2s!4v1766843500000!5m2!1sen!2s",
+    population: "1.1 million",
+    timezone: "America/New_York",
+    tagline: "Ocean State Local SEO Expertise",
+    description: "Navigating local search waters for Rhode Island businesses with expert precision."
+  },
+  sc: {
+    code: "sc",
+    name: "South Carolina",
+    fullName: "State of South Carolina",
+    abbreviation: "SC",
+    cities: SC_CITIES,
+    activeCities: [],
+    mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6712334.665493672!2d-80.94879365!3d33.84457755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88fe6a5c3e1d7b09%3A0x1a0b9c8d7e6abcd!2sSouth%20Carolina%2C%20USA!5e0!3m2!1sen!2s!4v1766843600000!5m2!1sen!2s",
+    population: "5.3 million",
+    timezone: "America/New_York",
+    tagline: "Palmetto State Local Search Victory",
+    description: "Winning local search battles for South Carolina businesses from Charleston to Greenville."
+  },
+  sd: {
+    code: "sd",
+    name: "South Dakota",
+    fullName: "State of South Dakota",
+    abbreviation: "SD",
+    cities: SD_CITIES,
+    activeCities: [],
+    mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5512334.665493672!2d-100.35879365!3d44.30457755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x878eb5a3c1e5f7d9%3A0x0a9b8c7d6e5abcd!2sSouth%20Dakota%2C%20USA!5e0!3m2!1sen!2s!4v1766843700000!5m2!1sen!2s",
+    population: "0.9 million",
+    timezone: "America/Chicago",
+    tagline: "Mount Rushmore State Local SEO Greatness",
+    description: "Carving out local search greatness for South Dakota businesses."
+  },
+  ut: {
+    code: "ut",
+    name: "Utah",
+    fullName: "State of Utah",
+    abbreviation: "UT",
+    cities: UT_CITIES,
+    activeCities: [],
+    mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6212334.665493672!2d-111.68879365!3d39.32457755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87520c3d5e1a7b99%3A0x9a8b7c6d5e4abcd!2sUtah%2C%20USA!5e0!3m2!1sen!2s!4v1766843800000!5m2!1sen!2s",
+    population: "3.4 million",
+    timezone: "America/Denver",
+    tagline: "Beehive State Local Search Industry",
+    description: "Building industrious local search success for Utah businesses from Salt Lake to St. George."
+  },
+  vt: {
+    code: "vt",
+    name: "Vermont",
+    fullName: "State of Vermont",
+    abbreviation: "VT",
+    cities: VT_CITIES,
+    activeCities: [],
+    mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2712334.665493672!2d-72.58879365!3d44.00457755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb5358c3e1d5a7b%3A0x8a7b6c5d4e3abcd!2sVermont%2C%20USA!5e0!3m2!1sen!2s!4v1766843900000!5m2!1sen!2s",
+    population: "0.6 million",
+    timezone: "America/New_York",
+    tagline: "Green Mountain State Local SEO Heights",
+    description: "Reaching new local search heights for Vermont businesses from Burlington to Montpelier."
+  },
+  wv: {
+    code: "wv",
+    name: "West Virginia",
+    fullName: "State of West Virginia",
+    abbreviation: "WV",
+    cities: WV_CITIES,
+    activeCities: [],
+    mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6112334.665493672!2d-80.46879365!3d38.92457755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x884a6c3e1d5a7b99%3A0x7a6b5c4d3e2abcd!2sWest%20Virginia%2C%20USA!5e0!3m2!1sen!2s!4v1766844000000!5m2!1sen!2s",
+    population: "1.8 million",
+    timezone: "America/New_York",
+    tagline: "Mountain State Local Search Peaks",
+    description: "Scaling local search peaks for West Virginia businesses from Charleston to Morgantown."
+  },
+  wi: {
+    code: "wi",
+    name: "Wisconsin",
+    fullName: "State of Wisconsin",
+    abbreviation: "WI",
+    cities: WI_CITIES,
+    activeCities: [],
+    mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5712334.665493672!2d-89.78879365!3d44.78457755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880259c5e1d7a3b9%3A0x6a5b4c3d2e1abcd!2sWisconsin%2C%20USA!5e0!3m2!1sen!2s!4v1766844100000!5m2!1sen!2s",
+    population: "5.9 million",
+    timezone: "America/Chicago",
+    tagline: "Badger State Local SEO Champions",
+    description: "Championing local search success for Wisconsin businesses from Milwaukee to Madison."
+  },
+  wy: {
+    code: "wy",
+    name: "Wyoming",
+    fullName: "State of Wyoming",
+    abbreviation: "WY",
+    cities: WY_CITIES,
+    activeCities: [],
+    mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5812334.665493672!2d-107.55879365!3d43.00457755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x875910c1e5d7a3b9%3A0x5a4b3c2d1e0abcd!2sWyoming%2C%20USA!5e0!3m2!1sen!2s!4v1766844200000!5m2!1sen!2s",
+    population: "0.6 million",
+    timezone: "America/Denver",
+    tagline: "Equality State Local Search Freedom",
+    description: "Freeing local search potential for Wyoming businesses from Cheyenne to Jackson."
   }
 };
 
