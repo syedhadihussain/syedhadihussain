@@ -766,13 +766,13 @@ export const translations: Translations = {
     de: "Gewinnen Sie Mehr Lokale Kunden in" 
   },
   "country.heroDescription": { 
-    en: "Every day, potential customers are typing your service into Google—but they're finding your competitors instead. I change that. Through strategic Google Business Profile optimization, local search rankings, and visibility in AI-powered search like ChatGPT, I connect your business with people who are ready to buy, book, or call right now.", 
-    ar: "كل يوم، العملاء المحتملون يكتبون خدمتك في Google—لكنهم يجدون منافسيك بدلاً منك. أنا أغير ذلك. من خلال تحسين ملف Google التجاري الاستراتيجي وتصنيفات البحث المحلي والظهور في البحث المدعوم بالذكاء الاصطناعي مثل ChatGPT، أربط عملك بالأشخاص المستعدين للشراء أو الحجز أو الاتصال الآن.", 
-    es: "Cada día, clientes potenciales escriben tu servicio en Google—pero encuentran a tus competidores. Yo cambio eso. A través de optimización estratégica de Google Business Profile, rankings de búsqueda local y visibilidad en búsqueda con IA como ChatGPT, conecto tu negocio con personas listas para comprar, reservar o llamar ahora mismo.", 
-    pt: "Todos os dias, clientes potenciais digitam seu serviço no Google—mas encontram seus concorrentes. Eu mudo isso. Através de otimização estratégica do Google Business Profile, rankings de busca local e visibilidade em busca com IA como ChatGPT, conecto seu negócio com pessoas prontas para comprar, agendar ou ligar agora mesmo.", 
-    fr: "Chaque jour, des clients potentiels tapent votre service sur Google—mais trouvent vos concurrents. Je change cela. Grâce à l'optimisation stratégique de Google Business Profile, aux classements de recherche locale et à la visibilité dans la recherche IA comme ChatGPT, je connecte votre entreprise avec des personnes prêtes à acheter, réserver ou appeler maintenant.", 
-    it: "Ogni giorno, potenziali clienti digitano il tuo servizio su Google—ma trovano i tuoi concorrenti. Io cambio questo. Attraverso l'ottimizzazione strategica del Profilo Google Business, classifiche di ricerca locale e visibilità nella ricerca IA come ChatGPT, connetto la tua attività con persone pronte a comprare, prenotare o chiamare adesso.", 
-    de: "Jeden Tag tippen potenzielle Kunden Ihren Service bei Google ein—aber sie finden Ihre Konkurrenten. Ich ändere das. Durch strategische Google Business Profil-Optimierung, lokale Such-Rankings und Sichtbarkeit in KI-gestützter Suche wie ChatGPT verbinde ich Ihr Unternehmen mit Menschen, die jetzt kaufen, buchen oder anrufen wollen." 
+    en: "Every day, potential customers are typing your service into Google, but they are finding your competitors instead. I change that. Through strategic Google Business Profile optimization, local search rankings, and visibility in AI-powered search like ChatGPT, I connect your business with people who are ready to buy, book, or call right now.", 
+    ar: "كل يوم، العملاء المحتملون يكتبون خدمتك في Google، لكنهم يجدون منافسيك بدلاً منك. أنا أغير ذلك. من خلال تحسين ملف Google التجاري الاستراتيجي وتصنيفات البحث المحلي والظهور في البحث المدعوم بالذكاء الاصطناعي مثل ChatGPT، أربط عملك بالأشخاص المستعدين للشراء أو الحجز أو الاتصال الآن.", 
+    es: "Cada día, clientes potenciales escriben tu servicio en Google, pero encuentran a tus competidores. Yo cambio eso. A través de optimización estratégica de Google Business Profile, rankings de búsqueda local y visibilidad en búsqueda con IA como ChatGPT, conecto tu negocio con personas listas para comprar, reservar o llamar ahora mismo.", 
+    pt: "Todos os dias, clientes potenciais digitam seu serviço no Google, mas encontram seus concorrentes. Eu mudo isso. Através de otimização estratégica do Google Business Profile, rankings de busca local e visibilidade em busca com IA como ChatGPT, conecto seu negócio com pessoas prontas para comprar, agendar ou ligar agora mesmo.", 
+    fr: "Chaque jour, des clients potentiels tapent votre service sur Google, mais trouvent vos concurrents. Je change cela. Grâce à l'optimisation stratégique de Google Business Profile, aux classements de recherche locale et à la visibilité dans la recherche IA comme ChatGPT, je connecte votre entreprise avec des personnes prêtes à acheter, réserver ou appeler maintenant.", 
+    it: "Ogni giorno, potenziali clienti digitano il tuo servizio su Google, ma trovano i tuoi concorrenti. Io cambio questo. Attraverso l'ottimizzazione strategica del Profilo Google Business, classifiche di ricerca locale e visibilità nella ricerca IA come ChatGPT, connetto la tua attività con persone pronte a comprare, prenotare o chiamare adesso.", 
+    de: "Jeden Tag tippen potenzielle Kunden Ihren Service bei Google ein, aber sie finden Ihre Konkurrenten. Ich ändere das. Durch strategische Google Business Profil-Optimierung, lokale Such-Rankings und Sichtbarkeit in KI-gestützter Suche wie ChatGPT verbinde ich Ihr Unternehmen mit Menschen, die jetzt kaufen, buchen oder anrufen wollen." 
   },
   "country.expertIn": { 
     en: "Seven years ago, I started helping a local restaurant get more dinner reservations. Today, I work with businesses across", 
@@ -784,13 +784,13 @@ export const translations: Translations = {
     de: "Vor sieben Jahren begann ich, einem lokalen Restaurant zu mehr Reservierungen zu verhelfen. Heute arbeite ich mit Unternehmen in" 
   },
   "country.aiReady": { 
-    en: "Search is changing fast. AI tools like ChatGPT now recommend local businesses—and I make sure you're one of them.", 
-    ar: "البحث يتغير بسرعة. أدوات الذكاء الاصطناعي مثل ChatGPT توصي الآن بالشركات المحلية—وأتأكد من أنك واحد منهم.", 
-    es: "La búsqueda está cambiando rápido. Las herramientas de IA como ChatGPT ahora recomiendan negocios locales—y me aseguro de que seas uno de ellos.", 
-    pt: "A busca está mudando rápido. Ferramentas de IA como ChatGPT agora recomendam empresas locais—e garanto que você seja uma delas.", 
-    fr: "La recherche change rapidement. Les outils IA comme ChatGPT recommandent maintenant des entreprises locales—et je m'assure que vous en faites partie.", 
-    it: "La ricerca sta cambiando velocemente. Gli strumenti IA come ChatGPT ora raccomandano attività locali—e mi assicuro che tu sia tra queste.", 
-    de: "Die Suche ändert sich schnell. KI-Tools wie ChatGPT empfehlen jetzt lokale Unternehmen—und ich sorge dafür, dass Sie dazugehören." 
+    en: "Search is changing fast. AI tools like ChatGPT now recommend local businesses, and I make sure you are one of them.", 
+    ar: "البحث يتغير بسرعة. أدوات الذكاء الاصطناعي مثل ChatGPT توصي الآن بالشركات المحلية، وأتأكد من أنك واحد منهم.", 
+    es: "La búsqueda está cambiando rápido. Las herramientas de IA como ChatGPT ahora recomiendan negocios locales, y me aseguro de que seas uno de ellos.", 
+    pt: "A busca está mudando rápido. Ferramentas de IA como ChatGPT agora recomendam empresas locais, e garanto que você seja uma delas.", 
+    fr: "La recherche change rapidement. Les outils IA comme ChatGPT recommandent maintenant des entreprises locales, et je m'assure que vous en faites partie.", 
+    it: "La ricerca sta cambiando velocemente. Gli strumenti IA come ChatGPT ora raccomandano attività locali, e mi assicuro che tu sia tra queste.", 
+    de: "Die Suche ändert sich schnell. KI-Tools wie ChatGPT empfehlen jetzt lokale Unternehmen, und ich sorge dafür, dass Sie dazugehören." 
   },
   "country.servingAllStates": { 
     en: "Working with businesses in all {count} states across", 
@@ -892,13 +892,13 @@ export const translations: Translations = {
     de: "Map Pack Sichtbarkeit die Konvertiert" 
   },
   "country.mapOptimizationDesc": { 
-    en: "The top 3 results in Google Maps get 93% of all clicks. Most agencies promise 'better rankings'—I focus specifically on getting you into those top positions and optimizing your listing so that clicks turn into calls, not just views.", 
-    ar: "أفضل 3 نتائج في خرائط Google تحصل على 93% من جميع النقرات. معظم الوكالات تعد بـ'تصنيفات أفضل'—أنا أركز تحديداً على إيصالك لتلك المراكز العليا وتحسين قائمتك حتى تتحول النقرات إلى مكالمات، وليس مجرد مشاهدات.", 
-    es: "Los 3 primeros resultados en Google Maps obtienen el 93% de todos los clics. La mayoría de agencias prometen 'mejores rankings'—yo me enfoco específicamente en ponerte en esas posiciones top y optimizar tu ficha para que los clics se conviertan en llamadas, no solo vistas.", 
-    pt: "Os 3 primeiros resultados no Google Maps recebem 93% de todos os cliques. A maioria das agências promete 'melhores rankings'—eu foco especificamente em colocá-lo nessas posições top e otimizar sua listagem para que cliques se tornem ligações, não apenas visualizações.", 
-    fr: "Les 3 premiers résultats sur Google Maps obtiennent 93% de tous les clics. La plupart des agences promettent 'de meilleurs classements'—je me concentre spécifiquement sur vous placer dans ces positions top et optimiser votre fiche pour que les clics deviennent des appels, pas seulement des vues.", 
-    it: "I primi 3 risultati su Google Maps ottengono il 93% di tutti i clic. La maggior parte delle agenzie promette 'classifiche migliori'—io mi concentro specificamente sul portarti in quelle posizioni top e ottimizzare la tua scheda in modo che i clic diventino chiamate, non solo visualizzazioni.", 
-    de: "Die Top 3 Ergebnisse in Google Maps erhalten 93% aller Klicks. Die meisten Agenturen versprechen 'bessere Rankings'—ich konzentriere mich speziell darauf, Sie in diese Top-Positionen zu bringen und Ihren Eintrag so zu optimieren, dass Klicks zu Anrufen werden, nicht nur zu Aufrufen." 
+    en: "The top 3 results in Google Maps get 93% of all clicks. Most agencies promise 'better rankings' but I focus specifically on getting you into those top positions and optimizing your listing so that clicks turn into calls, not just views.", 
+    ar: "أفضل 3 نتائج في خرائط Google تحصل على 93% من جميع النقرات. معظم الوكالات تعد بـ'تصنيفات أفضل' لكنني أركز تحديداً على إيصالك لتلك المراكز العليا وتحسين قائمتك حتى تتحول النقرات إلى مكالمات، وليس مجرد مشاهدات.", 
+    es: "Los 3 primeros resultados en Google Maps obtienen el 93% de todos los clics. La mayoría de agencias prometen 'mejores rankings' pero yo me enfoco específicamente en ponerte en esas posiciones top y optimizar tu ficha para que los clics se conviertan en llamadas, no solo vistas.", 
+    pt: "Os 3 primeiros resultados no Google Maps recebem 93% de todos os cliques. A maioria das agências promete 'melhores rankings' mas eu foco especificamente em colocá-lo nessas posições top e otimizar sua listagem para que cliques se tornem ligações, não apenas visualizações.", 
+    fr: "Les 3 premiers résultats sur Google Maps obtiennent 93% de tous les clics. La plupart des agences promettent 'de meilleurs classements' mais je me concentre spécifiquement sur vous placer dans ces positions top et optimiser votre fiche pour que les clics deviennent des appels, pas seulement des vues.", 
+    it: "I primi 3 risultati su Google Maps ottengono il 93% di tutti i clic. La maggior parte delle agenzie promette 'classifiche migliori' ma io mi concentro specificamente sul portarti in quelle posizioni top e ottimizzare la tua scheda in modo che i clic diventino chiamate, non solo visualizzazioni.", 
+    de: "Die Top 3 Ergebnisse in Google Maps erhalten 93% aller Klicks. Die meisten Agenturen versprechen 'bessere Rankings' aber ich konzentriere mich speziell darauf, Sie in diese Top-Positionen zu bringen und Ihren Eintrag so zu optimieren, dass Klicks zu Anrufen werden, nicht nur zu Aufrufen." 
   },
   "country.aiSearchReady": { 
     en: "Prepared for How People Search Tomorrow", 
@@ -910,13 +910,13 @@ export const translations: Translations = {
     de: "Vorbereitet auf die Suche von Morgen" 
   },
   "country.aiSearchReadyDesc": { 
-    en: "Ask ChatGPT for 'the best dentist near me' and watch what happens. AI-powered search is already here, and it's reshaping how customers find local businesses. My strategies don't just work for Google today—they position you for AI search tomorrow.", 
-    ar: "اسأل ChatGPT عن 'أفضل طبيب أسنان بالقرب مني' وشاهد ما يحدث. البحث المدعوم بالذكاء الاصطناعي موجود بالفعل، ويعيد تشكيل كيفية عثور العملاء على الشركات المحلية. استراتيجياتي لا تعمل فقط لـ Google اليوم—بل تضعك في موقع جيد للبحث بالذكاء الاصطناعي غداً.", 
-    es: "Pregunta a ChatGPT por 'el mejor dentista cerca de mí' y mira qué pasa. La búsqueda con IA ya está aquí, y está reformando cómo los clientes encuentran negocios locales. Mis estrategias no solo funcionan para Google hoy—te posicionan para la búsqueda IA de mañana.", 
-    pt: "Pergunte ao ChatGPT 'o melhor dentista perto de mim' e veja o que acontece. A busca com IA já está aqui, e está remodelando como os clientes encontram empresas locais. Minhas estratégias não funcionam apenas para o Google hoje—elas te posicionam para a busca IA de amanhã.", 
-    fr: "Demandez à ChatGPT 'le meilleur dentiste près de chez moi' et regardez ce qui se passe. La recherche IA est déjà là, et elle remodèle la façon dont les clients trouvent les entreprises locales. Mes stratégies ne fonctionnent pas seulement pour Google aujourd'hui—elles vous positionnent pour la recherche IA de demain.", 
-    it: "Chiedi a ChatGPT 'il miglior dentista vicino a me' e guarda cosa succede. La ricerca IA è già qui, e sta rimodellando il modo in cui i clienti trovano le attività locali. Le mie strategie non funzionano solo per Google oggi—ti posizionano per la ricerca IA di domani.", 
-    de: "Fragen Sie ChatGPT nach 'dem besten Zahnarzt in meiner Nähe' und sehen Sie, was passiert. KI-gestützte Suche ist bereits hier und verändert, wie Kunden lokale Unternehmen finden. Meine Strategien funktionieren nicht nur für Google heute—sie positionieren Sie für die KI-Suche von morgen." 
+    en: "Ask ChatGPT for 'the best dentist near me' and watch what happens. AI-powered search is already here, and it is reshaping how customers find local businesses. My strategies do not just work for Google today. They position you for AI search tomorrow.", 
+    ar: "اسأل ChatGPT عن 'أفضل طبيب أسنان بالقرب مني' وشاهد ما يحدث. البحث المدعوم بالذكاء الاصطناعي موجود بالفعل، ويعيد تشكيل كيفية عثور العملاء على الشركات المحلية. استراتيجياتي لا تعمل فقط لـ Google اليوم بل تضعك في موقع جيد للبحث بالذكاء الاصطناعي غداً.", 
+    es: "Pregunta a ChatGPT por 'el mejor dentista cerca de mí' y mira qué pasa. La búsqueda con IA ya está aquí, y está reformando cómo los clientes encuentran negocios locales. Mis estrategias no solo funcionan para Google hoy. Te posicionan para la búsqueda IA de mañana.", 
+    pt: "Pergunte ao ChatGPT 'o melhor dentista perto de mim' e veja o que acontece. A busca com IA já está aqui, e está remodelando como os clientes encontram empresas locais. Minhas estratégias não funcionam apenas para o Google hoje. Elas te posicionam para a busca IA de amanhã.", 
+    fr: "Demandez à ChatGPT 'le meilleur dentiste près de chez moi' et regardez ce qui se passe. La recherche IA est déjà là, et elle remodèle la façon dont les clients trouvent les entreprises locales. Mes stratégies ne fonctionnent pas seulement pour Google aujourd'hui. Elles vous positionnent pour la recherche IA de demain.", 
+    it: "Chiedi a ChatGPT 'il miglior dentista vicino a me' e guarda cosa succede. La ricerca IA è già qui, e sta rimodellando il modo in cui i clienti trovano le attività locali. Le mie strategie non funzionano solo per Google oggi. Ti posizionano per la ricerca IA di domani.", 
+    de: "Fragen Sie ChatGPT nach 'dem besten Zahnarzt in meiner Nähe' und sehen Sie, was passiert. KI-gestützte Suche ist bereits hier und verändert, wie Kunden lokale Unternehmen finden. Meine Strategien funktionieren nicht nur für Google heute. Sie positionieren Sie für die KI-Suche von morgen." 
   },
   "country.localSearchDominance": { 
     en: "Measurable Growth You Can Track", 
