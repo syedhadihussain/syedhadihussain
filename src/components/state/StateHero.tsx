@@ -1,9 +1,10 @@
-import { MapPin, Star, TrendingUp, Award, ArrowRight } from "lucide-react";
+import { MapPin, Star, TrendingUp, Award, ArrowRight, Eye, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { StateDetailData } from "@/lib/states-config";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
+import profilePhoto from "@/assets/profile-photo.png";
 
 interface StateHeroProps {
   state: StateDetailData;
@@ -15,18 +16,19 @@ const StateHero = ({ state, countryCode }: StateHeroProps) => {
 
   return (
     <section 
-      className="relative min-h-[90vh] flex items-center overflow-hidden pt-20"
+      className="relative min-h-screen flex items-center overflow-hidden pt-24 pb-16"
       aria-labelledby="state-hero-heading"
     >
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-background to-background" />
-      <div className="absolute top-20 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-1/4 w-80 h-80 bg-accent/10 rounded-full blur-3xl" />
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-primary/5 rounded-full blur-2xl" />
+      </div>
 
       <div className="container-narrow relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Content */}
-          <div className="space-y-8">
+          <div className="order-2 lg:order-1 space-y-6">
             <ScrollReveal>
               {/* Breadcrumb */}
               <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
@@ -64,15 +66,17 @@ const StateHero = ({ state, countryCode }: StateHeroProps) => {
 
             <ScrollReveal delay={0.3}>
               <div className="flex flex-wrap gap-4">
-                <Button asChild size="lg" className="group">
-                  <a href="#contact">
-                    {t("state.getFreeAudit")}
+                <Button asChild size="lg" className="glow group">
+                  <Link to={`/${language}/case-studies`}>
+                    <Eye className="w-4 h-4 mr-2" />
+                    View Portfolio
                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </a>
+                  </Link>
                 </Button>
-                <Button asChild variant="outline" size="lg">
-                  <a href="#services">
-                    {t("state.viewServices")}
+                <Button asChild variant="secondary" size="lg">
+                  <a href="https://calendly.com/syedhadihussain" target="_blank" rel="noopener noreferrer">
+                    <MessageCircle className="w-4 h-4 mr-2" />
+                    Book Consultation
                   </a>
                 </Button>
               </div>
@@ -106,27 +110,28 @@ const StateHero = ({ state, countryCode }: StateHeroProps) => {
             </ScrollReveal>
           </div>
 
-          {/* Map Embed */}
-          <ScrollReveal delay={0.2}>
+          {/* Image */}
+          <div className="order-1 lg:order-2 flex justify-center animate-scale-in" style={{ animationDelay: "0.3s" }}>
             <div className="relative">
-              <div className="relative bg-card rounded-2xl overflow-hidden shadow-2xl border border-border">
-                <iframe
-                  src={state.mapEmbed}
-                  width="100%"
-                  height="450"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title={`Map of ${state.name} - Local SEO Service Area`}
-                  className="w-full"
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl blur-2xl scale-110" />
+              <figure className="relative gradient-border rounded-2xl overflow-hidden">
+                <img
+                  src={profilePhoto}
+                  alt={`Local SEO Specialist serving businesses in ${state.name} - Syed Hadi Hussain`}
+                  className="w-full max-w-md rounded-2xl object-cover"
+                  loading="eager"
+                  fetchPriority="high"
+                  width="400"
+                  height="500"
                 />
+              </figure>
+              {/* Floating Badge */}
+              <div className="absolute -bottom-4 -right-4 glass rounded-xl p-4 glow-sm animate-fade-up" style={{ animationDelay: "0.6s" }}>
+                <div className="text-sm font-medium text-foreground">{t("country.localExpert")}</div>
+                <div className="text-xs text-muted-foreground">{state.name} {t("country.specialist")}</div>
               </div>
-              {/* Decorative Elements */}
-              <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-primary/20 rounded-full blur-2xl" />
-              <div className="absolute -top-4 -left-4 w-24 h-24 bg-accent/20 rounded-full blur-2xl" />
             </div>
-          </ScrollReveal>
+          </div>
         </div>
       </div>
     </section>
