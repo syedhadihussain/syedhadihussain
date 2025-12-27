@@ -150,7 +150,7 @@ export const getCountryPageCopy = (country: CountryData): CountryPageCopy => {
 
   const heroTitlePrefix = `${pick(heroTitlePrefixes, seed, 0)} in`;
 
-  const heroDescription = `Over the past seven years, I have partnered with businesses across 50+ industries—from healthcare and legal to hospitality and home services—helping them dominate local search in markets around the world. In ${country.name}, I bring that same proven expertise to your doorstep. The search landscape is evolving rapidly: AI tools like ChatGPT and Google's AI Overviews now influence how customers discover local businesses. My strategies ensure you stay ahead, visible wherever your next customer is searching.`;
+  const heroDescription = `In 2018, I started helping local businesses get more visibility and real leads on Google. Today, I work with service-based businesses worldwide, providing expert Local SEO Services, Google Maps optimization, and Google Business Profile management. Search is evolving fast, and I make sure your business ranks higher and turns searches into customers.`;
 
   const authorityTitle = `${pick(authorityTitlePrefixes, seed, 2)} in ${country.name}`;
 
