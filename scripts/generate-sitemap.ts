@@ -26,6 +26,15 @@ const HREFLANG_CODES: Record<SupportedLanguage, string> = {
   de: "de",
 };
 
+// All US state codes
+const US_STATE_CODES = [
+  "fl", "tx", "ny", "wa", "ca", "az", "ga", "nc", "oh", "pa",
+  "il", "nj", "mi", "co", "tn", "va", "in", "ks", "dc", "or",
+  "al", "ak", "ar", "ct", "de", "hi", "id", "ia", "ky", "la",
+  "me", "md", "ma", "mn", "ms", "mo", "mt", "ne", "nv", "nh",
+  "nm", "nd", "ok", "ri", "sc", "sd", "ut", "vt", "wv", "wi", "wy"
+] as const;
+
 // All routes in the application - KEEP IN SYNC WITH src/lib/i18n-config.ts
 const ALL_ROUTES = [
   "",                          // Homepage
@@ -46,6 +55,9 @@ const ALL_ROUTES = [
   "social-media",
   "privacy",
   "terms",
+  "us",                        // Country: United States
+  // All 51 US state routes
+  ...US_STATE_CODES.map(code => `us/${code}`),
 ] as const;
 
 // Helper functions
