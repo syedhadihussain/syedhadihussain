@@ -14,6 +14,12 @@ interface StateHeroProps {
 const StateHero = ({ state, countryCode }: StateHeroProps) => {
   const { t, language } = useLanguage();
 
+  // Get first 4 cities for dynamic content (avoid duplication across states)
+  const city1 = state.cities[0]?.name || "City 1";
+  const city2 = state.cities[1]?.name || "City 2";
+  const city3 = state.cities[2]?.name || "City 3";
+  const city4 = state.cities[3]?.name || "City 4";
+
   return (
     <section 
       className="relative min-h-screen flex items-center overflow-hidden pt-24 pb-16"
@@ -60,7 +66,13 @@ const StateHero = ({ state, countryCode }: StateHeroProps) => {
 
             <ScrollReveal delay={0.2}>
               <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
-                {t("state.heroDescription").replace("{state}", state.name).replace("{count}", String(state.cities.length))}
+                {t("state.heroDescription")
+                  .replace("{state}", state.name)
+                  .replace("{count}", String(state.cities.length))
+                  .replace("{city1}", city1)
+                  .replace("{city2}", city2)
+                  .replace("{city3}", city3)
+                  .replace("{city4}", city4)}
               </p>
             </ScrollReveal>
 
