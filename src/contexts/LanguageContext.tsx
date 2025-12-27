@@ -1874,6 +1874,33 @@ export const translations: Translations = {
     it: "Focus Soddisfazione", 
     de: "Zufriedenheitsfokus" 
   },
+  "state.servingBusinessesIn": { 
+    en: "Serving Businesses Across {state}", 
+    ar: "نخدم الشركات في جميع أنحاء {state}", 
+    es: "Sirviendo Negocios en Todo {state}", 
+    pt: "Atendendo Empresas em Todo {state}", 
+    fr: "Au Service des Entreprises dans Tout {state}", 
+    it: "Al Servizio delle Aziende in Tutto {state}", 
+    de: "Unternehmen in ganz {state} betreuen" 
+  },
+  "state.mapDescription": { 
+    en: "I provide local SEO services to businesses in all {count} cities across {state}. From major metropolitan areas to growing suburban communities, I help local businesses get found online.", 
+    ar: "أقدم خدمات SEO المحلية للشركات في جميع المدن الـ {count} عبر {state}. من المناطق الحضرية الكبرى إلى المجتمعات الضواحي المتنامية، أساعد الشركات المحلية على الظهور عبر الإنترنت.", 
+    es: "Ofrezco servicios de SEO local a negocios en las {count} ciudades de {state}. Desde áreas metropolitanas importantes hasta comunidades suburbanas en crecimiento, ayudo a negocios locales a ser encontrados en línea.", 
+    pt: "Ofereço serviços de SEO local para empresas em todas as {count} cidades de {state}. De grandes áreas metropolitanas a comunidades suburbanas em crescimento, ajudo empresas locais a serem encontradas online.", 
+    fr: "Je fournis des services SEO local aux entreprises dans les {count} villes de {state}. Des grandes zones métropolitaines aux communautés suburbaines en croissance, j'aide les entreprises locales à être trouvées en ligne.", 
+    it: "Offro servizi SEO locale alle aziende in tutte le {count} città di {state}. Dalle grandi aree metropolitane alle comunità suburbane in crescita, aiuto le attività locali a farsi trovare online.", 
+    de: "Ich biete lokale SEO-Dienste für Unternehmen in allen {count} Städten in {state} an. Von großen Metropolregionen bis hin zu wachsenden Vorstadtgemeinden helfe ich lokalen Unternehmen, online gefunden zu werden." 
+  },
+  "state.citiesWeServe": { 
+    en: "Cities We Serve in {state}", 
+    ar: "المدن التي نخدمها في {state}", 
+    es: "Ciudades que Servimos en {state}", 
+    pt: "Cidades que Atendemos em {state}", 
+    fr: "Villes que Nous Desservons en {state}", 
+    it: "Città che Serviamo in {state}", 
+    de: "Städte, die Wir in {state} Betreuen" 
+  },
 };
 
 interface LanguageContextType {

@@ -1,6 +1,4 @@
 import { Calendar, MessageCircle, Mail, MapPin } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { StateDetailData } from "@/lib/states-config";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
@@ -11,7 +9,7 @@ interface StateContactProps {
 }
 
 const StateContact = ({ state }: StateContactProps) => {
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
 
   return (
     <section id="contact" className="py-20 bg-primary/5" aria-labelledby="contact-heading">
@@ -83,22 +81,6 @@ const StateContact = ({ state }: StateContactProps) => {
                 <h3 className="font-semibold text-foreground mb-1">{t("contact.worldwide")}</h3>
                 <p className="text-sm text-muted-foreground">Worldwide</p>
               </div>
-            </div>
-          </ScrollReveal>
-
-          {/* CTA Buttons */}
-          <ScrollReveal animation="fade-up" delay={150}>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Button asChild size="lg" variant="outline">
-                <Link to={`/${language}/case-studies`}>
-                  View Portfolio
-                </Link>
-              </Button>
-              <Button asChild size="lg">
-                <a href="https://calendly.com/syedhadihussain" target="_blank" rel="noopener noreferrer">
-                  Book Consultation
-                </a>
-              </Button>
             </div>
           </ScrollReveal>
 

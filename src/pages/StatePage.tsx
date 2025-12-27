@@ -6,6 +6,7 @@ import Navigation from "@/components/portfolio/Navigation";
 import Footer from "@/components/portfolio/Footer";
 import StateSEOHead from "@/components/state/StateSEOHead";
 import StateHero from "@/components/state/StateHero";
+import StateMap from "@/components/state/StateMap";
 import StateCities from "@/components/state/StateCities";
 import StateServices from "@/components/state/StateServices";
 import StateWhyChoose from "@/components/state/StateWhyChoose";
@@ -62,6 +63,7 @@ const StatePage = () => {
         <Navigation />
         <main id="main-content" role="main">
           <StateHero state={state} countryCode={countryCode} />
+          <StateMap state={state} />
           <StateCities state={state} countryCode={countryCode} />
           <StateServices state={state} />
           <StateWhyChoose state={state} />
