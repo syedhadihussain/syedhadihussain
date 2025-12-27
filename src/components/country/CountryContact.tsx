@@ -82,11 +82,11 @@ const CountryContact = ({ country }: CountryContactProps) => {
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors flex-shrink-0">
                   <Mail className="w-6 h-6 text-primary" />
                 </div>
-                <div>
+                <div className="min-w-0 flex-1">
                   <h3 className="font-display font-semibold text-foreground mb-1">
                     Email
                   </h3>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-xs sm:text-sm text-muted-foreground break-all leading-relaxed">
                     contact.syedhadihussain@gmail.com
                   </p>
                 </div>

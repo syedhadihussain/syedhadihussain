@@ -68,12 +68,12 @@ const StateContact = ({ state }: StateContactProps) => {
                     href={option.href}
                     target={option.external ? "_blank" : undefined}
                     rel={option.external ? "noopener noreferrer" : undefined}
-                    className="flex items-center gap-3 p-4 bg-background rounded-xl border border-border hover:border-primary/50 hover:shadow-md transition-all duration-300 group"
+                    className="flex items-center gap-3 p-4 bg-background rounded-xl border border-border hover:border-primary/50 hover:shadow-md transition-all duration-300 group min-w-0"
                   >
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors flex-shrink-0">
                       <option.icon className="w-5 h-5 text-primary" />
                     </div>
-                    <span className="font-medium text-foreground">{t(option.labelKey)}</span>
+                    <span className="font-medium text-foreground truncate">{t(option.labelKey)}</span>
                   </a>
                 ))}
               </div>
