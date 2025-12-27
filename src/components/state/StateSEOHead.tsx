@@ -51,12 +51,17 @@ const StateSEOHead = ({ state, countryCode, title, description, keywords }: Stat
     }
   };
 
-  // Site navigation schema with cities
+  // Get only active cities for schema links
+  const activeCities = state.cities.filter(city => 
+    state.activeCities?.includes(city.code)
+  );
+
+  // Site navigation schema with active cities only
   const siteNavigationSchema = {
     "@context": "https://schema.org",
     "@type": "SiteNavigationElement",
     "name": `${state.name} Local SEO Cities`,
-    "hasPart": state.cities.slice(0, 20).map(city => ({
+    "hasPart": activeCities.map(city => ({
       "@type": "SiteNavigationElement",
       "name": `Local SEO ${city.name}`,
       "url": `${baseUrl}/${language}/${countryCode}/${state.code}/${city.code}/`
