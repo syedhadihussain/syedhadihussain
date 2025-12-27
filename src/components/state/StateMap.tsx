@@ -42,24 +42,6 @@ const StateMap = ({ state }: StateMapProps) => {
           </div>
         </ScrollReveal>
 
-        {/* Cities Legend */}
-        <ScrollReveal delay={0.3}>
-          <div className="mt-8 p-6 bg-muted/30 rounded-xl">
-            <h3 className="font-display text-lg font-semibold text-foreground mb-4 text-center">
-              {t("state.citiesWeServe").replace("{state}", state.name)}
-            </h3>
-            <div className="flex flex-wrap justify-center gap-2">
-              {state.cities.map((city) => (
-                <span 
-                  key={city.name}
-                  className="px-3 py-1 bg-background rounded-full text-sm text-muted-foreground border border-border"
-                >
-                  {city.name}
-                </span>
-              ))}
-            </div>
-          </div>
-        </ScrollReveal>
       </div>
     </section>
   );
