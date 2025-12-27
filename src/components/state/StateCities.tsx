@@ -12,6 +12,14 @@ interface StateCitiesProps {
 const StateCities = ({ state, countryCode }: StateCitiesProps) => {
   const { t, language } = useLanguage();
 
+  // Check if a city has an active page
+  const isCityActive = (cityCode: string) => {
+    return state.activeCities?.includes(cityCode) ?? false;
+  };
+
+  // Get only active cities for the major cities section
+  const activeCities = state.cities.filter(city => isCityActive(city.code));
+
   return (
     <section className="py-20 bg-muted/30" aria-labelledby="cities-heading">
       <div className="container-narrow">
@@ -38,23 +46,38 @@ const StateCities = ({ state, countryCode }: StateCitiesProps) => {
               </h3>
             </div>
             <div className="flex flex-wrap gap-2">
-              {state.cities.map((city) => (
-                <Link
-                  key={city.code}
-                  to={`/${language}/${countryCode}/${state.code}/${city.code}/`}
-                  className="px-3 py-1.5 bg-muted hover:bg-primary/10 rounded-full text-sm text-muted-foreground hover:text-primary border border-border hover:border-primary/30 transition-all duration-200"
-                >
-                  {city.name}
-                </Link>
-              ))}
+              {state.cities.map((city) => {
+                const isActive = isCityActive(city.code);
+                
+                if (isActive) {
+                  return (
+                    <Link
+                      key={city.code}
+                      to={`/${language}/${countryCode}/${state.code}/${city.code}/`}
+                      className="px-3 py-1.5 bg-muted hover:bg-primary/10 rounded-full text-sm text-muted-foreground hover:text-primary border border-border hover:border-primary/30 transition-all duration-200"
+                    >
+                      {city.name}
+                    </Link>
+                  );
+                }
+                
+                return (
+                  <span
+                    key={city.code}
+                    className="px-3 py-1.5 bg-muted rounded-full text-sm text-muted-foreground border border-border"
+                  >
+                    {city.name}
+                  </span>
+                );
+              })}
             </div>
           </div>
         </ScrollReveal>
 
-        {/* Major Cities Highlight */}
+        {/* Major Cities Highlight - Only active cities */}
         <ScrollReveal delay={0.3}>
           <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {state.cities.slice(0, 4).map((city, index) => (
+            {activeCities.slice(0, 4).map((city, index) => (
               <Link
                 key={city.code}
                 to={`/${language}/${countryCode}/${state.code}/${city.code}/`}
