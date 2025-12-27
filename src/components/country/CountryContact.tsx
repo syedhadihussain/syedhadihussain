@@ -34,7 +34,7 @@ const CountryContact = ({ country }: CountryContactProps) => {
           <div className="lg:col-span-1 space-y-4">
             <ScrollReveal delay={0.1}>
               <a
-                href="https://calendly.com/hadinetwork-localseo/30min"
+                href="https://calendly.com/syedhadihussain"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="glass p-6 rounded-xl flex items-start gap-4 hover:shadow-lg transition-all duration-300 group block"
@@ -55,7 +55,7 @@ const CountryContact = ({ country }: CountryContactProps) => {
 
             <ScrollReveal delay={0.2}>
               <a
-                href="https://wa.me/971561948712"
+                href="https://wa.me/+971523695036"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="glass p-6 rounded-xl flex items-start gap-4 hover:shadow-lg transition-all duration-300 group block"
@@ -76,7 +76,7 @@ const CountryContact = ({ country }: CountryContactProps) => {
 
             <ScrollReveal delay={0.3}>
               <a
-                href="mailto:hadinetwork@outlook.com"
+                href="mailto:contact.syedhadihussain@gmail.com"
                 className="glass p-6 rounded-xl flex items-start gap-4 hover:shadow-lg transition-all duration-300 group block"
               >
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors flex-shrink-0">
@@ -87,7 +87,7 @@ const CountryContact = ({ country }: CountryContactProps) => {
                     Email
                   </h3>
                   <p className="text-sm text-muted-foreground">
-                    hadinetwork@outlook.com
+                    contact.syedhadihussain@gmail.com
                   </p>
                 </div>
               </a>
