@@ -1,4 +1,4 @@
-import { ArrowRight, Calendar, MessageCircle, Mail, MapPin } from "lucide-react";
+import { Calendar, MessageCircle, Mail, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -13,113 +13,100 @@ interface StateContactProps {
 const StateContact = ({ state }: StateContactProps) => {
   const { t, language } = useLanguage();
 
-  const quickContactOptions = [
-    {
-      icon: Calendar,
-      labelKey: "contact.bookCall",
-      href: "https://calendly.com/syedhadihussain",
-      external: true,
-    },
-    {
-      icon: MessageCircle,
-      labelKey: "contact.whatsapp",
-      href: "https://wa.me/+971523695036",
-      external: true,
-    },
-    {
-      icon: Mail,
-      labelKey: "contact.email",
-      href: "mailto:contact.syedhadihussain@gmail.com",
-      external: true,
-    },
-    {
-      icon: MapPin,
-      labelKey: "contact.location",
-      href: "#",
-      external: false,
-    },
-  ];
-
   return (
     <section id="contact" className="py-20 bg-primary/5" aria-labelledby="contact-heading">
       <div className="container-narrow">
-        <div className="text-center mb-12">
-          <ScrollReveal>
-            <span className="text-primary font-medium text-sm uppercase tracking-wider">
-              {t("state.readyToGrow")}
-            </span>
-            <h2 id="contact-heading" className="font-display text-3xl sm:text-4xl font-bold text-foreground mt-2 mb-4">
-              {t("state.contactHeading").replace("{state}", state.name)}
-            </h2>
-            <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-              {t("state.contactDescription").replace("{state}", state.name)}
-            </p>
+        <div className="max-w-4xl mx-auto">
+          {/* Section Header */}
+          <ScrollReveal animation="fade-up">
+            <div className="text-center mb-12">
+              <span className="text-primary text-sm font-medium tracking-wider uppercase mb-4 block">
+                {t("state.readyToGrow")}
+              </span>
+              <h2 id="contact-heading" className="font-display text-3xl lg:text-4xl xl:text-5xl font-bold text-foreground mb-4">
+                {t("state.contactHeading").replace("{state}", state.name)}
+              </h2>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                {t("state.contactDescription").replace("{state}", state.name)}
+              </p>
+            </div>
           </ScrollReveal>
-        </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Left Column - Quick Contact & Stats */}
-          <div className="space-y-8">
-            <ScrollReveal>
-              <div className="grid sm:grid-cols-2 gap-4">
-                {quickContactOptions.map((option, index) => (
-                  <a
-                    key={index}
-                    href={option.href}
-                    target={option.external ? "_blank" : undefined}
-                    rel={option.external ? "noopener noreferrer" : undefined}
-                    className="flex items-center gap-3 p-4 bg-background rounded-xl border border-border hover:border-primary/50 hover:shadow-md transition-all duration-300 group min-w-0"
-                  >
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors flex-shrink-0">
-                      <option.icon className="w-5 h-5 text-primary" />
-                    </div>
-                    <span className="font-medium text-foreground truncate">{t(option.labelKey)}</span>
-                  </a>
-                ))}
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.1}>
-              <div className="p-6 bg-background rounded-xl border border-border">
-                <div className="grid grid-cols-3 gap-6 text-center">
-                  <div>
-                    <div className="text-2xl font-bold text-primary mb-1">24-48h</div>
-                    <div className="text-sm text-muted-foreground">{t("state.responseTime")}</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-primary mb-1">{t("state.freeLabel")}</div>
-                    <div className="text-sm text-muted-foreground">{t("state.initialAudit")}</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-primary mb-1">100%</div>
-                    <div className="text-sm text-muted-foreground">{t("state.satisfaction")}</div>
-                  </div>
+          {/* Quick Contact Cards */}
+          <ScrollReveal animation="fade-up" delay={100}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+              <a 
+                href="https://calendly.com/syedhadihussain" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="glass rounded-2xl p-6 text-center hover:bg-primary/10 transition-all duration-300 group"
+              >
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
+                  <Calendar className="w-6 h-6 text-primary" />
                 </div>
-              </div>
-            </ScrollReveal>
+                <h3 className="font-semibold text-foreground mb-1">{t("contact.bookCall")}</h3>
+                <p className="text-sm text-muted-foreground">{t("contact.scheduleMeeting")}</p>
+              </a>
 
-            <ScrollReveal delay={0.2}>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button asChild size="lg" className="group">
-                  <Link to={`/${language}/contact`}>
-                    {t("state.getStarted")}
-                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </Button>
-                <Button asChild variant="outline" size="lg">
-                  <Link to={`/${language}/pricing`}>
-                    {t("state.viewPricing")}
-                  </Link>
-                </Button>
-              </div>
-            </ScrollReveal>
-          </div>
+              <a 
+                href="https://wa.me/+971523695036" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="glass rounded-2xl p-6 text-center hover:bg-primary/10 transition-all duration-300 group"
+              >
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
+                  <MessageCircle className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="font-semibold text-foreground mb-1">{t("contact.whatsapp")}</h3>
+                <p className="text-sm text-muted-foreground">{t("contact.quickChat")}</p>
+              </a>
 
-          {/* Right Column - Contact Form */}
-          <ScrollReveal delay={0.3}>
-            <div className="bg-background rounded-2xl border border-border p-6 sm:p-8 shadow-sm">
-              <h3 className="font-display text-xl font-semibold text-foreground mb-6">
-                {t("contact.formTitle")}
+              <a 
+                href="mailto:contact.syedhadihussain@gmail.com"
+                className="glass rounded-2xl p-6 text-center hover:bg-primary/10 transition-all duration-300 group"
+              >
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
+                  <Mail className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="font-semibold text-foreground mb-1">{t("contact.email")}</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed break-all">
+                  contact.syedhadihussain
+                  <br />
+                  @gmail.com
+                </p>
+              </a>
+
+              <div className="glass rounded-2xl p-6 text-center">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <MapPin className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="font-semibold text-foreground mb-1">{t("contact.worldwide")}</h3>
+                <p className="text-sm text-muted-foreground">Worldwide</p>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* CTA Buttons */}
+          <ScrollReveal animation="fade-up" delay={150}>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+              <Button asChild size="lg" variant="outline">
+                <Link to={`/${language}/case-studies`}>
+                  View Portfolio
+                </Link>
+              </Button>
+              <Button asChild size="lg">
+                <a href="https://calendly.com/syedhadihussain" target="_blank" rel="noopener noreferrer">
+                  Book Consultation
+                </a>
+              </Button>
+            </div>
+          </ScrollReveal>
+
+          {/* Contact Form */}
+          <ScrollReveal animation="fade-up" delay={200}>
+            <div className="glass rounded-3xl p-6 sm:p-8 lg:p-10">
+              <h3 className="font-display text-xl lg:text-2xl font-bold text-foreground mb-6 text-center">
+                {t("contact.sendInquiry")}
               </h3>
               <ContactForm />
             </div>
