@@ -148,11 +148,7 @@ export const getCountryPageCopy = (country: CountryData): CountryPageCopy => {
   const areas = getCountryTopAreas(country, 3);
   const areasText = areas.length ? formatList(areas) : `major regions across ${country.name}`;
 
-  const heroTitlePrefix = (() => {
-    const base = pick(heroTitlePrefixes, seed, 0);
-    if (areas.length) return `${base} in ${areas[0]} and across`;
-    return `${base} across`;
-  })();
+  const heroTitlePrefix = `${pick(heroTitlePrefixes, seed, 0)} in`;
 
   const heroDescription = [
     pick(openers, seed, 1),
