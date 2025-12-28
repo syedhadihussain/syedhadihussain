@@ -1,4 +1,4 @@
-import { MapPin, Search, Star, TrendingUp, Bot, Globe, Building2, MessageSquare } from "lucide-react";
+import { MapPin, Search, Star, TrendingUp, Bot, Globe, Building2, MessageSquare, DollarSign, Users } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { CityDetailData } from "@/lib/cities-config";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
@@ -13,43 +13,43 @@ const CityServices = ({ city }: CityServicesProps) => {
   const services = [
     {
       icon: MapPin,
-      title: `Google Maps Optimization`,
-      description: `Dominate the ${city.name} map pack. I optimize your Google Business Profile to appear prominently when ${city.name} customers search for your services locally.`,
+      title: `Google Maps Domination for ${city.name}`,
+      description: `Your ${city.name} customers search Google Maps first. I'll get you into the coveted top 3 "Map Pack" results where 93% of local clicks happen. More visibility = more walk-ins and calls.`,
     },
     {
       icon: Bot,
-      title: `AI Search Readiness`,
-      description: `Prepare your ${city.name} business for the AI revolution. I ensure ChatGPT, Gemini, and other AI assistants recommend your business to ${city.name} searchers.`,
+      title: `AI Search Optimization`,
+      description: `ChatGPT and AI assistants are the NEW search. I ensure your ${city.name} business gets recommended when customers ask AI "best [service] near me." Stay ahead of competitors still stuck in 2020.`,
     },
     {
       icon: Building2,
-      title: `Local Citation Building`,
-      description: `Build authoritative citations across ${city.name} and ${city.stateName} directories. Consistent NAP (Name, Address, Phone) data boosts your local search credibility.`,
+      title: `${city.stateAbbreviation} Citation Authority`,
+      description: `I build your ${city.name} presence across 100+ authoritative directories. Consistent NAP data across the web tells Google you're THE trusted local business. Watch your rankings climb.`,
     },
     {
       icon: Star,
-      title: `Review Generation Strategy`,
-      description: `Grow your ${city.name} reputation with authentic 5-star reviews. I implement proven strategies that encourage happy customers to share their experiences.`,
+      title: `5-Star Review Machine`,
+      description: `Reviews drive decisions. I implement proven systems that turn your happy ${city.name} customers into enthusiastic reviewers. More 5-star reviews = more trust = more customers.`,
     },
     {
       icon: Search,
-      title: `Local Keyword Targeting`,
-      description: `Capture high-intent ${city.name} searches. I identify and target the exact keywords your ${city.name} customers use when looking for businesses like yours.`,
+      title: `High-Intent ${city.name} Keywords`,
+      description: `I find the exact search terms your ${city.name} customers use when they're ready to buy. No vanity keywords – just terms that put cash in your register.`,
     },
     {
       icon: TrendingUp,
-      title: `Competitor Analysis`,
-      description: `Outrank your ${city.name} competitors strategically. I analyze what's working for top-ranking ${city.name} businesses and develop strategies to surpass them.`,
+      title: `Competitor Destruction Strategy`,
+      description: `I analyze exactly what's working for your ${city.name} competitors, then build a strategy to outrank them. Why let them steal YOUR customers?`,
     },
     {
       icon: Globe,
-      title: `Local Link Building`,
-      description: `Earn authoritative backlinks from ${city.name} and ${city.stateAbbreviation} sources. Local links signal relevance to search engines and boost your ${city.name} rankings.`,
+      title: `Local Authority Link Building`,
+      description: `Earn powerful backlinks from ${city.name} and ${city.stateAbbreviation} sources that Google trusts. Local links = local relevance = higher rankings for every ${city.name} search.`,
     },
     {
       icon: MessageSquare,
-      title: `Voice Search Optimization`,
-      description: `Be the answer to "${city.name}" voice searches. I optimize your content for natural language queries used with Siri, Alexa, and Google Assistant.`,
+      title: `Voice Search Capture`,
+      description: `"Hey Siri, find a [your service] in ${city.name}." I optimize your content so you're THE answer to voice searches. 50%+ of searches are voice – don't miss these customers.`,
     },
   ];
 
@@ -59,14 +59,14 @@ const CityServices = ({ city }: CityServicesProps) => {
         <ScrollReveal>
           <div className="text-center mb-16">
             <span className="text-primary text-sm font-medium uppercase tracking-wider">
-              {city.name} SEO Services
+              Local SEO Services in {city.name}
             </span>
             <h2 id="city-services-heading" className="font-display text-3xl md:text-4xl font-bold text-foreground mt-4 mb-6">
-              Comprehensive Local SEO for {city.name} Businesses
+              Complete Local SEO Solutions That Put {city.name} Customers at Your Door
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              From Google Maps dominance to AI search readiness, I provide {city.name}, {city.stateAbbreviation} businesses 
-              with everything needed to capture more local customers and outperform competitors.
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+              Stop watching competitors take YOUR customers. I deliver full-spectrum local SEO for {city.name}, {city.stateAbbreviation} businesses – 
+              from Google Maps mastery to AI search domination. Every strategy is designed for one thing: <strong>more customers, more revenue</strong>.
             </p>
           </div>
         </ScrollReveal>
@@ -74,8 +74,8 @@ const CityServices = ({ city }: CityServicesProps) => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
             <ScrollReveal key={service.title} delay={index * 0.1}>
-              <div className="group p-6 bg-card rounded-xl border border-border hover:border-primary/30 transition-all duration-300 h-full">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+              <div className="group p-6 bg-card rounded-xl border border-border hover:border-primary/30 hover:shadow-xl transition-all duration-300 h-full">
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 group-hover:scale-110 transition-all">
                   <service.icon className="w-6 h-6 text-primary" />
                 </div>
                 <h3 className="font-display text-lg font-semibold text-foreground mb-3">
@@ -92,20 +92,23 @@ const CityServices = ({ city }: CityServicesProps) => {
         {/* Industries Served */}
         <ScrollReveal delay={0.4}>
           <div className="mt-16 text-center">
-            <h3 className="font-display text-xl font-semibold text-foreground mb-6">
-              Industries I Serve in {city.name}
+            <h3 className="font-display text-xl font-semibold text-foreground mb-2">
+              Local SEO for {city.name} Industries I've Mastered
             </h3>
+            <p className="text-muted-foreground mb-6">
+              Whatever your business, I've helped similar {city.name} companies dominate local search:
+            </p>
             <div className="flex flex-wrap justify-center gap-3">
               {city.industries.map((industry, index) => (
                 <span 
                   key={index}
-                  className="px-4 py-2 bg-primary/10 text-primary text-sm rounded-full border border-primary/20"
+                  className="px-4 py-2 bg-primary/10 text-primary text-sm rounded-full border border-primary/20 hover:bg-primary/20 transition-colors cursor-default"
                 >
                   {industry}
                 </span>
               ))}
-              <span className="px-4 py-2 bg-muted text-muted-foreground text-sm rounded-full border border-border">
-                + 46 More Industries
+              <span className="px-4 py-2 bg-muted text-muted-foreground text-sm rounded-full border border-border font-medium">
+                + 46 More {city.name} Industries
               </span>
             </div>
           </div>

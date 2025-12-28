@@ -15,62 +15,62 @@ export interface CityDetailData {
   industries: string[];
 }
 
-// Generate unique content for each city based on its characteristics
+// Generate unique, client-catching content for each city based on its characteristics
 const getCityUniqueContent = (cityName: string, stateName: string, stateAbbreviation: string, cityIndex: number): { tagline: string; description: string; uniqueFeatures: string[]; industries: string[] } => {
-  // Diverse taglines that vary by city position to ensure uniqueness
+  // Client-catching taglines optimized for "local SEO" keyword
   const taglines = [
-    `Dominate Local Search in ${cityName}`,
-    `${cityName}'s Premier Local SEO Expert`,
-    `Rank Higher in ${cityName} - Guaranteed Results`,
-    `Transform Your ${cityName} Business Visibility`,
-    `${cityName} Local Search Domination`,
-    `Your ${cityName} SEO Growth Partner`,
-    `${cityName} Maps & AI Search Specialist`,
-    `Proven Local SEO Success in ${cityName}`,
-    `${cityName} Business Growth Through SEO`,
-    `Expert Local Optimization for ${cityName}`,
+    `#1 Local SEO Expert in ${cityName} – Get Found, Get Customers`,
+    `Local SEO ${cityName}: Rank #1 on Google Maps & AI Search`,
+    `${cityName} Local SEO That Delivers Real Customers, Not Just Rankings`,
+    `Stop Losing Customers – Local SEO ${cityName} That Actually Works`,
+    `Local SEO ${cityName}, ${stateAbbreviation}: From Invisible to #1 in 90 Days`,
+    `${cityName}'s Most Trusted Local SEO Specialist – Proven Results`,
+    `Local SEO ${cityName}: Get More Calls, More Customers, More Revenue`,
+    `Dominate ${cityName} Search Results with Expert Local SEO Services`,
+    `${cityName} Local SEO Expert: Your Shortcut to Page 1 Rankings`,
+    `Unlock ${cityName} Customers with Strategic Local SEO That Converts`,
   ];
 
-  // Unique descriptions with varied phrasing
+  // Compelling descriptions that build trust and urgency
   const descriptions = [
-    `With 7+ years of experience across 50+ industries, I've helped businesses in ${cityName}, ${stateAbbreviation} achieve top rankings on Google Maps and AI-powered search platforms. My data-driven approach delivers measurable results that translate to more customers and revenue.`,
-    `As your dedicated ${cityName} local SEO specialist, I combine deep market knowledge with proven optimization strategies. From Google Business Profile mastery to AI search readiness, I ensure your ${cityName} business stands out in every local search.`,
-    `Serving ${cityName} businesses with comprehensive local SEO solutions that drive real growth. My expertise spans Google Maps optimization, citation building, and preparing your business for the AI search revolution happening right now.`,
-    `Your ${cityName}, ${stateAbbreviation} business deserves visibility that matches your quality. I deliver strategic local SEO that puts you ahead of competitors, attracting customers actively searching for your services in ${cityName}.`,
-    `Transform your ${cityName} business presence with battle-tested local SEO strategies. I've helped hundreds of businesses across ${stateName} achieve sustainable growth through smart search optimization and AI readiness.`,
-    `${cityName} businesses trust me to deliver local SEO results that matter. My comprehensive approach covers every aspect of local search, from map pack rankings to voice search optimization and AI assistant visibility.`,
-    `As a ${cityName} local SEO expert, I understand the unique competitive landscape of ${stateAbbreviation} markets. My strategies are tailored to help your business capture more local customers and outrank competitors.`,
-    `I specialize in helping ${cityName} businesses dominate local search results. My proven methodology combines technical SEO excellence with local market expertise to deliver exceptional ROI.`,
-    `For ${cityName} businesses seeking real growth, I offer comprehensive local SEO services that go beyond rankings. I focus on driving qualified leads and converting local searches into paying customers.`,
-    `Elevate your ${cityName} business with expert local SEO that delivers. From Google Maps to AI assistants, I ensure your business is found by customers searching in ${cityName} and throughout ${stateName}.`,
+    `Tired of watching ${cityName} competitors steal your customers? I've spent 7 years mastering local SEO across 50+ industries, and I know exactly how to put YOUR business at the top of Google Maps, local search results, and AI assistants like ChatGPT. My ${cityName} clients see an average 150% increase in local visibility within 90 days – with a strategy built specifically for the ${stateAbbreviation} market.`,
+    `Your ${cityName} customers are searching for you right now. Are they finding you – or your competitors? As your dedicated ${cityName} local SEO specialist, I combine data-driven strategies with deep ${stateName} market expertise to ensure your business appears first when it matters most. Over 50 industries served. 7+ years of proven results. Zero guesswork.`,
+    `In ${cityName}'s competitive market, good enough isn't good enough. I deliver local SEO strategies that don't just improve rankings – they put paying customers through your door. From Google Business Profile domination to AI search optimization, I give ${cityName} businesses the unfair advantage they deserve.`,
+    `Every day without proper local SEO costs your ${cityName} business real money. I've helped businesses across ${stateName} capture customers they didn't know they were losing. My comprehensive approach covers Google Maps, voice search, citation building, and the AI-powered search revolution that's changing how ${cityName} customers find local businesses.`,
+    `What if every ${cityName} customer searching for your services found YOU first? That's not a dream – it's what I deliver. With battle-tested strategies refined across 50+ industries and 7 years of experience, I transform invisible ${cityName} businesses into local market leaders. Ready to stop guessing and start growing?`,
+    `${cityName} businesses trust me because I deliver what others promise. Real rankings. Real calls. Real customers. My local SEO approach is built for the way people search today – including AI assistants, voice search, and Google Maps. If you're ready to own your ${cityName} market, let's talk.`,
+    `Most ${cityName} businesses are leaving money on the table with outdated SEO tactics. I bring fresh, proven strategies that capture customers across Google, AI platforms, and voice search. Specialized expertise in ${stateAbbreviation} markets. 50+ industries served. 150% average visibility increase. Results that matter.`,
+    `Your ${cityName} customers are looking for solutions – make sure they find you. I combine technical SEO excellence with deep local market knowledge to put your business in front of ready-to-buy customers. From neighborhood targeting to AI optimization, I cover every angle of modern local search.`,
+    `In 7 years of helping ${stateName} businesses grow, I've learned what works in local SEO – and what doesn't. I bring that expertise to your ${cityName} business with strategies tailored to your industry, your market, and your goals. No cookie-cutter approaches. No wasted time. Just results.`,
+    `${cityName} is competitive. Your local SEO strategy should be too. I help businesses like yours outrank, outperform, and outgrow the competition with comprehensive local search optimization. Google Maps. AI assistants. Voice search. Review management. I handle it all so you can focus on serving customers.`,
   ];
 
-  // Unique feature sets that vary by city
+  // Feature sets emphasizing results and benefits
   const featureSets = [
-    ["Google Maps Dominance", "AI Search Optimization", "Local Citation Building", "Review Generation Strategy"],
-    ["Hyper-Local Targeting", "Competitor Analysis", "Voice Search Ready", "Mobile-First Approach"],
-    ["Google Business Mastery", "Multi-Location SEO", "Local Link Building", "Conversion Optimization"],
-    ["Map Pack Ranking", "Schema Markup Expert", "Local Content Strategy", "Performance Tracking"],
-    ["Neighborhood Targeting", "Industry-Specific SEO", "Reputation Management", "Analytics Dashboard"],
-    ["Local Keyword Research", "On-Page Optimization", "GMB Post Strategy", "Lead Attribution"],
-    ["Service Area Optimization", "Photo Optimization", "Q&A Management", "Category Optimization"],
-    ["Local Landing Pages", "NAP Consistency", "Review Response Strategy", "Rank Monitoring"],
-    ["Geo-Targeted Campaigns", "Local Authority Building", "Search Console Analysis", "ROI Reporting"],
-    ["Community Engagement SEO", "Event Optimization", "Product Listings", "Service Showcasing"],
+    ["Google Maps #1 Rankings", "AI Search Domination", "150% More Visibility", "Guaranteed Results"],
+    ["Map Pack Mastery", "ChatGPT Optimization", "More Phone Calls", "ROI-Focused Strategies"],
+    ["Top 3 Local Rankings", "Voice Search Ready", "Competitor Crushing", "Monthly Growth Reports"],
+    ["5-Star Review Strategy", "Local Link Authority", "Neighborhood Targeting", "Conversion Tracking"],
+    ["GBP Optimization Pro", "AI Assistant Visibility", "Citation Dominance", "Lead Attribution"],
+    ["Hyperlocal Targeting", "Multi-Platform SEO", "Review Generation", "Transparent Reporting"],
+    ["Schema Markup Expert", "Mobile-First Rankings", "Local Content Strategy", "24/7 Rank Monitoring"],
+    ["Service Area Domination", "Photo Optimization", "Q&A Management", "Category Maximization"],
+    ["Geo-Targeted Campaigns", "Authority Building", "Search Console Mastery", "Revenue Tracking"],
+    ["Community SEO", "Event Optimization", "Product Listings", "Service Showcasing"],
   ];
 
   // Industry focus varies by city to add uniqueness
   const industrySets = [
-    ["Restaurants & Food Service", "Home Services", "Medical & Dental", "Legal Services"],
-    ["Retail & Shopping", "Automotive", "Real Estate", "Fitness & Wellness"],
-    ["Professional Services", "Construction", "Beauty & Spa", "Pet Services"],
-    ["Healthcare", "Financial Services", "Education", "Entertainment"],
-    ["Hospitality", "Manufacturing", "Technology", "Non-Profit"],
-    ["E-Commerce Local", "Travel & Tourism", "Sports & Recreation", "Arts & Culture"],
-    ["Senior Care", "Childcare", "Wedding Services", "Event Planning"],
-    ["Insurance", "Accounting", "Marketing Agencies", "Consulting"],
-    ["Plumbing & HVAC", "Electrical", "Landscaping", "Cleaning Services"],
-    ["Roofing", "Painting", "Moving Services", "Storage Solutions"],
+    ["Restaurants & Bars", "HVAC & Plumbing", "Dental Practices", "Personal Injury Law"],
+    ["Retail Stores", "Auto Repair", "Real Estate Agents", "Gyms & Fitness"],
+    ["Accountants & CPAs", "Roofing & Construction", "Med Spas & Salons", "Veterinarians"],
+    ["Urgent Care & Clinics", "Financial Advisors", "Tutoring & Education", "Event Venues"],
+    ["Hotels & Resorts", "Manufacturing", "IT Services", "Churches & Non-Profits"],
+    ["Online Retailers", "Travel Agencies", "Golf & Recreation", "Art Galleries"],
+    ["Senior Living", "Daycares", "Wedding Planners", "Caterers"],
+    ["Insurance Agents", "Tax Preparers", "Digital Agencies", "Business Consultants"],
+    ["Plumbers", "Electricians", "Lawn Care", "Maid Services"],
+    ["Roofers", "Painters", "Movers", "Self-Storage"],
   ];
 
   const index = cityIndex % 10;
