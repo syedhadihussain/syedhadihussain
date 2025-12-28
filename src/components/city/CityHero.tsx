@@ -35,11 +35,11 @@ const CityHero = ({ city, state }: CityHeroProps) => {
               {/* Breadcrumb */}
               <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-muted-foreground mb-4 flex-wrap">
                 <Link to={`/${language}/`} className="hover:text-primary transition-colors">
-                  Home
+                  {t("cityHero.home") || "Home"}
                 </Link>
                 <span>/</span>
                 <Link to={`/${language}/us/`} className="hover:text-primary transition-colors">
-                  United States
+                  {t("cityHero.unitedStates") || "United States"}
                 </Link>
                 <span>/</span>
                 <Link to={`/${language}/us/${state.code}/`} className="hover:text-primary transition-colors">
@@ -53,7 +53,7 @@ const CityHero = ({ city, state }: CityHeroProps) => {
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full">
                 <Zap className="w-4 h-4 text-primary animate-pulse" />
                 <span className="text-sm font-medium text-primary">
-                  {city.name} Businesses: Stop Losing Customers to Competitors
+                  {t(`${city.name} Businesses: Stop Losing Customers to Competitors`)}
                 </span>
               </div>
             </ScrollReveal>
@@ -87,14 +87,14 @@ const CityHero = ({ city, state }: CityHeroProps) => {
                 <Button asChild size="lg" className="glow group">
                   <a href="https://calendly.com/syedhadihussain" target="_blank" rel="noopener noreferrer">
                     <Phone className="w-4 h-4 mr-2" />
-                    Get Your FREE {city.name} SEO Audit
+                    {t(`Get Your FREE ${city.name} SEO Audit`)}
                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </a>
                 </Button>
                 <Button asChild variant="secondary" size="lg">
                   <Link to={`/${language}/case-studies`}>
                     <Eye className="w-4 h-4 mr-2" />
-                    See Real Results
+                    {t("See Real Results")}
                   </Link>
                 </Button>
               </div>
@@ -108,21 +108,21 @@ const CityHero = ({ city, state }: CityHeroProps) => {
                     <Star className="w-4 h-4 fill-primary" />
                     <span className="font-bold text-xl text-foreground">7+</span>
                   </div>
-                  <span className="text-xs text-muted-foreground">Years Proven Results</span>
+                  <span className="text-xs text-muted-foreground">{t("Years Proven Results")}</span>
                 </div>
                 <div className="text-center">
                   <div className="flex items-center justify-center gap-1 text-primary mb-1">
                     <TrendingUp className="w-4 h-4" />
                     <span className="font-bold text-xl text-foreground">150%+</span>
                   </div>
-                  <span className="text-xs text-muted-foreground">Average Visibility Boost</span>
+                  <span className="text-xs text-muted-foreground">{t("Average Visibility Boost")}</span>
                 </div>
                 <div className="text-center">
                   <div className="flex items-center justify-center gap-1 text-primary mb-1">
                     <Award className="w-4 h-4" />
                     <span className="font-bold text-xl text-foreground">50+</span>
                   </div>
-                  <span className="text-xs text-muted-foreground">Industries Mastered</span>
+                  <span className="text-xs text-muted-foreground">{t("Industries Mastered")}</span>
                 </div>
               </div>
             </ScrollReveal>
@@ -145,8 +145,8 @@ const CityHero = ({ city, state }: CityHeroProps) => {
               </figure>
               {/* Floating Badge */}
               <div className="absolute -bottom-4 -right-4 glass rounded-xl p-4 glow-sm animate-fade-up" style={{ animationDelay: "0.6s" }}>
-                <div className="text-sm font-bold text-foreground">Your {city.name} Local SEO Expert</div>
-                <div className="text-xs text-muted-foreground">Trusted by {state.name} Businesses</div>
+                <div className="text-sm font-bold text-foreground">{t(`Your ${city.name} Local SEO Expert`)}</div>
+                <div className="text-xs text-muted-foreground">{t(`Trusted by ${state.name} Businesses`)}</div>
               </div>
             </div>
           </div>
