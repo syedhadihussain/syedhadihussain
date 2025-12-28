@@ -147,20 +147,16 @@ export const ALL_GERMANY_STATES: string[] = [
   "Saarland", "Bremen"
 ];
 
-// UK Regions
+// UK Regions (4 constituent countries)
 export const UK_REGIONS: StateData[] = [
-  { name: "London", code: "ldn", coords: [51.5074, -0.1278] },
-  { name: "Manchester", code: "man", coords: [53.4808, -2.2426] },
-  { name: "Birmingham", code: "brm", coords: [52.4862, -1.8904] },
-  { name: "Scotland", code: "sct", coords: [56.4907, -4.2026] },
-  { name: "Wales", code: "wls", coords: [52.1307, -3.7837] },
-  { name: "Northern Ireland", code: "nir", coords: [54.7877, -6.4923] }
+  { name: "England", code: "england", coords: [52.5310, -1.2650] },
+  { name: "Scotland", code: "scotland", coords: [56.4907, -4.2026] },
+  { name: "Wales", code: "wales", coords: [52.1307, -3.7837] },
+  { name: "Northern Ireland", code: "northern-ireland", coords: [54.7877, -6.4923] }
 ];
 
 export const ALL_UK_REGIONS: string[] = [
-  "London", "South East", "South West", "East of England", "West Midlands",
-  "East Midlands", "Yorkshire and the Humber", "North West", "North East",
-  "Scotland", "Wales", "Northern Ireland"
+  "England", "Scotland", "Wales", "Northern Ireland"
 ];
 
 // UAE Emirates
@@ -715,7 +711,7 @@ export const COUNTRIES: Record<string, CountryData> = {
     name: "United Kingdom",
     localName: "United Kingdom",
     flag: "🇬🇧",
-    statesCount: 12,
+    statesCount: 4,
     states: UK_REGIONS,
     mapCenter: [55.3781, -3.4360],
     mapZoom: 5,
