@@ -13,43 +13,43 @@ const CityServices = ({ city }: CityServicesProps) => {
   const services = [
     {
       icon: MapPin,
-      title: t(`Google Maps Domination for ${city.name}`),
-      description: t(`Your ${city.name} customers search Google Maps first. I'll get you into the coveted top 3 "Map Pack" results where 93% of local clicks happen. More visibility = more walk-ins and calls.`),
+      titleKey: "Google Maps Domination",
+      descKey: "Your customers search Google Maps first. Get into the coveted top 3 Map Pack results where 93% of local clicks happen. More visibility means more walk-ins and calls.",
     },
     {
       icon: Bot,
-      title: t("AI Search Optimization"),
-      description: t(`ChatGPT and AI assistants are the NEW search. I ensure your ${city.name} business gets recommended when customers ask AI "best [service] near me." Stay ahead of competitors still stuck in 2020.`),
+      titleKey: "AI Search Optimization",
+      descKey: "ChatGPT and AI assistants are the NEW search. I ensure your business gets recommended when customers ask AI for the best service near them. Stay ahead of competitors still stuck in 2020.",
     },
     {
       icon: Building2,
-      title: t(`${city.stateAbbreviation} Citation Authority`),
-      description: t(`I build your ${city.name} presence across 100+ authoritative directories. Consistent NAP data across the web tells Google you're THE trusted local business. Watch your rankings climb.`),
+      titleKey: "Citation Authority Building",
+      descKey: "I build your presence across 100+ authoritative directories. Consistent NAP data across the web tells Google you are THE trusted local business. Watch your rankings climb.",
     },
     {
       icon: Star,
-      title: t("5-Star Review Machine"),
-      description: t(`Reviews drive decisions. I implement proven systems that turn your happy ${city.name} customers into enthusiastic reviewers. More 5-star reviews = more trust = more customers.`),
+      titleKey: "5-Star Review Machine",
+      descKey: "Reviews drive decisions. I implement proven systems that turn your happy customers into enthusiastic reviewers. More 5-star reviews means more trust and more customers.",
     },
     {
       icon: Search,
-      title: t(`High-Intent ${city.name} Keywords`),
-      description: t(`I find the exact search terms your ${city.name} customers use when they're ready to buy. No vanity keywords – just terms that put cash in your register.`),
+      titleKey: "High-Intent Keywords",
+      descKey: "I find the exact search terms your customers use when they are ready to buy. No vanity keywords, just terms that put cash in your register.",
     },
     {
       icon: TrendingUp,
-      title: t("Competitor Destruction Strategy"),
-      description: t(`I analyze exactly what's working for your ${city.name} competitors, then build a strategy to outrank them. Why let them steal YOUR customers?`),
+      titleKey: "Competitor Destruction Strategy",
+      descKey: "I analyze exactly what is working for your competitors, then build a strategy to outrank them. Why let them steal YOUR customers?",
     },
     {
       icon: Globe,
-      title: t("Local Authority Link Building"),
-      description: t(`Earn powerful backlinks from ${city.name} and ${city.stateAbbreviation} sources that Google trusts. Local links = local relevance = higher rankings for every ${city.name} search.`),
+      titleKey: "Local Authority Link Building",
+      descKey: "Earn powerful backlinks from local sources that Google trusts. Local links mean local relevance and higher rankings for every local search.",
     },
     {
       icon: MessageSquare,
-      title: t("Voice Search Capture"),
-      description: t(`"Hey Siri, find a [your service] in ${city.name}." I optimize your content so you're THE answer to voice searches. 50%+ of searches are voice – don't miss these customers.`),
+      titleKey: "Voice Search Capture",
+      descKey: "Hey Siri, find a service near me. I optimize your content so you are THE answer to voice searches. Over 50% of searches are voice, do not miss these customers.",
     },
   ];
 
@@ -59,29 +59,29 @@ const CityServices = ({ city }: CityServicesProps) => {
         <ScrollReveal>
           <div className="text-center mb-16">
             <span className="text-primary text-sm font-medium uppercase tracking-wider">
-              {t(`Local SEO Services in ${city.name}`)}
+              {t("Local SEO Services in")} {city.name}
             </span>
             <h2 id="city-services-heading" className="font-display text-3xl md:text-4xl font-bold text-foreground mt-4 mb-6">
-              {t(`Complete Local SEO Solutions That Put ${city.name} Customers at Your Door`)}
+              {t("Complete Local SEO Solutions That Put")} {city.name} {t("Customers at Your Door")}
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              {t(`Stop watching competitors take YOUR customers. I deliver full-spectrum local SEO for ${city.name}, ${city.stateAbbreviation} businesses – from Google Maps mastery to AI search domination. Every strategy is designed for one thing:`)} <strong>{t("more customers, more revenue")}</strong>.
+              {t("Stop watching competitors take YOUR customers. I deliver full-spectrum local SEO for")} {city.name}, {city.stateAbbreviation} {t("businesses from Google Maps mastery to AI search domination. Every strategy is designed for one thing:")} <strong>{t("more customers, more revenue")}</strong>.
             </p>
           </div>
         </ScrollReveal>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
-            <ScrollReveal key={service.title} delay={index * 0.1}>
+            <ScrollReveal key={service.titleKey} delay={index * 0.1}>
               <div className="group p-6 bg-card rounded-xl border border-border hover:border-primary/30 hover:shadow-xl transition-all duration-300 h-full">
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 group-hover:scale-110 transition-all">
                   <service.icon className="w-6 h-6 text-primary" />
                 </div>
                 <h3 className="font-display text-lg font-semibold text-foreground mb-3">
-                  {service.title}
+                  {t(service.titleKey)} {service.titleKey === "Google Maps Domination" ? `- ${city.name}` : ""}
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  {service.description}
+                  {t(service.descKey)}
                 </p>
               </div>
             </ScrollReveal>
@@ -92,10 +92,10 @@ const CityServices = ({ city }: CityServicesProps) => {
         <ScrollReveal delay={0.4}>
           <div className="mt-16 text-center">
             <h3 className="font-display text-xl font-semibold text-foreground mb-2">
-              {t(`Local SEO for ${city.name} Industries I've Mastered`)}
+              {t("Local SEO for Industries I have Mastered in")} {city.name}
             </h3>
             <p className="text-muted-foreground mb-6">
-              {t(`Whatever your business, I've helped similar ${city.name} companies dominate local search:`)}
+              {t("Whatever your business, I have helped similar companies in")} {city.name} {t("dominate local search:")}
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               {city.industries.map((industry, index) => (
@@ -107,7 +107,7 @@ const CityServices = ({ city }: CityServicesProps) => {
                 </span>
               ))}
               <span className="px-4 py-2 bg-muted text-muted-foreground text-sm rounded-full border border-border font-medium">
-                {t(`+ 46 More ${city.name} Industries`)}
+                + 46 {t("More Industries in")} {city.name}
               </span>
             </div>
           </div>
