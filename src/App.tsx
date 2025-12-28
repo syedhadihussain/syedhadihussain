@@ -89,11 +89,11 @@ const App = () => (
                   {/* Root redirect to default language */}
                   <Route path="/" element={<Navigate to={`/${DEFAULT_LANGUAGE}`} replace />} />
                   
-                  {/* City pages first - most specific (3 segments after lang) */}
-                  <Route path="/en/:countryCode/:stateCode/:cityCode" element={<CityPage />} />
-                  <Route path="/ar/:countryCode/:stateCode/:cityCode" element={<CityPage />} />
-                  <Route path="/es/:countryCode/:stateCode/:cityCode" element={<CityPage />} />
-                  <Route path="/zh/:countryCode/:stateCode/:cityCode" element={<CityPage />} />
+                  {/* City pages first - most specific with local-seo prefix in URL */}
+                  <Route path="/en/:countryCode/:stateCode/:citySlug" element={<CityPage />} />
+                  <Route path="/ar/:countryCode/:stateCode/:citySlug" element={<CityPage />} />
+                  <Route path="/es/:countryCode/:stateCode/:citySlug" element={<CityPage />} />
+                  <Route path="/zh/:countryCode/:stateCode/:citySlug" element={<CityPage />} />
                   
                   {/* State pages (2 segments after lang) */}
                   <Route path="/en/:countryCode/:stateCode" element={<StatePage />} />

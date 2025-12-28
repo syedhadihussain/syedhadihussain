@@ -53,7 +53,7 @@ const StateCities = ({ state, countryCode }: StateCitiesProps) => {
               {state.cities.map((city) => (
                 <Link
                   key={city.code}
-                  to={`/${language}/${countryCode}/${state.code}/${city.code}`}
+                  to={`/${language}/${countryCode}/${state.code}/local-seo-${city.code}`}
                   className="px-3 py-1.5 bg-muted hover:bg-primary/10 rounded-full text-sm text-muted-foreground hover:text-primary border border-border hover:border-primary/30 transition-all duration-200"
                 >
                   {city.name}
@@ -69,7 +69,7 @@ const StateCities = ({ state, countryCode }: StateCitiesProps) => {
             {state.cities.slice(0, 4).map((city, index) => (
               <Link
                 key={city.code}
-                to={`/${language}/${countryCode}/${state.code}/${city.code}`}
+                to={`/${language}/${countryCode}/${state.code}/local-seo-${city.code}`}
                 className="group relative bg-background rounded-xl p-6 border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg"
               >
                 <div className="flex items-start justify-between mb-3">
