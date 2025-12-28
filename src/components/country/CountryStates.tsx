@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { CountryData } from "@/lib/countries-config";
 import { AU_STATES } from "@/lib/au-states-config";
+import { UK_STATES } from "@/lib/uk-states-config";
 import { STATES, StateDetailData } from "@/lib/states-config";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
@@ -25,6 +26,14 @@ const CountryStates = ({ country }: CountryStatesProps) => {
   const getStates = (): StateDisplay[] => {
     if (country.code === "au") {
       return Object.values(AU_STATES).map((state: StateDetailData) => ({
+        code: state.code,
+        name: state.name,
+        abbreviation: state.abbreviation,
+        citiesCount: state.cities.length,
+        tagline: state.tagline
+      }));
+    } else if (country.code === "uk") {
+      return Object.values(UK_STATES).map((state: StateDetailData) => ({
         code: state.code,
         name: state.name,
         abbreviation: state.abbreviation,
