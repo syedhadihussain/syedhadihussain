@@ -1017,6 +1017,51 @@ export const translations: Translations = {
     it: "Tutti gli stati che serviamo", 
     de: "Alle Bundesstaaten, die wir bedienen" 
   },
+  "country.serviceAreas": { 
+    en: "Service Areas", 
+    ar: "مناطق الخدمة", 
+    es: "Áreas de Servicio", 
+    pt: "Áreas de Serviço", 
+    fr: "Zones de service", 
+    it: "Aree di servizio", 
+    de: "Servicegebiete" 
+  },
+  "country.statesHeading": { 
+    en: "Local SEO Services Across {country}", 
+    ar: "خدمات SEO المحلي عبر {country}", 
+    es: "Servicios de SEO Local en {country}", 
+    pt: "Serviços de SEO Local em {country}", 
+    fr: "Services SEO Local dans {country}", 
+    it: "Servizi SEO Locale in {country}", 
+    de: "Lokale SEO-Dienste in {country}" 
+  },
+  "country.statesDescription": { 
+    en: "I provide specialized local SEO services across all {count} states and territories. Click on any state to explore city-specific services and local market insights.", 
+    ar: "أقدم خدمات SEO محلية متخصصة عبر جميع {count} ولاية ومنطقة. انقر على أي ولاية لاستكشاف الخدمات الخاصة بالمدن ورؤى السوق المحلي.", 
+    es: "Ofrezco servicios de SEO local especializados en todos los {count} estados y territorios. Haz clic en cualquier estado para explorar servicios específicos de ciudades.", 
+    pt: "Forneço serviços especializados de SEO local em todos os {count} estados e territórios. Clique em qualquer estado para explorar serviços específicos de cidades.", 
+    fr: "Je fournis des services SEO local spécialisés dans les {count} états et territoires. Cliquez sur un état pour explorer les services spécifiques aux villes.", 
+    it: "Fornisco servizi SEO locale specializzati in tutti i {count} stati e territori. Clicca su uno stato per esplorare i servizi specifici per città.", 
+    de: "Ich biete spezialisierte lokale SEO-Dienste in allen {count} Bundesstaaten und Territorien. Klicken Sie auf einen Staat, um stadtspezifische Dienste zu erkunden." 
+  },
+  "country.cities": { 
+    en: "cities", 
+    ar: "مدن", 
+    es: "ciudades", 
+    pt: "cidades", 
+    fr: "villes", 
+    it: "città", 
+    de: "Städte" 
+  },
+  "country.viewState": { 
+    en: "View State", 
+    ar: "عرض الولاية", 
+    es: "Ver Estado", 
+    pt: "Ver Estado", 
+    fr: "Voir l'état", 
+    it: "Vedi Stato", 
+    de: "Bundesstaat ansehen" 
+  },
   "country.ourServices": { 
     en: "What I Do", 
     ar: "ما أقوم به", 
