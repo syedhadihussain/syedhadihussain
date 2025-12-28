@@ -17,10 +17,10 @@ import FullStackCTA from "@/components/portfolio/FullStackCTA";
 import FAQ from "@/components/portfolio/FAQ";
 
 const CityPage = () => {
-  const { countryCode, stateCode, cityCode } = useParams<{ 
+  const { countryCode, stateCode, citySlug } = useParams<{ 
     countryCode: string; 
     stateCode: string; 
-    cityCode: string;
+    citySlug: string;
   }>();
   const { language } = useLanguage();
 
@@ -34,6 +34,13 @@ const CityPage = () => {
     return <Navigate to={`/${language}/${countryCode}`} replace />;
   }
 
+  // Check if citySlug starts with local-seo- and extract city code
+  if (!citySlug || !citySlug.startsWith("local-seo-")) {
+    return <Navigate to={`/${language}/${countryCode}/${stateCode}`} replace />;
+  }
+  
+  const cityCode = citySlug.replace("local-seo-", "");
+  
   // Validate city code
   if (!cityCode || !isValidCity(stateCode, cityCode)) {
     return <Navigate to={`/${language}/${countryCode}/${stateCode}`} replace />;
