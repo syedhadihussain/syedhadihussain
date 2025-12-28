@@ -1995,6 +1995,16 @@ import { NZ_STATES } from "./nz-states-config";
 import { SA_STATES } from "./sa-states-config";
 import { QA_STATES } from "./qa-states-config";
 import { EG_STATES } from "./eg-states-config";
+import { PT_STATES } from "./pt-states-config";
+import { OM_STATES } from "./om-states-config";
+import { KW_STATES } from "./kw-states-config";
+import { LU_STATES } from "./lu-states-config";
+import { FR_STATES } from "./fr-states-config";
+import { ES_STATES } from "./es-states-config";
+import { CH_STATES } from "./ch-states-config";
+import { IE_STATES } from "./ie-states-config";
+import { BR_STATES } from "./br-states-config";
+import { FI_STATES, NL_STATES, SE_STATES, NO_STATES, DK_STATES, BE_STATES, JO_STATES, ZA_STATES } from "./nordic-benelux-config";
 
 // Get the state registry based on country code
 const getStateRegistry = (countryCode: string): Record<string, StateDetailData> => {
@@ -2012,6 +2022,23 @@ const getStateRegistry = (countryCode: string): Record<string, StateDetailData> 
   if (code === 'sa') return SA_STATES;
   if (code === 'qa') return QA_STATES;
   if (code === 'eg') return EG_STATES;
+  if (code === 'pt') return PT_STATES;
+  if (code === 'om') return OM_STATES;
+  if (code === 'kw') return KW_STATES;
+  if (code === 'lu') return LU_STATES;
+  if (code === 'fr') return FR_STATES;
+  if (code === 'es') return ES_STATES;
+  if (code === 'ch') return CH_STATES;
+  if (code === 'ie') return IE_STATES;
+  if (code === 'br') return BR_STATES;
+  if (code === 'fi') return FI_STATES;
+  if (code === 'nl') return NL_STATES;
+  if (code === 'se') return SE_STATES;
+  if (code === 'no') return NO_STATES;
+  if (code === 'dk') return DK_STATES;
+  if (code === 'be') return BE_STATES;
+  if (code === 'jo') return JO_STATES;
+  if (code === 'za') return ZA_STATES;
   return STATES;
 };
 
