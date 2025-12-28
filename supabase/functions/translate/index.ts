@@ -52,18 +52,17 @@ const handler = async (req: Request): Promise<Response> => {
       );
     }
 
-    // Deduplicate, keep stable order - reduce batch size to avoid long responses
-    const uniqueTexts = Array.from(new Set(texts)).slice(0, 40);
+    // Deduplicate, keep stable order - reduce batch size to ensure complete responses
+    const uniqueTexts = Array.from(new Set(texts)).slice(0, 25);
 
     const systemPrompt = `You are a professional UI translator. Translate each input string into ${targetLanguage}.
 Rules:
 - Preserve brand names and proper nouns when appropriate.
 - Preserve URLs, emails, phone numbers, currency symbols, and numbers.
 - Keep the meaning and tone.
-- Return ONLY valid JSON object with no additional text: {"translations": {"<input>": "<translation>", ...}}
-- Do NOT add any explanation or text before or after the JSON.`;
+- Return ONLY valid JSON object: {"translations": {"<input>": "<translation>", ...}}`;
 
-    const userPrompt = `Translate the following strings (JSON array):\n${JSON.stringify(uniqueTexts)}`;
+    const userPrompt = `Translate to ${targetLanguage}:\n${JSON.stringify(uniqueTexts)}`;
 
     console.log(`Translating ${uniqueTexts.length} strings to ${targetLanguage}`);
 
@@ -75,8 +74,8 @@ Rules:
       },
       body: JSON.stringify({
         model: "google/gemini-2.5-flash",
-        temperature: 0.1,
-        max_tokens: 4000,
+        temperature: 0,
+        max_tokens: 8000,
         messages: [
           { role: "system", content: systemPrompt },
           { role: "user", content: userPrompt },
