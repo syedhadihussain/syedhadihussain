@@ -2061,14 +2061,22 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
         body: { targetLanguage: language, texts: batch },
       });
 
-      // Always remove processed items from the queue (avoid infinite loops on errors)
-      batch.forEach((txt) => pendingRef.current.delete(txt));
-
       if (error || !data?.translations) {
-        // Try again later if there are still items in the queue
-        if (pendingRef.current.size > 0) setPendingTick((x) => x + 1);
+        // On error, keep items in the queue for retry
+        console.error("Translation error:", error);
+        // Show a toast on first failure only (avoid spamming)
+        if (pendingRef.current.size === batch.length) {
+          // Only report major failures
+          console.warn("Translation batch failed, will retry...");
+        }
+        // Trigger retry after a delay
+        window.setTimeout(() => setPendingTick((x) => x + 1), 2000);
         return;
       }
+
+      // Only remove successfully translated items from the queue
+      const translatedKeys = Object.keys(data.translations);
+      translatedKeys.forEach((txt) => pendingRef.current.delete(txt));
 
       setDynamicTranslations((prev) => {
         const next = { ...prev, ...data.translations };
@@ -2080,6 +2088,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
         return next;
       });
 
+      // If there are still pending items (some weren't returned), trigger another batch
       if (pendingRef.current.size > 0) setPendingTick((x) => x + 1);
     }, 250);
 
