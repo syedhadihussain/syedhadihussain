@@ -12,7 +12,6 @@ import FloatingActions from "@/components/FloatingActions";
 import TawkToChat from "@/components/TawkToChat";
 import GlobalSEO from "@/components/GlobalSEO";
 import { SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE } from "@/lib/i18n-config";
-import { getAllCitySlugs } from "@/lib/cities-config";
 import Index from "./pages/Index";
 
 // Lazy load pages for better performance
@@ -72,9 +71,6 @@ const pageRoutes = [
   { path: "terms", element: <TermsOfServicePage /> },
 ];
 
-// Get all city slugs for routing
-const citySlugs = getAllCitySlugs();
-
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <ThemeProvider>
@@ -93,34 +89,35 @@ const App = () => (
                   {/* Root redirect to default language */}
                   <Route path="/" element={<Navigate to={`/${DEFAULT_LANGUAGE}`} replace />} />
                   
-                  {/* Language-prefixed routes */}
+                  {/* City pages first - most specific (3 segments after lang) */}
+                  <Route path="/en/:countryCode/:stateCode/:cityCode" element={<CityPage />} />
+                  <Route path="/ar/:countryCode/:stateCode/:cityCode" element={<CityPage />} />
+                  <Route path="/es/:countryCode/:stateCode/:cityCode" element={<CityPage />} />
+                  <Route path="/zh/:countryCode/:stateCode/:cityCode" element={<CityPage />} />
+                  
+                  {/* State pages (2 segments after lang) */}
+                  <Route path="/en/:countryCode/:stateCode" element={<StatePage />} />
+                  <Route path="/ar/:countryCode/:stateCode" element={<StatePage />} />
+                  <Route path="/es/:countryCode/:stateCode" element={<StatePage />} />
+                  <Route path="/zh/:countryCode/:stateCode" element={<StatePage />} />
+                  
+                  {/* Country pages (1 segment after lang) */}
+                  <Route path="/en/:countryCode" element={<CountryPage />} />
+                  <Route path="/ar/:countryCode" element={<CountryPage />} />
+                  <Route path="/es/:countryCode" element={<CountryPage />} />
+                  <Route path="/zh/:countryCode" element={<CountryPage />} />
+                  
+                  {/* Static routes for each language */}
                   {SUPPORTED_LANGUAGES.map((lang) => (
-                    <Route key={lang} path={`/${lang}`}>
-                      {pageRoutes.map((route) => (
+                    <Route key={lang} path={`/${lang}/*`}>
+                      <Route index element={<Index />} />
+                      {pageRoutes.slice(1).map((route) => (
                         <Route
                           key={`${lang}-${route.path}`}
                           path={route.path}
                           element={route.element}
                         />
                       ))}
-                      {/* City pages - explicit routes for each city */}
-                      {citySlugs.map((slug) => (
-                        <Route
-                          key={`${lang}-${slug}`}
-                          path={slug}
-                          element={<CityPage />}
-                        />
-                      ))}
-                      {/* Country pages within language prefix - use :countryCode param */}
-                      <Route
-                        path=":countryCode"
-                        element={<CountryPage />}
-                      />
-                      {/* State pages within country - use :stateCode param */}
-                      <Route
-                        path=":countryCode/:stateCode"
-                        element={<StatePage />}
-                      />
                     </Route>
                   ))}
 
