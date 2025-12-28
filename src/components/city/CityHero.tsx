@@ -35,18 +35,18 @@ const CityHero = ({ city, state }: CityHeroProps) => {
               {/* Breadcrumb */}
               <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-muted-foreground mb-4 flex-wrap">
                 <Link to={`/${language}/`} className="hover:text-primary transition-colors">
-                  {t("cityHero.home") || "Home"}
+                  {t("Home")}
                 </Link>
                 <span>/</span>
                 <Link to={`/${language}/us/`} className="hover:text-primary transition-colors">
-                  {t("cityHero.unitedStates") || "United States"}
+                  {t("United States")}
                 </Link>
                 <span>/</span>
                 <Link to={`/${language}/us/${state.code}/`} className="hover:text-primary transition-colors">
-                  {state.name}
+                  {t(state.name)}
                 </Link>
                 <span>/</span>
-                <span className="text-foreground font-medium">{city.name}</span>
+                <span className="text-foreground font-medium">{t(city.name)}</span>
               </nav>
 
               {/* Urgency Badge */}
@@ -60,13 +60,13 @@ const CityHero = ({ city, state }: CityHeroProps) => {
 
             <ScrollReveal delay={0.1}>
               <h1 id="city-hero-heading" className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-                {city.tagline}
+                {t(city.tagline)}
               </h1>
             </ScrollReveal>
 
             <ScrollReveal delay={0.2}>
               <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
-                {city.description}
+                {t(city.description)}
               </p>
             </ScrollReveal>
 
@@ -76,7 +76,7 @@ const CityHero = ({ city, state }: CityHeroProps) => {
                 {city.uniqueFeatures.map((feature, index) => (
                   <div key={index} className="flex items-center gap-2 text-sm text-muted-foreground">
                     <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
-                    <span className="font-medium">{feature}</span>
+                    <span className="font-medium">{t(feature)}</span>
                   </div>
                 ))}
               </div>
@@ -135,7 +135,7 @@ const CityHero = ({ city, state }: CityHeroProps) => {
               <figure className="relative gradient-border rounded-2xl overflow-hidden">
                 <img
                   src={profilePhoto}
-                  alt={`${city.name} Local SEO Expert - Syed Hadi Hussain - Helping ${city.stateAbbreviation} businesses rank #1 on Google`}
+                  alt={t(`${city.name} Local SEO Expert - Syed Hadi Hussain - Helping ${city.stateAbbreviation} businesses rank #1 on Google`)}
                   className="w-full max-w-md rounded-2xl object-cover"
                   loading="eager"
                   fetchPriority="high"

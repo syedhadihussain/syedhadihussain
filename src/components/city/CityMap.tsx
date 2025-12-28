@@ -9,7 +9,7 @@ interface CityMapProps {
 }
 
 const CityMap = ({ city, state }: CityMapProps) => {
-  const { language } = useLanguage();
+  const { t } = useLanguage();
 
   // Generate Google Maps embed URL for the city
   const mapQuery = encodeURIComponent(`${city.name}, ${state.abbreviation}, USA`);
@@ -21,15 +21,13 @@ const CityMap = ({ city, state }: CityMapProps) => {
         <ScrollReveal>
           <div className="text-center mb-10">
             <span className="text-primary text-sm font-medium uppercase tracking-wider">
-              Local SEO Service Area
+              {t("Local SEO Service Area")}
             </span>
             <h2 id="city-map-heading" className="font-display text-3xl md:text-4xl font-bold text-foreground mt-4 mb-6">
-              Serving {city.name}, {city.stateAbbreviation} & Surrounding Areas
+              {t(`Serving ${city.name}, ${city.stateAbbreviation} & Surrounding Areas`)}
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              I provide expert local SEO services throughout {city.name} and the greater {state.name} region. 
-              Whether your customers are searching from downtown {city.name} or neighboring communities, 
-              I'll help your business get found.
+              {t(`I provide expert local SEO services throughout ${city.name} and the greater ${state.name} region. Whether your customers are searching from downtown ${city.name} or neighboring communities, I'll help your business get found.`)}
             </p>
           </div>
         </ScrollReveal>
@@ -38,7 +36,7 @@ const CityMap = ({ city, state }: CityMapProps) => {
           <div className="relative rounded-2xl overflow-hidden border border-border shadow-lg">
             <div className="aspect-[16/9] w-full">
               <iframe
-                title={`Map of ${city.name}, ${state.abbreviation} - Local SEO Service Area`}
+                title={t(`Map of ${city.name}, ${state.abbreviation} - Local SEO Service Area`)}
                 src={mapEmbedUrl}
                 className="w-full h-full"
                 style={{ border: 0 }}
@@ -52,10 +50,10 @@ const CityMap = ({ city, state }: CityMapProps) => {
               <div className="flex flex-wrap items-center justify-between gap-4">
                 <div>
                   <h3 className="font-display text-lg font-semibold text-foreground">
-                    {city.name} Local SEO Expert
+                    {t(`${city.name} Local SEO Expert`)}
                   </h3>
                   <p className="text-sm text-muted-foreground">
-                    Helping {city.name} businesses dominate Google Maps & AI search
+                    {t(`Helping ${city.name} businesses dominate Google Maps & AI search`)}
                   </p>
                 </div>
                 <a
@@ -64,7 +62,7 @@ const CityMap = ({ city, state }: CityMapProps) => {
                   rel="noopener noreferrer"
                   className="px-5 py-2.5 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors text-sm"
                 >
-                  Get Your Free Audit
+                  {t("Get Your Free Audit")}
                 </a>
               </div>
             </div>
@@ -76,15 +74,15 @@ const CityMap = ({ city, state }: CityMapProps) => {
           <div className="mt-10 grid md:grid-cols-3 gap-6">
             <div className="p-5 bg-card rounded-xl border border-border text-center">
               <div className="text-3xl font-bold text-primary mb-2">25+</div>
-              <div className="text-sm text-muted-foreground">Mile Service Radius from {city.name}</div>
+              <div className="text-sm text-muted-foreground">{t(`Mile Service Radius from ${city.name}`)}</div>
             </div>
             <div className="p-5 bg-card rounded-xl border border-border text-center">
               <div className="text-3xl font-bold text-primary mb-2">100%</div>
-              <div className="text-sm text-muted-foreground">Remote & On-Site Flexibility</div>
+              <div className="text-sm text-muted-foreground">{t("Remote & On-Site Flexibility")}</div>
             </div>
             <div className="p-5 bg-card rounded-xl border border-border text-center">
               <div className="text-3xl font-bold text-primary mb-2">24/7</div>
-              <div className="text-sm text-muted-foreground">Monitoring & Support</div>
+              <div className="text-sm text-muted-foreground">{t("Monitoring & Support")}</div>
             </div>
           </div>
         </ScrollReveal>
