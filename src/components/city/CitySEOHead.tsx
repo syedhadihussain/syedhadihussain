@@ -17,14 +17,20 @@ interface CitySEOHeadProps {
   title: string;
   description: string;
   keywords: string;
+  ogTitle?: string;
+  ogDescription?: string;
 }
 
-const CitySEOHead = ({ countryCode, city, state, title, description, keywords }: CitySEOHeadProps) => {
+const CitySEOHead = ({ countryCode, city, state, title, description, keywords, ogTitle, ogDescription }: CitySEOHeadProps) => {
   const { language } = useLanguage();
 
   const slug = `${countryCode}/${state.code}/${city.slug}`;
   const canonicalUrl = getCanonicalUrl(language, slug);
   const hreflangs = generateHreflangs(slug);
+
+  // Determine country name based on country code
+  const countryName = countryCode === "au" ? "Australia" : "United States";
+  const geoRegion = countryCode === "au" ? `AU-${city.stateAbbreviation}` : `US-${city.stateAbbreviation}`;
 
   // Local Business structured data
   const localBusinessSchema = {
@@ -43,7 +49,7 @@ const CitySEOHead = ({ countryCode, city, state, title, description, keywords }:
         name: state.name,
         containedInPlace: {
           "@type": "Country",
-          name: "United States",
+          name: countryName,
         },
       },
     },
@@ -96,7 +102,7 @@ const CitySEOHead = ({ countryCode, city, state, title, description, keywords }:
       {
         "@type": "ListItem",
         position: 2,
-        name: "United States",
+        name: countryName,
         item: `${BASE_URL}/${language}/${countryCode}/`,
       },
       {
@@ -168,8 +174,8 @@ const CitySEOHead = ({ countryCode, city, state, title, description, keywords }:
       ))}
 
       {/* Open Graph */}
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
+      <meta property="og:title" content={ogTitle || title} />
+      <meta property="og:description" content={ogDescription || description} />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:locale" content={language === "en" ? "en_US" : language} />
@@ -177,11 +183,11 @@ const CitySEOHead = ({ countryCode, city, state, title, description, keywords }:
 
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
+      <meta name="twitter:title" content={ogTitle || title} />
+      <meta name="twitter:description" content={ogDescription || description} />
 
       {/* Geo Tags */}
-      <meta name="geo.region" content={`US-${city.stateAbbreviation}`} />
+      <meta name="geo.region" content={geoRegion} />
       <meta name="geo.placename" content={city.name} />
 
       {/* Structured Data */}

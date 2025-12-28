@@ -3,6 +3,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { getCityDetailData } from "@/lib/cities-config";
 import { isValidState, getStateData, isValidCity } from "@/lib/states-config";
 import { isValidCountry } from "@/lib/countries-config";
+import { getAUCityMetadata } from "@/lib/au-metadata-config";
 import Navigation from "@/components/portfolio/Navigation";
 import Footer from "@/components/portfolio/Footer";
 import CitySEOHead from "@/components/city/CitySEOHead";
@@ -53,10 +54,15 @@ const CityPage = () => {
     return <Navigate to={`/${language}/${countryCode}/${stateCode}`} replace />;
   }
 
-  // Client-catching SEO metadata optimized for "local SEO" keyword
-  const pageTitle = `Local SEO ${city.name}, ${city.stateAbbreviation} | #1 Google Maps & AI Search Expert | Get Found Now`;
+  // Check for AU-specific metadata
+  const auMetadata = countryCode === "au" ? getAUCityMetadata(stateCode, cityCode) : null;
+
+  // Client-catching SEO metadata optimized for "local SEO" keyword (use AU metadata if available)
+  const pageTitle = auMetadata?.title ||
+    `Local SEO ${city.name}, ${city.stateAbbreviation} | #1 Google Maps & AI Search Expert | Get Found Now`;
   
-  const pageDescription = `Looking for Local SEO in ${city.name}? I help ${city.stateAbbreviation} businesses rank #1 on Google Maps & AI search. 7+ years, 50+ industries, 150% avg growth. Get your FREE ${city.name} SEO audit today!`;
+  const pageDescription = auMetadata?.description ||
+    `Looking for Local SEO in ${city.name}? I help ${city.stateAbbreviation} businesses rank #1 on Google Maps & AI search. 7+ years, 50+ industries, 150% avg growth. Get your FREE ${city.name} SEO audit today!`;
 
   const keywords = [
     `local SEO ${city.name}`,
@@ -82,6 +88,8 @@ const CityPage = () => {
         title={pageTitle}
         description={pageDescription}
         keywords={keywords}
+        ogTitle={auMetadata?.ogTitle}
+        ogDescription={auMetadata?.ogDescription}
       />
       <div className="min-h-screen bg-background">
         <Navigation />
