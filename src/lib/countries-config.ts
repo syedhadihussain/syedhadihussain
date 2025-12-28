@@ -551,6 +551,20 @@ export const ALL_JORDAN_REGIONS: string[] = [
   "Ma'an", "Madaba", "Mafraq", "Tafilah", "Zarqa"
 ];
 
+// Kuwaiti Governorates
+export const KUWAIT_REGIONS: StateData[] = [
+  { name: "Kuwait City", code: "kwc", coords: [29.3759, 47.9774] },
+  { name: "Hawalli", code: "haw", coords: [29.3328, 48.0286] },
+  { name: "Al Ahmadi", code: "ahm", coords: [29.0769, 48.0838] },
+  { name: "Al Farwaniyah", code: "far", coords: [29.2775, 47.9581] },
+  { name: "Al Jahra", code: "jah", coords: [29.3376, 47.6581] },
+  { name: "Mubarak Al-Kabeer", code: "mak", coords: [29.2171, 48.0920] }
+];
+
+export const ALL_KUWAIT_REGIONS: string[] = [
+  "Al Ahmadi", "Al Farwaniyah", "Al Jahra", "Capital", "Hawalli", "Mubarak Al-Kabeer"
+];
+
 export const COUNTRIES: Record<string, CountryData> = {
   us: {
     code: "us",
@@ -1210,6 +1224,28 @@ export const COUNTRIES: Record<string, CountryData> = {
       "Amman SEO expert",
       "Aqaba local SEO",
       "Jordanian business SEO services"
+    ]
+  },
+  kw: {
+    code: "kw",
+    name: "Kuwait",
+    localName: "الكويت",
+    flag: "🇰🇼",
+    statesCount: 6,
+    states: KUWAIT_REGIONS,
+    mapCenter: [29.3117, 47.4818],
+    mapZoom: 9,
+    mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d918437.0992668982!2d46.882861!3d29.311660!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fc5363fbeea51a1%3A0x74726bcd92d8edd2!2sKuwait!5e0!3m2!1sen!2s!4v1766866620000!5m2!1sen!2s",
+    currency: "KWD",
+    timezone: "Asia/Kuwait",
+    phoneCode: "+965",
+    seoKeywords: [
+      "local SEO Kuwait",
+      "Kuwaiti SEO specialist",
+      "Google Maps optimization Kuwait",
+      "Kuwait City SEO expert",
+      "Kuwait business SEO services",
+      "Middle East SEO consultant"
     ]
   }
 };
