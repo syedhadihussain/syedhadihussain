@@ -4,6 +4,27 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { CountryData } from "@/lib/countries-config";
 import { AU_STATES } from "@/lib/au-states-config";
 import { UK_STATES } from "@/lib/uk-states-config";
+import { CA_STATES } from "@/lib/ca-states-config";
+import { DE_STATES } from "@/lib/de-states-config";
+import { AE_STATES } from "@/lib/ae-states-config";
+import { IT_STATES } from "@/lib/it-states-config";
+import { MX_STATES } from "@/lib/mx-states-config";
+import { MY_STATES } from "@/lib/my-states-config";
+import { SG_STATES } from "@/lib/sg-states-config";
+import { NZ_STATES } from "@/lib/nz-states-config";
+import { SA_STATES } from "@/lib/sa-states-config";
+import { QA_STATES } from "@/lib/qa-states-config";
+import { EG_STATES } from "@/lib/eg-states-config";
+import { PT_STATES } from "@/lib/pt-states-config";
+import { OM_STATES } from "@/lib/om-states-config";
+import { KW_STATES } from "@/lib/kw-states-config";
+import { LU_STATES } from "@/lib/lu-states-config";
+import { FR_STATES } from "@/lib/fr-states-config";
+import { ES_STATES } from "@/lib/es-states-config";
+import { CH_STATES } from "@/lib/ch-states-config";
+import { IE_STATES } from "@/lib/ie-states-config";
+import { BR_STATES } from "@/lib/br-states-config";
+import { FI_STATES, NL_STATES, SE_STATES, NO_STATES, DK_STATES, BE_STATES, JO_STATES, ZA_STATES } from "@/lib/nordic-benelux-config";
 import { STATES, StateDetailData } from "@/lib/states-config";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
@@ -19,37 +40,56 @@ interface StateDisplay {
   tagline: string;
 }
 
+// Map country codes to their state registries
+const COUNTRY_STATE_REGISTRIES: Record<string, Record<string, StateDetailData>> = {
+  us: STATES,
+  au: AU_STATES,
+  uk: UK_STATES,
+  ca: CA_STATES,
+  de: DE_STATES,
+  ae: AE_STATES,
+  it: IT_STATES,
+  mx: MX_STATES,
+  my: MY_STATES,
+  sg: SG_STATES,
+  nz: NZ_STATES,
+  sa: SA_STATES,
+  qa: QA_STATES,
+  eg: EG_STATES,
+  pt: PT_STATES,
+  om: OM_STATES,
+  kw: KW_STATES,
+  lu: LU_STATES,
+  fr: FR_STATES,
+  es: ES_STATES,
+  ch: CH_STATES,
+  ie: IE_STATES,
+  br: BR_STATES,
+  fi: FI_STATES,
+  nl: NL_STATES,
+  se: SE_STATES,
+  no: NO_STATES,
+  dk: DK_STATES,
+  be: BE_STATES,
+  jo: JO_STATES,
+  za: ZA_STATES
+};
+
 const CountryStates = ({ country }: CountryStatesProps) => {
   const { t, language } = useLanguage();
 
   // Get states based on country code
   const getStates = (): StateDisplay[] => {
-    if (country.code === "au") {
-      return Object.values(AU_STATES).map((state: StateDetailData) => ({
-        code: state.code,
-        name: state.name,
-        abbreviation: state.abbreviation,
-        citiesCount: state.cities.length,
-        tagline: state.tagline
-      }));
-    } else if (country.code === "uk") {
-      return Object.values(UK_STATES).map((state: StateDetailData) => ({
-        code: state.code,
-        name: state.name,
-        abbreviation: state.abbreviation,
-        citiesCount: state.cities.length,
-        tagline: state.tagline
-      }));
-    } else if (country.code === "us") {
-      return Object.values(STATES).map((state: StateDetailData) => ({
-        code: state.code,
-        name: state.name,
-        abbreviation: state.abbreviation,
-        citiesCount: state.cities.length,
-        tagline: state.tagline
-      }));
-    }
-    return [];
+    const registry = COUNTRY_STATE_REGISTRIES[country.code.toLowerCase()];
+    if (!registry) return [];
+    
+    return Object.values(registry).map((state: StateDetailData) => ({
+      code: state.code,
+      name: state.name,
+      abbreviation: state.abbreviation,
+      citiesCount: state.cities?.length || 0,
+      tagline: state.tagline || ""
+    }));
   };
 
   const states = getStates();
