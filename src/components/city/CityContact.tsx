@@ -24,7 +24,7 @@ const CityContact = ({ city, state }: CityContactProps) => {
                 {t("Ready to Dominate Local Search in")} {city.name}?
               </span>
               <h2 id="contact-heading" className="font-display text-3xl lg:text-4xl xl:text-5xl font-bold text-foreground mb-4">
-                {t("Get Your FREE Local SEO Consultation for")} {city.name}
+                {t("Get 50% Off Your Local SEO Consultation for")} {city.name}
               </h2>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
                 {t("Let us discuss how we can help your business in")} {city.name}, {state.name} {t("attract more local customers and outrank your competition.")}

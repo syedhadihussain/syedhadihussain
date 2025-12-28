@@ -62,7 +62,7 @@ const CityMap = ({ city, state }: CityMapProps) => {
                   rel="noopener noreferrer"
                   className="px-5 py-2.5 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors text-sm"
                 >
-                  {t("Get Your Free Audit")}
+                  {t("Get 50% Off Audit")}
                 </a>
               </div>
             </div>
