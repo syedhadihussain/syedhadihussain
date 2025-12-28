@@ -1,4 +1,4 @@
-import { useParams, Navigate } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { getCityBySlug } from "@/lib/cities-config";
 import Navigation from "@/components/portfolio/Navigation";
@@ -14,15 +14,20 @@ import FullStackCTA from "@/components/portfolio/FullStackCTA";
 import FAQ from "@/components/portfolio/FAQ";
 
 const CityPage = () => {
-  const { citySlug } = useParams<{ citySlug: string }>();
+  const location = useLocation();
   const { language } = useLanguage();
 
-  // Validate city slug - must start with "local-seo-"
+  // Extract city slug from pathname (e.g., /en/local-seo-tampa -> local-seo-tampa)
+  const pathParts = location.pathname.split('/').filter(Boolean);
+  const citySlug = pathParts[pathParts.length - 1]; // Last segment
+
+  // Validate city slug
   if (!citySlug || !citySlug.startsWith("local-seo-")) {
     return <Navigate to={`/${language}`} replace />;
   }
 
   const cityData = getCityBySlug(citySlug);
+  
   if (!cityData) {
     return <Navigate to={`/${language}`} replace />;
   }
