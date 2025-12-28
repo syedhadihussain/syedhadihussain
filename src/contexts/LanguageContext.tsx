@@ -1946,6 +1946,73 @@ export const translations: Translations = {
     it: "Città di {state} con cui Lavoro", 
     de: "{state} Städte, mit denen ich Arbeite" 
   },
+
+  // Breadcrumb translations
+  "breadcrumb.home": {
+    en: "Home",
+    ar: "الرئيسية",
+    es: "Inicio",
+    pt: "Início",
+    fr: "Accueil",
+    it: "Home",
+    de: "Startseite"
+  },
+  "breadcrumb.localSeo": {
+    en: "Local SEO",
+    ar: "SEO المحلي",
+    es: "SEO Local",
+    pt: "SEO Local",
+    fr: "SEO Local",
+    it: "SEO Locale",
+    de: "Lokales SEO"
+  },
+
+  // Related Cities translations
+  "relatedCities.subtitle": {
+    en: "Nearby Areas",
+    ar: "المناطق المجاورة",
+    es: "Áreas Cercanas",
+    pt: "Áreas Próximas",
+    fr: "Zones Proches",
+    it: "Aree Vicine",
+    de: "Nahe Gebiete"
+  },
+  "relatedCities.heading": {
+    en: "More Local SEO Services in {state}",
+    ar: "المزيد من خدمات SEO المحلية في {state}",
+    es: "Más Servicios de SEO Local en {state}",
+    pt: "Mais Serviços de SEO Local em {state}",
+    fr: "Plus de Services SEO Local dans {state}",
+    it: "Altri Servizi SEO Locale in {state}",
+    de: "Weitere Local SEO Services in {state}"
+  },
+  "relatedCities.description": {
+    en: "Explore my local SEO services for other cities near {city} in {state}.",
+    ar: "استكشف خدمات SEO المحلية الخاصة بي للمدن الأخرى القريبة من {city} في {state}.",
+    es: "Explora mis servicios de SEO local para otras ciudades cerca de {city} en {state}.",
+    pt: "Explore meus serviços de SEO local para outras cidades perto de {city} em {state}.",
+    fr: "Découvrez mes services SEO local pour d'autres villes près de {city} dans {state}.",
+    it: "Esplora i miei servizi SEO locale per altre città vicino a {city} in {state}.",
+    de: "Entdecken Sie meine lokalen SEO-Dienste für andere Städte in der Nähe von {city} in {state}."
+  },
+  "relatedCities.localSeo": {
+    en: "Local SEO",
+    ar: "SEO المحلي",
+    es: "SEO Local",
+    pt: "SEO Local",
+    fr: "SEO Local",
+    it: "SEO Locale",
+    de: "Lokales SEO"
+  },
+  "relatedCities.viewAll": {
+    en: "View all cities in {state}",
+    ar: "عرض جميع المدن في {state}",
+    es: "Ver todas las ciudades en {state}",
+    pt: "Ver todas as cidades em {state}",
+    fr: "Voir toutes les villes de {state}",
+    it: "Vedi tutte le città in {state}",
+    de: "Alle Städte in {state} anzeigen"
+  },
 };
 
 interface LanguageContextType {

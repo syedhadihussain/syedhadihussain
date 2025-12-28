@@ -17,6 +17,7 @@ import Testimonials from "@/components/portfolio/Testimonials";
 import CaseStudies from "@/components/portfolio/CaseStudies";
 import FullStackCTA from "@/components/portfolio/FullStackCTA";
 import FAQ from "@/components/portfolio/FAQ";
+import GeoBreadcrumb from "@/components/geo/GeoBreadcrumb";
 
 const StatePage = () => {
   const { countryCode, stateCode } = useParams<{ countryCode: string; stateCode: string }>();
@@ -72,6 +73,14 @@ const StatePage = () => {
       <div className="min-h-screen bg-background">
         <Navigation />
         <main id="main-content" role="main">
+          {/* Breadcrumb Navigation */}
+          <div className="container-narrow pt-24 pb-4">
+            <GeoBreadcrumb
+              countryCode={countryCode}
+              stateName={state.name}
+              stateCode={state.code}
+            />
+          </div>
           <StateHero state={state} countryCode={countryCode} />
           <StateMap state={state} />
           <StateCities state={state} countryCode={countryCode} />

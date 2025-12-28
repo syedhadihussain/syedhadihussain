@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { StateDetailData } from "@/lib/states-config";
+import { getCountryData } from "@/lib/countries-config";
 import {
   SUPPORTED_LANGUAGES,
   HREFLANG_CODES,
@@ -24,7 +25,9 @@ const StateSEOHead = ({ state, countryCode, title, description, keywords }: Stat
   const canonicalUrl = getCanonicalUrl(language, slug);
   const hreflangs = generateHreflangs(slug);
 
-  // Generate structured data for the state page
+  // Get country data for dynamic country name
+  const country = getCountryData(countryCode);
+  const countryName = country?.name || "United States";
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -39,7 +42,7 @@ const StateSEOHead = ({ state, countryCode, title, description, keywords }: Stat
       name: state.name,
       containedInPlace: {
         "@type": "Country",
-        name: "United States",
+        name: countryName,
       },
     },
     serviceArea: state.cities.map((city) => ({
@@ -128,7 +131,7 @@ const StateSEOHead = ({ state, countryCode, title, description, keywords }: Stat
       {
         "@type": "ListItem",
         position: 2,
-        name: "United States",
+        name: countryName,
         item: `${BASE_URL}/${language}/${countryCode}/`,
       },
       {
@@ -188,7 +191,7 @@ const StateSEOHead = ({ state, countryCode, title, description, keywords }: Stat
       <meta name="twitter:description" content={description} />
 
       {/* Geo Tags */}
-      <meta name="geo.region" content={`US-${state.abbreviation}`} />
+      <meta name="geo.region" content={`${countryCode.toUpperCase()}-${state.abbreviation}`} />
       <meta name="geo.placename" content={state.name} />
 
       {/* Structured Data */}
