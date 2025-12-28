@@ -46,14 +46,14 @@ const CityHero = ({ city, state }: CityHeroProps) => {
                   {t(state.name)}
                 </Link>
                 <span>/</span>
-                <span className="text-foreground font-medium">{t(city.name)}</span>
+                <span className="text-foreground font-medium">{city.name}</span>
               </nav>
 
               {/* Urgency Badge */}
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full">
                 <Zap className="w-4 h-4 text-primary animate-pulse" />
                 <span className="text-sm font-medium text-primary">
-                  {t(`${city.name} Businesses: Stop Losing Customers to Competitors`)}
+                  {city.name} {t("Businesses: Stop Losing Customers to Competitors")}
                 </span>
               </div>
             </ScrollReveal>
@@ -87,7 +87,7 @@ const CityHero = ({ city, state }: CityHeroProps) => {
                 <Button asChild size="lg" className="glow group">
                   <a href="https://calendly.com/syedhadihussain" target="_blank" rel="noopener noreferrer">
                     <Phone className="w-4 h-4 mr-2" />
-                    {t(`Get Your FREE ${city.name} SEO Audit`)}
+                    {t("Get Your FREE SEO Audit for")} {city.name}
                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </a>
                 </Button>
@@ -135,7 +135,7 @@ const CityHero = ({ city, state }: CityHeroProps) => {
               <figure className="relative gradient-border rounded-2xl overflow-hidden">
                 <img
                   src={profilePhoto}
-                  alt={t(`${city.name} Local SEO Expert - Syed Hadi Hussain - Helping ${city.stateAbbreviation} businesses rank #1 on Google`)}
+                  alt={`${city.name} ${t("Local SEO Expert - Syed Hadi Hussain - Helping businesses rank number 1 on Google")}`}
                   className="w-full max-w-md rounded-2xl object-cover"
                   loading="eager"
                   fetchPriority="high"
@@ -145,8 +145,8 @@ const CityHero = ({ city, state }: CityHeroProps) => {
               </figure>
               {/* Floating Badge */}
               <div className="absolute -bottom-4 -right-4 glass rounded-xl p-4 glow-sm animate-fade-up" style={{ animationDelay: "0.6s" }}>
-                <div className="text-sm font-bold text-foreground">{t(`Your ${city.name} Local SEO Expert`)}</div>
-                <div className="text-xs text-muted-foreground">{t(`Trusted by ${state.name} Businesses`)}</div>
+                <div className="text-sm font-bold text-foreground">{t("Your Local SEO Expert in")} {city.name}</div>
+                <div className="text-xs text-muted-foreground">{t("Trusted by Businesses in")} {state.name}</div>
               </div>
             </div>
           </div>

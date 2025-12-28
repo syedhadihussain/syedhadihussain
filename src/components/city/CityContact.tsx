@@ -21,13 +21,13 @@ const CityContact = ({ city, state }: CityContactProps) => {
           <ScrollReveal animation="fade-up">
             <div className="text-center mb-12">
               <span className="text-primary text-sm font-medium tracking-wider uppercase mb-4 block">
-                {t(`Ready to Dominate ${city.name} Local Search?`)}
+                {t("Ready to Dominate Local Search in")} {city.name}?
               </span>
               <h2 id="contact-heading" className="font-display text-3xl lg:text-4xl xl:text-5xl font-bold text-foreground mb-4">
-                {t(`Get Your FREE ${city.name} Local SEO Consultation`)}
+                {t("Get Your FREE Local SEO Consultation for")} {city.name}
               </h2>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                {t(`Let's discuss how we can help your ${city.name}, ${state.name} business attract more local customers and outrank your competition.`)}
+                {t("Let us discuss how we can help your business in")} {city.name}, {state.name} {t("attract more local customers and outrank your competition.")}
               </p>
             </div>
           </ScrollReveal>
@@ -44,8 +44,8 @@ const CityContact = ({ city, state }: CityContactProps) => {
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
                   <Calendar className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="font-semibold text-foreground mb-1">{t("contact.bookCall")}</h3>
-                <p className="text-sm text-muted-foreground">{t("contact.scheduleMeeting")}</p>
+                <h3 className="font-semibold text-foreground mb-1">{t("Book a Call")}</h3>
+                <p className="text-sm text-muted-foreground">{t("Schedule a meeting")}</p>
               </a>
 
               <a 
@@ -57,8 +57,8 @@ const CityContact = ({ city, state }: CityContactProps) => {
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
                   <MessageCircle className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="font-semibold text-foreground mb-1">{t("contact.whatsapp")}</h3>
-                <p className="text-sm text-muted-foreground">{t("contact.quickChat")}</p>
+                <h3 className="font-semibold text-foreground mb-1">{t("WhatsApp")}</h3>
+                <p className="text-sm text-muted-foreground">{t("Quick chat")}</p>
               </a>
 
               <a 
@@ -68,7 +68,7 @@ const CityContact = ({ city, state }: CityContactProps) => {
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
                   <Mail className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="font-semibold text-foreground mb-1">{t("contact.email")}</h3>
+                <h3 className="font-semibold text-foreground mb-1">{t("Email")}</h3>
                 <p className="text-xs text-muted-foreground leading-relaxed break-all">
                   contact.syedhadihussain
                   <br />
@@ -80,7 +80,7 @@ const CityContact = ({ city, state }: CityContactProps) => {
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                   <MapPin className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="font-semibold text-foreground mb-1">{t(`Serving ${city.name}`)}</h3>
+                <h3 className="font-semibold text-foreground mb-1">{t("Serving")} {city.name}</h3>
                 <p className="text-sm text-muted-foreground">{state.name}</p>
               </div>
             </div>
@@ -90,7 +90,7 @@ const CityContact = ({ city, state }: CityContactProps) => {
           <ScrollReveal animation="fade-up" delay={200}>
             <div className="glass rounded-3xl p-6 sm:p-8 lg:p-10">
               <h3 className="font-display text-xl lg:text-2xl font-bold text-foreground mb-6 text-center">
-                {t("contact.sendInquiry")}
+                {t("Send a Detailed Inquiry")}
               </h3>
               <ContactForm />
             </div>
