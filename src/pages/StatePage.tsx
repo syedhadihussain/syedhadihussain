@@ -2,6 +2,7 @@ import { useParams, Navigate } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { isValidState, getStateData } from "@/lib/states-config";
 import { isValidCountry } from "@/lib/countries-config";
+import { getAUStateMetadata } from "@/lib/au-metadata-config";
 import Navigation from "@/components/portfolio/Navigation";
 import Footer from "@/components/portfolio/Footer";
 import StateSEOHead from "@/components/state/StateSEOHead";
@@ -35,10 +36,15 @@ const StatePage = () => {
     return <Navigate to={`/${language}/${countryCode}`} replace />;
   }
 
-  // Generate unique SEO metadata
-  const pageTitle = `Local SEO Services ${state.name} | Google Maps & AI Search Optimization`;
+  // Check for AU-specific metadata
+  const auMetadata = countryCode === "au" ? getAUStateMetadata(stateCode) : null;
+
+  // Generate unique SEO metadata (use AU metadata if available)
+  const pageTitle = auMetadata?.title || 
+    `Local SEO Services ${state.name} | Google Maps & AI Search Optimization`;
   
-  const pageDescription = `Grow your ${state.name} business with expert Local SEO services. I help businesses in ${state.cities.slice(0, 3).map(c => c.name).join(", ")} and ${state.cities.length - 3}+ cities rank higher on Google Maps and AI search. 7+ years experience.`;
+  const pageDescription = auMetadata?.description ||
+    `Grow your ${state.name} business with expert Local SEO services. I help businesses in ${state.cities.slice(0, 3).map(c => c.name).join(", ")} and ${state.cities.length - 3}+ cities rank higher on Google Maps and AI search. 7+ years experience.`;
 
   const keywords = [
     `local SEO ${state.name}`,
