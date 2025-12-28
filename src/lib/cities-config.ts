@@ -1,7 +1,28 @@
 // City page configuration with unique SEO content for each city
-import { CityData, StateDetailData, STATES } from "./states-config";
+import { CityData, StateDetailData, STATES, getStateData } from "./states-config";
 import { AU_STATES } from "./au-states-config";
 import { UK_STATES } from "./uk-states-config";
+import { CA_STATES } from "./ca-states-config";
+import { DE_STATES } from "./de-states-config";
+import { AE_STATES } from "./ae-states-config";
+import { IT_STATES } from "./it-states-config";
+import { MX_STATES } from "./mx-states-config";
+import { MY_STATES } from "./my-states-config";
+import { SG_STATES } from "./sg-states-config";
+import { NZ_STATES } from "./nz-states-config";
+import { SA_STATES } from "./sa-states-config";
+import { QA_STATES } from "./qa-states-config";
+import { EG_STATES } from "./eg-states-config";
+import { PT_STATES } from "./pt-states-config";
+import { OM_STATES } from "./om-states-config";
+import { KW_STATES } from "./kw-states-config";
+import { LU_STATES } from "./lu-states-config";
+import { FR_STATES } from "./fr-states-config";
+import { ES_STATES } from "./es-states-config";
+import { CH_STATES } from "./ch-states-config";
+import { IE_STATES } from "./ie-states-config";
+import { BR_STATES } from "./br-states-config";
+import { FI_STATES, NL_STATES, SE_STATES, NO_STATES, DK_STATES, BE_STATES, JO_STATES, ZA_STATES } from "./nordic-benelux-config";
 
 export interface CityDetailData {
   code: string;
@@ -85,16 +106,45 @@ const getCityUniqueContent = (cityName: string, stateName: string, stateAbbrevia
   };
 };
 
+// Get the state registry based on country code
+const getCountryStateRegistry = (countryCode: string): Record<string, StateDetailData> => {
+  const code = countryCode.toLowerCase();
+  if (code === 'au') return AU_STATES;
+  if (code === 'uk') return UK_STATES;
+  if (code === 'ca') return CA_STATES;
+  if (code === 'de') return DE_STATES;
+  if (code === 'ae') return AE_STATES;
+  if (code === 'it') return IT_STATES;
+  if (code === 'mx') return MX_STATES;
+  if (code === 'my') return MY_STATES;
+  if (code === 'sg') return SG_STATES;
+  if (code === 'nz') return NZ_STATES;
+  if (code === 'sa') return SA_STATES;
+  if (code === 'qa') return QA_STATES;
+  if (code === 'eg') return EG_STATES;
+  if (code === 'pt') return PT_STATES;
+  if (code === 'om') return OM_STATES;
+  if (code === 'kw') return KW_STATES;
+  if (code === 'lu') return LU_STATES;
+  if (code === 'fr') return FR_STATES;
+  if (code === 'es') return ES_STATES;
+  if (code === 'ch') return CH_STATES;
+  if (code === 'ie') return IE_STATES;
+  if (code === 'br') return BR_STATES;
+  if (code === 'fi') return FI_STATES;
+  if (code === 'nl') return NL_STATES;
+  if (code === 'se') return SE_STATES;
+  if (code === 'no') return NO_STATES;
+  if (code === 'dk') return DK_STATES;
+  if (code === 'be') return BE_STATES;
+  if (code === 'jo') return JO_STATES;
+  if (code === 'za') return ZA_STATES;
+  return STATES;
+};
+
 // Get city detail data including unique content
 export const getCityDetailData = (stateCode: string, cityCode: string, countryCode: string = 'us'): CityDetailData | undefined => {
-  // Determine which state registry to use based on country
-  const getStateRegistry = () => {
-    const code = countryCode.toLowerCase();
-    if (code === 'au') return AU_STATES;
-    if (code === 'uk') return UK_STATES;
-    return STATES;
-  };
-  const stateRegistry = getStateRegistry();
+  const stateRegistry = getCountryStateRegistry(countryCode);
   const state = stateRegistry[stateCode.toLowerCase()];
   if (!state) return undefined;
 
@@ -120,14 +170,7 @@ export const getCityBySlug = (slug: string, countryCode: string = 'us'): { city:
   // Extract city code from slug (e.g., "local-seo-tampa" -> "tampa")
   const cityCode = slug.replace("local-seo-", "");
   
-  // Determine which state registry to use based on country
-  const getStateRegistry = () => {
-    const code = countryCode.toLowerCase();
-    if (code === 'au') return AU_STATES;
-    if (code === 'uk') return UK_STATES;
-    return STATES;
-  };
-  const stateRegistry = getStateRegistry();
+  const stateRegistry = getCountryStateRegistry(countryCode);
   
   // Search through all states to find this city
   for (const stateCode of Object.keys(stateRegistry)) {
@@ -166,14 +209,7 @@ export const getAllCitySlugs = (): string[] => {
 
 // Get all cities for a specific state
 export const getStateCities = (stateCode: string, countryCode: string = 'us'): CityDetailData[] => {
-  // Determine which state registry to use based on country
-  const getStateRegistry = () => {
-    const code = countryCode.toLowerCase();
-    if (code === 'au') return AU_STATES;
-    if (code === 'uk') return UK_STATES;
-    return STATES;
-  };
-  const stateRegistry = getStateRegistry();
+  const stateRegistry = getCountryStateRegistry(countryCode);
   const state = stateRegistry[stateCode.toLowerCase()];
   if (!state) return [];
   
