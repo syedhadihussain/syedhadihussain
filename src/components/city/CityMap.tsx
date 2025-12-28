@@ -6,13 +6,52 @@ import { ScrollReveal } from "@/components/ui/scroll-reveal";
 interface CityMapProps {
   city: CityDetailData;
   state: StateDetailData;
+  countryCode?: string;
 }
 
-const CityMap = ({ city, state }: CityMapProps) => {
+// Country code to country name mapping for map queries
+const COUNTRY_NAMES: Record<string, string> = {
+  us: "USA",
+  uk: "United Kingdom",
+  au: "Australia",
+  ca: "Canada",
+  de: "Germany",
+  ae: "United Arab Emirates",
+  it: "Italy",
+  mx: "Mexico",
+  my: "Malaysia",
+  sg: "Singapore",
+  nz: "New Zealand",
+  sa: "Saudi Arabia",
+  qa: "Qatar",
+  eg: "Egypt",
+  pt: "Portugal",
+  om: "Oman",
+  kw: "Kuwait",
+  lu: "Luxembourg",
+  fr: "France",
+  es: "Spain",
+  ch: "Switzerland",
+  ie: "Ireland",
+  br: "Brazil",
+  fi: "Finland",
+  nl: "Netherlands",
+  se: "Sweden",
+  no: "Norway",
+  dk: "Denmark",
+  be: "Belgium",
+  jo: "Jordan",
+  za: "South Africa"
+};
+
+const CityMap = ({ city, state, countryCode = "us" }: CityMapProps) => {
   const { t } = useLanguage();
 
-  // Generate Google Maps embed URL for the city
-  const mapQuery = encodeURIComponent(`${city.name}, ${state.abbreviation}, USA`);
+  // Get country name for map query
+  const countryName = COUNTRY_NAMES[countryCode.toLowerCase()] || "USA";
+  
+  // Generate Google Maps embed URL for the city with correct country
+  const mapQuery = encodeURIComponent(`${city.name}, ${state.name}, ${countryName}`);
   const mapEmbedUrl = `https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=${mapQuery}&zoom=12`;
 
   return (

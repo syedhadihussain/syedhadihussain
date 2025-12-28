@@ -111,7 +111,7 @@ const CityPage = () => {
           </div>
           <CityHero city={city} state={state} />
           <CityServices city={city} />
-          <CityMap city={city} state={state} />
+          <CityMap city={city} state={state} countryCode={countryCode} />
           <CityWhyChoose city={city} />
           {/* Related Cities - Internal Linking */}
           <RelatedCities
