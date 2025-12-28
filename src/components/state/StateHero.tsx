@@ -41,19 +41,6 @@ const StateHero = ({ state, countryCode }: StateHeroProps) => {
           {/* Content */}
           <div className="order-2 lg:order-1 space-y-6">
             <ScrollReveal>
-              {/* Breadcrumb */}
-              <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
-                <Link to={`/${language}/`} className="hover:text-primary transition-colors">
-                  {t("nav.home")}
-                </Link>
-                <span>/</span>
-                <Link to={`/${language}/${countryCode}/`} className="hover:text-primary transition-colors">
-                  {t(countryName)}
-                </Link>
-                <span>/</span>
-                <span className="text-foreground font-medium">{state.name}</span>
-              </nav>
-
               {/* Badge */}
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full">
                 <MapPin className="w-4 h-4 text-primary" />
