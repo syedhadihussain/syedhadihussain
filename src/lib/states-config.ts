@@ -1996,3 +1996,10 @@ export const isCityActive = (stateCode: string, cityCode: string): boolean => {
   const state = STATES[stateCode.toLowerCase()];
   return state?.activeCities.includes(cityCode.toLowerCase()) ?? false;
 };
+
+// Check if a city code is valid for a given state
+export const isValidCity = (stateCode: string, cityCode: string): boolean => {
+  const state = STATES[stateCode.toLowerCase()];
+  if (!state) return false;
+  return state.cities.some(c => c.code === cityCode.toLowerCase());
+};

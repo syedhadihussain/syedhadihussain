@@ -1,6 +1,8 @@
-import { Navigate, useLocation } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { getCityBySlug } from "@/lib/cities-config";
+import { getCityDetailData } from "@/lib/cities-config";
+import { isValidState, getStateData, isValidCity } from "@/lib/states-config";
+import { isValidCountry } from "@/lib/countries-config";
 import Navigation from "@/components/portfolio/Navigation";
 import Footer from "@/components/portfolio/Footer";
 import CitySEOHead from "@/components/city/CitySEOHead";
@@ -15,25 +17,34 @@ import FullStackCTA from "@/components/portfolio/FullStackCTA";
 import FAQ from "@/components/portfolio/FAQ";
 
 const CityPage = () => {
-  const location = useLocation();
+  const { countryCode, stateCode, cityCode } = useParams<{ 
+    countryCode: string; 
+    stateCode: string; 
+    cityCode: string;
+  }>();
   const { language } = useLanguage();
 
-  // Extract city slug from pathname (e.g., /en/local-seo-tampa -> local-seo-tampa)
-  const pathParts = location.pathname.split('/').filter(Boolean);
-  const citySlug = pathParts[pathParts.length - 1]; // Last segment
-
-  // Validate city slug
-  if (!citySlug || !citySlug.startsWith("local-seo-")) {
+  // Validate country code
+  if (!countryCode || !isValidCountry(countryCode)) {
     return <Navigate to={`/${language}`} replace />;
   }
 
-  const cityData = getCityBySlug(citySlug);
+  // Validate state code
+  if (!stateCode || !isValidState(stateCode)) {
+    return <Navigate to={`/${language}/${countryCode}`} replace />;
+  }
+
+  // Validate city code
+  if (!cityCode || !isValidCity(stateCode, cityCode)) {
+    return <Navigate to={`/${language}/${countryCode}/${stateCode}`} replace />;
+  }
+
+  const state = getStateData(stateCode);
+  const city = getCityDetailData(stateCode, cityCode);
   
-  if (!cityData) {
-    return <Navigate to={`/${language}`} replace />;
+  if (!city || !state) {
+    return <Navigate to={`/${language}/${countryCode}/${stateCode}`} replace />;
   }
-
-  const { city, state } = cityData;
 
   // Client-catching SEO metadata optimized for "local SEO" keyword
   const pageTitle = `Local SEO ${city.name}, ${city.stateAbbreviation} | #1 Google Maps & AI Search Expert | Get Found Now`;
@@ -74,7 +85,7 @@ const CityPage = () => {
           <section id="case-studies" aria-label="Local SEO client success stories">
             <CaseStudies />
           </section>
-          <section id="testimonials" aria-label="What ${city.name} business owners say">
+          <section id="testimonials" aria-label={`What ${city.name} business owners say`}>
             <Testimonials />
           </section>
           <FullStackCTA />
