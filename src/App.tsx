@@ -89,23 +89,30 @@ const App = () => (
                   {/* Root redirect to default language */}
                   <Route path="/" element={<Navigate to={`/${DEFAULT_LANGUAGE}`} replace />} />
                   
-                  {/* City pages first - most specific with local-seo prefix in URL */}
-                  <Route path="/en/:countryCode/:stateCode/:citySlug" element={<CityPage />} />
-                  <Route path="/ar/:countryCode/:stateCode/:citySlug" element={<CityPage />} />
-                  <Route path="/es/:countryCode/:stateCode/:citySlug" element={<CityPage />} />
-                  <Route path="/zh/:countryCode/:stateCode/:citySlug" element={<CityPage />} />
-                  
-                  {/* State pages (2 segments after lang) */}
-                  <Route path="/en/:countryCode/:stateCode" element={<StatePage />} />
-                  <Route path="/ar/:countryCode/:stateCode" element={<StatePage />} />
-                  <Route path="/es/:countryCode/:stateCode" element={<StatePage />} />
-                  <Route path="/zh/:countryCode/:stateCode" element={<StatePage />} />
-                  
-                  {/* Country pages (1 segment after lang) */}
-                  <Route path="/en/:countryCode" element={<CountryPage />} />
-                  <Route path="/ar/:countryCode" element={<CountryPage />} />
-                  <Route path="/es/:countryCode" element={<CountryPage />} />
-                  <Route path="/zh/:countryCode" element={<CountryPage />} />
+                  {/* Dynamic geo pages for ALL supported languages */}
+                  {SUPPORTED_LANGUAGES.map((lang) => (
+                    <Route
+                      key={`city-${lang}`}
+                      path={`/${lang}/:countryCode/:stateCode/:citySlug`}
+                      element={<CityPage />}
+                    />
+                  ))}
+
+                  {SUPPORTED_LANGUAGES.map((lang) => (
+                    <Route
+                      key={`state-${lang}`}
+                      path={`/${lang}/:countryCode/:stateCode`}
+                      element={<StatePage />}
+                    />
+                  ))}
+
+                  {SUPPORTED_LANGUAGES.map((lang) => (
+                    <Route
+                      key={`country-${lang}`}
+                      path={`/${lang}/:countryCode`}
+                      element={<CountryPage />}
+                    />
+                  ))}
                   
                   {/* Static routes for each language */}
                   {SUPPORTED_LANGUAGES.map((lang) => (

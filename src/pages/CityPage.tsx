@@ -76,6 +76,7 @@ const CityPage = () => {
   return (
     <>
       <CitySEOHead
+        countryCode={countryCode}
         city={city}
         state={state}
         title={pageTitle}
