@@ -2,7 +2,7 @@
 
 import { CityData, StateDetailData } from "./states-config";
 
-// England cities/areas
+// England cities/areas with local-seo-{city} slug format
 export const ENGLAND_CITIES: CityData[] = [
   // London & Surrounds
   { name: "London", code: "london" },

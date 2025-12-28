@@ -91,8 +91,8 @@ const CityPage = () => {
         title={pageTitle}
         description={pageDescription}
         keywords={keywords}
-        ogTitle={auMetadata?.ogTitle}
-        ogDescription={auMetadata?.ogDescription}
+        ogTitle={customMetadata?.ogTitle}
+        ogDescription={customMetadata?.ogDescription}
       />
       <div className="min-h-screen bg-background">
         <Navigation />
