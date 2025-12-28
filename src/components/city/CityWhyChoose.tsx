@@ -103,10 +103,10 @@ const CityWhyChoose = ({ city }: CityWhyChooseProps) => {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors text-lg glow"
             >
-              {t("Claim Your FREE SEO Audit Now for")} {city.name}
+              {t("Claim 50% Off Your SEO Audit Now for")} {city.name}
             </a>
             <p className="text-xs text-muted-foreground mt-4">
-              {t("No obligation. No sales pressure. Just actionable insights for your business.")}
+              {t("Limited time offer. No obligation. Just actionable insights for your business.")}
             </p>
           </div>
         </ScrollReveal>

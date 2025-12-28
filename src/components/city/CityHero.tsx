@@ -87,7 +87,7 @@ const CityHero = ({ city, state }: CityHeroProps) => {
                 <Button asChild size="lg" className="glow group">
                   <a href="https://calendly.com/syedhadihussain" target="_blank" rel="noopener noreferrer">
                     <Phone className="w-4 h-4 mr-2" />
-                    {t("Get Your FREE SEO Audit for")} {city.name}
+                    {t("Get 50% Off Your SEO Audit for")} {city.name}
                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </a>
                 </Button>
