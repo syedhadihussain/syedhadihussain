@@ -1987,6 +1987,14 @@ import { UK_STATES } from "./uk-states-config";
 import { CA_STATES } from "./ca-states-config";
 import { DE_STATES } from "./de-states-config";
 import { AE_STATES } from "./ae-states-config";
+import { IT_STATES } from "./it-states-config";
+import { MX_STATES } from "./mx-states-config";
+import { MY_STATES } from "./my-states-config";
+import { SG_STATES } from "./sg-states-config";
+import { NZ_STATES } from "./nz-states-config";
+import { SA_STATES } from "./sa-states-config";
+import { QA_STATES } from "./qa-states-config";
+import { EG_STATES } from "./eg-states-config";
 
 // Get the state registry based on country code
 const getStateRegistry = (countryCode: string): Record<string, StateDetailData> => {
@@ -1996,6 +2004,14 @@ const getStateRegistry = (countryCode: string): Record<string, StateDetailData> 
   if (code === 'ca') return CA_STATES;
   if (code === 'de') return DE_STATES;
   if (code === 'ae') return AE_STATES;
+  if (code === 'it') return IT_STATES;
+  if (code === 'mx') return MX_STATES;
+  if (code === 'my') return MY_STATES;
+  if (code === 'sg') return SG_STATES;
+  if (code === 'nz') return NZ_STATES;
+  if (code === 'sa') return SA_STATES;
+  if (code === 'qa') return QA_STATES;
+  if (code === 'eg') return EG_STATES;
   return STATES;
 };
 
