@@ -29,8 +29,8 @@ const CityPage = () => {
     return <Navigate to={`/${language}`} replace />;
   }
 
-  // Validate state code
-  if (!stateCode || !isValidState(stateCode)) {
+  // Validate state code (pass countryCode for AU support)
+  if (!stateCode || !isValidState(stateCode, countryCode)) {
     return <Navigate to={`/${language}/${countryCode}`} replace />;
   }
 
@@ -41,13 +41,13 @@ const CityPage = () => {
   
   const cityCode = citySlug.replace("local-seo-", "");
   
-  // Validate city code
-  if (!cityCode || !isValidCity(stateCode, cityCode)) {
+  // Validate city code (pass countryCode for AU support)
+  if (!cityCode || !isValidCity(stateCode, cityCode, countryCode)) {
     return <Navigate to={`/${language}/${countryCode}/${stateCode}`} replace />;
   }
 
-  const state = getStateData(stateCode);
-  const city = getCityDetailData(stateCode, cityCode);
+  const state = getStateData(stateCode, countryCode);
+  const city = getCityDetailData(stateCode, cityCode, countryCode);
   
   if (!city || !state) {
     return <Navigate to={`/${language}/${countryCode}/${stateCode}`} replace />;

@@ -118,9 +118,11 @@ export const AUSTRALIA_STATES: StateData[] = [
   { name: "New South Wales", code: "nsw", coords: [-31.2532, 146.9211] },
   { name: "Victoria", code: "vic", coords: [-36.9848, 143.3906] },
   { name: "Queensland", code: "qld", coords: [-22.5751, 144.0848] },
-  { name: "Western Australia", code: "wa", coords: [-25.0428, 117.7930] },
-  { name: "South Australia", code: "sa", coords: [-30.0002, 136.2092] },
-  { name: "Tasmania", code: "tas", coords: [-41.4545, 145.9707] }
+  { name: "Western Australia", code: "wa-au", coords: [-25.0428, 117.7930] },
+  { name: "South Australia", code: "sa-au", coords: [-30.0002, 136.2092] },
+  { name: "Tasmania", code: "tas", coords: [-41.4545, 145.9707] },
+  { name: "Australian Capital Territory", code: "act", coords: [-35.2809, 149.1300] },
+  { name: "Northern Territory", code: "nt", coords: [-19.4914, 132.5510] }
 ];
 
 export const ALL_AUSTRALIA_STATES: string[] = [

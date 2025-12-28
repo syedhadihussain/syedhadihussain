@@ -1,5 +1,6 @@
 // City page configuration with unique SEO content for each city
 import { CityData, StateDetailData, STATES } from "./states-config";
+import { AU_STATES } from "./au-states-config";
 
 export interface CityDetailData {
   code: string;
@@ -84,8 +85,10 @@ const getCityUniqueContent = (cityName: string, stateName: string, stateAbbrevia
 };
 
 // Get city detail data including unique content
-export const getCityDetailData = (stateCode: string, cityCode: string): CityDetailData | undefined => {
-  const state = STATES[stateCode.toLowerCase()];
+export const getCityDetailData = (stateCode: string, cityCode: string, countryCode: string = 'us'): CityDetailData | undefined => {
+  // Determine which state registry to use based on country
+  const stateRegistry = countryCode.toLowerCase() === 'au' ? AU_STATES : STATES;
+  const state = stateRegistry[stateCode.toLowerCase()];
   if (!state) return undefined;
 
   const cityIndex = state.cities.findIndex(c => c.code === cityCode.toLowerCase());
@@ -106,17 +109,20 @@ export const getCityDetailData = (stateCode: string, cityCode: string): CityDeta
 };
 
 // Get city by slug (e.g., "local-seo-tampa" -> city data)
-export const getCityBySlug = (slug: string): { city: CityDetailData; state: StateDetailData } | undefined => {
+export const getCityBySlug = (slug: string, countryCode: string = 'us'): { city: CityDetailData; state: StateDetailData } | undefined => {
   // Extract city code from slug (e.g., "local-seo-tampa" -> "tampa")
   const cityCode = slug.replace("local-seo-", "");
   
+  // Determine which state registry to use based on country
+  const stateRegistry = countryCode.toLowerCase() === 'au' ? AU_STATES : STATES;
+  
   // Search through all states to find this city
-  for (const stateCode of Object.keys(STATES)) {
-    const state = STATES[stateCode];
+  for (const stateCode of Object.keys(stateRegistry)) {
+    const state = stateRegistry[stateCode];
     const cityData = state.cities.find(c => c.code === cityCode);
     
     if (cityData) {
-      const cityDetail = getCityDetailData(stateCode, cityCode);
+      const cityDetail = getCityDetailData(stateCode, cityCode, countryCode);
       if (cityDetail) {
         return { city: cityDetail, state };
       }
@@ -127,8 +133,8 @@ export const getCityBySlug = (slug: string): { city: CityDetailData; state: Stat
 };
 
 // Check if a city slug is valid
-export const isValidCitySlug = (slug: string): boolean => {
-  return getCityBySlug(slug) !== undefined;
+export const isValidCitySlug = (slug: string, countryCode: string = 'us'): boolean => {
+  return getCityBySlug(slug, countryCode) !== undefined;
 };
 
 // Generate all city slugs for routing
@@ -146,8 +152,10 @@ export const getAllCitySlugs = (): string[] => {
 };
 
 // Get all cities for a specific state
-export const getStateCities = (stateCode: string): CityDetailData[] => {
-  const state = STATES[stateCode.toLowerCase()];
+export const getStateCities = (stateCode: string, countryCode: string = 'us'): CityDetailData[] => {
+  // Determine which state registry to use based on country
+  const stateRegistry = countryCode.toLowerCase() === 'au' ? AU_STATES : STATES;
+  const state = stateRegistry[stateCode.toLowerCase()];
   if (!state) return [];
   
   return state.cities.map((city, index) => {
