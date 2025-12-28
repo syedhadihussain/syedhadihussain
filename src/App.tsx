@@ -35,6 +35,7 @@ const PrivacyPolicyPage = lazy(() => import("./pages/PrivacyPolicyPage"));
 const TermsOfServicePage = lazy(() => import("./pages/TermsOfServicePage"));
 const CountryPage = lazy(() => import("./pages/CountryPage"));
 const StatePage = lazy(() => import("./pages/StatePage"));
+const CityPage = lazy(() => import("./pages/CityPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -108,6 +109,11 @@ const App = () => (
                       <Route
                         path=":countryCode/:stateCode"
                         element={<StatePage />}
+                      />
+                      {/* City pages with slug format /local-seo-{cityname} */}
+                      <Route
+                        path=":citySlug"
+                        element={<CityPage />}
                       />
                     </Route>
                   ))}

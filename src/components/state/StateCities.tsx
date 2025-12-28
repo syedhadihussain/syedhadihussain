@@ -17,13 +17,7 @@ const StateCities = ({ state, countryCode }: StateCitiesProps) => {
   const city2 = state.cities[1]?.name || "City 2";
   const city3 = state.cities[2]?.name || "City 3";
 
-  // Check if a city has an active page
-  const isCityActive = (cityCode: string) => {
-    return state.activeCities?.includes(cityCode) ?? false;
-  };
-
-  // Get only active cities for the major cities section
-  const activeCities = state.cities.filter(city => isCityActive(city.code));
+  // All cities now have pages with the /local-seo-{citycode} format
 
   return (
     <section className="py-20 bg-muted/30" aria-labelledby="cities-heading">
@@ -56,41 +50,26 @@ const StateCities = ({ state, countryCode }: StateCitiesProps) => {
               </h3>
             </div>
             <div className="flex flex-wrap gap-2">
-              {state.cities.map((city) => {
-                const isActive = isCityActive(city.code);
-                
-                if (isActive) {
-                  return (
-                    <Link
-                      key={city.code}
-                      to={`/${language}/${countryCode}/${state.code}/${city.code}/`}
-                      className="px-3 py-1.5 bg-muted hover:bg-primary/10 rounded-full text-sm text-muted-foreground hover:text-primary border border-border hover:border-primary/30 transition-all duration-200"
-                    >
-                      {city.name}
-                    </Link>
-                  );
-                }
-                
-                return (
-                  <span
-                    key={city.code}
-                    className="px-3 py-1.5 bg-muted rounded-full text-sm text-muted-foreground border border-border"
-                  >
-                    {city.name}
-                  </span>
-                );
-              })}
+              {state.cities.map((city) => (
+                <Link
+                  key={city.code}
+                  to={`/${language}/local-seo-${city.code}`}
+                  className="px-3 py-1.5 bg-muted hover:bg-primary/10 rounded-full text-sm text-muted-foreground hover:text-primary border border-border hover:border-primary/30 transition-all duration-200"
+                >
+                  {city.name}
+                </Link>
+              ))}
             </div>
           </div>
         </ScrollReveal>
 
-        {/* Major Cities Highlight - Only active cities */}
+        {/* Major Cities Highlight - First 4 cities */}
         <ScrollReveal delay={0.3}>
           <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {activeCities.slice(0, 4).map((city, index) => (
+            {state.cities.slice(0, 4).map((city, index) => (
               <Link
                 key={city.code}
-                to={`/${language}/${countryCode}/${state.code}/${city.code}/`}
+                to={`/${language}/local-seo-${city.code}`}
                 className="group relative bg-background rounded-xl p-6 border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg"
               >
                 <div className="flex items-start justify-between mb-3">
