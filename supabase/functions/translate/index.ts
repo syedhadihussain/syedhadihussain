@@ -41,10 +41,41 @@ async function translateChunk(args: {
 Rules:
 - Preserve brand names and proper nouns when appropriate.
 - Preserve URLs, emails, phone numbers, currency symbols, and numbers.
-- Keep the meaning and tone.
-- Return ONLY valid JSON object with no additional text: {"translations": {"<input>": "<translation>", ...}}`;
+- Keep the meaning and tone.`;
 
   const userPrompt = `Translate the following strings (JSON array):\n${JSON.stringify(texts)}`;
+
+  const body: any = {
+    model: "google/gemini-2.5-flash",
+    temperature: 0,
+    max_tokens: 4000,
+    messages: [
+      { role: "system", content: systemPrompt },
+      { role: "user", content: userPrompt },
+    ],
+    // Use tool-calling to get reliable structured output
+    tools: [
+      {
+        type: "function",
+        function: {
+          name: "return_translations",
+          description: "Return translations for the provided strings.",
+          parameters: {
+            type: "object",
+            properties: {
+              translations: {
+                type: "object",
+                additionalProperties: { type: "string" },
+              },
+            },
+            required: ["translations"],
+            additionalProperties: false,
+          },
+        },
+      },
+    ],
+    tool_choice: { type: "function", function: { name: "return_translations" } },
+  };
 
   const aiRes = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
     method: "POST",
@@ -52,28 +83,39 @@ Rules:
       "Content-Type": "application/json",
       Authorization: `Bearer ${LOVABLE_API_KEY}`,
     },
-    body: JSON.stringify({
-      model: "google/gemini-2.5-flash",
-      temperature: 0,
-      max_tokens: 4000,
-      messages: [
-        { role: "system", content: systemPrompt },
-        { role: "user", content: userPrompt },
-      ],
-    }),
+    body: JSON.stringify(body),
   });
 
   if (!aiRes.ok) {
     const errorText = await aiRes.text();
     console.error("AI gateway error:", aiRes.status, errorText);
+    if (aiRes.status === 429) throw new Error("Rate limit exceeded (429)");
+    if (aiRes.status === 402) throw new Error("Credits required (402)");
     throw new Error("AI translation failed");
   }
 
   const aiJson = await aiRes.json();
-  const content = aiJson?.choices?.[0]?.message?.content;
 
+  // Preferred: tool call arguments
+  const toolArgsStr =
+    aiJson?.choices?.[0]?.message?.tool_calls?.[0]?.function?.arguments;
+  if (toolArgsStr && typeof toolArgsStr === "string") {
+    try {
+      const parsedArgs = JSON.parse(toolArgsStr);
+      const translations = parsedArgs?.translations;
+      if (translations && typeof translations === "object") {
+        return translations as Record<string, string>;
+      }
+    } catch (e) {
+      console.error("Tool args JSON parse error:", String(e));
+      // fall through to content parsing
+    }
+  }
+
+  // Fallback: plain content (less reliable)
+  const content = aiJson?.choices?.[0]?.message?.content;
   if (!content || typeof content !== "string") {
-    console.error("Invalid AI response:", JSON.stringify(aiJson).slice(0, 500));
+    console.error("Invalid AI response:", JSON.stringify(aiJson).slice(0, 700));
     throw new Error("Invalid AI response format");
   }
 
@@ -83,7 +125,7 @@ Rules:
   try {
     parsed = JSON.parse(cleaned);
   } catch {
-    console.error("JSON parse error. Cleaned content:", cleaned.slice(0, 800));
+    console.error("JSON parse error. Cleaned content:", cleaned.slice(0, 900));
     throw new Error("Failed to parse AI response as JSON");
   }
 
