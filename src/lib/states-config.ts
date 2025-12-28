@@ -1981,15 +1981,21 @@ export const STATES: Record<string, StateDetailData> = {
 // Get all active state codes
 export const STATE_CODES = Object.keys(STATES);
 
-// Import AU and UK states for combined lookups
+// Import country-specific states for combined lookups
 import { AU_STATES } from "./au-states-config";
 import { UK_STATES } from "./uk-states-config";
+import { CA_STATES } from "./ca-states-config";
+import { DE_STATES } from "./de-states-config";
+import { AE_STATES } from "./ae-states-config";
 
 // Get the state registry based on country code
 const getStateRegistry = (countryCode: string): Record<string, StateDetailData> => {
   const code = countryCode.toLowerCase();
   if (code === 'au') return AU_STATES;
   if (code === 'uk') return UK_STATES;
+  if (code === 'ca') return CA_STATES;
+  if (code === 'de') return DE_STATES;
+  if (code === 'ae') return AE_STATES;
   return STATES;
 };
 
