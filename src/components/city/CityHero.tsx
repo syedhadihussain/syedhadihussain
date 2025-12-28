@@ -1,4 +1,4 @@
-import { MapPin, Star, TrendingUp, Award, ArrowRight, Eye, MessageCircle, CheckCircle } from "lucide-react";
+import { MapPin, Star, TrendingUp, Award, ArrowRight, Eye, MessageCircle, CheckCircle, Phone, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -49,11 +49,11 @@ const CityHero = ({ city, state }: CityHeroProps) => {
                 <span className="text-foreground font-medium">{city.name}</span>
               </nav>
 
-              {/* Badge */}
+              {/* Urgency Badge */}
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full">
-                <MapPin className="w-4 h-4 text-primary" />
+                <Zap className="w-4 h-4 text-primary animate-pulse" />
                 <span className="text-sm font-medium text-primary">
-                  Local SEO Expert in {city.name}, {city.stateAbbreviation}
+                  {city.name} Businesses: Stop Losing Customers to Competitors
                 </span>
               </div>
             </ScrollReveal>
@@ -70,13 +70,13 @@ const CityHero = ({ city, state }: CityHeroProps) => {
               </p>
             </ScrollReveal>
 
-            {/* Unique Features */}
+            {/* Results-Focused Features */}
             <ScrollReveal delay={0.25}>
               <div className="grid grid-cols-2 gap-3">
                 {city.uniqueFeatures.map((feature, index) => (
                   <div key={index} className="flex items-center gap-2 text-sm text-muted-foreground">
                     <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
-                    <span>{feature}</span>
+                    <span className="font-medium">{feature}</span>
                   </div>
                 ))}
               </div>
@@ -85,17 +85,17 @@ const CityHero = ({ city, state }: CityHeroProps) => {
             <ScrollReveal delay={0.3}>
               <div className="flex flex-wrap gap-4">
                 <Button asChild size="lg" className="glow group">
-                  <Link to={`/${language}/case-studies`}>
-                    <Eye className="w-4 h-4 mr-2" />
-                    View Portfolio
+                  <a href="https://calendly.com/syedhadihussain" target="_blank" rel="noopener noreferrer">
+                    <Phone className="w-4 h-4 mr-2" />
+                    Get Your FREE {city.name} SEO Audit
                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Link>
+                  </a>
                 </Button>
                 <Button asChild variant="secondary" size="lg">
-                  <a href="https://calendly.com/syedhadihussain" target="_blank" rel="noopener noreferrer">
-                    <MessageCircle className="w-4 h-4 mr-2" />
-                    Free Consultation
-                  </a>
+                  <Link to={`/${language}/case-studies`}>
+                    <Eye className="w-4 h-4 mr-2" />
+                    See Real Results
+                  </Link>
                 </Button>
               </div>
             </ScrollReveal>
@@ -108,21 +108,21 @@ const CityHero = ({ city, state }: CityHeroProps) => {
                     <Star className="w-4 h-4 fill-primary" />
                     <span className="font-bold text-xl text-foreground">7+</span>
                   </div>
-                  <span className="text-xs text-muted-foreground">Years Experience</span>
+                  <span className="text-xs text-muted-foreground">Years Proven Results</span>
                 </div>
                 <div className="text-center">
                   <div className="flex items-center justify-center gap-1 text-primary mb-1">
                     <TrendingUp className="w-4 h-4" />
                     <span className="font-bold text-xl text-foreground">150%+</span>
                   </div>
-                  <span className="text-xs text-muted-foreground">Avg Growth</span>
+                  <span className="text-xs text-muted-foreground">Average Visibility Boost</span>
                 </div>
                 <div className="text-center">
                   <div className="flex items-center justify-center gap-1 text-primary mb-1">
                     <Award className="w-4 h-4" />
                     <span className="font-bold text-xl text-foreground">50+</span>
                   </div>
-                  <span className="text-xs text-muted-foreground">Industries</span>
+                  <span className="text-xs text-muted-foreground">Industries Mastered</span>
                 </div>
               </div>
             </ScrollReveal>
@@ -135,7 +135,7 @@ const CityHero = ({ city, state }: CityHeroProps) => {
               <figure className="relative gradient-border rounded-2xl overflow-hidden">
                 <img
                   src={profilePhoto}
-                  alt={`Local SEO Specialist serving ${city.name}, ${city.stateAbbreviation} - Syed Hadi Hussain`}
+                  alt={`${city.name} Local SEO Expert - Syed Hadi Hussain - Helping ${city.stateAbbreviation} businesses rank #1 on Google`}
                   className="w-full max-w-md rounded-2xl object-cover"
                   loading="eager"
                   fetchPriority="high"
@@ -145,8 +145,8 @@ const CityHero = ({ city, state }: CityHeroProps) => {
               </figure>
               {/* Floating Badge */}
               <div className="absolute -bottom-4 -right-4 glass rounded-xl p-4 glow-sm animate-fade-up" style={{ animationDelay: "0.6s" }}>
-                <div className="text-sm font-medium text-foreground">{city.name} Local Expert</div>
-                <div className="text-xs text-muted-foreground">{state.name} SEO Specialist</div>
+                <div className="text-sm font-bold text-foreground">Your {city.name} Local SEO Expert</div>
+                <div className="text-xs text-muted-foreground">Trusted by {state.name} Businesses</div>
               </div>
             </div>
           </div>
