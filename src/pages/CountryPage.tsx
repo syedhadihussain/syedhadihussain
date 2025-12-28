@@ -7,6 +7,7 @@ import CountrySEOHead from "@/components/country/CountrySEOHead";
 import CountryHero from "@/components/country/CountryHero";
 import CountryAuthority from "@/components/country/CountryAuthority";
 import CountryMap from "@/components/country/CountryMap";
+import CountryStates from "@/components/country/CountryStates";
 import CountryServices from "@/components/country/CountryServices";
 import CountryCaseStudiesCTA from "@/components/country/CountryCaseStudiesCTA";
 import CountryContact from "@/components/country/CountryContact";
@@ -61,6 +62,7 @@ const CountryPage = () => {
         <main id="main-content" role="main">
           <CountryHero country={country} />
           <CountryAuthority country={country} />
+          <CountryStates country={country} />
           <CountryMap country={country} />
           <CountryServices country={country} />
           <section id="case-studies" aria-label="Client case studies">
