@@ -2,7 +2,7 @@ import { Navigate, useParams } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { getCityDetailData } from "@/lib/cities-config";
 import { isValidState, getStateData, isValidCity } from "@/lib/states-config";
-import { isValidCountry } from "@/lib/countries-config";
+import { isValidCountry, getCountryData } from "@/lib/countries-config";
 import { getAUCityMetadata } from "@/lib/au-metadata-config";
 import { getUKCityMetadata } from "@/lib/uk-metadata-config";
 import Navigation from "@/components/portfolio/Navigation";
@@ -17,6 +17,8 @@ import Testimonials from "@/components/portfolio/Testimonials";
 import CaseStudies from "@/components/portfolio/CaseStudies";
 import FullStackCTA from "@/components/portfolio/FullStackCTA";
 import FAQ from "@/components/portfolio/FAQ";
+import GeoBreadcrumb from "@/components/geo/GeoBreadcrumb";
+import RelatedCities from "@/components/geo/RelatedCities";
 
 const CityPage = () => {
   const { countryCode, stateCode, citySlug } = useParams<{ 
@@ -97,10 +99,27 @@ const CityPage = () => {
       <div className="min-h-screen bg-background">
         <Navigation />
         <main id="main-content" role="main">
+          {/* Breadcrumb Navigation */}
+          <div className="container-narrow pt-24 pb-4">
+            <GeoBreadcrumb
+              countryCode={countryCode}
+              stateName={state.name}
+              stateCode={state.code}
+              cityName={city.name}
+              citySlug={city.slug}
+            />
+          </div>
           <CityHero city={city} state={state} />
           <CityServices city={city} />
           <CityMap city={city} state={state} />
           <CityWhyChoose city={city} />
+          {/* Related Cities - Internal Linking */}
+          <RelatedCities
+            countryCode={countryCode}
+            stateCode={state.code}
+            currentCityCode={city.code}
+            maxCities={8}
+          />
           <section id="case-studies" aria-label="Local SEO client success stories">
             <CaseStudies />
           </section>

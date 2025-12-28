@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { CityDetailData } from "@/lib/cities-config";
 import { StateDetailData } from "@/lib/states-config";
+import { getCountryData } from "@/lib/countries-config";
 import {
   SUPPORTED_LANGUAGES,
   BASE_URL,
@@ -28,9 +29,10 @@ const CitySEOHead = ({ countryCode, city, state, title, description, keywords, o
   const canonicalUrl = getCanonicalUrl(language, slug);
   const hreflangs = generateHreflangs(slug);
 
-  // Determine country name based on country code
-  const countryName = countryCode === "au" ? "Australia" : "United States";
-  const geoRegion = countryCode === "au" ? `AU-${city.stateAbbreviation}` : `US-${city.stateAbbreviation}`;
+  // Get dynamic country data
+  const country = getCountryData(countryCode);
+  const countryName = country?.name || (countryCode === "au" ? "Australia" : countryCode === "uk" ? "United Kingdom" : "United States");
+  const geoRegion = `${countryCode.toUpperCase()}-${city.stateAbbreviation}`;
 
   // Local Business structured data
   const localBusinessSchema = {
