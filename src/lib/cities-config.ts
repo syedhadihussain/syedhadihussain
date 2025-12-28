@@ -1,6 +1,7 @@
 // City page configuration with unique SEO content for each city
 import { CityData, StateDetailData, STATES } from "./states-config";
 import { AU_STATES } from "./au-states-config";
+import { UK_STATES } from "./uk-states-config";
 
 export interface CityDetailData {
   code: string;
@@ -87,7 +88,13 @@ const getCityUniqueContent = (cityName: string, stateName: string, stateAbbrevia
 // Get city detail data including unique content
 export const getCityDetailData = (stateCode: string, cityCode: string, countryCode: string = 'us'): CityDetailData | undefined => {
   // Determine which state registry to use based on country
-  const stateRegistry = countryCode.toLowerCase() === 'au' ? AU_STATES : STATES;
+  const getStateRegistry = () => {
+    const code = countryCode.toLowerCase();
+    if (code === 'au') return AU_STATES;
+    if (code === 'uk') return UK_STATES;
+    return STATES;
+  };
+  const stateRegistry = getStateRegistry();
   const state = stateRegistry[stateCode.toLowerCase()];
   if (!state) return undefined;
 
@@ -114,7 +121,13 @@ export const getCityBySlug = (slug: string, countryCode: string = 'us'): { city:
   const cityCode = slug.replace("local-seo-", "");
   
   // Determine which state registry to use based on country
-  const stateRegistry = countryCode.toLowerCase() === 'au' ? AU_STATES : STATES;
+  const getStateRegistry = () => {
+    const code = countryCode.toLowerCase();
+    if (code === 'au') return AU_STATES;
+    if (code === 'uk') return UK_STATES;
+    return STATES;
+  };
+  const stateRegistry = getStateRegistry();
   
   // Search through all states to find this city
   for (const stateCode of Object.keys(stateRegistry)) {
@@ -154,7 +167,13 @@ export const getAllCitySlugs = (): string[] => {
 // Get all cities for a specific state
 export const getStateCities = (stateCode: string, countryCode: string = 'us'): CityDetailData[] => {
   // Determine which state registry to use based on country
-  const stateRegistry = countryCode.toLowerCase() === 'au' ? AU_STATES : STATES;
+  const getStateRegistry = () => {
+    const code = countryCode.toLowerCase();
+    if (code === 'au') return AU_STATES;
+    if (code === 'uk') return UK_STATES;
+    return STATES;
+  };
+  const stateRegistry = getStateRegistry();
   const state = stateRegistry[stateCode.toLowerCase()];
   if (!state) return [];
   

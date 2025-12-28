@@ -4,6 +4,7 @@ import { getCityDetailData } from "@/lib/cities-config";
 import { isValidState, getStateData, isValidCity } from "@/lib/states-config";
 import { isValidCountry } from "@/lib/countries-config";
 import { getAUCityMetadata } from "@/lib/au-metadata-config";
+import { getUKCityMetadata } from "@/lib/uk-metadata-config";
 import Navigation from "@/components/portfolio/Navigation";
 import Footer from "@/components/portfolio/Footer";
 import CitySEOHead from "@/components/city/CitySEOHead";
@@ -54,14 +55,16 @@ const CityPage = () => {
     return <Navigate to={`/${language}/${countryCode}/${stateCode}`} replace />;
   }
 
-  // Check for AU-specific metadata
+  // Check for AU or UK-specific metadata
   const auMetadata = countryCode === "au" ? getAUCityMetadata(stateCode, cityCode) : null;
+  const ukMetadata = countryCode === "uk" ? getUKCityMetadata(stateCode, cityCode) : null;
+  const customMetadata = auMetadata || ukMetadata;
 
-  // Client-catching SEO metadata optimized for "local SEO" keyword (use AU metadata if available)
-  const pageTitle = auMetadata?.title ||
+  // Client-catching SEO metadata optimized for "local SEO" keyword (use custom metadata if available)
+  const pageTitle = customMetadata?.title ||
     `Local SEO ${city.name}, ${city.stateAbbreviation} | #1 Google Maps & AI Search Expert | Get Found Now`;
   
-  const pageDescription = auMetadata?.description ||
+  const pageDescription = customMetadata?.description ||
     `Looking for Local SEO in ${city.name}? I help ${city.stateAbbreviation} businesses rank #1 on Google Maps & AI search. 7+ years, 50+ industries, 150% avg growth. Get your FREE ${city.name} SEO audit today!`;
 
   const keywords = [
