@@ -11,7 +11,7 @@ import DiscountCountdown from "@/components/DiscountCountdown";
 import { useDiscountTimer } from "@/hooks/useDiscountTimer";
 
 const PricingPage = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { expired } = useDiscountTimer();
 
   // Calculate discounted prices (25% off)
