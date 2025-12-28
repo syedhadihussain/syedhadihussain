@@ -21,13 +21,13 @@ const CityContact = ({ city, state }: CityContactProps) => {
           <ScrollReveal animation="fade-up">
             <div className="text-center mb-12">
               <span className="text-primary text-sm font-medium tracking-wider uppercase mb-4 block">
-                Ready to Dominate {city.name} Local Search?
+                {t(`Ready to Dominate ${city.name} Local Search?`)}
               </span>
               <h2 id="contact-heading" className="font-display text-3xl lg:text-4xl xl:text-5xl font-bold text-foreground mb-4">
-                Get Your FREE {city.name} Local SEO Consultation
+                {t(`Get Your FREE ${city.name} Local SEO Consultation`)}
               </h2>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                Let's discuss how we can help your {city.name}, {state.name} business attract more local customers and outrank your competition.
+                {t(`Let's discuss how we can help your ${city.name}, ${state.name} business attract more local customers and outrank your competition.`)}
               </p>
             </div>
           </ScrollReveal>
@@ -80,7 +80,7 @@ const CityContact = ({ city, state }: CityContactProps) => {
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                   <MapPin className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="font-semibold text-foreground mb-1">Serving {city.name}</h3>
+                <h3 className="font-semibold text-foreground mb-1">{t(`Serving ${city.name}`)}</h3>
                 <p className="text-sm text-muted-foreground">{state.name}</p>
               </div>
             </div>
