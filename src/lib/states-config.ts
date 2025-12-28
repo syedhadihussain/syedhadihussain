@@ -1981,25 +1981,36 @@ export const STATES: Record<string, StateDetailData> = {
 // Get all active state codes
 export const STATE_CODES = Object.keys(STATES);
 
-// Check if a state code is valid
-export const isValidState = (code: string): boolean => {
+// Import AU states for combined lookups
+import { AU_STATES } from "./au-states-config";
+
+// Check if a state code is valid (for a specific country)
+export const isValidState = (code: string, countryCode: string = 'us'): boolean => {
+  if (countryCode.toLowerCase() === 'au') {
+    return code.toLowerCase() in AU_STATES;
+  }
   return code.toLowerCase() in STATES;
 };
 
-// Get state data by code
-export const getStateData = (code: string): StateDetailData | undefined => {
+// Get state data by code (for a specific country)
+export const getStateData = (code: string, countryCode: string = 'us'): StateDetailData | undefined => {
+  if (countryCode.toLowerCase() === 'au') {
+    return AU_STATES[code.toLowerCase()];
+  }
   return STATES[code.toLowerCase()];
 };
 
 // Check if a city has an active page
-export const isCityActive = (stateCode: string, cityCode: string): boolean => {
-  const state = STATES[stateCode.toLowerCase()];
+export const isCityActive = (stateCode: string, cityCode: string, countryCode: string = 'us'): boolean => {
+  const stateRegistry = countryCode.toLowerCase() === 'au' ? AU_STATES : STATES;
+  const state = stateRegistry[stateCode.toLowerCase()];
   return state?.activeCities.includes(cityCode.toLowerCase()) ?? false;
 };
 
 // Check if a city code is valid for a given state
-export const isValidCity = (stateCode: string, cityCode: string): boolean => {
-  const state = STATES[stateCode.toLowerCase()];
+export const isValidCity = (stateCode: string, cityCode: string, countryCode: string = 'us'): boolean => {
+  const stateRegistry = countryCode.toLowerCase() === 'au' ? AU_STATES : STATES;
+  const state = stateRegistry[stateCode.toLowerCase()];
   if (!state) return false;
   return state.cities.some(c => c.code === cityCode.toLowerCase());
 };

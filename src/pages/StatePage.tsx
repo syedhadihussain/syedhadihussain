@@ -25,11 +25,12 @@ const StatePage = () => {
     return <Navigate to={`/${language}`} replace />;
   }
 
-  if (!stateCode || !isValidState(stateCode)) {
+  // Validate state code (pass countryCode for AU support)
+  if (!stateCode || !isValidState(stateCode, countryCode)) {
     return <Navigate to={`/${language}/${countryCode}`} replace />;
   }
 
-  const state = getStateData(stateCode);
+  const state = getStateData(stateCode, countryCode);
   if (!state) {
     return <Navigate to={`/${language}/${countryCode}`} replace />;
   }

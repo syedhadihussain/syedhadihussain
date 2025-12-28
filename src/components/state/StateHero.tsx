@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { StateDetailData } from "@/lib/states-config";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
+import { getCountryData } from "@/lib/countries-config";
 import profilePhoto from "@/assets/profile-photo.png";
 
 interface StateHeroProps {
@@ -13,6 +14,10 @@ interface StateHeroProps {
 
 const StateHero = ({ state, countryCode }: StateHeroProps) => {
   const { t, language } = useLanguage();
+  
+  // Get country name for breadcrumb
+  const country = getCountryData(countryCode);
+  const countryName = country?.name || "Country";
 
   // Get first 4 cities for dynamic content (avoid duplication across states)
   const city1 = state.cities[0]?.name || "City 1";
@@ -43,7 +48,7 @@ const StateHero = ({ state, countryCode }: StateHeroProps) => {
                 </Link>
                 <span>/</span>
                 <Link to={`/${language}/${countryCode}/`} className="hover:text-primary transition-colors">
-                  {t("state.unitedStates")}
+                  {t(countryName)}
                 </Link>
                 <span>/</span>
                 <span className="text-foreground font-medium">{state.name}</span>
