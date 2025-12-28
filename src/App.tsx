@@ -12,7 +12,7 @@ import FloatingActions from "@/components/FloatingActions";
 import TawkToChat from "@/components/TawkToChat";
 import GlobalSEO from "@/components/GlobalSEO";
 import { SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE } from "@/lib/i18n-config";
-import { COUNTRY_CODES } from "@/lib/countries-config";
+import { getAllCitySlugs } from "@/lib/cities-config";
 import Index from "./pages/Index";
 
 // Lazy load pages for better performance
@@ -50,7 +50,7 @@ const PageLoader = () => (
   </div>
 );
 
-// Page routes configuration
+// Page routes configuration - includes static routes
 const pageRoutes = [
   { path: "", element: <Index /> },
   { path: "about", element: <AboutPage /> },
@@ -71,6 +71,9 @@ const pageRoutes = [
   { path: "privacy", element: <PrivacyPolicyPage /> },
   { path: "terms", element: <TermsOfServicePage /> },
 ];
+
+// Get all city slugs for routing
+const citySlugs = getAllCitySlugs();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -100,6 +103,14 @@ const App = () => (
                           element={route.element}
                         />
                       ))}
+                      {/* City pages - explicit routes for each city */}
+                      {citySlugs.map((slug) => (
+                        <Route
+                          key={`${lang}-${slug}`}
+                          path={slug}
+                          element={<CityPage />}
+                        />
+                      ))}
                       {/* Country pages within language prefix - use :countryCode param */}
                       <Route
                         path=":countryCode"
@@ -109,11 +120,6 @@ const App = () => (
                       <Route
                         path=":countryCode/:stateCode"
                         element={<StatePage />}
-                      />
-                      {/* City pages with slug format /local-seo-{cityname} */}
-                      <Route
-                        path=":citySlug"
-                        element={<CityPage />}
                       />
                     </Route>
                   ))}
