@@ -1981,35 +1981,40 @@ export const STATES: Record<string, StateDetailData> = {
 // Get all active state codes
 export const STATE_CODES = Object.keys(STATES);
 
-// Import AU states for combined lookups
+// Import AU and UK states for combined lookups
 import { AU_STATES } from "./au-states-config";
+import { UK_STATES } from "./uk-states-config";
+
+// Get the state registry based on country code
+const getStateRegistry = (countryCode: string): Record<string, StateDetailData> => {
+  const code = countryCode.toLowerCase();
+  if (code === 'au') return AU_STATES;
+  if (code === 'uk') return UK_STATES;
+  return STATES;
+};
 
 // Check if a state code is valid (for a specific country)
 export const isValidState = (code: string, countryCode: string = 'us'): boolean => {
-  if (countryCode.toLowerCase() === 'au') {
-    return code.toLowerCase() in AU_STATES;
-  }
-  return code.toLowerCase() in STATES;
+  const stateRegistry = getStateRegistry(countryCode);
+  return code.toLowerCase() in stateRegistry;
 };
 
 // Get state data by code (for a specific country)
 export const getStateData = (code: string, countryCode: string = 'us'): StateDetailData | undefined => {
-  if (countryCode.toLowerCase() === 'au') {
-    return AU_STATES[code.toLowerCase()];
-  }
-  return STATES[code.toLowerCase()];
+  const stateRegistry = getStateRegistry(countryCode);
+  return stateRegistry[code.toLowerCase()];
 };
 
 // Check if a city has an active page
 export const isCityActive = (stateCode: string, cityCode: string, countryCode: string = 'us'): boolean => {
-  const stateRegistry = countryCode.toLowerCase() === 'au' ? AU_STATES : STATES;
+  const stateRegistry = getStateRegistry(countryCode);
   const state = stateRegistry[stateCode.toLowerCase()];
   return state?.activeCities.includes(cityCode.toLowerCase()) ?? false;
 };
 
 // Check if a city code is valid for a given state
 export const isValidCity = (stateCode: string, cityCode: string, countryCode: string = 'us'): boolean => {
-  const stateRegistry = countryCode.toLowerCase() === 'au' ? AU_STATES : STATES;
+  const stateRegistry = getStateRegistry(countryCode);
   const state = stateRegistry[stateCode.toLowerCase()];
   if (!state) return false;
   return state.cities.some(c => c.code === cityCode.toLowerCase());
