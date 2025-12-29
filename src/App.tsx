@@ -47,10 +47,13 @@ const PortalMessagesPage = lazy(() => import("./pages/portal/PortalMessagesPage"
 const PortalDocumentsPage = lazy(() => import("./pages/portal/PortalDocumentsPage"));
 const PortalAgreementsPage = lazy(() => import("./pages/portal/PortalAgreementsPage"));
 const PortalSettingsPage = lazy(() => import("./pages/portal/PortalSettingsPage"));
+const PortalSubscriptionPage = lazy(() => import("./pages/portal/PortalSubscriptionPage"));
+const PortalProjectDetailsPage = lazy(() => import("./pages/portal/PortalProjectDetailsPage"));
 const AdminClientsPage = lazy(() => import("./pages/portal/admin/AdminClientsPage"));
 const AdminProjectsPage = lazy(() => import("./pages/portal/admin/AdminProjectsPage"));
 const AdminRolesPage = lazy(() => import("./pages/portal/admin/AdminRolesPage"));
 const AdminAnnouncementsPage = lazy(() => import("./pages/portal/admin/AdminAnnouncementsPage"));
+const AdminAnalyticsPage = lazy(() => import("./pages/portal/admin/AdminAnalyticsPage"));
 const ProtectedPortalRoute = lazy(() => import("./components/portal/ProtectedPortalRoute"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
@@ -95,9 +98,11 @@ const staticPageRoutes = [
 const protectedPortalRoutes = [
   { path: "portal/dashboard", element: <PortalDashboardPage /> },
   { path: "portal/projects", element: <PortalProjectsPage /> },
+  { path: "portal/projects/:projectId", element: <PortalProjectDetailsPage /> },
   { path: "portal/messages", element: <PortalMessagesPage /> },
   { path: "portal/documents", element: <PortalDocumentsPage /> },
   { path: "portal/agreements", element: <PortalAgreementsPage /> },
+  { path: "portal/subscription", element: <PortalSubscriptionPage /> },
   { path: "portal/settings", element: <PortalSettingsPage /> },
 ];
 
@@ -107,6 +112,7 @@ const adminPortalRoutes = [
   { path: "portal/admin/projects", element: <AdminProjectsPage />, requireModerator: true },
   { path: "portal/admin/roles", element: <AdminRolesPage />, requireAdmin: true },
   { path: "portal/admin/announcements", element: <AdminAnnouncementsPage />, requireModerator: true },
+  { path: "portal/admin/analytics", element: <AdminAnalyticsPage />, requireModerator: true },
 ];
 
 // Protected admin routes (require authentication + admin role)
