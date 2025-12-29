@@ -12,7 +12,7 @@ import LanguageRedirect from "@/components/LanguageRedirect";
 import FloatingActions from "@/components/FloatingActions";
 import TawkToChat from "@/components/TawkToChat";
 import GlobalSEO from "@/components/GlobalSEO";
-import { SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE } from "@/lib/i18n-config";
+import { SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE, isSupportedLanguage } from "@/lib/i18n-config";
 import Index from "./pages/Index";
 
 // Lazy load pages for better performance
@@ -69,6 +69,19 @@ const PageLoader = () => (
     </div>
   </div>
 );
+
+// Get preferred language for legacy routes / root redirects
+const getPreferredLanguage = () => {
+  if (typeof window === "undefined") return DEFAULT_LANGUAGE;
+
+  const stored = localStorage.getItem("language");
+  if (stored && isSupportedLanguage(stored)) return stored;
+
+  const browserLang = navigator.language?.split("-")[0]?.toLowerCase();
+  if (browserLang && isSupportedLanguage(browserLang)) return browserLang;
+
+  return DEFAULT_LANGUAGE;
+};
 
 // Static page routes configuration (path relative to language prefix)
 const staticPageRoutes = [
@@ -138,14 +151,14 @@ const App = () => (
                 <LanguageRedirect />
               <Suspense fallback={<PageLoader />}>
                 <Routes>
-                  {/* Root redirect to default language */}
-                  <Route path="/" element={<Navigate to={`/${DEFAULT_LANGUAGE}`} replace />} />
+                  {/* Root redirect to preferred language */}
+                  <Route path="/" element={<Navigate to={`/${getPreferredLanguage()}`} replace />} />
 
                   {/* Explicit 404 route per language */}
                   {SUPPORTED_LANGUAGES.map((lang) => (
                     <Route key={`notfound-${lang}`} path={`/${lang}/404`} element={<NotFound />} />
                   ))}
-                  <Route path="/404" element={<Navigate to={`/${DEFAULT_LANGUAGE}/404`} replace />} />
+                  <Route path="/404" element={<Navigate to={`/${getPreferredLanguage()}/404`} replace />} />
 
                   {/* Static routes for each language - FIRST to take priority */}
                   {SUPPORTED_LANGUAGES.map((lang) =>
@@ -234,12 +247,12 @@ const App = () => (
                     />
                   ))}
 
-                  {/* Legacy routes without language prefix - redirect to default language */}
+                  {/* Legacy routes without language prefix - redirect to preferred language */}
                   {staticPageRoutes.slice(1).map((route) => (
                     <Route
                       key={`legacy-${route.path}`}
                       path={`/${route.path}`}
-                      element={<Navigate to={`/${DEFAULT_LANGUAGE}/${route.path}`} replace />}
+                      element={<Navigate to={`/${getPreferredLanguage()}/${route.path}`} replace />}
                     />
                   ))}
 

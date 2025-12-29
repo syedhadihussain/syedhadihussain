@@ -4,16 +4,10 @@ import { isSupportedLanguage, SupportedLanguage, SUPPORTED_LANGUAGES } from "@/l
 
 export type Language = SupportedLanguage;
 
+type TranslationEntry = Record<SupportedLanguage, string>;
+
 interface Translations {
-  [key: string]: {
-    en: string;
-    ar: string;
-    es: string;
-    pt: string;
-    fr: string;
-    it: string;
-    de: string;
-  };
+  [key: string]: TranslationEntry;
 }
 
 export const translations: Translations = {
@@ -31,6 +25,12 @@ export const translations: Translations = {
   "nav.localServiceAds": { en: "Local Service Ads", ar: "إعلانات الخدمات المحلية", es: "Anuncios de Servicios Locales", pt: "Anúncios de Serviços Locais", fr: "Annonces de services locaux", it: "Annunci di servizi locali", de: "Lokale Serviceanzeigen" },
   "nav.projectManagement": { en: "Project Management", ar: "إدارة المشاريع", es: "Gestión de Proyectos", pt: "Gerenciamento de Projetos", fr: "Gestion de projet", it: "Gestione progetti", de: "Projektmanagement" },
   "nav.localSeo": { en: "Local SEO", ar: "SEO المحلي", es: "SEO Local", pt: "SEO Local", fr: "SEO local", it: "SEO locale", de: "Lokales SEO" },
+  "nav.webDevelopment": { en: "Web Development", ar: "تطوير الويب", es: "Desarrollo Web", pt: "Desenvolvimento Web", fr: "Développement web", it: "Sviluppo web", de: "Webentwicklung" },
+  "nav.contentWriting": { en: "Content Writing", ar: "كتابة المحتوى", es: "Redacción de Contenido", pt: "Redação de Conteúdo", fr: "Rédaction de contenu", it: "Scrittura di contenuti", de: "Content-Erstellung" },
+  "nav.graphicDesign": { en: "Graphic Design", ar: "تصميم الجرافيك", es: "Diseño Gráfico", pt: "Design Gráfico", fr: "Design graphique", it: "Graphic design", de: "Grafikdesign" },
+  "nav.socialMediaMarketing": { en: "Social Media Marketing", ar: "التسويق عبر وسائل التواصل", es: "Marketing en Redes Sociales", pt: "Marketing de Mídias Sociais", fr: "Marketing sur les réseaux sociaux", it: "Marketing sui social media", de: "Social-Media-Marketing" },
+  "nav.industriesWeServe": { en: "Industries We Serve", ar: "الصناعات التي نخدمها", es: "Industrias que Atendemos", pt: "Indústrias que Atendemos", fr: "Secteurs que nous servons", it: "Settori serviti", de: "Branchen, die wir bedienen" },
+  "nav.clientPortal": { en: "Client Portal", ar: "بوابة العميل", es: "Portal del Cliente", pt: "Portal do Cliente", fr: "Portail client", it: "Portale clienti", de: "Kundenportal" },
 
   // Hero
   "hero.available": { en: "Available for new projects", ar: "متاح لمشاريع جديدة", es: "Disponible para nuevos proyectos", pt: "Disponível para novos projetos", fr: "Disponible pour de nouveaux projets", it: "Disponibile per nuovi progetti", de: "Verfügbar für neue Projekte" },
