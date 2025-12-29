@@ -62,7 +62,7 @@ const RelatedIndustries = ({ industry }: RelatedIndustriesProps) => {
           </>
         )}
 
-        {/* All Categories with First Industry Link */}
+        {/* All Categories with Representative Industry Link */}
         <ScrollReveal animation="fade-up">
           <div className="text-center mb-12">
             <h3 className="font-display text-2xl font-bold text-foreground mb-4">
@@ -76,9 +76,37 @@ const RelatedIndustries = ({ industry }: RelatedIndustriesProps) => {
 
         <div className="flex flex-wrap justify-center gap-3">
           {categories.map((category, index) => {
-            // Get the first industry in this category to link to
-            const firstIndustrySlug = category.industries[0];
-            const industryLink = langLink(`/local-seo-services-for-${firstIndustrySlug}`);
+            // Map each category to its representative/main industry slug for correct linking
+            const categoryToRepresentativeIndustry: Record<string, string> = {
+              "home-maintenance": "plumbers",
+              "cleaning": "home-cleaning-services",
+              "construction": "builders",
+              "inspection": "surveying-mapping-services",
+              "pest-control": "pest-control-services",
+              "waste-recycling": "waste-removal-services",
+              "landscaping": "gardeners",
+              "energy": "solar-panel-installers",
+              "security": "cctv-installation-services",
+              "healthcare": "doctors-clinics",
+              "beauty": "hair-salons",
+              "automotive": "car-repair-shops",
+              "childcare": "childcare-centers",
+              "elderly-care": "elderly-care-services",
+              "funeral-religious": "funeral-services",
+              "legal-financial": "law-firms",
+              "real-estate": "real-estate-agencies",
+              "food-beverage": "restaurants",
+              "hospitality-events": "hotels",
+              "technology": "it-support-companies",
+              "professional-services": "accountants",
+              "manufacturing": "commercial-printing-services",
+              "storage-logistics": "storage-facilities",
+              "fitness": "gyms",
+              "specialized-trades": "furniture-restoration-services",
+            };
+            
+            const representativeSlug = categoryToRepresentativeIndustry[category.slug] || category.industries[0];
+            const industryLink = langLink(`/local-seo-services-for-${representativeSlug}`);
             
             return (
               <ScrollReveal key={category.slug} animation="fade-up" delay={index * 20}>
