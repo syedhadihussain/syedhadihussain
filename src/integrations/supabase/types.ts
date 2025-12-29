@@ -14,6 +14,48 @@ export type Database = {
   }
   public: {
     Tables: {
+      client_profiles: {
+        Row: {
+          account_status: string | null
+          billing_status: string | null
+          client_id: string
+          company_name: string | null
+          country: string | null
+          created_at: string
+          id: string
+          phone: string | null
+          subscription_plan: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          account_status?: string | null
+          billing_status?: string | null
+          client_id: string
+          company_name?: string | null
+          country?: string | null
+          created_at?: string
+          id?: string
+          phone?: string | null
+          subscription_plan?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          account_status?: string | null
+          billing_status?: string | null
+          client_id?: string
+          company_name?: string | null
+          country?: string | null
+          created_at?: string
+          id?: string
+          phone?: string | null
+          subscription_plan?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       contacts: {
         Row: {
           business_address: string | null
@@ -98,6 +140,129 @@ export type Database = {
         }
         Relationships: []
       }
+      project_files: {
+        Row: {
+          created_at: string
+          file_name: string
+          file_type: string | null
+          file_url: string
+          id: string
+          project_id: string
+          uploaded_by: string
+        }
+        Insert: {
+          created_at?: string
+          file_name: string
+          file_type?: string | null
+          file_url: string
+          id?: string
+          project_id: string
+          uploaded_by: string
+        }
+        Update: {
+          created_at?: string
+          file_name?: string
+          file_type?: string | null
+          file_url?: string
+          id?: string
+          project_id?: string
+          uploaded_by?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "project_files_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "projects"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      project_notes: {
+        Row: {
+          content: string
+          created_at: string
+          created_by: string
+          id: string
+          is_internal: boolean | null
+          project_id: string
+        }
+        Insert: {
+          content: string
+          created_at?: string
+          created_by: string
+          id?: string
+          is_internal?: boolean | null
+          project_id: string
+        }
+        Update: {
+          content?: string
+          created_at?: string
+          created_by?: string
+          id?: string
+          is_internal?: boolean | null
+          project_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "project_notes_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "projects"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      projects: {
+        Row: {
+          admin_notes: string | null
+          client_id: string
+          created_at: string
+          description: string | null
+          id: string
+          name: string
+          services: string[] | null
+          status: string | null
+          timeline_end: string | null
+          timeline_start: string | null
+          updated_at: string
+        }
+        Insert: {
+          admin_notes?: string | null
+          client_id: string
+          created_at?: string
+          description?: string | null
+          id?: string
+          name: string
+          services?: string[] | null
+          status?: string | null
+          timeline_end?: string | null
+          timeline_start?: string | null
+          updated_at?: string
+        }
+        Update: {
+          admin_notes?: string | null
+          client_id?: string
+          created_at?: string
+          description?: string | null
+          id?: string
+          name?: string
+          services?: string[] | null
+          status?: string | null
+          timeline_end?: string | null
+          timeline_start?: string | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "projects_client_id_fkey"
+            columns: ["client_id"]
+            isOneToOne: false
+            referencedRelation: "client_profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       user_roles: {
         Row: {
           created_at: string
@@ -124,6 +289,7 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      generate_client_id: { Args: never; Returns: string }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
@@ -131,9 +297,10 @@ export type Database = {
         }
         Returns: boolean
       }
+      is_admin_or_moderator: { Args: { _user_id: string }; Returns: boolean }
     }
     Enums: {
-      app_role: "admin" | "user"
+      app_role: "admin" | "moderator" | "client"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -261,7 +428,7 @@ export type CompositeTypes<
 export const Constants = {
   public: {
     Enums: {
-      app_role: ["admin", "user"],
+      app_role: ["admin", "moderator", "client"],
     },
   },
 } as const
