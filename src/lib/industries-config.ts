@@ -272,7 +272,8 @@ export const INDUSTRY_CATEGORIES: IndustryCategory[] = [
       "it-support-companies", "managed-it-services", "data-cabling-services",
       "structured-cabling-services", "server-installation-services", "pos-system-providers",
       "cybersecurity-services", "internet-service-providers", "telecom-service-providers",
-      "mobile-phone-repair-shops"
+      "mobile-phone-repair-shops", "laptop-repair-shops", "tablet-repair-services",
+      "gaming-console-repair-services", "computer-repair-services", "smart-watch-repair-services"
     ]
   },
   {
@@ -727,6 +728,256 @@ function generateIndustryContent(slug: string, name: string, category: string): 
         {
           question: "How do you help compete with big repair chains?",
           answer: "We focus on local authority, fast response times, genuine reviews, and competitive pricing keywords to help independent shops outrank franchise competitors."
+        }
+      ]
+    },
+    // Laptop Repair Shops
+    "laptop-repair-shops": {
+      metaDescription: `Local SEO services for laptop repair shops. Rank #1 on Google Maps, get more repair jobs, and grow your laptop repair business with proven SEO strategies.`,
+      heroTagline: "Dominate Local Search for Laptop Repair Services",
+      heroDescription: "Get more customers searching for laptop repairs with specialized Local SEO for laptop repair shops. We help computer repair businesses rank #1 in Google Maps and attract customers needing device fixes.",
+      uniqueFeatures: [
+        "Brand-Specific Repair Page Optimization",
+        "Google Business Profile for Repair Shops",
+        "Same-Day Repair Service Keywords",
+        "Component Replacement Service Pages",
+        "Business & Student Customer Targeting",
+        "Review Generation Campaigns"
+      ],
+      semanticEntities: [
+        "Laptop Repair Near Me", "MacBook Repair", "Dell Laptop Repair", "HP Laptop Repair",
+        "Laptop Screen Replacement", "Laptop Keyboard Repair", "Laptop Battery Replacement", "Laptop Virus Removal",
+        "Laptop Data Recovery", "Gaming Laptop Repair", "Laptop Motherboard Repair", "Laptop Fan Repair"
+      ],
+      painPoints: [
+        "Not appearing in 'laptop repair near me' searches",
+        "Losing business to big box store repair services",
+        "Low visibility for specific laptop brand repairs",
+        "Competing with mail-in repair services"
+      ],
+      solutions: [
+        "Optimize for brand-specific repair keywords (MacBook, Dell, HP, etc.)",
+        "Target urgent repair searches with same-day service messaging",
+        "Build authority through tech-focused review strategies",
+        "Create detailed service pages for each repair type"
+      ],
+      stats: [
+        { label: "Repair Job Increase", value: "265%" },
+        { label: "More Customer Calls", value: "178%" },
+        { label: "Google Map Rankings", value: "Top 3" }
+      ],
+      faq: [
+        {
+          question: "How long does it take to see SEO results for laptop repair shops?",
+          answer: "Most laptop repair shops see significant improvements in 2-4 months, as customers searching for repairs typically need quick service and look for local options first."
+        },
+        {
+          question: "Can you help us rank for specific laptop brands?",
+          answer: "Yes, we create optimized pages for each brand you repair - Apple MacBook, Dell, HP, Lenovo, ASUS, and more - to capture brand-specific search traffic."
+        },
+        {
+          question: "How do you help compete with big box store repair services?",
+          answer: "We emphasize your expertise, faster turnaround times, competitive pricing, and personalized service to help independent shops outrank big retailers."
+        }
+      ]
+    },
+    // Tablet Repair Services
+    "tablet-repair-services": {
+      metaDescription: `Local SEO services for tablet repair shops. Rank #1 on Google Maps, get more iPad and tablet repair jobs, and grow your business with proven SEO strategies.`,
+      heroTagline: "Dominate Local Search for Tablet Repair Services",
+      heroDescription: "Attract more customers needing tablet repairs with specialized Local SEO for tablet repair services. We help you rank #1 in Google Maps for iPad, Samsung Galaxy Tab, and all tablet repairs.",
+      uniqueFeatures: [
+        "iPad & Android Tablet Optimization",
+        "Google Business Profile Management",
+        "Screen Repair Service Keywords",
+        "Educational & Business Tablet Focus",
+        "Walk-In Service Optimization",
+        "Review Building Strategies"
+      ],
+      semanticEntities: [
+        "Tablet Repair Near Me", "iPad Repair", "iPad Screen Repair", "Samsung Tablet Repair",
+        "Tablet Battery Replacement", "Tablet Charging Port Repair", "iPad Glass Replacement", "Tablet Data Recovery",
+        "Kids Tablet Repair", "Amazon Fire Tablet Repair", "Tablet Speaker Repair", "Tablet Button Repair"
+      ],
+      painPoints: [
+        "Not appearing in 'tablet repair near me' searches",
+        "Low visibility for iPad-specific repairs",
+        "Losing customers to Apple Store or manufacturer repairs",
+        "Difficulty ranking for multiple tablet brands"
+      ],
+      solutions: [
+        "Optimize for device-specific keywords (iPad, Samsung Galaxy Tab, etc.)",
+        "Highlight faster turnaround vs manufacturer repairs",
+        "Build strong Google review profile",
+        "Create dedicated pages for each tablet brand and repair type"
+      ],
+      stats: [
+        { label: "Tablet Repair Leads", value: "245%" },
+        { label: "More Store Visits", value: "167%" },
+        { label: "Local Search Rankings", value: "Top 3" }
+      ],
+      faq: [
+        {
+          question: "How can SEO help my tablet repair business?",
+          answer: "Local SEO ensures your shop appears when customers search for tablet repairs nearby, driving walk-in traffic and phone calls from people needing immediate repairs."
+        },
+        {
+          question: "Do you optimize for both iPad and Android tablets?",
+          answer: "Yes, we create targeted content for all tablet brands including Apple iPad, Samsung Galaxy Tab, Amazon Fire, Microsoft Surface, and more."
+        },
+        {
+          question: "How do you help compete with manufacturer repair services?",
+          answer: "We highlight your competitive advantages: faster service, lower prices, no appointments needed, and personalized customer care."
+        }
+      ]
+    },
+    // Gaming Console Repair Services
+    "gaming-console-repair-services": {
+      metaDescription: `Local SEO services for gaming console repair shops. Rank #1 on Google Maps, get more PlayStation, Xbox, and Nintendo repair jobs with proven SEO strategies.`,
+      heroTagline: "Dominate Local Search for Gaming Console Repairs",
+      heroDescription: "Get more gamers through your door with specialized Local SEO for gaming console repair services. We help you rank #1 for PlayStation, Xbox, Nintendo Switch, and all gaming console repairs.",
+      uniqueFeatures: [
+        "Console-Specific Repair Page Optimization",
+        "Google Business Profile for Gaming Repair",
+        "Disc Drive & HDMI Repair Keywords",
+        "Controller Repair Service Pages",
+        "Gaming Community Outreach",
+        "Review Generation from Gamers"
+      ],
+      semanticEntities: [
+        "Console Repair Near Me", "PS5 Repair", "Xbox Repair", "Nintendo Switch Repair",
+        "PlayStation Repair", "Xbox Series X Repair", "HDMI Port Repair", "Disc Drive Repair",
+        "Controller Repair", "Red Ring of Death Fix", "Overheating Console Fix", "Gaming Console Cleaning"
+      ],
+      painPoints: [
+        "Not appearing in 'console repair near me' searches",
+        "Low visibility for specific console brand repairs",
+        "Losing customers to mail-in repair services",
+        "Competing with manufacturer warranty repairs"
+      ],
+      solutions: [
+        "Optimize for console-specific keywords (PS5, Xbox Series X, Switch)",
+        "Target urgent repair searches from frustrated gamers",
+        "Build authority in gaming communities",
+        "Create detailed pages for each console and repair type"
+      ],
+      stats: [
+        { label: "Console Repair Jobs", value: "312%" },
+        { label: "More Gamer Customers", value: "198%" },
+        { label: "Google Map Rankings", value: "Top 3" }
+      ],
+      faq: [
+        {
+          question: "How long does it take to see SEO results for console repair shops?",
+          answer: "Most gaming console repair shops see significant improvements in 2-4 months, as gamers actively search for local repair options when their consoles break."
+        },
+        {
+          question: "Can you help us rank for all major gaming consoles?",
+          answer: "Yes, we create optimized pages for PlayStation, Xbox, Nintendo Switch, and retro consoles to capture searches across all gaming platforms."
+        },
+        {
+          question: "How do you reach the gaming community?",
+          answer: "We optimize for gaming-specific searches, leverage gaming forums and communities for visibility, and help you build a reputation as the go-to local repair expert."
+        }
+      ]
+    },
+    // Computer Repair Services
+    "computer-repair-services": {
+      metaDescription: `Local SEO services for computer repair shops. Rank #1 on Google Maps, get more PC repair jobs, and grow your computer repair business with proven SEO strategies.`,
+      heroTagline: "Dominate Local Search for Computer Repair Services",
+      heroDescription: "Attract more customers needing computer repairs with specialized Local SEO for PC repair shops. We help you rank #1 for desktop repairs, virus removal, and all computer services.",
+      uniqueFeatures: [
+        "PC & Mac Repair Optimization",
+        "Google Business Profile Management",
+        "Virus Removal & Security Keywords",
+        "Business IT Support Pages",
+        "Home & Office Service Targeting",
+        "Emergency Repair Optimization"
+      ],
+      semanticEntities: [
+        "Computer Repair Near Me", "PC Repair", "Mac Repair", "Virus Removal",
+        "Computer Screen Repair", "Hard Drive Recovery", "Computer Upgrade", "Slow Computer Fix",
+        "Blue Screen Repair", "Computer Tune Up", "Custom PC Building", "Computer Networking"
+      ],
+      painPoints: [
+        "Not appearing in 'computer repair near me' searches",
+        "Losing business customers to IT companies",
+        "Low visibility for specific repair services",
+        "Competing with remote tech support services"
+      ],
+      solutions: [
+        "Optimize for both home and business computer repair keywords",
+        "Target urgent searches for virus removal and data recovery",
+        "Build strong review profile highlighting expertise",
+        "Create comprehensive service pages for all repair types"
+      ],
+      stats: [
+        { label: "Repair Job Increase", value: "278%" },
+        { label: "More Service Calls", value: "185%" },
+        { label: "Google Map Rankings", value: "Top 3" }
+      ],
+      faq: [
+        {
+          question: "How can SEO help my computer repair business?",
+          answer: "Local SEO ensures your shop appears when people search for computer help nearby, driving both residential and business customers to your door."
+        },
+        {
+          question: "Do you help with both home and business computer repair SEO?",
+          answer: "Yes, we create targeted strategies for residential customers needing quick fixes and businesses requiring ongoing IT support and repairs."
+        },
+        {
+          question: "How do you help compete with remote tech support?",
+          answer: "We emphasize your local presence, hands-on expertise, and the trust factor of working with a local technician vs remote services."
+        }
+      ]
+    },
+    // Smart Watch Repair Services
+    "smart-watch-repair-services": {
+      metaDescription: `Local SEO services for smart watch repair shops. Rank #1 on Google Maps, get more Apple Watch, Samsung, and Fitbit repair jobs with proven SEO strategies.`,
+      heroTagline: "Dominate Local Search for Smart Watch Repairs",
+      heroDescription: "Get more customers needing smart watch repairs with specialized Local SEO for wearable device repair. We help you rank #1 for Apple Watch, Samsung Galaxy Watch, and Fitbit repairs.",
+      uniqueFeatures: [
+        "Wearable Device Repair Optimization",
+        "Google Business Profile Management",
+        "Screen & Battery Replacement Keywords",
+        "Fitness Tracker Repair Pages",
+        "Premium Watch Service Focus",
+        "Quick Turnaround Messaging"
+      ],
+      semanticEntities: [
+        "Smart Watch Repair Near Me", "Apple Watch Repair", "Samsung Watch Repair", "Fitbit Repair",
+        "Watch Screen Replacement", "Watch Battery Replacement", "Apple Watch Glass Repair", "Watch Crown Repair",
+        "Garmin Watch Repair", "Watch Water Damage Repair", "Watch Band Replacement", "Watch Sensor Repair"
+      ],
+      painPoints: [
+        "Not appearing in 'smart watch repair near me' searches",
+        "Low visibility for specific brand repairs",
+        "Losing customers to manufacturer mail-in repairs",
+        "Difficulty establishing as wearable repair expert"
+      ],
+      solutions: [
+        "Optimize for brand-specific keywords (Apple Watch, Samsung, Fitbit)",
+        "Highlight faster turnaround vs manufacturer repairs",
+        "Build expertise reputation through reviews",
+        "Create dedicated pages for each smart watch brand"
+      ],
+      stats: [
+        { label: "Watch Repair Leads", value: "234%" },
+        { label: "More Customers", value: "156%" },
+        { label: "Local Search Rankings", value: "Top 3" }
+      ],
+      faq: [
+        {
+          question: "How can SEO help my smart watch repair business?",
+          answer: "Local SEO ensures your shop appears when customers search for wearable repairs nearby, driving foot traffic from Apple Watch, Samsung, and Fitbit owners."
+        },
+        {
+          question: "Do you optimize for all smart watch brands?",
+          answer: "Yes, we create targeted content for Apple Watch, Samsung Galaxy Watch, Fitbit, Garmin, and other popular wearable devices."
+        },
+        {
+          question: "How do you help compete with Apple Store and manufacturer repairs?",
+          answer: "We emphasize your faster service, competitive pricing, and personalized care to attract customers who want quick, affordable repairs."
         }
       ]
     }
