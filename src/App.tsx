@@ -72,7 +72,14 @@ const pageRoutes = [
   { path: "privacy", element: <PrivacyPolicyPage /> },
   { path: "terms", element: <TermsOfServicePage /> },
   { path: "serving-industries", element: <ServingIndustriesPage /> },
-  { path: "local-seo-services-for-:industrySlug", element: <IndustryPage /> },
+
+  // Industry pages live at /:lang/local-seo-services-for-{industry}
+  // React Router params cannot be embedded in the middle of a segment, so we match the entire
+  // segment and extract the actual industry slug inside IndustryPage.
+  {
+    path: ":industrySlug(local-seo-services-for-[a-z0-9-]+)",
+    element: <IndustryPage />,
+  },
 ];
 
 const App = () => (
@@ -93,11 +100,17 @@ const App = () => (
                   {/* Root redirect to default language */}
                   <Route path="/" element={<Navigate to={`/${DEFAULT_LANGUAGE}`} replace />} />
 
+                  {/* Explicit 404 route per language (prevents blank nested route with no element) */}
+                  {SUPPORTED_LANGUAGES.map((lang) => (
+                    <Route key={`notfound-${lang}`} path={`/${lang}/404`} element={<NotFound />} />
+                  ))}
+                  <Route path="/404" element={<Navigate to={`/${DEFAULT_LANGUAGE}/404`} replace />} />
+
                   {/* Industry pages - must come before country routes */}
                   {SUPPORTED_LANGUAGES.map((lang) => (
                     <Route
                       key={`industry-${lang}`}
-                      path={`/${lang}/local-seo-services-for-:industrySlug`}
+                      path={`/${lang}/:industrySlug(local-seo-services-for-[a-z0-9-]+)`}
                       element={<IndustryPage />}
                     />
                   ))}

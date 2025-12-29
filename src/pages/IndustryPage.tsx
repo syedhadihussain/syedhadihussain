@@ -14,9 +14,13 @@ import RelatedIndustries from "@/components/industry/RelatedIndustries";
 const IndustryPage = () => {
   const { industrySlug } = useParams<{ industrySlug: string }>();
   
-  // The slug comes directly from the route param (e.g., "plumbers")
-  const slug = industrySlug || "";
-  
+  // Route param includes the full segment, e.g. "local-seo-services-for-plumbers"
+  // We extract the real industry slug ("plumbers") here.
+  const raw = industrySlug || "";
+  const slug = raw.startsWith("local-seo-services-for-")
+    ? raw.replace("local-seo-services-for-", "")
+    : raw;
+
   if (!isValidIndustrySlug(slug)) {
     return <Navigate to="/404" replace />;
   }
