@@ -3,6 +3,18 @@ project_id = "sbilaslhxhbdyclacnkv"
 [functions.send-contact-email]
 verify_jwt = false
 
+[functions.indexnow-submit]
+verify_jwt = false
+
+[functions.submit-sitemaps]
+verify_jwt = false
+
+[functions.google-indexing]
+verify_jwt = false
+
+[functions.indexing-webhook]
+verify_jwt = false
+
 [api]
 enabled = true
 schemas = ["public", "graphql_public"]
