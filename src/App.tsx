@@ -43,9 +43,13 @@ const ProtectedAdminRoute = lazy(() => import("./components/ProtectedAdminRoute"
 const PortalLoginPage = lazy(() => import("./pages/portal/PortalLoginPage"));
 const PortalDashboardPage = lazy(() => import("./pages/portal/PortalDashboardPage"));
 const PortalProjectsPage = lazy(() => import("./pages/portal/PortalProjectsPage"));
+const PortalMessagesPage = lazy(() => import("./pages/portal/PortalMessagesPage"));
+const PortalDocumentsPage = lazy(() => import("./pages/portal/PortalDocumentsPage"));
 const PortalSettingsPage = lazy(() => import("./pages/portal/PortalSettingsPage"));
 const AdminClientsPage = lazy(() => import("./pages/portal/admin/AdminClientsPage"));
+const AdminProjectsPage = lazy(() => import("./pages/portal/admin/AdminProjectsPage"));
 const AdminRolesPage = lazy(() => import("./pages/portal/admin/AdminRolesPage"));
+const AdminAnnouncementsPage = lazy(() => import("./pages/portal/admin/AdminAnnouncementsPage"));
 const ProtectedPortalRoute = lazy(() => import("./components/portal/ProtectedPortalRoute"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
@@ -90,13 +94,17 @@ const staticPageRoutes = [
 const protectedPortalRoutes = [
   { path: "portal/dashboard", element: <PortalDashboardPage /> },
   { path: "portal/projects", element: <PortalProjectsPage /> },
+  { path: "portal/messages", element: <PortalMessagesPage /> },
+  { path: "portal/documents", element: <PortalDocumentsPage /> },
   { path: "portal/settings", element: <PortalSettingsPage /> },
 ];
 
 // Admin portal routes (require admin role)
 const adminPortalRoutes = [
-  { path: "portal/admin/clients", element: <AdminClientsPage /> },
-  { path: "portal/admin/roles", element: <AdminRolesPage /> },
+  { path: "portal/admin/clients", element: <AdminClientsPage />, requireAdmin: true },
+  { path: "portal/admin/projects", element: <AdminProjectsPage />, requireModerator: true },
+  { path: "portal/admin/roles", element: <AdminRolesPage />, requireAdmin: true },
+  { path: "portal/admin/announcements", element: <AdminAnnouncementsPage />, requireModerator: true },
 ];
 
 // Protected admin routes (require authentication + admin role)
@@ -108,15 +116,16 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <ThemeProvider>
       <LanguageProvider>
-        <HelmetProvider>
-          <GlobalSEO />
-          <TooltipProvider>
-            <Toaster />
-            <Sonner />
-            <FloatingActions />
-            <TawkToChat />
-            <BrowserRouter>
-              <LanguageRedirect />
+        <AuthProvider>
+          <HelmetProvider>
+            <GlobalSEO />
+            <TooltipProvider>
+              <Toaster />
+              <Sonner />
+              <FloatingActions />
+              <TawkToChat />
+              <BrowserRouter>
+                <LanguageRedirect />
               <Suspense fallback={<PageLoader />}>
                 <Routes>
                   {/* Root redirect to default language */}
@@ -135,6 +144,39 @@ const App = () => (
                         key={`${lang}-${route.path || "index"}`}
                         path={route.path ? `/${lang}/${route.path}` : `/${lang}`}
                         element={route.element}
+                      />
+                    ))
+                  )}
+
+                  {/* Protected portal routes - require authentication */}
+                  {SUPPORTED_LANGUAGES.map((lang) =>
+                    protectedPortalRoutes.map((route) => (
+                      <Route
+                        key={`${lang}-portal-${route.path}`}
+                        path={`/${lang}/${route.path}`}
+                        element={
+                          <ProtectedPortalRoute>
+                            {route.element}
+                          </ProtectedPortalRoute>
+                        }
+                      />
+                    ))
+                  )}
+
+                  {/* Admin portal routes - require admin/moderator role */}
+                  {SUPPORTED_LANGUAGES.map((lang) =>
+                    adminPortalRoutes.map((route) => (
+                      <Route
+                        key={`${lang}-admin-${route.path}`}
+                        path={`/${lang}/${route.path}`}
+                        element={
+                          <ProtectedPortalRoute
+                            requireAdmin={route.requireAdmin}
+                            requireModerator={route.requireModerator}
+                          >
+                            {route.element}
+                          </ProtectedPortalRoute>
+                        }
                       />
                     ))
                   )}
@@ -198,9 +240,10 @@ const App = () => (
             </BrowserRouter>
           </TooltipProvider>
         </HelmetProvider>
-      </LanguageProvider>
-    </ThemeProvider>
-  </QueryClientProvider>
+      </AuthProvider>
+    </LanguageProvider>
+  </ThemeProvider>
+</QueryClientProvider>
 );
 
 export default App;
