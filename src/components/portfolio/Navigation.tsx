@@ -100,6 +100,12 @@ const Navigation = () => {
             <LanguageSelector />
           </div>
           
+          <Button asChild variant="outline" size="sm">
+            <Link to="/portal/login">
+              Client Portal
+            </Link>
+          </Button>
+          
           <Button asChild size="sm" className="glow-sm">
             <a href="https://calendly.com/syedhadihussain" target="_blank" rel="noopener noreferrer">
               {t("nav.bookCall")}
@@ -153,6 +159,11 @@ const Navigation = () => {
                 </Link>
               )
             ))}
+            <Button asChild variant="outline" className="w-full mt-2">
+              <Link to="/portal/login" onClick={() => setIsMobileMenuOpen(false)}>
+                Client Portal
+              </Link>
+            </Button>
             <Button asChild className="w-full mt-2">
               <a href="https://calendly.com/syedhadihussain" target="_blank" rel="noopener noreferrer">
                 {t("nav.bookCall")}
