@@ -15,6 +15,9 @@ verify_jwt = false
 [functions.indexing-webhook]
 verify_jwt = false
 
+[functions.indexing-monitor]
+verify_jwt = false
+
 [api]
 enabled = true
 schemas = ["public", "graphql_public"]
