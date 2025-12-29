@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { Link, useLocation } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { IndustryData, getRelatedIndustries, getAllCategories } from "@/lib/industries-config";
+import { IndustryData, getRelatedIndustries, getAllCategories, getIndustriesByCategory } from "@/lib/industries-config";
 import { SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE } from "@/lib/i18n-config";
 
 interface RelatedIndustriesProps {
@@ -35,7 +35,7 @@ const RelatedIndustries = ({ industry }: RelatedIndustriesProps) => {
                   Other {industry.category} We Serve
                 </h2>
                 <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                  Explore our specialized Local SEO services for other businesses in the {industry.category.toLowerCase()} industry.
+                  Explore our specialized <Link to={langLink("/services")} className="text-primary hover:underline">Local SEO services</Link> for other businesses in the {industry.category.toLowerCase()} industry.
                 </p>
               </div>
             </ScrollReveal>
@@ -50,7 +50,7 @@ const RelatedIndustries = ({ industry }: RelatedIndustriesProps) => {
                     <span className="text-2xl">{related.icon}</span>
                     <div className="flex-1 min-w-0">
                       <h3 className="font-semibold text-foreground truncate group-hover:text-primary transition-colors">
-                        {related.name}
+                        Local SEO for {related.name}
                       </h3>
                       <p className="text-sm text-muted-foreground">Local SEO Services</p>
                     </div>
@@ -62,31 +62,50 @@ const RelatedIndustries = ({ industry }: RelatedIndustriesProps) => {
           </>
         )}
 
-        {/* All Categories */}
+        {/* All Categories with First Industry Link */}
         <ScrollReveal animation="fade-up">
           <div className="text-center mb-12">
             <h3 className="font-display text-2xl font-bold text-foreground mb-4">
               All Industry Categories
             </h3>
             <p className="text-muted-foreground">
-              We provide Local SEO services for businesses across all industries
+              We provide <Link to={langLink("/serving-industries")} className="text-primary hover:underline">Local SEO services</Link> for businesses across all industries
             </p>
           </div>
         </ScrollReveal>
 
         <div className="flex flex-wrap justify-center gap-3">
-          {categories.map((category, index) => (
-            <ScrollReveal key={category.slug} animation="fade-up" delay={index * 20}>
-              <Link
-                to={langLink(`/industries/${category.slug}`)}
-                className="glass rounded-full px-4 py-2 flex items-center gap-2 hover:bg-primary/10 transition-colors text-sm"
-              >
-                <span>{category.icon}</span>
-                <span className="text-foreground">{category.name}</span>
-              </Link>
-            </ScrollReveal>
-          ))}
+          {categories.map((category, index) => {
+            // Get the first industry in this category to link to
+            const firstIndustrySlug = category.industries[0];
+            const industryLink = langLink(`/local-seo-services-for-${firstIndustrySlug}`);
+            
+            return (
+              <ScrollReveal key={category.slug} animation="fade-up" delay={index * 20}>
+                <Link
+                  to={industryLink}
+                  className="glass rounded-full px-4 py-2 flex items-center gap-2 hover:bg-primary/10 transition-colors text-sm"
+                >
+                  <span>{category.icon}</span>
+                  <span className="text-foreground">{category.name}</span>
+                </Link>
+              </ScrollReveal>
+            );
+          })}
         </div>
+
+        {/* View All Industries Link */}
+        <ScrollReveal animation="fade-up" delay={100}>
+          <div className="text-center mt-8">
+            <Link 
+              to={langLink("/serving-industries")}
+              className="inline-flex items-center gap-2 text-primary hover:underline font-medium"
+            >
+              View All 300+ Industries We Serve
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );
