@@ -556,14 +556,14 @@ const IndustryHero = ({ industry }: IndustryHeroProps) => {
             {/* Tagline */}
             <ScrollReveal animation="fade-up" delay={150}>
               <p className="text-xl md:text-2xl text-primary font-medium mb-4">
-                {industry.heroTagline}
+                {t(industry.heroTagline)}
               </p>
             </ScrollReveal>
 
             {/* Description */}
             <ScrollReveal animation="fade-up" delay={200}>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                {industry.heroDescription}
+                {t(industry.heroDescription)}
               </p>
             </ScrollReveal>
 
@@ -579,7 +579,7 @@ const IndustryHero = ({ industry }: IndustryHeroProps) => {
                 </Button>
                 <Button asChild size="lg" variant="outline">
                   <Link to={langLink("/case-studies")}>
-                    View Case Studies
+                    {t("View Case Studies")}
                   </Link>
                 </Button>
               </div>
@@ -590,17 +590,17 @@ const IndustryHero = ({ industry }: IndustryHeroProps) => {
               <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
                 <div className="flex items-center gap-2">
                   <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
-                  <span>5-Star Rated</span>
+                  <span>{t("5-Star Rated")}</span>
                 </div>
                 <div className="h-4 w-px bg-border" />
                 <div className="flex items-center gap-2">
                   <MapPin className="w-4 h-4 text-primary" />
-                  <span>Serving Worldwide</span>
+                  <span>{t("Serving Worldwide")}</span>
                 </div>
                 <div className="h-4 w-px bg-border" />
                 <div className="flex items-center gap-2">
                   <CheckCircle className="w-4 h-4 text-primary" />
-                  <span>100+ {industry.name} Clients</span>
+                  <span>100+ {industry.name} {t("Clients")}</span>
                 </div>
               </div>
             </ScrollReveal>
@@ -628,7 +628,7 @@ const IndustryHero = ({ industry }: IndustryHeroProps) => {
                     {industry.stats.slice(0, 3).map((stat, index) => (
                       <div key={index}>
                         <p className="text-lg font-bold text-primary">{stat.value}</p>
-                        <p className="text-xs text-muted-foreground">{stat.label}</p>
+                        <p className="text-xs text-muted-foreground">{t(stat.label)}</p>
                       </div>
                     ))}
                   </div>
