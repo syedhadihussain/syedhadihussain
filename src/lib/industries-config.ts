@@ -271,7 +271,8 @@ export const INDUSTRY_CATEGORIES: IndustryCategory[] = [
     industries: [
       "it-support-companies", "managed-it-services", "data-cabling-services",
       "structured-cabling-services", "server-installation-services", "pos-system-providers",
-      "cybersecurity-services", "internet-service-providers", "telecom-service-providers"
+      "cybersecurity-services", "internet-service-providers", "telecom-service-providers",
+      "mobile-phone-repair-shops"
     ]
   },
   {
@@ -676,6 +677,56 @@ function generateIndustryContent(slug: string, name: string, category: string): 
         {
           question: "Can you optimize for specific fitness programs?",
           answer: "Absolutely. We create targeted pages for personal training, group classes, and specialty programs to attract specific member segments."
+        }
+      ]
+    },
+    // Mobile Phone Repair Shops
+    "mobile-phone-repair-shops": {
+      metaDescription: `Local SEO services for mobile phone repair shops. Rank #1 on Google Maps, get more repair jobs, and grow your phone repair business with proven SEO strategies.`,
+      heroTagline: "Dominate Local Search for Phone Repair Services",
+      heroDescription: "Get more customers through your door with specialized Local SEO for mobile phone repair shops. We help phone repair businesses rank #1 in Google Maps and attract customers searching for device repairs near them.",
+      uniqueFeatures: [
+        "Emergency Repair Service Optimization",
+        "Google Business Profile for Repair Shops",
+        "Review Generation from Happy Customers",
+        "Device-Specific Service Pages",
+        "Walk-In Traffic Optimization",
+        "Price Comparison Keyword Strategy"
+      ],
+      semanticEntities: [
+        "Phone Repair Near Me", "iPhone Screen Repair", "Samsung Repair", "Cell Phone Repair",
+        "Cracked Screen Repair", "Phone Battery Replacement", "Mobile Repair Shop", "Same Day Phone Repair",
+        "Water Damage Repair", "Phone Unlock Service", "Tablet Repair", "iPad Repair"
+      ],
+      painPoints: [
+        "Not appearing in 'phone repair near me' searches",
+        "Losing emergency repairs to competitors",
+        "Low visibility for specific device repairs",
+        "Difficulty competing with franchise repair chains"
+      ],
+      solutions: [
+        "Optimize for device-specific repair keywords (iPhone, Samsung, etc.)",
+        "Target urgent repair searches with same-day service messaging",
+        "Build strong Google review profile",
+        "Create location-specific service pages for each repair type"
+      ],
+      stats: [
+        { label: "Walk-In Traffic Increase", value: "287%" },
+        { label: "More Repair Jobs", value: "195%" },
+        { label: "Google Map Rankings", value: "Top 3" }
+      ],
+      faq: [
+        {
+          question: "How long does it take to see SEO results for phone repair shops?",
+          answer: "Most mobile phone repair shops see significant improvements in 2-4 months, as customers searching for repairs typically need immediate service and local results."
+        },
+        {
+          question: "Can you help us rank for specific phone brands?",
+          answer: "Yes, we create optimized pages for each device brand you repair - iPhone, Samsung, Google Pixel, and more - to capture brand-specific search traffic."
+        },
+        {
+          question: "How do you help compete with big repair chains?",
+          answer: "We focus on local authority, fast response times, genuine reviews, and competitive pricing keywords to help independent shops outrank franchise competitors."
         }
       ]
     }

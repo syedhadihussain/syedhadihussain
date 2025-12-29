@@ -407,6 +407,7 @@ const INDUSTRY_HERO_IMAGES: Record<string, string> = {
   "cybersecurity-services": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=600&fit=crop",
   "internet-service-providers": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop",
   "telecom-service-providers": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop",
+  "mobile-phone-repair-shops": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop",
 
   // ============ PROFESSIONAL SERVICES ============
   "accountants": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&h=600&fit=crop",
