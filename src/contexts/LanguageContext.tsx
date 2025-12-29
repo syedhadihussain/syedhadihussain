@@ -2013,6 +2013,278 @@ export const translations: Translations = {
     it: "Vedi tutte le città in {state}",
     de: "Alle Städte in {state} anzeigen"
   },
+
+  // ============ INDUSTRY PAGES - UNIQUE SEO OPTIMIZED CONTENT ============
+  "industry.relatedServices": {
+    en: "Related Services",
+    ar: "الخدمات ذات الصلة",
+    es: "Servicios Relacionados",
+    pt: "Serviços Relacionados",
+    fr: "Services connexes",
+    it: "Servizi correlati",
+    de: "Verwandte Dienste"
+  },
+  "industry.otherIndustries": {
+    en: "Other {category} We Serve",
+    ar: "{category} أخرى نخدمها",
+    es: "Otros {category} que Servimos",
+    pt: "Outros {category} que Atendemos",
+    fr: "Autres {category} que nous servons",
+    it: "Altri {category} che serviamo",
+    de: "Andere {category} die wir bedienen"
+  },
+  "industry.exploreServices": {
+    en: "Explore our specialized Local SEO services for other businesses in the {category} industry.",
+    ar: "استكشف خدمات SEO المحلية المتخصصة لدينا للشركات الأخرى في صناعة {category}.",
+    es: "Explore nuestros servicios especializados de SEO Local para otros negocios en la industria de {category}.",
+    pt: "Explore nossos serviços especializados de SEO Local para outros negócios na indústria de {category}.",
+    fr: "Explorez nos services SEO Local spécialisés pour d'autres entreprises de l'industrie {category}.",
+    it: "Esplora i nostri servizi SEO Locale specializzati per altre aziende nel settore {category}.",
+    de: "Entdecken Sie unsere spezialisierten lokalen SEO-Dienste für andere Unternehmen in der {category}-Branche."
+  },
+  "industry.allCategories": {
+    en: "All Industry Categories",
+    ar: "جميع فئات الصناعة",
+    es: "Todas las Categorías de la Industria",
+    pt: "Todas as Categorias da Indústria",
+    fr: "Toutes les catégories d'industrie",
+    it: "Tutte le categorie di industria",
+    de: "Alle Branchenkategorien"
+  },
+  "industry.weProvideServices": {
+    en: "We provide Local SEO services for businesses across all industries",
+    ar: "نقدم خدمات SEO المحلية للشركات في جميع الصناعات",
+    es: "Proporcionamos servicios de SEO Local para negocios en todas las industrias",
+    pt: "Fornecemos serviços de SEO Local para empresas em todas as indústrias",
+    fr: "Nous fournissons des services SEO Local pour les entreprises de toutes les industries",
+    it: "Forniamo servizi SEO Locale per aziende di tutti i settori",
+    de: "Wir bieten lokale SEO-Dienste für Unternehmen aller Branchen"
+  },
+  "industry.viewAllIndustries": {
+    en: "View All 300+ Industries We Serve",
+    ar: "عرض جميع الصناعات الـ 300+ التي نخدمها",
+    es: "Ver Todas las 300+ Industrias que Servimos",
+    pt: "Ver Todas as 300+ Indústrias que Atendemos",
+    fr: "Voir toutes les 300+ industries que nous servons",
+    it: "Vedi tutte le 300+ industrie che serviamo",
+    de: "Alle 300+ Branchen ansehen, die wir bedienen"
+  },
+  "industry.localSeoFor": {
+    en: "Local SEO for {name}",
+    ar: "SEO المحلي لـ {name}",
+    es: "SEO Local para {name}",
+    pt: "SEO Local para {name}",
+    fr: "SEO Local pour {name}",
+    it: "SEO Locale per {name}",
+    de: "Lokales SEO für {name}"
+  },
+  "industry.localSeoServices": {
+    en: "Local SEO Services",
+    ar: "خدمات SEO المحلية",
+    es: "Servicios de SEO Local",
+    pt: "Serviços de SEO Local",
+    fr: "Services SEO Local",
+    it: "Servizi SEO Locale",
+    de: "Lokale SEO-Dienste"
+  },
+  "industry.servicesWeProvide": {
+    en: "Our Services for {name}",
+    ar: "خدماتنا لـ {name}",
+    es: "Nuestros Servicios para {name}",
+    pt: "Nossos Serviços para {name}",
+    fr: "Nos services pour {name}",
+    it: "I nostri servizi per {name}",
+    de: "Unsere Dienste für {name}"
+  },
+  "industry.servicesDescription": {
+    en: "Comprehensive Local SEO solutions tailored specifically for {name}",
+    ar: "حلول SEO محلية شاملة مصممة خصيصاً لـ {name}",
+    es: "Soluciones integrales de SEO Local adaptadas específicamente para {name}",
+    pt: "Soluções completas de SEO Local adaptadas especificamente para {name}",
+    fr: "Solutions SEO Local complètes adaptées spécifiquement pour {name}",
+    it: "Soluzioni SEO Locale complete personalizzate specificamente per {name}",
+    de: "Umfassende lokale SEO-Lösungen speziell für {name}"
+  },
+  "industry.faqTitle": {
+    en: "Frequently Asked Questions",
+    ar: "الأسئلة الشائعة",
+    es: "Preguntas Frecuentes",
+    pt: "Perguntas Frequentes",
+    fr: "Questions fréquemment posées",
+    it: "Domande frequenti",
+    de: "Häufig gestellte Fragen"
+  },
+  "industry.faqSubtitle": {
+    en: "Common questions about Local SEO for {name}",
+    ar: "أسئلة شائعة حول SEO المحلي لـ {name}",
+    es: "Preguntas comunes sobre SEO Local para {name}",
+    pt: "Perguntas comuns sobre SEO Local para {name}",
+    fr: "Questions courantes sur le SEO Local pour {name}",
+    it: "Domande comuni sul SEO Locale per {name}",
+    de: "Häufige Fragen zum lokalen SEO für {name}"
+  },
+  "industry.contactTitle": {
+    en: "Ready to Grow Your {name} Business?",
+    ar: "هل أنت مستعد لتنمية أعمال {name} الخاصة بك؟",
+    es: "¿Listo para Hacer Crecer Su Negocio de {name}?",
+    pt: "Pronto para Crescer Seu Negócio de {name}?",
+    fr: "Prêt à développer votre entreprise de {name}?",
+    it: "Pronto a far crescere la tua attività di {name}?",
+    de: "Bereit, Ihr {name}-Geschäft auszubauen?"
+  },
+  "industry.contactDescription": {
+    en: "Get a free consultation and learn how we can help your {name} business dominate local search results.",
+    ar: "احصل على استشارة مجانية وتعرف على كيفية مساعدة أعمال {name} الخاصة بك للسيطرة على نتائج البحث المحلية.",
+    es: "Obtenga una consulta gratuita y aprenda cómo podemos ayudar a su negocio de {name} a dominar los resultados de búsqueda local.",
+    pt: "Obtenha uma consulta gratuita e saiba como podemos ajudar seu negócio de {name} a dominar os resultados de busca local.",
+    fr: "Obtenez une consultation gratuite et découvrez comment nous pouvons aider votre entreprise de {name} à dominer les résultats de recherche locale.",
+    it: "Ottieni una consulenza gratuita e scopri come possiamo aiutare la tua attività di {name} a dominare i risultati di ricerca locale.",
+    de: "Erhalten Sie eine kostenlose Beratung und erfahren Sie, wie wir Ihrem {name}-Geschäft helfen können, lokale Suchergebnisse zu dominieren."
+  },
+  "industry.gbpOptimization": {
+    en: "Google Business Profile Optimization",
+    ar: "تحسين ملف Google التجاري",
+    es: "Optimización de Perfil de Google Business",
+    pt: "Otimização de Perfil do Google Business",
+    fr: "Optimisation du profil Google Business",
+    it: "Ottimizzazione del profilo Google Business",
+    de: "Google Business Profil Optimierung"
+  },
+  "industry.citationBuilding": {
+    en: "Local Citation Building",
+    ar: "بناء الاستشهادات المحلية",
+    es: "Construcción de Citas Locales",
+    pt: "Construção de Citações Locais",
+    fr: "Construction de citations locales",
+    it: "Costruzione citazioni locali",
+    de: "Lokaler Zitationsaufbau"
+  },
+  "industry.reviewManagement": {
+    en: "Review Management & Generation",
+    ar: "إدارة وتوليد المراجعات",
+    es: "Gestión y Generación de Reseñas",
+    pt: "Gestão e Geração de Avaliações",
+    fr: "Gestion et génération d'avis",
+    it: "Gestione e generazione recensioni",
+    de: "Bewertungsmanagement & Generierung"
+  },
+  "industry.googleMapsSeo": {
+    en: "Google Maps SEO",
+    ar: "تحسين خرائط Google",
+    es: "SEO de Google Maps",
+    pt: "SEO do Google Maps",
+    fr: "SEO Google Maps",
+    it: "SEO Google Maps",
+    de: "Google Maps SEO"
+  },
+  "industry.localLinkBuilding": {
+    en: "Local Link Building",
+    ar: "بناء الروابط المحلية",
+    es: "Construcción de Enlaces Locales",
+    pt: "Construção de Links Locais",
+    fr: "Création de liens locaux",
+    it: "Link building locale",
+    de: "Lokaler Linkaufbau"
+  },
+  "industry.localContentMarketing": {
+    en: "Local Content Marketing",
+    ar: "تسويق المحتوى المحلي",
+    es: "Marketing de Contenido Local",
+    pt: "Marketing de Conteúdo Local",
+    fr: "Marketing de contenu local",
+    it: "Content marketing locale",
+    de: "Lokales Content Marketing"
+  },
+  "industry.competitorAnalysis": {
+    en: "Competitor Analysis",
+    ar: "تحليل المنافسين",
+    es: "Análisis de Competidores",
+    pt: "Análise de Concorrentes",
+    fr: "Analyse des concurrents",
+    it: "Analisi dei concorrenti",
+    de: "Wettbewerbsanalyse"
+  },
+  "industry.localKeywordResearch": {
+    en: "Local Keyword Research",
+    ar: "بحث الكلمات المفتاحية المحلية",
+    es: "Investigación de Palabras Clave Locales",
+    pt: "Pesquisa de Palavras-chave Locais",
+    fr: "Recherche de mots-clés locaux",
+    it: "Ricerca parole chiave locali",
+    de: "Lokale Keyword-Recherche"
+  },
+  "industry.onPageOptimization": {
+    en: "On-Page Local SEO Optimization",
+    ar: "تحسين SEO المحلي على الصفحة",
+    es: "Optimización SEO Local On-Page",
+    pt: "Otimização SEO Local On-Page",
+    fr: "Optimisation SEO Local On-Page",
+    it: "Ottimizzazione SEO locale on-page",
+    de: "On-Page lokale SEO-Optimierung"
+  },
+  "industry.localSchemaMakrup": {
+    en: "Local Schema Markup",
+    ar: "ترميز المخطط المحلي",
+    es: "Marcado de Esquema Local",
+    pt: "Marcação de Schema Local",
+    fr: "Balisage de schéma local",
+    it: "Markup schema locale",
+    de: "Lokales Schema Markup"
+  },
+  "industry.aiSearchOptimization": {
+    en: "AI Search Optimization",
+    ar: "تحسين البحث بالذكاء الاصطناعي",
+    es: "Optimización de Búsqueda IA",
+    pt: "Otimização de Busca IA",
+    fr: "Optimisation de recherche IA",
+    it: "Ottimizzazione ricerca IA",
+    de: "KI-Suchoptimierung"
+  },
+  "industry.mobileLocalSeo": {
+    en: "Mobile Local SEO",
+    ar: "SEO محلي للجوال",
+    es: "SEO Local Móvil",
+    pt: "SEO Local Mobile",
+    fr: "SEO local mobile",
+    it: "SEO locale mobile",
+    de: "Mobiles lokales SEO"
+  },
+  "industry.viewCaseStudies": {
+    en: "View Case Studies",
+    ar: "عرض دراسات الحالة",
+    es: "Ver Casos de Estudio",
+    pt: "Ver Estudos de Caso",
+    fr: "Voir les études de cas",
+    it: "Vedi casi studio",
+    de: "Fallstudien ansehen"
+  },
+  "industry.fiveStarRated": {
+    en: "5-Star Rated",
+    ar: "تقييم 5 نجوم",
+    es: "Calificación 5 Estrellas",
+    pt: "Avaliação 5 Estrelas",
+    fr: "Noté 5 étoiles",
+    it: "Valutazione 5 stelle",
+    de: "5-Sterne-Bewertung"
+  },
+  "industry.servingWorldwide": {
+    en: "Serving Worldwide",
+    ar: "نخدم في جميع أنحاء العالم",
+    es: "Sirviendo en Todo el Mundo",
+    pt: "Atendendo em Todo o Mundo",
+    fr: "Service mondial",
+    it: "Servizio mondiale",
+    de: "Weltweit tätig"
+  },
+  "industry.clientsServed": {
+    en: "100+ {name} Clients",
+    ar: "أكثر من 100 عميل {name}",
+    es: "100+ Clientes de {name}",
+    pt: "100+ Clientes de {name}",
+    fr: "100+ clients {name}",
+    it: "100+ clienti {name}",
+    de: "100+ {name} Kunden"
+  },
 };
 
 interface LanguageContextType {
