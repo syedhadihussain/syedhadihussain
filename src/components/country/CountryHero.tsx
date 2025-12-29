@@ -36,12 +36,12 @@ const CountryHero = ({ country }: CountryHeroProps) => {
             </div>
 
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-              {copy.heroTitlePrefix}
+              {t(copy.heroTitlePrefix)}
               <span className="block text-primary">{country.name}</span>
             </h1>
 
             <p className="text-lg text-muted-foreground leading-relaxed mb-4 max-w-xl animate-fade-up" style={{ animationDelay: "0.3s" }}>
-              {copy.heroDescription}
+              {t(copy.heroDescription)}
             </p>
             
             <p className="text-base text-foreground/80 font-medium mb-8 max-w-xl animate-fade-up" style={{ animationDelay: "0.35s" }}>

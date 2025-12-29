@@ -64,10 +64,10 @@ const CountryServices = ({ country }: CountryServicesProps) => {
               {t("country.ourServices")}
             </span>
             <h2 id="services-heading" className="font-display text-3xl sm:text-4xl font-bold text-foreground mt-2 mb-4">
-              {copy.servicesTitle}
+              {t(copy.servicesTitle)}
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              {copy.servicesSubtitle}
+              {t(copy.servicesSubtitle)}
             </p>
           </div>
         </ScrollReveal>
