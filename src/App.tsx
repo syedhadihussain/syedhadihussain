@@ -4,6 +4,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { AuthProvider } from "@/hooks/useAuth";
 import { HelmetProvider } from "react-helmet-async";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { LanguageProvider } from "@/contexts/LanguageContext";
@@ -39,6 +40,13 @@ const DynamicRouteResolver = lazy(() => import("./components/DynamicRouteResolve
 const IndexingDashboardPage = lazy(() => import("./pages/IndexingDashboardPage"));
 const AdminAuthPage = lazy(() => import("./pages/AdminAuthPage"));
 const ProtectedAdminRoute = lazy(() => import("./components/ProtectedAdminRoute"));
+const PortalLoginPage = lazy(() => import("./pages/portal/PortalLoginPage"));
+const PortalDashboardPage = lazy(() => import("./pages/portal/PortalDashboardPage"));
+const PortalProjectsPage = lazy(() => import("./pages/portal/PortalProjectsPage"));
+const PortalSettingsPage = lazy(() => import("./pages/portal/PortalSettingsPage"));
+const AdminClientsPage = lazy(() => import("./pages/portal/admin/AdminClientsPage"));
+const AdminRolesPage = lazy(() => import("./pages/portal/admin/AdminRolesPage"));
+const ProtectedPortalRoute = lazy(() => import("./components/portal/ProtectedPortalRoute"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -75,6 +83,20 @@ const staticPageRoutes = [
   { path: "terms", element: <TermsOfServicePage /> },
   { path: "serving-industries", element: <ServingIndustriesPage /> },
   { path: "admin/login", element: <AdminAuthPage /> },
+  { path: "portal/login", element: <PortalLoginPage /> },
+];
+
+// Protected portal routes (require authentication)
+const protectedPortalRoutes = [
+  { path: "portal/dashboard", element: <PortalDashboardPage /> },
+  { path: "portal/projects", element: <PortalProjectsPage /> },
+  { path: "portal/settings", element: <PortalSettingsPage /> },
+];
+
+// Admin portal routes (require admin role)
+const adminPortalRoutes = [
+  { path: "portal/admin/clients", element: <AdminClientsPage /> },
+  { path: "portal/admin/roles", element: <AdminRolesPage /> },
 ];
 
 // Protected admin routes (require authentication + admin role)
