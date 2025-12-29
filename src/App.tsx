@@ -36,6 +36,7 @@ const StatePage = lazy(() => import("./pages/StatePage"));
 const CityPage = lazy(() => import("./pages/CityPage"));
 const ServingIndustriesPage = lazy(() => import("./pages/ServingIndustriesPage"));
 const DynamicRouteResolver = lazy(() => import("./components/DynamicRouteResolver"));
+const IndexingDashboardPage = lazy(() => import("./pages/IndexingDashboardPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -71,6 +72,7 @@ const staticPageRoutes = [
   { path: "privacy", element: <PrivacyPolicyPage /> },
   { path: "terms", element: <TermsOfServicePage /> },
   { path: "serving-industries", element: <ServingIndustriesPage /> },
+  { path: "admin/indexing", element: <IndexingDashboardPage /> },
 ];
 
 const App = () => (
