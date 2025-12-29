@@ -22,8 +22,10 @@ const seoProjects = [
     title: "Moe's iRepair - Complete Local SEO Domination",
     industry: "Phone Repair",
     location: "Duncanville, TX",
-    challenge: "New business with zero online visibility competing against established repair shops. No Google presence, no reviews, and no organic traffic.",
-    solution: "Implemented full-stack local SEO strategy including GBP optimization, aggressive citation building, review generation campaign, and comprehensive on-page optimization.",
+    challenge:
+      "New business with zero online visibility competing against established repair shops. No Google presence, no reviews, and no organic traffic.",
+    solution:
+      "Implemented full-stack local SEO strategy including GBP optimization, aggressive citation building, review generation campaign, and comprehensive on-page optimization.",
     results: [
       { metric: "5,187", label: "GBP Interactions" },
       { metric: "495", label: "Website Clicks" },
@@ -37,15 +39,17 @@ const seoProjects = [
       "Review generation campaign: grew from 0 to 1,300+ verified reviews",
       "Local schema markup and location-specific landing pages",
       "Targeted 50+ local keywords including 'phone repair near me', 'iphone repair duncanville'",
-      "Monthly performance tracking and strategy adjustments"
-    ]
+      "Monthly performance tracking and strategy adjustments",
+    ],
   },
   {
     title: "Phone Repair Shop - Grid Domination in Locust City",
     industry: "Phone Repair",
     location: "Locust City, NC",
-    challenge: "Business was ranking 20+ for most grid points in the local area. Competitors were dominating the map pack and taking all the local traffic.",
-    solution: "Implemented aggressive local SEO grid strategy focusing on expanding visibility across the entire service area through systematic GBP optimization and localized content.",
+    challenge:
+      "Business was ranking 20+ for most grid points in the local area. Competitors were dominating the map pack and taking all the local traffic.",
+    solution:
+      "Implemented aggressive local SEO grid strategy focusing on expanding visibility across the entire service area through systematic GBP optimization and localized content.",
     results: [
       { metric: "95%", label: "Grid Points #1" },
       { metric: "20+ → 1", label: "Ranking Improvement" },
@@ -60,15 +64,17 @@ const seoProjects = [
       "Geo-targeted content creation for surrounding areas",
       "Citation consistency audit across 100+ directories",
       "Review velocity optimization with automated follow-up system",
-      "Bi-weekly performance monitoring and ranking adjustments"
-    ]
+      "Bi-weekly performance monitoring and ranking adjustments",
+    ],
   },
   {
     title: "Neighborhood Pizza - Restaurant Local SEO",
     industry: "Restaurant",
     location: "Wilbraham, MA, USA",
-    challenge: "Popular neighborhood restaurant was invisible in local searches despite excellent food and service. Missing out on thousands of potential customers.",
-    solution: "GBP optimization with menu integration, local keyword targeting for high-volume restaurant searches, and structured data implementation.",
+    challenge:
+      "Popular neighborhood restaurant was invisible in local searches despite excellent food and service. Missing out on thousands of potential customers.",
+    solution:
+      "GBP optimization with menu integration, local keyword targeting for high-volume restaurant searches, and structured data implementation.",
     results: [
       { metric: "36,164", label: "Profile Views" },
       { metric: "20,909", label: "Search Appearances" },
@@ -82,15 +88,17 @@ const seoProjects = [
       "Restaurant and menu schema markup for rich snippets",
       "Local content strategy targeting neighborhood-specific searches",
       "Review management and response strategy",
-      "Weekly posts featuring specials and seasonal items"
-    ]
+      "Weekly posts featuring specials and seasonal items",
+    ],
   },
   {
     title: "Website SEO - Sustainable Organic Growth",
     industry: "Multiple Clients",
     location: "Worldwide",
-    challenge: "Clients needed sustainable organic traffic growth beyond just local pack rankings. Required comprehensive website optimization strategy.",
-    solution: "Full website SEO including technical optimization, content strategy, on-page SEO, and strategic link building for long-term organic growth.",
+    challenge:
+      "Clients needed sustainable organic traffic growth beyond just local pack rankings. Required comprehensive website optimization strategy.",
+    solution:
+      "Full website SEO including technical optimization, content strategy, on-page SEO, and strategic link building for long-term organic growth.",
     results: [
       { metric: "1.5K", label: "Total Clicks" },
       { metric: "41.8K", label: "Impressions" },
@@ -104,8 +112,8 @@ const seoProjects = [
       "High-quality backlink building through guest posting and digital PR",
       "Schema markup implementation for rich snippets",
       "Core Web Vitals optimization for better user experience",
-      "Monthly reporting with actionable insights and recommendations"
-    ]
+      "Monthly reporting with actionable insights and recommendations",
+    ],
   },
 ];
 
@@ -115,18 +123,20 @@ const PortfolioPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <SEOHead 
-        title="Proven Local SEO Portfolio With Real Rankings & Growth – Syed Hadi Hussain"
-        description="View a curated portfolio of Local SEO projects showcasing Google Maps rankings, traffic growth, and lead generation across multiple industries and locations."
+      <SEOHead
+        title={t("Proven Local SEO Portfolio With Real Rankings & Growth – Syed Hadi Hussain")}
+        description={t(
+          "View a curated portfolio of Local SEO projects showcasing Google Maps rankings, traffic growth, and lead generation across multiple industries and locations."
+        )}
         canonical="https://syedhadihussain.com/portfolio"
         keywords="SEO portfolio, local SEO results, Google Maps rankings, traffic growth, lead generation"
         breadcrumbs={[
           { name: "Home", url: "https://syedhadihussain.com" },
-          { name: "Portfolio", url: "https://syedhadihussain.com/portfolio" }
+          { name: "Portfolio", url: "https://syedhadihussain.com/portfolio" },
         ]}
       />
       <Navigation />
-      
+
       <main className="pt-24">
         {/* Hero Section */}
         <section className="section-padding bg-gradient-to-b from-primary/5 to-background">
@@ -137,23 +147,25 @@ const PortfolioPage = () => {
                   {t("nav.portfolio")}
                 </span>
                 <h1 className="font-display text-4xl sm:text-5xl font-bold text-foreground mb-6">
-                  SEO Results That Speak For Themselves
+                  {t("SEO Results That Speak For Themselves")}
                 </h1>
                 <p className="text-muted-foreground text-lg mb-8">
-                  Real projects, real results. Every case study includes the exact strategies I used and the measurable outcomes achieved. No fluff, just proven SEO success.
+                  {t(
+                    "Real projects, real results. Every case study includes the exact strategies I used and the measurable outcomes achieved. No fluff, just proven SEO success."
+                  )}
                 </p>
                 <div className="flex flex-wrap justify-center gap-4">
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <CheckCircle className="w-4 h-4 text-primary" />
-                    <span>100+ Clients Served</span>
+                    <span>{t("100+ Clients Served")}</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <CheckCircle className="w-4 h-4 text-primary" />
-                    <span>Verified Screenshots</span>
+                    <span>{t("Verified Screenshots")}</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <CheckCircle className="w-4 h-4 text-primary" />
-                    <span>Real Business Impact</span>
+                    <span>{t("Real Business Impact")}</span>
                   </div>
                 </div>
               </div>
@@ -172,15 +184,15 @@ const PortfolioPage = () => {
                     <div className="p-6 lg:p-8 bg-gradient-to-r from-primary/10 to-transparent border-b border-border">
                       <div className="flex flex-wrap items-center gap-4 mb-4">
                         <span className="px-4 py-1.5 bg-primary text-primary-foreground rounded-full text-sm font-medium">
-                          {project.industry}
+                          {t(project.industry)}
                         </span>
                         <span className="flex items-center gap-1 text-muted-foreground text-sm">
                           <MapPin className="w-4 h-4" />
-                          {project.location}
+                          {t(project.location)}
                         </span>
                       </div>
                       <h2 className="font-display text-2xl lg:text-3xl font-bold text-foreground">
-                        {project.title}
+                        {t(project.title)}
                       </h2>
                     </div>
 
@@ -191,25 +203,28 @@ const PortfolioPage = () => {
                         <div>
                           <h3 className="font-semibold text-foreground mb-3 flex items-center gap-2">
                             <Search className="w-5 h-5 text-primary" />
-                            The Challenge
+                            {t("The Challenge")}
                           </h3>
-                          <p className="text-muted-foreground leading-relaxed">{project.challenge}</p>
+                          <p className="text-muted-foreground leading-relaxed">{t(project.challenge)}</p>
                         </div>
                         <div>
                           <h3 className="font-semibold text-foreground mb-3 flex items-center gap-2">
                             <TrendingUp className="w-5 h-5 text-primary" />
-                            The Solution
+                            {t("The Solution")}
                           </h3>
-                          <p className="text-muted-foreground leading-relaxed">{project.solution}</p>
+                          <p className="text-muted-foreground leading-relaxed">{t(project.solution)}</p>
                         </div>
                       </div>
 
                       {/* Results Grid */}
                       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
                         {project.results.map((result, i) => (
-                          <div key={i} className="bg-primary/5 border border-primary/20 rounded-xl p-4 text-center hover:bg-primary/10 transition-colors">
+                          <div
+                            key={i}
+                            className="bg-primary/5 border border-primary/20 rounded-xl p-4 text-center hover:bg-primary/10 transition-colors"
+                          >
                             <div className="font-display text-2xl lg:text-3xl font-bold text-primary">{result.metric}</div>
-                            <div className="text-xs text-muted-foreground mt-1">{result.label}</div>
+                            <div className="text-xs text-muted-foreground mt-1">{t(result.label)}</div>
                           </div>
                         ))}
                       </div>
@@ -218,13 +233,13 @@ const PortfolioPage = () => {
                       <div className="mb-8">
                         <h3 className="font-semibold text-foreground mb-4 flex items-center gap-2">
                           <BarChart3 className="w-5 h-5 text-primary" />
-                          Strategy & Execution
+                          {t("Strategy & Execution")}
                         </h3>
                         <div className="grid md:grid-cols-2 gap-3">
                           {project.strategy.map((item, i) => (
                             <div key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
                               <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                              <span>{item}</span>
+                              <span>{t(item)}</span>
                             </div>
                           ))}
                         </div>
@@ -233,29 +248,65 @@ const PortfolioPage = () => {
                       {/* Screenshots */}
                       {project.beforeAfter ? (
                         <div>
-                          <h3 className="font-semibold text-foreground mb-4">Before & After Grid Rankings</h3>
+                          <h3 className="font-semibold text-foreground mb-4">{t("Before & After Grid Rankings")}</h3>
                           <div className="grid md:grid-cols-2 gap-6">
                             <div className="rounded-xl overflow-hidden border border-destructive/30 bg-destructive/5">
                               <div className="p-3 bg-destructive/10 text-center">
-                                <span className="text-sm font-medium text-destructive">BEFORE - Ranking 20+ (Red = Not Ranking)</span>
+                                <span className="text-sm font-medium text-destructive">
+                                  {t("BEFORE - Ranking 20+ (Red = Not Ranking)")}
+                                </span>
                               </div>
-                              <img src={project.images[0]} alt="Before SEO - poor rankings" loading="lazy" width={600} height={400} className="w-full h-auto" />
+                              <img
+                                src={project.images[0]}
+                                alt={t("Before SEO - poor rankings")}
+                                loading="lazy"
+                                width={600}
+                                height={400}
+                                className="w-full h-auto"
+                              />
                             </div>
                             <div className="rounded-xl overflow-hidden border border-primary/30 bg-primary/5">
                               <div className="p-3 bg-primary/10 text-center">
-                                <span className="text-sm font-medium text-primary">AFTER - Ranking #1 (Green = Top Position)</span>
+                                <span className="text-sm font-medium text-primary">
+                                  {t("AFTER - Ranking #1 (Green = Top Position)")}
+                                </span>
                               </div>
-                              <img src={project.images[1]} alt="After SEO - top rankings" loading="lazy" width={600} height={400} className="w-full h-auto" />
+                              <img
+                                src={project.images[1]}
+                                alt={t("After SEO - top rankings")}
+                                loading="lazy"
+                                width={600}
+                                height={400}
+                                className="w-full h-auto"
+                              />
                             </div>
                           </div>
                         </div>
                       ) : (
                         <div>
-                          <h3 className="font-semibold text-foreground mb-4">Results Screenshots</h3>
-                          <div className={`grid gap-4 ${project.images.length === 1 ? 'grid-cols-1 max-w-2xl mx-auto' : project.images.length === 2 ? 'md:grid-cols-2' : 'md:grid-cols-2 lg:grid-cols-4'}`}>
+                          <h3 className="font-semibold text-foreground mb-4">{t("Results Screenshots")}</h3>
+                          <div
+                            className={`grid gap-4 ${
+                              project.images.length === 1
+                                ? "grid-cols-1 max-w-2xl mx-auto"
+                                : project.images.length === 2
+                                  ? "md:grid-cols-2"
+                                  : "md:grid-cols-2 lg:grid-cols-4"
+                            }`}
+                          >
                             {project.images.map((img, i) => (
-                              <div key={i} className="rounded-xl overflow-hidden border border-border hover:border-primary/50 transition-colors">
-                                <img src={img} alt={`${project.title} results screenshot ${i + 1}`} loading="lazy" width={600} height={400} className="w-full h-auto" />
+                              <div
+                                key={i}
+                                className="rounded-xl overflow-hidden border border-border hover:border-primary/50 transition-colors"
+                              >
+                                <img
+                                  src={img}
+                                  alt={t(`${project.title} results screenshot ${i + 1}`)}
+                                  loading="lazy"
+                                  width={600}
+                                  height={400}
+                                  className="w-full h-auto"
+                                />
                               </div>
                             ))}
                           </div>
@@ -275,27 +326,25 @@ const PortfolioPage = () => {
             <ScrollReveal animation="scale">
               <div className="glass rounded-3xl p-8 lg:p-12 text-center glow">
                 <h2 className="font-display text-3xl font-bold text-foreground mb-4">
-                  Ready for Similar Results?
+                  {t("Ready for Similar Results?")}
                 </h2>
                 <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-                  Get a professional SEO audit for just <span className="text-primary font-semibold">$50</span> (50% OFF — book within 24 hours!) and discover your growth potential.
+                  {t("Get a professional SEO audit for just")}{" "}
+                  <span className="text-primary font-semibold">$50</span>{" "}
+                  {t("(50% OFF — book within 24 hours!) and discover your growth potential.")}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button asChild size="lg" className="glow group">
                     <a href="https://calendly.com/syedhadihussain" target="_blank" rel="noopener noreferrer">
-                      Get SEO Audit — $50
+                      {t("hero.bookAudit")}
                       <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                     </a>
                   </Button>
                   <Button asChild variant="outline" size="lg">
-                    <Link to={withLang("/case-studies")}>
-                      View Case Studies
-                    </Link>
+                    <Link to={withLang("/case-studies")}>{t("View Case Studies")}</Link>
                   </Button>
                   <Button asChild variant="outline" size="lg">
-                    <Link to={withLang("/contact")}>
-                      Contact Me
-                    </Link>
+                    <Link to={withLang("/contact")}>{t("Contact Me")}</Link>
                   </Button>
                 </div>
               </div>

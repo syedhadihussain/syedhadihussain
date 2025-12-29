@@ -73,14 +73,14 @@ const StateHero = ({ state, countryCode }: StateHeroProps) => {
                 <Button asChild size="lg" className="glow group">
                   <Link to={`/${language}/case-studies`}>
                     <Eye className="w-4 h-4 mr-2" />
-                    View Portfolio
+                    {t("View Portfolio")}
                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </Button>
                 <Button asChild variant="secondary" size="lg">
                   <a href="https://calendly.com/syedhadihussain" target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="w-4 h-4 mr-2" />
-                    Book Consultation
+                    {t("Book Consultation")}
                   </a>
                 </Button>
               </div>
