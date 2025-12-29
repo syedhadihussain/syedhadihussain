@@ -201,7 +201,7 @@ const PricingPage = () => {
                   
                   <div className="flex justify-center mt-6">
                     <Button asChild size="lg" className="glow group">
-                      <Link to="/contact">
+                      <Link to={`/${language}/contact`}>
                         {t("pricing.claimDiscount")}
                         <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                       </Link>
@@ -282,7 +282,7 @@ const PricingPage = () => {
                   </div>
                   
                   <Button asChild className={`w-full ${pkg.popular ? 'glow' : ''}`} variant={pkg.popular ? 'default' : 'outline'}>
-                    <Link to="/contact">
+                    <Link to={`/${language}/contact`}>
                       {t(pkg.ctaKey)}
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </Link>
@@ -360,7 +360,7 @@ const PricingPage = () => {
                     </a>
                   </Button>
                   <Button asChild variant="outline" size="lg">
-                    <Link to="/contact">
+                    <Link to={`/${language}/contact`}>
                       {t("pricing.requestCustomQuote")}
                     </Link>
                   </Button>
@@ -385,13 +385,13 @@ const PricingPage = () => {
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild variant="outline" size="lg">
-                  <Link to="/faq">{t("pricing.viewFaq")}</Link>
+                  <Link to={`/${language}/faq`}>{t("pricing.viewFaq")}</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <Link to="/case-studies">{t("pricing.viewCaseStudies")}</Link>
+                  <Link to={`/${language}/case-studies`}>{t("pricing.viewCaseStudies")}</Link>
                 </Button>
                 <Button asChild className="glow" size="lg">
-                  <Link to="/contact">
+                  <Link to={`/${language}/contact`}>
                     {t("pricing.contactUs")} <ArrowRight className="w-4 h-4 ml-2" />
                   </Link>
                 </Button>
