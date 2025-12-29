@@ -32,11 +32,10 @@ const GraphicDesignPage = lazy(() => import("./pages/GraphicDesignPage"));
 const SocialMediaPage = lazy(() => import("./pages/SocialMediaPage"));
 const PrivacyPolicyPage = lazy(() => import("./pages/PrivacyPolicyPage"));
 const TermsOfServicePage = lazy(() => import("./pages/TermsOfServicePage"));
-const CountryPage = lazy(() => import("./pages/CountryPage"));
 const StatePage = lazy(() => import("./pages/StatePage"));
 const CityPage = lazy(() => import("./pages/CityPage"));
-const IndustryPage = lazy(() => import("./pages/IndustryPage"));
 const ServingIndustriesPage = lazy(() => import("./pages/ServingIndustriesPage"));
+const DynamicRouteResolver = lazy(() => import("./components/DynamicRouteResolver"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -51,8 +50,8 @@ const PageLoader = () => (
   </div>
 );
 
-// Page routes configuration - includes static routes
-const pageRoutes = [
+// Static page routes configuration (path relative to language prefix)
+const staticPageRoutes = [
   { path: "", element: <Index /> },
   { path: "about", element: <AboutPage /> },
   { path: "services", element: <ServicesPage /> },
@@ -72,14 +71,6 @@ const pageRoutes = [
   { path: "privacy", element: <PrivacyPolicyPage /> },
   { path: "terms", element: <TermsOfServicePage /> },
   { path: "serving-industries", element: <ServingIndustriesPage /> },
-
-  // Industry pages live at /:lang/local-seo-services-for-{industry}
-  // React Router params cannot be embedded in the middle of a segment, so we match the entire
-  // segment and extract the actual industry slug inside IndustryPage.
-  {
-    path: ":industrySlug(local-seo-services-for-[a-z0-9-]+)",
-    element: <IndustryPage />,
-  },
 ];
 
 const App = () => (
@@ -100,62 +91,53 @@ const App = () => (
                   {/* Root redirect to default language */}
                   <Route path="/" element={<Navigate to={`/${DEFAULT_LANGUAGE}`} replace />} />
 
-                  {/* Explicit 404 route per language (prevents blank nested route with no element) */}
+                  {/* Explicit 404 route per language */}
                   {SUPPORTED_LANGUAGES.map((lang) => (
                     <Route key={`notfound-${lang}`} path={`/${lang}/404`} element={<NotFound />} />
                   ))}
                   <Route path="/404" element={<Navigate to={`/${DEFAULT_LANGUAGE}/404`} replace />} />
 
-                  {/* Industry pages - must come before country routes */}
-                  {SUPPORTED_LANGUAGES.map((lang) => (
-                    <Route
-                      key={`industry-${lang}`}
-                      path={`/${lang}/:industrySlug(local-seo-services-for-[a-z0-9-]+)`}
-                      element={<IndustryPage />}
-                    />
-                  ))}
+                  {/* Static routes for each language - FIRST to take priority */}
+                  {SUPPORTED_LANGUAGES.map((lang) =>
+                    staticPageRoutes.map((route) => (
+                      <Route
+                        key={`${lang}-${route.path || "index"}`}
+                        path={route.path ? `/${lang}/${route.path}` : `/${lang}`}
+                        element={route.element}
+                      />
+                    ))
+                  )}
 
-                  {/* Dynamic geo pages for ALL supported languages */}
+                  {/* Dynamic geo pages - 4 segment paths (city level) */}
                   {SUPPORTED_LANGUAGES.map((lang) => (
                     <Route
                       key={`city-${lang}`}
-                      path={`/${lang}/:countryCode([a-z]{2})/:stateCode/:citySlug`}
+                      path={`/${lang}/:countryCode/:stateCode/:citySlug`}
                       element={<CityPage />}
                     />
                   ))}
 
+                  {/* Dynamic geo pages - 3 segment paths (state level) */}
                   {SUPPORTED_LANGUAGES.map((lang) => (
                     <Route
                       key={`state-${lang}`}
-                      path={`/${lang}/:countryCode([a-z]{2})/:stateCode`}
+                      path={`/${lang}/:countryCode/:stateCode`}
                       element={<StatePage />}
                     />
                   ))}
 
+                  {/* Dynamic 2-segment routes - industry pages OR country pages */}
+                  {/* Resolved by DynamicRouteResolver based on slug format */}
                   {SUPPORTED_LANGUAGES.map((lang) => (
                     <Route
-                      key={`country-${lang}`}
-                      path={`/${lang}/:countryCode([a-z]{2})`}
-                      element={<CountryPage />}
+                      key={`dynamic-${lang}`}
+                      path={`/${lang}/:slug`}
+                      element={<DynamicRouteResolver />}
                     />
-                  ))}
-                  
-                  {/* Static routes for each language */}
-                  {SUPPORTED_LANGUAGES.map((lang) => (
-                    <Route key={lang} path={`/${lang}/*`}>
-                      <Route index element={<Index />} />
-                      {pageRoutes.slice(1).map((route) => (
-                        <Route
-                          key={`${lang}-${route.path}`}
-                          path={route.path}
-                          element={route.element}
-                        />
-                      ))}
-                    </Route>
                   ))}
 
                   {/* Legacy routes without language prefix - redirect to default language */}
-                  {pageRoutes.slice(1).map((route) => (
+                  {staticPageRoutes.slice(1).map((route) => (
                     <Route
                       key={`legacy-${route.path}`}
                       path={`/${route.path}`}

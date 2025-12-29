@@ -1,4 +1,4 @@
-import { useParams, Navigate } from "react-router-dom";
+import { useParams, useLocation, Navigate } from "react-router-dom";
 import { getIndustryData, isValidIndustrySlug } from "@/lib/industries-config";
 import Navigation from "@/components/portfolio/Navigation";
 import Footer from "@/components/portfolio/Footer";
@@ -12,16 +12,19 @@ import IndustryContact from "@/components/industry/IndustryContact";
 import RelatedIndustries from "@/components/industry/RelatedIndustries";
 
 const IndustryPage = () => {
-  const { industrySlug } = useParams<{ industrySlug: string }>();
+  const location = useLocation();
   
-  // Route param includes the full segment, e.g. "local-seo-services-for-plumbers"
-  // We extract the real industry slug ("plumbers") here.
-  const raw = industrySlug || "";
-  const slug = raw.startsWith("local-seo-services-for-")
-    ? raw.replace("local-seo-services-for-", "")
-    : raw;
+  // Extract industry slug from URL path
+  // URL format: /:lang/local-seo-services-for-{industrySlug}
+  const pathParts = location.pathname.split('/').filter(Boolean);
+  const industrySegment = pathParts.find(part => part.startsWith('local-seo-services-for-'));
+  
+  // Extract the slug after "local-seo-services-for-"
+  const slug = industrySegment 
+    ? industrySegment.replace('local-seo-services-for-', '')
+    : '';
 
-  if (!isValidIndustrySlug(slug)) {
+  if (!slug || !isValidIndustrySlug(slug)) {
     return <Navigate to="/404" replace />;
   }
 
