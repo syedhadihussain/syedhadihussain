@@ -18,6 +18,9 @@ verify_jwt = false
 [functions.indexing-monitor]
 verify_jwt = false
 
+[functions.send-notification-email]
+verify_jwt = false
+
 [api]
 enabled = true
 schemas = ["public", "graphql_public"]
