@@ -90,6 +90,124 @@ export type Database = {
           },
         ]
       }
+      automation_rules: {
+        Row: {
+          action_config: Json | null
+          action_type: string
+          created_at: string
+          created_by: string | null
+          id: string
+          is_active: boolean | null
+          name: string
+          trigger_config: Json | null
+          trigger_type: string
+          updated_at: string
+        }
+        Insert: {
+          action_config?: Json | null
+          action_type: string
+          created_at?: string
+          created_by?: string | null
+          id?: string
+          is_active?: boolean | null
+          name: string
+          trigger_config?: Json | null
+          trigger_type: string
+          updated_at?: string
+        }
+        Update: {
+          action_config?: Json | null
+          action_type?: string
+          created_at?: string
+          created_by?: string | null
+          id?: string
+          is_active?: boolean | null
+          name?: string
+          trigger_config?: Json | null
+          trigger_type?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      chat_summaries: {
+        Row: {
+          action_items: Json | null
+          conversation_id: string
+          generated_at: string
+          id: string
+          key_points: Json | null
+          message_range_end: string | null
+          message_range_start: string | null
+          sentiment: string | null
+          summary: string
+        }
+        Insert: {
+          action_items?: Json | null
+          conversation_id: string
+          generated_at?: string
+          id?: string
+          key_points?: Json | null
+          message_range_end?: string | null
+          message_range_start?: string | null
+          sentiment?: string | null
+          summary: string
+        }
+        Update: {
+          action_items?: Json | null
+          conversation_id?: string
+          generated_at?: string
+          id?: string
+          key_points?: Json | null
+          message_range_end?: string | null
+          message_range_start?: string | null
+          sentiment?: string | null
+          summary?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "chat_summaries_conversation_id_fkey"
+            columns: ["conversation_id"]
+            isOneToOne: false
+            referencedRelation: "conversations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      client_activity_log: {
+        Row: {
+          activity_data: Json | null
+          activity_type: string
+          client_id: string | null
+          created_at: string
+          id: string
+          user_id: string | null
+        }
+        Insert: {
+          activity_data?: Json | null
+          activity_type: string
+          client_id?: string | null
+          created_at?: string
+          id?: string
+          user_id?: string | null
+        }
+        Update: {
+          activity_data?: Json | null
+          activity_type?: string
+          client_id?: string | null
+          created_at?: string
+          id?: string
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "client_activity_log_client_id_fkey"
+            columns: ["client_id"]
+            isOneToOne: false
+            referencedRelation: "client_profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       client_profiles: {
         Row: {
           account_status: string | null
@@ -437,32 +555,50 @@ export type Database = {
       }
       messages: {
         Row: {
+          attachment_type: string | null
+          attachment_url: string | null
           content: string
           conversation_id: string
           created_at: string
           id: string
+          is_pinned: boolean | null
           is_read: boolean | null
+          is_voice_note: boolean | null
+          reactions: Json | null
           read_at: string | null
+          reply_to_id: string | null
           sender_id: string
           updated_at: string
         }
         Insert: {
+          attachment_type?: string | null
+          attachment_url?: string | null
           content: string
           conversation_id: string
           created_at?: string
           id?: string
+          is_pinned?: boolean | null
           is_read?: boolean | null
+          is_voice_note?: boolean | null
+          reactions?: Json | null
           read_at?: string | null
+          reply_to_id?: string | null
           sender_id: string
           updated_at?: string
         }
         Update: {
+          attachment_type?: string | null
+          attachment_url?: string | null
           content?: string
           conversation_id?: string
           created_at?: string
           id?: string
+          is_pinned?: boolean | null
           is_read?: boolean | null
+          is_voice_note?: boolean | null
+          reactions?: Json | null
           read_at?: string | null
+          reply_to_id?: string | null
           sender_id?: string
           updated_at?: string
         }
@@ -472,6 +608,13 @@ export type Database = {
             columns: ["conversation_id"]
             isOneToOne: false
             referencedRelation: "conversations"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "messages_reply_to_id_fkey"
+            columns: ["reply_to_id"]
+            isOneToOne: false
+            referencedRelation: "messages"
             referencedColumns: ["id"]
           },
         ]
@@ -522,6 +665,48 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      notification_preferences: {
+        Row: {
+          created_at: string
+          digest_mode: string | null
+          email_agreement_request: boolean | null
+          email_new_message: boolean | null
+          email_project_update: boolean | null
+          id: string
+          push_enabled: boolean | null
+          quiet_hours_end: string | null
+          quiet_hours_start: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          digest_mode?: string | null
+          email_agreement_request?: boolean | null
+          email_new_message?: boolean | null
+          email_project_update?: boolean | null
+          id?: string
+          push_enabled?: boolean | null
+          quiet_hours_end?: string | null
+          quiet_hours_start?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          digest_mode?: string | null
+          email_agreement_request?: boolean | null
+          email_new_message?: boolean | null
+          email_project_update?: boolean | null
+          id?: string
+          push_enabled?: boolean | null
+          quiet_hours_end?: string | null
+          quiet_hours_start?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
       }
       profiles: {
         Row: {
