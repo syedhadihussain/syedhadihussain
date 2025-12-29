@@ -35,6 +35,7 @@ const TermsOfServicePage = lazy(() => import("./pages/TermsOfServicePage"));
 const CountryPage = lazy(() => import("./pages/CountryPage"));
 const StatePage = lazy(() => import("./pages/StatePage"));
 const CityPage = lazy(() => import("./pages/CityPage"));
+const IndustryPage = lazy(() => import("./pages/IndustryPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
