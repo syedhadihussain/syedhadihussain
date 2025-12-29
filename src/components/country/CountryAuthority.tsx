@@ -44,10 +44,10 @@ const CountryAuthority = ({ country }: CountryAuthorityProps) => {
               {t("country.whyChooseUs")}
             </span>
             <h2 id="authority-heading" className="font-display text-3xl sm:text-4xl font-bold text-foreground mt-2 mb-4">
-              {copy.authorityTitle}
+              {t(copy.authorityTitle)}
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              {copy.authoritySubtitle}
+              {t(copy.authoritySubtitle)}
             </p>
           </div>
         </ScrollReveal>

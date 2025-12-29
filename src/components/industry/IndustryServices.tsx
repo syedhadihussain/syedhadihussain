@@ -88,13 +88,13 @@ const IndustryServices = ({ industry }: IndustryServicesProps) => {
         <ScrollReveal animation="fade-up">
           <div className="text-center mb-16">
             <span className="text-primary text-sm font-medium tracking-wider uppercase mb-4 block">
-              Our Local SEO Services
+              {t("Our Local SEO Services")}
             </span>
             <h2 className="font-display text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Comprehensive <Link to={langLink("/services")} className="text-primary hover:underline">Local SEO Solutions</Link> for {industry.name}
+              {t("Comprehensive")} <Link to={langLink("/services")} className="text-primary hover:underline">{t("Local SEO Solutions")}</Link> {t("for")} {industry.name}
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              From <Link to={langLink("/services")} className="text-primary hover:underline">Google Business Profile optimization</Link> to local citation building, we provide complete Local SEO services tailored for {industry.name.toLowerCase()} businesses
+              {t("From")} <Link to={langLink("/services")} className="text-primary hover:underline">{t("Google Business Profile optimization")}</Link> {t("to local citation building, we provide complete Local SEO services tailored for")} {industry.name.toLowerCase()} {t("businesses")}
             </p>
           </div>
         </ScrollReveal>
@@ -110,10 +110,10 @@ const IndustryServices = ({ industry }: IndustryServicesProps) => {
                     <Icon className="w-6 h-6 text-primary" />
                   </div>
                   <h3 className="font-display text-lg font-bold text-foreground mb-2">
-                    {service.title}
+                    {t(service.title)}
                   </h3>
                   <p className="text-muted-foreground text-sm">
-                    {service.description}
+                    {t(service.description)}
                   </p>
                 </div>
               </ScrollReveal>
@@ -125,7 +125,7 @@ const IndustryServices = ({ industry }: IndustryServicesProps) => {
         <ScrollReveal animation="fade-up">
           <div className="text-center mb-8">
             <h3 className="font-display text-2xl font-bold text-foreground mb-4">
-              Specialized Features for {industry.name}
+              {t("Specialized Features for")} {industry.name}
             </h3>
           </div>
         </ScrollReveal>
@@ -135,7 +135,7 @@ const IndustryServices = ({ industry }: IndustryServicesProps) => {
             <ScrollReveal key={index} animation="fade-up" delay={index * 30}>
               <div className="flex items-center gap-3 glass rounded-xl p-4">
                 <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                <span className="text-foreground font-medium">{feature}</span>
+                <span className="text-foreground font-medium">{t(feature)}</span>
               </div>
             </ScrollReveal>
           ))}
@@ -148,7 +148,7 @@ const IndustryServices = ({ industry }: IndustryServicesProps) => {
             <div className="glass rounded-2xl p-8">
               <h3 className="font-display text-xl font-bold text-foreground mb-6 flex items-center gap-3">
                 <span className="text-2xl">😰</span>
-                Common Challenges for {industry.name}
+                {t("Common Challenges for")} {industry.name}
               </h3>
               <ul className="space-y-4">
                 {industry.painPoints.map((point, index) => (
@@ -156,7 +156,7 @@ const IndustryServices = ({ industry }: IndustryServicesProps) => {
                     <span className="w-6 h-6 rounded-full bg-destructive/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <span className="text-destructive text-sm">✗</span>
                     </span>
-                    <span className="text-muted-foreground">{point}</span>
+                    <span className="text-muted-foreground">{t(point)}</span>
                   </li>
                 ))}
               </ul>
@@ -168,7 +168,7 @@ const IndustryServices = ({ industry }: IndustryServicesProps) => {
             <div className="glass rounded-2xl p-8 border-primary/20">
               <h3 className="font-display text-xl font-bold text-foreground mb-6 flex items-center gap-3">
                 <span className="text-2xl">🚀</span>
-                Our Solutions
+                {t("Our Solutions")}
               </h3>
               <ul className="space-y-4">
                 {industry.solutions.map((solution, index) => (
@@ -176,7 +176,7 @@ const IndustryServices = ({ industry }: IndustryServicesProps) => {
                     <span className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <CheckCircle className="w-4 h-4 text-primary" />
                     </span>
-                    <span className="text-foreground">{solution}</span>
+                    <span className="text-foreground">{t(solution)}</span>
                   </li>
                 ))}
               </ul>

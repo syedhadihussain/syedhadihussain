@@ -8,18 +8,20 @@ import { Calendar, Mail, MessageCircle, MapPin, Clock, ArrowRight } from "lucide
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const ContactPage = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <>
       <SEOHead
-        title="Start Ranking Higher on Google Maps Today – Contact Syed Hadi Hussain"
-        description="Get in touch to improve your Google Maps rankings, Local SEO visibility, and inbound leads. Share your goals and receive a clear, actionable SEO plan."
+        title={t("Start Ranking Higher on Google Maps Today – Contact Syed Hadi Hussain")}
+        description={t(
+          "Get in touch to improve your Google Maps rankings, Local SEO visibility, and inbound leads. Share your goals and receive a clear, actionable SEO plan."
+        )}
         canonical="https://syedhadihussain.com/contact"
         keywords="Contact SEO specialist, Google Maps ranking, Local SEO consultation, SEO plan"
         breadcrumbs={[
           { name: "Home", url: "https://syedhadihussain.com" },
-          { name: "Contact", url: "https://syedhadihussain.com/contact" }
+          { name: "Contact", url: "https://syedhadihussain.com/contact" },
         ]}
       />
       <div className="min-h-screen bg-background">
@@ -53,24 +55,26 @@ const ContactPage = () => {
                       <h2 className="font-display text-2xl font-bold text-foreground mb-6">
                         {t("contactPage.quickContact")}
                       </h2>
-                      
+
                       <div className="space-y-6">
-                        <a 
-                          href="mailto:contact.syedhadihussain@gmail.com" 
+                        <a
+                          href="mailto:contact.syedhadihussain@gmail.com"
                           className="flex items-start gap-4 group"
                         >
                           <div className="p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                             <Mail className="w-5 h-5" />
                           </div>
                           <div>
-                            <p className="font-medium text-foreground">{t("contact.email.label")}</p>
-                            <p className="text-muted-foreground text-sm">contact.syedhadihussain@gmail.com</p>
+                            <p className="font-medium text-foreground">{t("Email")}</p>
+                            <p className="text-muted-foreground text-sm">
+                              contact.syedhadihussain@gmail.com
+                            </p>
                           </div>
                         </a>
 
-                        <a 
-                          href="https://wa.me/+971523695036" 
-                          target="_blank" 
+                        <a
+                          href="https://wa.me/+971523695036"
+                          target="_blank"
                           rel="noopener noreferrer"
                           className="flex items-start gap-4 group"
                         >
@@ -78,7 +82,7 @@ const ContactPage = () => {
                             <MessageCircle className="w-5 h-5" />
                           </div>
                           <div>
-                            <p className="font-medium text-foreground">{t("contact.whatsapp.label")}</p>
+                            <p className="font-medium text-foreground">{t("WhatsApp")}</p>
                             <p className="text-muted-foreground text-sm">+971 52 369 5036</p>
                           </div>
                         </a>
@@ -88,8 +92,10 @@ const ContactPage = () => {
                             <MapPin className="w-5 h-5" />
                           </div>
                           <div>
-                            <p className="font-medium text-foreground">{t("contactPage.serviceAreas")}</p>
-                            <p className="text-muted-foreground text-sm">{t("contact.worldwide")}</p>
+                            <p className="font-medium text-foreground">
+                              {t("contactPage.serviceAreas")}
+                            </p>
+                            <p className="text-muted-foreground text-sm">{t("Worldwide")}</p>
                           </div>
                         </div>
 
@@ -98,8 +104,12 @@ const ContactPage = () => {
                             <Clock className="w-5 h-5" />
                           </div>
                           <div>
-                            <p className="font-medium text-foreground">{t("contactPage.responseTime")}</p>
-                            <p className="text-muted-foreground text-sm">{t("contactPage.within24h")}</p>
+                            <p className="font-medium text-foreground">
+                              {t("contactPage.responseTime")}
+                            </p>
+                            <p className="text-muted-foreground text-sm">
+                              {t("contactPage.within24h")}
+                            </p>
                           </div>
                         </div>
                       </div>
@@ -116,7 +126,11 @@ const ContactPage = () => {
                         {t("contactPage.consultationDesc")}
                       </p>
                       <Button asChild className="w-full glow group">
-                        <a href="https://calendly.com/syedhadihussain" target="_blank" rel="noopener noreferrer">
+                        <a
+                          href="https://calendly.com/syedhadihussain"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           {t("contactPage.scheduleCall")}
                           <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                         </a>

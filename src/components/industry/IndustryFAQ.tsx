@@ -26,10 +26,10 @@ const IndustryFAQ = ({ industry }: IndustryFAQProps) => {
                 FAQ
               </span>
               <h2 className="font-display text-3xl lg:text-4xl font-bold text-foreground mb-4">
-                Frequently Asked Questions About SEO for {industry.name}
+                {t("Frequently Asked Questions About SEO for")} {industry.name}
               </h2>
               <p className="text-muted-foreground text-lg">
-                Get answers to common questions about Local SEO services for {industry.name.toLowerCase()} businesses.
+                {t("Get answers to common questions about Local SEO services for")} {industry.name.toLowerCase()} {t("businesses")}.
               </p>
             </div>
           </ScrollReveal>
@@ -44,10 +44,10 @@ const IndustryFAQ = ({ industry }: IndustryFAQProps) => {
                   className="glass rounded-xl px-6 border-none"
                 >
                   <AccordionTrigger className="text-left font-semibold text-foreground hover:text-primary py-6">
-                    {item.question}
+                    {t(item.question)}
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground pb-6">
-                    {item.answer}
+                    {t(item.answer)}
                   </AccordionContent>
                 </AccordionItem>
               ))}
