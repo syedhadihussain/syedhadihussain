@@ -14,129 +14,123 @@ const PricingPage = () => {
   const { t, language } = useLanguage();
   const { expired } = useDiscountTimer();
 
-  // Calculate discounted prices (25% off)
-  const calculateDiscount = (price: number) => {
-    const discounted = price * 0.75;
-    return `$${discounted.toFixed(0)}`;
-  };
-
   const packages = [
     {
-      name: "SEO Audit",
-      badge: expired ? null : "50% OFF",
+      nameKey: "pricing.seoAudit",
+      badge: expired ? null : t("pricing.badge.off50"),
       originalPrice: "$100",
       price: expired ? "$100" : "$50",
-      description: "Perfect for understanding your current SEO standing and getting actionable recommendations.",
+      descriptionKey: "pricing.seoAuditDesc",
       features: [
-        "Complete GBP Analysis",
-        "Website SEO Audit",
-        "Competitor Analysis (3 competitors)",
-        "Local Ranking Check",
-        "NAP Consistency Review",
-        "Actionable Recommendations Report",
-        "30-min Strategy Call",
+        "pricing.feature.gbpAnalysis",
+        "pricing.feature.websiteAudit",
+        "pricing.feature.competitorAnalysis3",
+        "pricing.feature.localRankingCheck",
+        "pricing.feature.napConsistency",
+        "pricing.feature.recommendations",
+        "pricing.feature.strategyCall30",
       ],
-      cta: "Get Audit Now",
+      ctaKey: "pricing.cta.getAuditNow",
       popular: true,
-      highlight: expired ? null : "Sign up within 3 days for 50% OFF!",
+      highlightKey: expired ? null : "pricing.signUpHighlight",
     },
     {
-      name: "GBP Management",
-      badge: expired ? null : "25% OFF",
+      nameKey: "pricing.gbpManagement",
+      badge: expired ? null : t("pricing.badge.off25"),
       originalPrice: "$399",
       price: expired ? "$399" : "$299",
-      period: "/month",
-      description: "Ongoing Google Business Profile optimization to keep you ranking high in local search.",
+      periodKey: "pricing.perMonth",
+      descriptionKey: "pricing.gbpManagementDesc",
       features: [
-        "Weekly GBP Posts & Updates",
-        "Photo & Video Optimization",
-        "Review Response Management",
-        "Q&A Monitoring & Responses",
-        "Category & Service Optimization",
-        "Monthly Performance Report",
-        "Competitor Monitoring",
-        "Priority Support",
+        "pricing.feature.weeklyPosts",
+        "pricing.feature.photoVideo",
+        "pricing.feature.reviewManagement",
+        "pricing.feature.qaMonitoring",
+        "pricing.feature.categoryOptimization",
+        "pricing.feature.monthlyReport",
+        "pricing.feature.competitorMonitoring",
+        "pricing.feature.prioritySupport",
       ],
-      cta: "Get Started",
+      ctaKey: "pricing.cta.getStarted",
       popular: false,
     },
     {
-      name: "Full Stack Local SEO",
-      badge: expired ? null : "25% OFF",
+      nameKey: "pricing.fullStackSeo",
+      badge: expired ? null : t("pricing.badge.off25"),
       originalPrice: "$799",
       price: expired ? "$799" : "$599",
-      period: "/month",
-      description: "Complete local SEO solution for businesses serious about dominating their market.",
+      periodKey: "pricing.perMonth",
+      descriptionKey: "pricing.fullStackSeoDesc",
       features: [
-        "Everything in GBP Management",
-        "On-Page SEO Optimization",
-        "Local Keyword Research",
-        "Citation Building (20/month)",
-        "Link Building (5 quality links/month)",
-        "Technical SEO Fixes",
-        "Schema Markup Implementation",
-        "Weekly Strategy Calls",
-        "Priority Support",
+        "pricing.feature.everythingInGbp",
+        "pricing.feature.onPageSeo",
+        "pricing.feature.localKeywordResearch",
+        "pricing.feature.citationBuilding",
+        "pricing.feature.linkBuilding",
+        "pricing.feature.technicalSeo",
+        "pricing.feature.schemaMarkup",
+        "pricing.feature.weeklyCalls",
+        "pricing.feature.prioritySupport",
       ],
-      cta: "Get Started",
+      ctaKey: "pricing.cta.getStarted",
       popular: false,
     },
     {
-      name: "Complete Business Audit",
-      badge: expired ? null : "25% OFF",
+      nameKey: "pricing.completeAudit",
+      badge: expired ? null : t("pricing.badge.off25"),
       originalPrice: "$265",
       price: expired ? "$265" : "$199",
-      description: "Comprehensive analysis of your entire digital presence with a detailed action plan.",
+      descriptionKey: "pricing.completeAuditDesc",
       features: [
-        "Full Website SEO Audit",
-        "GBP & Local SEO Analysis",
-        "Competitor Deep Dive (5 competitors)",
-        "Social Media Presence Review",
-        "Brand Consistency Check",
-        "Technical Performance Analysis",
-        "Detailed PDF Report",
-        "60-min Strategy Call",
-        "30-day Email Support",
+        "pricing.feature.fullWebsiteAudit",
+        "pricing.feature.gbpLocalAnalysis",
+        "pricing.feature.competitorDeepDive",
+        "pricing.feature.socialMediaReview",
+        "pricing.feature.brandConsistency",
+        "pricing.feature.technicalPerformance",
+        "pricing.feature.pdfReport",
+        "pricing.feature.strategyCall60",
+        "pricing.feature.emailSupport30",
       ],
-      cta: "Order Audit",
+      ctaKey: "pricing.cta.orderAudit",
       popular: false,
     },
     {
-      name: "Project Management",
-      price: "Custom",
-      description: "End-to-end digital project management for businesses that need a full-stack solution.",
+      nameKey: "pricing.projectManagement",
+      price: t("pricing.custom"),
+      descriptionKey: "pricing.projectManagementDesc",
       features: [
-        "Dedicated Project Manager",
-        "Website Development",
-        "SEO & Marketing Strategy",
-        "Social Media Management",
-        "Advertising Campaign Management",
-        "Vendor Coordination",
-        "Weekly Progress Reports",
-        "24/7 Priority Support",
-        "Custom Dashboard Access",
+        "pricing.feature.dedicatedPM",
+        "pricing.feature.webDevelopment",
+        "pricing.feature.seoMarketingStrategy",
+        "pricing.feature.socialMediaManagement",
+        "pricing.feature.adCampaignManagement",
+        "pricing.feature.vendorCoordination",
+        "pricing.feature.weeklyReports",
+        "pricing.feature.support247",
+        "pricing.feature.customDashboard",
       ],
-      cta: "Get Quote",
+      ctaKey: "pricing.cta.getQuote",
       popular: false,
     },
     {
-      name: "Local Service Ads",
-      badge: expired ? null : "25% OFF",
+      nameKey: "pricing.localServiceAds",
+      badge: expired ? null : t("pricing.badge.off25"),
       originalPrice: "$532",
       price: expired ? "$532" : "$399",
-      period: "/month + ad spend",
-      description: "Google Local Service Ads management to get guaranteed leads for your service business.",
+      periodKey: "pricing.perMonthAdSpend",
+      descriptionKey: "pricing.localServiceAdsDesc",
       features: [
-        "LSA Account Setup",
-        "Profile Optimization",
-        "Badge Verification Support",
-        "Lead Response Management",
-        "Dispute Handling",
-        "Performance Optimization",
-        "Weekly Reporting",
-        "Budget Recommendations",
+        "pricing.feature.lsaSetup",
+        "pricing.feature.profileOptimization",
+        "pricing.feature.badgeVerification",
+        "pricing.feature.leadResponse",
+        "pricing.feature.disputeHandling",
+        "pricing.feature.performanceOptimization",
+        "pricing.feature.weeklyReporting",
+        "pricing.feature.budgetRecommendations",
       ],
-      cta: "Get Started",
+      ctaKey: "pricing.cta.getStarted",
       popular: false,
     },
   ];
@@ -190,14 +184,14 @@ const PricingPage = () => {
                         <div className="flex items-center gap-2 justify-center lg:justify-start mb-1">
                           <Badge variant="destructive" className="animate-pulse">
                             <Timer className="w-3 h-3 mr-1" />
-                            Limited Time
+                            {t("pricing.limitedTime")}
                           </Badge>
                         </div>
                         <h2 className="font-display text-2xl lg:text-3xl font-bold text-foreground">
-                          50% OFF SEO Audit!
+                          {t("pricing.specialOfferTitle")}
                         </h2>
                         <p className="text-muted-foreground mt-1">
-                          Book within 3 days and get your audit for just $50
+                          {t("pricing.specialOfferDesc")}
                         </p>
                       </div>
                     </div>
@@ -208,7 +202,7 @@ const PricingPage = () => {
                   <div className="flex justify-center mt-6">
                     <Button asChild size="lg" className="glow group">
                       <Link to="/contact">
-                        Claim Your 50% Discount
+                        {t("pricing.claimDiscount")}
                         <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                       </Link>
                     </Button>
@@ -226,7 +220,7 @@ const PricingPage = () => {
                   {pkg.popular && (
                     <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                       <Badge className="bg-primary text-primary-foreground">
-                        Most Popular
+                        {t("pricing.mostPopular")}
                       </Badge>
                     </div>
                   )}
@@ -240,7 +234,7 @@ const PricingPage = () => {
                   )}
                   
                   <h3 className="font-display text-xl font-bold text-foreground mb-2">
-                    {pkg.name}
+                    {t(pkg.nameKey)}
                   </h3>
                   
                   <div className="mb-4">
@@ -252,27 +246,27 @@ const PricingPage = () => {
                     <span className="font-display text-3xl font-bold text-foreground">
                       {pkg.price}
                     </span>
-                    {pkg.period && (
-                      <span className="text-muted-foreground">{pkg.period}</span>
+                    {pkg.periodKey && (
+                      <span className="text-muted-foreground">{t(pkg.periodKey)}</span>
                     )}
                   </div>
 
-                  {pkg.highlight && (
+                  {pkg.highlightKey && (
                     <p className="text-sm text-primary font-medium mb-3 flex items-center gap-1">
                       <Timer className="w-3 h-3" />
-                      {pkg.highlight}
+                      {t(pkg.highlightKey)}
                     </p>
                   )}
                   
                   <p className="text-muted-foreground text-sm mb-6">
-                    {pkg.description}
+                    {t(pkg.descriptionKey)}
                   </p>
                   
                   <ul className="space-y-3 mb-6 flex-1">
-                    {pkg.features.map((feature, i) => (
+                    {pkg.features.map((featureKey, i) => (
                       <li key={i} className="flex items-start gap-2 text-sm">
                         <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                        <span className="text-foreground">{feature}</span>
+                        <span className="text-foreground">{t(featureKey)}</span>
                       </li>
                     ))}
                   </ul>
@@ -282,14 +276,14 @@ const PricingPage = () => {
                     <p className="text-xs text-muted-foreground flex items-start gap-1.5">
                       <Sparkles className="w-3 h-3 text-primary shrink-0 mt-0.5" />
                       <span>
-                        <strong className="text-foreground">Multi-location or need more services?</strong> Use code <span className="text-primary font-semibold">MULTI-DISCOUNT</span> for special pricing!
+                        <strong className="text-foreground">{t("pricing.multiLocationNote")}</strong> {t("pricing.useCode")} <span className="text-primary font-semibold">MULTI-DISCOUNT</span> {t("pricing.forSpecialPricing")}
                       </span>
                     </p>
                   </div>
                   
                   <Button asChild className={`w-full ${pkg.popular ? 'glow' : ''}`} variant={pkg.popular ? 'default' : 'outline'}>
                     <Link to="/contact">
-                      {pkg.cta}
+                      {t(pkg.ctaKey)}
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </Link>
                   </Button>
@@ -309,14 +303,13 @@ const PricingPage = () => {
                 <div className="text-center mb-8">
                   <Badge className="bg-primary/10 text-primary border-primary/20 mb-4">
                     <Percent className="w-3 h-3 mr-1" />
-                    Special Multi-Location Discount
+                    {t("pricing.multiLocationDiscount")}
                   </Badge>
                   <h2 className="font-display text-3xl lg:text-4xl font-bold text-foreground mb-4">
-                    Managing Multiple Locations or Need Multiple Services?
+                    {t("pricing.multiLocationTitle")}
                   </h2>
                   <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                    Get a custom quote with exclusive discounts for businesses with multiple Google Business Profiles, 
-                    franchise locations, or those needing a combination of SEO, web development, content, and marketing services.
+                    {t("pricing.multiLocationDesc")}
                   </p>
                 </div>
 
@@ -326,10 +319,10 @@ const PricingPage = () => {
                       <MapPin className="w-7 h-7 text-primary" />
                     </div>
                     <h3 className="font-display text-lg font-bold text-foreground mb-2">
-                      Multi-Location SEO
+                      {t("pricing.multiLocationSeo")}
                     </h3>
                     <p className="text-sm text-muted-foreground">
-                      Managing 2+ GBP locations? Get volume discounts up to 30% off per location.
+                      {t("pricing.multiLocationSeoDesc")}
                     </p>
                   </div>
 
@@ -338,10 +331,10 @@ const PricingPage = () => {
                       <Layers className="w-7 h-7 text-primary" />
                     </div>
                     <h3 className="font-display text-lg font-bold text-foreground mb-2">
-                      Bundled Services
+                      {t("pricing.bundledServices")}
                     </h3>
                     <p className="text-sm text-muted-foreground">
-                      Combine SEO + Web Dev + Content + Social Media for up to 25% bundle discount.
+                      {t("pricing.bundledServicesDesc")}
                     </p>
                   </div>
 
@@ -350,10 +343,10 @@ const PricingPage = () => {
                       <Building2 className="w-7 h-7 text-primary" />
                     </div>
                     <h3 className="font-display text-lg font-bold text-foreground mb-2">
-                      Enterprise Solutions
+                      {t("pricing.enterpriseSolutions")}
                     </h3>
                     <p className="text-sm text-muted-foreground">
-                      Franchise or agency? Custom pricing with dedicated account management.
+                      {t("pricing.enterpriseDesc")}
                     </p>
                   </div>
                 </div>
@@ -362,20 +355,20 @@ const PricingPage = () => {
                   <Button asChild size="lg" className="glow group">
                     <a href="https://calendly.com/syedhadihussain" target="_blank" rel="noopener noreferrer">
                       <Phone className="w-4 h-4 mr-2" />
-                      Book a Strategy Call
+                      {t("pricing.bookStrategyCall")}
                       <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                     </a>
                   </Button>
                   <Button asChild variant="outline" size="lg">
                     <Link to="/contact">
-                      Request Custom Quote
+                      {t("pricing.requestCustomQuote")}
                     </Link>
                   </Button>
                 </div>
 
                 <p className="text-center text-sm text-muted-foreground mt-6">
                   <Sparkles className="w-4 h-4 inline mr-1 text-primary" />
-                  Mention "MULTI-DISCOUNT" when you reach out to unlock exclusive pricing
+                  {t("pricing.mentionCode")}
                 </p>
               </div>
             </div>
@@ -385,21 +378,21 @@ const PricingPage = () => {
           <ScrollReveal delay={150}>
             <div className="text-center">
               <h2 className="font-display text-2xl font-bold text-foreground mb-4">
-                Have Questions?
+                {t("pricing.haveQuestions")}
               </h2>
               <p className="text-muted-foreground mb-6">
-                Check our FAQ or get in touch for custom solutions tailored to your needs.
+                {t("pricing.questionsDesc")}
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild variant="outline" size="lg">
-                  <Link to="/faq">View FAQ</Link>
+                  <Link to="/faq">{t("pricing.viewFaq")}</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <Link to="/case-studies">View Case Studies</Link>
+                  <Link to="/case-studies">{t("pricing.viewCaseStudies")}</Link>
                 </Button>
                 <Button asChild className="glow" size="lg">
                   <Link to="/contact">
-                    Contact Us <ArrowRight className="w-4 h-4 ml-2" />
+                    {t("pricing.contactUs")} <ArrowRight className="w-4 h-4 ml-2" />
                   </Link>
                 </Button>
               </div>
