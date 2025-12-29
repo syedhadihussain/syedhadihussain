@@ -408,8 +408,12 @@ const INDUSTRY_HERO_IMAGES: Record<string, string> = {
   "internet-service-providers": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop",
   "telecom-service-providers": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop",
   "mobile-phone-repair-shops": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop",
+  "laptop-repair-shops": "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=800&h=600&fit=crop",
+  "tablet-repair-services": "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=800&h=600&fit=crop",
+  "gaming-console-repair-services": "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=800&h=600&fit=crop",
+  "computer-repair-services": "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=800&h=600&fit=crop",
+  "smart-watch-repair-services": "https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d?w=800&h=600&fit=crop",
 
-  // ============ PROFESSIONAL SERVICES ============
   "accountants": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&h=600&fit=crop",
   "bookkeepers": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&h=600&fit=crop",
   "tax-consultants": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&h=600&fit=crop",
