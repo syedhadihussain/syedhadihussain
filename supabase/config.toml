@@ -21,6 +21,15 @@ verify_jwt = false
 [functions.send-notification-email]
 verify_jwt = false
 
+[functions.summarize-chat]
+verify_jwt = true
+
+[functions.smart-reply]
+verify_jwt = true
+
+[functions.translate-message]
+verify_jwt = true
+
 [api]
 enabled = true
 schemas = ["public", "graphql_public"]

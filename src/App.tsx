@@ -54,6 +54,7 @@ const AdminProjectsPage = lazy(() => import("./pages/portal/admin/AdminProjectsP
 const AdminRolesPage = lazy(() => import("./pages/portal/admin/AdminRolesPage"));
 const AdminAnnouncementsPage = lazy(() => import("./pages/portal/admin/AdminAnnouncementsPage"));
 const AdminAnalyticsPage = lazy(() => import("./pages/portal/admin/AdminAnalyticsPage"));
+const AdminAutomationPage = lazy(() => import("./pages/portal/admin/AdminAutomationPage"));
 const ProtectedPortalRoute = lazy(() => import("./components/portal/ProtectedPortalRoute"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
@@ -113,6 +114,7 @@ const adminPortalRoutes = [
   { path: "portal/admin/roles", element: <AdminRolesPage />, requireAdmin: true },
   { path: "portal/admin/announcements", element: <AdminAnnouncementsPage />, requireModerator: true },
   { path: "portal/admin/analytics", element: <AdminAnalyticsPage />, requireModerator: true },
+  { path: "portal/admin/automation", element: <AdminAutomationPage />, requireAdmin: true },
 ];
 
 // Protected admin routes (require authentication + admin role)
