@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { ArrowRight, HelpCircle } from "lucide-react";
 
 const faqs = [
@@ -56,6 +57,9 @@ const faqs = [
 ];
 
 const FAQPage = () => {
+  const { language } = useLanguage();
+  const withLang = (path: string) => (path === "/" ? `/${language}` : `/${language}${path}`);
+
   // FAQ Schema for SEO
   const faqSchema = {
     "@context": "https://schema.org",
@@ -134,7 +138,7 @@ const FAQPage = () => {
                     I'm happy to answer any specific questions about your business and how Local SEO can help.
                   </p>
                   <Button asChild size="lg" className="glow group">
-                    <Link to="/contact">
+                    <Link to={withLang("/contact")}>
                       Get in Touch
                       <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                     </Link>

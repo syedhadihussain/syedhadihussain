@@ -4,6 +4,7 @@ import SEOHead from "@/components/SEOHead";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { TrendingUp, ArrowRight, MapPin, CheckCircle } from "lucide-react";
 
 const caseStudies = [
@@ -130,6 +131,9 @@ const caseStudies = [
 ];
 
 const CaseStudiesPage = () => {
+  const { language } = useLanguage();
+  const withLang = (path: string) => (path === "/" ? `/${language}` : `/${language}${path}`);
+
   return (
     <>
       <SEOHead
@@ -262,7 +266,7 @@ const CaseStudiesPage = () => {
                       </a>
                     </Button>
                     <Button asChild variant="outline" size="lg">
-                      <Link to="/contact">
+                      <Link to={withLang("/contact")}>
                         Start Your Success Story
                       </Link>
                     </Button>

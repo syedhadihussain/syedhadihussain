@@ -4,6 +4,7 @@ import SEOHead from "@/components/SEOHead";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { ArrowRight, Calendar, Clock, Tag } from "lucide-react";
 
 const blogPosts = [
@@ -64,6 +65,9 @@ const blogPosts = [
 ];
 
 const BlogPage = () => {
+  const { language } = useLanguage();
+  const withLang = (path: string) => (path === "/" ? `/${language}` : `/${language}${path}`);
+
   return (
     <>
       <SEOHead
@@ -160,7 +164,7 @@ const BlogPage = () => {
                     Join hundreds of business owners receiving weekly insights on improving their local search presence.
                   </p>
                   <Button asChild size="lg" className="glow group">
-                    <Link to="/contact">
+                    <Link to={withLang("/contact")}>
                       Subscribe to Newsletter
                       <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                     </Link>

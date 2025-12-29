@@ -4,6 +4,7 @@ import SEOHead from "@/components/SEOHead";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 import {
   MapPin,
   Search,
@@ -195,6 +196,9 @@ const services = [
 ];
 
 const ServicesPage = () => {
+  const { language } = useLanguage();
+  const withLang = (path: string) => (path === "/" ? `/${language}` : `/${language}${path}`);
+
   return (
     <>
       <SEOHead
@@ -222,13 +226,13 @@ const ServicesPage = () => {
                 </p>
                 <div className="flex flex-wrap justify-center gap-4">
                   <Button asChild size="lg" className="glow group">
-                    <Link to="/project-management">
+                    <Link to={withLang("/project-management")}>
                       Project Management
                       <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </Button>
                   <Button asChild variant="outline" size="lg">
-                    <Link to="/local-service-ads">
+                    <Link to={withLang("/local-service-ads")}>
                       Local Service Ads
                     </Link>
                   </Button>
@@ -285,7 +289,7 @@ const ServicesPage = () => {
                       </a>
                     </Button>
                     <Button asChild variant="outline" size="lg">
-                      <Link to="/contact">
+                      <Link to={withLang("/contact")}>
                         Contact Me
                       </Link>
                     </Button>

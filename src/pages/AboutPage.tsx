@@ -4,6 +4,7 @@ import SEOHead from "@/components/SEOHead";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { 
   CheckCircle, 
   Award, 
@@ -51,6 +52,9 @@ const skills = [
 ];
 
 const AboutPage = () => {
+  const { language } = useLanguage();
+  const withLang = (path: string) => (path === "/" ? `/${language}` : `/${language}${path}`);
+
   return (
     <>
       <SEOHead
@@ -97,18 +101,18 @@ const AboutPage = () => {
                   {/* CTA Buttons */}
                   <div className="flex flex-wrap gap-4">
                     <Button asChild size="lg" className="glow group min-w-[160px] justify-center">
-                      <Link to="/case-studies">
+                      <Link to={withLang("/case-studies")}>
                         View Case Studies
                         <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                       </Link>
                     </Button>
                     <Button asChild variant="outline" size="lg" className="min-w-[160px] justify-center">
-                      <Link to="/services">
+                      <Link to={withLang("/services")}>
                         Explore Services
                       </Link>
                     </Button>
                     <Button asChild variant="outline" size="lg" className="min-w-[160px] justify-center">
-                      <Link to="/contact">
+                      <Link to={withLang("/contact")}>
                         Get In Touch
                       </Link>
                     </Button>
