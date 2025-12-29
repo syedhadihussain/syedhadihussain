@@ -106,7 +106,7 @@ const App = () => (
                   {SUPPORTED_LANGUAGES.map((lang) => (
                     <Route
                       key={`city-${lang}`}
-                      path={`/${lang}/:countryCode/:stateCode/:citySlug`}
+                      path={`/${lang}/:countryCode([a-z]{2})/:stateCode/:citySlug`}
                       element={<CityPage />}
                     />
                   ))}
@@ -114,7 +114,7 @@ const App = () => (
                   {SUPPORTED_LANGUAGES.map((lang) => (
                     <Route
                       key={`state-${lang}`}
-                      path={`/${lang}/:countryCode/:stateCode`}
+                      path={`/${lang}/:countryCode([a-z]{2})/:stateCode`}
                       element={<StatePage />}
                     />
                   ))}
@@ -122,7 +122,7 @@ const App = () => (
                   {SUPPORTED_LANGUAGES.map((lang) => (
                     <Route
                       key={`country-${lang}`}
-                      path={`/${lang}/:countryCode`}
+                      path={`/${lang}/:countryCode([a-z]{2})`}
                       element={<CountryPage />}
                     />
                   ))}
