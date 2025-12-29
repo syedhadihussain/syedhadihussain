@@ -37,6 +37,8 @@ const CityPage = lazy(() => import("./pages/CityPage"));
 const ServingIndustriesPage = lazy(() => import("./pages/ServingIndustriesPage"));
 const DynamicRouteResolver = lazy(() => import("./components/DynamicRouteResolver"));
 const IndexingDashboardPage = lazy(() => import("./pages/IndexingDashboardPage"));
+const AdminAuthPage = lazy(() => import("./pages/AdminAuthPage"));
+const ProtectedAdminRoute = lazy(() => import("./components/ProtectedAdminRoute"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -72,6 +74,11 @@ const staticPageRoutes = [
   { path: "privacy", element: <PrivacyPolicyPage /> },
   { path: "terms", element: <TermsOfServicePage /> },
   { path: "serving-industries", element: <ServingIndustriesPage /> },
+  { path: "admin/login", element: <AdminAuthPage /> },
+];
+
+// Protected admin routes (require authentication + admin role)
+const protectedAdminRoutes = [
   { path: "admin/indexing", element: <IndexingDashboardPage /> },
 ];
 
@@ -106,6 +113,21 @@ const App = () => (
                         key={`${lang}-${route.path || "index"}`}
                         path={route.path ? `/${lang}/${route.path}` : `/${lang}`}
                         element={route.element}
+                      />
+                    ))
+                  )}
+
+                  {/* Protected admin routes - require authentication + admin role */}
+                  {SUPPORTED_LANGUAGES.map((lang) =>
+                    protectedAdminRoutes.map((route) => (
+                      <Route
+                        key={`${lang}-protected-${route.path}`}
+                        path={`/${lang}/${route.path}`}
+                        element={
+                          <ProtectedAdminRoute>
+                            {route.element}
+                          </ProtectedAdminRoute>
+                        }
                       />
                     ))
                   )}
