@@ -86,7 +86,7 @@ const CountryMap = ({ country }: CountryMapProps) => {
                     return (
                       <Link 
                         key={stateName}
-                        to={`/${language}/${country.code}/${stateCode}/`}
+                        to={`/${language}/${country.code}/${stateCode}`}
                         className="px-3 py-1 bg-background rounded-full text-sm text-muted-foreground border border-border hover:border-primary hover:text-primary hover:bg-primary/5 transition-colors"
                       >
                         {stateName}

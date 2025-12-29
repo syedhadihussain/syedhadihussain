@@ -1,4 +1,5 @@
-import { useParams, useLocation, Navigate } from "react-router-dom";
+import { useLocation, Navigate } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { getIndustryData, isValidIndustrySlug } from "@/lib/industries-config";
 import Navigation from "@/components/portfolio/Navigation";
 import Footer from "@/components/portfolio/Footer";
@@ -13,6 +14,7 @@ import RelatedIndustries from "@/components/industry/RelatedIndustries";
 
 const IndustryPage = () => {
   const location = useLocation();
+  const { language } = useLanguage();
   
   // Extract industry slug from URL path
   // URL format: /:lang/local-seo-services-for-{industrySlug}
@@ -25,13 +27,13 @@ const IndustryPage = () => {
     : '';
 
   if (!slug || !isValidIndustrySlug(slug)) {
-    return <Navigate to="/404" replace />;
+    return <Navigate to={`/${language}/404`} replace />;
   }
 
   const industry = getIndustryData(slug);
   
   if (!industry) {
-    return <Navigate to="/404" replace />;
+    return <Navigate to={`/${language}/404`} replace />;
   }
 
   return (

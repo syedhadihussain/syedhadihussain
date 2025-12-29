@@ -110,7 +110,8 @@ const seoProjects = [
 ];
 
 const PortfolioPage = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const withLang = (path: string) => (path === "/" ? `/${language}` : `/${language}${path}`);
 
   return (
     <div className="min-h-screen bg-background">
@@ -287,12 +288,12 @@ const PortfolioPage = () => {
                     </a>
                   </Button>
                   <Button asChild variant="outline" size="lg">
-                    <Link to="/case-studies">
+                    <Link to={withLang("/case-studies")}>
                       View Case Studies
                     </Link>
                   </Button>
                   <Button asChild variant="outline" size="lg">
-                    <Link to="/contact">
+                    <Link to={withLang("/contact")}>
                       Contact Me
                     </Link>
                   </Button>

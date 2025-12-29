@@ -36,7 +36,8 @@ const TermsOfServicePage = lazy(() => import("./pages/TermsOfServicePage"));
 const StatePage = lazy(() => import("./pages/StatePage"));
 const CityPage = lazy(() => import("./pages/CityPage"));
 const ServingIndustriesPage = lazy(() => import("./pages/ServingIndustriesPage"));
-const DynamicRouteResolver = lazy(() => import("./components/DynamicRouteResolver"));
+const CountryPage = lazy(() => import("./pages/CountryPage"));
+const IndustryPage = lazy(() => import("./pages/IndustryPage"));
 const IndexingDashboardPage = lazy(() => import("./pages/IndexingDashboardPage"));
 const AdminAuthPage = lazy(() => import("./pages/AdminAuthPage"));
 const ProtectedAdminRoute = lazy(() => import("./components/ProtectedAdminRoute"));
@@ -237,13 +238,21 @@ const App = () => (
                     />
                   ))}
 
-                  {/* Dynamic 2-segment routes - industry pages OR country pages */}
-                  {/* Resolved by DynamicRouteResolver based on slug format */}
+                  {/* Industry pages - 2 segment paths */}
                   {SUPPORTED_LANGUAGES.map((lang) => (
                     <Route
-                      key={`dynamic-${lang}`}
-                      path={`/${lang}/:slug`}
-                      element={<DynamicRouteResolver />}
+                      key={`industry-${lang}`}
+                      path={`/${lang}/local-seo-services-for-:industrySlug`}
+                      element={<IndustryPage />}
+                    />
+                  ))}
+
+                  {/* Country pages - 1 segment paths (country code) */}
+                  {SUPPORTED_LANGUAGES.map((lang) => (
+                    <Route
+                      key={`country-${lang}`}
+                      path={`/${lang}/:countryCode`}
+                      element={<CountryPage />}
                     />
                   ))}
 
