@@ -29,26 +29,33 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const withLang = (path: string) => {
+    if (!path.startsWith("/")) return path;
+    if (path === "/") return `/${language}`;
+    if (path.startsWith(`/${language}/`) || path === `/${language}`) return path;
+    return `/${language}${path}`;
+  };
+
   const serviceLinks = [
-    { href: "/services", label: t("nav.localSeo") },
-    { href: "/local-service-ads", label: t("nav.localServiceAds") },
-    { href: "/project-management", label: t("nav.projectManagement") },
-    { href: "/web-development", label: "Web Development" },
-    { href: "/content-writing", label: "Content Writing" },
-    { href: "/graphic-design", label: "Graphic Design" },
-    { href: "/social-media", label: "Social Media Marketing" },
-    { href: "/serving-industries", label: "Industries We Serve" },
+    { href: withLang("/services"), label: t("nav.localSeo") },
+    { href: withLang("/local-service-ads"), label: t("nav.localServiceAds") },
+    { href: withLang("/project-management"), label: t("nav.projectManagement") },
+    { href: withLang("/web-development"), label: t("nav.webDevelopment") },
+    { href: withLang("/content-writing"), label: t("nav.contentWriting") },
+    { href: withLang("/graphic-design"), label: t("nav.graphicDesign") },
+    { href: withLang("/social-media"), label: t("nav.socialMediaMarketing") },
+    { href: withLang("/serving-industries"), label: t("nav.industriesWeServe") },
   ];
 
   const navLinks = [
-    { href: "/about", label: t("nav.about"), isDropdown: false },
-    { href: "/services", label: t("nav.services"), isDropdown: true },
-    { href: "/pricing", label: t("nav.pricing"), isDropdown: false },
-    { href: "/portfolio", label: t("nav.portfolio"), isDropdown: false },
-    { href: "/case-studies", label: t("nav.caseStudies"), isDropdown: false },
-    { href: "/faq", label: t("nav.faq"), isDropdown: false },
-    { href: "/blog", label: t("nav.blog"), isDropdown: false },
-    { href: "/contact", label: t("nav.contact"), isDropdown: false },
+    { href: withLang("/about"), label: t("nav.about"), isDropdown: false },
+    { href: withLang("/services"), label: t("nav.services"), isDropdown: true },
+    { href: withLang("/pricing"), label: t("nav.pricing"), isDropdown: false },
+    { href: withLang("/portfolio"), label: t("nav.portfolio"), isDropdown: false },
+    { href: withLang("/case-studies"), label: t("nav.caseStudies"), isDropdown: false },
+    { href: withLang("/faq"), label: t("nav.faq"), isDropdown: false },
+    { href: withLang("/blog"), label: t("nav.blog"), isDropdown: false },
+    { href: withLang("/contact"), label: t("nav.contact"), isDropdown: false },
   ];
 
   return (
@@ -58,7 +65,7 @@ const Navigation = () => {
       }`}
     >
       <div className="container-narrow flex items-center justify-between">
-        <Link to="/" className="font-display text-xl font-bold text-foreground">
+        <Link to={`/${language}`} className="font-display text-xl font-bold text-foreground">
           Syed Hadi<span className="text-primary">.</span>
         </Link>
 
@@ -101,8 +108,8 @@ const Navigation = () => {
           </div>
           
           <Button asChild variant="outline" size="sm">
-            <Link to="/portal/login">
-              Client Portal
+            <Link to={withLang("/portal/login")}>
+              {t("nav.clientPortal")}
             </Link>
           </Button>
           
@@ -160,8 +167,8 @@ const Navigation = () => {
               )
             ))}
             <Button asChild variant="outline" className="w-full mt-2">
-              <Link to="/portal/login" onClick={() => setIsMobileMenuOpen(false)}>
-                Client Portal
+              <Link to={withLang("/portal/login")} onClick={() => setIsMobileMenuOpen(false)}>
+                {t("nav.clientPortal")}
               </Link>
             </Button>
             <Button asChild className="w-full mt-2">

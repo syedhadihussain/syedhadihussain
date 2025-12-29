@@ -2,7 +2,8 @@ import { useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { isSupportedLanguage, DEFAULT_LANGUAGE, SupportedLanguage } from "@/lib/i18n-config";
 
-const LANGUAGE_STORAGE_KEY = "preferred-language";
+const LANGUAGE_STORAGE_KEY = "language";
+const LEGACY_LANGUAGE_STORAGE_KEY = "preferred-language";
 
 // Detect browser language preference
 const detectBrowserLanguage = (): SupportedLanguage => {
@@ -16,9 +17,16 @@ const detectBrowserLanguage = (): SupportedLanguage => {
 // Get stored language preference
 const getStoredLanguage = (): SupportedLanguage | null => {
   try {
+    // Current key used by LanguageContext
     const stored = localStorage.getItem(LANGUAGE_STORAGE_KEY);
     if (stored && isSupportedLanguage(stored)) {
       return stored;
+    }
+
+    // Backward-compat for older builds
+    const legacyStored = localStorage.getItem(LEGACY_LANGUAGE_STORAGE_KEY);
+    if (legacyStored && isSupportedLanguage(legacyStored)) {
+      return legacyStored;
     }
   } catch {
     // localStorage might not be available
