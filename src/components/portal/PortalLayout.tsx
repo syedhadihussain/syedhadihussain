@@ -36,6 +36,7 @@ import {
   Shield,
   Bell,
   ChevronRight,
+  FileSignature,
 } from "lucide-react";
 
 interface PortalLayoutProps {
@@ -57,6 +58,7 @@ const PortalLayout = ({ children }: PortalLayoutProps) => {
     { icon: FolderKanban, label: "Projects", path: "/en/portal/projects" },
     { icon: MessageSquare, label: "Messages", path: "/en/portal/messages" },
     { icon: FileText, label: "Documents", path: "/en/portal/documents" },
+    { icon: FileSignature, label: "Agreements", path: "/en/portal/agreements" },
     { icon: Settings, label: "Settings", path: "/en/portal/settings" },
   ];
 

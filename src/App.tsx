@@ -45,6 +45,7 @@ const PortalDashboardPage = lazy(() => import("./pages/portal/PortalDashboardPag
 const PortalProjectsPage = lazy(() => import("./pages/portal/PortalProjectsPage"));
 const PortalMessagesPage = lazy(() => import("./pages/portal/PortalMessagesPage"));
 const PortalDocumentsPage = lazy(() => import("./pages/portal/PortalDocumentsPage"));
+const PortalAgreementsPage = lazy(() => import("./pages/portal/PortalAgreementsPage"));
 const PortalSettingsPage = lazy(() => import("./pages/portal/PortalSettingsPage"));
 const AdminClientsPage = lazy(() => import("./pages/portal/admin/AdminClientsPage"));
 const AdminProjectsPage = lazy(() => import("./pages/portal/admin/AdminProjectsPage"));
@@ -96,6 +97,7 @@ const protectedPortalRoutes = [
   { path: "portal/projects", element: <PortalProjectsPage /> },
   { path: "portal/messages", element: <PortalMessagesPage /> },
   { path: "portal/documents", element: <PortalDocumentsPage /> },
+  { path: "portal/agreements", element: <PortalAgreementsPage /> },
   { path: "portal/settings", element: <PortalSettingsPage /> },
 ];
 
