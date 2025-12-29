@@ -36,6 +36,7 @@ const CountryPage = lazy(() => import("./pages/CountryPage"));
 const StatePage = lazy(() => import("./pages/StatePage"));
 const CityPage = lazy(() => import("./pages/CityPage"));
 const IndustryPage = lazy(() => import("./pages/IndustryPage"));
+const ServingIndustriesPage = lazy(() => import("./pages/ServingIndustriesPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -70,6 +71,8 @@ const pageRoutes = [
   { path: "social-media", element: <SocialMediaPage /> },
   { path: "privacy", element: <PrivacyPolicyPage /> },
   { path: "terms", element: <TermsOfServicePage /> },
+  { path: "serving-industries", element: <ServingIndustriesPage /> },
+  { path: "local-seo-services-for-:industrySlug", element: <IndustryPage /> },
 ];
 
 const App = () => (
@@ -89,7 +92,16 @@ const App = () => (
                 <Routes>
                   {/* Root redirect to default language */}
                   <Route path="/" element={<Navigate to={`/${DEFAULT_LANGUAGE}`} replace />} />
-                  
+
+                  {/* Industry pages - must come before country routes */}
+                  {SUPPORTED_LANGUAGES.map((lang) => (
+                    <Route
+                      key={`industry-${lang}`}
+                      path={`/${lang}/local-seo-services-for-:industrySlug`}
+                      element={<IndustryPage />}
+                    />
+                  ))}
+
                   {/* Dynamic geo pages for ALL supported languages */}
                   {SUPPORTED_LANGUAGES.map((lang) => (
                     <Route
