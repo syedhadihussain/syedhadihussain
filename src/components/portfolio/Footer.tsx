@@ -40,6 +40,7 @@ const Footer = () => {
     { labelKey: "footer.service.contentWriting", href: langLink("/content-writing") },
     { labelKey: "footer.service.graphicDesign", href: langLink("/graphic-design") },
     { labelKey: "footer.service.socialMedia", href: langLink("/social-media") },
+    { label: "Industries We Serve", href: langLink("/serving-industries") },
   ];
 
   const paymentLogos = [
@@ -107,12 +108,12 @@ const Footer = () => {
             <nav className="space-y-2.5">
               {services.map((service) => (
                 <Link
-                  key={service.labelKey}
+                  key={service.href}
                   to={service.href}
                   className="block text-sm text-muted-foreground hover:text-foreground transition-colors group"
                 >
                   <span className="inline-flex items-center gap-1">
-                    {t(service.labelKey)}
+                    {service.label || t(service.labelKey!)}
                     <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </span>
                 </Link>

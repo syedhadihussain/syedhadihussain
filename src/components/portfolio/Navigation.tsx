@@ -37,6 +37,7 @@ const Navigation = () => {
     { href: "/content-writing", label: "Content Writing" },
     { href: "/graphic-design", label: "Graphic Design" },
     { href: "/social-media", label: "Social Media Marketing" },
+    { href: "/serving-industries", label: "Industries We Serve" },
   ];
 
   const navLinks = [
