@@ -1,9 +1,10 @@
+import { forwardRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Linkedin, Facebook, Github, Mail, Globe, MessageCircle, ArrowUpRight, Shield, CreditCard } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE } from "@/lib/i18n-config";
 
-const Footer = () => {
+const Footer = forwardRef<HTMLElement>((_, ref) => {
   const { t } = useLanguage();
   const location = useLocation();
   const currentYear = new Date().getFullYear();
@@ -52,7 +53,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-card border-t border-border" role="contentinfo" aria-label="Site footer">
+    <footer ref={ref} className="bg-card border-t border-border" role="contentinfo" aria-label="Site footer">
       {/* Main Footer Content */}
       <div className="container-narrow py-16 lg:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
@@ -211,6 +212,8 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
+});
+
+Footer.displayName = "Footer";
 
 export default Footer;

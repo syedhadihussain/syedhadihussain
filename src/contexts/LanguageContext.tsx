@@ -2791,10 +2791,11 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       const cached = dynamicTranslations[key];
       if (cached) return cached;
 
-      // Enqueue for translation (batched)
+      // Enqueue for translation (batched) - defer state update to avoid updating during render
       if (!pendingRef.current.has(key)) {
         pendingRef.current.add(key);
-        setPendingTick((x) => x + 1);
+        // Use queueMicrotask to defer the state update outside the render phase
+        queueMicrotask(() => setPendingTick((x) => x + 1));
       }
 
       // Show English until translation arrives
