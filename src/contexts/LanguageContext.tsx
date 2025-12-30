@@ -2362,6 +2362,371 @@ export const translations: Translations = {
     it: "100+ clienti {name}",
     de: "100+ {name} Kunden"
   },
+
+  // ============ CITY PAGES ============
+  "city.stopLosingCustomers": {
+    en: "Businesses: Stop Losing Customers to Competitors",
+    ar: "الشركات: توقف عن خسارة العملاء لصالح المنافسين",
+    es: "Negocios: Deja de Perder Clientes ante la Competencia",
+    pt: "Empresas: Pare de Perder Clientes para Concorrentes",
+    fr: "Entreprises: Arrêtez de perdre des clients au profit de la concurrence",
+    it: "Aziende: Smetti di perdere clienti a favore dei concorrenti",
+    de: "Unternehmen: Hören Sie auf, Kunden an die Konkurrenz zu verlieren"
+  },
+  "city.get50OffAudit": {
+    en: "Get 50% Off Your SEO Audit for {city}",
+    ar: "احصل على خصم 50% على تدقيق SEO لـ {city}",
+    es: "Obtén 50% de Descuento en tu Auditoría SEO para {city}",
+    pt: "Obtenha 50% de Desconto na Auditoria SEO para {city}",
+    fr: "Obtenez 50% de réduction sur votre audit SEO pour {city}",
+    it: "Ottieni il 50% di sconto sull'audit SEO per {city}",
+    de: "50% Rabatt auf Ihr SEO-Audit für {city}"
+  },
+  "city.seeRealResults": {
+    en: "See Real Results",
+    ar: "شاهد نتائج حقيقية",
+    es: "Ver Resultados Reales",
+    pt: "Ver Resultados Reais",
+    fr: "Voir les résultats réels",
+    it: "Vedi risultati reali",
+    de: "Echte Ergebnisse sehen"
+  },
+  "city.yearsProvenResults": {
+    en: "Years Proven Results",
+    ar: "سنوات من النتائج المثبتة",
+    es: "Años de Resultados Comprobados",
+    pt: "Anos de Resultados Comprovados",
+    fr: "Années de résultats prouvés",
+    it: "Anni di risultati comprovati",
+    de: "Jahre bewährte Ergebnisse"
+  },
+  "city.averageVisibilityBoost": {
+    en: "Average Visibility Boost",
+    ar: "متوسط زيادة الظهور",
+    es: "Aumento Promedio de Visibilidad",
+    pt: "Aumento Médio de Visibilidade",
+    fr: "Augmentation moyenne de la visibilité",
+    it: "Aumento medio della visibilità",
+    de: "Durchschnittliche Sichtbarkeitssteigerung"
+  },
+  "city.industriesMastered": {
+    en: "Industries Mastered",
+    ar: "صناعات متقنة",
+    es: "Industrias Dominadas",
+    pt: "Indústrias Dominadas",
+    fr: "Industries maîtrisées",
+    it: "Industrie padroneggiate",
+    de: "Beherrschte Branchen"
+  },
+  "city.yourLocalExpert": {
+    en: "Your Local SEO Expert in {city}",
+    ar: "خبير SEO المحلي الخاص بك في {city}",
+    es: "Tu Experto en SEO Local en {city}",
+    pt: "Seu Especialista em SEO Local em {city}",
+    fr: "Votre expert SEO local à {city}",
+    it: "Il tuo esperto SEO locale a {city}",
+    de: "Ihr lokaler SEO-Experte in {city}"
+  },
+  "city.trustedByBusinesses": {
+    en: "Trusted by Businesses in {state}",
+    ar: "موثوق به من قبل الشركات في {state}",
+    es: "Confiado por Negocios en {state}",
+    pt: "Confiável por Empresas em {state}",
+    fr: "Approuvé par les entreprises de {state}",
+    it: "Affidabile dalle aziende in {state}",
+    de: "Von Unternehmen in {state} vertraut"
+  },
+    en: "View All 300+ Industries We Serve",
+    ar: "عرض جميع الصناعات الـ 300+ التي نخدمها",
+    es: "Ver Todas las 300+ Industrias que Servimos",
+    pt: "Ver Todas as 300+ Indústrias que Atendemos",
+    fr: "Voir toutes les 300+ industries que nous servons",
+    it: "Vedi tutte le 300+ industrie che serviamo",
+    de: "Alle 300+ Branchen ansehen, die wir bedienen"
+  },
+
+  // ============ CITY PAGES ============
+  "city.stopLosingCustomers": {
+    en: "Businesses: Stop Losing Customers to Competitors",
+    ar: "الشركات: توقف عن خسارة العملاء لصالح المنافسين",
+    es: "Negocios: Deja de Perder Clientes ante la Competencia",
+    pt: "Empresas: Pare de Perder Clientes para Concorrentes",
+    fr: "Entreprises: Arrêtez de perdre des clients au profit de la concurrence",
+    it: "Aziende: Smetti di perdere clienti a favore dei concorrenti",
+    de: "Unternehmen: Hören Sie auf, Kunden an die Konkurrenz zu verlieren"
+  },
+  "city.get50OffAudit": {
+    en: "Get 50% Off Your SEO Audit for {city}",
+    ar: "احصل على خصم 50% على تدقيق SEO لـ {city}",
+    es: "Obtén 50% de Descuento en tu Auditoría SEO para {city}",
+    pt: "Obtenha 50% de Desconto na Auditoria SEO para {city}",
+    fr: "Obtenez 50% de réduction sur votre audit SEO pour {city}",
+    it: "Ottieni il 50% di sconto sull'audit SEO per {city}",
+    de: "50% Rabatt auf Ihr SEO-Audit für {city}"
+  },
+  "city.seeRealResults": {
+    en: "See Real Results",
+    ar: "شاهد نتائج حقيقية",
+    es: "Ver Resultados Reales",
+    pt: "Ver Resultados Reais",
+    fr: "Voir les résultats réels",
+    it: "Vedi risultati reali",
+    de: "Echte Ergebnisse sehen"
+  },
+  "city.yearsProvenResults": {
+    en: "Years Proven Results",
+    ar: "سنوات من النتائج المثبتة",
+    es: "Años de Resultados Comprobados",
+    pt: "Anos de Resultados Comprovados",
+    fr: "Années de résultats prouvés",
+    it: "Anni di risultati comprovati",
+    de: "Jahre bewährte Ergebnisse"
+  },
+  "city.averageVisibilityBoost": {
+    en: "Average Visibility Boost",
+    ar: "متوسط زيادة الظهور",
+    es: "Aumento Promedio de Visibilidad",
+    pt: "Aumento Médio de Visibilidade",
+    fr: "Augmentation moyenne de la visibilité",
+    it: "Aumento medio della visibilità",
+    de: "Durchschnittliche Sichtbarkeitssteigerung"
+  },
+  "city.industriesMastered": {
+    en: "Industries Mastered",
+    ar: "صناعات متقنة",
+    es: "Industrias Dominadas",
+    pt: "Indústrias Dominadas",
+    fr: "Industries maîtrisées",
+    it: "Industrie padroneggiate",
+    de: "Beherrschte Branchen"
+  },
+  "city.yourLocalExpert": {
+    en: "Your Local SEO Expert in {city}",
+    ar: "خبير SEO المحلي الخاص بك في {city}",
+    es: "Tu Experto en SEO Local en {city}",
+    pt: "Seu Especialista em SEO Local em {city}",
+    fr: "Votre expert SEO local à {city}",
+    it: "Il tuo esperto SEO locale a {city}",
+    de: "Ihr lokaler SEO-Experte in {city}"
+  },
+  "city.trustedByBusinesses": {
+    en: "Trusted by Businesses in {state}",
+    ar: "موثوق به من قبل الشركات في {state}",
+    es: "Confiado por Negocios en {state}",
+    pt: "Confiável por Empresas em {state}",
+    fr: "Approuvé par les entreprises de {state}",
+    it: "Affidabile dalle aziende in {state}",
+    de: "Von Unternehmen in {state} vertraut"
+  },
+
+  // ============ CITY SERVICES ============
+  "cityServices.localSeoServicesIn": {
+    en: "Local SEO Services in {city}",
+    ar: "خدمات SEO المحلية في {city}",
+    es: "Servicios de SEO Local en {city}",
+    pt: "Serviços de SEO Local em {city}",
+    fr: "Services SEO Local à {city}",
+    it: "Servizi SEO Locale a {city}",
+    de: "Lokale SEO-Dienste in {city}"
+  },
+  "cityServices.completeSolutions": {
+    en: "Complete Local SEO Solutions That Put {city} Customers at Your Door",
+    ar: "حلول SEO محلية كاملة تجلب عملاء {city} إلى بابك",
+    es: "Soluciones Completas de SEO Local que Traen Clientes de {city} a Tu Puerta",
+    pt: "Soluções Completas de SEO Local que Trazem Clientes de {city} à Sua Porta",
+    fr: "Solutions SEO Local Complètes qui Amènent les Clients de {city} à Votre Porte",
+    it: "Soluzioni SEO Locale Complete che Portano i Clienti di {city} alla Tua Porta",
+    de: "Komplette lokale SEO-Lösungen, die {city}-Kunden zu Ihrer Tür bringen"
+  },
+  "cityServices.stopWatching": {
+    en: "Stop watching competitors take YOUR customers. I deliver full-spectrum local SEO for {city}, {state} businesses from Google Maps mastery to AI search domination. Every strategy is designed for one thing:",
+    ar: "توقف عن مشاهدة المنافسين يأخذون عملاءك. أقدم SEO محلي كامل الطيف لشركات {city}، {state} من إتقان خرائط Google إلى هيمنة البحث بالذكاء الاصطناعي. كل استراتيجية مصممة لشيء واحد:",
+    es: "Deja de ver cómo los competidores se llevan TUS clientes. Ofrezco SEO local de espectro completo para negocios de {city}, {state} desde el dominio de Google Maps hasta la dominación de búsqueda IA. Cada estrategia está diseñada para una cosa:",
+    pt: "Pare de assistir os concorrentes levarem SEUS clientes. Entrego SEO local de espectro completo para empresas de {city}, {state} desde o domínio do Google Maps até a dominação da busca IA. Cada estratégia é projetada para uma coisa:",
+    fr: "Arrêtez de regarder les concurrents prendre VOS clients. Je fournis un SEO local complet pour les entreprises de {city}, {state} de la maîtrise de Google Maps à la domination de la recherche IA. Chaque stratégie est conçue pour une chose:",
+    it: "Smetti di guardare i concorrenti prendere i TUOI clienti. Fornisco SEO locale a spettro completo per le aziende di {city}, {state} dalla padronanza di Google Maps al dominio della ricerca IA. Ogni strategia è progettata per una cosa:",
+    de: "Hören Sie auf zuzusehen, wie Konkurrenten IHRE Kunden nehmen. Ich liefere Full-Spectrum lokales SEO für Unternehmen in {city}, {state} von Google Maps Beherrschung bis zur KI-Suchdominanz. Jede Strategie ist für eines konzipiert:"
+  },
+  "cityServices.moreCustomers": {
+    en: "more customers, more revenue",
+    ar: "المزيد من العملاء، المزيد من الإيرادات",
+    es: "más clientes, más ingresos",
+    pt: "mais clientes, mais receita",
+    fr: "plus de clients, plus de revenus",
+    it: "più clienti, più entrate",
+    de: "mehr Kunden, mehr Umsatz"
+  },
+  "cityServices.googleMapsDomination": {
+    en: "Google Maps Domination",
+    ar: "هيمنة خرائط Google",
+    es: "Dominio de Google Maps",
+    pt: "Domínio do Google Maps",
+    fr: "Domination Google Maps",
+    it: "Dominio Google Maps",
+    de: "Google Maps Dominanz"
+  },
+  "cityServices.googleMapsDesc": {
+    en: "Your customers search Google Maps first. Get into the coveted top 3 Map Pack results where 93% of local clicks happen. More visibility means more walk-ins and calls.",
+    ar: "يبحث عملاؤك في خرائط Google أولاً. ادخل في أفضل 3 نتائج Map Pack حيث يحدث 93% من النقرات المحلية. المزيد من الظهور يعني المزيد من الزيارات والمكالمات.",
+    es: "Tus clientes buscan primero en Google Maps. Entra en los codiciados 3 primeros resultados del Map Pack donde ocurre el 93% de los clics locales. Más visibilidad significa más visitas y llamadas.",
+    pt: "Seus clientes pesquisam primeiro no Google Maps. Entre nos cobiçados 3 primeiros resultados do Map Pack onde acontecem 93% dos cliques locais. Mais visibilidade significa mais visitas e ligações.",
+    fr: "Vos clients cherchent d'abord sur Google Maps. Entrez dans les 3 premiers résultats Map Pack tant convoités où se produisent 93% des clics locaux. Plus de visibilité signifie plus de visites et d'appels.",
+    it: "I tuoi clienti cercano prima su Google Maps. Entra nei primi 3 risultati del Map Pack dove avviene il 93% dei clic locali. Più visibilità significa più visite e chiamate.",
+    de: "Ihre Kunden suchen zuerst auf Google Maps. Kommen Sie in die begehrten Top 3 Map Pack Ergebnisse, wo 93% der lokalen Klicks passieren. Mehr Sichtbarkeit bedeutet mehr Besuche und Anrufe."
+  },
+  "cityServices.aiSearchOptimization": {
+    en: "AI Search Optimization",
+    ar: "تحسين البحث بالذكاء الاصطناعي",
+    es: "Optimización de Búsqueda IA",
+    pt: "Otimização de Busca IA",
+    fr: "Optimisation de recherche IA",
+    it: "Ottimizzazione ricerca IA",
+    de: "KI-Suchoptimierung"
+  },
+  "cityServices.aiSearchDesc": {
+    en: "ChatGPT and AI assistants are the NEW search. I ensure your business gets recommended when customers ask AI for the best service near them. Stay ahead of competitors still stuck in 2020.",
+    ar: "ChatGPT ومساعدات الذكاء الاصطناعي هي البحث الجديد. أتأكد من أن عملك يُوصى به عندما يسأل العملاء الذكاء الاصطناعي عن أفضل خدمة بالقرب منهم. ابق متقدماً على المنافسين العالقين في 2020.",
+    es: "ChatGPT y los asistentes de IA son la NUEVA búsqueda. Me aseguro de que tu negocio sea recomendado cuando los clientes pregunten a la IA por el mejor servicio cerca de ellos. Mantente adelante de los competidores atascados en 2020.",
+    pt: "ChatGPT e assistentes de IA são a NOVA busca. Garanto que seu negócio seja recomendado quando os clientes perguntam à IA pelo melhor serviço perto deles. Fique à frente dos concorrentes ainda presos em 2020.",
+    fr: "ChatGPT et les assistants IA sont la NOUVELLE recherche. Je m'assure que votre entreprise soit recommandée quand les clients demandent à l'IA le meilleur service près d'eux. Restez en avance sur les concurrents encore bloqués en 2020.",
+    it: "ChatGPT e gli assistenti IA sono la NUOVA ricerca. Mi assicuro che la tua attività venga consigliata quando i clienti chiedono all'IA il miglior servizio vicino a loro. Resta avanti rispetto ai concorrenti ancora bloccati nel 2020.",
+    de: "ChatGPT und KI-Assistenten sind die NEUE Suche. Ich stelle sicher, dass Ihr Unternehmen empfohlen wird, wenn Kunden die KI nach dem besten Service in ihrer Nähe fragen. Bleiben Sie den Konkurrenten voraus, die noch in 2020 feststecken."
+  },
+  "cityServices.citationAuthorityBuilding": {
+    en: "Citation Authority Building",
+    ar: "بناء سلطة الاستشهادات",
+    es: "Construcción de Autoridad de Citas",
+    pt: "Construção de Autoridade de Citações",
+    fr: "Construction d'autorité de citations",
+    it: "Costruzione autorità citazioni",
+    de: "Zitationsautoritätsaufbau"
+  },
+  "cityServices.citationDesc": {
+    en: "I build your presence across 100+ authoritative directories. Consistent NAP data across the web tells Google you are THE trusted local business. Watch your rankings climb.",
+    ar: "أبني حضورك عبر أكثر من 100 دليل موثوق. بيانات NAP المتسقة عبر الويب تخبر Google أنك الشركة المحلية الموثوقة. شاهد تصنيفاتك ترتفع.",
+    es: "Construyo tu presencia en más de 100 directorios autorizados. Datos NAP consistentes en la web le dicen a Google que eres EL negocio local de confianza. Mira cómo suben tus rankings.",
+    pt: "Construo sua presença em mais de 100 diretórios autorizados. Dados NAP consistentes na web dizem ao Google que você é O negócio local confiável. Veja seus rankings subirem.",
+    fr: "Je construis votre présence sur plus de 100 annuaires faisant autorité. Des données NAP cohérentes sur le web disent à Google que vous êtes L'entreprise locale de confiance. Regardez vos classements grimper.",
+    it: "Costruisco la tua presenza su oltre 100 directory autorevoli. Dati NAP coerenti sul web dicono a Google che sei L'attività locale affidabile. Guarda i tuoi ranking salire.",
+    de: "Ich baue Ihre Präsenz in über 100 maßgeblichen Verzeichnissen auf. Konsistente NAP-Daten im Web sagen Google, dass Sie DAS vertrauenswürdige lokale Unternehmen sind. Sehen Sie, wie Ihre Rankings steigen."
+  },
+  "cityServices.fiveStarReviewMachine": {
+    en: "5-Star Review Machine",
+    ar: "آلة التقييمات 5 نجوم",
+    es: "Máquina de Reseñas 5 Estrellas",
+    pt: "Máquina de Avaliações 5 Estrelas",
+    fr: "Machine à avis 5 étoiles",
+    it: "Macchina recensioni 5 stelle",
+    de: "5-Sterne-Bewertungsmaschine"
+  },
+  "cityServices.reviewDesc": {
+    en: "Reviews drive decisions. I implement proven systems that turn your happy customers into enthusiastic reviewers. More 5-star reviews means more trust and more customers.",
+    ar: "المراجعات تقود القرارات. أطبق أنظمة مثبتة تحول عملاءك السعداء إلى مراجعين متحمسين. المزيد من تقييمات 5 نجوم يعني المزيد من الثقة والمزيد من العملاء.",
+    es: "Las reseñas impulsan las decisiones. Implemento sistemas probados que convierten a tus clientes felices en entusiastas reseñadores. Más reseñas de 5 estrellas significa más confianza y más clientes.",
+    pt: "Avaliações impulsionam decisões. Implemento sistemas comprovados que transformam seus clientes felizes em avaliadores entusiasmados. Mais avaliações 5 estrelas significa mais confiança e mais clientes.",
+    fr: "Les avis guident les décisions. J'implémente des systèmes éprouvés qui transforment vos clients satisfaits en évaluateurs enthousiastes. Plus d'avis 5 étoiles signifie plus de confiance et plus de clients.",
+    it: "Le recensioni guidano le decisioni. Implemento sistemi comprovati che trasformano i tuoi clienti soddisfatti in recensori entusiasti. Più recensioni 5 stelle significa più fiducia e più clienti.",
+    de: "Bewertungen treiben Entscheidungen. Ich implementiere bewährte Systeme, die Ihre zufriedenen Kunden in begeisterte Bewerter verwandeln. Mehr 5-Sterne-Bewertungen bedeutet mehr Vertrauen und mehr Kunden."
+  },
+  "cityServices.highIntentKeywords": {
+    en: "High-Intent Keywords",
+    ar: "كلمات مفتاحية عالية النية",
+    es: "Palabras Clave de Alta Intención",
+    pt: "Palavras-chave de Alta Intenção",
+    fr: "Mots-clés à forte intention",
+    it: "Parole chiave ad alta intenzione",
+    de: "Keywords mit hoher Kaufabsicht"
+  },
+  "cityServices.keywordsDesc": {
+    en: "I find the exact search terms your customers use when they are ready to buy. No vanity keywords, just terms that put cash in your register.",
+    ar: "أجد مصطلحات البحث الدقيقة التي يستخدمها عملاؤك عندما يكونون مستعدين للشراء. لا كلمات مفتاحية استعراضية، فقط مصطلحات تضع النقود في صندوقك.",
+    es: "Encuentro los términos de búsqueda exactos que usan tus clientes cuando están listos para comprar. Sin palabras clave de vanidad, solo términos que ponen dinero en tu caja.",
+    pt: "Encontro os termos de busca exatos que seus clientes usam quando estão prontos para comprar. Sem palavras-chave de vaidade, apenas termos que colocam dinheiro no seu caixa.",
+    fr: "Je trouve les termes de recherche exacts que vos clients utilisent quand ils sont prêts à acheter. Pas de mots-clés de vanité, juste des termes qui mettent de l'argent dans votre caisse.",
+    it: "Trovo i termini di ricerca esatti che i tuoi clienti usano quando sono pronti ad acquistare. Nessuna parola chiave di vanità, solo termini che mettono soldi nel tuo registratore di cassa.",
+    de: "Ich finde die genauen Suchbegriffe, die Ihre Kunden verwenden, wenn sie kaufbereit sind. Keine Vanity-Keywords, nur Begriffe, die Geld in Ihre Kasse bringen."
+  },
+  "cityServices.competitorDestructionStrategy": {
+    en: "Competitor Destruction Strategy",
+    ar: "استراتيجية تدمير المنافسين",
+    es: "Estrategia de Destrucción de Competidores",
+    pt: "Estratégia de Destruição de Concorrentes",
+    fr: "Stratégie de destruction des concurrents",
+    it: "Strategia di distruzione dei concorrenti",
+    de: "Konkurrenz-Zerstörungsstrategie"
+  },
+  "cityServices.competitorDesc": {
+    en: "I analyze exactly what is working for your competitors, then build a strategy to outrank them. Why let them steal YOUR customers?",
+    ar: "أحلل بالضبط ما ينجح لدى منافسيك، ثم أبني استراتيجية للتفوق عليهم. لماذا تدعهم يسرقون عملاءك؟",
+    es: "Analizo exactamente qué está funcionando para tus competidores, luego construyo una estrategia para superarlos. ¿Por qué dejarlos robar TUS clientes?",
+    pt: "Analiso exatamente o que está funcionando para seus concorrentes, depois construo uma estratégia para superá-los. Por que deixá-los roubar SEUS clientes?",
+    fr: "J'analyse exactement ce qui fonctionne pour vos concurrents, puis je construis une stratégie pour les surpasser. Pourquoi les laisser voler VOS clients?",
+    it: "Analizzo esattamente cosa funziona per i tuoi concorrenti, poi costruisco una strategia per superarli. Perché lasciarli rubare i TUOI clienti?",
+    de: "Ich analysiere genau, was bei Ihren Konkurrenten funktioniert, und baue dann eine Strategie auf, um sie zu übertreffen. Warum lassen Sie sie IHRE Kunden stehlen?"
+  },
+  "cityServices.localAuthorityLinkBuilding": {
+    en: "Local Authority Link Building",
+    ar: "بناء روابط السلطة المحلية",
+    es: "Construcción de Enlaces de Autoridad Local",
+    pt: "Construção de Links de Autoridade Local",
+    fr: "Construction de liens d'autorité locale",
+    it: "Link building di autorità locale",
+    de: "Lokaler Autoritäts-Linkaufbau"
+  },
+  "cityServices.linkBuildingDesc": {
+    en: "Earn powerful backlinks from local sources that Google trusts. Local links mean local relevance and higher rankings for every local search.",
+    ar: "اكسب روابط خلفية قوية من مصادر محلية يثق بها Google. الروابط المحلية تعني الصلة المحلية وتصنيفات أعلى لكل بحث محلي.",
+    es: "Gana potentes backlinks de fuentes locales en las que Google confía. Enlaces locales significan relevancia local y rankings más altos para cada búsqueda local.",
+    pt: "Ganhe backlinks poderosos de fontes locais em que o Google confia. Links locais significam relevância local e rankings mais altos para cada busca local.",
+    fr: "Gagnez des backlinks puissants de sources locales auxquelles Google fait confiance. Les liens locaux signifient pertinence locale et classements plus élevés pour chaque recherche locale.",
+    it: "Guadagna backlink potenti da fonti locali di cui Google si fida. I link locali significano rilevanza locale e ranking più alti per ogni ricerca locale.",
+    de: "Verdienen Sie starke Backlinks von lokalen Quellen, denen Google vertraut. Lokale Links bedeuten lokale Relevanz und höhere Rankings für jede lokale Suche."
+  },
+  "cityServices.voiceSearchCapture": {
+    en: "Voice Search Capture",
+    ar: "التقاط البحث الصوتي",
+    es: "Captura de Búsqueda por Voz",
+    pt: "Captura de Busca por Voz",
+    fr: "Capture de recherche vocale",
+    it: "Cattura ricerca vocale",
+    de: "Sprachsuche-Erfassung"
+  },
+  "cityServices.voiceSearchDesc": {
+    en: "Hey Siri, find a service near me. I optimize your content so you are THE answer to voice searches. Over 50% of searches are voice, do not miss these customers.",
+    ar: "يا Siri، اعثر على خدمة قريبة مني. أحسن محتواك لتكون الإجابة على البحث الصوتي. أكثر من 50% من عمليات البحث صوتية، لا تفوت هؤلاء العملاء.",
+    es: "Oye Siri, encuentra un servicio cerca de mí. Optimizo tu contenido para que seas LA respuesta a las búsquedas por voz. Más del 50% de las búsquedas son por voz, no pierdas estos clientes.",
+    pt: "Ei Siri, encontre um serviço perto de mim. Otimizo seu conteúdo para que você seja A resposta às buscas por voz. Mais de 50% das buscas são por voz, não perca esses clientes.",
+    fr: "Dis Siri, trouve un service près de moi. J'optimise votre contenu pour que vous soyez LA réponse aux recherches vocales. Plus de 50% des recherches sont vocales, ne manquez pas ces clients.",
+    it: "Ehi Siri, trova un servizio vicino a me. Ottimizzo i tuoi contenuti in modo che tu sia LA risposta alle ricerche vocali. Oltre il 50% delle ricerche sono vocali, non perdere questi clienti.",
+    de: "Hey Siri, finde einen Service in meiner Nähe. Ich optimiere Ihre Inhalte, damit Sie DIE Antwort auf Sprachsuchen sind. Über 50% der Suchen sind Sprachsuchen, verpassen Sie diese Kunden nicht."
+  },
+  "cityServices.industriesMastered": {
+    en: "Local SEO for Industries I have Mastered in {city}",
+    ar: "SEO محلي للصناعات التي أتقنتها في {city}",
+    es: "SEO Local para Industrias que he Dominado en {city}",
+    pt: "SEO Local para Indústrias que Dominei em {city}",
+    fr: "SEO Local pour les industries que j'ai maîtrisées à {city}",
+    it: "SEO Locale per le industrie che ho padroneggiato a {city}",
+    de: "Lokales SEO für Branchen, die ich in {city} beherrsche"
+  },
+  "cityServices.whateverBusiness": {
+    en: "Whatever your business, I have helped similar companies in {city} dominate local search:",
+    ar: "مهما كان عملك، لقد ساعدت شركات مماثلة في {city} على السيطرة على البحث المحلي:",
+    es: "Sea cual sea tu negocio, he ayudado a empresas similares en {city} a dominar la búsqueda local:",
+    pt: "Seja qual for o seu negócio, ajudei empresas similares em {city} a dominar a busca local:",
+    fr: "Quel que soit votre entreprise, j'ai aidé des entreprises similaires à {city} à dominer la recherche locale:",
+    it: "Qualunque sia la tua attività, ho aiutato aziende simili a {city} a dominare la ricerca locale:",
+    de: "Was auch immer Ihr Geschäft ist, ich habe ähnlichen Unternehmen in {city} geholfen, die lokale Suche zu dominieren:"
+  },
+  "cityServices.moreIndustries": {
+    en: "More Industries in {city}",
+    ar: "المزيد من الصناعات في {city}",
+    es: "Más Industrias en {city}",
+    pt: "Mais Indústrias em {city}",
+    fr: "Plus d'industries à {city}",
+    it: "Più industrie a {city}",
+    de: "Mehr Branchen in {city}"
+  },
 };
 
 interface LanguageContextType {
