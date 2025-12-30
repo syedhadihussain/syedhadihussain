@@ -2436,6 +2436,7 @@ export const translations: Translations = {
     it: "Affidabile dalle aziende in {state}",
     de: "Von Unternehmen in {state} vertraut"
   },
+  "industry.viewAll300Industries": {
     en: "View All 300+ Industries We Serve",
     ar: "عرض جميع الصناعات الـ 300+ التي نخدمها",
     es: "Ver Todas las 300+ Industrias que Servimos",
@@ -2443,80 +2444,6 @@ export const translations: Translations = {
     fr: "Voir toutes les 300+ industries que nous servons",
     it: "Vedi tutte le 300+ industrie che serviamo",
     de: "Alle 300+ Branchen ansehen, die wir bedienen"
-  },
-
-  // ============ CITY PAGES ============
-  "city.stopLosingCustomers": {
-    en: "Businesses: Stop Losing Customers to Competitors",
-    ar: "الشركات: توقف عن خسارة العملاء لصالح المنافسين",
-    es: "Negocios: Deja de Perder Clientes ante la Competencia",
-    pt: "Empresas: Pare de Perder Clientes para Concorrentes",
-    fr: "Entreprises: Arrêtez de perdre des clients au profit de la concurrence",
-    it: "Aziende: Smetti di perdere clienti a favore dei concorrenti",
-    de: "Unternehmen: Hören Sie auf, Kunden an die Konkurrenz zu verlieren"
-  },
-  "city.get50OffAudit": {
-    en: "Get 50% Off Your SEO Audit for {city}",
-    ar: "احصل على خصم 50% على تدقيق SEO لـ {city}",
-    es: "Obtén 50% de Descuento en tu Auditoría SEO para {city}",
-    pt: "Obtenha 50% de Desconto na Auditoria SEO para {city}",
-    fr: "Obtenez 50% de réduction sur votre audit SEO pour {city}",
-    it: "Ottieni il 50% di sconto sull'audit SEO per {city}",
-    de: "50% Rabatt auf Ihr SEO-Audit für {city}"
-  },
-  "city.seeRealResults": {
-    en: "See Real Results",
-    ar: "شاهد نتائج حقيقية",
-    es: "Ver Resultados Reales",
-    pt: "Ver Resultados Reais",
-    fr: "Voir les résultats réels",
-    it: "Vedi risultati reali",
-    de: "Echte Ergebnisse sehen"
-  },
-  "city.yearsProvenResults": {
-    en: "Years Proven Results",
-    ar: "سنوات من النتائج المثبتة",
-    es: "Años de Resultados Comprobados",
-    pt: "Anos de Resultados Comprovados",
-    fr: "Années de résultats prouvés",
-    it: "Anni di risultati comprovati",
-    de: "Jahre bewährte Ergebnisse"
-  },
-  "city.averageVisibilityBoost": {
-    en: "Average Visibility Boost",
-    ar: "متوسط زيادة الظهور",
-    es: "Aumento Promedio de Visibilidad",
-    pt: "Aumento Médio de Visibilidade",
-    fr: "Augmentation moyenne de la visibilité",
-    it: "Aumento medio della visibilità",
-    de: "Durchschnittliche Sichtbarkeitssteigerung"
-  },
-  "city.industriesMastered": {
-    en: "Industries Mastered",
-    ar: "صناعات متقنة",
-    es: "Industrias Dominadas",
-    pt: "Indústrias Dominadas",
-    fr: "Industries maîtrisées",
-    it: "Industrie padroneggiate",
-    de: "Beherrschte Branchen"
-  },
-  "city.yourLocalExpert": {
-    en: "Your Local SEO Expert in {city}",
-    ar: "خبير SEO المحلي الخاص بك في {city}",
-    es: "Tu Experto en SEO Local en {city}",
-    pt: "Seu Especialista em SEO Local em {city}",
-    fr: "Votre expert SEO local à {city}",
-    it: "Il tuo esperto SEO locale a {city}",
-    de: "Ihr lokaler SEO-Experte in {city}"
-  },
-  "city.trustedByBusinesses": {
-    en: "Trusted by Businesses in {state}",
-    ar: "موثوق به من قبل الشركات في {state}",
-    es: "Confiado por Negocios en {state}",
-    pt: "Confiável por Empresas em {state}",
-    fr: "Approuvé par les entreprises de {state}",
-    it: "Affidabile dalle aziende in {state}",
-    de: "Von Unternehmen in {state} vertraut"
   },
 
   // ============ CITY SERVICES ============
