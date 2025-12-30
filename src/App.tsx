@@ -40,7 +40,7 @@ const CountryPage = lazy(() => import("./pages/CountryPage"));
 const IndustryPage = lazy(() => import("./pages/IndustryPage"));
 const IndexingDashboardPage = lazy(() => import("./pages/IndexingDashboardPage"));
 const AdminAuthPage = lazy(() => import("./pages/AdminAuthPage"));
-const ProtectedAdminRoute = lazy(() => import("./components/ProtectedAdminRoute"));
+const ProtectedAdminRoute = lazy(() => import("./components/ProtectedAdminRoute").then(m => ({ default: m.default })));
 const PortalLoginPage = lazy(() => import("./pages/portal/PortalLoginPage"));
 const PortalDashboardPage = lazy(() => import("./pages/portal/PortalDashboardPage"));
 const PortalProjectsPage = lazy(() => import("./pages/portal/PortalProjectsPage"));
@@ -56,7 +56,7 @@ const AdminRolesPage = lazy(() => import("./pages/portal/admin/AdminRolesPage"))
 const AdminAnnouncementsPage = lazy(() => import("./pages/portal/admin/AdminAnnouncementsPage"));
 const AdminAnalyticsPage = lazy(() => import("./pages/portal/admin/AdminAnalyticsPage"));
 const AdminAutomationPage = lazy(() => import("./pages/portal/admin/AdminAutomationPage"));
-const ProtectedPortalRoute = lazy(() => import("./components/portal/ProtectedPortalRoute"));
+const ProtectedPortalRoute = lazy(() => import("./components/portal/ProtectedPortalRoute").then(m => ({ default: m.default })));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();

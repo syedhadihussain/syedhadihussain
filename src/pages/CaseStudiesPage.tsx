@@ -179,28 +179,26 @@ const CaseStudiesPage = () => {
             <div className="container-narrow text-center">
               <ScrollReveal animation="fade-up">
                 <span className="text-primary text-sm font-medium tracking-wider uppercase mb-4 block">
-                  {t("nav.caseStudies")}
+                  {t("caseStudies.badge")}
                 </span>
                 <h1 className="font-display text-4xl lg:text-5xl font-bold text-foreground mb-6">
-                  {t("Real Results for Real Businesses")}
+                  {t("caseStudies.title")}
                 </h1>
                 <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8">
-                  {t(
-                    "Discover how strategic Local SEO has transformed businesses across different industries and regions. Every case study shows real, measurable results."
-                  )}
+                  {t("caseStudies.description")}
                 </p>
                 <div className="flex flex-wrap justify-center gap-6">
                   <div className="text-center">
                     <div className="font-display text-3xl font-bold text-primary">100+</div>
-                    <div className="text-sm text-muted-foreground">{t("Clients Served")}</div>
+                    <div className="text-sm text-muted-foreground">{t("caseStudies.clientsServed")}</div>
                   </div>
                   <div className="text-center">
                     <div className="font-display text-3xl font-bold text-primary">15+</div>
-                    <div className="text-sm text-muted-foreground">{t("Industries")}</div>
+                    <div className="text-sm text-muted-foreground">{t("caseStudies.industries")}</div>
                   </div>
                   <div className="text-center">
                     <div className="font-display text-3xl font-bold text-primary">95%</div>
-                    <div className="text-sm text-muted-foreground">{t("Success Rate")}</div>
+                    <div className="text-sm text-muted-foreground">{t("caseStudies.successRate")}</div>
                   </div>
                 </div>
               </ScrollReveal>
@@ -233,13 +231,13 @@ const CaseStudiesPage = () => {
                       <div className="grid lg:grid-cols-2 gap-6 mb-8">
                         <div className="bg-secondary/30 rounded-xl p-5">
                           <h3 className="text-sm font-semibold text-foreground mb-2">
-                            {t("🎯 Challenge")}
+                            🎯 {t("caseStudies.challenge")}
                           </h3>
                           <p className="text-muted-foreground text-sm leading-relaxed">{t(study.challenge)}</p>
                         </div>
                         <div className="bg-primary/5 rounded-xl p-5">
                           <h3 className="text-sm font-semibold text-foreground mb-2">
-                            {t("💡 Solution")}
+                            💡 {t("caseStudies.solution")}
                           </h3>
                           <p className="text-muted-foreground text-sm leading-relaxed">{t(study.solution)}</p>
                         </div>
@@ -290,14 +288,10 @@ const CaseStudiesPage = () => {
                 <div className="glass rounded-3xl p-8 lg:p-12 glow">
                   <TrendingUp className="w-12 h-12 text-primary mx-auto mb-4" />
                   <h2 className="font-display text-3xl font-bold text-foreground mb-4">
-                    {t("Want Results Like These?")}
+                    {t("caseStudies.ctaTitle")}
                   </h2>
                   <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-                    {t(
-                      "Let's discuss how we can achieve similar or better results for your business. Get a professional SEO audit for just"
-                    )}{" "}
-                    <span className="text-primary font-semibold">$50</span>{" "}
-                    {t("(50% OFF — book within 24 hours!)")}
+                    {t("caseStudies.ctaDescription")}
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <Button asChild size="lg" className="glow group">
@@ -311,7 +305,7 @@ const CaseStudiesPage = () => {
                       </a>
                     </Button>
                     <Button asChild variant="outline" size="lg">
-                      <Link to={withLang("/contact")}>{t("Start Your Success Story")}</Link>
+                      <Link to={withLang("/contact")}>{t("caseStudies.startStory")}</Link>
                     </Button>
                   </div>
                 </div>
