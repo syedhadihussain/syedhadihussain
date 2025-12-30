@@ -36,7 +36,7 @@ const CityHero = ({ city, state }: CityHeroProps) => {
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full">
                 <Zap className="w-4 h-4 text-primary animate-pulse" />
                 <span className="text-sm font-medium text-primary">
-                  {city.name} {t("Businesses: Stop Losing Customers to Competitors")}
+                  {city.name} {t("city.stopLosingCustomers")}
                 </span>
               </div>
             </ScrollReveal>
@@ -70,14 +70,14 @@ const CityHero = ({ city, state }: CityHeroProps) => {
                 <Button asChild size="lg" className="glow group">
                   <a href="https://calendly.com/syedhadihussain" target="_blank" rel="noopener noreferrer">
                     <Phone className="w-4 h-4 mr-2" />
-                    {t("Get 50% Off Your SEO Audit for")} {city.name}
+                    {t("city.get50OffAudit").replace("{city}", city.name)}
                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </a>
                 </Button>
                 <Button asChild variant="secondary" size="lg">
                   <Link to={`/${language}/case-studies`}>
                     <Eye className="w-4 h-4 mr-2" />
-                    {t("See Real Results")}
+                    {t("city.seeRealResults")}
                   </Link>
                 </Button>
               </div>
@@ -91,21 +91,21 @@ const CityHero = ({ city, state }: CityHeroProps) => {
                     <Star className="w-4 h-4 fill-primary" />
                     <span className="font-bold text-xl text-foreground">7+</span>
                   </div>
-                  <span className="text-xs text-muted-foreground">{t("Years Proven Results")}</span>
+                  <span className="text-xs text-muted-foreground">{t("city.yearsProvenResults")}</span>
                 </div>
                 <div className="text-center">
                   <div className="flex items-center justify-center gap-1 text-primary mb-1">
                     <TrendingUp className="w-4 h-4" />
                     <span className="font-bold text-xl text-foreground">150%+</span>
                   </div>
-                  <span className="text-xs text-muted-foreground">{t("Average Visibility Boost")}</span>
+                  <span className="text-xs text-muted-foreground">{t("city.averageVisibilityBoost")}</span>
                 </div>
                 <div className="text-center">
                   <div className="flex items-center justify-center gap-1 text-primary mb-1">
                     <Award className="w-4 h-4" />
                     <span className="font-bold text-xl text-foreground">50+</span>
                   </div>
-                  <span className="text-xs text-muted-foreground">{t("Industries Mastered")}</span>
+                  <span className="text-xs text-muted-foreground">{t("city.industriesMastered")}</span>
                 </div>
               </div>
             </ScrollReveal>
@@ -128,8 +128,8 @@ const CityHero = ({ city, state }: CityHeroProps) => {
               </figure>
               {/* Floating Badge */}
               <div className="absolute -bottom-4 -right-4 glass rounded-xl p-4 glow-sm animate-fade-up" style={{ animationDelay: "0.6s" }}>
-                <div className="text-sm font-bold text-foreground">{t("Your Local SEO Expert in")} {city.name}</div>
-                <div className="text-xs text-muted-foreground">{t("Trusted by Businesses in")} {state.name}</div>
+                <div className="text-sm font-bold text-foreground">{t("city.yourLocalExpert").replace("{city}", city.name)}</div>
+                <div className="text-xs text-muted-foreground">{t("city.trustedByBusinesses").replace("{state}", state.name)}</div>
               </div>
             </div>
           </div>

@@ -13,43 +13,43 @@ const CityServices = ({ city }: CityServicesProps) => {
   const services = [
     {
       icon: MapPin,
-      titleKey: "Google Maps Domination",
-      descKey: "Your customers search Google Maps first. Get into the coveted top 3 Map Pack results where 93% of local clicks happen. More visibility means more walk-ins and calls.",
+      titleKey: "cityServices.googleMapsDomination",
+      descKey: "cityServices.googleMapsDesc",
     },
     {
       icon: Bot,
-      titleKey: "AI Search Optimization",
-      descKey: "ChatGPT and AI assistants are the NEW search. I ensure your business gets recommended when customers ask AI for the best service near them. Stay ahead of competitors still stuck in 2020.",
+      titleKey: "cityServices.aiSearchOptimization",
+      descKey: "cityServices.aiSearchDesc",
     },
     {
       icon: Building2,
-      titleKey: "Citation Authority Building",
-      descKey: "I build your presence across 100+ authoritative directories. Consistent NAP data across the web tells Google you are THE trusted local business. Watch your rankings climb.",
+      titleKey: "cityServices.citationAuthorityBuilding",
+      descKey: "cityServices.citationDesc",
     },
     {
       icon: Star,
-      titleKey: "5-Star Review Machine",
-      descKey: "Reviews drive decisions. I implement proven systems that turn your happy customers into enthusiastic reviewers. More 5-star reviews means more trust and more customers.",
+      titleKey: "cityServices.fiveStarReviewMachine",
+      descKey: "cityServices.reviewDesc",
     },
     {
       icon: Search,
-      titleKey: "High-Intent Keywords",
-      descKey: "I find the exact search terms your customers use when they are ready to buy. No vanity keywords, just terms that put cash in your register.",
+      titleKey: "cityServices.highIntentKeywords",
+      descKey: "cityServices.keywordsDesc",
     },
     {
       icon: TrendingUp,
-      titleKey: "Competitor Destruction Strategy",
-      descKey: "I analyze exactly what is working for your competitors, then build a strategy to outrank them. Why let them steal YOUR customers?",
+      titleKey: "cityServices.competitorDestructionStrategy",
+      descKey: "cityServices.competitorDesc",
     },
     {
       icon: Globe,
-      titleKey: "Local Authority Link Building",
-      descKey: "Earn powerful backlinks from local sources that Google trusts. Local links mean local relevance and higher rankings for every local search.",
+      titleKey: "cityServices.localAuthorityLinkBuilding",
+      descKey: "cityServices.linkBuildingDesc",
     },
     {
       icon: MessageSquare,
-      titleKey: "Voice Search Capture",
-      descKey: "Hey Siri, find a service near me. I optimize your content so you are THE answer to voice searches. Over 50% of searches are voice, do not miss these customers.",
+      titleKey: "cityServices.voiceSearchCapture",
+      descKey: "cityServices.voiceSearchDesc",
     },
   ];
 
@@ -59,13 +59,13 @@ const CityServices = ({ city }: CityServicesProps) => {
         <ScrollReveal>
           <div className="text-center mb-16">
             <span className="text-primary text-sm font-medium uppercase tracking-wider">
-              {t("Local SEO Services in")} {city.name}
+              {t("cityServices.localSeoServicesIn").replace("{city}", city.name)}
             </span>
             <h2 id="city-services-heading" className="font-display text-3xl md:text-4xl font-bold text-foreground mt-4 mb-6">
-              {t("Complete Local SEO Solutions That Put")} {city.name} {t("Customers at Your Door")}
+              {t("cityServices.completeSolutions").replace("{city}", city.name)}
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              {t("Stop watching competitors take YOUR customers. I deliver full-spectrum local SEO for")} {city.name}, {city.stateAbbreviation} {t("businesses from Google Maps mastery to AI search domination. Every strategy is designed for one thing:")} <strong>{t("more customers, more revenue")}</strong>.
+              {t("cityServices.stopWatching").replace("{city}", city.name).replace("{state}", city.stateAbbreviation)} <strong>{t("cityServices.moreCustomers")}</strong>.
             </p>
           </div>
         </ScrollReveal>
@@ -78,7 +78,7 @@ const CityServices = ({ city }: CityServicesProps) => {
                   <service.icon className="w-6 h-6 text-primary" />
                 </div>
                 <h3 className="font-display text-lg font-semibold text-foreground mb-3">
-                  {t(service.titleKey)} {service.titleKey === "Google Maps Domination" ? `- ${city.name}` : ""}
+                  {t(service.titleKey)} {service.titleKey === "cityServices.googleMapsDomination" ? `- ${city.name}` : ""}
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   {t(service.descKey)}
@@ -92,10 +92,10 @@ const CityServices = ({ city }: CityServicesProps) => {
         <ScrollReveal delay={0.4}>
           <div className="mt-16 text-center">
             <h3 className="font-display text-xl font-semibold text-foreground mb-2">
-              {t("Local SEO for Industries I have Mastered in")} {city.name}
+              {t("cityServices.industriesMastered").replace("{city}", city.name)}
             </h3>
             <p className="text-muted-foreground mb-6">
-              {t("Whatever your business, I have helped similar companies in")} {city.name} {t("dominate local search:")}
+              {t("cityServices.whateverBusiness").replace("{city}", city.name)}
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               {city.industries.map((industry, index) => (
@@ -103,11 +103,11 @@ const CityServices = ({ city }: CityServicesProps) => {
                   key={index}
                   className="px-4 py-2 bg-primary/10 text-primary text-sm rounded-full border border-primary/20 hover:bg-primary/20 transition-colors cursor-default"
                 >
-                  {t(industry)}
+                  {industry}
                 </span>
               ))}
               <span className="px-4 py-2 bg-muted text-muted-foreground text-sm rounded-full border border-border font-medium">
-                + 46 {t("More Industries in")} {city.name}
+                + 46 {t("cityServices.moreIndustries").replace("{city}", city.name)}
               </span>
             </div>
           </div>

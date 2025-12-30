@@ -29,13 +29,13 @@ const RelatedIndustries = ({ industry }: RelatedIndustriesProps) => {
             <ScrollReveal animation="fade-up">
               <div className="text-center mb-12">
                 <span className="text-primary text-sm font-medium tracking-wider uppercase mb-4 block">
-                  Related Services
+                  {t("industry.relatedServices")}
                 </span>
                 <h2 className="font-display text-3xl lg:text-4xl font-bold text-foreground mb-4">
-                  Other {industry.category} We Serve
+                  {t("industry.otherCategoryWeServe").replace("{category}", industry.category)}
                 </h2>
                 <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                  Explore our specialized <Link to={langLink("/services")} className="text-primary hover:underline">Local SEO services</Link> for other businesses in the {industry.category.toLowerCase()} industry.
+                  {t("industry.exploreSpecialized")} <Link to={langLink("/services")} className="text-primary hover:underline">{t("nav.services")}</Link> {t("industry.forOtherBusinesses").replace("{category}", industry.category.toLowerCase())}
                 </p>
               </div>
             </ScrollReveal>
@@ -50,9 +50,9 @@ const RelatedIndustries = ({ industry }: RelatedIndustriesProps) => {
                     <span className="text-2xl">{related.icon}</span>
                     <div className="flex-1 min-w-0">
                       <h3 className="font-semibold text-foreground truncate group-hover:text-primary transition-colors">
-                        Local SEO for {related.name}
+                        {t("industry.localSeoFor")} {related.name}
                       </h3>
-                      <p className="text-sm text-muted-foreground">Local SEO Services</p>
+                      <p className="text-sm text-muted-foreground">{t("industry.localSeoServices")}</p>
                     </div>
                     <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
                   </Link>
@@ -66,10 +66,10 @@ const RelatedIndustries = ({ industry }: RelatedIndustriesProps) => {
         <ScrollReveal animation="fade-up">
           <div className="text-center mb-12">
             <h3 className="font-display text-2xl font-bold text-foreground mb-4">
-              All Industry Categories
+              {t("industry.allIndustryCategories")}
             </h3>
             <p className="text-muted-foreground">
-              We provide <Link to={langLink("/serving-industries")} className="text-primary hover:underline">Local SEO services</Link> for businesses across all industries
+              {t("industry.weProvide")} <Link to={langLink("/serving-industries")} className="text-primary hover:underline">{t("industry.localSeoServices")}</Link> {t("industry.forBusinessesAcrossAll")}
             </p>
           </div>
         </ScrollReveal>
@@ -129,7 +129,7 @@ const RelatedIndustries = ({ industry }: RelatedIndustriesProps) => {
               to={langLink("/serving-industries")}
               className="inline-flex items-center gap-2 text-primary hover:underline font-medium"
             >
-              View All 300+ Industries We Serve
+              {t("industry.viewAll300")}
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
