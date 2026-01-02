@@ -565,6 +565,41 @@ export const ALL_KUWAIT_REGIONS: string[] = [
   "Al Ahmadi", "Al Farwaniyah", "Al Jahra", "Capital", "Hawalli", "Mubarak Al-Kabeer"
 ];
 
+// Saint Helena Districts
+export const SAINT_HELENA_DISTRICTS: StateData[] = [
+  { name: "Jamestown", code: "jamestown", coords: [-15.9247, -5.7187] },
+  { name: "Half Tree Hollow", code: "half-tree-hollow", coords: [-15.9347, -5.7087] },
+  { name: "Longwood", code: "longwood", coords: [-15.9547, -5.6587] },
+  { name: "St Pauls", code: "st-pauls", coords: [-15.9247, -5.6887] },
+  { name: "Blue Hill", code: "blue-hill", coords: [-15.9747, -5.7487] },
+  { name: "Sandy Bay", code: "sandy-bay", coords: [-15.9947, -5.7687] },
+  { name: "Levelwood", code: "levelwood", coords: [-15.9647, -5.6987] },
+  { name: "Alarm Forest", code: "alarm-forest", coords: [-15.9447, -5.7287] }
+];
+
+export const ALL_SAINT_HELENA_DISTRICTS: string[] = [
+  "Jamestown", "Half Tree Hollow", "Longwood", "St Pauls", "Blue Hill", "Sandy Bay", "Levelwood", "Alarm Forest"
+];
+
+// Lithuania Counties
+export const LITHUANIA_COUNTIES: StateData[] = [
+  { name: "Vilnius County", code: "vilnius-county", coords: [54.68, 24.9] },
+  { name: "Kaunas County", code: "kaunas-county", coords: [54.9, 23.9] },
+  { name: "Klaipeda County", code: "klaipeda-county", coords: [55.7, 21.1] },
+  { name: "Siauliai County", code: "siauliai-county", coords: [55.9, 23.3] },
+  { name: "Panevezys County", code: "panevezys-county", coords: [55.7, 24.3] },
+  { name: "Alytus County", code: "alytus-county", coords: [54.4, 24.0] },
+  { name: "Marijampole County", code: "marijampole-county", coords: [54.6, 23.3] },
+  { name: "Telsiai County", code: "telsiai-county", coords: [55.9, 22.2] },
+  { name: "Taurage County", code: "taurage-county", coords: [55.2, 22.3] },
+  { name: "Utena County", code: "utena-county", coords: [55.5, 25.6] }
+];
+
+export const ALL_LITHUANIA_COUNTIES: string[] = [
+  "Vilnius County", "Kaunas County", "Klaipeda County", "Siauliai County", "Panevezys County",
+  "Alytus County", "Marijampole County", "Telsiai County", "Taurage County", "Utena County"
+];
+
 export const COUNTRIES: Record<string, CountryData> = {
   us: {
     code: "us",
@@ -1246,6 +1281,54 @@ export const COUNTRIES: Record<string, CountryData> = {
       "Kuwait City SEO expert",
       "Kuwait business SEO services",
       "Middle East SEO consultant"
+    ]
+  },
+  sh: {
+    code: "sh",
+    name: "Saint Helena",
+    localName: "Saint Helena",
+    flag: "🇸🇭",
+    statesCount: 8,
+    states: SAINT_HELENA_DISTRICTS,
+    mapCenter: [-15.9650, -5.7089],
+    mapZoom: 12,
+    mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63467.2!2d-5.78!3d-15.96!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sSaint%20Helena!5e0!3m2!1sen!2s",
+    currency: "SHP",
+    timezone: "Atlantic/St_Helena",
+    phoneCode: "+290",
+    seoKeywords: [
+      "local SEO Saint Helena",
+      "Saint Helena SEO specialist",
+      "Google Maps optimization Saint Helena",
+      "Jamestown SEO expert",
+      "Saint Helena business SEO services",
+      "South Atlantic island SEO consultant",
+      "British Overseas Territory SEO",
+      "Napoleon exile island marketing"
+    ]
+  },
+  lt: {
+    code: "lt",
+    name: "Lithuania",
+    localName: "Lietuva",
+    flag: "🇱🇹",
+    statesCount: 10,
+    states: LITHUANIA_COUNTIES,
+    mapCenter: [55.1694, 23.8813],
+    mapZoom: 7,
+    mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2318934.8!2d21.0!3d55.2!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dd94357f5a7189%3A0x400d18c70e9d850!2sLithuania!5e0!3m2!1sen!2s",
+    currency: "EUR",
+    timezone: "Europe/Vilnius",
+    phoneCode: "+370",
+    seoKeywords: [
+      "local SEO Lithuania",
+      "Lithuanian SEO specialist",
+      "Google Maps optimization Lithuania",
+      "Vilnius SEO expert",
+      "Kaunas local SEO",
+      "Lithuanian business SEO services",
+      "Baltic States SEO consultant",
+      "Klaipeda business visibility"
     ]
   }
 };
