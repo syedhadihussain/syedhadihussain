@@ -23,6 +23,7 @@ const PortfolioPage = lazy(() => import("./pages/PortfolioPage"));
 const FAQPage = lazy(() => import("./pages/FAQPage"));
 const ContactPage = lazy(() => import("./pages/ContactPage"));
 const BlogPage = lazy(() => import("./pages/BlogPage"));
+const BlogPostPage = lazy(() => import("./pages/BlogPostPage"));
 const ProjectManagementPage = lazy(() => import("./pages/ProjectManagementPage"));
 const LocalServiceAdsPage = lazy(() => import("./pages/LocalServiceAdsPage"));
 const PricingPage = lazy(() => import("./pages/PricingPage"));
@@ -94,6 +95,7 @@ const staticPageRoutes = [
   { path: "faq", element: <FAQPage /> },
   { path: "contact", element: <ContactPage /> },
   { path: "blog", element: <BlogPage /> },
+  { path: "blog/:slug", element: <BlogPostPage /> },
   { path: "project-management", element: <ProjectManagementPage /> },
   { path: "local-service-ads", element: <LocalServiceAdsPage /> },
   { path: "pricing", element: <PricingPage /> },
