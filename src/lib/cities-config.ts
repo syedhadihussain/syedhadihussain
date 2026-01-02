@@ -23,6 +23,8 @@ import { CH_STATES } from "./ch-states-config";
 import { IE_STATES } from "./ie-states-config";
 import { BR_STATES } from "./br-states-config";
 import { FI_STATES, NL_STATES, SE_STATES, NO_STATES, DK_STATES, BE_STATES, JO_STATES, ZA_STATES } from "./nordic-benelux-config";
+import { SH_STATES } from "./sh-states-config";
+import { LT_STATES } from "./lt-states-config";
 
 export interface CityDetailData {
   code: string;
@@ -139,6 +141,8 @@ const getCountryStateRegistry = (countryCode: string): Record<string, StateDetai
   if (code === 'be') return BE_STATES;
   if (code === 'jo') return JO_STATES;
   if (code === 'za') return ZA_STATES;
+  if (code === 'sh') return SH_STATES;
+  if (code === 'lt') return LT_STATES;
   return STATES;
 };
 
