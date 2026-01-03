@@ -28,15 +28,18 @@ const PricingPage = () => {
       urgentPrice: "$100",
       features: [
         "pricing.feature.gbpAnalysis",
-        "pricing.feature.websiteAudit",
         "pricing.feature.competitorAnalysis3",
         "pricing.feature.localRankingCheck",
         "pricing.feature.napConsistency",
         "pricing.feature.recommendations",
         "pricing.feature.strategyCall30",
+        "pricing.feature.locationStrategy",
+        "pricing.feature.businessNameOptimization",
+        "pricing.feature.categoryOptimization",
+        "pricing.feature.rankingFactorsReview",
       ],
       ctaKey: "pricing.cta.getAuditNow",
-      popular: false,
+      popular: true,
       type: "one-time",
     },
     {
@@ -81,25 +84,6 @@ const PricingPage = () => {
       popular: false,
       type: "one-time",
     },
-    {
-      nameKey: "pricing.localSeoConsultation",
-      badge: t("pricing.badge.new"),
-      originalPrice: "$199",
-      price: "$149",
-      descriptionKey: "pricing.localSeoConsultationDesc",
-      features: [
-        "pricing.feature.locationStrategy",
-        "pricing.feature.businessNameOptimization",
-        "pricing.feature.categoryOptimization",
-        "pricing.feature.competitorAnalysis3",
-        "pricing.feature.rankingFactorsReview",
-        "pricing.feature.actionPlan",
-        "pricing.feature.strategyCall60",
-      ],
-      ctaKey: "pricing.cta.bookConsultation",
-      popular: true,
-      type: "one-time",
-    },
   ];
 
   // Monthly Plans
@@ -112,9 +96,9 @@ const PricingPage = () => {
       periodKey: "pricing.perMonth",
       descriptionKey: "pricing.starterPlanDesc",
       features: [
-        "pricing.feature.gbpPostsBiweekly",
+        "pricing.feature.gbpPostsBiweeklySimple",
         "pricing.feature.basicPhotoUpdates",
-        "pricing.feature.reviewResponseBasic",
+        "pricing.feature.reviewResponseSimple",
         "pricing.feature.monthlyReport",
         "pricing.feature.emailSupport",
       ],
@@ -182,9 +166,9 @@ const PricingPage = () => {
       monthlyEquivalent: "$127",
       descriptionKey: "pricing.starterPlanDesc",
       features: [
-        "pricing.feature.gbpPostsBiweekly",
+        "pricing.feature.gbpPostsBiweeklySimple",
         "pricing.feature.basicPhotoUpdates",
-        "pricing.feature.reviewResponseBasic",
+        "pricing.feature.reviewResponseSimple",
         "pricing.feature.monthlyReport",
         "pricing.feature.emailSupport",
         "pricing.feature.priceLocked",
@@ -260,9 +244,9 @@ const PricingPage = () => {
       monthlyEquivalent: "$112",
       descriptionKey: "pricing.starterPlanDesc",
       features: [
-        "pricing.feature.gbpPostsBiweekly",
+        "pricing.feature.gbpPostsBiweeklySimple",
         "pricing.feature.basicPhotoUpdates",
-        "pricing.feature.reviewResponseBasic",
+        "pricing.feature.reviewResponseSimple",
         "pricing.feature.monthlyReport",
         "pricing.feature.emailSupport",
         "pricing.feature.priceLocked",
@@ -481,9 +465,9 @@ const PricingPage = () => {
     },
     {
       nameKey: "pricing.businessConsultation",
-      badge: null,
+      badge: t("pricing.badge.free"),
       icon: Building2,
-      price: t("pricing.getCustomQuote"),
+      price: t("pricing.free"),
       descriptionKey: "pricing.businessConsultationDesc",
       features: [
         "pricing.feature.onlinePresenceAudit",
@@ -493,8 +477,9 @@ const PricingPage = () => {
         "pricing.feature.implementationGuidance",
         "pricing.feature.ongoingSupport",
       ],
-      ctaKey: "pricing.cta.getFreeQuote",
-      isQuoteBased: true,
+      ctaKey: "pricing.cta.bookFreeConsultation",
+      isQuoteBased: false,
+      calendlyLink: "https://calendly.com/syedhadihussain",
     },
   ];
 
@@ -737,7 +722,7 @@ const PricingPage = () => {
                   {t("pricing.oneTimeDesc")}
                 </p>
               </div>
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="grid md:grid-cols-3 gap-6">
                 {oneTimeServices.map((pkg, index) => renderPricingCard(pkg, index))}
               </div>
             </div>
@@ -926,12 +911,21 @@ const PricingPage = () => {
                         ))}
                       </ul>
                       
-                      <Button asChild variant="outline" className="w-full">
-                        <Link to={`/${language}/contact?service=${encodeURIComponent(t(service.nameKey))}`}>
-                          {t(service.ctaKey)}
-                          <ArrowRight className="w-4 h-4 ml-2" />
-                        </Link>
-                      </Button>
+                      {service.calendlyLink ? (
+                        <Button asChild variant="default" className="w-full glow">
+                          <a href={service.calendlyLink} target="_blank" rel="noopener noreferrer">
+                            {t(service.ctaKey)}
+                            <ArrowRight className="w-4 h-4 ml-2" />
+                          </a>
+                        </Button>
+                      ) : (
+                        <Button asChild variant="outline" className="w-full">
+                          <Link to={`/${language}/contact?service=${encodeURIComponent(t(service.nameKey))}`}>
+                            {t(service.ctaKey)}
+                            <ArrowRight className="w-4 h-4 ml-2" />
+                          </Link>
+                        </Button>
+                      )}
                     </div>
                   </ScrollReveal>
                 ))}
