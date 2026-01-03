@@ -39,6 +39,7 @@ const StatePage = lazy(() => import("./pages/StatePage"));
 const CityPage = lazy(() => import("./pages/CityPage"));
 const DistrictPage = lazy(() => import("./pages/DistrictPage"));
 const ServingIndustriesPage = lazy(() => import("./pages/ServingIndustriesPage"));
+const AreasWeServePage = lazy(() => import("./pages/AreasWeServePage"));
 const CountryPage = lazy(() => import("./pages/CountryPage"));
 const IndustryPage = lazy(() => import("./pages/IndustryPage"));
 const IndexingDashboardPage = lazy(() => import("./pages/IndexingDashboardPage"));
@@ -109,6 +110,7 @@ const staticPageRoutes = [
   { path: "privacy", element: <PrivacyPolicyPage /> },
   { path: "terms", element: <TermsOfServicePage /> },
   { path: "serving-industries", element: <ServingIndustriesPage /> },
+  { path: "areas-we-serve", element: <AreasWeServePage /> },
   { path: "admin/login", element: <AdminAuthPage /> },
   { path: "portal/login", element: <PortalLoginPage /> },
 ];
