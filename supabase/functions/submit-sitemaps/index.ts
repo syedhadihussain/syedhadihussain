@@ -75,7 +75,22 @@ serve(async (req) => {
   }
 
   try {
-    console.log('🚀 Starting sitemap submission to search engines...');
+    // Parse request body to check source
+    let source = 'manual';
+    let triggeredAt = new Date().toISOString();
+    
+    try {
+      const body = await req.json();
+      source = body.source || 'manual';
+      triggeredAt = body.triggered_at || triggeredAt;
+    } catch {
+      // No body or invalid JSON - that's fine for manual triggers
+    }
+    
+    console.log(`🚀 Starting sitemap submission to search engines...`);
+    console.log(`📅 Triggered at: ${triggeredAt}`);
+    console.log(`🔧 Source: ${source}`);
+    console.log(`📊 Total sitemaps to submit: ${SITEMAPS.length}`);
     
     const results: PingResult[] = [];
     let successCount = 0;
@@ -110,6 +125,8 @@ serve(async (req) => {
 
     const summary = {
       timestamp: new Date().toISOString(),
+      source,
+      triggeredAt,
       totalSitemaps: SITEMAPS.length,
       totalPings: SITEMAPS.length * 2, // Google + Bing
       successful: successCount,
@@ -118,6 +135,7 @@ serve(async (req) => {
     };
 
     console.log(`✅ Submission complete: ${successCount} successful, ${failCount} failed`);
+    console.log(`📈 Success rate: ${((successCount / (SITEMAPS.length * 2)) * 100).toFixed(1)}%`);
 
     return new Response(
       JSON.stringify(summary, null, 2),
