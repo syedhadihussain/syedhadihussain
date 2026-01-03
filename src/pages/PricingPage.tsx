@@ -1,4 +1,4 @@
-import { Check, Sparkles, ArrowRight, Timer, Zap, MapPin, Layers, Percent, Building2, Phone, Star, Clock, Gift, Shield, Globe } from "lucide-react";
+import { Check, Sparkles, ArrowRight, Timer, Zap, MapPin, Layers, Percent, Building2, Phone, Star, Clock, Gift, Shield, Globe, Award, TrendingUp } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -144,25 +144,28 @@ const PricingPage = () => {
     },
     {
       nameKey: "pricing.fullStackSeo",
-      badge: expired ? null : t("pricing.badge.premium"),
+      badge: t("pricing.badge.resultGuarantee"),
       originalPrice: "$599",
       price: expired ? "$599" : "$449",
       periodKey: "pricing.perMonth",
       descriptionKey: "pricing.fullStackSeoDesc",
       features: [
         "pricing.feature.everythingInGbp",
+        "pricing.feature.websiteSeoIncluded",
         "pricing.feature.onPageSeo",
         "pricing.feature.localKeywordResearch",
-        "pricing.feature.citationBuilding",
-        "pricing.feature.linkBuilding",
+        "pricing.feature.citations10Monthly",
         "pricing.feature.technicalSeo",
         "pricing.feature.schemaMarkup",
         "pricing.feature.weeklyCalls",
         "pricing.feature.prioritySupport",
+        "pricing.feature.timelineAfterAudit",
       ],
       ctaKey: "pricing.cta.getStarted",
       popular: false,
       tier: "fullstack",
+      featured: true,
+      resultGuarantee: true,
     },
   ];
 
@@ -215,7 +218,7 @@ const PricingPage = () => {
     },
     {
       nameKey: "pricing.fullStackSeo",
-      badge: t("pricing.badge.save15"),
+      badge: t("pricing.badge.resultGuarantee"),
       originalPrice: "$2,694",
       price: "$2,289",
       periodKey: "pricing.per6Months",
@@ -223,20 +226,23 @@ const PricingPage = () => {
       descriptionKey: "pricing.fullStackSeoDesc",
       features: [
         "pricing.feature.everythingInGbp",
+        "pricing.feature.websiteSeoIncluded",
         "pricing.feature.onPageSeo",
         "pricing.feature.localKeywordResearch",
-        "pricing.feature.citationBuilding",
-        "pricing.feature.linkBuilding",
+        "pricing.feature.citations10Monthly",
         "pricing.feature.technicalSeo",
         "pricing.feature.schemaMarkup",
         "pricing.feature.weeklyCalls",
         "pricing.feature.prioritySupport",
         "pricing.feature.priceLocked",
+        "pricing.feature.timelineAfterAudit",
       ],
       ctaKey: "pricing.cta.subscribe6",
       popular: false,
       tier: "fullstack",
       savings: "$405",
+      featured: true,
+      resultGuarantee: true,
     },
   ];
 
@@ -292,7 +298,7 @@ const PricingPage = () => {
     },
     {
       nameKey: "pricing.fullStackSeo",
-      badge: t("pricing.badge.save25"),
+      badge: t("pricing.badge.resultGuarantee"),
       originalPrice: "$5,388",
       price: "$3,999",
       periodKey: "pricing.perYear",
@@ -300,10 +306,10 @@ const PricingPage = () => {
       descriptionKey: "pricing.fullStackSeoDesc",
       features: [
         "pricing.feature.everythingInGbp",
+        "pricing.feature.websiteSeoIncluded",
         "pricing.feature.onPageSeo",
         "pricing.feature.localKeywordResearch",
-        "pricing.feature.citationBuilding",
-        "pricing.feature.linkBuilding",
+        "pricing.feature.citations10Monthly",
         "pricing.feature.technicalSeo",
         "pricing.feature.schemaMarkup",
         "pricing.feature.weeklyCalls",
@@ -312,11 +318,14 @@ const PricingPage = () => {
         "pricing.feature.freeAudit",
         "pricing.feature.bonusOptimization",
         "pricing.feature.quarterlyStrategy",
+        "pricing.feature.timelineAfterAudit",
       ],
       ctaKey: "pricing.cta.subscribe12",
       popular: false,
       tier: "fullstack",
       savings: "$1,389",
+      featured: true,
+      resultGuarantee: true,
     },
   ];
 
@@ -362,8 +371,16 @@ const PricingPage = () => {
 
   const renderPricingCard = (pkg: any, index: number, showSavings = false) => (
     <ScrollReveal key={index} delay={150 + index * 50}>
-      <div className={`glass rounded-2xl p-6 h-full flex flex-col relative ${pkg.popular ? 'border-2 border-primary glow-sm' : ''}`}>
-        {pkg.popular && (
+      <div className={`glass rounded-2xl p-6 h-full flex flex-col relative ${pkg.popular ? 'border-2 border-primary glow-sm' : ''} ${pkg.featured ? 'border-2 border-green-500 ring-2 ring-green-500/20' : ''}`}>
+        {pkg.featured && (
+          <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+            <Badge className="bg-gradient-to-r from-green-500 to-emerald-600 text-white">
+              <Award className="w-3 h-3 mr-1" />
+              {t("pricing.mostSubscribed")}
+            </Badge>
+          </div>
+        )}
+        {pkg.popular && !pkg.featured && (
           <div className="absolute -top-3 left-1/2 -translate-x-1/2">
             <Badge className="bg-primary text-primary-foreground">
               {t("pricing.mostPopular")}
@@ -372,8 +389,8 @@ const PricingPage = () => {
         )}
         {pkg.badge && (
           <div className="absolute -top-3 -right-3">
-            <Badge variant="destructive" className="animate-pulse">
-              <Sparkles className="w-3 h-3 mr-1" />
+            <Badge variant={pkg.resultGuarantee ? "default" : "destructive"} className={`animate-pulse ${pkg.resultGuarantee ? 'bg-gradient-to-r from-green-500 to-emerald-600 text-white' : ''}`}>
+              {pkg.resultGuarantee ? <Shield className="w-3 h-3 mr-1" /> : <Sparkles className="w-3 h-3 mr-1" />}
               {pkg.badge}
             </Badge>
           </div>
@@ -382,6 +399,15 @@ const PricingPage = () => {
         <h3 className="font-display text-xl font-bold text-foreground mb-2">
           {t(pkg.nameKey)}
         </h3>
+        
+        {pkg.resultGuarantee && (
+          <div className="bg-green-500/10 border border-green-500/30 rounded-lg px-3 py-2 mb-3">
+            <p className="text-xs font-medium text-green-600 dark:text-green-400 flex items-center gap-1.5">
+              <TrendingUp className="w-3 h-3" />
+              {t("pricing.resultGuaranteeNote")}
+            </p>
+          </div>
+        )}
         
         <div className="mb-2">
           {pkg.originalPrice && (
@@ -432,7 +458,7 @@ const PricingPage = () => {
           ))}
         </ul>
         
-        <Button asChild className={`w-full ${pkg.popular ? 'glow' : ''}`} variant={pkg.popular ? 'default' : 'outline'}>
+        <Button asChild className={`w-full ${pkg.popular || pkg.featured ? 'glow' : ''}`} variant={pkg.popular || pkg.featured ? 'default' : 'outline'}>
           <Link to={`/${language}/subscribe?plan=${encodeURIComponent(t(pkg.nameKey))}&price=${encodeURIComponent(pkg.price)}&duration=${pkg.periodKey ? (pkg.periodKey.includes('Year') ? 'annual' : pkg.periodKey.includes('6') ? '6-month' : 'monthly') : 'one-time'}&services=${encodeURIComponent(pkg.features.slice(0, 5).map((f: string) => t(f)).join(','))}`}>
             {t(pkg.ctaKey)}
             <ArrowRight className="w-4 h-4 ml-2" />
@@ -552,6 +578,48 @@ const PricingPage = () => {
               </div>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {oneTimeServices.map((pkg, index) => renderPricingCard(pkg, index))}
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* Featured Plan Banner */}
+          <ScrollReveal delay={100}>
+            <div className="relative overflow-hidden glass rounded-2xl p-6 lg:p-8 mb-12 border-2 border-green-500/30 bg-gradient-to-r from-green-500/5 to-emerald-500/5">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-green-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+              <div className="absolute bottom-0 left-0 w-48 h-48 bg-emerald-500/5 rounded-full blur-2xl translate-y-1/2 -translate-x-1/2" />
+              
+              <div className="relative">
+                <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
+                  <div className="flex items-center gap-4 text-center lg:text-left">
+                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center shrink-0">
+                      <Award className="w-8 h-8 text-white" />
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-2 justify-center lg:justify-start mb-1">
+                        <Badge className="bg-gradient-to-r from-green-500 to-emerald-600 text-white">
+                          <Shield className="w-3 h-3 mr-1" />
+                          {t("pricing.badge.resultGuarantee")}
+                        </Badge>
+                        <Badge variant="outline" className="border-green-500/50 text-green-600 dark:text-green-400">
+                          {t("pricing.mostSubscribed")}
+                        </Badge>
+                      </div>
+                      <h2 className="font-display text-2xl lg:text-3xl font-bold text-foreground">
+                        {t("pricing.fullStackSeo")}
+                      </h2>
+                      <p className="text-muted-foreground mt-1 max-w-xl">
+                        {t("pricing.fullStackSeoFeaturedDesc")}
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <Button asChild size="lg" className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white glow group">
+                    <Link to={`/${language}/subscribe?plan=${encodeURIComponent(t("pricing.fullStackSeo"))}&price=$449&duration=monthly&services=${encodeURIComponent("Full Website SEO, GBP Management, 10 Citations/Month, Technical SEO, Weekly Calls")}`}>
+                      {t("pricing.cta.getStarted")}
+                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                  </Button>
+                </div>
               </div>
             </div>
           </ScrollReveal>
