@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { IndustryData } from "@/lib/industries-config";
 import { getAbsoluteUrl, generateHreflangs, SUPPORTED_LANGUAGES, HREFLANG_CODES, SupportedLanguage } from "@/lib/i18n-config";
+import { generateIndustryMetaTitle, generateIndustryMetaDescription } from "@/lib/seo-metadata-generator";
 
 interface IndustrySEOHeadProps {
   industry: IndustryData;
@@ -14,8 +15,9 @@ const IndustrySEOHead = ({ industry }: IndustrySEOHeadProps) => {
   const canonicalUrl = getAbsoluteUrl(language, slug);
   const hreflangs = generateHreflangs(slug);
   
-  const title = `${industry.keyword} | Professional Local SEO Expert`;
-  const description = industry.metaDescription;
+  // Generate unique meta title and description using the SEO metadata generator
+  const title = generateIndustryMetaTitle(industry.name, industry.slug);
+  const description = generateIndustryMetaDescription(industry.name, industry.slug);
   
   // Structured data for Service
   const serviceSchema = {

@@ -158,27 +158,50 @@ export const generateCityMetaDescription = (cityName: string, stateCode: string,
 };
 
 // ============================================================================
-// INDUSTRY META GENERATORS (for future use)
+// INDUSTRY META GENERATORS
 // ============================================================================
 
-export const generateIndustryMetaTitle = (industryName: string, industryCode: string): string => {
-  const modifierIndex = getUniqueIndex(industryName, industryCode, intentModifiers.length, 10);
+type IndustryTitlePattern = (industryName: string, modifier: string) => string;
+
+const industryTitlePatterns: IndustryTitlePattern[] = [
+  (industry, mod) => `${mod} Local SEO Services for ${industry} | GBP Expert – Syed Hadi Hussain`,
+  (industry, mod) => `${mod} Local SEO Services in ${industry} Industry | Maps – Syed Hadi Hussain`,
+  (industry, mod) => `${mod} Local SEO Services for ${industry} Businesses – Syed Hadi Hussain`,
+  (industry, mod) => `${mod} Local SEO Services ${industry} | Map Pack Rankings – Syed Hadi Hussain`,
+  (industry, mod) => `${mod} Local SEO Services for ${industry} | Near Me SEO – Syed Hadi Hussain`,
+  (industry, mod) => `${mod} Local SEO Services in ${industry} Niche | Leads – Syed Hadi Hussain`,
+  (industry, mod) => `${mod} Local SEO Services for ${industry} | Rankings Expert – Syed Hadi Hussain`,
+  (industry, mod) => `${mod} Local SEO Services ${industry} Industry | Visibility – Syed Hadi Hussain`,
+  (industry, mod) => `${mod} Local SEO Services for ${industry} Companies | GBP – Syed Hadi Hussain`,
+  (industry, mod) => `${mod} Local SEO Services in ${industry} | Google Maps – Syed Hadi Hussain`,
+  (industry, mod) => `${mod} Local SEO Services for ${industry} Firms | Traffic – Syed Hadi Hussain`,
+  (industry, mod) => `${mod} Local SEO Services ${industry} | Citation Building – Syed Hadi Hussain`,
+];
+
+type IndustryDescPattern = (industryName: string, industryLower: string) => string;
+
+const industryDescPatterns: IndustryDescPattern[] = [
+  (industry, lower) => `Specialized local SEO services for ${lower}. As an industry-focused local SEO specialist, I deliver GBP optimization, Google Maps SEO, and local search strategies tailored to ${industry}. Drive more qualified leads today.`,
+  (industry, lower) => `Expert local SEO services for the ${lower} industry. I help businesses dominate local search with targeted GBP optimization, map pack rankings, and citation building. Grow your ${industry} visibility and customer base.`,
+  (industry, lower) => `Professional local SEO expert serving ${lower}. From Google Maps optimization to review strategies, I deliver industry-specific local SEO services that drive real results. Capture more local ${industry} customers.`,
+  (industry, lower) => `Boost your ${industry} business with proven local SEO services. As a freelance local SEO specialist, I optimize GBP listings, build citations, and improve near me search visibility. Get more calls and leads today.`,
+  (industry, lower) => `Dominate local search in the ${lower} industry with my trusted local SEO services. I specialize in Google Business Profile optimization, map pack rankings, and local citation strategies. Grow your business faster.`,
+  (industry, lower) => `Transform your ${industry} local presence with data-driven local SEO services. I help ${lower} achieve top Google Maps positions, generate more reviews, and capture near me searches. Start ranking higher.`,
+  (industry, lower) => `Partner with a certified local SEO specialist for ${lower}. I deliver GBP management, Google Maps SEO, and local search strategies that bring real results. More visibility, more customers, more growth for ${industry}.`,
+  (industry, lower) => `Grow your ${industry} business with expert local SEO services. As your dedicated local SEO freelancer, I optimize for Google Maps, build citation authority, and improve local rankings. Drive measurable business growth.`,
+  (industry, lower) => `Elevate your ${lower} visibility with professional local SEO services. I provide GBP optimization, review generation, and map pack ranking strategies specifically designed for the ${industry} industry. Book a free audit.`,
+  (industry, lower) => `Accelerate growth for ${lower} with my proven local SEO services. I specialize in Google Maps optimization, local citation building, and GBP management that delivers more calls, leads, and customers. Contact me today.`,
+];
+
+export const generateIndustryMetaTitle = (industryName: string, industrySlug: string): string => {
+  const modifierIndex = getUniqueIndex(industryName, industrySlug, intentModifiers.length, 10);
+  const patternIndex = getUniqueIndex(industrySlug, industryName, industryTitlePatterns.length, 11);
   const modifier = intentModifiers[modifierIndex];
-  const patterns = [
-    `${modifier} Local SEO Services for ${industryName} | Industry Expert – Syed Hadi Hussain`,
-    `${modifier} Local SEO Services in ${industryName} Industry | GBP – Syed Hadi Hussain`,
-    `${modifier} Local SEO Services for ${industryName} Businesses – Syed Hadi Hussain`,
-  ];
-  const patternIndex = getUniqueIndex(industryCode, industryName, patterns.length, 11);
-  return patterns[patternIndex];
+  return industryTitlePatterns[patternIndex](industryName, modifier);
 };
 
-export const generateIndustryMetaDescription = (industryName: string, industryCode: string): string => {
-  const patterns = [
-    `Specialized local SEO services for ${industryName} businesses. As an industry-focused local SEO specialist, I deliver GBP optimization, Google Maps SEO, and local search strategies tailored to your niche. Drive more qualified leads today.`,
-    `Expert local SEO services for the ${industryName} industry. I help businesses dominate local search with targeted GBP optimization, map pack ranking strategies, and citation building. Grow your ${industryName} business visibility.`,
-    `Professional local SEO expert serving ${industryName} companies. From Google Maps optimization to review strategies, I deliver industry-specific local SEO services that drive real results. Capture more local customers.`,
-  ];
-  const patternIndex = getUniqueIndex(industryCode, industryName, patterns.length, 12);
-  return patterns[patternIndex];
+export const generateIndustryMetaDescription = (industryName: string, industrySlug: string): string => {
+  const patternIndex = getUniqueIndex(industrySlug, industryName, industryDescPatterns.length, 12);
+  const industryLower = industryName.toLowerCase();
+  return industryDescPatterns[patternIndex](industryName, industryLower);
 };
