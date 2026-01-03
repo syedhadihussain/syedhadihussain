@@ -1,4 +1,4 @@
-import { Check, Sparkles, ArrowRight, Timer, Zap, MapPin, Layers, Percent, Building2, Phone, Star, Clock, Gift, Shield, Globe, Award, TrendingUp, Code, Palette, PenTool, Share2, AlertTriangle } from "lucide-react";
+import { Check, Sparkles, ArrowRight, Timer, Zap, MapPin, Layers, Percent, Building2, Phone, Star, Clock, Gift, Shield, Globe, Award, TrendingUp, Code, Palette, PenTool, Share2, AlertTriangle, Bot } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -18,10 +18,32 @@ const PricingPage = () => {
   // One-Time Services
   const oneTimeServices = [
     {
+      nameKey: "pricing.gbpFullAudit",
+      badge: t("pricing.badge.off25"),
+      originalPrice: "$100",
+      price: "$75",
+      descriptionKey: "pricing.gbpFullAuditDesc",
+      deliveryTime: "pricing.delivery.2to3days",
+      urgentDelivery: "pricing.delivery.urgent",
+      urgentPrice: "$100",
+      features: [
+        "pricing.feature.gbpAnalysis",
+        "pricing.feature.websiteAudit",
+        "pricing.feature.competitorAnalysis3",
+        "pricing.feature.localRankingCheck",
+        "pricing.feature.napConsistency",
+        "pricing.feature.recommendations",
+        "pricing.feature.strategyCall30",
+      ],
+      ctaKey: "pricing.cta.getAuditNow",
+      popular: false,
+      type: "one-time",
+    },
+    {
       nameKey: "pricing.gbpVerification",
-      badge: expired ? null : t("pricing.badge.popular"),
-      originalPrice: "$149",
-      price: expired ? "$149" : "$99",
+      badge: t("pricing.badge.off25"),
+      originalPrice: "$267",
+      price: "$200",
       descriptionKey: "pricing.gbpVerificationDesc",
       features: [
         "pricing.feature.gbpCreation",
@@ -34,14 +56,14 @@ const PricingPage = () => {
         "pricing.feature.verificationSupport",
       ],
       ctaKey: "pricing.cta.getStarted",
-      popular: true,
+      popular: false,
       type: "one-time",
     },
     {
       nameKey: "pricing.gbpOptimization",
-      badge: expired ? null : t("pricing.badge.bestValue"),
-      originalPrice: "$249",
-      price: expired ? "$249" : "$179",
+      badge: t("pricing.badge.off25"),
+      originalPrice: "$400",
+      price: "$300",
       descriptionKey: "pricing.gbpOptimizationDesc",
       deliveryTime: "pricing.delivery.20days",
       features: [
@@ -60,49 +82,22 @@ const PricingPage = () => {
       type: "one-time",
     },
     {
-      nameKey: "pricing.seoAudit",
-      badge: t("pricing.badge.off25"),
-      originalPrice: "$67",
-      price: "$50",
-      descriptionKey: "pricing.seoAuditDesc",
-      deliveryTime: "pricing.delivery.2to3days",
-      urgentDelivery: "pricing.delivery.urgent",
-      urgentPrice: "$67",
+      nameKey: "pricing.localSeoConsultation",
+      badge: t("pricing.badge.new"),
+      originalPrice: "$199",
+      price: "$149",
+      descriptionKey: "pricing.localSeoConsultationDesc",
       features: [
-        "pricing.feature.gbpAnalysis",
-        "pricing.feature.websiteAudit",
+        "pricing.feature.locationStrategy",
+        "pricing.feature.businessNameOptimization",
+        "pricing.feature.categoryOptimization",
         "pricing.feature.competitorAnalysis3",
-        "pricing.feature.localRankingCheck",
-        "pricing.feature.napConsistency",
-        "pricing.feature.recommendations",
-        "pricing.feature.strategyCall30",
-      ],
-      ctaKey: "pricing.cta.getAuditNow",
-      popular: false,
-      type: "one-time",
-    },
-    {
-      nameKey: "pricing.completeAudit",
-      badge: t("pricing.badge.off25"),
-      originalPrice: "$265",
-      price: "$199",
-      descriptionKey: "pricing.completeAuditDesc",
-      deliveryTime: "pricing.delivery.2to3days",
-      urgentDelivery: "pricing.delivery.urgent",
-      urgentPrice: "$265",
-      features: [
-        "pricing.feature.fullWebsiteAudit",
-        "pricing.feature.gbpLocalAnalysis",
-        "pricing.feature.competitorDeepDive",
-        "pricing.feature.socialMediaReview",
-        "pricing.feature.brandConsistency",
-        "pricing.feature.technicalPerformance",
-        "pricing.feature.pdfReport",
+        "pricing.feature.rankingFactorsReview",
+        "pricing.feature.actionPlan",
         "pricing.feature.strategyCall60",
-        "pricing.feature.emailSupport30",
       ],
-      ctaKey: "pricing.cta.orderAudit",
-      popular: false,
+      ctaKey: "pricing.cta.bookConsultation",
+      popular: true,
       type: "one-time",
     },
   ];
@@ -384,7 +379,7 @@ const PricingPage = () => {
       nameKey: "pricing.webDevelopment",
       badge: t("pricing.badge.popular"),
       icon: Code,
-      price: t("pricing.startingFrom") + " $499",
+      price: t("pricing.getCustomQuote"),
       descriptionKey: "pricing.webDevelopmentDesc",
       features: [
         "pricing.feature.responsiveDesign",
@@ -393,15 +388,17 @@ const PricingPage = () => {
         "pricing.feature.mobileFirst",
         "pricing.feature.customDesign",
         "pricing.feature.cmsIntegration",
+        "pricing.feature.advancedTechStack",
         "pricing.feature.support30Days",
       ],
       ctaKey: "pricing.cta.getQuote",
+      isQuoteBased: true,
     },
     {
       nameKey: "pricing.contentWriting",
       badge: null,
       icon: PenTool,
-      price: t("pricing.startingFrom") + " $50",
+      price: t("pricing.getCustomQuote"),
       descriptionKey: "pricing.contentWritingDesc",
       features: [
         "pricing.feature.seoContent",
@@ -411,13 +408,14 @@ const PricingPage = () => {
         "pricing.feature.keywordOptimized",
         "pricing.feature.unlimitedRevisions",
       ],
-      ctaKey: "pricing.cta.getQuote",
+      ctaKey: "pricing.cta.getFreeQuote",
+      isQuoteBased: true,
     },
     {
       nameKey: "pricing.graphicDesign",
       badge: null,
       icon: Palette,
-      price: t("pricing.startingFrom") + " $99",
+      price: t("pricing.getCustomQuote"),
       descriptionKey: "pricing.graphicDesignDesc",
       features: [
         "pricing.feature.logoDesign",
@@ -427,14 +425,14 @@ const PricingPage = () => {
         "pricing.feature.customIllustrations",
         "pricing.feature.sourceFiles",
       ],
-      ctaKey: "pricing.cta.getQuote",
+      ctaKey: "pricing.cta.getFreeQuote",
+      isQuoteBased: true,
     },
     {
       nameKey: "pricing.socialMediaMarketing",
       badge: t("pricing.badge.trending"),
       icon: Share2,
-      price: t("pricing.startingFrom") + " $299",
-      periodKey: "pricing.perMonth",
+      price: t("pricing.getCustomQuote"),
       descriptionKey: "pricing.socialMediaMarketingDesc",
       features: [
         "pricing.feature.contentCalendar",
@@ -444,7 +442,59 @@ const PricingPage = () => {
         "pricing.feature.adManagement",
         "pricing.feature.influencerOutreach",
       ],
-      ctaKey: "pricing.cta.getQuote",
+      ctaKey: "pricing.cta.getFreeQuote",
+      isQuoteBased: true,
+    },
+    {
+      nameKey: "pricing.aiReceptionist",
+      badge: t("pricing.badge.new"),
+      icon: Phone,
+      price: t("pricing.getCustomQuote"),
+      descriptionKey: "pricing.aiReceptionistDesc",
+      features: [
+        "pricing.feature.247Availability",
+        "pricing.feature.callHandling",
+        "pricing.feature.appointmentBooking",
+        "pricing.feature.leadCapture",
+        "pricing.feature.customVoice",
+        "pricing.feature.integration",
+      ],
+      ctaKey: "pricing.cta.getFreeQuote",
+      isQuoteBased: true,
+    },
+    {
+      nameKey: "pricing.aiChatbots",
+      badge: t("pricing.badge.trending"),
+      icon: Bot,
+      price: t("pricing.getCustomQuote"),
+      descriptionKey: "pricing.aiChatbotsDesc",
+      features: [
+        "pricing.feature.automatedResponses",
+        "pricing.feature.leadQualification",
+        "pricing.feature.faqHandling",
+        "pricing.feature.multiPlatform",
+        "pricing.feature.analytics",
+        "pricing.feature.customTraining",
+      ],
+      ctaKey: "pricing.cta.getFreeQuote",
+      isQuoteBased: true,
+    },
+    {
+      nameKey: "pricing.businessConsultation",
+      badge: null,
+      icon: Building2,
+      price: t("pricing.getCustomQuote"),
+      descriptionKey: "pricing.businessConsultationDesc",
+      features: [
+        "pricing.feature.onlinePresenceAudit",
+        "pricing.feature.digitalStrategy",
+        "pricing.feature.competitorAnalysis",
+        "pricing.feature.growthPlan",
+        "pricing.feature.implementationGuidance",
+        "pricing.feature.ongoingSupport",
+      ],
+      ctaKey: "pricing.cta.getFreeQuote",
+      isQuoteBased: true,
     },
   ];
 
@@ -836,7 +886,7 @@ const PricingPage = () => {
                   {t("pricing.otherServicesDesc")}
                 </p>
               </div>
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {otherServices.map((service, index) => (
                   <ScrollReveal key={index} delay={150 + index * 50}>
                     <div className="glass rounded-2xl p-6 h-full flex flex-col relative">
@@ -861,9 +911,6 @@ const PricingPage = () => {
                         <span className="font-display text-2xl font-bold text-foreground">
                           {service.price}
                         </span>
-                        {service.periodKey && (
-                          <span className="text-muted-foreground text-sm">{t(service.periodKey)}</span>
-                        )}
                       </div>
                       
                       <p className="text-muted-foreground text-sm mb-4">
