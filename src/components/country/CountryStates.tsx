@@ -152,29 +152,6 @@ const CountryStates = ({ country }: CountryStatesProps) => {
           </div>
         </ScrollReveal>
 
-        {/* All States Tags */}
-        <ScrollReveal delay={0.3}>
-          <div className="mt-12 bg-background rounded-2xl p-8 border border-border">
-            <div className="flex items-center gap-2 mb-6">
-              <MapPin className="w-5 h-5 text-primary" />
-              <h3 className="font-display text-lg font-semibold text-foreground">
-                {t("country.allStatesHeading").replace("{count}", String(states.length))}
-              </h3>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {states.map((state) => (
-                <Link
-                  key={state.code}
-                  to={`/${language}/${country.code}/${state.code}`}
-                  className="px-3 py-1.5 bg-muted hover:bg-primary/10 rounded-full text-sm text-muted-foreground hover:text-primary border border-border hover:border-primary/30 transition-all duration-200"
-                  title={`Local SEO services throughout ${state.name}`}
-                >
-                  SEO Services {state.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </ScrollReveal>
       </div>
     </section>
   );
