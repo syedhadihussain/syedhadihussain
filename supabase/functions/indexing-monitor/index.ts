@@ -7,7 +7,7 @@ const corsHeaders = {
 };
 
 const ALERT_EMAIL = "syedhadihussain@outlook.com"; // Alert recipient
-const FROM_EMAIL = "alerts@syedhadihussain.com";
+const FROM_EMAIL = "Syed Hadi Hussain <syedhadihussain.seo@gmail.com>";
 
 interface CronJobRun {
   jobid: number;
