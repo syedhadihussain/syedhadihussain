@@ -3,6 +3,7 @@ import { lazy, Suspense } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { getCountryData, isValidCountry } from "@/lib/countries-config";
 import { isValidIndustrySlug, isValidCategorySlug } from "@/lib/industries-config";
+import { generateCountryMetaTitle, generateCountryMetaDescription } from "@/lib/seo-metadata-generator";
 import Navigation from "@/components/portfolio/Navigation";
 import Footer from "@/components/portfolio/Footer";
 import CountrySEOHead from "@/components/country/CountrySEOHead";
@@ -66,22 +67,21 @@ const CountryPage = () => {
     return <Navigate to={`/${language}/404`} replace />;
   }
 
-  // Generate unique SEO metadata to avoid cannibalization
-  const pageTitle = `Local SEO Expert in ${country.name} | Rank Higher on Google Maps & AI Search`;
+  // Generate unique SEO metadata using new generators
+  const pageTitle = generateCountryMetaTitle(country.name, country.code);
   
-  const pageDescription = `Get more customers with Local SEO services across all ${country.statesCount} states. I help ${country.name} businesses appear in Google Maps, local search results, and AI-powered search engines like ChatGPT. 7+ years experience, 150%+ traffic growth.`;
+  const pageDescription = generateCountryMetaDescription(country.name, country.code, country.statesCount);
 
   const keywords = [
-    `local SEO ${country.name}`,
-    `SEO specialist ${country.name}`,
-    `Google Maps optimization ${country.name}`,
-    `local search marketing USA`,
-    `Google Business Profile expert`,
-    `local SEO consultant America`,
-    `AI search optimization`,
-    `generative search SEO`,
-    `map ranking services`,
-    `local business SEO`,
+    `local SEO services ${country.name}`,
+    `local SEO specialist ${country.name}`,
+    `Google Maps SEO ${country.name}`,
+    `GBP optimization ${country.name}`,
+    `local search ranking USA`,
+    `local SEO expert America`,
+    `SEO freelancer ${country.name}`,
+    `map pack ranking`,
+    `near me visibility`,
     ...country.seoKeywords
   ].join(", ");
 
