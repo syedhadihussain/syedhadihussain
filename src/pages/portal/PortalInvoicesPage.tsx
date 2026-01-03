@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
 import { useInvoiceManagement } from "@/hooks/useInvoiceManagement";
@@ -411,6 +412,16 @@ const PortalInvoicesPage = () => {
                             <Download className="h-4 w-4 mr-2" />
                             Receipt
                           </a>
+                        </Button>
+                      )}
+
+                      {/* Client Pay Invoice Button */}
+                      {!isAdmin && invoice.status === 'pending' && (
+                        <Button size="sm" asChild>
+                          <Link to={`/en/portal/invoices/${invoice.id}/pay`}>
+                            <CreditCard className="h-4 w-4 mr-2" />
+                            Pay Invoice
+                          </Link>
                         </Button>
                       )}
 

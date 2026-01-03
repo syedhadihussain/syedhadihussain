@@ -58,6 +58,8 @@ const PortalProjectDetailsPage = lazy(() => import("./pages/portal/PortalProject
 const PortalTeamPage = lazy(() => import("./pages/portal/PortalTeamPage"));
 const PortalInvoicesPage = lazy(() => import("./pages/portal/PortalInvoicesPage"));
 const PortalMultiProjectPage = lazy(() => import("./pages/portal/PortalMultiProjectPage"));
+const PortalPayInvoicePage = lazy(() => import("./pages/portal/PortalPayInvoicePage"));
+const SubscriptionFormPage = lazy(() => import("./pages/SubscriptionFormPage"));
 const AdminClientsPage = lazy(() => import("./pages/portal/admin/AdminClientsPage"));
 const AdminProjectsPage = lazy(() => import("./pages/portal/admin/AdminProjectsPage"));
 const AdminRolesPage = lazy(() => import("./pages/portal/admin/AdminRolesPage"));
@@ -65,6 +67,7 @@ const AdminAnnouncementsPage = lazy(() => import("./pages/portal/admin/AdminAnno
 const AdminAnalyticsPage = lazy(() => import("./pages/portal/admin/AdminAnalyticsPage"));
 const AdminAutomationPage = lazy(() => import("./pages/portal/admin/AdminAutomationPage"));
 const AdminSitemapDashboardPage = lazy(() => import("./pages/portal/admin/AdminSitemapDashboardPage"));
+const AdminSubscriptionRequestsPage = lazy(() => import("./pages/portal/admin/AdminSubscriptionRequestsPage"));
 const ProtectedPortalRoute = lazy(() => import("./components/portal/ProtectedPortalRoute").then(m => ({ default: m.default })));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
@@ -119,6 +122,7 @@ const staticPageRoutes = [
   { path: "admin/login", element: <AdminAuthPage /> },
   { path: "portal/login", element: <PortalLoginPage /> },
   { path: "portal/onboarding", element: <PortalOnboardingPage /> },
+  { path: "subscribe", element: <SubscriptionFormPage /> },
 ];
 
 // Protected portal routes (require authentication)
@@ -130,6 +134,7 @@ const protectedPortalRoutes = [
   { path: "portal/documents", element: <PortalDocumentsPage /> },
   { path: "portal/agreements", element: <PortalAgreementsPage /> },
   { path: "portal/invoices", element: <PortalInvoicesPage /> },
+  { path: "portal/invoices/:invoiceId/pay", element: <PortalPayInvoicePage /> },
   { path: "portal/subscription", element: <PortalSubscriptionPage /> },
   { path: "portal/team", element: <PortalTeamPage /> },
   { path: "portal/settings", element: <PortalSettingsPage /> },
@@ -144,6 +149,7 @@ const adminPortalRoutes = [
   { path: "portal/admin/analytics", element: <AdminAnalyticsPage />, requireModerator: true },
   { path: "portal/admin/automation", element: <AdminAutomationPage />, requireAdmin: true },
   { path: "portal/admin/sitemaps", element: <AdminSitemapDashboardPage />, requireAdmin: true },
+  { path: "portal/admin/subscription-requests", element: <AdminSubscriptionRequestsPage />, requireAdmin: true },
 ];
 
 // Protected admin routes (require authentication + admin role)

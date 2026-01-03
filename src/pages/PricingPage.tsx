@@ -282,7 +282,7 @@ const PricingPage = () => {
                   </div>
                   
                   <Button asChild className={`w-full ${pkg.popular ? 'glow' : ''}`} variant={pkg.popular ? 'default' : 'outline'}>
-                    <Link to={`/${language}/contact`}>
+                    <Link to={`/${language}/subscribe?plan=${encodeURIComponent(t(pkg.nameKey))}&price=${encodeURIComponent(pkg.price)}&duration=${pkg.periodKey ? 'monthly' : 'one-time'}&services=${encodeURIComponent(pkg.features.slice(0, 5).map(f => t(f)).join(','))}`}>
                       {t(pkg.ctaKey)}
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </Link>
