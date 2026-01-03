@@ -25,14 +25,14 @@ const AreasWeServePage = () => {
   // Get all countries as an array
   const countries = Object.values(COUNTRIES);
   
-  // Define regions
+  // Define regions - include all countries
   const regionMapping: Record<string, string[]> = {
     "North America": ["us", "ca", "mx"],
     "Europe": ["uk", "de", "fr", "es", "it", "nl", "ie", "pt", "ch", "se", "no", "dk", "fi", "be", "lu", "lt"],
     "Asia Pacific": ["au", "nz", "sg", "my"],
-    "Middle East": ["ae", "sa", "qa", "kw", "om", "eg"],
+    "Middle East": ["ae", "sa", "qa", "kw", "om", "eg", "jo"],
     "South America": ["br"],
-    "Africa": ["sh"],
+    "Africa": ["sh", "za"],
   };
 
   const getCountryRegion = (code: string): string => {
