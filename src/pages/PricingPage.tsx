@@ -724,12 +724,19 @@ const PricingPage = () => {
                     </div>
                   </div>
                   
-                  <Button asChild size="lg" className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white glow group">
-                    <Link to={`/${language}/subscribe?plan=${encodeURIComponent(t("pricing.fullStackSeo"))}&price=$449&duration=monthly&services=${encodeURIComponent("Full Website SEO, GBP Management, Technical SEO, Weekly Calls")}`}>
-                      {t("pricing.cta.getStarted")}
-                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                  </Button>
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <Button asChild size="lg" className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white glow group">
+                      <Link to={`/${language}/subscribe?plan=${encodeURIComponent(t("pricing.fullStackSeo"))}&price=$449&duration=monthly&services=${encodeURIComponent("Full Website SEO, GBP Management, Technical SEO, Weekly Calls")}`}>
+                        {t("pricing.cta.getStarted")}
+                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                      </Link>
+                    </Button>
+                    <Button asChild size="lg" variant="outline" className="border-green-500/50 text-green-600 dark:text-green-400 hover:bg-green-500/10">
+                      <Link to={`/${language}/blog/full-stack-local-seo-result-guarantee`}>
+                        {t("pricing.learnAboutGuarantee")}
+                      </Link>
+                    </Button>
+                  </div>
                 </div>
               </div>
             </div>
