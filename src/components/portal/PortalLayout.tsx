@@ -38,6 +38,7 @@ import {
   ChevronRight,
   FileSignature,
   Globe,
+  Receipt,
 } from "lucide-react";
 
 interface PortalLayoutProps {
@@ -60,6 +61,7 @@ const PortalLayout = ({ children }: PortalLayoutProps) => {
     { icon: MessageSquare, label: "Messages", path: "/en/portal/messages" },
     { icon: FileText, label: "Documents", path: "/en/portal/documents" },
     { icon: FileSignature, label: "Agreements", path: "/en/portal/agreements" },
+    { icon: Receipt, label: "Invoices", path: "/en/portal/invoices" },
     { icon: Users, label: "Team", path: "/en/portal/team" },
     { icon: Settings, label: "Settings", path: "/en/portal/settings" },
   ];
