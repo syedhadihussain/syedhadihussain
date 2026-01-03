@@ -230,7 +230,7 @@ const handler = async (req: Request): Promise<Response> => {
     const { subject, html } = getEmailContent(type, recipientName, data);
 
     const emailResponse = await resend.emails.send({
-      from: "Syed Hadi Hussain <onboarding@resend.dev>",
+      from: "Syed Hadi Hussain <syedhadihussain.seo@gmail.com>",
       to: [recipientEmail],
       subject,
       html,
