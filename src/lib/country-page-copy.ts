@@ -1,5 +1,18 @@
 import { CountryData } from "@/lib/countries-config";
 
+/**
+ * Country Page Copy Generator
+ * 
+ * PURPOSE: Generate unique, SEO-optimized content for each country page
+ * FOCUS: Authority, coverage, scalability, international trust
+ * 
+ * Each country page targets ONE primary intent to avoid cannibalization:
+ * - Country: Authority & international trust
+ * - State: Regional dominance (handled separately)
+ * - City: Local intent & proximity (handled separately)
+ * - Industry: Niche expertise (handled separately)
+ */
+
 export type CountryPageCopy = {
   heroTitlePrefix: string;
   heroDescription: string;
@@ -35,29 +48,55 @@ export const getCountryTopAreas = (country: CountryData, max = 3) => {
   return areas.filter(Boolean);
 };
 
+// ============================================================================
+// HERO SECTION - Authority & Trust Focus
+// ============================================================================
+
 const heroTitlePrefixes = [
-  "Boost Your Local Visibility",
-  "Rank Higher on Google Maps",
-  "Turn Local Searches Into Calls",
-  "Win More Customers From Nearby Searches",
-  "Get Found First When People Search",
-  "Become the Top Choice on Google",
-  "Local SEO Services That Drive Leads",
-  "Be Visible Where Customers Decide",
-  "Outrank Competitors in Local Search",
-  "Grow Consistent Leads From Google",
+  "Local SEO Services Across",
+  "Strategic Local SEO for Businesses in",
+  "Nationwide Local SEO Solutions for",
+  "Comprehensive Local SEO Expertise in",
+  "Professional Local SEO Services in",
+  "Results-Driven Local SEO for",
+  "Full-Service Local SEO Across",
+  "Scalable Local SEO Solutions in",
+  "Trusted Local SEO Partner for",
+  "Expert Local SEO Services in",
 ];
 
-const authorityTitlePrefixes = [
-  "A Local SEO Strategy Built for Real Revenue",
-  "Straightforward Local SEO That Produces Leads",
-  "A Practical Plan to Own Your Map Pack",
-  "Local SEO Services Focused on Conversions",
-  "A Results-First Approach to Local Search",
-  "Local Visibility You Can Measure and Trust",
-  "Local SEO Built Around What Customers Actually Do",
-  "More Calls, More Bookings, Better Local Rankings",
+const heroDescriptionTemplates = [
+  `With experience spanning seven years and fifty-plus industries, I deliver Local SEO Services adapted to the unique characteristics of the {country} market. Whether you operate in one city or across multiple regions in {areasText}, my approach focuses on measurable improvements in local search visibility, qualified leads, and sustainable ranking growth.`,
+  `Businesses throughout {country} trust my Local SEO Services to improve their presence on Google Maps, build credible online profiles, and attract customers actively searching for their services. I bring a data-driven methodology refined through work with clients from {areasText} to markets worldwide.`,
+  `My Local SEO Services for {country} combine deep knowledge of search algorithms with practical insights into local consumer behavior. From {areasText} and beyond, I help businesses establish the local authority that translates into calls, bookings, and revenue.`,
+  `I work directly with {country} business owners who want more than promises. My Local SEO Services deliver measurable outcomes: improved Google Maps visibility, higher local search rankings, and the kind of leads that convert into long-term customers across {areasText}.`,
+  `Search patterns vary across {country}, and effective Local SEO must account for these regional differences. I develop strategies for businesses in {areasText} that address their specific competitive landscape while building sustainable local visibility.`,
 ];
+
+// ============================================================================
+// AUTHORITY SECTION - Expertise & Trust Focus
+// ============================================================================
+
+const authorityTitlePrefixes = [
+  "A Local SEO Strategy Built for Real Revenue in",
+  "Straightforward Local SEO That Produces Leads in",
+  "A Practical Plan to Own Your Map Pack in",
+  "Local SEO Services Focused on Conversions in",
+  "A Results-First Approach to Local Search in",
+  "Local Visibility You Can Measure and Trust in",
+  "Local SEO Built Around What Customers Actually Do in",
+  "More Calls, More Bookings, Better Local Rankings in",
+];
+
+const authoritySubtitleTemplates = [
+  `You work directly with me, not a junior team. I tailor Local SEO Services to your market in {country}, from {areasText}. We focus on visibility that turns into calls, bookings, and steady enquiries.`,
+  `Every strategy I create for {country} businesses prioritizes practical outcomes: more qualified calls, higher-quality leads, and sustainable rankings. My transparent reporting shows exactly what actions I take and how they improve your local search performance.`,
+  `I combine proven Local SEO fundamentals with adaptations specific to {country} markets. This means understanding local search patterns across {areasText}, regional competition levels, and the specific signals that influence Google's ranking decisions in your area.`,
+];
+
+// ============================================================================
+// SERVICES SECTION
+// ============================================================================
 
 const servicesTitlePrefixes = [
   "Local SEO Services for",
@@ -69,6 +108,16 @@ const servicesTitlePrefixes = [
   "Everything That Moves the Needle in",
 ];
 
+const servicesSubtitleTemplates = [
+  `From Google Business Profile optimization to local content and review growth, these Local SEO Services are designed to help you rank and convert across {areasText} in {country}.`,
+  `Each service addresses a specific aspect of local search visibility in {country}. Together, they create a comprehensive system that drives qualified leads from {areasText} and beyond.`,
+  `I focus on the Local SEO Services that directly impact your bottom line: better Map Pack positions, more phone calls, and improved visibility when {country} customers search for what you offer.`,
+];
+
+// ============================================================================
+// MAP & COVERAGE SECTION
+// ============================================================================
+
 const mapTitlePrefixes = [
   "Local SEO Coverage Across",
   "Serving Businesses Across",
@@ -76,6 +125,16 @@ const mapTitlePrefixes = [
   "Helping You Rank Across",
   "Local SEO Services Available in",
 ];
+
+const mapDescriptionTemplates = [
+  `Whether you serve one city or multiple regions, Local SEO Services should match how people search locally. I build location relevance across {areasText} so you can earn stronger rankings and more qualified leads in {country}.`,
+  `I support clients throughout {country}, adapting strategies to match local market conditions and search behavior patterns specific to each area from {areasText} to smaller communities.`,
+  `Search competition varies significantly across {country}. My Local SEO Services account for these differences, helping you capture opportunities in {areasText} while building authority that extends throughout your service area.`,
+];
+
+// ============================================================================
+// CTA SECTION
+// ============================================================================
 
 const ctaTitlePrefixes = [
   "Proof You Can Verify in",
@@ -85,60 +144,28 @@ const ctaTitlePrefixes = [
   "Case Studies and Growth Stories from",
 ];
 
+const ctaSubtitleTemplates = [
+  `No inflated promises, just real outcomes. These examples show how Local SEO Services can increase calls, visibility, and revenue for businesses in {country}.`,
+  `I share detailed case studies so you can evaluate my work before committing. My {country} clients see measurable improvements in Google Maps visibility, phone calls, and qualified leads.`,
+  `Real results from real businesses in {areasText}. Each success story demonstrates what strategic Local SEO Services can accomplish when properly executed.`,
+];
+
+// ============================================================================
+// CONTACT SECTION
+// ============================================================================
+
 const contactTitlePrefixes = [
   "Ready to Grow in",
-  "Let’s Build Your Local Visibility in",
+  "Let's Build Your Local Visibility in",
   "Get a Local SEO Plan for",
   "Talk to a Local SEO Specialist for",
   "Start Winning More Customers in",
 ];
 
-const openers = [
-  "Local customers are already looking for your service.",
-  "People don’t browse for long. They click the business that looks trustworthy and close.",
-  "In most industries, the first three results take the majority of calls.",
-  "If your business is not visible on Maps, you are missing ready-to-buy customers.",
-  "When someone needs help urgently, they choose the easiest option to contact.",
-  "Your next client is searching right now. The question is whether they find you.",
-  "Search results are crowded, but the Map Pack still has room for the right strategy.",
-  "The businesses that win locally are the ones that show up consistently and look credible.",
-  "Visibility is not enough. You need rankings that turn into phone calls and bookings.",
-  "The fastest way to grow locally is to become the obvious choice on Google.",
-];
-
-const middleBeats = [
-  "I help service businesses move from being hard to find to being the first call.",
-  "My process improves both rankings and conversion so clicks become enquiries.",
-  "I focus on the work that increases calls, direction requests, and booked appointments.",
-  "Instead of generic SEO, I build location signals that Google understands and rewards.",
-  "I optimize your Google Business Profile and your website so they support each other.",
-  "I build a clean foundation of listings, content, and reviews that holds rankings long term.",
-  "I align your online presence so Google can confidently rank you above competitors.",
-  "I create a strategy that fits how people actually search for your service.",
-  "I fix the gaps that keep you out of the Map Pack and off page one.",
-  "I turn your visibility into measurable leads with tracking and clear reporting.",
-];
-
-const localContextBeats = [
-  "That matters because search intent can change from one region to the next.",
-  "The competition level is different across regions, and your strategy should reflect that.",
-  "Different areas have different demand patterns, so we tailor the approach.",
-  "Local trust signals and relevance are what separate winners from everyone else.",
-  "Google rewards consistency, accuracy, and strong local relevance.",
-  "Your listing, reviews, and location pages need to work together to win.",
-  "If your competitors look more credible online, Google will often rank them higher.",
-  "A few high-impact improvements can change how often you show up for valuable searches.",
-];
-
-const closers = [
-  "You will know what is working because we track calls, clicks, and rankings month by month.",
-  "The goal is simple: more qualified leads from local search, without wasting ad spend.",
-  "You get a clear plan, clean execution, and reporting you can understand.",
-  "This is built for business owners who want growth, not vanity metrics.",
-  "If you are ready for consistent local leads, this is the right place to start.",
-  "Let’s turn your local presence into a predictable source of new customers.",
-  "I keep it transparent so you can see progress and ROI as we go.",
-  "It is a practical, conversion-focused approach designed to win your local market.",
+const contactSubtitleTemplates = [
+  `Tell me what you do and where you want to grow. I will share a clear Local SEO Services roadmap for {country}, including quick wins and the longer-term moves that build durable rankings.`,
+  `Schedule a consultation to discuss your specific goals in {areasText}. I'll provide actionable insights you can use whether we work together or not.`,
+  `Whether you're in {areasText} or elsewhere in {country}, I'm ready to analyze your competitive landscape and create a Local SEO strategy that delivers real business growth.`,
 ];
 
 const pick = (arr: string[], seed: number, offset: number) => arr[(seed + offset) % arr.length];
@@ -148,39 +175,41 @@ export const getCountryPageCopy = (country: CountryData): CountryPageCopy => {
   const areas = getCountryTopAreas(country, 3);
   const areasText = areas.length ? formatList(areas) : `major regions across ${country.name}`;
 
-  const heroTitlePrefix = `${pick(heroTitlePrefixes, seed, 0)} in`;
+  const heroTitlePrefix = `${pick(heroTitlePrefixes, seed, 0)}`;
+  
+  const heroDescription = pick(heroDescriptionTemplates, seed, 1)
+    .replace(/{country}/g, country.name)
+    .replace(/{areasText}/g, areasText);
 
-  const heroDescription = `Over the past seven years, I have partnered with businesses across 50+ industries—from healthcare and legal to hospitality and home services—helping them dominate local search in markets around the world. In ${country.name}, I bring that same proven expertise to your doorstep. The search landscape is evolving rapidly: AI tools like ChatGPT and Google's AI Overviews now influence how customers discover local businesses. My strategies ensure you stay ahead, visible wherever your next customer is searching.`;
+  const authorityTitle = `${pick(authorityTitlePrefixes, seed, 2)} ${country.name}`;
 
-  const authorityTitle = `${pick(authorityTitlePrefixes, seed, 2)} in ${country.name}`;
-
-  const authoritySubtitle =
-    `You work directly with me, not a junior team. I tailor Local SEO Services to your market in ${country.name}, ` +
-    `from ${areasText}. We focus on visibility that turns into calls, bookings, and steady enquiries.`;
+  const authoritySubtitle = pick(authoritySubtitleTemplates, seed, 3)
+    .replace(/{country}/g, country.name)
+    .replace(/{areasText}/g, areasText);
 
   const servicesTitle = `${pick(servicesTitlePrefixes, seed, 4)} ${country.name}`;
 
-  const servicesSubtitle =
-    `From Google Business Profile optimization to local content and review growth, ` +
-    `these Local SEO Services are designed to help you rank and convert across ${areasText} in ${country.name}.`;
+  const servicesSubtitle = pick(servicesSubtitleTemplates, seed, 5)
+    .replace(/{country}/g, country.name)
+    .replace(/{areasText}/g, areasText);
 
   const mapTitle = `${pick(mapTitlePrefixes, seed, 6)} ${country.name}`;
 
-  const mapDescription =
-    `Whether you serve one city or multiple regions, Local SEO Services should match how people search locally. ` +
-    `I build location relevance across ${areasText} so you can earn stronger rankings and more qualified leads in ${country.name}.`;
+  const mapDescription = pick(mapDescriptionTemplates, seed, 7)
+    .replace(/{country}/g, country.name)
+    .replace(/{areasText}/g, areasText);
 
   const ctaTitle = `${pick(ctaTitlePrefixes, seed, 8)} ${country.name}`;
 
-  const ctaSubtitle =
-    `No inflated promises, just real outcomes. These examples show how Local SEO Services can increase calls, ` +
-    `visibility, and revenue for businesses in ${country.name}.`;
+  const ctaSubtitle = pick(ctaSubtitleTemplates, seed, 9)
+    .replace(/{country}/g, country.name)
+    .replace(/{areasText}/g, areasText);
 
   const contactTitle = `${pick(contactTitlePrefixes, seed, 10)} ${country.name}`;
 
-  const contactSubtitle =
-    `Tell me what you do and where you want to grow. I will share a clear Local SEO Services roadmap for ${country.name}, ` +
-    `including quick wins and the longer-term moves that build durable rankings.`;
+  const contactSubtitle = pick(contactSubtitleTemplates, seed, 11)
+    .replace(/{country}/g, country.name)
+    .replace(/{areasText}/g, areasText);
 
   return {
     heroTitlePrefix,

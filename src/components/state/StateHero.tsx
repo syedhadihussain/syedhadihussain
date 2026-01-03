@@ -5,6 +5,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { StateDetailData } from "@/lib/states-config";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { getCountryData } from "@/lib/countries-config";
+import { getStatePageCopy } from "@/lib/state-page-copy";
 import profilePhoto from "@/assets/profile-photo.png";
 
 interface StateHeroProps {
@@ -15,15 +16,12 @@ interface StateHeroProps {
 const StateHero = ({ state, countryCode }: StateHeroProps) => {
   const { t, language } = useLanguage();
   
-  // Get country name for breadcrumb
+  // Get country name for breadcrumb and copy generation
   const country = getCountryData(countryCode);
   const countryName = country?.name || "Country";
-
-  // Get first 4 cities for dynamic content (avoid duplication across states)
-  const city1 = state.cities[0]?.name || "City 1";
-  const city2 = state.cities[1]?.name || "City 2";
-  const city3 = state.cities[2]?.name || "City 3";
-  const city4 = state.cities[3]?.name || "City 4";
+  
+  // Get unique, SEO-optimized copy for this state
+  const copy = getStatePageCopy(state, countryName);
 
   return (
     <section 
@@ -45,26 +43,20 @@ const StateHero = ({ state, countryCode }: StateHeroProps) => {
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full">
                 <MapPin className="w-4 h-4 text-primary" />
                 <span className="text-sm font-medium text-primary">
-                  {t("state.servingCities").replace("{count}", String(state.cities.length)).replace("{state}", state.name)}
+                  {copy.heroSubtitle}
                 </span>
               </div>
             </ScrollReveal>
 
             <ScrollReveal delay={0.1}>
               <h1 id="state-hero-heading" className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-                {t("state.heroTitle").replace("{state}", state.name)}
+                {copy.heroTitle}
               </h1>
             </ScrollReveal>
 
             <ScrollReveal delay={0.2}>
               <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
-                {t("state.heroDescription")
-                  .replace("{state}", state.name)
-                  .replace("{count}", String(state.cities.length))
-                  .replace("{city1}", city1)
-                  .replace("{city2}", city2)
-                  .replace("{city3}", city3)
-                  .replace("{city4}", city4)}
+                {copy.heroDescription}
               </p>
             </ScrollReveal>
 
@@ -106,7 +98,7 @@ const StateHero = ({ state, countryCode }: StateHeroProps) => {
                 <div className="text-center">
                   <div className="flex items-center justify-center gap-1 text-primary mb-1">
                     <Award className="w-4 h-4" />
-                    <span className="font-bold text-xl text-foreground">50+</span>
+                    <span className="font-bold text-xl text-foreground">{state.cities?.length || 50}+</span>
                   </div>
                   <span className="text-xs text-muted-foreground">{t("state.citiesServed")}</span>
                 </div>

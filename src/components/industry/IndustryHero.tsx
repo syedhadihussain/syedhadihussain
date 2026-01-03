@@ -4,6 +4,7 @@ import { ArrowRight, CheckCircle, MapPin, Star, MessageCircle } from "lucide-rea
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { IndustryData } from "@/lib/industries-config";
+import { getIndustryPageCopy } from "@/lib/industry-page-copy";
 import { Link, useLocation } from "react-router-dom";
 import { SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE } from "@/lib/i18n-config";
 
@@ -516,6 +517,9 @@ const IndustryHero = ({ industry }: IndustryHeroProps) => {
   const currentLang = SUPPORTED_LANGUAGES.includes(pathParts[0] as any) ? pathParts[0] : DEFAULT_LANGUAGE;
   const langLink = (path: string) => `/${currentLang}${path}`;
 
+  // Get unique, SEO-optimized copy for this industry
+  const copy = getIndustryPageCopy(industry);
+
   // First try to get industry-specific image, then fall back to category image
   const heroImage = INDUSTRY_HERO_IMAGES[industry.slug] || CATEGORY_FALLBACK_IMAGES[industry.categorySlug] || CATEGORY_FALLBACK_IMAGES["home-maintenance"];
 
@@ -556,14 +560,14 @@ const IndustryHero = ({ industry }: IndustryHeroProps) => {
             {/* Tagline */}
             <ScrollReveal animation="fade-up" delay={150}>
               <p className="text-xl md:text-2xl text-primary font-medium mb-4">
-                {t(industry.heroTagline)}
+                {copy.heroSubtitle}
               </p>
             </ScrollReveal>
 
             {/* Description */}
             <ScrollReveal animation="fade-up" delay={200}>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                {t(industry.heroDescription)}
+                {copy.heroDescription}
               </p>
             </ScrollReveal>
 
