@@ -11,6 +11,7 @@ import IndustryEntities from "@/components/industry/IndustryEntities";
 import IndustryFAQ from "@/components/industry/IndustryFAQ";
 import IndustryContact from "@/components/industry/IndustryContact";
 import RelatedIndustries from "@/components/industry/RelatedIndustries";
+import AreasWeServe from "@/components/industry/AreasWeServe";
 
 const IndustryPage = () => {
   const location = useLocation();
@@ -47,6 +48,7 @@ const IndustryPage = () => {
         <IndustryHero industry={industry} />
         <IndustryServices industry={industry} />
         <IndustryEntities industry={industry} />
+        <AreasWeServe industryName={industry.name} />
         <IndustryMap industry={industry} />
         <IndustryFAQ industry={industry} />
         <RelatedIndustries industry={industry} />
