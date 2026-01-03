@@ -71,29 +71,33 @@ const pick = <T>(arr: T[], seed: number, offset: number = 0): T => {
 // ============================================================================
 
 const heroTitleTemplates = [
-  "Local SEO Services Across {state}",
-  "{state} Local SEO Specialist",
-  "Regional Local SEO for {state} Businesses",
-  "Statewide Local Search Optimization in {state}",
-  "Local SEO Services for {state} Business Owners",
+  "Expert Local SEO Services in {state}",
+  "Trusted Local SEO Specialist for {state}",
+  "Results-Driven Local SEO Expert in {state}",
+  "Professional Local SEO Consultant in {state}",
+  "High-Impact Local SEO Services for {state}",
+  "Your Dedicated Local SEO Partner in {state}",
+  "Proven Local SEO Strategist for {state}",
+  "Data-Driven Local SEO Solutions in {state}",
 ];
 
 const heroSubtitleTemplates = [
-  "Regional expertise spanning {cityCount} cities and communities",
-  "Helping {state} businesses compete in local search markets",
-  "Strategic regional coverage from {city1} to {city2}",
-  "Building regional search authority across {state}",
-  "Your dedicated {state} local search partner",
+  "Google Maps optimization expert covering {cityCount}+ cities",
+  "Your GBP optimization partner from {city1} to {city2}",
+  "Dominating map pack rankings across {state}",
+  "Near me search visibility specialist for {cityCount} communities",
+  "Turning local searches into customers throughout {state}",
+  "Local search marketing expert spanning {city1} to {city2}",
 ];
 
 const heroDescriptionTemplates = [
-  `Businesses throughout {state} compete for local customers in an increasingly complex search landscape. My Local SEO Services help companies in {city1}, {city2}, {city3}, and across {cityCount}+ communities improve their Google Maps visibility, build review authority, and capture more customers actively searching for their services.`,
+  `As your {state} local SEO specialist, I help businesses across {city1}, {city2}, {city3}, and {cityCount}+ communities achieve dominant Google Maps positions. My expertise in GBP optimization, citation building, and near me search visibility delivers measurable improvements in map pack rankings and qualified customer inquiries.`,
   
-  `{state} businesses face distinct competitive challenges that require region-specific strategies. I work with service providers, retailers, and professionals across the state to improve local search performance through data-driven Google Business Profile optimization, citation building, and content strategies tailored to {state} markets.`,
+  `I provide comprehensive local search marketing services for {state} businesses, specializing in Google Business Profile management, review generation strategies, and NAP consistency optimization. From {city1} to {city2}, my data-driven approach builds the local authority that converts searchers into loyal customers.`,
   
-  `Whether you operate in a single {state} city or serve customers across multiple locations, my approach to Local SEO addresses the regional factors that influence search rankings. I analyze competitive landscapes in {city1}, {city2}, {city3}, and beyond to develop strategies that improve visibility where your customers are searching.`,
+  `{state} businesses trust my local SEO expertise to improve their visibility in Google Maps, capture near me searches, and build the review profiles that influence purchasing decisions. I combine strategic GBP optimization with targeted citation development to dominate local search results across {cityCount}+ cities.`,
   
-  `My work with {state} businesses combines technical local search expertise with practical business understanding. I focus on improvements that directly impact customer acquisition: better Google Maps placement, stronger review profiles, accurate citations, and the trust signals that influence local purchasing decisions.`,
+  `My local SEO services for {state} focus on the ranking signals that matter: Google Business Profile optimization, consistent citations, strategic review management, and local content that resonates with customers in {city1}, {city2}, {city3}, and throughout the region. Every strategy prioritizes measurable business outcomes.`,
 ];
 
 // ============================================================================
