@@ -26,9 +26,9 @@ const IndustriesWeServe = ({ locationName }: IndustriesWeServeProps) => {
     }))
   );
 
-  // Get one representative industry per category for the compact view
-  const categoryRepresentatives = INDUSTRY_CATEGORIES.map(category => ({
-    slug: category.industries[0],
+  // Get all categories for the category links (not individual industries)
+  const allCategories = INDUSTRY_CATEGORIES.map(category => ({
+    slug: category.slug, // Use category slug, not industry slug
     name: category.name,
     icon: category.icon,
   }));
@@ -56,18 +56,18 @@ const IndustriesWeServe = ({ locationName }: IndustriesWeServeProps) => {
         <ScrollReveal delay={0.2}>
           <nav aria-label="Industries navigation">
             <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-              {categoryRepresentatives.map((industry) => (
-                <li key={industry.slug}>
+              {allCategories.map((category) => (
+                <li key={category.slug}>
                   <Link
-                    to={`/${language}/local-seo-services-for-${industry.slug}`}
+                    to={`/${language}/local-seo-for-${category.slug}`}
                     className="flex items-center gap-2 p-3 bg-card rounded-lg border border-border hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 group"
-                    title={`Local SEO services for ${industry.name}`}
+                    title={`Local SEO services for ${category.name}`}
                   >
                     <span className="text-lg flex-shrink-0" aria-hidden="true">
-                      {industry.icon}
+                      {category.icon}
                     </span>
                     <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors truncate">
-                      {industry.name} SEO
+                      {category.name} SEO
                     </span>
                   </Link>
                 </li>
