@@ -70,55 +70,112 @@ const pick = <T>(arr: T[], seed: number, offset: number = 0): T => {
   return arr[(seed + offset) % arr.length];
 };
 
+// Generate unique index based on city characteristics
+const getUniqueCityIndex = (cityName: string, stateCode: string, arrayLength: number, offset: number = 0): number => {
+  const combined = cityName + stateCode + offset.toString();
+  let hash = 0;
+  for (let i = 0; i < combined.length; i++) {
+    hash = ((hash << 5) - hash + combined.charCodeAt(i)) | 0;
+  }
+  return Math.abs(hash) % arrayLength;
+};
+
 // ============================================================================
-// HERO SECTION - Local Intent & Proximity Focus
+// HERO SECTION - Unique H1 per City with Power Keywords
 // ============================================================================
 
-const heroTitleTemplates = [
-  "Premier Local SEO Services in {city}, {stateAbbr}",
-  "Award-Winning Local SEO Services for {city}",
-  "Dominate Local Search | Local SEO Services {city}",
-  "Boost Your Rankings | Local SEO Services in {city}, {stateAbbr}",
-  "Get Found First | Local SEO Services {city}",
-  "Grow Faster with Local SEO Services in {city}",
-  "Outrank Competitors | Local SEO Services {city}, {stateAbbr}",
-  "Maximize Visibility | Local SEO Services in {city}",
-  "Drive More Leads | Local SEO Services {city}",
-  "Accelerate Growth | Local SEO Services in {city}, {stateAbbr}",
-  "Capture Local Customers | Local SEO Services {city}",
-  "Transform Your Reach | Local SEO Services in {city}",
-  "Unlock Local Markets | Local SEO Services {city}, {stateAbbr}",
-  "Scale Your Business | Local SEO Services in {city}",
-  "Elevate Your Presence | Local SEO Services {city}",
-  "Supercharge Rankings | Local SEO Services in {city}, {stateAbbr}",
-  "Conquer Local Search | Local SEO Services {city}",
-  "Dominate the Map Pack | Local SEO Services in {city}",
-  "Crush the Competition | Local SEO Services {city}, {stateAbbr}",
-  "Own Your Market | Local SEO Services in {city}",
+// Power keyword prefixes for cities
+const cityPowerPrefixes = [
+  "Premier", "Award-Winning", "Top-Rated", "Elite", "Leading", "Proven",
+  "Expert", "Professional", "Certified", "Trusted", "Strategic", "Results-Driven",
+  "High-Performance", "Advanced", "Comprehensive", "Full-Service", "Dedicated",
+  "Specialized", "Innovative", "Data-Driven", "ROI-Focused", "Growth-Oriented",
+  "Best-in-Class", "Industry-Leading", "Customer-Focused", "Performance-Based"
 ];
 
-const heroSubtitleTemplates = [
-  "Your trusted local SEO specialist for Google Maps dominance in {city}",
-  "Expert local SEO freelancer delivering map pack rankings for {city} businesses",
-  "Professional local SEO consultant maximizing near me search visibility locally",
-  "Dedicated GBP SEO optimization expert helping {city} businesses capture customers",
-  "Results-focused local SEO expert building citation authority in your area",
-  "Strategic local search marketing specialist driving qualified {city} leads",
-  "Proven local SEO strategist transforming {city} visibility into revenue",
-  "Your neighborhood local SEO partner for lasting search success",
+const cityIntentModifiers = [
+  "Dominate Local Search", "Boost Your Rankings", "Get Found First", "Grow Faster",
+  "Outrank Competitors", "Maximize Visibility", "Drive More Leads", "Accelerate Growth",
+  "Capture Local Customers", "Transform Your Reach", "Unlock Local Markets", "Scale Your Business",
+  "Elevate Your Presence", "Supercharge Rankings", "Conquer Local Search", "Own Your Market",
+  "Build Market Authority", "Increase Local Traffic", "Generate More Calls", "Win More Customers",
+  "Dominate the Map Pack", "Crush the Competition", "Lead Your Industry", "Expand Your Reach"
 ];
 
-const heroDescriptionTemplates = [
-  `Partner with a proven {city} local SEO specialist who delivers measurable results. I combine expert Google Business Profile optimization, strategic citation building, and advanced map pack ranking techniques to help your business dominate local search. As a local SEO expert with 7+ years experience, I focus on near me search visibility, review generation strategies, and NAP consistency that converts local searchers into loyal customers throughout {city}.`,
+// Generate unique H1 for each city
+const generateCityHeroTitle = (cityName: string, stateCode: string, stateAbbr: string): string => {
+  const prefixIndex = getUniqueCityIndex(cityName, stateCode, cityPowerPrefixes.length, 1);
+  const modifierIndex = getUniqueCityIndex(stateCode, cityName, cityIntentModifiers.length, 2);
   
-  `As your dedicated {city} local SEO freelancer, I specialize in the strategies that drive real business growth: GBP SEO optimization, local citation development, and map pack ranking improvements. My comprehensive local SEO services help businesses capture high-intent near me searches, build review authority, and establish the local presence that outranks every competitor in {city}.`,
+  // Use multiple pattern variations based on city name characteristics
+  const patternSelector = cityName.length + stateCode.charCodeAt(0);
   
-  `{city} businesses trust my expertise as a local SEO consultant to achieve dominant Google Maps visibility and capture qualified local leads. I deliver strategic GBP optimization, professional citation management, and proven review generation systems that improve map pack rankings. Every strategy focuses on the near me search visibility and local authority signals that convert searchers into paying customers.`,
+  if (patternSelector % 4 === 0) {
+    return `${cityPowerPrefixes[prefixIndex]} Local SEO Services in ${cityName}, ${stateAbbr}`;
+  } else if (patternSelector % 4 === 1) {
+    return `${cityIntentModifiers[modifierIndex]} | Local SEO Services ${cityName}`;
+  } else if (patternSelector % 4 === 2) {
+    return `${cityPowerPrefixes[prefixIndex]} Local SEO Services for ${cityName} Businesses`;
+  } else {
+    return `${cityIntentModifiers[modifierIndex]} with Local SEO Services in ${cityName}, ${stateAbbr}`;
+  }
+};
+
+// Generate unique subtitle for each city
+const generateCitySubtitle = (cityName: string, stateCode: string): string => {
+  const subtitleIndex = getUniqueCityIndex(cityName, stateCode, 16, 3);
   
-  `Elevate your {city} business with data-driven local SEO services from an experienced specialist. I focus on the ranking factors that matter most: Google Business Profile excellence, consistent NAP citations, strategic review management, and local content authority. As a local SEO expert, my proven approach delivers measurable improvements in map pack positions, near me search visibility, and customer acquisition for businesses throughout {city}, {stateAbbr}.`,
+  const subtitles = [
+    `Your trusted local SEO specialist for Google Maps dominance in ${cityName}`,
+    `Expert local SEO freelancer delivering top map pack rankings for ${cityName} businesses`,
+    `Professional local SEO consultant maximizing near me search visibility in ${cityName}`,
+    `Dedicated GBP SEO optimization expert helping ${cityName} businesses capture customers`,
+    `Results-focused local SEO expert building citation authority in ${cityName}`,
+    `Strategic local search marketing specialist driving qualified ${cityName} leads`,
+    `Proven local SEO strategist transforming ${cityName} visibility into revenue`,
+    `Your ${cityName} local SEO partner for lasting Google Maps success`,
+    `Certified local SEO professional boosting ${cityName} businesses in local search`,
+    `Data-driven local SEO expert optimizing ${cityName} business visibility`,
+    `Full-service local SEO specialist serving ${cityName} and surrounding areas`,
+    `ROI-focused local SEO consultant for ${cityName} market domination`,
+    `${cityName} local SEO expert delivering measurable ranking improvements`,
+    `Neighborhood-focused local SEO specialist for ${cityName} business growth`,
+    `Experienced local SEO freelancer helping ${cityName} companies rank higher`,
+    `Your go-to local SEO consultant for ${cityName} Google Maps optimization`,
+  ];
   
-  `Transform your {city} online presence with professional local SEO services designed to dominate. As a skilled local SEO freelancer, I optimize your GBP listing, build authoritative citations, and implement review strategies that boost map pack rankings. My expertise in near me search optimization and local visibility helps your business capture customers actively searching in {city}.`,
-];
+  return subtitles[subtitleIndex];
+};
+
+// Generate unique description for each city with all semantic keywords
+const generateCityDescription = (cityName: string, stateCode: string, stateAbbr: string): string => {
+  const descIndex = getUniqueCityIndex(stateCode, cityName, 10, 4);
+  
+  const descriptions = [
+    `Partner with a proven ${cityName} local SEO specialist who delivers measurable results. I combine expert Google Business Profile optimization, strategic citation building, and advanced map pack ranking techniques to help your business dominate local search. As a local SEO expert with 7+ years experience, I focus on near me search visibility, review generation strategies, and NAP consistency that converts local searchers into loyal customers throughout ${cityName}.`,
+    
+    `As your dedicated ${cityName} local SEO freelancer, I specialize in strategies that drive real business growth: GBP SEO optimization, local citation development, and map pack ranking improvements. My comprehensive local SEO services help businesses capture high-intent near me searches, build review authority, and establish the local presence that outranks every competitor in ${cityName}, ${stateAbbr}.`,
+    
+    `${cityName} businesses trust my expertise as a local SEO consultant to achieve dominant Google Maps visibility and capture qualified local leads. I deliver strategic GBP optimization, professional citation management, and proven review generation systems that improve map pack rankings. Every strategy focuses on near me search visibility and local authority signals that convert searchers into paying customers.`,
+    
+    `Elevate your ${cityName} business with data-driven local SEO services from an experienced specialist. I focus on ranking factors that matter most: Google Business Profile excellence, consistent NAP citations, strategic review management, and local content authority. As a local SEO expert in ${stateAbbr}, my proven approach delivers measurable improvements in map pack positions, near me search visibility, and customer acquisition.`,
+    
+    `Transform your ${cityName} online presence with professional local SEO services designed to dominate. As a skilled local SEO freelancer, I optimize your GBP listing, build authoritative citations, and implement review strategies that boost map pack rankings. My expertise in near me search optimization helps your ${cityName} business capture customers actively searching for your services.`,
+    
+    `Discover why ${cityName} businesses choose me as their local SEO expert for sustainable growth. I combine GBP optimization mastery, strategic citation building, and proven near me search strategies to improve your visibility. My local SEO specialist approach focuses on map pack dominance, review authority, and local signals that drive qualified customer inquiries in ${cityName}, ${stateAbbr}.`,
+    
+    `Unlock the full potential of your ${cityName} business with targeted local SEO services. As your local SEO consultant, I optimize Google Business Profiles, build citation networks, and implement strategies that dominate map pack results. From near me searches to GBP optimization, every tactic generates more calls, visits, and revenue for your ${cityName} business.`,
+    
+    `Grow your ${cityName} customer base with expert local SEO services tailored to your market. As a local SEO specialist, I focus on GBP SEO optimization, local citation authority, map pack ranking improvements, and near me search visibility. My freelancer approach means direct communication, transparent reporting, and strategies that prioritize your business growth in ${cityName}.`,
+    
+    `Achieve top Google Maps rankings in ${cityName} with my proven local SEO expertise. I help businesses dominate local search through strategic GBP optimization, review generation systems, and citation building that strengthens your local authority. As a dedicated local SEO freelancer, I deliver near me search visibility and map pack positions that convert to real customers.`,
+    
+    `Stand out in ${cityName} local search with comprehensive SEO services from a certified specialist. I focus on Google Business Profile optimization, strategic citation development, and review authority building that improves your map pack rankings. My local SEO expert approach prioritizes near me visibility, NAP consistency, and the local signals that drive ${cityName} customer acquisition.`,
+  ];
+  
+  return descriptions[descIndex];
+};
+
 
 // ============================================================================
 // MAPS SECTION - Google Maps Dominance
@@ -362,9 +419,9 @@ export const getCityPageCopy = (
       .replace(/{stateAbbr}/g, city.stateAbbreviation || state.code.toUpperCase());
 
   return {
-    heroTitle: replacements(pick(heroTitleTemplates, seed, 0)),
-    heroSubtitle: replacements(pick(heroSubtitleTemplates, seed, 1)),
-    heroDescription: replacements(pick(heroDescriptionTemplates, seed, 2)),
+    heroTitle: generateCityHeroTitle(city.name, state.code, city.stateAbbreviation || state.code.toUpperCase()),
+    heroSubtitle: generateCitySubtitle(city.name, state.code),
+    heroDescription: generateCityDescription(city.name, state.code, city.stateAbbreviation || state.code.toUpperCase()),
     mapsTitle: replacements(pick(mapsTitleTemplates, seed, 3)),
     mapsDescription: replacements(pick(mapsDescriptionTemplates, seed, 4)),
     mapsPoints: getMapsPoints(city),
