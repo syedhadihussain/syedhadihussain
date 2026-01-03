@@ -3,7 +3,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from './useAuth';
 import { useToast } from '@/hooks/use-toast';
 
-interface EnhancedAgreement {
+export interface EnhancedAgreement {
   id: string;
   project_id: string;
   title: string;
@@ -13,7 +13,7 @@ interface EnhancedAgreement {
   is_locked: boolean;
   client_can_edit: boolean;
   terms_and_conditions: string | null;
-  services_included: string[];
+  services_included: any[];
   payment_amount: number | null;
   payment_schedule: string | null;
   extra_services_rules: string | null;
@@ -24,6 +24,8 @@ interface EnhancedAgreement {
   viewed_at: string | null;
   signed_at: string | null;
   signature_data: string | null;
+  signer_ip: string | null;
+  signer_user_agent: string | null;
   created_at: string;
   created_by: string;
 }
@@ -77,13 +79,15 @@ export const useEnhancedAgreements = () => {
           is_locked: item.is_locked ?? false,
           client_can_edit: item.client_can_edit ?? false,
           terms_and_conditions: item.terms_and_conditions ?? null,
-          services_included: item.services_included ?? [],
+          services_included: (item.services_included as any[]) ?? [],
           payment_amount: item.payment_amount ?? null,
           payment_schedule: item.payment_schedule ?? null,
           extra_services_rules: item.extra_services_rules ?? null,
           late_payment_terms: item.late_payment_terms ?? null,
           agreement_type: item.agreement_type ?? 'primary',
           parent_agreement_id: item.parent_agreement_id ?? null,
+          signer_ip: item.signer_ip ?? null,
+          signer_user_agent: item.signer_user_agent ?? null,
         })) as EnhancedAgreement[];
         setAgreements(enhancedData);
       }

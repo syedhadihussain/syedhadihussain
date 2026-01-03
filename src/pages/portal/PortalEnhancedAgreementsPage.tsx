@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Helmet } from "react-helmet-async";
-import { useEnhancedAgreements } from "@/hooks/useEnhancedAgreements";
+import { useEnhancedAgreements, EnhancedAgreement } from "@/hooks/useEnhancedAgreements";
 import { useAuth } from "@/hooks/useAuth";
 import { supabase } from "@/integrations/supabase/client";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -12,10 +12,8 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Switch } from "@/components/ui/switch";
-import SignaturePad from "@/components/portal/SignaturePad";
+import { AgreementDetailView } from "@/components/portal/agreement";
 import {
   FileSignature,
   Clock,
@@ -23,24 +21,28 @@ import {
   XCircle,
   Eye,
   Send,
-  History,
   FileText,
   AlertCircle,
   Lock,
-  Unlock,
-  Edit,
   Plus,
   DollarSign,
   Calendar,
   ListChecks,
   Shield,
   Download,
+  ChevronRight,
 } from "lucide-react";
 import { format } from "date-fns";
 
 interface Project {
   id: string;
   name: string;
+}
+
+interface ClientProfile {
+  id: string;
+  user_id: string;
+  company_name: string | null;
 }
 
 const PortalEnhancedAgreementsPage = () => {
@@ -50,20 +52,13 @@ const PortalEnhancedAgreementsPage = () => {
     loading,
     fetchAgreements,
     createAgreement,
-    updateAgreement,
-    lockAgreement,
-    toggleClientEdit,
-    signAgreement,
-    addSecondaryAgreement
   } = useEnhancedAgreements();
 
   const [projects, setProjects] = useState<Project[]>([]);
-  const [selectedAgreement, setSelectedAgreement] = useState<string | null>(null);
+  const [clientProfile, setClientProfile] = useState<ClientProfile | null>(null);
+  const [clientName, setClientName] = useState("");
+  const [selectedAgreementId, setSelectedAgreementId] = useState<string | null>(null);
   const [showCreateDialog, setShowCreateDialog] = useState(false);
-  const [showSignDialog, setShowSignDialog] = useState(false);
-  const [showAddServiceDialog, setShowAddServiceDialog] = useState(false);
-  const [auditLog, setAuditLog] = useState<any[]>([]);
-  const [showAuditDialog, setShowAuditDialog] = useState(false);
 
   // Form state for creating agreement
   const [newAgreement, setNewAgreement] = useState({
@@ -81,10 +76,37 @@ const PortalEnhancedAgreementsPage = () => {
 
   const [newService, setNewService] = useState('');
 
+  const fetchClientInfo = useCallback(async () => {
+    if (!user) return;
+
+    // Get user's profile name
+    const { data: profile } = await supabase
+      .from("profiles")
+      .select("full_name, email")
+      .eq("id", user.id)
+      .maybeSingle();
+
+    if (profile) {
+      setClientName(profile.full_name || profile.email || "Client");
+    }
+
+    // Get client profile
+    const { data: clientProfileData } = await supabase
+      .from("client_profiles")
+      .select("id, user_id, company_name")
+      .eq("user_id", user.id)
+      .maybeSingle();
+
+    if (clientProfileData) {
+      setClientProfile(clientProfileData);
+    }
+  }, [user]);
+
   useEffect(() => {
     fetchAgreements();
     fetchProjects();
-  }, [fetchAgreements]);
+    fetchClientInfo();
+  }, [fetchAgreements, fetchClientInfo]);
 
   const fetchProjects = async () => {
     if (!user) return;
@@ -147,28 +169,6 @@ const PortalEnhancedAgreementsPage = () => {
     }
   };
 
-  const handleSign = async (signatureData: string) => {
-    if (!selectedAgreement) return;
-    
-    const success = await signAgreement(selectedAgreement, signatureData);
-    if (success) {
-      setShowSignDialog(false);
-      setSelectedAgreement(null);
-      fetchAgreements();
-    }
-  };
-
-  const handleViewAuditLog = async (agreementId: string) => {
-    const { data } = await supabase
-      .from("agreement_audit_log")
-      .select("*")
-      .eq("agreement_id", agreementId)
-      .order("created_at", { ascending: true });
-
-    setAuditLog(data || []);
-    setShowAuditDialog(true);
-  };
-
   const addServiceToList = () => {
     if (newService.trim()) {
       setNewAgreement({
@@ -205,7 +205,7 @@ const PortalEnhancedAgreementsPage = () => {
           {status.charAt(0).toUpperCase() + status.slice(1)}
         </Badge>
         {isLocked && (
-          <Badge variant="outline" className="flex items-center gap-1">
+          <Badge variant="outline" className="flex items-center gap-1 bg-primary/10">
             <Lock className="h-3 w-3" />
             Locked
           </Badge>
@@ -214,7 +214,31 @@ const PortalEnhancedAgreementsPage = () => {
     );
   };
 
-  const selectedAgreementData = agreements.find((a) => a.id === selectedAgreement);
+  // Find selected agreement
+  const selectedAgreement = agreements.find((a) => a.id === selectedAgreementId);
+
+  // If viewing a specific agreement
+  if (selectedAgreement) {
+    return (
+      <>
+        <Helmet>
+          <title>{selectedAgreement.title} | Agreement | Client Portal</title>
+          <meta name="robots" content="noindex, nofollow" />
+        </Helmet>
+
+        <AgreementDetailView
+          agreement={selectedAgreement}
+          clientName={clientName}
+          companyName={clientProfile?.company_name || null}
+          isAdmin={isAdmin}
+          isClient={!isAdmin}
+          userId={user?.id || ""}
+          onBack={() => setSelectedAgreementId(null)}
+          onRefresh={fetchAgreements}
+        />
+      </>
+    );
+  }
 
   // Group agreements by type
   const primaryAgreements = agreements.filter(a => a.agreement_type === 'primary');
@@ -407,22 +431,11 @@ const PortalEnhancedAgreementsPage = () => {
                 </h2>
                 <div className="grid gap-4">
                   {primaryAgreements.map((agreement) => (
-                    <AgreementCard
+                    <AgreementListCard
                       key={agreement.id}
                       agreement={agreement}
-                      isAdmin={isAdmin}
-                      onSign={() => {
-                        setSelectedAgreement(agreement.id);
-                        setShowSignDialog(true);
-                      }}
-                      onViewAudit={() => handleViewAuditLog(agreement.id)}
-                      onToggleEdit={(canEdit) => toggleClientEdit(agreement.id, canEdit)}
-                      onLock={() => lockAgreement(agreement.id)}
-                      onAddService={() => {
-                        setSelectedAgreement(agreement.id);
-                        setShowAddServiceDialog(true);
-                      }}
-                      fetchAgreements={fetchAgreements}
+                      getStatusBadge={getStatusBadge}
+                      onClick={() => setSelectedAgreementId(agreement.id)}
                     />
                   ))}
                 </div>
@@ -438,18 +451,11 @@ const PortalEnhancedAgreementsPage = () => {
                 </h2>
                 <div className="grid gap-4">
                   {secondaryAgreements.map((agreement) => (
-                    <AgreementCard
+                    <AgreementListCard
                       key={agreement.id}
                       agreement={agreement}
-                      isAdmin={isAdmin}
-                      onSign={() => {
-                        setSelectedAgreement(agreement.id);
-                        setShowSignDialog(true);
-                      }}
-                      onViewAudit={() => handleViewAuditLog(agreement.id)}
-                      onToggleEdit={(canEdit) => toggleClientEdit(agreement.id, canEdit)}
-                      onLock={() => lockAgreement(agreement.id)}
-                      fetchAgreements={fetchAgreements}
+                      getStatusBadge={getStatusBadge}
+                      onClick={() => setSelectedAgreementId(agreement.id)}
                     />
                   ))}
                 </div>
@@ -457,125 +463,31 @@ const PortalEnhancedAgreementsPage = () => {
             )}
           </div>
         )}
-
-        {/* Sign Dialog */}
-        <Dialog open={showSignDialog} onOpenChange={setShowSignDialog}>
-          <DialogContent className="max-w-lg">
-            <DialogHeader>
-              <DialogTitle>Sign Agreement</DialogTitle>
-              <DialogDescription>
-                Please review the agreement and provide your signature below.
-                This action is legally binding and will lock the agreement.
-              </DialogDescription>
-            </DialogHeader>
-            {selectedAgreementData && (
-              <div className="space-y-4">
-                <div className="p-4 bg-muted rounded-lg space-y-3">
-                  <p className="font-medium">{selectedAgreementData.title}</p>
-                  
-                  {selectedAgreementData.services_included && selectedAgreementData.services_included.length > 0 && (
-                    <div>
-                      <p className="text-sm font-medium text-muted-foreground mb-1">Services Included:</p>
-                      <div className="flex flex-wrap gap-1">
-                        {selectedAgreementData.services_included.map((s, i) => (
-                          <Badge key={i} variant="outline" className="text-xs">{String(s)}</Badge>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  {selectedAgreementData.payment_amount && (
-                    <p className="text-sm">
-                      <span className="font-medium">Payment:</span> ${selectedAgreementData.payment_amount}
-                      {selectedAgreementData.payment_schedule && ` - ${selectedAgreementData.payment_schedule}`}
-                    </p>
-                  )}
-
-                  {selectedAgreementData.terms_and_conditions && (
-                    <div className="mt-2">
-                      <p className="text-sm font-medium text-muted-foreground mb-1">Terms & Conditions:</p>
-                      <ScrollArea className="h-24 rounded border p-2 text-xs">
-                        {selectedAgreementData.terms_and_conditions}
-                      </ScrollArea>
-                    </div>
-                  )}
-
-                  <p className="text-sm text-muted-foreground">
-                    By signing, you agree to all terms and conditions outlined in this agreement.
-                  </p>
-                </div>
-                <SignaturePad onSave={handleSign} />
-              </div>
-            )}
-          </DialogContent>
-        </Dialog>
-
-        {/* Audit Log Dialog */}
-        <Dialog open={showAuditDialog} onOpenChange={setShowAuditDialog}>
-          <DialogContent className="max-w-lg">
-            <DialogHeader>
-              <DialogTitle>Audit Log</DialogTitle>
-              <DialogDescription>
-                Complete history of actions taken on this agreement.
-              </DialogDescription>
-            </DialogHeader>
-            <ScrollArea className="max-h-96">
-              <div className="space-y-3">
-                {auditLog.map((entry) => (
-                  <div
-                    key={entry.id}
-                    className="flex items-start gap-3 p-3 bg-muted rounded-lg"
-                  >
-                    <History className="h-4 w-4 mt-0.5 text-muted-foreground" />
-                    <div className="flex-1 min-w-0">
-                      <p className="font-medium text-sm">
-                        {entry.action.charAt(0).toUpperCase() + entry.action.slice(1)}
-                      </p>
-                      <p className="text-xs text-muted-foreground">
-                        {format(new Date(entry.created_at), "MMM d, yyyy 'at' h:mm a")}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </ScrollArea>
-          </DialogContent>
-        </Dialog>
       </div>
     </>
   );
 };
 
-// Agreement Card Component
-interface AgreementCardProps {
+// Agreement List Card Component
+interface AgreementListCardProps {
   agreement: any;
-  isAdmin: boolean;
-  onSign: () => void;
-  onViewAudit: () => void;
-  onToggleEdit: (canEdit: boolean) => void;
-  onLock: () => void;
-  onAddService?: () => void;
-  fetchAgreements: () => void;
+  getStatusBadge: (status: string, isLocked: boolean) => React.ReactNode;
+  onClick: () => void;
 }
 
-const AgreementCard = ({
-  agreement,
-  isAdmin,
-  onSign,
-  onViewAudit,
-  onToggleEdit,
-  onLock,
-  onAddService,
-  fetchAgreements
-}: AgreementCardProps) => {
-  const canClientSign = !agreement.is_locked && agreement.status !== 'signed' && agreement.status !== 'rejected';
-  const canClientEdit = agreement.client_can_edit && !agreement.is_locked;
-
+const AgreementListCard = ({ agreement, getStatusBadge, onClick }: AgreementListCardProps) => {
+  const servicesIncluded = Array.isArray(agreement.services_included) ? agreement.services_included : [];
+  
   return (
-    <Card className={agreement.is_locked ? "border-primary/20" : ""}>
+    <Card 
+      className={`cursor-pointer transition-all hover:shadow-md hover:border-primary/50 ${
+        agreement.is_locked ? "border-primary/20" : ""
+      }`}
+      onClick={onClick}
+    >
       <CardHeader className="pb-3">
         <div className="flex items-start justify-between">
-          <div className="space-y-1">
+          <div className="space-y-1 flex-1">
             <CardTitle className="text-lg flex items-center gap-2">
               <FileText className="h-5 w-5" />
               {agreement.title}
@@ -588,32 +500,29 @@ const AgreementCard = ({
             )}
           </div>
           <div className="flex items-center gap-2">
-            <Badge variant={agreement.status === 'signed' ? 'default' : 'outline'} className="flex items-center gap-1">
-              {agreement.status === 'signed' ? <CheckCircle className="h-3 w-3" /> : <Clock className="h-3 w-3" />}
-              {(agreement.status || 'pending').charAt(0).toUpperCase() + (agreement.status || 'pending').slice(1)}
-            </Badge>
-            {agreement.is_locked && (
-              <Badge variant="secondary" className="flex items-center gap-1">
-                <Lock className="h-3 w-3" />
-                Locked
-              </Badge>
-            )}
+            {getStatusBadge(agreement.status || 'pending', agreement.is_locked)}
+            <ChevronRight className="h-5 w-5 text-muted-foreground" />
           </div>
         </div>
       </CardHeader>
 
       <CardContent>
-        {/* Services Included */}
-        {agreement.services_included && agreement.services_included.length > 0 && (
+        {/* Services Preview */}
+        {servicesIncluded.length > 0 && (
           <div className="mb-4">
             <p className="text-sm font-medium text-muted-foreground mb-2 flex items-center gap-1">
               <ListChecks className="h-4 w-4" />
-              Services Included
+              Services ({servicesIncluded.length})
             </p>
             <div className="flex flex-wrap gap-2">
-              {agreement.services_included.map((service: string, i: number) => (
-                <Badge key={i} variant="outline">{service}</Badge>
+              {servicesIncluded.slice(0, 3).map((service: any, i: number) => (
+                <Badge key={i} variant="outline">
+                  {typeof service === 'string' ? service : service.name}
+                </Badge>
               ))}
+              {servicesIncluded.length > 3 && (
+                <Badge variant="secondary">+{servicesIncluded.length - 3} more</Badge>
+              )}
             </div>
           </div>
         )}
@@ -634,31 +543,10 @@ const AgreementCard = ({
           </div>
         )}
 
-        {/* Terms Preview */}
-        {agreement.terms_and_conditions && (
-          <div className="mb-4 p-3 bg-muted rounded-lg">
-            <p className="text-sm font-medium mb-1">Terms & Conditions</p>
-            <p className="text-xs text-muted-foreground line-clamp-2">
-              {agreement.terms_and_conditions}
-            </p>
-          </div>
-        )}
-
-        {/* Late Payment Terms */}
-        {agreement.late_payment_terms && (
-          <div className="mb-4 p-3 bg-red-50 dark:bg-red-900/10 rounded-lg border border-red-200 dark:border-red-900/20">
-            <p className="text-sm font-medium text-red-700 dark:text-red-400 mb-1 flex items-center gap-1">
-              <AlertCircle className="h-4 w-4" />
-              Late Payment Policy
-            </p>
-            <p className="text-xs text-red-600 dark:text-red-300">
-              {agreement.late_payment_terms}
-            </p>
-          </div>
-        )}
+        <Separator className="my-3" />
 
         {/* Dates */}
-        <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-4">
+        <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
           <div>
             <span className="font-medium">Created:</span>{" "}
             {format(new Date(agreement.created_at), "MMM d, yyyy")}
@@ -666,88 +554,8 @@ const AgreementCard = ({
           {agreement.signed_at && (
             <div>
               <span className="font-medium">Signed:</span>{" "}
-              {format(new Date(agreement.signed_at), "MMM d, yyyy h:mm a")}
+              {format(new Date(agreement.signed_at), "MMM d, yyyy")}
             </div>
-          )}
-        </div>
-
-        <Separator className="my-4" />
-
-        {/* Actions */}
-        <div className="flex flex-wrap gap-2">
-          {agreement.document_url && agreement.document_url !== '#' && (
-            <Button variant="outline" size="sm" asChild>
-              <a href={agreement.document_url} target="_blank" rel="noopener noreferrer">
-                <Download className="h-4 w-4 mr-2" />
-                View Document
-              </a>
-            </Button>
-          )}
-
-          {canClientSign && !isAdmin && (
-            <Button size="sm" onClick={onSign}>
-              <FileSignature className="h-4 w-4 mr-2" />
-              Sign Agreement
-            </Button>
-          )}
-
-          {agreement.signature_data && (
-            <Dialog>
-              <DialogTrigger asChild>
-                <Button variant="ghost" size="sm">
-                  <CheckCircle className="h-4 w-4 mr-2" />
-                  View Signature
-                </Button>
-              </DialogTrigger>
-              <DialogContent>
-                <DialogHeader>
-                  <DialogTitle>Digital Signature</DialogTitle>
-                  <DialogDescription>
-                    Signature captured on {agreement.signed_at && format(new Date(agreement.signed_at), "MMMM d, yyyy 'at' h:mm a")}
-                  </DialogDescription>
-                </DialogHeader>
-                <div className="border rounded-lg p-4 bg-background">
-                  <img
-                    src={agreement.signature_data}
-                    alt="Digital signature"
-                    className="max-w-full h-auto"
-                  />
-                </div>
-              </DialogContent>
-            </Dialog>
-          )}
-
-          {isAdmin && (
-            <>
-              <Button variant="ghost" size="sm" onClick={onViewAudit}>
-                <History className="h-4 w-4 mr-2" />
-                Audit Log
-              </Button>
-
-              {!agreement.is_locked && (
-                <>
-                  <div className="flex items-center gap-2 px-2">
-                    <Switch
-                      checked={agreement.client_can_edit}
-                      onCheckedChange={onToggleEdit}
-                    />
-                    <span className="text-sm">Client Edit</span>
-                  </div>
-
-                  <Button variant="outline" size="sm" onClick={onLock}>
-                    <Lock className="h-4 w-4 mr-2" />
-                    Lock
-                  </Button>
-                </>
-              )}
-
-              {agreement.agreement_type === 'primary' && onAddService && (
-                <Button variant="outline" size="sm" onClick={onAddService}>
-                  <Plus className="h-4 w-4 mr-2" />
-                  Add Service Agreement
-                </Button>
-              )}
-            </>
           )}
         </div>
       </CardContent>
