@@ -2519,7 +2519,7 @@ export const BLOG_CONTENT: Record<string, BlogContent> = {
         subsections: [
           {
             title: "Industries We Specialize In",
-            content: "Home services (plumbing, HVAC, electrical, roofing), medical and dental practices, legal services, restaurants and hospitality, automotive services, real estate, and professional services. However, we work with any local business that serves customers in a specific geographic area."
+            content: "We serve 200+ industries across all local business categories. Listing just a few here would not do justice to our expertise—and might make you think we do not cover your industry. The truth is, if you are a local business serving customers in a specific area, we can help you rank. [Explore All Industries We Serve →](/en/industries)"
           },
           {
             title: "When This Might Not Be Right for You",
