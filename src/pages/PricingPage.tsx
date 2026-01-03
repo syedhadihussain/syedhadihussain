@@ -84,6 +84,28 @@ const PricingPage = () => {
       popular: false,
       type: "one-time",
     },
+    {
+      nameKey: "pricing.fullBusinessAudit",
+      badge: t("pricing.badge.off25"),
+      originalPrice: "$267",
+      price: "$200",
+      descriptionKey: "pricing.fullBusinessAuditDesc",
+      deliveryTime: "pricing.delivery.5to7days",
+      features: [
+        "pricing.feature.gbpAnalysis",
+        "pricing.feature.websiteAudit",
+        "pricing.feature.socialMediaAudit",
+        "pricing.feature.onlineReputationCheck",
+        "pricing.feature.competitorAnalysis3",
+        "pricing.feature.localRankingCheck",
+        "pricing.feature.fullPresenceReport",
+        "pricing.feature.actionableRecommendations",
+        "pricing.feature.strategyCall60",
+      ],
+      ctaKey: "pricing.cta.getFullAudit",
+      popular: false,
+      type: "one-time",
+    },
   ];
 
   // Monthly Plans
@@ -722,7 +744,7 @@ const PricingPage = () => {
                   {t("pricing.oneTimeDesc")}
                 </p>
               </div>
-              <div className="grid md:grid-cols-3 gap-6">
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {oneTimeServices.map((pkg, index) => renderPricingCard(pkg, index))}
               </div>
             </div>
