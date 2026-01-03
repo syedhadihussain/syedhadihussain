@@ -45,6 +45,7 @@ const Navigation = () => {
     { href: withLang("/graphic-design"), label: t("nav.graphicDesign") },
     { href: withLang("/social-media"), label: t("nav.socialMediaMarketing") },
     { href: withLang("/serving-industries"), label: t("nav.industriesWeServe") },
+    { href: withLang("/areas-we-serve"), label: "Areas We Serve" },
   ];
 
   const navLinks = [
