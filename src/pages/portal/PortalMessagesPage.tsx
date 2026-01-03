@@ -33,7 +33,11 @@ import {
   Paperclip,
   Loader2,
   X,
+  Users,
+  Eye,
+  EyeOff,
 } from "lucide-react";
+import ChatParticipantManager from "@/components/portal/ChatParticipantManager";
 import { useRealtimeMessages, useConversations } from "@/hooks/useRealtimeMessages";
 import { useAuth } from "@/hooks/useAuth";
 import { supabase } from "@/integrations/supabase/client";
@@ -50,7 +54,7 @@ interface ChatSummary {
 }
 
 const PortalMessagesPage = () => {
-  const { user } = useAuth();
+  const { user, isAdmin, isModerator } = useAuth();
   const [selectedConversationId, setSelectedConversationId] = useState<string | null>(null);
   const [message, setMessage] = useState("");
   const [isTyping, setIsTyping] = useState(false);
@@ -62,6 +66,7 @@ const PortalMessagesPage = () => {
   const [smartReplies, setSmartReplies] = useState<string[]>([]);
   const [isLoadingReplies, setIsLoadingReplies] = useState(false);
   const [showEmojiPicker, setShowEmojiPicker] = useState<string | null>(null);
+  const [showParticipantManager, setShowParticipantManager] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const typingTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -247,6 +252,16 @@ const PortalMessagesPage = () => {
     (c) => c.id === selectedConversationId
   );
 
+  // Determine display name based on visibility
+  const getConversationDisplayName = (conv: typeof selectedConversation) => {
+    if (!conv) return "Support Team";
+    if (conv.title) return conv.title;
+    if (conv.can_view_client_name && conv.client_name) {
+      return conv.client_name;
+    }
+    return "Client Conversation";
+  };
+
   const pinnedMessages = messages.filter((m: any) => m.is_pinned);
 
   return (
@@ -285,29 +300,32 @@ const PortalMessagesPage = () => {
                 </div>
               ) : filteredConversations.length > 0 ? (
                 <div className="divide-y divide-border">
-                  {filteredConversations.map((conv) => (
-                    <button
-                      key={conv.id}
-                      onClick={() => setSelectedConversationId(conv.id)}
-                      className={`w-full p-4 text-left hover:bg-muted/50 transition-colors ${
-                        selectedConversationId === conv.id ? "bg-muted/50 border-l-2 border-primary" : ""
-                      }`}
-                    >
-                      <div className="flex items-start justify-between">
-                        <div className="space-y-1 flex-1 min-w-0">
-                          <p className="font-medium flex items-center gap-2 truncate">
-                            {conv.title || "Support Team"}
-                          </p>
-                          <p className="text-sm text-muted-foreground line-clamp-1">
-                            Click to view messages
-                          </p>
+                    {filteredConversations.map((conv) => (
+                      <button
+                        key={conv.id}
+                        onClick={() => setSelectedConversationId(conv.id)}
+                        className={`w-full p-4 text-left hover:bg-muted/50 transition-colors ${
+                          selectedConversationId === conv.id ? "bg-muted/50 border-l-2 border-primary" : ""
+                        }`}
+                      >
+                        <div className="flex items-start justify-between">
+                          <div className="space-y-1 flex-1 min-w-0">
+                            <p className="font-medium flex items-center gap-2 truncate">
+                              {getConversationDisplayName(conv)}
+                              {!conv.can_view_client_name && (
+                                <EyeOff className="h-3 w-3 text-muted-foreground" />
+                              )}
+                            </p>
+                            <p className="text-sm text-muted-foreground line-clamp-1">
+                              Click to view messages
+                            </p>
+                          </div>
+                          <span className="text-xs text-muted-foreground flex-shrink-0 ml-2">
+                            {format(new Date(conv.last_message_at), "MMM d")}
+                          </span>
                         </div>
-                        <span className="text-xs text-muted-foreground flex-shrink-0 ml-2">
-                          {format(new Date(conv.last_message_at), "MMM d")}
-                        </span>
-                      </div>
-                    </button>
-                  ))}
+                      </button>
+                    ))}
                 </div>
               ) : (
                 <div className="p-8 text-center text-muted-foreground">
@@ -325,8 +343,11 @@ const PortalMessagesPage = () => {
                 <CardHeader className="border-b border-border">
                   <div className="flex items-center justify-between">
                     <div>
-                      <CardTitle className="text-lg">
-                        {selectedConversation?.title || "Support Team"}
+                      <CardTitle className="text-lg flex items-center gap-2">
+                        {getConversationDisplayName(selectedConversation)}
+                        {selectedConversation && !selectedConversation.can_view_client_name && (
+                          <EyeOff className="h-4 w-4 text-muted-foreground" />
+                        )}
                       </CardTitle>
                       <CardDescription>
                         {typingUsers.length > 0
@@ -335,6 +356,16 @@ const PortalMessagesPage = () => {
                       </CardDescription>
                     </div>
                     <div className="flex items-center gap-2">
+                      {(isAdmin || isModerator) && (
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          onClick={() => setShowParticipantManager(true)}
+                        >
+                          <Users className="h-4 w-4 mr-1" />
+                          Participants
+                        </Button>
+                      )}
                       <Button variant="outline" size="sm" onClick={handleSummarize} disabled={isSummarizing}>
                         <Sparkles className="h-4 w-4 mr-1" />
                         Summarize
@@ -614,6 +645,15 @@ const PortalMessagesPage = () => {
           ) : null}
         </DialogContent>
       </Dialog>
+
+      {/* Chat Participant Manager */}
+      {selectedConversationId && (
+        <ChatParticipantManager
+          conversationId={selectedConversationId}
+          isOpen={showParticipantManager}
+          onClose={() => setShowParticipantManager(false)}
+        />
+      )}
     </>
   );
 };

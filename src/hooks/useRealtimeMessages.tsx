@@ -2,16 +2,23 @@ import { useState, useEffect, useCallback } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from './useAuth';
 import { RealtimeChannel } from '@supabase/supabase-js';
+import { Json } from '@/integrations/supabase/types';
 
 interface Message {
   id: string;
   conversation_id: string;
   sender_id: string;
   content: string;
-  is_read: boolean;
+  is_read: boolean | null;
   read_at: string | null;
   created_at: string;
   updated_at: string;
+  is_pinned?: boolean | null;
+  reactions?: Json | null;
+  attachment_url?: string | null;
+  attachment_type?: string | null;
+  is_voice_note?: boolean | null;
+  reply_to_id?: string | null;
 }
 
 interface Conversation {
@@ -20,6 +27,8 @@ interface Conversation {
   title: string | null;
   last_message_at: string;
   created_at: string;
+  client_name?: string | null;
+  can_view_client_name?: boolean;
 }
 
 interface TypingUser {
@@ -183,7 +192,7 @@ export const useRealtimeMessages = (conversationId: string | null) => {
 };
 
 export const useConversations = () => {
-  const { user } = useAuth();
+  const { user, isAdmin, isModerator } = useAuth();
   const [conversations, setConversations] = useState<Conversation[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -191,16 +200,104 @@ export const useConversations = () => {
     if (!user) return;
 
     setLoading(true);
-    const { data, error } = await supabase
-      .from('conversations')
-      .select('*')
-      .order('last_message_at', { ascending: false });
+    try {
+      // For admins/moderators, fetch all conversations
+      // For regular users, fetch only conversations they're participants in
+      if (isAdmin || isModerator) {
+        const { data, error } = await supabase
+          .from('conversations')
+          .select(`
+            *,
+            client_profiles:client_id (
+              company_name,
+              user_id
+            )
+          `)
+          .order('last_message_at', { ascending: false });
 
-    if (!error && data) {
-      setConversations(data);
+        if (!error && data) {
+          const conversationsWithClientName = data.map((conv: any) => ({
+            ...conv,
+            client_name: conv.client_profiles?.company_name || 'Client',
+            can_view_client_name: true,
+          }));
+          setConversations(conversationsWithClientName);
+        }
+      } else {
+        // Check if user is a client (owns the conversation)
+        const { data: clientProfile } = await supabase
+          .from('client_profiles')
+          .select('id')
+          .eq('user_id', user.id)
+          .maybeSingle();
+
+        if (clientProfile) {
+          // User is a client - fetch their own conversations
+          const { data, error } = await supabase
+            .from('conversations')
+            .select('*')
+            .eq('client_id', clientProfile.id)
+            .order('last_message_at', { ascending: false });
+
+          if (!error && data) {
+            const conversationsWithAccess = data.map((conv) => ({
+              ...conv,
+              client_name: null, // Clients see their own name
+              can_view_client_name: true,
+            }));
+            setConversations(conversationsWithAccess);
+          }
+        } else {
+          // User is a team member - fetch conversations they're participants in
+          const { data: participantData, error: participantError } = await supabase
+            .from('chat_participants')
+            .select('conversation_id, can_view_client_name')
+            .eq('user_id', user.id);
+
+          if (participantError || !participantData || participantData.length === 0) {
+            setConversations([]);
+            setLoading(false);
+            return;
+          }
+
+          // Create a map for visibility
+          const visibilityMap = new Map<string, boolean>();
+          participantData.forEach((p) => {
+            visibilityMap.set(p.conversation_id, p.can_view_client_name);
+          });
+
+          const conversationIds = participantData.map((p) => p.conversation_id);
+
+          const { data: conversationsData, error: conversationsError } = await supabase
+            .from('conversations')
+            .select(`
+              *,
+              client_profiles:client_id (
+                company_name
+              )
+            `)
+            .in('id', conversationIds)
+            .order('last_message_at', { ascending: false });
+
+          if (!conversationsError && conversationsData) {
+            const conversationsWithVisibility = conversationsData.map((conv: any) => {
+              const canViewClientName = visibilityMap.get(conv.id) || false;
+              return {
+                ...conv,
+                client_name: canViewClientName ? conv.client_profiles?.company_name : null,
+                can_view_client_name: canViewClientName,
+              };
+            });
+            setConversations(conversationsWithVisibility);
+          }
+        }
+      }
+    } catch (error) {
+      console.error('Error fetching conversations:', error);
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
-  }, [user]);
+  }, [user, isAdmin, isModerator]);
 
   useEffect(() => {
     fetchConversations();
@@ -246,6 +343,14 @@ export const useConversations = () => {
     await supabase.from('conversation_participants').insert({
       conversation_id: conversation.id,
       user_id: user.id
+    });
+
+    // Also add to chat_participants for team member access control
+    await supabase.from('chat_participants').insert({
+      conversation_id: conversation.id,
+      user_id: user.id,
+      can_view_client_name: true, // Creator can always see client name
+      added_by: user.id,
     });
 
     return conversation;
