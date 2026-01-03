@@ -7,17 +7,34 @@ const corsHeaders = {
 
 const BASE_URL = "https://syedhadihussain.com";
 
-// All sitemaps to submit
+// All sitemaps to submit (new v2 structure)
 const SITEMAPS = [
+  // Master index
   `${BASE_URL}/sitemap.xml`,
-  `${BASE_URL}/sitemaps/quick-links.xml`,
-  `${BASE_URL}/sitemaps/industries/sitemap.xml`,
+  // Countries sitemap
+  `${BASE_URL}/sitemaps/countries.xml`,
+  // Content sitemap (blog & pages)
+  `${BASE_URL}/sitemaps/content.xml`,
+  // Industry categories sitemap
+  `${BASE_URL}/sitemaps/industries/categories.xml`,
 ];
 
-// Add country sitemap indexes
+// Add state sitemaps per country
 const COUNTRIES = ['us', 'ca', 'au', 'uk', 'de', 'ae', 'mx', 'my', 'it', 'nz', 'br', 'ie', 'sg', 'za', 'nl', 'fr', 'es', 'se', 'no', 'dk', 'fi', 'ch', 'be', 'sa', 'qa', 'eg', 'pt', 'om', 'kw', 'lu', 'jo'];
 COUNTRIES.forEach(country => {
-  SITEMAPS.push(`${BASE_URL}/sitemaps/countries/${country}/sitemap.xml`);
+  SITEMAPS.push(`${BASE_URL}/sitemaps/countries/${country}/states.xml`);
+});
+
+// Add industry category sitemaps
+const INDUSTRY_CATEGORIES = [
+  'home-maintenance', 'cleaning', 'construction', 'inspection', 'pest-control',
+  'waste-recycling', 'landscaping', 'energy', 'security', 'healthcare', 'beauty',
+  'automotive', 'childcare', 'elderly-care', 'funeral-religious', 'legal-financial',
+  'real-estate', 'food-beverage', 'hospitality-events', 'technology',
+  'professional-services', 'manufacturing', 'storage-logistics', 'fitness', 'specialized-trades'
+];
+INDUSTRY_CATEGORIES.forEach(category => {
+  SITEMAPS.push(`${BASE_URL}/sitemaps/industries/${category}.xml`);
 });
 
 interface PingResult {

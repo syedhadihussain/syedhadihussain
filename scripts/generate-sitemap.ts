@@ -1,13 +1,20 @@
 /**
- * Enterprise Sitemap Generator
+ * Enterprise Sitemap Generator v2
  * 
- * Generates a hierarchical sitemap structure:
- * - /sitemap.xml (root index referencing all child sitemaps)
- * - /sitemaps/countries/{country}/sitemap.xml (country index with state refs)
- * - /sitemaps/countries/{country}/states/{state}.xml (city URLs)
- * - /sitemaps/industries/sitemap.xml (industry index)
- * - /sitemaps/industries/{category}.xml (industry category sitemaps)
- * - /sitemaps/quick-links.xml (conversion pages)
+ * STRICT RULES:
+ * - Uses ONLY existing indexed URLs from configuration files
+ * - Does NOT generate, infer, normalize, or restructure URLs
+ * - Does NOT modify routing, slugs, canonicals, or page hierarchy
+ * - ONLY groups existing URLs into sitemaps as instructed
+ * 
+ * Sitemap Structure:
+ * 1. /sitemap.xml (master index - references only sitemap files)
+ * 2. /sitemaps/countries.xml (country-level pages only)
+ * 3. /sitemaps/countries/{country}/states.xml (state-level pages for that country)
+ * 4. /sitemaps/countries/{country}/states/{state}.xml (city-level pages for that state)
+ * 5. /sitemaps/industries/categories.xml (industry category pages only)
+ * 6. /sitemaps/industries/{category}.xml (industry pages for that category)
+ * 7. /sitemaps/content.xml (blog posts and other content pages)
  * 
  * Run with: npx tsx scripts/generate-sitemap.ts
  */
@@ -21,7 +28,9 @@ const BASE_URL = "https://syedhadihussain.com";
 const DEFAULT_LANGUAGE = "en";
 const TODAY = new Date().toISOString().split('T')[0];
 
-// Countries with their state configs (simplified for sitemap)
+// ==================== EXISTING INDEXED URLS FROM CONFIG FILES ====================
+
+// Countries with their state codes (from countries-config.ts)
 const COUNTRY_STATES: Record<string, string[]> = {
   us: ["fl", "tx", "ny", "wa", "ca", "az", "ga", "nc", "oh", "pa", "il", "nj", "mi", "co", "tn", "va", "in", "ks", "dc", "or", "al", "ak", "ar", "ct", "de", "hi", "id", "ia", "ky", "la", "me", "md", "ma", "mn", "ms", "mo", "mt", "ne", "nv", "nh", "nm", "nd", "ok", "ri", "sc", "sd", "ut", "vt", "wv", "wi", "wy"],
   ca: ["on", "qc", "bc", "ab", "mb", "sk", "ns", "nb", "nl", "pe"],
@@ -56,7 +65,7 @@ const COUNTRY_STATES: Record<string, string[]> = {
   jo: ["amm", "irb", "zar", "aqb", "maf"]
 };
 
-// State to Cities mapping (simplified - major cities per state)
+// State to Cities mapping (from existing config)
 const STATE_CITIES: Record<string, Record<string, string[]>> = {
   us: {
     fl: ["miami", "fort-lauderdale", "west-palm-beach", "orlando", "tampa", "st-petersburg", "clearwater", "jacksonville", "boca-raton", "delray-beach", "boynton-beach", "coral-springs", "pembroke-pines", "hollywood-fl", "hialeah", "doral", "kissimmee", "lakeland", "brandon", "sarasota", "naples", "fort-myers", "cape-coral", "estero", "bonita-springs", "naples-park"],
@@ -141,7 +150,7 @@ const STATE_CITIES: Record<string, Record<string, string[]>> = {
   }
 };
 
-// Industry categories mapping
+// Industry categories with their industries (from industries-config.ts)
 const INDUSTRY_CATEGORIES: Record<string, string[]> = {
   "home-maintenance": ["plumbers", "electricians", "handyman-services", "hvac-services", "ac-repair-services", "boiler-repair-services", "gas-engineers", "locksmiths", "painters-decorators", "roofing-companies", "garage-door-repair-installation-services", "shutter-installation-services", "blinds-installation-services", "curtain-fitting-services", "awning-installation-services", "window-cleaning-services", "abseiling-window-cleaners", "facade-cleaning-services", "glass-repair-services", "emergency-glass-replacement", "double-glazing-repair", "mirror-installation-services", "flat-pack-furniture-assembly", "scaffolding-companies", "mold-remediation-professionals", "water-damage-restoration-professionals", "pressure-washing-professionals"],
   "cleaning": ["home-cleaning-services", "deep-cleaning-services", "end-of-tenancy-cleaning", "carpet-cleaning-services", "warehouse-cleaning-services", "factory-cleaning-services", "industrial-cleaning-services", "commercial-kitchen-installation", "kitchen-extraction-ventilation-cleaning", "grease-trap-cleaning-services", "water-tank-cleaning", "pool-cleaning-services", "laundry-services", "dry-cleaning-services", "ironing-services", "holiday-let-cleaning-services", "mattress-cleaning-services", "blind-cleaning-services", "cleanroom-cleaning-services", "street-cleaning-contractors", "snow-clearance-services", "gritting-services", "winter-maintenance-services", "cryogenic-cleaning-services", "dry-ice-blasting-services", "shot-blasting-services"],
@@ -170,8 +179,32 @@ const INDUSTRY_CATEGORIES: Record<string, string[]> = {
   "specialized-trades": ["antique-restoration-services", "furniture-restoration-services", "upholstery-services", "clock-repair-services", "watch-repair-services", "shoe-repair-services", "key-cutting-services", "vending-machine-services", "atm-installation-services", "portable-toilet-hire", "luxury-toilet-trailer-hire", "film-tv-location-services", "3d-scanning-services", "3d-printing-services", "cnc-machining-services", "laser-cutting-services"]
 };
 
-// Quick links and conversion pages
-const QUICK_LINK_PAGES = [
+// Blog posts (from blog-posts-config.ts)
+const BLOG_POST_SLUGS = [
+  "complete-local-seo-guide",
+  "google-business-profile-optimization",
+  "local-keyword-research",
+  "citation-building-strategy",
+  "review-management-strategy",
+  "on-page-seo-local-businesses",
+  "technical-seo-local-business",
+  "local-link-building",
+  "content-strategy-local-seo",
+  "local-seo-audit-guide",
+  "mobile-seo-local-businesses",
+  "voice-search-local-seo",
+  "local-seo-small-business",
+  "multi-location-seo",
+  "local-seo-ecommerce",
+  "local-seo-restaurants",
+  "local-seo-healthcare",
+  "local-seo-home-services",
+  "local-seo-lawyers",
+  "measuring-local-seo-success"
+];
+
+// Other content pages (informational, service pages, etc.)
+const CONTENT_PAGES = [
   "", // homepage
   "about",
   "services",
@@ -190,7 +223,8 @@ const QUICK_LINK_PAGES = [
   "social-media",
   "privacy",
   "terms",
-  "serving-industries"
+  "serving-industries",
+  "areas-we-serve"
 ];
 
 // ==================== HELPER FUNCTIONS ====================
@@ -201,37 +235,7 @@ const ensureDir = (dirPath: string): void => {
   }
 };
 
-const getPriority = (type: 'country' | 'state' | 'city' | 'industry' | 'quicklink', path?: string): string => {
-  if (type === 'quicklink') {
-    if (path === '') return '1.0'; // homepage
-    if (['services', 'contact', 'about'].includes(path || '')) return '0.9';
-    if (['portfolio', 'case-studies', 'pricing'].includes(path || '')) return '0.8';
-    if (path?.startsWith('blog')) return '0.7';
-    return '0.6';
-  }
-  switch (type) {
-    case 'country': return '0.9';
-    case 'state': return '0.8';
-    case 'city': return '0.7';
-    case 'industry': return '0.6';
-    default: return '0.5';
-  }
-};
-
-const getChangefreq = (type: 'country' | 'state' | 'city' | 'industry' | 'quicklink'): string => {
-  switch (type) {
-    case 'country': return 'weekly';
-    case 'state': return 'weekly';
-    case 'city': return 'monthly';
-    case 'industry': return 'monthly';
-    case 'quicklink': return 'weekly';
-    default: return 'monthly';
-  }
-};
-
-// ==================== SITEMAP GENERATORS ====================
-
-// Generate sitemap index XML
+// Generate sitemap index XML (references only sitemap files)
 const generateSitemapIndex = (sitemapUrls: string[]): string => {
   let xml = `<?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -249,7 +253,7 @@ const generateSitemapIndex = (sitemapUrls: string[]): string => {
   return xml;
 };
 
-// Generate URL set XML (for actual URLs)
+// Generate URL set XML (for actual page URLs)
 const generateUrlSet = (urls: Array<{ loc: string; priority: string; changefreq: string }>): string => {
   let xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -269,175 +273,210 @@ const generateUrlSet = (urls: Array<{ loc: string; priority: string; changefreq:
   return xml;
 };
 
-// Generate quick-links sitemap
-const generateQuickLinksSitemap = (): string => {
-  const urls = QUICK_LINK_PAGES.map(page => ({
-    loc: page ? `${BASE_URL}/${DEFAULT_LANGUAGE}/${page}` : `${BASE_URL}/${DEFAULT_LANGUAGE}`,
-    priority: getPriority('quicklink', page),
-    changefreq: getChangefreq('quicklink')
+// ==================== SITEMAP GENERATORS ====================
+
+// 2️⃣ COUNTRIES SITEMAP - country-level pages only
+const generateCountriesSitemap = (): string => {
+  const countryCodes = Object.keys(COUNTRY_STATES);
+  const urls = countryCodes.map(code => ({
+    loc: `${BASE_URL}/${DEFAULT_LANGUAGE}/${code}`,
+    priority: '0.9',
+    changefreq: 'weekly'
   }));
   
   return generateUrlSet(urls);
 };
 
-// Generate state sitemap (city URLs)
-const generateStateSitemap = (countryCode: string, stateCode: string, cities: string[]): string => {
+// 3️⃣ STATE SITEMAP (ONE PER COUNTRY) - state-level pages for that country
+const generateCountryStatesSitemap = (countryCode: string): string => {
+  const states = COUNTRY_STATES[countryCode] || [];
+  const urls = states.map(stateCode => ({
+    loc: `${BASE_URL}/${DEFAULT_LANGUAGE}/${countryCode}/${stateCode}`,
+    priority: '0.8',
+    changefreq: 'weekly'
+  }));
+  
+  return generateUrlSet(urls);
+};
+
+// 4️⃣ CITY SITEMAP (ONE PER STATE) - city-level pages for that state
+const generateStateCitiesSitemap = (countryCode: string, stateCode: string): string => {
+  const cities = STATE_CITIES[countryCode]?.[stateCode] || [];
   const urls = cities.map(city => ({
     loc: `${BASE_URL}/${DEFAULT_LANGUAGE}/${countryCode}/${stateCode}/local-seo-${city}`,
-    priority: getPriority('city'),
-    changefreq: getChangefreq('city')
+    priority: '0.7',
+    changefreq: 'monthly'
   }));
   
   return generateUrlSet(urls);
 };
 
-// Generate country sitemap index (references state sitemaps + country page)
-const generateCountrySitemapIndex = (countryCode: string, states: string[]): string => {
-  // Include state sitemaps
-  const sitemapUrls = states.map(state => 
-    `${BASE_URL}/sitemaps/countries/${countryCode}/states/${state}.xml`
-  );
-  
-  return generateSitemapIndex(sitemapUrls);
-};
-
-// Generate industry category sitemap
-const generateIndustryCategorySitemap = (categorySlug: string, industries: string[]): string => {
-  const urls = industries.map(industry => ({
-    loc: `${BASE_URL}/${DEFAULT_LANGUAGE}/local-seo-services-for-${industry}`,
-    priority: getPriority('industry'),
-    changefreq: getChangefreq('industry')
+// 5️⃣ INDUSTRY CATEGORY SITEMAP - category pages only
+const generateIndustryCategoriesSitemap = (): string => {
+  const categories = Object.keys(INDUSTRY_CATEGORIES);
+  const urls = categories.map(categorySlug => ({
+    loc: `${BASE_URL}/${DEFAULT_LANGUAGE}/industries/${categorySlug}`,
+    priority: '0.8',
+    changefreq: 'weekly'
   }));
   
   return generateUrlSet(urls);
 };
 
-// Generate industry sitemap index
-const generateIndustrySitemapIndex = (): string => {
-  const sitemapUrls = Object.keys(INDUSTRY_CATEGORIES).map(category =>
-    `${BASE_URL}/sitemaps/industries/${category}.xml`
-  );
+// 6️⃣ INDUSTRY SITEMAP (ONE PER CATEGORY) - industry pages for that category
+const generateCategoryIndustriesSitemap = (categorySlug: string): string => {
+  const industries = INDUSTRY_CATEGORIES[categorySlug] || [];
+  const urls = industries.map(industrySlug => ({
+    loc: `${BASE_URL}/${DEFAULT_LANGUAGE}/local-seo-services-for-${industrySlug}`,
+    priority: '0.7',
+    changefreq: 'monthly'
+  }));
   
-  return generateSitemapIndex(sitemapUrls);
+  return generateUrlSet(urls);
 };
 
-// Generate root sitemap index
-const generateRootSitemapIndex = (countryCodes: string[]): string => {
-  const sitemapUrls: string[] = [];
+// 7️⃣ BLOG & CONTENT SITEMAP - blog posts and other content pages
+const generateContentSitemap = (): string => {
+  const urls: Array<{ loc: string; priority: string; changefreq: string }> = [];
   
-  // Quick links sitemap
-  sitemapUrls.push(`${BASE_URL}/sitemaps/quick-links.xml`);
-  
-  // Industry sitemap index
-  sitemapUrls.push(`${BASE_URL}/sitemaps/industries/sitemap.xml`);
-  
-  // Country sitemap indexes
-  countryCodes.forEach(country => {
-    sitemapUrls.push(`${BASE_URL}/sitemaps/countries/${country}/sitemap.xml`);
+  // Add content/service pages
+  CONTENT_PAGES.forEach(page => {
+    const loc = page ? `${BASE_URL}/${DEFAULT_LANGUAGE}/${page}` : `${BASE_URL}/${DEFAULT_LANGUAGE}`;
+    let priority = '0.6';
+    if (page === '') priority = '1.0'; // homepage
+    else if (['services', 'contact', 'about'].includes(page)) priority = '0.9';
+    else if (['portfolio', 'case-studies', 'pricing'].includes(page)) priority = '0.8';
+    else if (page.startsWith('blog')) priority = '0.7';
+    
+    urls.push({ loc, priority, changefreq: 'weekly' });
   });
   
-  return generateSitemapIndex(sitemapUrls);
+  // Add blog posts
+  BLOG_POST_SLUGS.forEach(slug => {
+    urls.push({
+      loc: `${BASE_URL}/${DEFAULT_LANGUAGE}/blog/${slug}`,
+      priority: '0.7',
+      changefreq: 'monthly'
+    });
+  });
+  
+  return generateUrlSet(urls);
 };
 
 // ==================== MAIN EXECUTION ====================
 
-const main = () => {
-  console.log('🚀 Generating enterprise sitemap structure...\n');
-  
-  const publicDir = path.join(process.cwd(), 'public');
-  const sitemapsDir = path.join(publicDir, 'sitemaps');
+const main = async () => {
+  console.log('🚀 Starting Enterprise Sitemap Generation v2...\n');
   
   // Create directory structure
-  ensureDir(sitemapsDir);
-  ensureDir(path.join(sitemapsDir, 'countries'));
-  ensureDir(path.join(sitemapsDir, 'industries'));
+  const dirs = [
+    'public/sitemaps',
+    'public/sitemaps/countries',
+    'public/sitemaps/industries'
+  ];
   
+  // Create country subdirectories
+  Object.keys(COUNTRY_STATES).forEach(countryCode => {
+    dirs.push(`public/sitemaps/countries/${countryCode}`);
+    dirs.push(`public/sitemaps/countries/${countryCode}/states`);
+  });
+  
+  dirs.forEach(dir => ensureDir(dir));
+  console.log('📁 Directory structure created\n');
+  
+  const allSitemapRefs: string[] = [];
   let totalUrls = 0;
-  let totalSitemaps = 0;
   
-  // 1. Generate quick-links sitemap
-  console.log('📝 Generating quick-links sitemap...');
-  const quickLinksSitemap = generateQuickLinksSitemap();
-  fs.writeFileSync(path.join(sitemapsDir, 'quick-links.xml'), quickLinksSitemap);
-  totalUrls += QUICK_LINK_PAGES.length;
-  totalSitemaps++;
-  console.log(`   ✓ ${QUICK_LINK_PAGES.length} quick link URLs`);
+  // ============ 2. COUNTRIES SITEMAP ============
+  console.log('🌍 Generating countries sitemap...');
+  const countriesSitemap = generateCountriesSitemap();
+  fs.writeFileSync('public/sitemaps/countries.xml', countriesSitemap);
+  allSitemapRefs.push(`${BASE_URL}/sitemaps/countries.xml`);
+  const countryCount = Object.keys(COUNTRY_STATES).length;
+  totalUrls += countryCount;
+  console.log(`   ✓ ${countryCount} country pages\n`);
   
-  // 2. Generate industry sitemaps
-  console.log('\n📦 Generating industry sitemaps...');
-  Object.entries(INDUSTRY_CATEGORIES).forEach(([category, industries]) => {
-    ensureDir(path.join(sitemapsDir, 'industries'));
-    const sitemap = generateIndustryCategorySitemap(category, industries);
-    fs.writeFileSync(path.join(sitemapsDir, 'industries', `${category}.xml`), sitemap);
-    totalUrls += industries.length;
-    totalSitemaps++;
-    console.log(`   ✓ ${category}: ${industries.length} industries`);
-  });
+  // ============ 3 & 4. STATE AND CITY SITEMAPS ============
+  console.log('🗺️  Generating state and city sitemaps per country...');
   
-  // Generate industry sitemap index
-  const industrySitemapIndex = generateIndustrySitemapIndex();
-  fs.writeFileSync(path.join(sitemapsDir, 'industries', 'sitemap.xml'), industrySitemapIndex);
-  totalSitemaps++;
-  console.log(`   ✓ Industry sitemap index created`);
-  
-  // 3. Generate country/state/city sitemaps
-  console.log('\n🌍 Generating country sitemaps...');
-  const countriesWithSitemaps: string[] = [];
-  
-  Object.entries(COUNTRY_STATES).forEach(([countryCode, states]) => {
-    const countryDir = path.join(sitemapsDir, 'countries', countryCode);
-    const statesDir = path.join(countryDir, 'states');
-    ensureDir(countryDir);
-    ensureDir(statesDir);
+  for (const countryCode of Object.keys(COUNTRY_STATES)) {
+    const states = COUNTRY_STATES[countryCode];
     
-    let countryUrls = 0;
-    const statesWithCities: string[] = [];
+    // 3. States sitemap for this country
+    const statesSitemap = generateCountryStatesSitemap(countryCode);
+    fs.writeFileSync(`public/sitemaps/countries/${countryCode}/states.xml`, statesSitemap);
+    allSitemapRefs.push(`${BASE_URL}/sitemaps/countries/${countryCode}/states.xml`);
+    totalUrls += states.length;
     
-    // Generate state sitemaps with cities
-    states.forEach(stateCode => {
-      const cities = STATE_CITIES[countryCode]?.[stateCode] || [];
-      if (cities.length > 0) {
-        const stateSitemap = generateStateSitemap(countryCode, stateCode, cities);
-        fs.writeFileSync(path.join(statesDir, `${stateCode}.xml`), stateSitemap);
-        countryUrls += cities.length;
-        totalUrls += cities.length;
-        totalSitemaps++;
-        statesWithCities.push(stateCode);
+    // 4. City sitemaps for each state (only for countries with city data)
+    if (STATE_CITIES[countryCode]) {
+      for (const stateCode of states) {
+        const cities = STATE_CITIES[countryCode]?.[stateCode] || [];
+        if (cities.length > 0) {
+          const citySitemap = generateStateCitiesSitemap(countryCode, stateCode);
+          fs.writeFileSync(`public/sitemaps/countries/${countryCode}/states/${stateCode}.xml`, citySitemap);
+          allSitemapRefs.push(`${BASE_URL}/sitemaps/countries/${countryCode}/states/${stateCode}.xml`);
+          totalUrls += cities.length;
+        }
       }
-    });
-    
-    // Generate country sitemap index (only if we have state sitemaps)
-    if (statesWithCities.length > 0) {
-      const countrySitemapIndex = generateCountrySitemapIndex(countryCode, statesWithCities);
-      fs.writeFileSync(path.join(countryDir, 'sitemap.xml'), countrySitemapIndex);
-      totalSitemaps++;
-      countriesWithSitemaps.push(countryCode);
-      console.log(`   ✓ ${countryCode.toUpperCase()}: ${statesWithCities.length} states, ${countryUrls} city URLs`);
     }
-  });
+    
+    console.log(`   ✓ ${countryCode.toUpperCase()}: ${states.length} states, ${Object.values(STATE_CITIES[countryCode] || {}).flat().length} cities`);
+  }
+  console.log('');
   
-  // 4. Generate root sitemap index
-  console.log('\n📋 Generating root sitemap index...');
-  const rootSitemap = generateRootSitemapIndex(countriesWithSitemaps);
-  fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), rootSitemap);
-  totalSitemaps++;
-  console.log(`   ✓ Root sitemap.xml created`);
+  // ============ 5. INDUSTRY CATEGORIES SITEMAP ============
+  console.log('🏭 Generating industry category sitemap...');
+  const categoriesSitemap = generateIndustryCategoriesSitemap();
+  fs.writeFileSync('public/sitemaps/industries/categories.xml', categoriesSitemap);
+  allSitemapRefs.push(`${BASE_URL}/sitemaps/industries/categories.xml`);
+  const categoryCount = Object.keys(INDUSTRY_CATEGORIES).length;
+  totalUrls += categoryCount;
+  console.log(`   ✓ ${categoryCount} industry categories\n`);
   
-  // Summary
-  console.log('\n' + '='.repeat(50));
+  // ============ 6. INDUSTRY SITEMAPS PER CATEGORY ============
+  console.log('🔧 Generating industry sitemaps per category...');
+  for (const categorySlug of Object.keys(INDUSTRY_CATEGORIES)) {
+    const industries = INDUSTRY_CATEGORIES[categorySlug];
+    const industrySitemap = generateCategoryIndustriesSitemap(categorySlug);
+    fs.writeFileSync(`public/sitemaps/industries/${categorySlug}.xml`, industrySitemap);
+    allSitemapRefs.push(`${BASE_URL}/sitemaps/industries/${categorySlug}.xml`);
+    totalUrls += industries.length;
+    console.log(`   ✓ ${categorySlug}: ${industries.length} industries`);
+  }
+  console.log('');
+  
+  // ============ 7. CONTENT SITEMAP ============
+  console.log('📝 Generating blog & content sitemap...');
+  const contentSitemap = generateContentSitemap();
+  fs.writeFileSync('public/sitemaps/content.xml', contentSitemap);
+  allSitemapRefs.push(`${BASE_URL}/sitemaps/content.xml`);
+  const contentCount = CONTENT_PAGES.length + BLOG_POST_SLUGS.length;
+  totalUrls += contentCount;
+  console.log(`   ✓ ${CONTENT_PAGES.length} content pages + ${BLOG_POST_SLUGS.length} blog posts\n`);
+  
+  // ============ 1. MASTER SITEMAP INDEX ============
+  console.log('📋 Generating master sitemap index...');
+  const masterIndex = generateSitemapIndex(allSitemapRefs);
+  fs.writeFileSync('public/sitemap.xml', masterIndex);
+  console.log(`   ✓ Master index with ${allSitemapRefs.length} sitemap references\n`);
+  
+  // ============ SUMMARY ============
+  console.log('═'.repeat(60));
   console.log('✅ SITEMAP GENERATION COMPLETE');
-  console.log('='.repeat(50));
-  console.log(`📊 Total URLs indexed: ${totalUrls.toLocaleString()}`);
-  console.log(`📄 Total sitemaps created: ${totalSitemaps}`);
-  console.log(`🌍 Countries with sitemaps: ${countriesWithSitemaps.length}`);
-  console.log(`🏭 Industry categories: ${Object.keys(INDUSTRY_CATEGORIES).length}`);
-  console.log('\n📁 Sitemap Structure:');
-  console.log('   /sitemap.xml (root index)');
-  console.log('   /sitemaps/quick-links.xml');
-  console.log('   /sitemaps/industries/sitemap.xml');
-  console.log('   /sitemaps/industries/{category}.xml');
-  console.log('   /sitemaps/countries/{country}/sitemap.xml');
-  console.log('   /sitemaps/countries/{country}/states/{state}.xml');
+  console.log('═'.repeat(60));
+  console.log(`📊 Total sitemaps generated: ${allSitemapRefs.length + 1}`);
+  console.log(`📊 Total URLs indexed: ${totalUrls}`);
+  console.log('');
+  console.log('Structure:');
+  console.log('  /sitemap.xml (master index)');
+  console.log('  /sitemaps/countries.xml (country pages)');
+  console.log('  /sitemaps/countries/{country}/states.xml (state pages)');
+  console.log('  /sitemaps/countries/{country}/states/{state}.xml (city pages)');
+  console.log('  /sitemaps/industries/categories.xml (category pages)');
+  console.log('  /sitemaps/industries/{category}.xml (industry pages)');
+  console.log('  /sitemaps/content.xml (blog & content pages)');
+  console.log('═'.repeat(60));
 };
 
-main();
+main().catch(console.error);
