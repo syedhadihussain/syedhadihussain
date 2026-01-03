@@ -13,7 +13,6 @@ import CountryStates from "@/components/country/CountryStates";
 import CountryServices from "@/components/country/CountryServices";
 import CountryCaseStudiesCTA from "@/components/country/CountryCaseStudiesCTA";
 import CountryContact from "@/components/country/CountryContact";
-import IndustriesWeServe from "@/components/geo/IndustriesWeServe";
 import Testimonials from "@/components/portfolio/Testimonials";
 import CaseStudies from "@/components/portfolio/CaseStudies";
 import FullStackCTA from "@/components/portfolio/FullStackCTA";
@@ -108,7 +107,6 @@ const CountryPage = () => {
           <CountryStates country={country} />
           <CountryMap country={country} />
           <CountryServices country={country} />
-          <IndustriesWeServe locationName={country.name} />
           <section id="case-studies" aria-label="Client case studies">
             <CaseStudies />
           </section>
