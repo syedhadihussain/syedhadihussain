@@ -1,7 +1,8 @@
-import { Check, Sparkles, ArrowRight, Timer, Zap, MapPin, Layers, Percent, Building2, Phone } from "lucide-react";
+import { Check, Sparkles, ArrowRight, Timer, Zap, MapPin, Layers, Percent, Building2, Phone, Star, Clock, Gift, Shield, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Navigation from "@/components/portfolio/Navigation";
 import Footer from "@/components/portfolio/Footer";
 import SEOHead from "@/components/SEOHead";
@@ -14,7 +15,49 @@ const PricingPage = () => {
   const { t, language } = useLanguage();
   const { expired } = useDiscountTimer();
 
-  const packages = [
+  // One-Time Services
+  const oneTimeServices = [
+    {
+      nameKey: "pricing.gbpVerification",
+      badge: expired ? null : t("pricing.badge.popular"),
+      originalPrice: "$149",
+      price: expired ? "$149" : "$99",
+      descriptionKey: "pricing.gbpVerificationDesc",
+      features: [
+        "pricing.feature.gbpCreation",
+        "pricing.feature.businessVerification",
+        "pricing.feature.basicInfoSetup",
+        "pricing.feature.categorySelection",
+        "pricing.feature.serviceAreaSetup",
+        "pricing.feature.hoursSetup",
+        "pricing.feature.initialPhotos",
+        "pricing.feature.verificationSupport",
+      ],
+      ctaKey: "pricing.cta.getStarted",
+      popular: true,
+      type: "one-time",
+    },
+    {
+      nameKey: "pricing.gbpOptimization",
+      badge: expired ? null : t("pricing.badge.bestValue"),
+      originalPrice: "$249",
+      price: expired ? "$249" : "$179",
+      descriptionKey: "pricing.gbpOptimizationDesc",
+      features: [
+        "pricing.feature.fullProfileOptimization",
+        "pricing.feature.keywordResearch",
+        "pricing.feature.descriptionOptimization",
+        "pricing.feature.servicesSetup",
+        "pricing.feature.productsSetup",
+        "pricing.feature.photoOptimization",
+        "pricing.feature.qaSetup",
+        "pricing.feature.competitorAnalysis3",
+        "pricing.feature.strategyCall30",
+      ],
+      ctaKey: "pricing.cta.optimizeNow",
+      popular: false,
+      type: "one-time",
+    },
     {
       nameKey: "pricing.seoAudit",
       badge: expired ? null : t("pricing.badge.off50"),
@@ -31,49 +74,9 @@ const PricingPage = () => {
         "pricing.feature.strategyCall30",
       ],
       ctaKey: "pricing.cta.getAuditNow",
-      popular: true,
+      popular: false,
       highlightKey: expired ? null : "pricing.signUpHighlight",
-    },
-    {
-      nameKey: "pricing.gbpManagement",
-      badge: expired ? null : t("pricing.badge.off25"),
-      originalPrice: "$399",
-      price: expired ? "$399" : "$299",
-      periodKey: "pricing.perMonth",
-      descriptionKey: "pricing.gbpManagementDesc",
-      features: [
-        "pricing.feature.weeklyPosts",
-        "pricing.feature.photoVideo",
-        "pricing.feature.reviewManagement",
-        "pricing.feature.qaMonitoring",
-        "pricing.feature.categoryOptimization",
-        "pricing.feature.monthlyReport",
-        "pricing.feature.competitorMonitoring",
-        "pricing.feature.prioritySupport",
-      ],
-      ctaKey: "pricing.cta.getStarted",
-      popular: false,
-    },
-    {
-      nameKey: "pricing.fullStackSeo",
-      badge: expired ? null : t("pricing.badge.off25"),
-      originalPrice: "$799",
-      price: expired ? "$799" : "$599",
-      periodKey: "pricing.perMonth",
-      descriptionKey: "pricing.fullStackSeoDesc",
-      features: [
-        "pricing.feature.everythingInGbp",
-        "pricing.feature.onPageSeo",
-        "pricing.feature.localKeywordResearch",
-        "pricing.feature.citationBuilding",
-        "pricing.feature.linkBuilding",
-        "pricing.feature.technicalSeo",
-        "pricing.feature.schemaMarkup",
-        "pricing.feature.weeklyCalls",
-        "pricing.feature.prioritySupport",
-      ],
-      ctaKey: "pricing.cta.getStarted",
-      popular: false,
+      type: "one-time",
     },
     {
       nameKey: "pricing.completeAudit",
@@ -94,6 +97,249 @@ const PricingPage = () => {
       ],
       ctaKey: "pricing.cta.orderAudit",
       popular: false,
+      type: "one-time",
+    },
+  ];
+
+  // Monthly Plans
+  const monthlyPlans = [
+    {
+      nameKey: "pricing.starterPlan",
+      badge: expired ? null : t("pricing.badge.affordable"),
+      originalPrice: "$199",
+      price: expired ? "$199" : "$149",
+      periodKey: "pricing.perMonth",
+      descriptionKey: "pricing.starterPlanDesc",
+      features: [
+        "pricing.feature.gbpPostsBiweekly",
+        "pricing.feature.basicPhotoUpdates",
+        "pricing.feature.reviewResponseBasic",
+        "pricing.feature.monthlyReport",
+        "pricing.feature.emailSupport",
+      ],
+      ctaKey: "pricing.cta.getStarted",
+      popular: false,
+      tier: "starter",
+    },
+    {
+      nameKey: "pricing.gbpManagement",
+      badge: expired ? null : t("pricing.badge.mostPopular"),
+      originalPrice: "$349",
+      price: expired ? "$349" : "$249",
+      periodKey: "pricing.perMonth",
+      descriptionKey: "pricing.gbpManagementDesc",
+      features: [
+        "pricing.feature.weeklyPosts",
+        "pricing.feature.photoVideo",
+        "pricing.feature.reviewManagement",
+        "pricing.feature.qaMonitoring",
+        "pricing.feature.categoryOptimization",
+        "pricing.feature.monthlyReport",
+        "pricing.feature.competitorMonitoring",
+        "pricing.feature.prioritySupport",
+      ],
+      ctaKey: "pricing.cta.getStarted",
+      popular: true,
+      tier: "pro",
+    },
+    {
+      nameKey: "pricing.fullStackSeo",
+      badge: expired ? null : t("pricing.badge.premium"),
+      originalPrice: "$599",
+      price: expired ? "$599" : "$449",
+      periodKey: "pricing.perMonth",
+      descriptionKey: "pricing.fullStackSeoDesc",
+      features: [
+        "pricing.feature.everythingInGbp",
+        "pricing.feature.onPageSeo",
+        "pricing.feature.localKeywordResearch",
+        "pricing.feature.citationBuilding",
+        "pricing.feature.linkBuilding",
+        "pricing.feature.technicalSeo",
+        "pricing.feature.schemaMarkup",
+        "pricing.feature.weeklyCalls",
+        "pricing.feature.prioritySupport",
+      ],
+      ctaKey: "pricing.cta.getStarted",
+      popular: false,
+      tier: "fullstack",
+    },
+  ];
+
+  // 6-Month Plans (15% discount)
+  const sixMonthPlans = [
+    {
+      nameKey: "pricing.starterPlan",
+      badge: t("pricing.badge.save15"),
+      originalPrice: "$894",
+      price: "$759",
+      periodKey: "pricing.per6Months",
+      monthlyEquivalent: "$127",
+      descriptionKey: "pricing.starterPlanDesc",
+      features: [
+        "pricing.feature.gbpPostsBiweekly",
+        "pricing.feature.basicPhotoUpdates",
+        "pricing.feature.reviewResponseBasic",
+        "pricing.feature.monthlyReport",
+        "pricing.feature.emailSupport",
+        "pricing.feature.priceLocked",
+      ],
+      ctaKey: "pricing.cta.subscribe6",
+      popular: false,
+      tier: "starter",
+      savings: "$135",
+    },
+    {
+      nameKey: "pricing.gbpManagement",
+      badge: t("pricing.badge.save15"),
+      originalPrice: "$1,494",
+      price: "$1,269",
+      periodKey: "pricing.per6Months",
+      monthlyEquivalent: "$212",
+      descriptionKey: "pricing.gbpManagementDesc",
+      features: [
+        "pricing.feature.weeklyPosts",
+        "pricing.feature.photoVideo",
+        "pricing.feature.reviewManagement",
+        "pricing.feature.qaMonitoring",
+        "pricing.feature.categoryOptimization",
+        "pricing.feature.monthlyReport",
+        "pricing.feature.competitorMonitoring",
+        "pricing.feature.prioritySupport",
+        "pricing.feature.priceLocked",
+      ],
+      ctaKey: "pricing.cta.subscribe6",
+      popular: true,
+      tier: "pro",
+      savings: "$225",
+    },
+    {
+      nameKey: "pricing.fullStackSeo",
+      badge: t("pricing.badge.save15"),
+      originalPrice: "$2,694",
+      price: "$2,289",
+      periodKey: "pricing.per6Months",
+      monthlyEquivalent: "$382",
+      descriptionKey: "pricing.fullStackSeoDesc",
+      features: [
+        "pricing.feature.everythingInGbp",
+        "pricing.feature.onPageSeo",
+        "pricing.feature.localKeywordResearch",
+        "pricing.feature.citationBuilding",
+        "pricing.feature.linkBuilding",
+        "pricing.feature.technicalSeo",
+        "pricing.feature.schemaMarkup",
+        "pricing.feature.weeklyCalls",
+        "pricing.feature.prioritySupport",
+        "pricing.feature.priceLocked",
+      ],
+      ctaKey: "pricing.cta.subscribe6",
+      popular: false,
+      tier: "fullstack",
+      savings: "$405",
+    },
+  ];
+
+  // Annual Plans (25% discount)
+  const annualPlans = [
+    {
+      nameKey: "pricing.starterPlan",
+      badge: t("pricing.badge.save25"),
+      originalPrice: "$1,788",
+      price: "$1,349",
+      periodKey: "pricing.perYear",
+      monthlyEquivalent: "$112",
+      descriptionKey: "pricing.starterPlanDesc",
+      features: [
+        "pricing.feature.gbpPostsBiweekly",
+        "pricing.feature.basicPhotoUpdates",
+        "pricing.feature.reviewResponseBasic",
+        "pricing.feature.monthlyReport",
+        "pricing.feature.emailSupport",
+        "pricing.feature.priceLocked",
+        "pricing.feature.freeAudit",
+      ],
+      ctaKey: "pricing.cta.subscribe12",
+      popular: false,
+      tier: "starter",
+      savings: "$439",
+    },
+    {
+      nameKey: "pricing.gbpManagement",
+      badge: t("pricing.badge.bestDeal"),
+      originalPrice: "$2,988",
+      price: "$2,249",
+      periodKey: "pricing.perYear",
+      monthlyEquivalent: "$187",
+      descriptionKey: "pricing.gbpManagementDesc",
+      features: [
+        "pricing.feature.weeklyPosts",
+        "pricing.feature.photoVideo",
+        "pricing.feature.reviewManagement",
+        "pricing.feature.qaMonitoring",
+        "pricing.feature.categoryOptimization",
+        "pricing.feature.monthlyReport",
+        "pricing.feature.competitorMonitoring",
+        "pricing.feature.prioritySupport",
+        "pricing.feature.priceLocked",
+        "pricing.feature.freeAudit",
+        "pricing.feature.bonusOptimization",
+      ],
+      ctaKey: "pricing.cta.subscribe12",
+      popular: true,
+      tier: "pro",
+      savings: "$739",
+    },
+    {
+      nameKey: "pricing.fullStackSeo",
+      badge: t("pricing.badge.save25"),
+      originalPrice: "$5,388",
+      price: "$3,999",
+      periodKey: "pricing.perYear",
+      monthlyEquivalent: "$333",
+      descriptionKey: "pricing.fullStackSeoDesc",
+      features: [
+        "pricing.feature.everythingInGbp",
+        "pricing.feature.onPageSeo",
+        "pricing.feature.localKeywordResearch",
+        "pricing.feature.citationBuilding",
+        "pricing.feature.linkBuilding",
+        "pricing.feature.technicalSeo",
+        "pricing.feature.schemaMarkup",
+        "pricing.feature.weeklyCalls",
+        "pricing.feature.prioritySupport",
+        "pricing.feature.priceLocked",
+        "pricing.feature.freeAudit",
+        "pricing.feature.bonusOptimization",
+        "pricing.feature.quarterlyStrategy",
+      ],
+      ctaKey: "pricing.cta.subscribe12",
+      popular: false,
+      tier: "fullstack",
+      savings: "$1,389",
+    },
+  ];
+
+  // Add-On Services
+  const addOnServices = [
+    {
+      nameKey: "pricing.localServiceAds",
+      badge: expired ? null : t("pricing.badge.off25"),
+      originalPrice: "$399",
+      price: expired ? "$399" : "$299",
+      periodKey: "pricing.perMonthAdSpend",
+      descriptionKey: "pricing.localServiceAdsDesc",
+      features: [
+        "pricing.feature.lsaSetup",
+        "pricing.feature.profileOptimization",
+        "pricing.feature.badgeVerification",
+        "pricing.feature.leadResponse",
+        "pricing.feature.disputeHandling",
+        "pricing.feature.performanceOptimization",
+        "pricing.feature.weeklyReporting",
+        "pricing.feature.budgetRecommendations",
+      ],
+      ctaKey: "pricing.cta.getStarted",
     },
     {
       nameKey: "pricing.projectManagement",
@@ -111,38 +357,98 @@ const PricingPage = () => {
         "pricing.feature.customDashboard",
       ],
       ctaKey: "pricing.cta.getQuote",
-      popular: false,
-    },
-    {
-      nameKey: "pricing.localServiceAds",
-      badge: expired ? null : t("pricing.badge.off25"),
-      originalPrice: "$532",
-      price: expired ? "$532" : "$399",
-      periodKey: "pricing.perMonthAdSpend",
-      descriptionKey: "pricing.localServiceAdsDesc",
-      features: [
-        "pricing.feature.lsaSetup",
-        "pricing.feature.profileOptimization",
-        "pricing.feature.badgeVerification",
-        "pricing.feature.leadResponse",
-        "pricing.feature.disputeHandling",
-        "pricing.feature.performanceOptimization",
-        "pricing.feature.weeklyReporting",
-        "pricing.feature.budgetRecommendations",
-      ],
-      ctaKey: "pricing.cta.getStarted",
-      popular: false,
     },
   ];
 
+  const renderPricingCard = (pkg: any, index: number, showSavings = false) => (
+    <ScrollReveal key={index} delay={150 + index * 50}>
+      <div className={`glass rounded-2xl p-6 h-full flex flex-col relative ${pkg.popular ? 'border-2 border-primary glow-sm' : ''}`}>
+        {pkg.popular && (
+          <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+            <Badge className="bg-primary text-primary-foreground">
+              {t("pricing.mostPopular")}
+            </Badge>
+          </div>
+        )}
+        {pkg.badge && (
+          <div className="absolute -top-3 -right-3">
+            <Badge variant="destructive" className="animate-pulse">
+              <Sparkles className="w-3 h-3 mr-1" />
+              {pkg.badge}
+            </Badge>
+          </div>
+        )}
+        
+        <h3 className="font-display text-xl font-bold text-foreground mb-2">
+          {t(pkg.nameKey)}
+        </h3>
+        
+        <div className="mb-2">
+          {pkg.originalPrice && (
+            <span className="text-muted-foreground line-through text-lg mr-2">
+              {pkg.originalPrice}
+            </span>
+          )}
+          <span className="font-display text-3xl font-bold text-foreground">
+            {pkg.price}
+          </span>
+          {pkg.periodKey && (
+            <span className="text-muted-foreground text-sm">{t(pkg.periodKey)}</span>
+          )}
+        </div>
+
+        {pkg.monthlyEquivalent && (
+          <p className="text-sm text-primary font-medium mb-2">
+            {t("pricing.equivalent")} {pkg.monthlyEquivalent}{t("pricing.perMonth")}
+          </p>
+        )}
+
+        {showSavings && pkg.savings && (
+          <div className="bg-green-500/10 border border-green-500/30 rounded-lg px-3 py-1.5 mb-3 inline-flex items-center gap-1.5 w-fit">
+            <Gift className="w-4 h-4 text-green-500" />
+            <span className="text-sm font-semibold text-green-600 dark:text-green-400">
+              {t("pricing.youSave")} {pkg.savings}
+            </span>
+          </div>
+        )}
+
+        {pkg.highlightKey && (
+          <p className="text-sm text-primary font-medium mb-3 flex items-center gap-1">
+            <Timer className="w-3 h-3" />
+            {t(pkg.highlightKey)}
+          </p>
+        )}
+        
+        <p className="text-muted-foreground text-sm mb-6">
+          {t(pkg.descriptionKey)}
+        </p>
+        
+        <ul className="space-y-3 mb-6 flex-1">
+          {pkg.features.map((featureKey: string, i: number) => (
+            <li key={i} className="flex items-start gap-2 text-sm">
+              <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+              <span className="text-foreground">{t(featureKey)}</span>
+            </li>
+          ))}
+        </ul>
+        
+        <Button asChild className={`w-full ${pkg.popular ? 'glow' : ''}`} variant={pkg.popular ? 'default' : 'outline'}>
+          <Link to={`/${language}/subscribe?plan=${encodeURIComponent(t(pkg.nameKey))}&price=${encodeURIComponent(pkg.price)}&duration=${pkg.periodKey ? (pkg.periodKey.includes('Year') ? 'annual' : pkg.periodKey.includes('6') ? '6-month' : 'monthly') : 'one-time'}&services=${encodeURIComponent(pkg.features.slice(0, 5).map((f: string) => t(f)).join(','))}`}>
+            {t(pkg.ctaKey)}
+            <ArrowRight className="w-4 h-4 ml-2" />
+          </Link>
+        </Button>
+      </div>
+    </ScrollReveal>
+  );
 
   return (
     <>
       <SEOHead
-        title="Simple & Transparent Local SEO Pricing That Delivers ROI – Syed Hadi Hussain"
-        description="Explore flexible Local SEO pricing plans built for businesses that want better Google Maps rankings, more traffic, and consistent inbound leads without hidden costs."
+        title="Affordable Local SEO Pricing | GBP Optimization & Management Plans"
+        description="Transparent, globally affordable Local SEO pricing. One-time GBP setup from $99, monthly management from $149. 6-month & annual plans with up to 25% discount."
         canonical="https://syedhadihussain.com/pricing"
-        keywords="Local SEO pricing, SEO packages, GBP management cost, SEO audit price, affordable SEO services, ROI"
+        keywords="Local SEO pricing, GBP optimization cost, affordable SEO, SEO packages, GBP management, SEO subscription plans"
         breadcrumbs={[
           { name: "Home", url: "https://syedhadihussain.com" },
           { name: "Pricing", url: "https://syedhadihussain.com/pricing" }
@@ -155,15 +461,32 @@ const PricingPage = () => {
           {/* Header */}
           <ScrollReveal>
             <div className="text-center mb-12">
-              <span className="text-primary text-sm font-medium tracking-wider uppercase mb-4 block">
-                {t("pricing.subtitle")}
-              </span>
+              <div className="flex items-center justify-center gap-2 mb-4">
+                <Globe className="w-5 h-5 text-primary" />
+                <span className="text-primary text-sm font-medium tracking-wider uppercase">
+                  {t("pricing.globallyAffordable")}
+                </span>
+              </div>
               <h1 className="font-display text-4xl lg:text-5xl font-bold text-foreground mb-6">
                 {t("pricing.title")}
               </h1>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-4">
                 {t("pricing.description")}
               </p>
+              <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-muted-foreground">
+                <span className="flex items-center gap-1.5">
+                  <Shield className="w-4 h-4 text-primary" />
+                  {t("pricing.noHiddenFees")}
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <Clock className="w-4 h-4 text-primary" />
+                  {t("pricing.cancelAnytime")}
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <Star className="w-4 h-4 text-primary" />
+                  {t("pricing.resultsDriven")}
+                </span>
+              </div>
             </div>
           </ScrollReveal>
 
@@ -188,10 +511,10 @@ const PricingPage = () => {
                           </Badge>
                         </div>
                         <h2 className="font-display text-2xl lg:text-3xl font-bold text-foreground">
-                          {t("pricing.specialOfferTitle")}
+                          {t("pricing.launchOfferTitle")}
                         </h2>
                         <p className="text-muted-foreground mt-1">
-                          {t("pricing.specialOfferDesc")}
+                          {t("pricing.launchOfferDesc")}
                         </p>
                       </div>
                     </div>
@@ -212,86 +535,105 @@ const PricingPage = () => {
             </ScrollReveal>
           )}
 
-          {/* Pricing Cards */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-            {packages.map((pkg, index) => (
-              <ScrollReveal key={index} delay={150 + index * 50}>
-                <div className={`glass rounded-2xl p-6 h-full flex flex-col relative ${pkg.popular ? 'border-2 border-primary glow-sm' : ''}`}>
-                  {pkg.popular && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                      <Badge className="bg-primary text-primary-foreground">
-                        {t("pricing.mostPopular")}
-                      </Badge>
-                    </div>
-                  )}
-                  {pkg.badge && (
-                    <div className="absolute -top-3 -right-3">
-                      <Badge variant="destructive" className="animate-pulse">
-                        <Sparkles className="w-3 h-3 mr-1" />
-                        {pkg.badge}
-                      </Badge>
-                    </div>
-                  )}
-                  
-                  <h3 className="font-display text-xl font-bold text-foreground mb-2">
-                    {t(pkg.nameKey)}
-                  </h3>
-                  
-                  <div className="mb-4">
-                    {pkg.originalPrice && !expired && (
-                      <span className="text-muted-foreground line-through text-lg mr-2">
-                        {pkg.originalPrice}
-                      </span>
-                    )}
-                    <span className="font-display text-3xl font-bold text-foreground">
-                      {pkg.price}
-                    </span>
-                    {pkg.periodKey && (
-                      <span className="text-muted-foreground">{t(pkg.periodKey)}</span>
-                    )}
-                  </div>
+          {/* One-Time Services Section */}
+          <ScrollReveal delay={100}>
+            <div className="mb-16">
+              <div className="text-center mb-8">
+                <Badge className="bg-primary/10 text-primary border-primary/20 mb-4">
+                  <Zap className="w-3 h-3 mr-1" />
+                  {t("pricing.oneTimeServices")}
+                </Badge>
+                <h2 className="font-display text-2xl lg:text-3xl font-bold text-foreground mb-2">
+                  {t("pricing.oneTimeTitle")}
+                </h2>
+                <p className="text-muted-foreground">
+                  {t("pricing.oneTimeDesc")}
+                </p>
+              </div>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {oneTimeServices.map((pkg, index) => renderPricingCard(pkg, index))}
+              </div>
+            </div>
+          </ScrollReveal>
 
-                  {pkg.highlightKey && (
-                    <p className="text-sm text-primary font-medium mb-3 flex items-center gap-1">
-                      <Timer className="w-3 h-3" />
-                      {t(pkg.highlightKey)}
-                    </p>
-                  )}
-                  
-                  <p className="text-muted-foreground text-sm mb-6">
-                    {t(pkg.descriptionKey)}
-                  </p>
-                  
-                  <ul className="space-y-3 mb-6 flex-1">
-                    {pkg.features.map((featureKey, i) => (
-                      <li key={i} className="flex items-start gap-2 text-sm">
-                        <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                        <span className="text-foreground">{t(featureKey)}</span>
-                      </li>
-                    ))}
-                  </ul>
+          {/* Subscription Plans Section */}
+          <ScrollReveal delay={100}>
+            <div className="mb-16">
+              <div className="text-center mb-8">
+                <Badge className="bg-primary/10 text-primary border-primary/20 mb-4">
+                  <Star className="w-3 h-3 mr-1" />
+                  {t("pricing.subscriptionPlans")}
+                </Badge>
+                <h2 className="font-display text-2xl lg:text-3xl font-bold text-foreground mb-2">
+                  {t("pricing.subscriptionTitle")}
+                </h2>
+                <p className="text-muted-foreground max-w-2xl mx-auto">
+                  {t("pricing.subscriptionDesc")}
+                </p>
+              </div>
 
-                  {/* Multi-location/Multi-service note */}
-                  <div className="bg-primary/5 border border-primary/20 rounded-lg p-3 mb-4">
-                    <p className="text-xs text-muted-foreground flex items-start gap-1.5">
-                      <Sparkles className="w-3 h-3 text-primary shrink-0 mt-0.5" />
-                      <span>
-                        <strong className="text-foreground">{t("pricing.multiLocationNote")}</strong> {t("pricing.useCode")} <span className="text-primary font-semibold">MULTI-DISCOUNT</span> {t("pricing.forSpecialPricing")}
-                      </span>
-                    </p>
-                  </div>
-                  
-                  <Button asChild className={`w-full ${pkg.popular ? 'glow' : ''}`} variant={pkg.popular ? 'default' : 'outline'}>
-                    <Link to={`/${language}/subscribe?plan=${encodeURIComponent(t(pkg.nameKey))}&price=${encodeURIComponent(pkg.price)}&duration=${pkg.periodKey ? 'monthly' : 'one-time'}&services=${encodeURIComponent(pkg.features.slice(0, 5).map(f => t(f)).join(','))}`}>
-                      {t(pkg.ctaKey)}
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </Link>
-                  </Button>
+              <Tabs defaultValue="monthly" className="w-full">
+                <div className="flex justify-center mb-8">
+                  <TabsList className="glass">
+                    <TabsTrigger value="monthly" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+                      {t("pricing.monthly")}
+                    </TabsTrigger>
+                    <TabsTrigger value="6month" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+                      {t("pricing.6month")}
+                      <Badge variant="secondary" className="ml-2 text-xs bg-green-500/20 text-green-600 dark:text-green-400">
+                        15% OFF
+                      </Badge>
+                    </TabsTrigger>
+                    <TabsTrigger value="annual" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+                      {t("pricing.annual")}
+                      <Badge variant="secondary" className="ml-2 text-xs bg-green-500/20 text-green-600 dark:text-green-400">
+                        25% OFF
+                      </Badge>
+                    </TabsTrigger>
+                  </TabsList>
                 </div>
-              </ScrollReveal>
-            ))}
-          </div>
 
+                <TabsContent value="monthly">
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {monthlyPlans.map((pkg, index) => renderPricingCard(pkg, index))}
+                  </div>
+                </TabsContent>
+
+                <TabsContent value="6month">
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {sixMonthPlans.map((pkg, index) => renderPricingCard(pkg, index, true))}
+                  </div>
+                </TabsContent>
+
+                <TabsContent value="annual">
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {annualPlans.map((pkg, index) => renderPricingCard(pkg, index, true))}
+                  </div>
+                </TabsContent>
+              </Tabs>
+            </div>
+          </ScrollReveal>
+
+          {/* Add-On Services */}
+          <ScrollReveal delay={100}>
+            <div className="mb-16">
+              <div className="text-center mb-8">
+                <Badge className="bg-primary/10 text-primary border-primary/20 mb-4">
+                  <Layers className="w-3 h-3 mr-1" />
+                  {t("pricing.addOnServices")}
+                </Badge>
+                <h2 className="font-display text-2xl lg:text-3xl font-bold text-foreground mb-2">
+                  {t("pricing.addOnTitle")}
+                </h2>
+                <p className="text-muted-foreground">
+                  {t("pricing.addOnDesc")}
+                </p>
+              </div>
+              <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                {addOnServices.map((pkg, index) => renderPricingCard(pkg, index))}
+              </div>
+            </div>
+          </ScrollReveal>
 
           {/* Multi-Location & Custom Plans CTA */}
           <ScrollReveal delay={100}>
@@ -392,7 +734,8 @@ const PricingPage = () => {
                 </Button>
                 <Button asChild className="glow" size="lg">
                   <Link to={`/${language}/contact`}>
-                    {t("pricing.contactUs")} <ArrowRight className="w-4 h-4 ml-2" />
+                    {t("pricing.contactUs")}
+                    <ArrowRight className="w-4 h-4 ml-2" />
                   </Link>
                 </Button>
               </div>
