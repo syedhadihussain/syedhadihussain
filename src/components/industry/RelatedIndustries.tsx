@@ -46,13 +46,14 @@ const RelatedIndustries = ({ industry }: RelatedIndustriesProps) => {
                   <Link
                     to={langLink(`/local-seo-services-for-${related.slug}`)}
                     className="glass rounded-xl p-6 flex items-center gap-4 hover:bg-primary/5 transition-all duration-300 group"
+                    title={`Local SEO services for ${related.name} businesses - Google Maps optimization`}
                   >
                     <span className="text-2xl">{related.icon}</span>
                     <div className="flex-1 min-w-0">
                       <h3 className="font-semibold text-foreground truncate group-hover:text-primary transition-colors">
-                        {t("industry.localSeoFor")} {related.name}
+                        SEO Services for {related.name}
                       </h3>
-                      <p className="text-sm text-muted-foreground">{t("industry.localSeoServices")}</p>
+                      <p className="text-sm text-muted-foreground">Google Maps & local search</p>
                     </div>
                     <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
                   </Link>
@@ -113,9 +114,10 @@ const RelatedIndustries = ({ industry }: RelatedIndustriesProps) => {
                 <Link
                   to={industryLink}
                   className="glass rounded-full px-4 py-2 flex items-center gap-2 hover:bg-primary/10 transition-colors text-sm"
+                  title={`Local SEO for ${category.name} businesses`}
                 >
                   <span>{category.icon}</span>
-                  <span className="text-foreground">{category.name}</span>
+                  <span className="text-foreground">{category.name} SEO</span>
                 </Link>
               </ScrollReveal>
             );

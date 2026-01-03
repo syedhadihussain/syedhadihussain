@@ -240,16 +240,11 @@ const App = () => (
                     />
                   ))}
 
-                  {/* Industry pages - 2 segment paths */}
-                  {SUPPORTED_LANGUAGES.map((lang) => (
-                    <Route
-                      key={`industry-${lang}`}
-                      path={`/${lang}/local-seo-services-for-:industrySlug`}
-                      element={<IndustryPage />}
-                    />
-                  ))}
+                  {/* Industry pages are handled via the CountryPage route since React Router v6 */}
+                  {/* doesn't support prefix+param pattern like "local-seo-services-for-:slug" */}
+                  {/* Instead, CountryPage will check if the path starts with the industry prefix */}
 
-                  {/* Country pages - 1 segment paths (country code) */}
+                  {/* Country pages - 1 segment paths (country code) - CATCH-ALL for dynamic slugs */}
                   {SUPPORTED_LANGUAGES.map((lang) => (
                     <Route
                       key={`country-${lang}`}

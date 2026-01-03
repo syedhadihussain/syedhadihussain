@@ -1,6 +1,8 @@
 import { useParams, Navigate } from "react-router-dom";
+import { lazy, Suspense } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { getCountryData, isValidCountry } from "@/lib/countries-config";
+import { isValidIndustrySlug } from "@/lib/industries-config";
 import Navigation from "@/components/portfolio/Navigation";
 import Footer from "@/components/portfolio/Footer";
 import CountrySEOHead from "@/components/country/CountrySEOHead";
@@ -17,18 +19,35 @@ import FullStackCTA from "@/components/portfolio/FullStackCTA";
 import FAQ from "@/components/portfolio/FAQ";
 import GeoBreadcrumb from "@/components/geo/GeoBreadcrumb";
 
+// Lazy load IndustryPage for when we need to render it
+const IndustryPage = lazy(() => import("./IndustryPage"));
+
 const CountryPage = () => {
   const { countryCode } = useParams<{ countryCode: string }>();
-  const { t, language } = useLanguage();
+  const { language } = useLanguage();
+
+  // First check if this is an industry page (handles routes like /en/local-seo-services-for-plumbers)
+  if (countryCode?.startsWith("local-seo-services-for-")) {
+    const industrySlug = countryCode.replace("local-seo-services-for-", "");
+    if (isValidIndustrySlug(industrySlug)) {
+      return (
+        <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-background"><div className="w-12 h-12 border-4 border-primary/20 border-t-primary rounded-full animate-spin" /></div>}>
+          <IndustryPage />
+        </Suspense>
+      );
+    }
+    // Invalid industry slug - redirect to 404
+    return <Navigate to={`/${language}/404`} replace />;
+  }
 
   // Validate country code
   if (!countryCode || !isValidCountry(countryCode)) {
-    return <Navigate to={`/${language}`} replace />;
+    return <Navigate to={`/${language}/404`} replace />;
   }
 
   const country = getCountryData(countryCode);
   if (!country) {
-    return <Navigate to={`/${language}`} replace />;
+    return <Navigate to={`/${language}/404`} replace />;
   }
 
   // Generate unique SEO metadata to avoid cannibalization

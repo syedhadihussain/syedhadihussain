@@ -24,6 +24,8 @@ import { ES_STATES } from "@/lib/es-states-config";
 import { CH_STATES } from "@/lib/ch-states-config";
 import { IE_STATES } from "@/lib/ie-states-config";
 import { BR_STATES } from "@/lib/br-states-config";
+import { SH_STATES } from "@/lib/sh-states-config";
+import { LT_STATES } from "@/lib/lt-states-config";
 import { FI_STATES, NL_STATES, SE_STATES, NO_STATES, DK_STATES, BE_STATES, JO_STATES, ZA_STATES } from "@/lib/nordic-benelux-config";
 import { STATES, StateDetailData } from "@/lib/states-config";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
@@ -65,6 +67,8 @@ const COUNTRY_STATE_REGISTRIES: Record<string, Record<string, StateDetailData>> 
   ch: CH_STATES,
   ie: IE_STATES,
   br: BR_STATES,
+  sh: SH_STATES,
+  lt: LT_STATES,
   fi: FI_STATES,
   nl: NL_STATES,
   se: SE_STATES,
@@ -123,6 +127,7 @@ const CountryStates = ({ country }: CountryStatesProps) => {
                 key={state.code}
                 to={`/${language}/${country.code}/${state.code}`}
                 className="group relative bg-background rounded-xl p-6 border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg"
+                title={`Local SEO services in ${state.name} - Google Maps & AI search optimization`}
               >
                 <div className="flex items-start justify-between mb-3">
                   <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
@@ -133,13 +138,13 @@ const CountryStates = ({ country }: CountryStatesProps) => {
                   </span>
                 </div>
                 <h3 className="font-display font-semibold text-foreground group-hover:text-primary transition-colors mb-1">
-                  {state.name}
+                  Local SEO {state.name}
                 </h3>
                 <p className="text-xs text-muted-foreground">
-                  {state.abbreviation}
+                  Google Maps optimization across {state.abbreviation}
                 </p>
                 <div className="mt-3 flex items-center text-sm text-primary opacity-0 group-hover:opacity-100 transition-opacity">
-                  <span>{t("country.viewState")}</span>
+                  <span>View local SEO services</span>
                   <ArrowRight className="w-4 h-4 ml-1" />
                 </div>
               </Link>
@@ -162,8 +167,9 @@ const CountryStates = ({ country }: CountryStatesProps) => {
                   key={state.code}
                   to={`/${language}/${country.code}/${state.code}`}
                   className="px-3 py-1.5 bg-muted hover:bg-primary/10 rounded-full text-sm text-muted-foreground hover:text-primary border border-border hover:border-primary/30 transition-all duration-200"
+                  title={`Local SEO services throughout ${state.name}`}
                 >
-                  {state.name}
+                  SEO Services {state.name}
                 </Link>
               ))}
             </div>

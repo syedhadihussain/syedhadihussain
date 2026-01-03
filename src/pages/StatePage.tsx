@@ -1,7 +1,7 @@
 import { useParams, Navigate } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { isValidState, getStateData } from "@/lib/states-config";
-import { isValidCountry } from "@/lib/countries-config";
+import { isValidCountry, getCountryData } from "@/lib/countries-config";
 import { getAUStateMetadata } from "@/lib/au-metadata-config";
 import { getUKStateMetadata } from "@/lib/uk-metadata-config";
 import Navigation from "@/components/portfolio/Navigation";
@@ -18,6 +18,7 @@ import CaseStudies from "@/components/portfolio/CaseStudies";
 import FullStackCTA from "@/components/portfolio/FullStackCTA";
 import FAQ from "@/components/portfolio/FAQ";
 import GeoBreadcrumb from "@/components/geo/GeoBreadcrumb";
+import ParentCountryLink from "@/components/geo/ParentCountryLink";
 
 const StatePage = () => {
   const { countryCode, stateCode } = useParams<{ countryCode: string; stateCode: string }>();
@@ -34,7 +35,9 @@ const StatePage = () => {
   }
 
   const state = getStateData(stateCode, countryCode);
-  if (!state) {
+  const country = getCountryData(countryCode);
+  
+  if (!state || !country) {
     return <Navigate to={`/${language}/${countryCode}`} replace />;
   }
 
@@ -84,6 +87,16 @@ const StatePage = () => {
           <StateHero state={state} countryCode={countryCode} />
           <StateMap state={state} />
           <StateCities state={state} countryCode={countryCode} />
+          {/* Contextual Parent Country Link - State → Country silo structure */}
+          <section className="py-12 bg-background">
+            <div className="container-narrow">
+              <ParentCountryLink
+                countryCode={countryCode}
+                countryName={country.name}
+                stateName={state.name}
+              />
+            </div>
+          </section>
           <StateServices state={state} />
           <StateWhyChoose state={state} />
           <section id="case-studies" aria-label="Client case studies">

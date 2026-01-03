@@ -76,16 +76,17 @@ const RelatedCities = ({
                 key={city.code}
                 to={`/${language}/${countryCode}/${stateCode}/local-seo-${city.code}`}
                 className="group flex items-center gap-2 p-3 sm:p-4 bg-background rounded-xl border border-border hover:border-primary/50 hover:shadow-md transition-all duration-300"
+                title={`Local SEO services for businesses in ${city.name}`}
               >
                 <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors flex-shrink-0">
                   <MapPin className="w-4 h-4 text-primary" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <span className="font-medium text-foreground group-hover:text-primary transition-colors text-sm sm:text-base truncate block">
-                    {city.name}
+                    Local SEO {city.name}
                   </span>
                   <span className="text-xs text-muted-foreground">
-                    {t("relatedCities.localSeo")}
+                    Google Maps optimization
                   </span>
                 </div>
                 <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors opacity-0 group-hover:opacity-100 flex-shrink-0" />
@@ -101,7 +102,7 @@ const RelatedCities = ({
               to={`/${language}/${countryCode}/${stateCode}`}
               className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium transition-colors"
             >
-              {t("relatedCities.viewAll").replace("{state}", state.name)}
+              Explore all Local SEO services in {state.name}
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
