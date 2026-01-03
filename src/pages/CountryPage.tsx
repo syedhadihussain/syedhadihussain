@@ -2,7 +2,7 @@ import { useParams, Navigate } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { getCountryData, isValidCountry } from "@/lib/countries-config";
-import { isValidIndustrySlug } from "@/lib/industries-config";
+import { isValidIndustrySlug, isValidCategorySlug } from "@/lib/industries-config";
 import Navigation from "@/components/portfolio/Navigation";
 import Footer from "@/components/portfolio/Footer";
 import CountrySEOHead from "@/components/country/CountrySEOHead";
@@ -19,14 +19,29 @@ import FullStackCTA from "@/components/portfolio/FullStackCTA";
 import FAQ from "@/components/portfolio/FAQ";
 import GeoBreadcrumb from "@/components/geo/GeoBreadcrumb";
 
-// Lazy load IndustryPage for when we need to render it
+// Lazy load IndustryPage and IndustryCategoryPage for when we need to render them
 const IndustryPage = lazy(() => import("./IndustryPage"));
+const IndustryCategoryPage = lazy(() => import("./IndustryCategoryPage"));
 
 const CountryPage = () => {
   const { countryCode } = useParams<{ countryCode: string }>();
   const { language } = useLanguage();
 
-  // First check if this is an industry page (handles routes like /en/local-seo-services-for-plumbers)
+  // First check if this is a category page (handles routes like /en/local-seo-for-home-maintenance)
+  if (countryCode?.startsWith("local-seo-for-")) {
+    const categorySlug = countryCode.replace("local-seo-for-", "");
+    if (isValidCategorySlug(categorySlug)) {
+      return (
+        <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-background"><div className="w-12 h-12 border-4 border-primary/20 border-t-primary rounded-full animate-spin" /></div>}>
+          <IndustryCategoryPage />
+        </Suspense>
+      );
+    }
+    // Invalid category slug - redirect to 404
+    return <Navigate to={`/${language}/404`} replace />;
+  }
+
+  // Check if this is an industry page (handles routes like /en/local-seo-services-for-plumbers)
   if (countryCode?.startsWith("local-seo-services-for-")) {
     const industrySlug = countryCode.replace("local-seo-services-for-", "");
     if (isValidIndustrySlug(industrySlug)) {

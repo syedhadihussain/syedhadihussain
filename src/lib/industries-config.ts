@@ -1109,6 +1109,16 @@ export function isValidIndustrySlug(slug: string): boolean {
   return getAllIndustrySlugs().includes(slug);
 }
 
+// Check if slug is valid category
+export function isValidCategorySlug(slug: string): boolean {
+  return INDUSTRY_CATEGORIES.some(c => c.slug === slug);
+}
+
+// Get category data by slug
+export function getCategoryData(slug: string): IndustryCategory | undefined {
+  return INDUSTRY_CATEGORIES.find(c => c.slug === slug);
+}
+
 // Get all categories with their industries
 export function getAllCategories(): IndustryCategory[] {
   return INDUSTRY_CATEGORIES;

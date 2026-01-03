@@ -9,34 +9,6 @@ interface RelatedIndustriesProps {
   industry: IndustryData;
 }
 
-// Map each category to its primary representative industry for category badge links
-const CATEGORY_REPRESENTATIVE_INDUSTRIES: Record<string, string> = {
-  "home-maintenance": "plumbers",
-  "cleaning": "home-cleaning-services",
-  "construction": "builders",
-  "inspection": "surveying-mapping-services",
-  "pest-control": "pest-control-services",
-  "waste-recycling": "waste-removal-services",
-  "landscaping": "gardeners",
-  "energy": "solar-panel-installers",
-  "security": "cctv-installation-services",
-  "healthcare": "doctors-clinics",
-  "beauty": "hair-salons",
-  "automotive": "car-repair-shops",
-  "childcare": "childcare-centers",
-  "elderly-care": "elderly-care-services",
-  "funeral-religious": "funeral-services",
-  "legal-financial": "law-firms",
-  "real-estate": "real-estate-agencies",
-  "food-beverage": "restaurants",
-  "hospitality-events": "hotels",
-  "technology": "it-support-companies",
-  "professional-services": "accountants",
-  "manufacturing": "commercial-printing-services",
-  "storage-logistics": "storage-facilities",
-  "fitness": "gyms",
-  "specialized-trades": "furniture-restoration-services",
-};
 
 // Format slug to display name
 const formatSlugToName = (slug: string): string => {
@@ -119,16 +91,15 @@ const RelatedIndustries = ({ industry }: RelatedIndustriesProps) => {
           </div>
         </ScrollReveal>
 
-        {/* Category badges - each links to its representative industry page */}
+        {/* Category badges - each links to its category page */}
         <div className="flex flex-wrap justify-center gap-3">
           {allCategories.map((category, index) => {
-            const representativeSlug = CATEGORY_REPRESENTATIVE_INDUSTRIES[category.slug] || category.industries[0];
             const isCurrentCategory = category.slug === industry.categorySlug;
             
             return (
               <ScrollReveal key={category.slug} animation="fade-up" delay={Math.min(index * 20, 200)}>
                 <Link
-                  to={langLink(`/local-seo-services-for-${representativeSlug}`)}
+                  to={langLink(`/local-seo-for-${category.slug}`)}
                   className={`rounded-full px-4 py-2 flex items-center gap-2 transition-all text-sm border ${
                     isCurrentCategory 
                       ? 'bg-primary/20 border-primary text-primary font-medium' 
