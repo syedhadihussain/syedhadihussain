@@ -20,6 +20,7 @@ import FAQ from "@/components/portfolio/FAQ";
 import GeoBreadcrumb from "@/components/geo/GeoBreadcrumb";
 import RelatedCities from "@/components/geo/RelatedCities";
 import ParentStateLink from "@/components/geo/ParentStateLink";
+import IndustriesWeServe from "@/components/geo/IndustriesWeServe";
 
 const CityPage = () => {
   const { countryCode, stateCode, citySlug } = useParams<{ 
@@ -132,6 +133,7 @@ const CityPage = () => {
             currentCityCode={city.code}
             maxCities={8}
           />
+          <IndustriesWeServe locationName={city.name} />
           <section id="case-studies" aria-label="Local SEO client success stories">
             <CaseStudies />
           </section>
