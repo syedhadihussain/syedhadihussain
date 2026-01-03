@@ -9,6 +9,41 @@ import { getPostBySlug, getRelatedPosts, BLOG_POSTS } from "@/lib/blog-posts-con
 import { getContentBySlug } from "@/lib/blog-content-config";
 import { ArrowLeft, ArrowRight, Calendar, Clock, Tag, User, BookOpen } from "lucide-react";
 
+// Helper to render content with markdown-style links [text](url)
+const renderContentWithLinks = (content: string, language: string) => {
+  const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  const parts: (string | JSX.Element)[] = [];
+  let lastIndex = 0;
+  let match;
+
+  while ((match = linkRegex.exec(content)) !== null) {
+    // Add text before the link
+    if (match.index > lastIndex) {
+      parts.push(content.slice(lastIndex, match.index));
+    }
+    // Add the link
+    const [, text, url] = match;
+    const finalUrl = url.startsWith('/en') || url.startsWith('/ar') ? url : url;
+    parts.push(
+      <Link
+        key={match.index}
+        to={finalUrl}
+        className="inline-flex items-center gap-1 text-primary hover:underline font-semibold"
+      >
+        {text}
+      </Link>
+    );
+    lastIndex = match.index + match[0].length;
+  }
+
+  // Add remaining text
+  if (lastIndex < content.length) {
+    parts.push(content.slice(lastIndex));
+  }
+
+  return parts.length > 0 ? parts : content;
+};
+
 const BlogPostPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const { t, language } = useLanguage();
@@ -148,7 +183,7 @@ const BlogPostPage = () => {
                                 {t(sub.title)}
                               </h3>
                               <p className="text-muted-foreground leading-relaxed">
-                                {sub.content}
+                                {renderContentWithLinks(sub.content, language)}
                               </p>
                             </div>
                           ))}
