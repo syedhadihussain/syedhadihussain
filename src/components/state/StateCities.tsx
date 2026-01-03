@@ -55,8 +55,9 @@ const StateCities = ({ state, countryCode }: StateCitiesProps) => {
                   key={city.code}
                   to={`/${language}/${countryCode}/${state.code}/local-seo-${city.code}`}
                   className="px-3 py-1.5 bg-muted hover:bg-primary/10 rounded-full text-sm text-muted-foreground hover:text-primary border border-border hover:border-primary/30 transition-all duration-200"
+                  title={`Local SEO services in ${city.name}, ${state.abbreviation}`}
                 >
-                  {city.name}
+                  Local SEO {city.name}
                 </Link>
               ))}
             </div>
@@ -81,10 +82,10 @@ const StateCities = ({ state, countryCode }: StateCitiesProps) => {
                   </span>
                 </div>
                 <h4 className="font-display font-semibold text-foreground group-hover:text-primary transition-colors">
-                  {city.name}
+                  Local SEO {city.name}
                 </h4>
                 <p className="text-sm text-muted-foreground mt-1">
-                  {t("state.localSEOIn")} {city.name}
+                  Google Maps optimization for {city.name} businesses
                 </p>
               </Link>
             ))}

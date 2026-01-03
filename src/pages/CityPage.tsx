@@ -19,6 +19,7 @@ import FullStackCTA from "@/components/portfolio/FullStackCTA";
 import FAQ from "@/components/portfolio/FAQ";
 import GeoBreadcrumb from "@/components/geo/GeoBreadcrumb";
 import RelatedCities from "@/components/geo/RelatedCities";
+import ParentStateLink from "@/components/geo/ParentStateLink";
 
 const CityPage = () => {
   const { countryCode, stateCode, citySlug } = useParams<{ 
@@ -113,7 +114,18 @@ const CityPage = () => {
           <CityServices city={city} />
           <CityMap city={city} state={state} countryCode={countryCode} />
           <CityWhyChoose city={city} />
-          {/* Related Cities - Internal Linking */}
+          {/* Contextual Parent State Link - City → State silo structure */}
+          <section className="py-12 bg-background">
+            <div className="container-narrow">
+              <ParentStateLink
+                countryCode={countryCode}
+                stateCode={state.code}
+                stateName={state.name}
+                cityName={city.name}
+              />
+            </div>
+          </section>
+          {/* Related Cities - Internal Linking within same state */}
           <RelatedCities
             countryCode={countryCode}
             stateCode={state.code}
