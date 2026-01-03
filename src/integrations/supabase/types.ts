@@ -312,6 +312,7 @@ export type Database = {
         Row: {
           account_status: string | null
           active_plan_details: Json | null
+          agreement_required: boolean | null
           approved_at: string | null
           approved_by: string | null
           billing_status: string | null
@@ -319,10 +320,14 @@ export type Database = {
           company_name: string | null
           country: string | null
           created_at: string
+          full_access_granted_at: string | null
+          full_access_granted_by: string | null
           id: string
           onboarding_completed: boolean | null
+          onboarding_status: string | null
           onboarding_step: string | null
           phone: string | null
+          portal_access_level: string | null
           subscription_plan: string | null
           updated_at: string
           user_id: string
@@ -330,6 +335,7 @@ export type Database = {
         Insert: {
           account_status?: string | null
           active_plan_details?: Json | null
+          agreement_required?: boolean | null
           approved_at?: string | null
           approved_by?: string | null
           billing_status?: string | null
@@ -337,10 +343,14 @@ export type Database = {
           company_name?: string | null
           country?: string | null
           created_at?: string
+          full_access_granted_at?: string | null
+          full_access_granted_by?: string | null
           id?: string
           onboarding_completed?: boolean | null
+          onboarding_status?: string | null
           onboarding_step?: string | null
           phone?: string | null
+          portal_access_level?: string | null
           subscription_plan?: string | null
           updated_at?: string
           user_id: string
@@ -348,6 +358,7 @@ export type Database = {
         Update: {
           account_status?: string | null
           active_plan_details?: Json | null
+          agreement_required?: boolean | null
           approved_at?: string | null
           approved_by?: string | null
           billing_status?: string | null
@@ -355,10 +366,14 @@ export type Database = {
           company_name?: string | null
           country?: string | null
           created_at?: string
+          full_access_granted_at?: string | null
+          full_access_granted_by?: string | null
           id?: string
           onboarding_completed?: boolean | null
+          onboarding_status?: string | null
           onboarding_step?: string | null
           phone?: string | null
+          portal_access_level?: string | null
           subscription_plan?: string | null
           updated_at?: string
           user_id?: string
@@ -956,6 +971,53 @@ export type Database = {
         }
         Relationships: []
       }
+      payment_proofs: {
+        Row: {
+          created_at: string
+          file_name: string
+          file_url: string
+          id: string
+          invoice_id: string
+          message: string | null
+          review_notes: string | null
+          reviewed_at: string | null
+          reviewed_by: string | null
+          status: string
+        }
+        Insert: {
+          created_at?: string
+          file_name: string
+          file_url: string
+          id?: string
+          invoice_id: string
+          message?: string | null
+          review_notes?: string | null
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          status?: string
+        }
+        Update: {
+          created_at?: string
+          file_name?: string
+          file_url?: string
+          id?: string
+          invoice_id?: string
+          message?: string | null
+          review_notes?: string | null
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          status?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "payment_proofs_invoice_id_fkey"
+            columns: ["invoice_id"]
+            isOneToOne: false
+            referencedRelation: "invoices"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       payment_reminders: {
         Row: {
           id: string
@@ -1216,6 +1278,7 @@ export type Database = {
           is_used: boolean
           metadata: Json | null
           pin_hash: string
+          pin_purpose: string | null
           pin_type: string
           used_at: string | null
           user_id: string
@@ -1228,6 +1291,7 @@ export type Database = {
           is_used?: boolean
           metadata?: Json | null
           pin_hash: string
+          pin_purpose?: string | null
           pin_type: string
           used_at?: string | null
           user_id: string
@@ -1240,6 +1304,7 @@ export type Database = {
           is_used?: boolean
           metadata?: Json | null
           pin_hash?: string
+          pin_purpose?: string | null
           pin_type?: string
           used_at?: string | null
           user_id?: string
@@ -1331,6 +1396,69 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      subscription_requests: {
+        Row: {
+          account_number: string | null
+          admin_notes: string | null
+          business_name: string | null
+          country: string | null
+          created_at: string
+          email: string
+          full_name: string
+          id: string
+          included_services: Json | null
+          notes: string | null
+          phone: string | null
+          plan_duration: string
+          plan_name: string
+          plan_price: number
+          processed_at: string | null
+          processed_by: string | null
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          account_number?: string | null
+          admin_notes?: string | null
+          business_name?: string | null
+          country?: string | null
+          created_at?: string
+          email: string
+          full_name: string
+          id?: string
+          included_services?: Json | null
+          notes?: string | null
+          phone?: string | null
+          plan_duration: string
+          plan_name: string
+          plan_price: number
+          processed_at?: string | null
+          processed_by?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          account_number?: string | null
+          admin_notes?: string | null
+          business_name?: string | null
+          country?: string | null
+          created_at?: string
+          email?: string
+          full_name?: string
+          id?: string
+          included_services?: Json | null
+          notes?: string | null
+          phone?: string | null
+          plan_duration?: string
+          plan_name?: string
+          plan_price?: number
+          processed_at?: string | null
+          processed_by?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
       }
       team_members: {
         Row: {

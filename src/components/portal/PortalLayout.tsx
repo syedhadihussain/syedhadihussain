@@ -39,6 +39,7 @@ import {
   FileSignature,
   Globe,
   Receipt,
+  CreditCard,
 } from "lucide-react";
 
 interface PortalLayoutProps {
@@ -67,6 +68,7 @@ const PortalLayout = ({ children }: PortalLayoutProps) => {
   ];
 
   const adminMenuItems = [
+    { icon: CreditCard, label: "Subscription Requests", path: "/en/portal/admin/subscription-requests" },
     { icon: Users, label: "All Clients", path: "/en/portal/admin/clients" },
     { icon: FolderKanban, label: "All Projects", path: "/en/portal/admin/projects" },
     { icon: Shield, label: "User Roles", path: "/en/portal/admin/roles" },
