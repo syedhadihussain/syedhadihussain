@@ -311,6 +311,7 @@ export type Database = {
       client_profiles: {
         Row: {
           account_status: string | null
+          active_plan_details: Json | null
           approved_at: string | null
           approved_by: string | null
           billing_status: string | null
@@ -328,6 +329,7 @@ export type Database = {
         }
         Insert: {
           account_status?: string | null
+          active_plan_details?: Json | null
           approved_at?: string | null
           approved_by?: string | null
           billing_status?: string | null
@@ -345,6 +347,7 @@ export type Database = {
         }
         Update: {
           account_status?: string | null
+          active_plan_details?: Json | null
           approved_at?: string | null
           approved_by?: string | null
           billing_status?: string | null
@@ -583,57 +586,94 @@ export type Database = {
       }
       document_agreements: {
         Row: {
+          agreement_type: string | null
+          client_can_edit: boolean | null
           created_at: string
           created_by: string
           description: string | null
           document_url: string
+          extra_services_rules: string | null
           id: string
+          is_locked: boolean | null
+          late_payment_terms: string | null
+          parent_agreement_id: string | null
+          payment_amount: number | null
+          payment_schedule: string | null
           project_id: string
           sent_at: string | null
+          services_included: Json | null
           signature_data: string | null
           signed_at: string | null
           signer_ip: string | null
           signer_user_agent: string | null
           status: string | null
+          terms_and_conditions: string | null
           title: string
           updated_at: string
           viewed_at: string | null
         }
         Insert: {
+          agreement_type?: string | null
+          client_can_edit?: boolean | null
           created_at?: string
           created_by: string
           description?: string | null
           document_url: string
+          extra_services_rules?: string | null
           id?: string
+          is_locked?: boolean | null
+          late_payment_terms?: string | null
+          parent_agreement_id?: string | null
+          payment_amount?: number | null
+          payment_schedule?: string | null
           project_id: string
           sent_at?: string | null
+          services_included?: Json | null
           signature_data?: string | null
           signed_at?: string | null
           signer_ip?: string | null
           signer_user_agent?: string | null
           status?: string | null
+          terms_and_conditions?: string | null
           title: string
           updated_at?: string
           viewed_at?: string | null
         }
         Update: {
+          agreement_type?: string | null
+          client_can_edit?: boolean | null
           created_at?: string
           created_by?: string
           description?: string | null
           document_url?: string
+          extra_services_rules?: string | null
           id?: string
+          is_locked?: boolean | null
+          late_payment_terms?: string | null
+          parent_agreement_id?: string | null
+          payment_amount?: number | null
+          payment_schedule?: string | null
           project_id?: string
           sent_at?: string | null
+          services_included?: Json | null
           signature_data?: string | null
           signed_at?: string | null
           signer_ip?: string | null
           signer_user_agent?: string | null
           status?: string | null
+          terms_and_conditions?: string | null
           title?: string
           updated_at?: string
           viewed_at?: string | null
         }
         Relationships: [
+          {
+            foreignKeyName: "document_agreements_parent_agreement_id_fkey"
+            columns: ["parent_agreement_id"]
+            isOneToOne: false
+            referencedRelation: "document_agreements"
+            referencedColumns: ["id"]
+          },
           {
             foreignKeyName: "document_agreements_project_id_fkey"
             columns: ["project_id"]
@@ -653,7 +693,12 @@ export type Database = {
           id: string
           invoice_date: string
           invoice_url: string | null
+          notes: string | null
           paid_at: string | null
+          project_id: string | null
+          receipt_url: string | null
+          reminder_count: number | null
+          reminder_sent_at: string | null
           status: string | null
           subscription_id: string | null
         }
@@ -666,7 +711,12 @@ export type Database = {
           id?: string
           invoice_date?: string
           invoice_url?: string | null
+          notes?: string | null
           paid_at?: string | null
+          project_id?: string | null
+          receipt_url?: string | null
+          reminder_count?: number | null
+          reminder_sent_at?: string | null
           status?: string | null
           subscription_id?: string | null
         }
@@ -679,7 +729,12 @@ export type Database = {
           id?: string
           invoice_date?: string
           invoice_url?: string | null
+          notes?: string | null
           paid_at?: string | null
+          project_id?: string | null
+          receipt_url?: string | null
+          reminder_count?: number | null
+          reminder_sent_at?: string | null
           status?: string | null
           subscription_id?: string | null
         }
@@ -689,6 +744,13 @@ export type Database = {
             columns: ["client_id"]
             isOneToOne: false
             referencedRelation: "client_profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "invoices_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "projects"
             referencedColumns: ["id"]
           },
           {
@@ -894,6 +956,41 @@ export type Database = {
         }
         Relationships: []
       }
+      payment_reminders: {
+        Row: {
+          id: string
+          invoice_id: string
+          metadata: Json | null
+          reminder_type: string
+          sent_at: string
+          status: string | null
+        }
+        Insert: {
+          id?: string
+          invoice_id: string
+          metadata?: Json | null
+          reminder_type?: string
+          sent_at?: string
+          status?: string | null
+        }
+        Update: {
+          id?: string
+          invoice_id?: string
+          metadata?: Json | null
+          reminder_type?: string
+          sent_at?: string
+          status?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "payment_reminders_invoice_id_fkey"
+            columns: ["invoice_id"]
+            isOneToOne: false
+            referencedRelation: "invoices"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       profiles: {
         Row: {
           created_at: string
@@ -987,6 +1084,48 @@ export type Database = {
             columns: ["project_id"]
             isOneToOne: false
             referencedRelation: "projects"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      project_subscriptions: {
+        Row: {
+          created_at: string
+          id: string
+          project_id: string
+          status: string | null
+          subscription_id: string | null
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          project_id: string
+          status?: string | null
+          subscription_id?: string | null
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          project_id?: string
+          status?: string | null
+          subscription_id?: string | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "project_subscriptions_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "projects"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "project_subscriptions_subscription_id_fkey"
+            columns: ["subscription_id"]
+            isOneToOne: false
+            referencedRelation: "subscription_info"
             referencedColumns: ["id"]
           },
         ]

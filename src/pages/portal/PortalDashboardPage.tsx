@@ -22,6 +22,9 @@ import {
   Target,
   TrendingUp,
   FileSignature,
+  Sparkles,
+  Receipt,
+  Calendar,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -67,6 +70,15 @@ interface Message {
   sender_id: string;
 }
 
+interface Subscription {
+  id: string;
+  plan_name: string;
+  plan_price: number | null;
+  billing_cycle: string | null;
+  status: string | null;
+  current_period_end: string | null;
+}
+
 const PortalDashboardPage = () => {
   const { user, isAdmin, isModerator } = useAuth();
   const [profile, setProfile] = useState<ClientProfile | null>(null);
@@ -74,6 +86,8 @@ const PortalDashboardPage = () => {
   const [milestones, setMilestones] = useState<Milestone[]>([]);
   const [pendingAgreements, setPendingAgreements] = useState<Agreement[]>([]);
   const [unreadMessages, setUnreadMessages] = useState<number>(0);
+  const [subscription, setSubscription] = useState<Subscription | null>(null);
+  const [pendingInvoices, setPendingInvoices] = useState<number>(0);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -126,6 +140,24 @@ const PortalDashboardPage = () => {
 
             setPendingAgreements(agreementsData || []);
           }
+
+          // Fetch subscription info
+          const { data: subscriptionData } = await supabase
+            .from("subscription_info")
+            .select("*")
+            .eq("client_id", profileData.id)
+            .maybeSingle();
+
+          setSubscription(subscriptionData);
+
+          // Fetch pending invoices count
+          const { count: invoiceCount } = await supabase
+            .from("invoices")
+            .select("*", { count: "exact", head: true })
+            .eq("client_id", profileData.id)
+            .eq("status", "pending");
+
+          setPendingInvoices(invoiceCount || 0);
 
           // Fetch unread message count
           const { data: conversationsData } = await supabase
