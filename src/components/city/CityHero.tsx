@@ -5,6 +5,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { CityDetailData } from "@/lib/cities-config";
 import { StateDetailData } from "@/lib/states-config";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
+import { getCityPageCopy } from "@/lib/city-page-copy";
 import profilePhoto from "@/assets/profile-photo.png";
 
 interface CityHeroProps {
@@ -14,6 +15,9 @@ interface CityHeroProps {
 
 const CityHero = ({ city, state }: CityHeroProps) => {
   const { t, language } = useLanguage();
+  
+  // Get unique, SEO-optimized copy for this city
+  const copy = getCityPageCopy(city, state);
 
   return (
     <section 
@@ -36,27 +40,27 @@ const CityHero = ({ city, state }: CityHeroProps) => {
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full">
                 <Zap className="w-4 h-4 text-primary animate-pulse" />
                 <span className="text-sm font-medium text-primary">
-                  {city.name} {t("city.stopLosingCustomers")}
+                  {copy.heroSubtitle}
                 </span>
               </div>
             </ScrollReveal>
 
             <ScrollReveal delay={0.1}>
               <h1 id="city-hero-heading" className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-                {t(city.tagline)}
+                {copy.heroTitle}
               </h1>
             </ScrollReveal>
 
             <ScrollReveal delay={0.2}>
               <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
-                {t(city.description)}
+                {copy.heroDescription}
               </p>
             </ScrollReveal>
 
             {/* Results-Focused Features */}
             <ScrollReveal delay={0.25}>
               <div className="grid grid-cols-2 gap-3">
-                {city.uniqueFeatures.map((feature, index) => (
+                {city.uniqueFeatures.slice(0, 4).map((feature, index) => (
                   <div key={index} className="flex items-center gap-2 text-sm text-muted-foreground">
                     <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
                     <span className="font-medium">{t(feature)}</span>
@@ -118,7 +122,7 @@ const CityHero = ({ city, state }: CityHeroProps) => {
               <figure className="relative gradient-border rounded-2xl overflow-hidden">
                 <img
                   src={profilePhoto}
-                  alt={`${city.name} ${t("Local SEO Expert - Syed Hadi Hussain - Helping businesses rank number 1 on Google")}`}
+                  alt={`${city.name} Local SEO Expert - Syed Hadi Hussain - Helping businesses rank on Google`}
                   className="w-full max-w-md rounded-2xl object-cover"
                   loading="eager"
                   fetchPriority="high"
@@ -128,8 +132,8 @@ const CityHero = ({ city, state }: CityHeroProps) => {
               </figure>
               {/* Floating Badge */}
               <div className="absolute -bottom-4 -right-4 glass rounded-xl p-4 glow-sm animate-fade-up" style={{ animationDelay: "0.6s" }}>
-                <div className="text-sm font-bold text-foreground">{t("city.yourLocalExpert").replace("{city}", city.name)}</div>
-                <div className="text-xs text-muted-foreground">{t("city.trustedByBusinesses").replace("{state}", state.name)}</div>
+                <div className="text-sm font-bold text-foreground">Your {city.name} Local SEO Partner</div>
+                <div className="text-xs text-muted-foreground">Trusted by businesses in {state.name}</div>
               </div>
             </div>
           </div>
