@@ -329,13 +329,17 @@ const ServingIndustriesPage = () => {
                   className="scroll-mt-24"
                   id={category.slug}
                 >
-                  {/* Category Header */}
-                  <div className="flex items-center gap-3 mb-8">
+                  {/* Category Header - Links to Category Page */}
+                  <Link 
+                    to={langLink(`/local-seo-for-${category.slug}`)}
+                    className="flex items-center gap-3 mb-8 group"
+                  >
                     <span className="text-3xl">{category.icon}</span>
-                    <h3 className="text-2xl font-display font-bold text-foreground">
+                    <h3 className="text-2xl font-display font-bold text-foreground group-hover:text-primary transition-colors">
                       Local SEO for {category.name}
                     </h3>
-                  </div>
+                    <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
+                  </Link>
 
                   {/* Category Description Card */}
                   <Card className="mb-8 overflow-hidden border-primary/20 bg-gradient-to-r from-primary/5 to-transparent">
