@@ -46,6 +46,7 @@ const IndexingDashboardPage = lazy(() => import("./pages/IndexingDashboardPage")
 const AdminAuthPage = lazy(() => import("./pages/AdminAuthPage"));
 const ProtectedAdminRoute = lazy(() => import("./components/ProtectedAdminRoute").then(m => ({ default: m.default })));
 const PortalLoginPage = lazy(() => import("./pages/portal/PortalLoginPage"));
+const PortalOnboardingPage = lazy(() => import("./pages/portal/PortalOnboardingPage"));
 const PortalDashboardPage = lazy(() => import("./pages/portal/PortalDashboardPage"));
 const PortalProjectsPage = lazy(() => import("./pages/portal/PortalProjectsPage"));
 const PortalMessagesPage = lazy(() => import("./pages/portal/PortalMessagesPage"));
@@ -54,6 +55,7 @@ const PortalAgreementsPage = lazy(() => import("./pages/portal/PortalAgreementsP
 const PortalSettingsPage = lazy(() => import("./pages/portal/PortalSettingsPage"));
 const PortalSubscriptionPage = lazy(() => import("./pages/portal/PortalSubscriptionPage"));
 const PortalProjectDetailsPage = lazy(() => import("./pages/portal/PortalProjectDetailsPage"));
+const PortalTeamPage = lazy(() => import("./pages/portal/PortalTeamPage"));
 const AdminClientsPage = lazy(() => import("./pages/portal/admin/AdminClientsPage"));
 const AdminProjectsPage = lazy(() => import("./pages/portal/admin/AdminProjectsPage"));
 const AdminRolesPage = lazy(() => import("./pages/portal/admin/AdminRolesPage"));
@@ -114,6 +116,7 @@ const staticPageRoutes = [
   { path: "areas-we-serve", element: <AreasWeServePage /> },
   { path: "admin/login", element: <AdminAuthPage /> },
   { path: "portal/login", element: <PortalLoginPage /> },
+  { path: "portal/onboarding", element: <PortalOnboardingPage /> },
 ];
 
 // Protected portal routes (require authentication)
@@ -125,6 +128,7 @@ const protectedPortalRoutes = [
   { path: "portal/documents", element: <PortalDocumentsPage /> },
   { path: "portal/agreements", element: <PortalAgreementsPage /> },
   { path: "portal/subscription", element: <PortalSubscriptionPage /> },
+  { path: "portal/team", element: <PortalTeamPage /> },
   { path: "portal/settings", element: <PortalSettingsPage /> },
 ];
 
