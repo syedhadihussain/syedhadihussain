@@ -947,6 +947,45 @@ export type Database = {
         }
         Relationships: []
       }
+      sitemap_submissions: {
+        Row: {
+          completed_at: string | null
+          created_at: string
+          failed_pings: number
+          id: string
+          results: Json | null
+          source: string
+          success_rate: number | null
+          successful_pings: number
+          total_sitemaps: number
+          triggered_at: string
+        }
+        Insert: {
+          completed_at?: string | null
+          created_at?: string
+          failed_pings?: number
+          id?: string
+          results?: Json | null
+          source?: string
+          success_rate?: number | null
+          successful_pings?: number
+          total_sitemaps?: number
+          triggered_at?: string
+        }
+        Update: {
+          completed_at?: string | null
+          created_at?: string
+          failed_pings?: number
+          id?: string
+          results?: Json | null
+          source?: string
+          success_rate?: number | null
+          successful_pings?: number
+          total_sitemaps?: number
+          triggered_at?: string
+        }
+        Relationships: []
+      }
       subscription_info: {
         Row: {
           billing_cycle: string | null

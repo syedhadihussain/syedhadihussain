@@ -37,6 +37,7 @@ import {
   Bell,
   ChevronRight,
   FileSignature,
+  Globe,
 } from "lucide-react";
 
 interface PortalLayoutProps {
@@ -67,6 +68,7 @@ const PortalLayout = ({ children }: PortalLayoutProps) => {
     { icon: FolderKanban, label: "All Projects", path: "/en/portal/admin/projects" },
     { icon: Shield, label: "User Roles", path: "/en/portal/admin/roles" },
     { icon: Bell, label: "Announcements", path: "/en/portal/admin/announcements" },
+    { icon: Globe, label: "Sitemaps", path: "/en/portal/admin/sitemaps" },
   ];
 
   const userInitials = user?.email?.slice(0, 2).toUpperCase() || "U";
