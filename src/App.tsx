@@ -68,6 +68,7 @@ const AdminAnalyticsPage = lazy(() => import("./pages/portal/admin/AdminAnalytic
 const AdminAutomationPage = lazy(() => import("./pages/portal/admin/AdminAutomationPage"));
 const AdminSitemapDashboardPage = lazy(() => import("./pages/portal/admin/AdminSitemapDashboardPage"));
 const AdminSubscriptionRequestsPage = lazy(() => import("./pages/portal/admin/AdminSubscriptionRequestsPage"));
+const AdminPaymentProofsPage = lazy(() => import("./pages/portal/admin/AdminPaymentProofsPage"));
 const ProtectedPortalRoute = lazy(() => import("./components/portal/ProtectedPortalRoute").then(m => ({ default: m.default })));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
@@ -150,6 +151,7 @@ const adminPortalRoutes = [
   { path: "portal/admin/automation", element: <AdminAutomationPage />, requireAdmin: true },
   { path: "portal/admin/sitemaps", element: <AdminSitemapDashboardPage />, requireAdmin: true },
   { path: "portal/admin/subscription-requests", element: <AdminSubscriptionRequestsPage />, requireAdmin: true },
+  { path: "portal/admin/payment-proofs", element: <AdminPaymentProofsPage />, requireAdmin: true },
 ];
 
 // Protected admin routes (require authentication + admin role)
