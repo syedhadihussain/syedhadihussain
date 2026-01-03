@@ -5,6 +5,7 @@ import { isValidState, getStateData, isValidCity } from "@/lib/states-config";
 import { isValidCountry, getCountryData } from "@/lib/countries-config";
 import { getAUCityMetadata } from "@/lib/au-metadata-config";
 import { getUKCityMetadata } from "@/lib/uk-metadata-config";
+import { generateCityMetaTitle, generateCityMetaDescription } from "@/lib/seo-metadata-generator";
 import Navigation from "@/components/portfolio/Navigation";
 import Footer from "@/components/portfolio/Footer";
 import CitySEOHead from "@/components/city/CitySEOHead";
@@ -64,26 +65,24 @@ const CityPage = () => {
   const ukMetadata = countryCode === "uk" ? getUKCityMetadata(stateCode, cityCode) : null;
   const customMetadata = auMetadata || ukMetadata;
 
-  // Client-catching SEO metadata optimized for "local SEO" keyword (use custom metadata if available)
+  // Generate unique SEO metadata using new generators (use custom metadata if available)
   const pageTitle = customMetadata?.title ||
-    `Local SEO ${city.name}, ${city.stateAbbreviation} | #1 Google Maps & AI Search Expert | Get Found Now`;
+    generateCityMetaTitle(city.name, state.code, city.stateAbbreviation);
   
   const pageDescription = customMetadata?.description ||
-    `Looking for Local SEO in ${city.name}? I help ${city.stateAbbreviation} businesses rank #1 on Google Maps & AI search. 7+ years, 50+ industries, 150% avg growth. Get your FREE ${city.name} SEO audit today!`;
+    generateCityMetaDescription(city.name, state.code, state.name);
 
   const keywords = [
-    `local SEO ${city.name}`,
-    `${city.name} SEO expert`,
-    `SEO services ${city.name} ${city.stateAbbreviation}`,
-    `Google Maps optimization ${city.name}`,
-    `local search marketing ${city.name}`,
-    `Google Business Profile ${city.name}`,
-    `local SEO consultant ${city.name}`,
-    `${city.name} SEO company`,
-    `best SEO ${city.name}`,
-    `local SEO agency ${city.name}`,
-    `${city.name} Google ranking`,
-    `SEO specialist ${city.name} ${city.stateName}`,
+    `local SEO services ${city.name}`,
+    `local SEO specialist ${city.name} ${city.stateAbbreviation}`,
+    `Google Maps SEO ${city.name}`,
+    `GBP optimization ${city.name}`,
+    `local search ranking ${city.name}`,
+    `local SEO expert ${city.name}`,
+    `SEO freelancer ${city.name} ${city.stateName}`,
+    `map pack ranking ${city.name}`,
+    `near me SEO ${city.name}`,
+    `local business SEO ${city.name}`,
   ].join(", ");
 
   return (
