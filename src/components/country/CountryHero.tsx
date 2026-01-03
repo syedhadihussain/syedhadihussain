@@ -50,7 +50,13 @@ const CountryHero = ({ country }: CountryHeroProps) => {
 
             <div className="flex items-center gap-3 text-sm text-muted-foreground mb-8 animate-fade-up" style={{ animationDelay: "0.4s" }}>
               <MapPin className="w-4 h-4 text-primary" />
-              <span>{t("country.servingAllStates").replace("{count}", String(country.statesCount || "all"))} {country.name}</span>
+              <span>
+                {/* For 2-tier countries like Saint Helena, use "districts" instead of "states" */}
+                {country.code.toLowerCase() === "sh" 
+                  ? `Working with businesses in all ${country.statesCount || 8} districts across ${country.name}`
+                  : t("country.servingAllStates").replace("{count}", String(country.statesCount || "all")) + " " + country.name
+                }
+              </span>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: "0.45s" }}>
