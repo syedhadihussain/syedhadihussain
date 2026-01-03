@@ -37,6 +37,7 @@ const PrivacyPolicyPage = lazy(() => import("./pages/PrivacyPolicyPage"));
 const TermsOfServicePage = lazy(() => import("./pages/TermsOfServicePage"));
 const StatePage = lazy(() => import("./pages/StatePage"));
 const CityPage = lazy(() => import("./pages/CityPage"));
+const DistrictPage = lazy(() => import("./pages/DistrictPage"));
 const ServingIndustriesPage = lazy(() => import("./pages/ServingIndustriesPage"));
 const CountryPage = lazy(() => import("./pages/CountryPage"));
 const IndustryPage = lazy(() => import("./pages/IndustryPage"));
@@ -230,6 +231,15 @@ const App = () => (
                       key={`city-${lang}`}
                       path={`/${lang}/:countryCode/:stateCode/:citySlug`}
                       element={<CityPage />}
+                    />
+                  ))}
+
+                  {/* District pages for 2-tier countries (e.g., Saint Helena: country → district) */}
+                  {SUPPORTED_LANGUAGES.map((lang) => (
+                    <Route
+                      key={`district-sh-${lang}`}
+                      path={`/${lang}/sh/:districtCode`}
+                      element={<DistrictPage />}
                     />
                   ))}
 

@@ -100,21 +100,32 @@ const CountryStates = ({ country }: CountryStatesProps) => {
 
   if (states.length === 0) return null;
 
+  // For 2-tier countries like Saint Helena, use "Districts" instead of "States/Regions"
+  const isTwoTierCountry = country.code.toLowerCase() === "sh";
+  const areaLabel = isTwoTierCountry ? "Districts" : "States/Regions";
+  const citiesLabel = isTwoTierCountry ? "areas" : "cities";
+
   return (
     <section className="py-20 bg-muted/30" aria-labelledby="states-heading">
       <div className="container-narrow">
         <ScrollReveal>
           <div className="text-center mb-12">
             <span className="text-primary font-medium text-sm uppercase tracking-wider">
-              {t("country.serviceAreas")}
+              {isTwoTierCountry ? "Service Districts" : t("country.serviceAreas")}
             </span>
             <h2 id="states-heading" className="font-display text-3xl sm:text-4xl font-bold text-foreground mt-2 mb-4">
-              {t("country.statesHeading").replace("{country}", country.name)}
+              {isTwoTierCountry 
+                ? `Local SEO Services Across ${country.name} Districts`
+                : t("country.statesHeading").replace("{country}", country.name)
+              }
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              {t("country.statesDescription")
-                .replace("{count}", String(states.length))
-                .replace("{country}", country.name)}
+              {isTwoTierCountry
+                ? `I provide expert local SEO services in all ${states.length} districts of ${country.name}, helping businesses dominate Google Maps and AI search.`
+                : t("country.statesDescription")
+                    .replace("{count}", String(states.length))
+                    .replace("{country}", country.name)
+              }
             </p>
           </div>
         </ScrollReveal>
