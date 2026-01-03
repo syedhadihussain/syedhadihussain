@@ -4,51 +4,24 @@ import {
   Star, 
   FileText, 
   Zap, 
-  BarChart3 
+  BarChart3,
+  Building2,
+  Link2,
+  LucideIcon
 } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
 import { StateDetailData } from "@/lib/states-config";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
+import { getStatePageCopy } from "@/lib/state-page-copy";
 
 interface StateServicesProps {
   state: StateDetailData;
+  countryName?: string;
 }
 
-const StateServices = ({ state }: StateServicesProps) => {
-  const { t } = useLanguage();
+const iconMap: LucideIcon[] = [MapPin, Search, Star, FileText, Building2, Link2];
 
-  const services = [
-    {
-      icon: MapPin,
-      titleKey: "state.service1Title",
-      descKey: "state.service1Desc"
-    },
-    {
-      icon: Search,
-      titleKey: "state.service2Title",
-      descKey: "state.service2Desc"
-    },
-    {
-      icon: Star,
-      titleKey: "state.service3Title",
-      descKey: "state.service3Desc"
-    },
-    {
-      icon: FileText,
-      titleKey: "state.service4Title",
-      descKey: "state.service4Desc"
-    },
-    {
-      icon: Zap,
-      titleKey: "state.service5Title",
-      descKey: "state.service5Desc"
-    },
-    {
-      icon: BarChart3,
-      titleKey: "state.service6Title",
-      descKey: "state.service6Desc"
-    }
-  ];
+const StateServices = ({ state, countryName }: StateServicesProps) => {
+  const copy = getStatePageCopy(state, countryName);
 
   return (
     <section id="services" className="py-20 bg-background" aria-labelledby="services-heading">
@@ -56,33 +29,45 @@ const StateServices = ({ state }: StateServicesProps) => {
         <ScrollReveal>
           <div className="text-center mb-12">
             <span className="text-primary font-medium text-sm uppercase tracking-wider">
-              {t("state.whatIOffer")}
+              What I Offer
             </span>
             <h2 id="services-heading" className="font-display text-3xl sm:text-4xl font-bold text-foreground mt-2 mb-4">
-              {t("state.servicesHeading").replace("{state}", state.name)}
+              {copy.servicesTitle}
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              {t("state.servicesDescription").replace("{state}", state.name)}
+              {copy.servicesSubtitle}
+            </p>
+          </div>
+        </ScrollReveal>
+
+        {/* Services Intro */}
+        <ScrollReveal delay={0.1}>
+          <div className="mb-12 max-w-3xl mx-auto">
+            <p className="text-muted-foreground text-center leading-relaxed">
+              {copy.servicesIntro}
             </p>
           </div>
         </ScrollReveal>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, index) => (
-            <ScrollReveal key={service.titleKey} delay={index * 0.1}>
-              <div className="group bg-card rounded-xl p-6 border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg h-full">
-                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <service.icon className="w-6 h-6 text-primary" />
-                </div>
-                <h2 className="font-display text-xl font-semibold text-foreground mb-2">
-                  {t(service.titleKey).replace("{state}", state.name)}
-                </h2>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {t(service.descKey).replace("{state}", state.name)}
-                </p>
-              </div>
-            </ScrollReveal>
-          ))}
+          {copy.serviceItems.map((service, index) => {
+            const Icon = iconMap[index % iconMap.length];
+            return (
+              <ScrollReveal key={service.title} delay={index * 0.1}>
+                <article className="group bg-card rounded-xl p-6 border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg h-full">
+                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                    <Icon className="w-6 h-6 text-primary" aria-hidden="true" />
+                  </div>
+                  <h3 className="font-display text-xl font-semibold text-foreground mb-2">
+                    {service.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {service.description}
+                  </p>
+                </article>
+              </ScrollReveal>
+            );
+          })}
         </div>
       </div>
     </section>
