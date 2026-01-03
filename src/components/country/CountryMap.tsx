@@ -1,7 +1,6 @@
 import { MapPin } from "lucide-react";
-import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { CountryData, ALL_US_STATES, US_STATES } from "@/lib/countries-config";
+import { CountryData } from "@/lib/countries-config";
 import { getCountryPageCopy } from "@/lib/country-page-copy";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
@@ -10,15 +9,8 @@ interface CountryMapProps {
 }
 
 const CountryMap = ({ country }: CountryMapProps) => {
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
   const copy = getCountryPageCopy(country);
-  const isUS = country.code === "us";
-
-  // Get active state codes for checking
-  const activeStateCodes = US_STATES.reduce((acc, state) => {
-    acc[state.name] = state.code;
-    return acc;
-  }, {} as Record<string, string>);
 
   return (
     <section className="py-20 bg-background" aria-labelledby="map-heading">
@@ -72,41 +64,6 @@ const CountryMap = ({ country }: CountryMapProps) => {
           </div>
         </ScrollReveal>
 
-        {isUS && (
-          <ScrollReveal delay={0.3}>
-            <div className="mt-8 p-6 bg-muted/30 rounded-xl">
-              <h3 className="font-display text-lg font-semibold text-foreground mb-4 text-center">
-                {t("country.allStatesHeading")}
-              </h3>
-              <div className="flex flex-wrap justify-center gap-2">
-                {ALL_US_STATES.map((stateName) => {
-                  const stateCode = activeStateCodes[stateName];
-                  
-                  if (stateCode) {
-                    return (
-                      <Link 
-                        key={stateName}
-                        to={`/${language}/${country.code}/${stateCode}`}
-                        className="px-3 py-1 bg-background rounded-full text-sm text-muted-foreground border border-border hover:border-primary hover:text-primary hover:bg-primary/5 transition-colors"
-                      >
-                        {stateName}
-                      </Link>
-                    );
-                  }
-                  
-                  return (
-                    <span 
-                      key={stateName}
-                      className="px-3 py-1 bg-background rounded-full text-sm text-muted-foreground border border-border"
-                    >
-                      {stateName}
-                    </span>
-                  );
-                })}
-              </div>
-            </div>
-          </ScrollReveal>
-        )}
       </div>
     </section>
   );

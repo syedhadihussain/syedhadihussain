@@ -13,6 +13,7 @@ import FloatingActions from "@/components/FloatingActions";
 import TawkToChat from "@/components/TawkToChat";
 import GlobalSEO from "@/components/GlobalSEO";
 import { SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE, isSupportedLanguage } from "@/lib/i18n-config";
+import ScrollToTop from "@/components/ScrollToTop";
 import Index from "./pages/Index";
 
 // Lazy load pages for better performance
@@ -151,6 +152,7 @@ const App = () => (
               <FloatingActions />
               <TawkToChat />
               <BrowserRouter>
+                <ScrollToTop />
                 <LanguageRedirect />
               <Suspense fallback={<PageLoader />}>
                 <Routes>
