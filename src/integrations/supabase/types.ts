@@ -194,6 +194,41 @@ export type Database = {
         }
         Relationships: []
       }
+      chat_participants: {
+        Row: {
+          added_at: string
+          added_by: string | null
+          can_view_client_name: boolean
+          conversation_id: string
+          id: string
+          user_id: string
+        }
+        Insert: {
+          added_at?: string
+          added_by?: string | null
+          can_view_client_name?: boolean
+          conversation_id: string
+          id?: string
+          user_id: string
+        }
+        Update: {
+          added_at?: string
+          added_by?: string | null
+          can_view_client_name?: boolean
+          conversation_id?: string
+          id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "chat_participants_conversation_id_fkey"
+            columns: ["conversation_id"]
+            isOneToOne: false
+            referencedRelation: "conversations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       chat_summaries: {
         Row: {
           action_items: Json | null
@@ -276,12 +311,16 @@ export type Database = {
       client_profiles: {
         Row: {
           account_status: string | null
+          approved_at: string | null
+          approved_by: string | null
           billing_status: string | null
           client_id: string
           company_name: string | null
           country: string | null
           created_at: string
           id: string
+          onboarding_completed: boolean | null
+          onboarding_step: string | null
           phone: string | null
           subscription_plan: string | null
           updated_at: string
@@ -289,12 +328,16 @@ export type Database = {
         }
         Insert: {
           account_status?: string | null
+          approved_at?: string | null
+          approved_by?: string | null
           billing_status?: string | null
           client_id: string
           company_name?: string | null
           country?: string | null
           created_at?: string
           id?: string
+          onboarding_completed?: boolean | null
+          onboarding_step?: string | null
           phone?: string | null
           subscription_plan?: string | null
           updated_at?: string
@@ -302,18 +345,57 @@ export type Database = {
         }
         Update: {
           account_status?: string | null
+          approved_at?: string | null
+          approved_by?: string | null
           billing_status?: string | null
           client_id?: string
           company_name?: string | null
           country?: string | null
           created_at?: string
           id?: string
+          onboarding_completed?: boolean | null
+          onboarding_step?: string | null
           phone?: string | null
           subscription_plan?: string | null
           updated_at?: string
           user_id?: string
         }
         Relationships: []
+      }
+      client_teams: {
+        Row: {
+          client_id: string
+          created_at: string
+          description: string | null
+          id: string
+          name: string
+          updated_at: string
+        }
+        Insert: {
+          client_id: string
+          created_at?: string
+          description?: string | null
+          id?: string
+          name: string
+          updated_at?: string
+        }
+        Update: {
+          client_id?: string
+          created_at?: string
+          description?: string | null
+          id?: string
+          name?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "client_teams_client_id_fkey"
+            columns: ["client_id"]
+            isOneToOne: false
+            referencedRelation: "client_profiles"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       contacts: {
         Row: {
@@ -617,6 +699,45 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      login_history: {
+        Row: {
+          device_info: Json | null
+          failure_reason: string | null
+          id: string
+          ip_address: string | null
+          is_successful: boolean
+          location: string | null
+          login_at: string
+          logout_at: string | null
+          user_agent: string | null
+          user_id: string
+        }
+        Insert: {
+          device_info?: Json | null
+          failure_reason?: string | null
+          id?: string
+          ip_address?: string | null
+          is_successful?: boolean
+          location?: string | null
+          login_at?: string
+          logout_at?: string | null
+          user_agent?: string | null
+          user_id: string
+        }
+        Update: {
+          device_info?: Json | null
+          failure_reason?: string | null
+          id?: string
+          ip_address?: string | null
+          is_successful?: boolean
+          location?: string | null
+          login_at?: string
+          logout_at?: string | null
+          user_agent?: string | null
+          user_id?: string
+        }
+        Relationships: []
       }
       messages: {
         Row: {
@@ -947,6 +1068,45 @@ export type Database = {
         }
         Relationships: []
       }
+      secure_pins: {
+        Row: {
+          created_at: string
+          created_by: string | null
+          expires_at: string
+          id: string
+          is_used: boolean
+          metadata: Json | null
+          pin_hash: string
+          pin_type: string
+          used_at: string | null
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          created_by?: string | null
+          expires_at: string
+          id?: string
+          is_used?: boolean
+          metadata?: Json | null
+          pin_hash: string
+          pin_type: string
+          used_at?: string | null
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          created_by?: string | null
+          expires_at?: string
+          id?: string
+          is_used?: boolean
+          metadata?: Json | null
+          pin_hash?: string
+          pin_type?: string
+          used_at?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
       sitemap_submissions: {
         Row: {
           completed_at: string | null
@@ -1033,6 +1193,62 @@ export type Database = {
           },
         ]
       }
+      team_members: {
+        Row: {
+          can_view_client_details: boolean
+          can_view_documents: boolean
+          can_view_invoices: boolean
+          created_at: string
+          id: string
+          invited_at: string
+          invited_by: string | null
+          joined_at: string | null
+          role: string
+          status: string
+          team_id: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          can_view_client_details?: boolean
+          can_view_documents?: boolean
+          can_view_invoices?: boolean
+          created_at?: string
+          id?: string
+          invited_at?: string
+          invited_by?: string | null
+          joined_at?: string | null
+          role?: string
+          status?: string
+          team_id: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          can_view_client_details?: boolean
+          can_view_documents?: boolean
+          can_view_invoices?: boolean
+          created_at?: string
+          id?: string
+          invited_at?: string
+          invited_by?: string | null
+          joined_at?: string | null
+          role?: string
+          status?: string
+          team_id?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "team_members_team_id_fkey"
+            columns: ["team_id"]
+            isOneToOne: false
+            referencedRelation: "client_teams"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       user_roles: {
         Row: {
           created_at: string
@@ -1070,7 +1286,7 @@ export type Database = {
       is_admin_or_moderator: { Args: { _user_id: string }; Returns: boolean }
     }
     Enums: {
-      app_role: "admin" | "moderator" | "client"
+      app_role: "admin" | "moderator" | "client" | "team_member"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -1198,7 +1414,7 @@ export type CompositeTypes<
 export const Constants = {
   public: {
     Enums: {
-      app_role: ["admin", "moderator", "client"],
+      app_role: ["admin", "moderator", "client", "team_member"],
     },
   },
 } as const
