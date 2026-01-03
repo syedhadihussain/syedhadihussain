@@ -9,7 +9,7 @@ const corsHeaders = {
 };
 
 interface NotificationRequest {
-  type: "new_message" | "agreement_request" | "agreement_signed" | "project_update";
+  type: "new_message" | "agreement_request" | "agreement_signed" | "project_update" | "payment_approved" | "payment_rejected";
   recipientEmail: string;
   recipientName: string;
   data: {
@@ -20,6 +20,9 @@ interface NotificationRequest {
     projectName?: string;
     updateType?: string;
     details?: string;
+    invoiceAmount?: string;
+    invoiceCurrency?: string;
+    reviewNotes?: string;
   };
 }
 
@@ -135,6 +138,68 @@ const getEmailContent = (type: string, recipientName: string, data: Notification
                 ${data.details ? `<p style="margin: 10px 0 0 0; color: #6b7280;">${data.details}</p>` : ""}
               </div>
               <a href="https://syedhadihussain.com/portal/projects" style="display: inline-block; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; padding: 12px 24px; text-decoration: none; border-radius: 8px; font-weight: 600; margin-top: 10px;">View Project</a>
+              <p style="color: #6b7280; font-size: 14px; margin-top: 30px;">Best regards,<br>Syed Hadi Hussain</p>
+            </div>
+          </body>
+          </html>
+        `,
+      };
+
+    case "payment_approved":
+      return {
+        subject: `✅ Payment Approved - ${data.invoiceCurrency} ${data.invoiceAmount}`,
+        html: `
+          <!DOCTYPE html>
+          <html>
+          <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          </head>
+          <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
+            <div style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); padding: 30px; border-radius: 12px 12px 0 0;">
+              <h1 style="color: white; margin: 0; font-size: 24px;">✅ Payment Approved</h1>
+            </div>
+            <div style="background: #f9fafb; padding: 30px; border-radius: 0 0 12px 12px; border: 1px solid #e5e7eb; border-top: none;">
+              <p style="margin-top: 0;">Hi ${recipientName},</p>
+              <p>Great news! Your payment has been verified and approved.</p>
+              <div style="background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #10b981; margin: 20px 0;">
+                <p style="margin: 0; font-weight: 600; font-size: 18px;">Amount: ${data.invoiceCurrency} ${data.invoiceAmount}</p>
+                <p style="margin: 10px 0 0 0; color: #10b981; font-weight: 600;">Status: Approved ✓</p>
+                ${data.reviewNotes ? `<p style="margin: 10px 0 0 0; color: #6b7280;">Notes: ${data.reviewNotes}</p>` : ""}
+              </div>
+              <p style="color: #374151;">You now have access to sign your agreement. Please proceed to complete your onboarding.</p>
+              <a href="https://syedhadihussain.com/portal/agreements" style="display: inline-block; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: 12px 24px; text-decoration: none; border-radius: 8px; font-weight: 600; margin-top: 10px;">View Agreements</a>
+              <p style="color: #6b7280; font-size: 14px; margin-top: 30px;">Best regards,<br>Syed Hadi Hussain</p>
+            </div>
+          </body>
+          </html>
+        `,
+      };
+
+    case "payment_rejected":
+      return {
+        subject: `⚠️ Payment Review Required - ${data.invoiceCurrency} ${data.invoiceAmount}`,
+        html: `
+          <!DOCTYPE html>
+          <html>
+          <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          </head>
+          <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
+            <div style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); padding: 30px; border-radius: 12px 12px 0 0;">
+              <h1 style="color: white; margin: 0; font-size: 24px;">⚠️ Payment Issue</h1>
+            </div>
+            <div style="background: #f9fafb; padding: 30px; border-radius: 0 0 12px 12px; border: 1px solid #e5e7eb; border-top: none;">
+              <p style="margin-top: 0;">Hi ${recipientName},</p>
+              <p>Unfortunately, we couldn't verify your payment proof. Please review the details below.</p>
+              <div style="background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #ef4444; margin: 20px 0;">
+                <p style="margin: 0; font-weight: 600; font-size: 18px;">Amount: ${data.invoiceCurrency} ${data.invoiceAmount}</p>
+                <p style="margin: 10px 0 0 0; color: #ef4444; font-weight: 600;">Status: Requires Attention</p>
+                ${data.reviewNotes ? `<p style="margin: 10px 0 0 0; color: #6b7280;"><strong>Reason:</strong> ${data.reviewNotes}</p>` : ""}
+              </div>
+              <p style="color: #374151;">Please upload a new payment proof or contact us if you believe this is an error.</p>
+              <a href="https://syedhadihussain.com/portal/invoices" style="display: inline-block; background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); color: white; padding: 12px 24px; text-decoration: none; border-radius: 8px; font-weight: 600; margin-top: 10px;">View Invoices</a>
               <p style="color: #6b7280; font-size: 14px; margin-top: 30px;">Best regards,<br>Syed Hadi Hussain</p>
             </div>
           </body>

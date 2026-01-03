@@ -158,6 +158,36 @@ const AdminPaymentProofsPage = () => {
         if (clientError) throw clientError;
       }
 
+      // Send email notification to client
+      if (selectedProof.client?.user_id) {
+        try {
+          const { data: profile } = await supabase
+            .from("profiles")
+            .select("email, full_name")
+            .eq("id", selectedProof.client.user_id)
+            .maybeSingle();
+
+          if (profile?.email) {
+            await supabase.functions.invoke("send-notification-email", {
+              body: {
+                type: status === "approved" ? "payment_approved" : "payment_rejected",
+                recipientEmail: profile.email,
+                recipientName: profile.full_name || selectedProof.client.company_name || "Client",
+                data: {
+                  invoiceAmount: selectedProof.invoice?.amount?.toLocaleString() || "0",
+                  invoiceCurrency: selectedProof.invoice?.currency || "USD",
+                  reviewNotes: reviewNotes || undefined,
+                },
+              },
+            });
+            console.log("Payment notification email sent successfully");
+          }
+        } catch (emailError) {
+          console.error("Failed to send email notification:", emailError);
+          // Don't fail the whole operation if email fails
+        }
+      }
+
       toast.success(`Payment ${status === "approved" ? "approved" : "rejected"} successfully`);
       setSelectedProof(null);
       setReviewNotes("");
