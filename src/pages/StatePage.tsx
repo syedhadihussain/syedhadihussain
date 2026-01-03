@@ -19,7 +19,6 @@ import FullStackCTA from "@/components/portfolio/FullStackCTA";
 import FAQ from "@/components/portfolio/FAQ";
 import GeoBreadcrumb from "@/components/geo/GeoBreadcrumb";
 import ParentCountryLink from "@/components/geo/ParentCountryLink";
-import IndustriesWeServe from "@/components/geo/IndustriesWeServe";
 
 const StatePage = () => {
   const { countryCode, stateCode } = useParams<{ countryCode: string; stateCode: string }>();
@@ -100,7 +99,6 @@ const StatePage = () => {
           </section>
           <StateServices state={state} />
           <StateWhyChoose state={state} />
-          <IndustriesWeServe locationName={state.name} />
           <section id="case-studies" aria-label="Client case studies">
             <CaseStudies />
           </section>

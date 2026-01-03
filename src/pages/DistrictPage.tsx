@@ -15,7 +15,6 @@ import FullStackCTA from "@/components/portfolio/FullStackCTA";
 import FAQ from "@/components/portfolio/FAQ";
 import GeoBreadcrumb from "@/components/geo/GeoBreadcrumb";
 import ParentCountryLink from "@/components/geo/ParentCountryLink";
-import IndustriesWeServe from "@/components/geo/IndustriesWeServe";
 import {
   Search,
   MapPin,
@@ -394,9 +393,6 @@ const DistrictPage = () => {
               />
             </div>
           </section>
-
-          {/* Industries We Serve */}
-          <IndustriesWeServe locationName={district.name} />
 
           {/* Case Studies */}
           <section id="case-studies" aria-label="Client case studies">
