@@ -53,24 +53,24 @@ export const getCountryTopAreas = (country: CountryData, max = 3) => {
 // ============================================================================
 
 const heroTitlePrefixes = [
-  "Local SEO Services Across",
-  "Strategic Local SEO for Businesses in",
-  "Nationwide Local SEO Solutions for",
-  "Comprehensive Local SEO Expertise in",
-  "Professional Local SEO Services in",
-  "Results-Driven Local SEO for",
-  "Full-Service Local SEO Across",
-  "Scalable Local SEO Solutions in",
-  "Trusted Local SEO Partner for",
   "Expert Local SEO Services in",
+  "Trusted Local SEO Specialist for",
+  "Results-Driven Local SEO Expert in",
+  "Professional Local SEO Services for",
+  "Data-Driven Local SEO Solutions in",
+  "Proven Local SEO Strategist for",
+  "Your Dedicated Local SEO Partner in",
+  "Award-Winning Local SEO Services in",
+  "High-Impact Local SEO Expert for",
+  "Certified Local SEO Consultant in",
 ];
 
 const heroDescriptionTemplates = [
-  `With experience spanning seven years and fifty-plus industries, I deliver Local SEO Services adapted to the unique characteristics of the {country} market. Whether you operate in one city or across multiple regions in {areasText}, my approach focuses on measurable improvements in local search visibility, qualified leads, and sustainable ranking growth.`,
-  `Businesses throughout {country} trust my Local SEO Services to improve their presence on Google Maps, build credible online profiles, and attract customers actively searching for their services. I bring a data-driven methodology refined through work with clients from {areasText} to markets worldwide.`,
-  `My Local SEO Services for {country} combine deep knowledge of search algorithms with practical insights into local consumer behavior. From {areasText} and beyond, I help businesses establish the local authority that translates into calls, bookings, and revenue.`,
-  `I work directly with {country} business owners who want more than promises. My Local SEO Services deliver measurable outcomes: improved Google Maps visibility, higher local search rankings, and the kind of leads that convert into long-term customers across {areasText}.`,
-  `Search patterns vary across {country}, and effective Local SEO must account for these regional differences. I develop strategies for businesses in {areasText} that address their specific competitive landscape while building sustainable local visibility.`,
+  `As your local SEO specialist, I help {country} businesses dominate Google Maps rankings and capture high-intent near me searches. My proven Google Business Profile optimization strategies deliver measurable improvements in map pack visibility across {areasText}, turning local searches into qualified leads and revenue.`,
+  `I specialize in comprehensive local search marketing for {country} businesses, focusing on the factors that drive real results: Google Maps SEO, NAP consistency, citation building, and strategic review generation. From {areasText} to markets nationwide, my data-driven approach builds the local authority that converts searchers into customers.`,
+  `My expertise as a local SEO expert spans Google Business Profile management, map pack ranking strategies, and local content optimization for businesses across {country}. I help companies in {areasText} achieve sustainable visibility improvements through search-guidelines-compliant methodologies that protect your long-term rankings.`,
+  `{country} business owners trust my local SEO services to improve their near me search visibility, strengthen their Google Maps presence, and build the review profiles that influence customer decisions. I combine GBP optimization with strategic citation development to dominate local search results in {areasText}.`,
+  `Effective local search optimization in {country} requires expertise in Google Business Profile management, citation accuracy, and the local ranking signals that drive map pack positions. My strategies for businesses in {areasText} focus on the measurable outcomes that matter: more calls, more direction requests, and more customers.`,
 ];
 
 // ============================================================================
