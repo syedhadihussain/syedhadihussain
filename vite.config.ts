@@ -41,14 +41,10 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    // Enable minification
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: mode === 'production',
-        drop_debugger: true,
-        pure_funcs: mode === 'production' ? ['console.log', 'console.info'] : [],
-      },
+    // Use esbuild for minification (built-in, no extra dependency)
+    minify: 'esbuild',
+    esbuild: {
+      drop: mode === 'production' ? ['console', 'debugger'] : [],
     },
     // Optimize chunk splitting
     rollupOptions: {

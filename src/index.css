@@ -150,6 +150,48 @@
   }
 }
 
+/* WCAG 2.1 AA Focus Styles */
+@layer base {
+  /* Enhanced focus indicators for keyboard navigation - WCAG 2.4.7 */
+  :focus-visible {
+    outline: 2px solid hsl(var(--primary));
+    outline-offset: 2px;
+  }
+
+  /* High contrast focus for buttons and links */
+  a:focus-visible,
+  button:focus-visible,
+  [role="button"]:focus-visible {
+    outline: 3px solid hsl(var(--primary));
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px hsl(var(--background));
+  }
+
+  /* Skip focus outline for mouse users */
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  /* Ensure minimum touch target size - WCAG 2.5.5 (AAA) / 2.5.8 (AA) */
+  button,
+  [role="button"],
+  a,
+  input,
+  select,
+  textarea {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Exception for inline links */
+  p a,
+  li a,
+  span a {
+    min-height: auto;
+    min-width: auto;
+  }
+}
+
 @layer utilities {
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
