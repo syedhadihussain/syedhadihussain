@@ -1,10 +1,11 @@
+import { memo, useMemo } from "react";
 import { ArrowUpRight, MapPin, TrendingUp, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Link } from "react-router-dom";
 
-const CaseStudies = () => {
+const CaseStudies = memo(() => {
   const { t } = useLanguage();
 
   const caseStudies = [
@@ -174,6 +175,8 @@ const CaseStudies = () => {
       </div>
     </section>
   );
-};
+});
+
+CaseStudies.displayName = "CaseStudies";
 
 export default CaseStudies;

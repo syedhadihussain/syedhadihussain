@@ -1,3 +1,4 @@
+import { memo, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Briefcase, Globe, MessageSquare, Bot, BarChart3, Eye } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -12,7 +13,7 @@ const capabilities = [
   { icon: Briefcase, label: "Complete Digital Marketing" },
 ];
 
-const FullStackCTA = () => {
+const FullStackCTA = memo(() => {
   const { t } = useLanguage();
 
   return (
@@ -81,6 +82,8 @@ const FullStackCTA = () => {
       </div>
     </section>
   );
-};
+});
+
+FullStackCTA.displayName = "FullStackCTA";
 
 export default FullStackCTA;

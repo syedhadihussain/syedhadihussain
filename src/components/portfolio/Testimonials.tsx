@@ -1,3 +1,4 @@
+import { memo, useMemo } from "react";
 import { Quote, Star } from "lucide-react";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -35,8 +36,11 @@ const testimonialKeys = [
   { quoteKey: "testimonials.t23.quote", authorKey: "testimonials.t23.author", roleKey: "testimonials.t23.role", locationKey: "testimonials.t23.location" },
 ];
 
-const Testimonials = () => {
+const Testimonials = memo(() => {
   const { t } = useLanguage();
+  
+  // Memoize star array to prevent recreation
+  const stars = useMemo(() => [...Array(5)], []);
 
   return (
     <section id="testimonials" className="section-padding overflow-hidden">
@@ -71,9 +75,9 @@ const Testimonials = () => {
                     {/* Quote Icon */}
                     <Quote className="w-10 h-10 text-primary/20 mb-4" />
 
-                    {/* Stars */}
+                    {/* Stars - memoized */}
                     <div className="flex gap-1 mb-4">
-                      {[...Array(5)].map((_, i) => (
+                      {stars.map((_, i) => (
                         <Star key={i} className="w-4 h-4 fill-primary text-primary" />
                       ))}
                     </div>
@@ -103,6 +107,8 @@ const Testimonials = () => {
       </div>
     </section>
   );
-};
+});
+
+Testimonials.displayName = "Testimonials";
 
 export default Testimonials;

@@ -1,8 +1,9 @@
+import { memo } from "react";
 import { Award, CheckCircle, TrendingUp, Users, Mail, Phone, Calendar, Linkedin, Facebook, Github, Youtube, Globe, Zap } from "lucide-react";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-const About = () => {
+const About = memo(() => {
   const { t } = useLanguage();
 
   const certifications = [
@@ -172,6 +173,8 @@ const About = () => {
       </div>
     </section>
   );
-};
+});
+
+About.displayName = "About";
 
 export default About;

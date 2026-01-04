@@ -1,3 +1,4 @@
+import { memo, useMemo } from "react";
 import Navigation from "@/components/portfolio/Navigation";
 import Footer from "@/components/portfolio/Footer";
 import SEOHead from "@/components/SEOHead";
@@ -117,9 +118,9 @@ const seoProjects = [
   },
 ];
 
-const PortfolioPage = () => {
+const PortfolioPage = memo(() => {
   const { t, language } = useLanguage();
-  const withLang = (path: string) => (path === "/" ? `/${language}` : `/${language}${path}`);
+  const withLang = useMemo(() => (path: string) => (path === "/" ? `/${language}` : `/${language}${path}`), [language]);
 
   return (
     <div className="min-h-screen bg-background">
@@ -356,6 +357,8 @@ const PortfolioPage = () => {
       <Footer />
     </div>
   );
-};
+});
+
+PortfolioPage.displayName = "PortfolioPage";
 
 export default PortfolioPage;

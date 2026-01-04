@@ -1,10 +1,11 @@
+import { memo, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Globe, Building2, MapPin, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-const GlobalReachCTA = () => {
+const GlobalReachCTA = memo(() => {
   const { language } = useLanguage();
 
   return (
@@ -130,6 +131,8 @@ const GlobalReachCTA = () => {
       </div>
     </section>
   );
-};
+});
+
+GlobalReachCTA.displayName = "GlobalReachCTA";
 
 export default GlobalReachCTA;
