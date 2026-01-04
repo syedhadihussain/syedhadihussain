@@ -4,6 +4,7 @@ import About from "@/components/portfolio/About";
 import Services from "@/components/portfolio/Services";
 import CaseStudies from "@/components/portfolio/CaseStudies";
 import Testimonials from "@/components/portfolio/Testimonials";
+import GlobalReachCTA from "@/components/portfolio/GlobalReachCTA";
 import FullStackCTA from "@/components/portfolio/FullStackCTA";
 import FAQ from "@/components/portfolio/FAQ";
 import Contact from "@/components/portfolio/Contact";
@@ -35,6 +36,9 @@ const Index = () => {
           </section>
           <section id="testimonials" aria-label="Client testimonials">
             <Testimonials />
+          </section>
+          <section id="global-reach" aria-label="Global reach and industries">
+            <GlobalReachCTA />
           </section>
           <aside aria-label="Call to action">
             <FullStackCTA />
