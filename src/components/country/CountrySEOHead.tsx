@@ -128,7 +128,7 @@ const CountrySEOHead = ({ country, title, description, keywords }: CountrySEOHea
     sameAs: [
       "https://www.linkedin.com/in/syed-hadi-hussain-seo-specialist/",
       "https://www.facebook.com/syedhadihussainseo/",
-      "https://wa.me/971561948712"
+      "https://wa.me/+971523695036"
     ]
   };
 

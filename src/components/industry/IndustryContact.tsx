@@ -47,7 +47,7 @@ const IndustryContact = ({ industry }: IndustryContactProps) => {
               </a>
 
               <a 
-                href="https://wa.me/971523695036" 
+                href="https://wa.me/+971523695036"
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="glass rounded-2xl p-6 text-center hover:bg-primary/10 transition-all duration-300 group"

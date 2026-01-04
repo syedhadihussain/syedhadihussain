@@ -37,7 +37,7 @@ const FloatingActions = () => {
       : 'Hi! I\'m interested in your SEO services. Can I know more?'
   );
 
-  const whatsappUrl = `https://wa.me/971523695036?text=${whatsappMessage}`;
+  const whatsappUrl = `https://wa.me/+971523695036?text=${whatsappMessage}`;
 
   const emailSubject = encodeURIComponent(
     language === 'ar' ? 'استفسار عن خدمات SEO' : 'SEO Services Inquiry'
