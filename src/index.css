@@ -105,17 +105,22 @@
 
   html {
     scroll-behavior: smooth;
+    /* Optimize rendering */
+    text-rendering: optimizeSpeed;
   }
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', system-ui, -apple-system, sans-serif;
     font-size: 16px;
     line-height: 1.5;
+    /* Performance optimizations */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
     font-weight: 700;
   }
 
@@ -125,6 +130,23 @@
 
   p {
     line-height: 1.6;
+  }
+
+  /* Optimize images globally */
+  img {
+    content-visibility: auto;
+  }
+
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 
@@ -195,6 +217,28 @@
   /* Image optimization */
   .img-lazy {
     content-visibility: auto;
+  }
+
+  /* Content visibility for below-fold sections */
+  .contain-content {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 500px;
+  }
+
+  /* GPU acceleration hints */
+  .gpu-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  /* Optimize paint containment */
+  .paint-contain {
+    contain: paint;
+  }
+
+  /* Layout containment for better performance */
+  .layout-contain {
+    contain: layout;
   }
 }
 

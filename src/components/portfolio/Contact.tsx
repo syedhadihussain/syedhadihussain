@@ -1,10 +1,12 @@
-import { Button } from "@/components/ui/button";
-import { Calendar, Mail, MessageCircle, ArrowRight, MapPin, Phone } from "lucide-react";
+import { memo, lazy, Suspense } from "react";
+import { Calendar, Mail, MessageCircle, MapPin } from "lucide-react";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
-import ContactForm from "@/components/ContactForm";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-const Contact = () => {
+// Lazy load the contact form since it's below the fold
+const ContactForm = lazy(() => import("@/components/ContactForm"));
+
+const Contact = memo(() => {
   const { t } = useLanguage();
 
   return (
@@ -86,13 +88,21 @@ const Contact = () => {
               <h3 className="font-display text-xl lg:text-2xl font-bold text-foreground mb-6 text-center">
                 {t("contact.sendInquiry")}
               </h3>
-              <ContactForm />
+              <Suspense fallback={
+                <div className="h-64 flex items-center justify-center">
+                  <div className="w-8 h-8 border-2 border-primary/20 border-t-primary rounded-full animate-spin" />
+                </div>
+              }>
+                <ContactForm />
+              </Suspense>
             </div>
           </ScrollReveal>
         </div>
       </div>
     </section>
   );
-};
+});
+
+Contact.displayName = "Contact";
 
 export default Contact;

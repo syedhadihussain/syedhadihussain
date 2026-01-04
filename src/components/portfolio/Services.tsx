@@ -1,3 +1,4 @@
+import { memo, useMemo } from "react";
 import { 
   MapPin, 
   Globe, 
@@ -16,7 +17,7 @@ import {
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-const Services = () => {
+const Services = memo(() => {
   const { t } = useLanguage();
 
   const services = [
@@ -71,6 +72,8 @@ const Services = () => {
       </div>
     </section>
   );
-};
+});
+
+Services.displayName = "Services";
 
 export default Services;

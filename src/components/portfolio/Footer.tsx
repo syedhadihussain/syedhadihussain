@@ -1,10 +1,10 @@
-import { forwardRef } from "react";
+import { forwardRef, memo, useMemo } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Linkedin, Facebook, Github, Mail, Globe, MessageCircle, ArrowUpRight, Shield, CreditCard } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE } from "@/lib/i18n-config";
 
-const Footer = forwardRef<HTMLElement>((_, ref) => {
+const Footer = memo(forwardRef<HTMLElement>((_, ref) => {
   const { t } = useLanguage();
   const location = useLocation();
   const currentYear = new Date().getFullYear();
@@ -215,7 +215,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
       </div>
     </footer>
   );
-});
+}));
 
 Footer.displayName = "Footer";
 

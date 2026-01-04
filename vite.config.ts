@@ -40,4 +40,48 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    // Enable minification
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: mode === 'production',
+        drop_debugger: true,
+        pure_funcs: mode === 'production' ? ['console.log', 'console.info'] : [],
+      },
+    },
+    // Optimize chunk splitting
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Core vendor chunk
+          'vendor-react': ['react', 'react-dom'],
+          'vendor-router': ['react-router-dom'],
+          // UI library chunk
+          'vendor-ui': [
+            '@radix-ui/react-accordion',
+            '@radix-ui/react-dialog',
+            '@radix-ui/react-dropdown-menu',
+            '@radix-ui/react-tabs',
+            '@radix-ui/react-tooltip',
+          ],
+          // Utilities chunk
+          'vendor-utils': ['clsx', 'tailwind-merge', 'class-variance-authority'],
+        },
+      },
+    },
+    // Target modern browsers
+    target: 'esnext',
+    // Enable source maps for production debugging
+    sourcemap: mode === 'development',
+    // CSS code splitting
+    cssCodeSplit: true,
+    // Asset size warning threshold
+    chunkSizeWarningLimit: 500,
+  },
+  // Optimize dependencies
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'react-router-dom'],
+    exclude: ['@tanstack/react-query'],
+  },
 }));

@@ -1,17 +1,28 @@
+import { lazy, Suspense, memo } from "react";
 import Navigation from "@/components/portfolio/Navigation";
 import Hero from "@/components/portfolio/Hero";
-import About from "@/components/portfolio/About";
-import Services from "@/components/portfolio/Services";
-import CaseStudies from "@/components/portfolio/CaseStudies";
-import Testimonials from "@/components/portfolio/Testimonials";
-import GlobalReachCTA from "@/components/portfolio/GlobalReachCTA";
-import FullStackCTA from "@/components/portfolio/FullStackCTA";
-import FAQ from "@/components/portfolio/FAQ";
-import Contact from "@/components/portfolio/Contact";
-import Footer from "@/components/portfolio/Footer";
 import SEOHead from "@/components/SEOHead";
 
-const Index = () => {
+// Lazy load below-the-fold components for faster LCP
+const About = lazy(() => import("@/components/portfolio/About"));
+const Services = lazy(() => import("@/components/portfolio/Services"));
+const CaseStudies = lazy(() => import("@/components/portfolio/CaseStudies"));
+const Testimonials = lazy(() => import("@/components/portfolio/Testimonials"));
+const GlobalReachCTA = lazy(() => import("@/components/portfolio/GlobalReachCTA"));
+const FullStackCTA = lazy(() => import("@/components/portfolio/FullStackCTA"));
+const FAQ = lazy(() => import("@/components/portfolio/FAQ"));
+const Contact = lazy(() => import("@/components/portfolio/Contact"));
+const Footer = lazy(() => import("@/components/portfolio/Footer"));
+
+// Minimal loading fallback for sections
+const SectionLoader = memo(() => (
+  <div className="min-h-[200px] flex items-center justify-center">
+    <div className="w-6 h-6 border-2 border-primary/20 border-t-primary rounded-full animate-spin" />
+  </div>
+));
+SectionLoader.displayName = "SectionLoader";
+
+const Index = memo(() => {
   return (
     <>
       <SEOHead 
@@ -25,35 +36,55 @@ const Index = () => {
         <Navigation />
         <main id="main-content" role="main">
           <Hero />
-          <article id="about" aria-label="About section">
-            <About />
-          </article>
-          <section id="services" aria-label="Services offered">
-            <Services />
-          </section>
-          <section id="case-studies" aria-label="Client success stories">
-            <CaseStudies />
-          </section>
-          <section id="testimonials" aria-label="Client testimonials">
-            <Testimonials />
-          </section>
-          <section id="global-reach" aria-label="Global reach and industries">
-            <GlobalReachCTA />
-          </section>
-          <aside aria-label="Call to action">
-            <FullStackCTA />
-          </aside>
-          <section id="faq" aria-label="Frequently asked questions">
-            <FAQ />
-          </section>
-          <section id="contact" aria-label="Contact information">
-            <Contact />
-          </section>
+          <Suspense fallback={<SectionLoader />}>
+            <article id="about" aria-label="About section">
+              <About />
+            </article>
+          </Suspense>
+          <Suspense fallback={<SectionLoader />}>
+            <section id="services" aria-label="Services offered">
+              <Services />
+            </section>
+          </Suspense>
+          <Suspense fallback={<SectionLoader />}>
+            <section id="case-studies" aria-label="Client success stories">
+              <CaseStudies />
+            </section>
+          </Suspense>
+          <Suspense fallback={<SectionLoader />}>
+            <section id="testimonials" aria-label="Client testimonials">
+              <Testimonials />
+            </section>
+          </Suspense>
+          <Suspense fallback={<SectionLoader />}>
+            <section id="global-reach" aria-label="Global reach and industries">
+              <GlobalReachCTA />
+            </section>
+          </Suspense>
+          <Suspense fallback={<SectionLoader />}>
+            <aside aria-label="Call to action">
+              <FullStackCTA />
+            </aside>
+          </Suspense>
+          <Suspense fallback={<SectionLoader />}>
+            <section id="faq" aria-label="Frequently asked questions">
+              <FAQ />
+            </section>
+          </Suspense>
+          <Suspense fallback={<SectionLoader />}>
+            <section id="contact" aria-label="Contact information">
+              <Contact />
+            </section>
+          </Suspense>
         </main>
-        <Footer />
+        <Suspense fallback={<SectionLoader />}>
+          <Footer />
+        </Suspense>
       </div>
     </>
   );
-};
+});
+
+Index.displayName = "Index";
 
 export default Index;

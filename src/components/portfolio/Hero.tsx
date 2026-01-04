@@ -1,10 +1,11 @@
+import { memo } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MapPin, MessageCircle, Eye } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import profilePhoto from "@/assets/profile-photo.png";
 
-const Hero = () => {
+const Hero = memo(() => {
   const { t } = useLanguage();
 
   return (
@@ -101,6 +102,8 @@ const Hero = () => {
       </div>
     </section>
   );
-};
+});
+
+Hero.displayName = "Hero";
 
 export default Hero;
