@@ -42,7 +42,7 @@ const CitySEOHead = ({ countryCode, city, state, title, description, keywords, o
     name: `Local SEO Expert - ${city.name}, ${city.stateAbbreviation}`,
     description,
     url: canonicalUrl,
-    telephone: "+1-555-SEO-HELP",
+    telephone: "+971523695036",
     areaServed: {
       "@type": "City",
       name: city.name,

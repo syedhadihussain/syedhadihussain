@@ -28,7 +28,7 @@ const IndustrySEOHead = ({ industry }: IndustrySEOHeadProps) => {
     "provider": {
       "@type": "LocalBusiness",
       "name": "Syed Hadi Hussain - Local SEO Specialist",
-      "url": "https://www.yoursite.com",
+      "url": "https://syedhadihussain.com",
       "telephone": "+971523695036",
       "email": "contact.syedhadihussain@gmail.com",
       "address": {

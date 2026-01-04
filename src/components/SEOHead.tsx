@@ -66,7 +66,7 @@ const SEOHead = ({
     description: "Results-driven Local SEO specialist with 7+ years of experience helping service businesses dominate Google Search and Google Business Profile rankings worldwide.",
     url: baseUrl,
     email: "contact.syedhadihussain@gmail.com",
-    telephone: "+971-50-123-4567",
+    telephone: "+971523695036",
     image: {
       "@type": "ImageObject",
       url: `${baseUrl}/profile-photo.png`,
@@ -77,7 +77,7 @@ const SEOHead = ({
       "https://www.linkedin.com/in/syed-hadi-hussain-seo-specialist/",
       "https://www.facebook.com/syedhadihussainseo/",
       "https://github.com/syedhadihussain",
-      "https://wa.me/971501234567"
+      "https://wa.me/+971523695036"
     ],
     knowsAbout: [
       "Local SEO",
@@ -174,7 +174,7 @@ const SEOHead = ({
     logo: `${baseUrl}/logo.png`,
     image: `${baseUrl}/og-image.jpg`,
     priceRange: "$$",
-    telephone: "+971-50-123-4567",
+    telephone: "+971523695036",
     email: "contact.syedhadihussain@gmail.com",
     founder: { "@id": `${baseUrl}/#person` },
     foundingDate: "2017",
@@ -262,7 +262,7 @@ const SEOHead = ({
         "@type": "ContactPoint",
         contactType: "customer service",
         email: "contact.syedhadihussain@gmail.com",
-        telephone: "+971-50-123-4567",
+        telephone: "+971523695036",
         availableLanguage: ["English", "Arabic", "Spanish"],
         hoursAvailable: {
           "@type": "OpeningHoursSpecification",

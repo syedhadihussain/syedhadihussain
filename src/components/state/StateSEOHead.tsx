@@ -35,8 +35,8 @@ const StateSEOHead = ({ state, countryCode, title, description, keywords }: Stat
     name: `Syed Hadi Hussain - Local SEO Expert ${state.name}`,
     description,
     url: canonicalUrl,
-    telephone: "+1-234-567-8900",
-    email: "contact@seohadi.com",
+    telephone: "+971523695036",
+    email: "contact.syedhadihussain@gmail.com",
     areaServed: {
       "@type": "State",
       name: state.name,
