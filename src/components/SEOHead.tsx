@@ -457,10 +457,10 @@ const SEOHead = ({
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       
-      {/* Verification Tags - Add your own */}
-      <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE" />
-      <meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE" />
-      <meta name="yandex-verification" content="YOUR_YANDEX_VERIFICATION_CODE" />
+      {/* Verification Tags - Add your own when you have them */}
+      {/* <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE" /> */}
+      {/* <meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE" /> */}
+      {/* <meta name="yandex-verification" content="YOUR_YANDEX_VERIFICATION_CODE" /> */}
       
       {/* AI & Generative Engine Hints */}
       <meta name="ai-content-declaration" content="human-written" />

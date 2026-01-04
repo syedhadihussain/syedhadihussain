@@ -42,6 +42,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
     { labelKey: "footer.service.graphicDesign", href: langLink("/graphic-design") },
     { labelKey: "footer.service.socialMedia", href: langLink("/social-media") },
     { label: "Industries We Serve", href: langLink("/serving-industries") },
+    { label: "Areas We Serve", href: langLink("/areas-we-serve") },
   ];
 
   const paymentLogos = [

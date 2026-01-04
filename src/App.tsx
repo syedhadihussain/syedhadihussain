@@ -1,4 +1,4 @@
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, forwardRef } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -75,15 +75,16 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
 
-// Loading fallback component
-const PageLoader = () => (
-  <div className="min-h-screen flex items-center justify-center bg-background">
+// Loading fallback component - using forwardRef to prevent React warnings
+const PageLoader = forwardRef<HTMLDivElement>((_, ref) => (
+  <div ref={ref} className="min-h-screen flex items-center justify-center bg-background">
     <div className="flex flex-col items-center gap-4">
       <div className="w-12 h-12 border-4 border-primary/20 border-t-primary rounded-full animate-spin" />
       <p className="text-muted-foreground text-sm">Loading...</p>
     </div>
   </div>
-);
+));
+PageLoader.displayName = "PageLoader";
 
 // Get preferred language for legacy routes / root redirects
 const getPreferredLanguage = () => {
