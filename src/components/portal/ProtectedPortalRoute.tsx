@@ -11,25 +11,29 @@ interface ProtectedPortalRouteProps {
   requireModerator?: boolean;
 }
 
-// Map routes to required features
-const routeFeatureMap: Record<string, string> = {
-  "/en/portal/dashboard": "dashboard",
-  "/en/portal/projects": "projects",
-  "/en/portal/messages": "messages",
-  "/en/portal/documents": "documents",
-  "/en/portal/agreements": "agreement",
-  "/en/portal/invoices": "invoices",
-  "/en/portal/team": "team",
-  "/en/portal/settings": "settings",
-  "/en/portal/subscription": "subscription",
+// Map routes to required features - supports all languages
+const getRouteFeature = (pathname: string): string => {
+  // Extract the feature from the path regardless of language prefix
+  if (pathname.includes("/portal/dashboard")) return "dashboard";
+  if (pathname.includes("/portal/projects")) return "projects";
+  if (pathname.includes("/portal/messages")) return "messages";
+  if (pathname.includes("/portal/documents")) return "documents";
+  if (pathname.includes("/portal/agreements")) return "agreement";
+  if (pathname.includes("/portal/invoices")) return "invoices";
+  if (pathname.includes("/portal/team")) return "team";
+  if (pathname.includes("/portal/settings")) return "settings";
+  if (pathname.includes("/portal/subscription")) return "subscription";
+  return "dashboard";
 };
 
-// Routes that don't need access gate checks
-const alwaysAllowedRoutes = [
-  "/en/portal/invoices",
-  "/en/portal/agreements",
-  "/en/portal/settings",
-];
+// Routes that don't need access gate checks - check pattern not exact path
+const isAlwaysAllowedRoute = (pathname: string): boolean => {
+  return (
+    pathname.includes("/portal/invoices") ||
+    pathname.includes("/portal/agreements") ||
+    pathname.includes("/portal/settings")
+  );
+};
 
 const ProtectedPortalRoute = ({
   children,
@@ -90,18 +94,16 @@ const ProtectedPortalRoute = ({
     return <PortalLayout>{children}</PortalLayout>;
   }
 
-  // Check if route is always allowed
-  const isAlwaysAllowed = alwaysAllowedRoutes.some(route => 
-    location.pathname.startsWith(route)
-  );
+  // Check if route is always allowed using the function
+  const isRouteAllowed = isAlwaysAllowedRoute(location.pathname);
 
   // If full access or always allowed route, render children directly
-  if (portalAccessLevel === "full" || isAlwaysAllowed) {
+  if (portalAccessLevel === "full" || isRouteAllowed) {
     return <PortalLayout>{children}</PortalLayout>;
   }
 
-  // Get required feature for this route
-  const requiredFeature = routeFeatureMap[location.pathname] || "dashboard";
+  // Get required feature for this route using the function
+  const requiredFeature = getRouteFeature(location.pathname);
 
   // Wrap children in AccessGate for restricted routes
   return (

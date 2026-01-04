@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { Loader2, Lock, Mail, ArrowLeft } from "lucide-react";
 import { z } from "zod";
 
@@ -16,6 +17,7 @@ const passwordSchema = z.string().min(6, "Password must be at least 6 characters
 const PortalLoginPage = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
+  const { language } = useLanguage();
   const [isLoading, setIsLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -25,19 +27,19 @@ const PortalLoginPage = () => {
     const checkSession = async () => {
       const { data: { session } } = await supabase.auth.getSession();
       if (session) {
-        navigate("/en/portal/dashboard");
+        navigate(`/${language}/portal/dashboard`);
       }
     };
     checkSession();
 
     const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
       if (session) {
-        navigate("/en/portal/dashboard");
+        navigate(`/${language}/portal/dashboard`);
       }
     });
 
     return () => subscription.unsubscribe();
-  }, [navigate]);
+  }, [navigate, language]);
 
   const validateForm = () => {
     const newErrors: { email?: string; password?: string } = {};
@@ -103,7 +105,7 @@ const PortalLoginPage = () => {
       <div className="min-h-screen flex items-center justify-center bg-background p-4">
         <div className="w-full max-w-md">
           <Link
-            to="/en"
+            to={`/${language}`}
             className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors"
           >
             <ArrowLeft className="h-4 w-4" />
@@ -182,7 +184,7 @@ const PortalLoginPage = () => {
                     {" "}To get started:
                   </p>
                   <ol className="text-sm text-muted-foreground mt-2 space-y-1 list-decimal list-inside">
-                    <li>Choose a plan on our <Link to="/en/pricing" className="text-primary hover:underline">Pricing page</Link></li>
+                    <li>Choose a plan on our <Link to={`/${language}/pricing`} className="text-primary hover:underline">Pricing page</Link></li>
                     <li>Submit a subscription request</li>
                     <li>Complete payment after receiving invoice</li>
                     <li>Receive your login credentials via email</li>
