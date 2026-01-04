@@ -54,7 +54,6 @@ const Navigation = memo(forwardRef<HTMLElement>((_, ref) => {
     { href: withLang("/pricing"), label: t("nav.pricing"), isDropdown: false },
     { href: withLang("/portfolio"), label: t("nav.portfolio"), isDropdown: false },
     { href: withLang("/case-studies"), label: t("nav.caseStudies"), isDropdown: false },
-    { href: withLang("/faq"), label: t("nav.faq"), isDropdown: false },
     { href: withLang("/blog"), label: t("nav.blog"), isDropdown: false },
     { href: withLang("/contact"), label: t("nav.contact"), isDropdown: false },
   ];
