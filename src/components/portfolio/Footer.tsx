@@ -46,7 +46,6 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
 
   const paymentLogos = [
     { labelKey: "footer.payment.payoneer", color: "#FF4800" },
-    { labelKey: "footer.payment.wise", color: "#9FE870" },
     { labelKey: "footer.payment.paypal", color: "#003087" },
     { labelKey: "footer.payment.bankTransfer", color: "#1e40af" },
     { labelKey: "footer.payment.usdt", color: "#26A17B" },
