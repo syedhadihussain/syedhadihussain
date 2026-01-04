@@ -1,4 +1,4 @@
-import { Suspense, lazy, forwardRef, useEffect } from "react";
+import { Suspense, lazy, forwardRef } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -16,6 +16,7 @@ import { SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE, isSupportedLanguage } from "@/li
 import ScrollToTop from "@/components/ScrollToTop";
 import { SkipToContent } from "@/components/accessibility/AccessibilityUtils";
 import { useServiceWorker } from "@/hooks/useServiceWorker";
+import { useWebVitals } from "@/hooks/useWebVitals";
 import Index from "./pages/Index";
 
 // Lazy load pages for better performance
@@ -88,9 +89,10 @@ const PageLoader = forwardRef<HTMLDivElement>((_, ref) => (
 ));
 PageLoader.displayName = "PageLoader";
 
-// Service worker registration component
-const ServiceWorkerInit = () => {
+// Service worker and performance monitoring component
+const AppInitializers = () => {
   useServiceWorker();
+  useWebVitals();
   return null;
 };
 
@@ -182,8 +184,8 @@ const App = () => (
               <SkipToContent />
               {/* Accessibility: Live region for announcements */}
               <div id="a11y-announcer" aria-live="polite" aria-atomic="true" className="sr-only" />
-              {/* Service Worker for offline support */}
-              <ServiceWorkerInit />
+              {/* Service Worker + Web Vitals monitoring */}
+              <AppInitializers />
               <Toaster />
               <Sonner />
               <FloatingActions />
