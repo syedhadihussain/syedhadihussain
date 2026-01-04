@@ -65,7 +65,7 @@ const TermsOfServicePage = () => {
                     <ul className="list-disc list-inside text-muted-foreground space-y-2">
                       <li>Payment terms will be specified in the project proposal or invoice</li>
                       <li>A deposit may be required before work begins</li>
-                      <li>Accepted payment methods include Payoneer, Wise, PayPal, Bank Transfer, and USDT</li>
+                      <li>Accepted payment methods include Payoneer, PayPal, Bank Transfer, and USDT</li>
                       <li>Late payments may incur additional fees or result in service suspension</li>
                       <li>All prices are in USD unless otherwise specified</li>
                     </ul>
