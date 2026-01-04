@@ -1,10 +1,49 @@
 # Syed Hadi Hussain - Local SEO Specialist Portfolio
 # https://syedhadihussain.com
-# Last updated: 2025-12-25
+# Production-ready robots.txt for 100k+ URL scale
+# Last updated: 2026-01-04
 
-# Default rules for all crawlers
+# ============================================
+# DEFAULT RULES FOR ALL CRAWLERS
+# ============================================
 User-agent: *
 Allow: /
+
+# Block non-indexable system and private areas
+Disallow: /api/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /login/
+Disallow: /signup/
+Disallow: /register/
+Disallow: /portal/
+Disallow: /client/
+Disallow: /account/
+Disallow: /billing/
+Disallow: /invoice/
+Disallow: /payment/
+Disallow: /agreement/
+Disallow: /thank-you/
+Disallow: /success/
+Disallow: /error/
+Disallow: /preview/
+Disallow: /draft/
+Disallow: /private/
+
+# Prevent duplicate and parameter crawling
+Disallow: /*?*
+Disallow: /*&*
+Disallow: /*=
+Disallow: /*utm_
+Disallow: /*ref=
+Disallow: /*session=
+Disallow: /*fbclid=
+Disallow: /*gclid=
+
+# Explicitly allow all SEO content
+Allow: /blog/
+Allow: /local-seo-services-for-*
+Allow: /service-areas/
 Allow: /en/
 Allow: /ar/
 Allow: /es/
@@ -12,22 +51,13 @@ Allow: /pt/
 Allow: /it/
 Allow: /fr/
 Allow: /de/
-Crawl-delay: 1
 
-# Sitemaps
-Sitemap: https://syedhadihussain.com/sitemap.xml
-
-# Google
+# ============================================
+# GOOGLE CRAWLER
+# ============================================
 User-agent: Googlebot
 Allow: /
-Allow: /en/
-Allow: /ar/
-Allow: /es/
-Allow: /pt/
-Allow: /it/
-Allow: /fr/
-Allow: /de/
-Crawl-delay: 0
+Crawl-delay: 2
 
 User-agent: Googlebot-Image
 Allow: /
@@ -38,40 +68,53 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-# Bing
+User-agent: Google-Safety
+Allow: /
+
+# ============================================
+# BING CRAWLER
+# ============================================
 User-agent: Bingbot
 Allow: /
-Allow: /en/
-Allow: /ar/
-Allow: /es/
-Allow: /pt/
-Allow: /it/
-Allow: /fr/
-Allow: /de/
-Crawl-delay: 1
+Crawl-delay: 3
 
 User-agent: msnbot
 Allow: /
 
-# Apple
+# ============================================
+# OTHER MAJOR SEARCH ENGINES
+# ============================================
 User-agent: Applebot
 Allow: /
 
-# Yahoo
 User-agent: Slurp
 Allow: /
 
-# AI Crawlers - Allow for AI Overview and Generative Engine visibility
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+# ============================================
+# AI & GENERATIVE SEARCH BOTS (ALLOW)
+# ============================================
 User-agent: GPTBot
 Allow: /
 
 User-agent: ChatGPT-User
 Allow: /
 
-User-agent: Anthropic-AI
+User-agent: ClaudeBot
 Allow: /
 
 User-agent: Claude-Web
+Allow: /
+
+User-agent: Anthropic-AI
 Allow: /
 
 User-agent: PerplexityBot
@@ -80,10 +123,12 @@ Allow: /
 User-agent: Cohere-ai
 Allow: /
 
-User-agent: Google-Safety
+User-agent: YouBot
 Allow: /
 
-# Social Media Crawlers
+# ============================================
+# SOCIAL MEDIA CRAWLERS (ALLOW)
+# ============================================
 User-agent: Twitterbot
 Allow: /
 
@@ -99,29 +144,49 @@ Allow: /
 User-agent: WhatsApp
 Allow: /
 
-# SEO Tools
-User-agent: AhrefsBot
+User-agent: Slackbot
 Allow: /
-Crawl-delay: 2
+
+User-agent: TelegramBot
+Allow: /
+
+# ============================================
+# BLOCK SCRAPERS & BAD BOTS
+# ============================================
+User-agent: AhrefsBot
+Disallow: /
 
 User-agent: SemrushBot
-Allow: /
-Crawl-delay: 2
+Disallow: /
 
 User-agent: MJ12bot
-Allow: /
-Crawl-delay: 2
+Disallow: /
 
-# Disallow sensitive paths
-Disallow: /api/
-Disallow: /admin/
-Disallow: /private/
-Disallow: /*.json$
-Disallow: /*?*utm_
-Disallow: /*?*fbclid=
-Disallow: /*?*gclid=
+User-agent: DotBot
+Disallow: /
 
-# Allow specific files
-Allow: /sitemap.xml
-Allow: /robots.txt
-Allow: /manifest.json
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: DataForSeoBot
+Disallow: /
+
+User-agent: serpstatbot
+Disallow: /
+
+User-agent: MegaIndex
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+User-agent: Sogou
+Disallow: /
+
+# ============================================
+# SITEMAP REFERENCES
+# ============================================
+Sitemap: https://syedhadihussain.com/sitemap.xml
