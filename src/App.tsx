@@ -1,4 +1,4 @@
-import { Suspense, lazy, forwardRef } from "react";
+import { Suspense, lazy, forwardRef, useEffect } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -14,6 +14,8 @@ import TawkToChat from "@/components/TawkToChat";
 import GlobalSEO from "@/components/GlobalSEO";
 import { SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE, isSupportedLanguage } from "@/lib/i18n-config";
 import ScrollToTop from "@/components/ScrollToTop";
+import { SkipToContent } from "@/components/accessibility/AccessibilityUtils";
+import { useServiceWorker } from "@/hooks/useServiceWorker";
 import Index from "./pages/Index";
 
 // Lazy load pages for better performance
@@ -77,14 +79,20 @@ const queryClient = new QueryClient();
 
 // Loading fallback component - using forwardRef to prevent React warnings
 const PageLoader = forwardRef<HTMLDivElement>((_, ref) => (
-  <div ref={ref} className="min-h-screen flex items-center justify-center bg-background">
+  <div ref={ref} role="status" aria-label="Loading page" className="min-h-screen flex items-center justify-center bg-background">
     <div className="flex flex-col items-center gap-4">
-      <div className="w-12 h-12 border-4 border-primary/20 border-t-primary rounded-full animate-spin" />
+      <div className="w-12 h-12 border-4 border-primary/20 border-t-primary rounded-full animate-spin" aria-hidden="true" />
       <p className="text-muted-foreground text-sm">Loading...</p>
     </div>
   </div>
 ));
 PageLoader.displayName = "PageLoader";
+
+// Service worker registration component
+const ServiceWorkerInit = () => {
+  useServiceWorker();
+  return null;
+};
 
 // Get preferred language for legacy routes / root redirects
 const getPreferredLanguage = () => {
@@ -170,6 +178,12 @@ const App = () => (
           <HelmetProvider>
             <GlobalSEO />
             <TooltipProvider>
+              {/* Accessibility: Skip to content link */}
+              <SkipToContent />
+              {/* Accessibility: Live region for announcements */}
+              <div id="a11y-announcer" aria-live="polite" aria-atomic="true" className="sr-only" />
+              {/* Service Worker for offline support */}
+              <ServiceWorkerInit />
               <Toaster />
               <Sonner />
               <FloatingActions />

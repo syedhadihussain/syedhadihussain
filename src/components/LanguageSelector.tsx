@@ -23,19 +23,26 @@ const LanguageSelector = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="sm" className="gap-2">
-          <Globe className="h-4 w-4" />
+        <Button 
+          variant="ghost" 
+          size="sm" 
+          className="gap-2"
+          aria-label={`Select language. Current: ${currentLang?.name}`}
+        >
+          <Globe className="h-4 w-4" aria-hidden="true" />
           <span className="hidden sm:inline">{currentLang?.flag}</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="min-w-[150px]">
+      <DropdownMenuContent align="end" className="min-w-[150px]" role="menu" aria-label="Language options">
         {languages.map((lang) => (
           <DropdownMenuItem
             key={lang.code}
             onClick={() => setLanguage(lang.code)}
             className={`gap-3 cursor-pointer ${language === lang.code ? "bg-accent" : ""}`}
+            role="menuitem"
+            aria-current={language === lang.code ? "true" : undefined}
           >
-            <span>{lang.flag}</span>
+            <span aria-hidden="true">{lang.flag}</span>
             <span>{lang.name}</span>
           </DropdownMenuItem>
         ))}
