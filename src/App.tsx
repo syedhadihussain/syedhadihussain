@@ -125,6 +125,7 @@ const staticPageRoutes = [
   { path: "portal/login", element: <PortalLoginPage /> },
   { path: "portal/onboarding", element: <PortalOnboardingPage /> },
   { path: "subscribe", element: <SubscriptionFormPage /> },
+  { path: "maintenance-guide", element: <MaintenanceGuidePage /> },
 ];
 
 // Protected portal routes (require authentication)
@@ -153,7 +154,6 @@ const adminPortalRoutes = [
   { path: "portal/admin/sitemaps", element: <AdminSitemapDashboardPage />, requireAdmin: true },
   { path: "portal/admin/subscription-requests", element: <AdminSubscriptionRequestsPage />, requireAdmin: true },
   { path: "portal/admin/payment-proofs", element: <AdminPaymentProofsPage />, requireAdmin: true },
-  { path: "portal/admin/maintenance-guide", element: <MaintenanceGuidePage />, requireAdmin: true },
 ];
 
 // Protected admin routes (require authentication + admin role)
