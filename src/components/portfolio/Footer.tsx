@@ -205,6 +205,9 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
               <Link to={langLink("/terms")} className="hover:text-foreground transition-colors">
                 {t("footer.terms")}
               </Link>
+              <a href="/sitemap.xml" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
+                Sitemap
+              </a>
             </div>
           </div>
         </div>
