@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, forwardRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { scrollToSection } from "@/hooks/use-scroll-animation";
@@ -13,7 +13,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-const Navigation = () => {
+const Navigation = forwardRef<HTMLElement>((_, ref) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { t, language } = useLanguage();
@@ -61,6 +61,7 @@ const Navigation = () => {
 
   return (
     <nav
+      ref={ref as React.Ref<HTMLElement>}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? "glass py-3" : "py-5"
       }`}
@@ -182,6 +183,8 @@ const Navigation = () => {
       )}
     </nav>
   );
-};
+});
+
+Navigation.displayName = "Navigation";
 
 export default Navigation;

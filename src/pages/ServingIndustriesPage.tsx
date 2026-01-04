@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, forwardRef } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link, useLocation } from "react-router-dom";
 import {
@@ -133,7 +133,7 @@ const getCategoryDescription = (categorySlug: string): string => {
   );
 };
 
-const ServingIndustriesPage = () => {
+const ServingIndustriesPage = forwardRef<HTMLDivElement>((_, ref) => {
   const location = useLocation();
 
   // Get current language from URL
@@ -477,6 +477,8 @@ const ServingIndustriesPage = () => {
       <Footer />
     </>
   );
-};
+});
+
+ServingIndustriesPage.displayName = "ServingIndustriesPage";
 
 export default ServingIndustriesPage;
